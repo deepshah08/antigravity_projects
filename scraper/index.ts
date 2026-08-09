@@ -43,7 +43,7 @@ async function processArticle(url: string, id: string): Promise<void> {
 
   // Custom Fallback Extraction since Readability fails on GFG's structure
   const title = document.querySelector('h1')?.textContent || 'Untitled';
-  const articleBody = document.querySelector('.article--viewer') || document.querySelector('article') || document.body;
+  const articleBody = document.querySelector('.article--viewer .text') || document.querySelector('article .text') || document.querySelector('.article--viewer') || document.querySelector('article') || document.body;
 
   // Clean up GFG-specific cruft inside the article body
   const elementsToRemove = articleBody.querySelectorAll(
