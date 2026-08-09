@@ -1,12 +1,6 @@
 import * as fs from 'fs-extra';
 import * as path from 'path';
 
-interface ArticleManifest {
-  articleId: string;
-  title: string;
-  topicId: string;
-}
-
 interface ArticleData {
   title: string;
   textContent: string;
@@ -19,11 +13,11 @@ function sanitizeFilename(name: string): string {
 
 async function main() {
   const manifestPath = path.join(__dirname, 'manifest.json');
-  const articlesDir = path.join(__dirname, '..', '..', 'offline-knowledge-center', 'public', 'data');
-  const outputBaseDir = path.join(__dirname, '..', '..', 'OfflineTutor', 'data_buffer', 'gfg');
+  const articlesDir = path.join(__dirname, '..', 'offline-knowledge-center', 'public', 'data');
+  const outputBaseDir = path.join(__dirname, '..', 'OfflineTutor', 'data_buffer', 'gfg');
 
   console.log(`Loading manifest from: ${manifestPath}`);
-  let manifest: ArticleManifest[];
+  let manifest: any;
   try {
     manifest = await fs.readJson(manifestPath);
   } catch (error: any) {
@@ -31,25 +25,37 @@ async function main() {
     return;
   }
 
-  for (const item of manifest) {
-    const { articleId, title, topicId } = item;
-    const articleFilePath = path.join(articlesDir, `${articleId}.json`);
+  const topics = manifest.topics || [];
 
-    try {
-      const articleData: ArticleData = await fs.readJson(articleFilePath);
+  for (const topic of topics) {
+    const topicId = topic.id;
+    const articles = topic.articles || [];
 
-      const safeTitle = sanitizeFilename(articleData.title || title);
-      const markdownContent = `# ${articleData.title || title}\n\n${articleData.textContent || ''}\n`;
+    for (const item of articles) {
+      const { id: articleId, title } = item;
+      const articleFilePath = path.join(articlesDir, `${articleId}.json`);
 
-      const outputDir = path.join(outputBaseDir, topicId);
-      await fs.ensureDir(outputDir);
+      try {
+        if (!await fs.pathExists(articleFilePath)) {
+          console.warn(`Article data not found for ${articleId}, skipping.`);
+          continue;
+        }
 
-      const outputPath = path.join(outputDir, `${safeTitle}.txt`);
-      await fs.writeFile(outputPath, markdownContent, 'utf-8');
+        const articleData: ArticleData = await fs.readJson(articleFilePath);
 
-      console.log(`Successfully exported: ${title} to ${outputPath}`);
-    } catch (error: any) {
-      console.error(`Failed to process article ${articleId} (${title}): ${error.message}`);
+        const safeTitle = sanitizeFilename(articleData.title || title);
+        const markdownContent = `# ${articleData.title || title}\n\n${articleData.textContent || ''}\n`;
+
+        const outputDir = path.join(outputBaseDir, topicId);
+        await fs.ensureDir(outputDir);
+
+        const outputPath = path.join(outputDir, `${safeTitle}.txt`);
+        await fs.writeFile(outputPath, markdownContent, 'utf-8');
+
+        console.log(`Successfully exported: ${title} to ${outputPath}`);
+      } catch (error: any) {
+        console.error(`Failed to process article ${articleId} (${title}): ${error.message}`);
+      }
     }
   }
 
