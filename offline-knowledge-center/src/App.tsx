@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
-import { Book, Bookmark, CheckCircle2, ChevronLeft, ChevronRight, Home, LayoutList, Menu, X } from 'lucide-react';
+import { Book, Bookmark, CheckCircle2, ChevronLeft, ChevronRight, Home, LayoutList, Menu, MessageCircle, X, Loader2, Send } from 'lucide-react';
 
 interface ArticleInfo {
   id: string;
@@ -122,7 +122,7 @@ function TopicIndex() {
   const [completedState] = useLocalStorage<Record<string, boolean>>('completed-articles', {});
 
   useEffect(() => {
-    fetch(`/data/${topicId}-index.json`)
+    fetch(`http://localhost:8000/api/curriculum/${topicId}`)
       .then(res => {
         if (!res.ok) throw new Error('Topic not found or data missing');
         return res.json();
@@ -178,12 +178,130 @@ function TopicIndex() {
   );
 }
 
+
+interface Message {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
+function AITutorSidebar({
+  isOpen,
+  onClose,
+  articleTitle,
+  articleContent
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+  articleTitle: string;
+  articleContent: string;
+}) {
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [input, setInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim() || isLoading) return;
+
+    const userMsg = input.trim();
+    setInput('');
+    setMessages(prev => [...prev, { role: 'user', content: userMsg }]);
+    setIsLoading(true);
+
+    try {
+      const res = await fetch('http://localhost:8000/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: userMsg,
+          context: `Article Title: ${articleTitle}\n\nArticle Content Excerpt:\n${articleContent.substring(0, 2000)}...`
+        })
+      });
+
+      if (!res.ok) throw new Error('Failed to get response');
+
+      const data = await res.json();
+      setMessages(prev => [...prev, { role: 'assistant', content: data.response }]);
+    } catch (err) {
+      console.error(err);
+      setMessages(prev => [...prev, { role: 'assistant', content: "I'm sorry, I encountered an error and couldn't process your question." }]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-y-0 right-0 w-full sm:w-96 bg-surface/95 backdrop-blur-xl border-l border-white/10 shadow-2xl flex flex-col z-50 animate-in slide-in-from-right duration-300">
+      <div className="p-4 border-b border-white/10 flex items-center justify-between">
+        <h3 className="font-semibold flex items-center gap-2">
+          <MessageCircle className="w-5 h-5 text-primary" />
+          Socratic Tutor
+        </h3>
+        <button onClick={onClose} className="p-2 hover:bg-white/5 rounded-lg transition-colors">
+          <X className="w-5 h-5 text-textMuted" />
+        </button>
+      </div>
+
+      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+        {messages.length === 0 ? (
+          <div className="text-center text-textMuted text-sm mt-8 space-y-2">
+            <p>I'm your Socratic AI Tutor.</p>
+            <p>What questions do you have about this article?</p>
+          </div>
+        ) : (
+          messages.map((m, i) => (
+            <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+              <div className={`max-w-[85%] p-3 rounded-xl text-sm ${
+                m.role === 'user'
+                  ? 'bg-primary text-background rounded-tr-sm'
+                  : 'bg-white/5 border border-white/10 rounded-tl-sm'
+              }`}>
+                {m.content}
+              </div>
+            </div>
+          ))
+        )}
+        {isLoading && (
+          <div className="flex justify-start">
+            <div className="bg-white/5 border border-white/10 p-3 rounded-xl rounded-tl-sm flex items-center gap-2">
+              <Loader2 className="w-4 h-4 animate-spin text-primary" />
+              <span className="text-sm text-textMuted">Thinking...</span>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <form onSubmit={handleSubmit} className="p-4 border-t border-white/10 bg-surface">
+        <div className="flex gap-2">
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Ask a question..."
+            className="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-primary/50 transition-colors"
+          />
+          <button
+            type="submit"
+            disabled={isLoading || !input.trim()}
+            className="bg-primary text-background p-2 rounded-lg disabled:opacity-50 transition-opacity"
+          >
+            <Send className="w-5 h-5" />
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+}
+
 function ArticleReader() {
   const { topicId, articleId } = useParams();
 
   const [article, setArticle] = useState<ArticleData | null>(null);
   const [indexData, setIndexData] = useState<IndexData | null>(null);
   const [error, setError] = useState('');
+  const [showTutor, setShowTutor] = useState(false);
 
   const [completedState, setCompletedState] = useLocalStorage<Record<string, boolean>>('completed-articles', {});
   const [bookmarks, setBookmarks] = useLocalStorage<Record<string, boolean>>('bookmarked-articles', {});
@@ -194,7 +312,7 @@ function ArticleReader() {
     setError('');
 
     // Fetch index for navigation
-    fetch(`/data/${topicId}-index.json`)
+    fetch(`http://localhost:8000/api/curriculum/${topicId}`)
       .then(res => res.json())
       .then(setIndexData)
       .catch(console.warn);
@@ -227,12 +345,22 @@ function ArticleReader() {
   const nextArticle = currentIndex < indexData.articles.length - 1 ? indexData.articles[currentIndex + 1] : null;
 
   return (
+    <>
+      <AITutorSidebar
+        isOpen={showTutor}
+        onClose={() => setShowTutor(false)}
+        articleTitle={article.title}
+        articleContent={article.content}
+      />
     <div className="max-w-3xl mx-auto space-y-8 pb-20 animate-in slide-in-from-bottom-4 duration-500">
       <nav className="flex items-center justify-between text-sm">
         <Link to={`/topic/${topicId}`} className="text-textMuted hover:text-primary transition-colors flex items-center gap-1">
           <LayoutList className="w-4 h-4"/> Table of Contents
         </Link>
         <div className="flex gap-2">
+          <button onClick={() => setShowTutor(true)} className={`p-2 rounded-lg transition-colors ${showTutor ? 'bg-primary/20 text-primary' : 'bg-surface text-textMuted hover:text-white'}`} title="Socratic AI Tutor">
+             <MessageCircle className="w-5 h-5" />
+          </button>
           <button onClick={toggleBookmark} className={`p-2 rounded-lg transition-colors ${isBookmarked ? 'bg-primary/20 text-primary' : 'bg-surface text-textMuted hover:text-white'}`} title="Bookmark">
              <Bookmark className="w-5 h-5" fill={isBookmarked ? 'currentColor' : 'none'} />
           </button>
@@ -265,6 +393,7 @@ function ArticleReader() {
         ) : <div className="flex-1"></div>}
       </div>
     </div>
+    </>
   );
 }
 
