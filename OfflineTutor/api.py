@@ -22,6 +22,8 @@ class ChatRequest(BaseModel):
     context: Optional[str] = None
     direct_answer: bool = False
 
+agent = SocraticAgent()
+
 @app.get("/api/curriculum/{topic}")
 def get_curriculum(topic: str):
     steps = get_prerequisite_steps(topic)
@@ -29,7 +31,7 @@ def get_curriculum(topic: str):
 
 @app.post("/api/chat")
 def chat(request: ChatRequest):
-    return SocraticAgent.generate_response(
+    return agent.generate_response(
         query=request.query,
         context=request.context,
         direct_answer=request.direct_answer
