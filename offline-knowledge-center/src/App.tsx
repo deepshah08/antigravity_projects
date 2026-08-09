@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
 import { Book, Bookmark, CheckCircle2, ChevronLeft, ChevronRight, Home, LayoutList, Menu, X } from 'lucide-react';
 
 interface ArticleInfo {
