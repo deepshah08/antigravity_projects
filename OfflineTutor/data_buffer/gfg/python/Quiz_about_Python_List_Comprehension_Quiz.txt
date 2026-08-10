@@ -1,0 +1,83 @@
+# Quiz about Python List Comprehension Quiz
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython List Comprehension QuizLast Updated : DiscussCommentsQuestion 1In list comprehension, what does the expression represent?The iterable being traversed.The condition for filtering elements.The value to be included in the new list.The index of the current element.Question 2In what scenarios might it be better to use traditional loops instead of list comprehension?When the code needs to be more concise.When the logic involves complex conditions.In situations where performance is critical.List comprehension is always preferable.Question 3What will the following list comprehension output?
+        Python
+        
+        words = ['apple', 'banana', 'cherry']
+word_lengths = {word: len(word) for word in words if len(word) % 2 == 0}
+
+        
+    {'apple': 5, 'banana': 6, 'cherry': 6}{'apple': 5, 'banana': 6}{'apple': 5, 'cherry': 6}{'banana': 6, 'cherry': 6}Question 4What is the significance of the order of for clauses in nested list comprehensions?The order has no effect on the result.It determines the order of elements in the resulting list.It is not possible to have multiple for clauses in list comprehension.It only affects the readability of the code.Question 5How can list comprehension be used to create a list of tuples?By converting a list to a tuple after using list comprehension.By using the tuple() constructor within the list comprehension.List comprehension can only create lists, not tuples.By enclosing each element in parentheses within the list comprehension.Question 6Can list comprehension be used with other data types besides lists?No, it can only be used with lists.Yes, it can be used with any iterable.Yes, but only with strings.No, it is limited to numerical data types.Question 7What is the purpose of the following list comprehension?numbers = [1, -2, 3, -4, 5]squared_positives = [x**2 if x > 0 else 0 for x in numbers] Squares all numbers.Squares only positive numbers.Squares only negative numbers.Squares numbers greater than 3.Question 8What is the purpose of the following set comprehension?
+        Python
+        
+        words = ['python', 'list', 'comprehension']
+unique_starting_letters = {word[0].upper() for word in words}
+
+        
+    Creates a list of unique starting letters of words.Creates a set of unique starting letters of words.Creates a dictionary with starting letters as keys and words as values.Counts the occurrences of each starting letter.Question 9Explain the concept of filtering in list comprehension.It involves transforming elements based on a specified condition.It refers to the process of excluding elements based on a condition.It is a technique for optimizing list comprehension.It is not applicable to list comprehension.Question 10Explain the term "nested list comprehension."It refers to using multiple conditions in a single list comprehension.It involves using a list comprehension inside another list comprehension.It is a type of list comprehension specific to nested lists.It is an advanced feature not related to list comprehensions.Tags:Python-QuizzesThere are 25 questions to complete.Take a part in the ongoing discussionView All Discussion

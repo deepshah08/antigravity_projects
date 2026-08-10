@@ -1,0 +1,1112 @@
+# SOLID Principles with Real Life Examples - GeeksforGeeks
+
+The SOLID principles are five essential guidelines that enhance software design, making code more maintainable and scalable. The SOLID principles help in enhancing loose coupling. Loose coupling means a group of classes are less dependent on one another.Loose coupling helps in making code more reusable, maintainable, flexible and stable. Loosely coupled classes minimize changes in your code when some changes are required in some other code. SOLID1. Single Responsibility PrincipleThis principle states that "A class should have only one reason to change" which means every class should have a single responsibility or single job or single purpose. In other words, a class should have only one job or purpose within the software system.Example: Imagine a baker who is responsible for baking bread. The baker's role is to focus on the task of baking bread, ensuring that the bread is of high quality, properly baked, and meets the bakery's standards.If the baker handles inventory, ordering, customer service, and cleaning along with baking, it violates SRP since multiple responsibilities are combined.Each task is a separate responsibility, and combining them reduces the baker’s focus and effectiveness in baking.To follow SRP, responsibilities should be divided among different individuals or teams, each handling a specific task independently.Code of above Example
+            C++
+
+    #include <iostream>
+#include <string>
+
+// Class for baking bread
+class BreadBaker {
+public:
+    void bakeBread() {
+        std::cout << "Baking high-quality bread..." << std::endl;
+    }
+};
+
+// Class for managing inventory
+class InventoryManager {
+public:
+    void manageInventory() {
+        std::cout << "Managing inventory..." << std::endl;
+    }
+};
+
+// Class for ordering supplies
+class SupplyOrder {
+public:
+    void orderSupplies() {
+        std::cout << "Ordering supplies..." << std::endl;
+    }
+};
+
+// Class for serving customers
+class CustomerService {
+public:
+    void serveCustomer() {
+        std::cout << "Serving customers..." << std::endl;
+    }
+};
+
+// Class for cleaning the bakery
+class BakeryCleaner {
+public:
+    void cleanBakery() {
+        std::cout << "Cleaning the bakery..." << std::endl;
+    }
+};
+
+int main() {
+    BreadBaker baker;
+    InventoryManager inventoryManager;
+    SupplyOrder supplyOrder;
+    CustomerService customerService;
+    BakeryCleaner cleaner;
+
+    // Each class focuses on its specific responsibility
+    baker.bakeBread();
+    inventoryManager.manageInventory();
+    supplyOrder.orderSupplies();
+    customerService.serveCustomer();
+    cleaner.cleanBakery();
+
+    return 0;
+}
+
+
+            Java
+
+    // Class for baking bread
+class BreadBaker {
+    public void bakeBread() {
+        System.out.println("Baking high-quality bread...");
+    }
+}
+
+// Class for managing inventory
+class InventoryManager {
+    public void manageInventory() {
+        System.out.println("Managing inventory...");
+    }
+}
+
+// Class for ordering supplies
+class SupplyOrder {
+    public void orderSupplies() {
+        System.out.println("Ordering supplies...");
+    }
+}
+
+// Class for serving customers
+class CustomerService {
+    public void serveCustomer() {
+        System.out.println("Serving customers...");
+    }
+}
+
+// Class for cleaning the bakery
+class BakeryCleaner {
+    public void cleanBakery() {
+        System.out.println("Cleaning the bakery...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BreadBaker baker = new BreadBaker();
+        InventoryManager inventoryManager = new InventoryManager();
+        SupplyOrder supplyOrder = new SupplyOrder();
+        CustomerService customerService = new CustomerService();
+        BakeryCleaner cleaner = new BakeryCleaner();
+
+        // Each class focuses on its specific responsibility
+        baker.bakeBread();
+        inventoryManager.manageInventory();
+        supplyOrder.orderSupplies();
+        customerService.serveCustomer();
+        cleaner.cleanBakery();
+    }
+}
+
+
+            Python
+
+    # Class for baking bread
+class BreadBaker:
+    def bakeBread(self):
+        print("Baking high-quality bread...")
+
+# Class for managing inventory
+class InventoryManager:
+    def manageInventory(self):
+        print("Managing inventory...")
+
+# Class for ordering supplies
+class SupplyOrder:
+    def orderSupplies(self):
+        print("Ordering supplies...")
+
+# Class for serving customers
+class CustomerService:
+    def serveCustomer(self):
+        print("Serving customers...")
+
+# Class for cleaning the bakery
+class BakeryCleaner:
+    def cleanBakery(self):
+        print("Cleaning the bakery...")
+
+def main():
+    baker = BreadBaker()
+    inventoryManager = InventoryManager()
+    supplyOrder = SupplyOrder()
+    customerService = CustomerService()
+    cleaner = BakeryCleaner()
+
+    # Each class focuses on its specific responsibility
+    baker.bakeBread()
+    inventoryManager.manageInventory()
+    supplyOrder.orderSupplies()
+    customerService.serveCustomer()
+    cleaner.cleanBakery()
+
+if __name__ == "__main__":
+    main()
+
+
+            JavaScript
+
+    // Class for baking bread
+class BreadBaker {
+    bakeBread() {
+        console.log("Baking high-quality bread...");
+    }
+}
+
+// Class for managing inventory
+class InventoryManager {
+    manageInventory() {
+        console.log("Managing inventory...");
+    }
+}
+
+// Class for ordering supplies
+class SupplyOrder {
+    orderSupplies() {
+        console.log("Ordering supplies...");
+    }
+}
+
+// Class for serving customers
+class CustomerService {
+    serveCustomer() {
+        console.log("Serving customers...");
+    }
+}
+
+// Class for cleaning the bakery
+class BakeryCleaner {
+    cleanBakery() {
+        console.log("Cleaning the bakery...");
+    }
+}
+
+function main() {
+    const baker = new BreadBaker();
+    const inventoryManager = new InventoryManager();
+    const supplyOrder = new SupplyOrder();
+    const customerService = new CustomerService();
+    const cleaner = new BakeryCleaner();
+
+    // Each class focuses on its specific responsibility
+    baker.bakeBread();
+    inventoryManager.manageInventory();
+    supplyOrder.orderSupplies();
+    customerService.serveCustomer();
+    cleaner.cleanBakery();
+}
+
+main();
+
+OutputBaking high-quality bread...
+Managing inventory...
+Ordering supplies...
+Serving customers...
+Cleaning the bakery...
+BreadBaker Class: Responsible solely for baking bread. This class focuses on ensuring the quality and standards of the bread without being burdened by other tasks.InventoryManager Class: Handles inventory management, ensuring that the bakery has the right ingredients and supplies available.SupplyOrder Class: Manages ordering supplies, ensuring that the bakery is stocked with necessary items.CustomerService Class: Takes care of serving customers, providing a focused approach to customer interactions.BakeryCleaner Class: Responsible for cleaning the bakery, ensuring a hygienic environment.2. Open/Closed PrincipleThis principle states that "Software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification" which means you should be able to extend a class behavior, without modifying it.Example: Imagine you have a class called PaymentProcessor that processes payments for an online store. Initially, the PaymentProcessor class only supports processing payments using credit cards. However, you want to extend its functionality to also support processing payments using PayPal.Instead of modifying the existing PaymentProcessor class, a new PayPalPaymentProcessor class can be created to add PayPal support.This keeps the original class unchanged while extending its functionality through a new class.It follows the Open-Closed Principle by keeping the class closed for modification but open for extension.
+            C++
+
+    #include <iostream>
+#include <string>
+
+// Base class for payment processing
+class PaymentProcessor {
+public:
+    virtual void processPayment(double amount) = 0; // Pure virtual function
+};
+
+// Credit card payment processor
+class CreditCardPaymentProcessor : public PaymentProcessor {
+public:
+    void processPayment(double amount) override {
+        std::cout << "Processing credit card payment of $" << amount << std::endl;
+    }
+};
+
+
+            Java
+
+    // Base class for payment processing
+abstract class PaymentProcessor {
+    public abstract void processPayment(double amount); // Pure virtual function
+}
+
+// Credit card payment processor
+class CreditCardPaymentProcessor extends PaymentProcessor {
+    @Override
+    public void processPayment(double amount) {
+        System.out.println("Processing credit card payment of $" + amount);
+    }
+}
+
+
+            Python
+
+    from abc import ABC, abstractmethod
+
+# Base class for payment processing
+class PaymentProcessor(ABC):
+    @abstractmethod
+    def processPayment(self, amount):  # Pure virtual function
+        pass
+
+# Credit card payment processor
+class CreditCardPaymentProcessor(PaymentProcessor):
+    def processPayment(self, amount):
+        print(f"Processing credit card payment of ${amount}")
+
+
+            JavaScript
+
+    // Base class for payment processing
+class PaymentProcessor {
+    processPayment(amount) { // Pure virtual function
+        throw new Error("processPayment must be implemented");
+    }
+}
+
+// Credit card payment processor
+class CreditCardPaymentProcessor extends PaymentProcessor {
+    processPayment(amount) {
+        console.log(`Processing credit card payment of $${amount}`);
+    }
+}
+
+Extended FunctionalityNow, to add support for PayPal payments, you create a new class PayPalPaymentProcessor that extends PaymentProcessor.
+            C++
+
+    // PayPal payment processor
+class PayPalPaymentProcessor : public PaymentProcessor {
+public:
+    void processPayment(double amount) override {
+        std::cout << "Processing PayPal payment of $" << amount << std::endl;
+    }
+};
+
+
+            Java
+
+    // PayPal payment processor
+class PayPalPaymentProcessor extends PaymentProcessor {
+    @Override
+    public void processPayment(double amount) {
+        System.out.println("Processing PayPal payment of $" + amount);
+    }
+}
+
+
+            Python
+
+    # PayPal payment processor
+class PayPalPaymentProcessor(PaymentProcessor):
+    def processPayment(self, amount):
+        print(f"Processing PayPal payment of ${amount}")
+
+
+            JavaScript
+
+    // PayPal payment processor
+class PayPalPaymentProcessor extends PaymentProcessor {
+    processPayment(amount) {
+        console.log(`Processing PayPal payment of $${amount}`);
+    }
+}
+
+UsageIn your application, you can use either payment processor without modifying the existing code for PaymentProcessor or CreditCardPaymentProcessor.
+            C++
+
+    void processPayment(PaymentProcessor* processor, double amount) {
+    processor->processPayment(amount);
+}
+
+int main() {
+    CreditCardPaymentProcessor creditCardProcessor;
+    PayPalPaymentProcessor payPalProcessor;
+
+    processPayment(&creditCardProcessor, 100.00); // Processing credit card payment
+    processPayment(&payPalProcessor, 150.00);     // Processing PayPal payment
+
+    return 0;
+}
+
+
+            Java
+
+    // Function to process payment
+public static void processPayment(PaymentProcessor processor, double amount) {
+    processor.processPayment(amount);
+}
+
+public class Main {
+    public static void main(String[] args) {
+        CreditCardPaymentProcessor creditCardProcessor = new CreditCardPaymentProcessor();
+        PayPalPaymentProcessor payPalProcessor = new PayPalPaymentProcessor();
+
+        processPayment(creditCardProcessor, 100.00); // Processing credit card payment
+        processPayment(payPalProcessor, 150.00);     // Processing PayPal payment
+    }
+
+    // Function to process payment
+    public static void processPayment(PaymentProcessor processor, double amount) {
+        processor.processPayment(amount);
+    }
+}
+
+
+            Python
+
+    # Function to process payment
+def processPayment(processor, amount):
+    processor.processPayment(amount)
+
+def main():
+    creditCardProcessor = CreditCardPaymentProcessor()
+    payPalProcessor = PayPalPaymentProcessor()
+
+    processPayment(creditCardProcessor, 100.00)  # Processing credit card payment
+    processPayment(payPalProcessor, 150.00)      # Processing PayPal payment
+
+if __name__ == "__main__":
+    main()
+
+
+            JavaScript
+
+    // Function to process payment
+function processPayment(processor, amount) {
+    processor.processPayment(amount);
+}
+
+function main() {
+    const creditCardProcessor = new CreditCardPaymentProcessor();
+    const payPalProcessor = new PayPalPaymentProcessor();
+
+    processPayment(creditCardProcessor, 100.00); // Processing credit card payment
+    processPayment(payPalProcessor, 150.00);     // Processing PayPal payment
+}
+
+main();
+
+Explanation of the above code:Base Class (PaymentProcessor): An abstract class that defines a common interface (processPayment) for all payment processors.CreditCardPaymentProcessor: Implements payment processing specifically for credit card transactions.PayPalPaymentProcessor: Extends functionality by handling PayPal payment processing.Main Function: Uses the PaymentProcessor interface to call processPayment(), allowing flexibility without changing existing code.3. Liskov's Substitution PrincipleThe principle was introduced by Barbara Liskov in 1987. According to this principle, "derived or child classes must be able to replace their base or parent classes". This ensures that any subclass can be used in place of its parent class without causing unexpected behavior in the program.Example: One of the classic examples of this principle is a rectangle having four sides. A rectangle's height can be any value and width can be any value. A square is a rectangle with equal width and height. So we can say that we can extend the properties of the rectangle class into square class. Replacing the Rectangle with a Square forces constraints (equal sides), which changes the expected behavior of the parent class.This violates LSP because a derived class should not alter or break the behavior expected from the base class.Code of above example
+            C++
+
+    #include <iostream>
+
+// Base class for shapes
+class Rectangle {
+protected:
+    double width;
+    double height;
+
+public:
+    Rectangle(double w, double h) : width(w), height(h) {}
+
+    virtual double area() const {
+        return width * height;
+    }
+
+    double getWidth() const {
+        return width;
+    }
+
+    double getHeight() const {
+        return height;
+    }
+
+    virtual void setWidth(double w) {   // made virtual
+        width = w;
+    }
+
+    virtual void setHeight(double h) {  // also virtual (good practice)
+        height = h;
+    }
+};
+
+// Derived class for squares
+class Square : public Rectangle {
+public:
+    Square(double size) : Rectangle(size, size) {}
+
+    void setWidth(double w) override {
+        width = height = w;
+    }
+
+    void setHeight(double h) override {
+        width = height = h;
+    }
+};
+
+int main() {
+    Square s(5);
+    s.setWidth(10);
+    std::cout << "Area: " << s.area() << std::endl;
+    return 0;
+}
+
+
+            Java
+
+    import java.util.*;
+
+// Base class for shapes
+class Rectangle {
+    protected double width;
+    protected double height;
+
+    public Rectangle(double w, double h) {
+        width = w;
+        height = h;
+    }
+
+    public double area() {
+        return width * height;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setWidth(double w) {
+        width = w;
+    }
+
+    public void setHeight(double h) {
+        height = h;
+    }
+}
+
+// Derived class for squares
+class Square extends Rectangle {
+    public Square(double size) {
+        super(size, size);
+    }
+
+    @Override
+    public void setWidth(double w) {
+        width = height = w;
+    }
+
+    @Override
+    public void setHeight(double h) {
+        width = height = h;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Square s = new Square(5);
+        s.setWidth(10);
+        System.out.println("Area: " + s.area());
+    }
+}
+
+
+            Python
+
+    from abc import ABC, abstractmethod
+
+# Base class for shapes
+class Rectangle(ABC):
+    def __init__(self, width, height):
+        self._width = width
+        self._height = height
+
+    @abstractmethod
+    def area(self):
+        return self._width * self._height
+
+    def get_width(self):
+        return self._width
+
+    def get_height(self):
+        return self._height
+
+    @abstractmethod
+    def set_width(self, width):
+        self._width = width
+
+    @abstractmethod
+    def set_height(self, height):
+        self._height = height
+
+
+# Derived class for squares
+class Square(Rectangle):
+    def __init__(self, size):
+        super().__init__(size, size)
+
+    def set_width(self, width):
+        self._width = self._height = width
+
+    def set_height(self, height):
+        self._width = self._height = height
+
+    def area(self):
+        return self._width * self._height
+
+
+if __name__ == '__main__':
+    s = Square(5)
+    s.set_width(10)
+    print(f'Area: {s.area()}')
+
+
+            JavaScript
+
+    // Base class for shapes
+class Rectangle {
+    constructor(w, h) {
+        this.width = w;
+        this.height = h;
+    }
+
+    area() {
+        return this.width * this.height;
+    }
+
+    getWidth() {
+        return this.width;
+    }
+
+    getHeight() {
+        return this.height;
+    }
+
+    setWidth(w) {
+        this.width = w;
+    }
+
+    setHeight(h) {
+        this.height = h;
+    }
+}
+
+// Derived class for squares
+class Square extends Rectangle {
+    constructor(size) {
+        super(size, size);
+    }
+
+    setWidth(w) {
+        this.width = this.height = w; // Ensure both width and height remain the same
+    }
+}
+
+OutputArea: 100
+Rectangle Class: This is the base class that has properties for width and height. It has methods for calculating the area and for setting width and height.Square Class: This class inherits from Rectangle but overrides the setWidth and setHeight methods to ensure that changing one dimension affects the other, maintaining the property that all sides are equal.LSP Violation ExampleTo see a potential violation of LSP, consider what would happen if you were to use the Square class in a context expecting a Rectangle:If you substitute a Square where a Rectangle is expected, changing just the width or height would lead to unexpected results because it will change both dimensions.4. Interface Segregation PrincipleThis principle applies to interfaces and is similar to the Single Responsibility Principle, focusing on keeping interfaces specific and well-defined. It states that clients should not be forced to depend on methods that are irrelevant to them, avoiding unnecessary dependencies. The goal is to prevent fat interfaces by using multiple small, client-specific interfaces, each with a clear and specific responsibility.Example: Suppose if you enter a restaurant and you are pure vegetarian. The waiter in that restaurant gave you the menu card which includes vegetarian items, non-vegetarian items, drinks, and sweets. Customers should receive a menu relevant to their needs (e.g., vegetarian only) instead of a general menu with unnecessary items.Splitting a common menu into smaller, specific ones reduces unnecessary dependencies and minimizes future changes.
+            C++
+
+    #include <iostream>
+#include <vector>
+#include <string>
+
+// Interface for vegetarian menu
+class IVegetarianMenu {
+public:
+    virtual std::vector<std::string> getVegetarianItems() = 0;
+};
+
+// Interface for non-vegetarian menu
+class INonVegetarianMenu {
+public:
+    virtual std::vector<std::string> getNonVegetarianItems() = 0;
+};
+
+// Interface for drinks menu
+class IDrinkMenu {
+public:
+    virtual std::vector<std::string> getDrinkItems() = 0;
+};
+
+// Class for vegetarian menu
+class VegetarianMenu : public IVegetarianMenu {
+public:
+    std::vector<std::string> getVegetarianItems() override {
+        return {"Vegetable Curry", "Paneer Tikka", "Salad"};
+    }
+};
+
+// Class for non-vegetarian menu
+class NonVegetarianMenu : public INonVegetarianMenu {
+public:
+    std::vector<std::string> getNonVegetarianItems() override {
+        return {"Chicken Curry", "Fish Fry", "Mutton Biryani"};
+    }
+};
+
+// Class for drinks menu
+class DrinkMenu : public IDrinkMenu {
+public:
+    std::vector<std::string> getDrinkItems() override {
+        return {"Water", "Soda", "Juice"};
+    }
+};
+
+// Function to display menu items for a vegetarian customer
+void displayVegetarianMenu(IVegetarianMenu* menu) {
+    std::cout << "Vegetarian Menu:\n";
+    for (const auto& item : menu->getVegetarianItems()) {
+        std::cout << "- " << item << std::endl;
+    }
+}
+
+// Function to display menu items for a non-vegetarian customer
+void displayNonVegetarianMenu(INonVegetarianMenu* menu) {
+    std::cout << "Non-Vegetarian Menu:\n";
+    for (const auto& item : menu->getNonVegetarianItems()) {
+        std::cout << "- " << item << std::endl;
+    }
+}
+
+int main() {
+    VegetarianMenu vegMenu;
+    NonVegetarianMenu nonVegMenu;
+    DrinkMenu drinkMenu;
+
+    displayVegetarianMenu(&vegMenu);
+    displayNonVegetarianMenu(&nonVegMenu);
+
+    return 0;
+}
+
+
+            Java
+
+    import java.util.*;
+
+// Interface for vegetarian menu
+interface IVegetarianMenu {
+    List<String> getVegetarianItems();
+}
+
+// Interface for non-vegetarian menu
+interface INonVegetarianMenu {
+    List<String> getNonVegetarianItems();
+}
+
+// Interface for drinks menu
+interface IDrinkMenu {
+    List<String> getDrinkItems();
+}
+
+// Class for vegetarian menu
+class VegetarianMenu implements IVegetarianMenu {
+    public List<String> getVegetarianItems() {
+        return Arrays.asList("Vegetable Curry", "Paneer Tikka", "Salad");
+    }
+}
+
+// Class for non-vegetarian menu
+class NonVegetarianMenu implements INonVegetarianMenu {
+    public List<String> getNonVegetarianItems() {
+        return Arrays.asList("Chicken Curry", "Fish Fry", "Mutton Biryani");
+    }
+}
+
+// Class for drinks menu
+class DrinkMenu implements IDrinkMenu {
+    public List<String> getDrinkItems() {
+        return Arrays.asList("Water", "Soda", "Juice");
+    }
+}
+
+// Function to display menu items for a vegetarian customer
+class MenuDisplay {
+    public static void displayVegetarianMenu(IVegetarianMenu menu) {
+        System.out.println("Vegetarian Menu:");
+        for (String item : menu.getVegetarianItems()) {
+            System.out.println("- " + item);
+        }
+    }
+
+    // Function to display menu items for a non-vegetarian customer
+    public static void displayNonVegetarianMenu(INonVegetarianMenu menu) {
+        System.out.println("Non-Vegetarian Menu:");
+        for (String item : menu.getNonVegetarianItems()) {
+            System.out.println("- " + item);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        VegetarianMenu vegMenu = new VegetarianMenu();
+        NonVegetarianMenu nonVegMenu = new NonVegetarianMenu();
+        DrinkMenu drinkMenu = new DrinkMenu();
+
+        MenuDisplay.displayVegetarianMenu(vegMenu);
+        MenuDisplay.displayNonVegetarianMenu(nonVegMenu);
+    }
+}
+
+
+            Python
+
+    from abc import ABC, abstractmethod
+
+# Interface for vegetarian menu
+class IVegetarianMenu(ABC):
+    @abstractmethod
+    def getVegetarianItems(self):
+        pass
+
+# Interface for non-vegetarian menu
+class INonVegetarianMenu(ABC):
+    @abstractmethod
+    def getNonVegetarianItems(self):
+        pass
+
+# Interface for drinks menu
+class IDrinkMenu(ABC):
+    @abstractmethod
+    def getDrinkItems(self):
+        pass
+
+# Class for vegetarian menu
+class VegetarianMenu(IVegetarianMenu):
+    def getVegetarianItems(self):
+        return ["Vegetable Curry", "Paneer Tikka", "Salad"]
+
+# Class for non-vegetarian menu
+class NonVegetarianMenu(INonVegetarianMenu):
+    def getNonVegetarianItems(self):
+        return ["Chicken Curry", "Fish Fry", "Mutton Biryani"]
+
+# Class for drinks menu
+class DrinkMenu(IDrinkMenu):
+    def getDrinkItems(self):
+        return ["Water", "Soda", "Juice"]
+
+# Function to display menu items for a vegetarian customer
+def displayVegetarianMenu(menu):
+    print("Vegetarian Menu:")
+    for item in menu.getVegetarianItems():
+        print(f"- {item}")
+
+# Function to display menu items for a non-vegetarian customer
+def displayNonVegetarianMenu(menu):
+    print("Non-Vegetarian Menu:")
+    for item in menu.getNonVegetarianItems():
+        print(f"- {item}")
+
+def main():
+    vegMenu = VegetarianMenu()
+    nonVegMenu = NonVegetarianMenu()
+    drinkMenu = DrinkMenu()
+
+    displayVegetarianMenu(vegMenu)
+    displayNonVegetarianMenu(nonVegMenu)
+
+if __name__ == "__main__":
+    main()
+
+
+            JavaScript
+
+    // Interface simulation is done by convention in JavaScript
+
+// Class for vegetarian menu
+class VegetarianMenu {
+    getVegetarianItems() {
+        return ["Vegetable Curry", "Paneer Tikka", "Salad"];
+    }
+}
+
+// Class for non-vegetarian menu
+class NonVegetarianMenu {
+    getNonVegetarianItems() {
+        return ["Chicken Curry", "Fish Fry", "Mutton Biryani"];
+    }
+}
+
+// Class for drinks menu
+class DrinkMenu {
+    getDrinkItems() {
+        return ["Water", "Soda", "Juice"];
+    }
+}
+
+// Function to display menu items for a vegetarian customer
+function displayVegetarianMenu(menu) {
+    console.log("Vegetarian Menu:");
+    for (const item of menu.getVegetarianItems()) {
+        console.log("- " + item);
+    }
+}
+
+// Function to display menu items for a non-vegetarian customer
+function displayNonVegetarianMenu(menu) {
+    console.log("Non-Vegetarian Menu:");
+    for (const item of menu.getNonVegetarianItems()) {
+        console.log("- " + item);
+    }
+}
+
+function main() {
+    const vegMenu = new VegetarianMenu();
+    const nonVegMenu = new NonVegetarianMenu();
+    const drinkMenu = new DrinkMenu();
+
+    displayVegetarianMenu(vegMenu);
+    displayNonVegetarianMenu(nonVegMenu);
+}
+
+main();
+
+IVegetarianMenu Interface: This interface defines a method to get vegetarian items. It ensures that only classes implementing vegetarian menus will need to provide this functionality.INonVegetarianMenu Interface: Similar to the vegetarian interface, this one defines a method for getting non-vegetarian items.IDrinkMenu Interface: This interface defines a method for getting drink items, keeping it separate from food items.VegetarianMenu Class: Implements the IVegetarianMenu interface and provides a list of vegetarian items.NonVegetarianMenu Class: Implements the INonVegetarianMenu interface and provides a list of non-vegetarian items.DrinkMenu Class: Implements the IDrinkMenu interface and provides a list of drink items.5. Dependency Inversion PrincipleThe Dependency Inversion Principle (DIP) is a principle in object-oriented design that states that "High-level modules should not depend on low-level modules. Both should depend on abstractions". means "Big parts of your program should not directly depend on small, detailed parts. Instead, both should depend on general ideas (interfaces)".  Additionally, abstractions should not depend on details. Details should depend on abstractions(Details should follow the rules).In simpler terms, the DIP suggests that classes should rely on abstractions (e.g., interfaces or abstract classes) rather than concrete implementations. This allows for more flexible and decoupled code, making it easier to change implementations without affecting other parts of the codebase.Example: In a software development team, developers depend on an abstract version control system (e.g., Git) to manage and track changes to the codebase. They don't depend on specific details of how Git works internally. Code of above example 
+            C++
+
+    #include <iostream>
+#include <string>
+
+// Interface for version control system
+class IVersionControl {
+public:
+    virtual void commit(const std::string& message) = 0;
+    virtual void push() = 0;
+    virtual void pull() = 0;
+};
+
+// Git version control implementation
+class GitVersionControl : public IVersionControl {
+public:
+    void commit(const std::string& message) override {
+        std::cout << "Committing changes to Git with message: " << message << std::endl;
+    }
+
+    void push() override {
+        std::cout << "Pushing changes to remote Git repository." << std::endl;
+    }
+
+    void pull() override {
+        std::cout << "Pulling changes from remote Git repository." << std::endl;
+    }
+};
+
+// Team class that relies on version control
+class DevelopmentTeam {
+private:
+    IVersionControl* versionControl;
+
+public:
+    DevelopmentTeam(IVersionControl* vc) : versionControl(vc) {}
+
+    void makeCommit(const std::string& message) {
+        versionControl->commit(message);
+    }
+
+    void performPush() {
+        versionControl->push();
+    }
+
+    void performPull() {
+        versionControl->pull();
+    }
+};
+
+int main() {
+    GitVersionControl git;
+    DevelopmentTeam team(&git);
+
+    team.makeCommit("Initial commit");
+    team.performPush();
+    team.performPull();
+
+    return 0;
+}
+
+
+            Java
+
+    // Interface for version control system
+interface IVersionControl {
+    void commit(String message);
+    void push();
+    void pull();
+}
+
+// Git version control implementation
+class GitVersionControl implements IVersionControl {
+    @Override
+    public void commit(String message) {
+        System.out.println("Committing changes to Git with message: " + message);
+    }
+
+    @Override
+    public void push() {
+        System.out.println("Pushing changes to remote Git repository.");
+    }
+
+    @Override
+    public void pull() {
+        System.out.println("Pulling changes from remote Git repository.");
+    }
+}
+
+// Team class that relies on version control
+class DevelopmentTeam {
+    private IVersionControl versionControl;
+
+    public DevelopmentTeam(IVersionControl vc) {
+        this.versionControl = vc;
+    }
+
+    public void makeCommit(String message) {
+        versionControl.commit(message);
+    }
+
+    public void performPush() {
+        versionControl.push();
+    }
+
+    public void performPull() {
+        versionControl.pull();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        GitVersionControl git = new GitVersionControl();
+        DevelopmentTeam team = new DevelopmentTeam(git);
+
+        team.makeCommit("Initial commit");
+        team.performPush();
+        team.performPull();
+    }
+}
+
+
+            Python
+
+    from abc import ABC, abstractmethod
+
+# Interface for version control system
+class IVersionControl(ABC):
+    @abstractmethod
+    def commit(self, message): pass
+
+    @abstractmethod
+    def push(self): pass
+
+    @abstractmethod
+    def pull(self): pass
+
+# Git version control implementation
+class GitVersionControl(IVersionControl):
+    def commit(self, message):
+        print(f"Committing changes to Git with message: {message}")
+
+    def push(self):
+        print("Pushing changes to remote Git repository.")
+
+    def pull(self):
+        print("Pulling changes from remote Git repository.")
+
+# Team class that relies on version control
+class DevelopmentTeam:
+    def __init__(self, vc: IVersionControl):
+        self.versionControl = vc
+
+    def makeCommit(self, message):
+        self.versionControl.commit(message)
+
+    def performPush(self):
+        self.versionControl.push()
+
+    def performPull(self):
+        self.versionControl.pull()
+
+def main():
+    git = GitVersionControl()
+    team = DevelopmentTeam(git)
+
+    team.makeCommit("Initial commit")
+    team.performPush()
+    team.performPull()
+
+if __name__ == "__main__":
+    main()
+
+
+            JavaScript
+
+    // Interface for version control system simulated via convention
+class IVersionControl {
+    commit(message) { throw new Error("commit() must be implemented"); }
+    push() { throw new Error("push() must be implemented"); }
+    pull() { throw new Error("pull() must be implemented"); }
+}
+
+// Git version control implementation
+class GitVersionControl extends IVersionControl {
+    commit(message) {
+        console.log("Committing changes to Git with message: " + message);
+    }
+
+    push() {
+        console.log("Pushing changes to remote Git repository.");
+    }
+
+    pull() {
+        console.log("Pulling changes from remote Git repository.");
+    }
+}
+
+// Team class that relies on version control
+class DevelopmentTeam {
+    constructor(vc) {
+        this.versionControl = vc;
+    }
+
+    makeCommit(message) {
+        this.versionControl.commit(message);
+    }
+
+    performPush() {
+        this.versionControl.push();
+    }
+
+    performPull() {
+        this.versionControl.pull();
+    }
+}
+
+function main() {
+    const git = new GitVersionControl();
+    const team = new DevelopmentTeam(git);
+
+    team.makeCommit("Initial commit");
+    team.performPush();
+    team.performPull();
+}
+
+main();
+
+OutputCommitting changes to Git with message: Initial commit
+Pushing changes to remote Git repository.
+Pulling changes from remote Git repository.
+IVersionControl Interface: This defines the operations that any version control system should support, like commit, push, and pull. It serves as an abstraction that decouples high-level code from low-level implementations.GitVersionControl Class: This class implements the IVersionControl interface, providing specific functionality for managing version control using Git.DevelopmentTeam Class: This class relies on the IVersionControl interface, meaning it can work with any version control implementation that adheres to the interface. It does not need to know the details of how Git works internally.Need for SOLID Principles in Object-Oriented DesignThe main reasons why solid principles are important in object oriented design:SOLID principles make code easier to maintain. When each class has a clear responsibility, it's simpler to find where to make changes without affecting unrelated parts of the code.These principles support growth in software. For example, the Open/Closed Principle allows developers to add new features without changing existing code, making it easier to adapt to new requirements.SOLID encourages flexibility. By depending on abstractions rather than specific implementations (as in the Dependency Inversion Principle), developers can change components without disrupting the entire system.

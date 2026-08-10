@@ -1,0 +1,61 @@
+# Java Class vs Interfaces - GeeksforGeeks
+
+In Java, classes and interfaces are used to define the structure and behavior of programs. While they might seem similar, since both can hold methods and variables, they have very different purposes.class-vs-InterfaceA class can extend another class and implement an interface, while an interface can only extend another interface, not implement a class.Class in JavaA class is a blueprint for creating objects. It encapsulates fields (state) and methods (behavior) that are common to all objects of that type.
+            Java
+
+    class Student{
+    
+    //data member (also instance variable) 
+    int id; 
+    
+    //data member (also instance variable)  
+    String name;
+
+    public static void main(String args[]){
+        
+        //creating an object of Student
+        Student s1=new Student();  
+        System.out.println(s1.id);  
+        System.out.println(s1.name);  
+    }  
+}
+
+Output0
+null
+Explanation: Above code defines a Student class with two instance variables, id and name, and creates an object to demonstrate default values. It shows that objects of a class can hold state and access its fields.Interface in JavaAn interface in Java is a blueprint of a class. Interface variables are implicitly public static final. Before Java 8, interface methods were implicitly public abstract. From Java 8 onward, interfaces can also contain default and static methods, and from Java 9 onward, private methods are allowed.
+            Java
+
+    import java.io.*;
+
+// Interface Declared
+interface testInterface{
+  
+    // public, static and final
+    final int a = 10;
+
+    // public and abstract
+    void display();
+}
+
+// Class implementing interface
+class TestClass implements testInterface{
+  
+    // Implementing the capabilities of Interface
+    public void display(){ 
+      System.out.println("Geek"); 
+    }
+}
+
+class Geeks{
+    
+    public static void main(String[] args){
+        
+        TestClass t = new TestClass();
+        t.display();
+        System.out.println(t.a);
+    }
+}
+
+OutputGeek
+10
+Explanation: Above code defines an interface with a constant and an abstract method, then implements it in a class providing method behavior. It demonstrates how a class can adopt an interface and use its constants and methods.Class vs InterfaceThe following table lists all the major differences between an interface and a class in Java.FeaturesClassInterfaceKeywordThe keyword used to create a class is "class".The keyword used to create an interface is "interface".InstantiationA class can be instantiated, i.e., objects of a class can be created.An interface cannot be instantiated directly, instead, it is implemented by a class or a struct.InheritanceClasses do not support multiple inheritance.Interface supports multiple inheritance.Inheritance MechanismA class can inherit another class using the keyword extends.A class uses implements to adopt an interface, while an interface uses extends to inherit another interface.ConstructorsIt can contain constructors.It cannot contain constructors.MethodsMethods in a class can be abstract, concrete, or both.An interface contains abstract methods by default (before Java 8) or default/static methods (from Java 8 onward).Access SpecifiersVariables and methods in a class can be declared using any access specifier(public, private, default, protected).Interface variables are public static final, and methods are public by default.VariablesVariables in a class can be static, final, or neither.All variables are static and final.PurposeA class is a blueprint for creating objects and encapsulates data and behaviour.An interface specifies a contract for classes to implement by focusing on capabilities rather than implementation.

@@ -1,0 +1,166 @@
+# Quiz about Python  List Quiz
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython  List QuizLast Updated : DiscussCommentsQuestion 1Find the output of the following program:
+        Python
+        
+        name = ['Alex', 'Emma', 'Bob', 'Lucas']
+pos = name.index("GeeksforGeeks")
+print(pos * 3)
+
+        
+    03NoneValueError: 'GeeksforGeeks' is not in listQuestion 2Find the output of the following program: 
+        Python
+        
+        li = ['Alex', 'Emma', 'Bob', 'Lucas']
+print(li[1][-1])
+
+        
+    rbsaQuestion 3Find the output of the following program: 
+        Python
+        
+        li = [1, 2, 3, 4]
+li.append([5, 6, 7, 8])
+print(li)
+
+        
+    [1, 2, 3, 4, 5, 6, 7, 8][1, 2, 3, 4][1, 2, 3, 4, [5, 6, 7, 8]][[1, 2, 3, 4], [5, 6, 7, 8]]Question 4Find the output of the following program: 
+        Python
+        
+        def addToList(a):
+    a += [10]
+
+b = [10, 20, 30, 40]
+addToList(b)
+print(len(b))
+
+        
+    45610Question 5Find the output of the following program: 
+        Python
+        
+        a = ['Python', 'Java', 'C++', 'Go']
+b = a
+c = a[:]
+b[0] = 'Code'
+c[1] = 'Quiz'
+count = 0
+
+for x in (a, b, c):
+    if x[0] == 'Code':
+        count += 1
+
+    if x[1] == 'Quiz':
+        count += 10
+
+print(count)
+
+        
+    451112Question 6Find the output of the following program: 
+        Python
+        
+        def square_list(x, li=[]):
+    for i in range(x):
+        li.append(i * i)
+    print(li)
+
+square_list(3, [3, 2, 1])
+
+        
+    [3, 2, 1, 0, 1, 4][0, 1, 0, 1, 4][0, 1][ ]Question 7Find the output of the following program: 
+        Python
+        
+        li = list(range(100, 110))
+print(li.index(105))
+
+        
+    1055106104Question 8Find the output of the following program: 
+        Python
+        
+        a = [1, 2, 3, 4, 5]
+
+b = a
+b[0] = 0
+print(a)
+
+        
+    [1, 2, 3, 4, 5, 0][0, 1, 2, 3, 4, 5][0, 2, 3, 4, 5][1, 2, 3, 4, 0]Question 9Find the output of the following program: 
+        Python
+        
+        a = [1998, 2002]
+b = [2014, 2016]
+print((a + b) * 2)
+
+        
+    [1998, 2002, 2014, 2016, 1998, 2002, 2014, 2016][1998, 2002, 2014, 2016][1998, 2002, 1998, 2002][2014, 2016, 2014, 2016]Question 10Find the output of the following program: 
+        Python
+        
+        a = ['Apple', 'Banana', 'Mango', 'Orange']
+print(a[2][1])
+
+        
+    anmgTags:Python-QuizzesThere are 25 questions to complete.Take a part in the ongoing discussionView All Discussion

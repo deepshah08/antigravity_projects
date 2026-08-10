@@ -1,0 +1,322 @@
+{
+  "id": "c",
+  "title": "C Tutorial",
+  "articles": [
+    {
+      "id": "c-001",
+      "title": "C Language Introduction - GeeksforGeeks"
+    },
+    {
+      "id": "c-002",
+      "title": "Setting Up C Development Environment - GeeksforGeeks"
+    },
+    {
+      "id": "c-003",
+      "title": "How to Compile and Run C program in Terminal - GeeksforGeeks"
+    },
+    {
+      "id": "c-004",
+      "title": "Compilation Process of C Programs - GeeksforGeeks"
+    },
+    {
+      "id": "c-005",
+      "title": "Identifiers in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-006",
+      "title": "Keywords in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-007",
+      "title": "Basic Input and Output in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-008",
+      "title": "Variables in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-009",
+      "title": "Data Types in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-010",
+      "title": "Quiz about Basics of C programming"
+    },
+    {
+      "id": "c-011",
+      "title": "Quiz about Variables in C Programming"
+    },
+    {
+      "id": "c-012",
+      "title": "Quiz about Data types in C Programming"
+    },
+    {
+      "id": "c-013",
+      "title": "Operators in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-014",
+      "title": "Quiz about Input/Output in C Programming"
+    },
+    {
+      "id": "c-015",
+      "title": "Quiz about Operators in C"
+    },
+    {
+      "id": "c-016",
+      "title": "Decision Making in C (if , if..else, Nested if, if-else-if ) - GeeksforGeeks"
+    },
+    {
+      "id": "c-017",
+      "title": "Loops in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-018",
+      "title": "Quiz about C Loops and Conditional statements"
+    },
+    {
+      "id": "c-019",
+      "title": "Functions in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-020",
+      "title": "Parameter Passing Techniques in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-021",
+      "title": "main Function in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-022",
+      "title": "C Recursion - GeeksforGeeks"
+    },
+    {
+      "id": "c-023",
+      "title": "Inline Function in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-024",
+      "title": "Nested Functions in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-025",
+      "title": "Quiz about Functions in C"
+    },
+    {
+      "id": "c-026",
+      "title": "Arrays in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-027",
+      "title": "Multidimensional Arrays in C - 2D and 3D Arrays - GeeksforGeeks"
+    },
+    {
+      "id": "c-028",
+      "title": "Strings in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-029",
+      "title": "C String Functions - GeeksforGeeks"
+    },
+    {
+      "id": "c-030",
+      "title": "Quiz about Arrays in C"
+    },
+    {
+      "id": "c-031",
+      "title": "Quiz about Strings in C"
+    },
+    {
+      "id": "c-032",
+      "title": "Pointers in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-033",
+      "title": "Pointer Arithmetics in C with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "c-034",
+      "title": "C - Pointer to Pointer (Double Pointer) - GeeksforGeeks"
+    },
+    {
+      "id": "c-035",
+      "title": "Function Pointer in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-036",
+      "title": "Quiz about Pointers in C"
+    },
+    {
+      "id": "c-037",
+      "title": "C Structures - GeeksforGeeks"
+    },
+    {
+      "id": "c-038",
+      "title": "Unions in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-039",
+      "title": "Enumeration (or enum) in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-040",
+      "title": "Quiz about C Structure & Union"
+    },
+    {
+      "id": "c-041",
+      "title": "Memory Layout of C Programs - GeeksforGeeks"
+    },
+    {
+      "id": "c-042",
+      "title": "Dynamic Memory Allocation in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-043",
+      "title": "Memory Leak in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-044",
+      "title": "Quiz about Memory Management in C"
+    },
+    {
+      "id": "c-045",
+      "title": "File Handling in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-046",
+      "title": "C Program to Read Content of a File - GeeksforGeeks"
+    },
+    {
+      "id": "c-047",
+      "title": "Read/Write Structure From/to a File in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-048",
+      "title": "EOF, getc() and feof() in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-049",
+      "title": "C Program to Delete a File - GeeksforGeeks"
+    },
+    {
+      "id": "c-050",
+      "title": "Quiz about C File Handling"
+    },
+    {
+      "id": "c-051",
+      "title": "Using goto for Exception Handling in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-052",
+      "title": "Error Handling During File Operations in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-053",
+      "title": "C Program to Handle Divide by Zero - GeeksforGeeks"
+    },
+    {
+      "id": "c-054",
+      "title": "C Preprocessors - GeeksforGeeks"
+    },
+    {
+      "id": "c-055",
+      "title": "Macros and its types in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-056",
+      "title": "Quiz about C Macro & Preprocessor"
+    },
+    {
+      "id": "c-057",
+      "title": "Header Files in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-058",
+      "title": "time.h header file in C with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "c-059",
+      "title": "Internal Linkage and External Linkage in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-060",
+      "title": "Storage Classes in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-061",
+      "title": "Quiz about Storage Classes and Type Qualifiers in C"
+    },
+    {
+      "id": "c-062",
+      "title": "Variadic Functions in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-063",
+      "title": "Input-output system calls - GeeksforGeeks"
+    },
+    {
+      "id": "c-064",
+      "title": "Signals in C language - GeeksforGeeks"
+    },
+    {
+      "id": "c-065",
+      "title": "Socket Programming in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-066",
+      "title": "_Generics Keyword in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-067",
+      "title": "Multithreading in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-068",
+      "title": "C vs C++ vs Java vs Python vs JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "c-069",
+      "title": "Careers and Jobs in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-070",
+      "title": "Companies That Use C - GeeksforGeeks"
+    },
+    {
+      "id": "c-071",
+      "title": "C Programming Interview Questions - GeeksforGeeks"
+    },
+    {
+      "id": "c-072",
+      "title": "Learn DSA in C: Master Data Structures and Algorithms Using C - GeeksforGeeks"
+    },
+    {
+      "id": "c-073",
+      "title": "C Fundamental Practice Problems - GeeksforGeeks"
+    },
+    {
+      "id": "c-074",
+      "title": "C Functions Practice Problems - GeeksforGeeks"
+    },
+    {
+      "id": "c-075",
+      "title": "C Compound Data Types Practice Problems - GeeksforGeeks"
+    },
+    {
+      "id": "c-076",
+      "title": "Structure Member Alignment, Padding and Data Packing - GeeksforGeeks"
+    },
+    {
+      "id": "c-077",
+      "title": "Error Handling in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-078",
+      "title": "Placement 360 – The Complete Tech Interview Program"
+    },
+    {
+      "id": "c-079",
+      "title": "DSA & System Design Course: The Complete SDE Interview Program"
+    }
+  ]
+}

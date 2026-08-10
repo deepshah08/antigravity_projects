@@ -1,0 +1,69 @@
+# Quiz about Basics of C programming
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsBasics of C programmingLast Updated : DiscussCommentsQuestion 1What was the primary purpose of creating the C language?To develop web applicationsTo write the UNIX operating systemTo support object-oriented programmingTo create mobile applicationsQuestion 2Which of the following best describes C language?Object-orientedHigh-level onlyAssembly languageMiddle-level languageQuestion 3Which of the following is NOT a characteristic of C language?Fast executionPlatform independence through virtual machineProcedural programmingPortabilityQuestion 4C language supports which programming paradigm?Object OrientedDeclarativeLogicalProceduralQuestion 5Why is C referred to as a “structured” language?It uses a specific indentation styleIt uses objectsIt allows breaking programs into functionsIt uses HTML-style tagsQuestion 6Which one of the following makes C efficient for system-level programming?Virtual machine executionInbuilt object-oriented featuresLow-level access to memoryAutomatic garbage collectionQuestion 7Which symbol is used to end a statement in C?:;,.Question 8What are identifiers in C?Names used to identify variables, functions, arrays, etc.Special symbols used to perform operationsPredefined keywords in the C languageNumbers used for loopingQuestion 9Which of these is a valid identifier in C?@valuevalue_2value-22valueQuestion 10What is the file extension for C source code files?.cs.cpp.c.javaTags:C LanguageThere are 16 questions to complete.Take a part in the ongoing discussionView All Discussion

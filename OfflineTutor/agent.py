@@ -1,6 +1,9 @@
 import os
 import subprocess
+from dotenv import load_dotenv
 from google import genai
+
+load_dotenv()
 
 class SocraticAgent:
     def __init__(self, api_key=None, model_name="gemini-2.5-flash"):

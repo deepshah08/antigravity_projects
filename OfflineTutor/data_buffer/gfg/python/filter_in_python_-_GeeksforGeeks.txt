@@ -1,0 +1,49 @@
+# filter() in python - GeeksforGeeks
+
+filter() function is used to extract elements from an iterable (like a list, tuple or set) that satisfy a given condition. It works by applying a function to each element and keeping only those for which function returns True.Example: This example shows how to keep only the words starting with the letter 'a' from a list of fruits.
+            Python
+
+    def starts_a(w):
+    return w.startswith("a")
+
+li = ["apple", "banana", "avocado", "cherry", "apricot"]
+res = filter(starts_a, li)
+print(list(res))
+
+Output['apple', 'avocado', 'apricot']
+Explanation: function starts_a checks if a word begins with 'a' and filter() applies this function to each fruit and returns only matching ones.Syntaxfilter(function, iterable)Parameters:function: tests each element and if return, True Keep the element, if False Discard the elementiterable: Any iterable (list, tuple, set, etc.).Return Value: A filter object (an iterator), which can be converted into a list, tuple, set, etc.ExamplesExample 1: This code defines a regular function to check if a number is even and then uses filter() to extract all even numbers from a list.
+            Python
+
+    def even(n):
+    return n % 2 == 0
+
+a = [1, 2, 3, 4, 5, 6]
+b = filter(even, a)
+print(list(b)) # Convert filter object to a list
+
+Output[2, 4, 6]
+Explanation:even function checks if a number is divisible by 2.filter() applies this function to each item in a.Only even numbers are included in output.Example 2: Below example uses a lambda function with filter() to select numbers divisible by 3.
+            Python
+
+    a = [1, 2, 3, 4, 5, 6]
+b = filter(lambda x: x % 3 == 0, a)
+print(list(b))  
+
+Output[3, 6]
+Example 3: Here, lambda function is used with filter() to keep only words that have more than 5 letters from a list of fruits.
+            Python
+
+    a = ["apple", "banana", "cherry", "kiwi", "grape"]
+b = filter(lambda w: len(w) > 5, a)
+print(list(b))
+
+Output['banana', 'cherry']
+Example 4: This code uses filter() with None as the function to remove all falsy values (like empty strings, None and 0) from a list.
+            Python
+
+    L = ["apple", "", None, "banana", 0, "cherry"]
+A = filter(None, L)
+print(list(A))
+
+Output['apple', 'banana', 'cherry']
+Explanation: filter(None, L) removes all falsy values (empty string, None and 0) and keeps only truthy ones.

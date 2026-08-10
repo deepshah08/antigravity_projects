@@ -1,0 +1,53 @@
+# String Class in Java - GeeksforGeeks
+
+The String class in Java represents a sequence of characters and is widely used for handling textual data. It provides various methods for creating, comparing, and manipulating strings. String objects are immutable, meaning their values cannot be changed after creation.Stored in the String Pool to optimize memory usage and reuse objects.Immutable nature ensures better security and thread safety.Can be created using string literals or the new keyword.Key Features of the String Class1. ImmutableImmutable means that once a String object is created, its value cannot be changed. Example:
+            Java
+
+    public class Main {
+    public static void main(String[] args) {
+        String text = "hello";
+        text.charAt(0) = 'H';  // compile-time error
+    }
+}
+
+Explanation: The line text.charAt(0) = 'H'; causes a compile-time error because charAt(0) returns a read-only char, not a variable. String is immutable in Java, you cannot modify its characters directly.2. Thread-SafeString in Java is thread-safe because it is immutable, allowing safe access by multiple threads without synchronization.3. Supports Various Utility Methods String is a predefined final class in Java present in java.lang package. It provides various methods to create, manipulate, and compare strings, like length(), charAt(), concat(), equals(), etc.
+            Java
+
+    import java.io.*;
+
+class GFG {
+    public static void main (String[] args) {
+        String str = "hello geeks";
+        System.out.println("Length of String-> "+str.length()); 
+        System.out.println("Changed String ->"+str.toUpperCase());
+    }
+}
+
+OutputLength of String-> 11
+Changed String ->HELLO GEEKS
+4. Implements InterfacesThe String class in Java implements three important interfaces.CharSequence: Allows access to characters in the string using charAt(), length(), etc.Comparable<String>: Enables comparing two strings lexicographically using compareTo()Serializable: Allows string objects to be converted into a byte streamString Constructors in JavaIn Java, String constructors are used to create new String objects from different sources like character arrays, byte arrays, or another string. Although strings in Java are usually created using string literals, the String class also provides constructors for more control.Let us check these constructors using a example demonstrating the use of them.
+            Java
+
+    public class Geeks {
+    public static void main(String[] args) {
+        
+        // Constructor 1: Creating string using new keyword
+        String str1 = new String("Hello Java");
+        System.out.println("String using new keyword: " + str1);
+
+        // Constructor 2: Creating string from character array
+        char[] charArray = { 'J', 'A', 'V', 'A' };
+        String str2 = new String(charArray);
+        System.out.println("String from char array: " + str2);
+
+        // Constructor 3: Creating string from byte array
+        byte[] byteArray = { 72, 101, 108, 108, 111 };
+        String str3 = new String(byteArray);
+        System.out.println("String from byte array: " + str3);
+    }
+}
+
+OutputString using new keyword: Hello Java
+String from char array: JAVA
+String from byte array: Hello
+String Constructors TableString ConstructorsDescriptionString(byte[] byte_arr) Construct a new String by decoding the byte array. It uses the platform's default character set for decoding. String(byte[] byte_arr, Charset char_set)Construct a new String by decoding the byte array. It uses the char_set for decoding. String(byte[] byte_arr, int start_index, int length)Construct a new string from the bytes array depending on the start_index(Starting location) and length(number of characters from starting location).String(byte[] byte_arr,  int start_index, int length, Charset char_set)Construct a new string from the bytes array depending on the start_index(Starting location) and length(number of characters from starting location).Uses char_set for decoding. String(char[] char_arr)Allocates a new String from the given Character array.String(char[] char_array, int start_index, int count)Allocates a String from a given character array but choose count characters from the start_index.   String(int[] uni_code_points, int offset, int count)Allocates a String from a uni_code_array but choose count characters from the start_index.   String(StringBuffer s_buffer)Allocates a new string from the string in s_buffer.String(StringBuilder s_builder)Allocates a new string from the string in s_builder.For Set -2, you can refer: Java.lang.String class in Java | Set 2

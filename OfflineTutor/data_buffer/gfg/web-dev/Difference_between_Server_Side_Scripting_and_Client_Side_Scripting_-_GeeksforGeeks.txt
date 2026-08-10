@@ -1,0 +1,17 @@
+# Difference between Server Side Scripting and Client Side Scripting - GeeksforGeeks
+
+1. Client-side scripting : Web browsers execute client-side scripting. It is used when browsers have all code. Source code is used to transfer from webserver to user's computer over the internet and run directly on browsers. It is also used for validations and functionality for user events. 
+
+
+
+It allows for more interactivity. It usually performs several actions without going to the user. It cannot be basically used to connect to databases on a web server. These scripts cannot access the file system that resides in the web browser. Pages are altered on basis of the user's choice. It can also be used to create "cookies" that store data on the user's computer. 2. Server-side scripting : Web servers are used to execute server-side scripting. They are basically used to create dynamic pages. It can also access the file system residing at the webserver. A server-side environment that runs on a scripting language is a web server. 
+
+
+
+Scripts can be written in any of a number of server-side scripting languages available. It is used to retrieve and generate content for dynamic pages. It is used to require to download plugins. In this load times are generally faster than client-side scripting. When you need to store and retrieve information a database will be used to contain data. It can use huge resources of the server. It reduces client-side computation overhead. The server sends pages to the request of the user/client. Difference between client-side scripting and server-side scripting : 
+
+Client-side scripting
+
+Server-side scripting
+
+Source code is visible to the user.Source code is not visible to the user because its output of server-sideside is an HTML page.  Its main function is to provide the requested output to the end user.Its primary function is to manipulate and provide access to the respective database as per the request.It usually depends on the browser and its version.In this any server-side technology can be used and it does not depend on the client.  It runs on the user's computer.It runs on the webserver.There are many advantages linked with this like faster. response times, a more interactive application.  The primary advantage is its ability to highly customize, response requirements, access rights based on user.  It does not provide security for data.It provides more security for data.It is a technique used in web development in which scripts run on the client's browser.It is a technique that uses scripts on the webserver to produce a response that is customized for each client's request.HTML, CSS, and javascript are used.PHP, Python, Java, Ruby are used.No need of interaction with the server.It is all about interacting with the servers.It reduces load on processing unit of the server.It surge the processing load on the server.

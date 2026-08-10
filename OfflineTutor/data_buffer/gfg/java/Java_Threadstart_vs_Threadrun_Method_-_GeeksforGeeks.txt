@@ -1,0 +1,91 @@
+# Java  Thread.start() vs Thread.run() Method - GeeksforGeeks
+
+In Java's multithreading concept, start() and run() are the two important methods of the Thread class. Although they might seem similar, they behave very differently. This article explains the differences and shows how to use them effectively.Thread.start() MethodThe start() method is used to begin a new thread of execution. It performs two main tasks:Allocates resources for a new thread.Calls the run() method internally in the new thread.
+            Java
+
+    class MyThread extends Thread {
+
+    public void run(){
+
+        System.out.println("Thread running using start()");
+    }
+
+    public static void main(String[] args)
+    {
+        MyThread t1 = new MyThread();
+        
+        // Starts a new thread
+        t1.start(); 
+    }
+}
+
+OutputThread running using start()
+Explanation: Calling start() creates a new thread. run() is executed in the context of that new thread.Thread.run() MethodThe run() method contains the code executed by the thread. However, calling run() directly does not create a new thread. Instead, it behaves like a normal method call executed in the current thread.
+            Java
+
+    class MyThread extends Thread{
+    
+    public void run(){
+        
+        System.out.println("Thread running using run()");
+    }
+
+    public static void main(String[] args){
+        
+        MyThread t1 = new MyThread();
+        
+        // Does NOT start a new thread
+        t1.run(); 
+    }
+}
+
+OutputThread running using run()
+Explanation: Here, run() is executed in the main thread, so no multithreading occurs.Multiple InvocationsIn Java's Multi-Threading Concept, another most important difference between start() and run() method is that we can't call the start() method twice otherwise it will throw an IllegalThreadStateException whereas run() method can be called multiple times as it is just a normal method calling. Example 1: Multiple invocation of start() method.
+            Java
+
+    class MyThread extends Thread {
+
+    public void run(){
+
+        System.out.println(
+            "Current thread: "
+            + Thread.currentThread().getName());
+    }
+}
+
+public class Geeks{
+    
+    public static void main(String[] args){
+        
+        MyThread t = new MyThread();
+        t.start();
+        t.start(); // Throws exception
+    }
+}
+
+Output:Current thread: Thread-0Exception in thread "main" java.lang.IllegalThreadStateExceptionExample 2: Multiple invocation of run() method 
+            Java
+
+    class MyThread extends Thread {
+
+    public void run(){
+        
+        System.out.println(
+            "Current thread: "
+            + Thread.currentThread().getName());
+    }
+}
+
+public class Geeks{
+    
+    public static void main(String[] args){
+        
+        MyThread t = new MyThread();
+        t.run();
+        t.run(); // Works fine
+    }
+}
+
+OutputCurrent thread: main
+Current thread: main
+Explanation: As we can see in the above example, calling run() method twice doesn't raise any exception and it is executed twice as expected but on the main thread itself.Thread.start() vs Thread.run() MethodFeaturestart() Methodrun() MethodThread CreationCreates a new thread.Does not create a new thread.Execution ContextRuns run() in a separate thread.Runs run() in the current thread.PurposeTo start concurrent execution.To define the code that a thread will execute.BehaviorAllows true parallel execution.Acts like a normal method call.Usage Examplet1.start();t1.run();

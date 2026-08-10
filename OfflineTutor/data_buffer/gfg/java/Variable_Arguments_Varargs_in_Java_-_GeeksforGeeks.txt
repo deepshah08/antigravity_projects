@@ -1,0 +1,94 @@
+# Variable Arguments (Varargs) in Java - GeeksforGeeks
+
+Variable Arguments (Varargs) in Java allow methods to accept a variable number of parameters using a simplified syntax. Introduced in Java 5, it improves flexibility and reduces the need for multiple method overloads. Internally, varargs are handled as arrays, making them easy to process within methods.Declared using ... (ellipsis) and must be the last parameter in the method.Only one varargs parameter is allowed per method declaration.Can be combined with other parameters, but remaining arguments are grouped into an array.
+            Java
+
+    import java.io.*;
+class Geeks {
+  
+    // Method that accepts variable number of String arguments using varargs
+    public static void Names(String... n) {
+      
+        // Iterate through the array and print each name
+        for (String i : n) {
+            System.out.print(i + " "); 
+        }
+        System.out.println(); 
+    }
+
+    public static void main(String[] args) {
+      
+        // Calling the 'Names' method with different number of arguments
+        Names("geek1", "geek2");           
+        Names("geek1", "geek2", "geek3");   
+    }
+}
+
+Outputgeek1 geek2 
+geek1 geek2 geek3 
+Explanation: In the above example, the String... names allows the method to accept a variable number of String arguments. Inside the method, the for-each loop iterates over the names array and prints each name. The method is called twice in main(), with two and three arguments respectively.Syntax:Internally, the Varargs method is implemented by using the single dimensions arrays concept. Hence, in the Varargs method, we can differentiate arguments by using Index. A variable-length argument is specified by three periods or dots(…). public static void fun(int ... a) {   // method body} This syntax tells the compiler that fun( ) can be called with zero or more arguments. As a result, here, a is implicitly declared as an array of type int[].Use case of  VarargsUntil JDK 4, we can not declare a method with variable no. of arguments. If there is any change in the number of arguments, we have to declare a new method. This approach increases the length of the code and reduces readability.Before JDK 5, variable-length arguments could be handled in two ways. One uses an overloaded method(one for each). Another puts the arguments into an array and then passes this array to the method. Both of them are potentially error-prone and require more code. To resolve these problems, Variable Arguments (Varargs) were introduced in JDK 5. From JDK 5 onwards, we can declare a method with a variable number of arguments. Such types of methods are called Varargs methods. The varargs feature offers a simpler, better option.Example:  Demonstrating the working of varargs with integer argument
+            Java
+
+    class Geeks {
+  
+    // A method that takes variable number of integer arguments.
+    static void fun(int... a)
+    {
+        System.out.println("Number of arguments: " + a.length);
+
+        // using for each loop to display contents of a
+        for (int i : a)
+            System.out.print(i + " ");
+        System.out.println();
+    }
+
+    // Driver code
+    public static void main(String args[])
+    {
+        // Calling the varargs method with one parameter
+        fun(100);
+
+        // four parameters
+        fun(1, 2, 3, 4);
+
+        // no parameter
+        fun();
+    }
+}
+
+OutputNumber of arguments: 1
+100 
+Number of arguments: 4
+1 2 3 4 
+Number of arguments: 0Explanation: In the above example, the fun(int... a) method accepts a variable number of integers. The length of the arguments is accessed using a.length. A for-each loop is used to iterate over the arguments and print each value.Note: A method can have variable length parameters with other parameters too, but one should ensure that there exists only one varargs parameter that should be written last in the parameter list of the method declaration. For example:int nums(int a, float b, double … c)In this case, the first two arguments are matched with the first two parameters, and the remaining arguments belong to c.Example: Varargs with Other Arguments
+            Java
+
+    class Geeks{
+    // Takes string as a argument followed by varargs
+    static void fun2(String s, int... a) {
+        System.out.println("String: " + s);
+        System.out.println("Number of arguments is: "
+                           + a.length);
+        // using for each loop to display contents of a
+        for (int i : a)
+            System.out.print(i + " ");
+
+        System.out.println();
+    }
+    public static void main(String args[])
+    {
+        // Calling fun2() with different parameter
+        fun2("GeeksforGeeks", 100, 200);
+        fun2("CSPortal", 1, 2, 3, 4, 5);
+        fun2("forGeeks");
+    }
+}
+
+OutputString: GeeksforGeeks
+Number of arguments is: 2
+100 200 
+String: CSPortal
+Number of arguments is: 5
+1 2 3 4 5 
+String: forGeeks
+Number of arguments is: 0Important Rules and LimitationsCase 1: Specifying two Varargs in a single methodvoid method(String... gfg, int... q){    // Compile time error as there     // are two varargs}Note: Only one Varargs parameter is allowed per method.Case 2: Specifying Varargs as the first parameter of the method instead of the last one void method(int... gfg, String q){    // Compile time error as vararg     // appear before normal argument}

@@ -1,0 +1,79 @@
+# Quiz about Python Exception Handling quiz
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython Exception Handling quizLast Updated : DiscussCommentsQuestion 1What is an exception in Python?A syntax errorA runtime errorA logical errorA compile-time errorQuestion 2How can you handle exceptions in Python?Using if-else statementsUsing try-except blocksUsing switch-case statementsUsing for loopsQuestion 3What is the purpose of the finally block in exception handling?To define a block of code that will be executed if an exception occursTo specify the code to be executed regardless of whether an exception occurs or notTo catch and handle specific exceptionsTo raise a custom exceptionQuestion 4Which of the following statements is used to raise a custom exception in Python?throwraise catchexceptQuestion 5What will be the output of the following code?
+        Python
+        
+        try:
+    res = 10 / 0
+except ZeroDivisionError:
+    res = "Infinity"
+print(res)
+
+        
+    10"Infinity"ZeroDivisionErrorNoneQuestion 6What is the purpose of the else block in exception handling?To handle exceptionsTo specify code that will be executed if no exceptions are raisedTo define custom exceptionsTo skip the execution of the block if an exception occursQuestion 7How can you catch multiple exceptions in a single except block?Using a comma-separated list of exceptionsUsing nested try-except blocksBy defining a custom exceptionUsing the catch keywordQuestion 8 What is the purpose of the assert statement in Python exception handling?To catch and handle exceptionsTo raise a custom exceptionTo check if a given expression is true, otherwise raise an 'AssertionError'To ignore exceptionsQuestion 9Will the finally block execute if an exception occurs and is not handled by any except block?It doesn't executeIt executes before the exception is raisedIt executes after try/except blocksIt executes only if the exception is caughtQuestion 10What is the purpose of the with statement in Python exception handling?To create a new exceptionTo simplify resource management using context managersTo catch and handle exceptionsTo define a custom exceptionTags:Python-QuizzesThere are 16 questions to complete.Take a part in the ongoing discussionView All Discussion

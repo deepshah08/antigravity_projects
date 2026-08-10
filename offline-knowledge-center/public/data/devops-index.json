@@ -1,0 +1,454 @@
+{
+  "id": "devops",
+  "title": "Devops Tutorial",
+  "articles": [
+    {
+      "id": "devops-001",
+      "title": "Introduction to DevOps - GeeksforGeeks"
+    },
+    {
+      "id": "devops-002",
+      "title": "DevOps Prerequisites  - Things to Learn Before - GeeksforGeeks"
+    },
+    {
+      "id": "devops-003",
+      "title": "DevOps Lifecycle - GeeksforGeeks"
+    },
+    {
+      "id": "devops-004",
+      "title": "Linux Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "devops-005",
+      "title": "Introduction to Linux - GeeksforGeeks"
+    },
+    {
+      "id": "devops-006",
+      "title": "Linux command in DevOps - GeeksforGeeks"
+    },
+    {
+      "id": "devops-007",
+      "title": "SSH Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "devops-008",
+      "title": "File Management in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "devops-009",
+      "title": "Linux Permissions - GeeksforGeeks"
+    },
+    {
+      "id": "devops-010",
+      "title": "System Information and Monitoring in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "devops-011",
+      "title": "Add a Linux Firewall ( ufw or iptables) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-012",
+      "title": "How to List Network Interfaces in Linux? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-013",
+      "title": "Network Devices - GeeksforGeeks"
+    },
+    {
+      "id": "devops-014",
+      "title": "route Command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "devops-015",
+      "title": "Ping Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "devops-016",
+      "title": "Layers of OSI Model - GeeksforGeeks"
+    },
+    {
+      "id": "devops-017",
+      "title": "Domain Name System (DNS) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-018",
+      "title": "TCP/IP Model - GeeksforGeeks"
+    },
+    {
+      "id": "devops-019",
+      "title": "Types of Network Firewall - GeeksforGeeks"
+    },
+    {
+      "id": "devops-020",
+      "title": "Types of Network Protocols - GeeksforGeeks"
+    },
+    {
+      "id": "devops-021",
+      "title": "Monolithic Architecture - GeeksforGeeks"
+    },
+    {
+      "id": "devops-022",
+      "title": "Microservices - GeeksforGeeks"
+    },
+    {
+      "id": "devops-023",
+      "title": "Event-Driven Architecture(EDA) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-024",
+      "title": "Scalability in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "devops-025",
+      "title": "Availability in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "devops-026",
+      "title": "CAP Theorem in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "devops-027",
+      "title": "Load Balancer - GeeksforGeeks"
+    },
+    {
+      "id": "devops-028",
+      "title": "Difference between Forward Proxy and Reverse Proxy - GeeksforGeeks"
+    },
+    {
+      "id": "devops-029",
+      "title": "Version Control Systems - GeeksforGeeks"
+    },
+    {
+      "id": "devops-030",
+      "title": "Git Introduction - GeeksforGeeks"
+    },
+    {
+      "id": "devops-031",
+      "title": "How Git Works Under the Hood? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-032",
+      "title": "Introduction to Github - GeeksforGeeks"
+    },
+    {
+      "id": "devops-033",
+      "title": "Useful Git Commands and Basic Concepts - GeeksforGeeks"
+    },
+    {
+      "id": "devops-034",
+      "title": "Essential Git Commands for Beginners and Developers - GeeksforGeeks"
+    },
+    {
+      "id": "devops-035",
+      "title": "Branching Strategies in Git - GeeksforGeeks"
+    },
+    {
+      "id": "devops-036",
+      "title": "Merge Strategies in Git - GeeksforGeeks"
+    },
+    {
+      "id": "devops-037",
+      "title": "Basic Git Commands with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "devops-038",
+      "title": "YAML Introduction - GeeksforGeeks"
+    },
+    {
+      "id": "devops-039",
+      "title": "Introduction to Linux Shell and Shell Scripting - GeeksforGeeks"
+    },
+    {
+      "id": "devops-040",
+      "title": "Using Shebang in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "devops-041",
+      "title": "Writing and executing shell scripts - GeeksforGeeks"
+    },
+    {
+      "id": "devops-042",
+      "title": "Conditional Statements | Shell Script - GeeksforGeeks"
+    },
+    {
+      "id": "devops-043",
+      "title": "Looping Statements | Shell Script - GeeksforGeeks"
+    },
+    {
+      "id": "devops-044",
+      "title": "Scheduling Tasks Using at Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "devops-045",
+      "title": "Automating Linux System Backups with Bash - GeeksforGeeks"
+    },
+    {
+      "id": "devops-046",
+      "title": "Amazon Web Services (AWS) Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "devops-047",
+      "title": "Google Cloud Platform Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "devops-048",
+      "title": "Bitbucket vs GitHub vs GitLab - GeeksforGeeks"
+    },
+    {
+      "id": "devops-049",
+      "title": "Docker Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "devops-050",
+      "title": "What is Docker? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-051",
+      "title": "Architecture of Docker - GeeksforGeeks"
+    },
+    {
+      "id": "devops-052",
+      "title": "Docker Commands - GeeksforGeeks"
+    },
+    {
+      "id": "devops-053",
+      "title": "Dockerfile - GeeksforGeeks"
+    },
+    {
+      "id": "devops-054",
+      "title": "What is Docker Image - GeeksforGeeks"
+    },
+    {
+      "id": "devops-055",
+      "title": "Docker Compose - GeeksforGeeks"
+    },
+    {
+      "id": "devops-056",
+      "title": "What Is Docker Volume? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-057",
+      "title": "Docker Networking - GeeksforGeeks"
+    },
+    {
+      "id": "devops-058",
+      "title": "Docker - Managing Ports - GeeksforGeeks"
+    },
+    {
+      "id": "devops-059",
+      "title": "Docker Registry - GeeksforGeeks"
+    },
+    {
+      "id": "devops-060",
+      "title": "Kubernetes Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "devops-061",
+      "title": "Introduction to Kubernetes (K8s) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-062",
+      "title": "Kubernetes - Architecture - GeeksforGeeks"
+    },
+    {
+      "id": "devops-063",
+      "title": "Kubernetes Pods: How to Create and Manage Them - GeeksforGeeks"
+    },
+    {
+      "id": "devops-064",
+      "title": "Kubernetes Deployment - GeeksforGeeks"
+    },
+    {
+      "id": "devops-065",
+      "title": "Kubernetes Services | Complete Guide - GeeksforGeeks"
+    },
+    {
+      "id": "devops-066",
+      "title": "Manual Scheduling In Kubernetes - GeeksforGeeks"
+    },
+    {
+      "id": "devops-067",
+      "title": "How To Use Kubernetes Taints and Tolerations? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-068",
+      "title": "Kubernetes Namespaces - GeeksforGeeks"
+    },
+    {
+      "id": "devops-069",
+      "title": "Kubernetes Persistent Storage: Volumes, PVs, and PVCs - GeeksforGeeks"
+    },
+    {
+      "id": "devops-070",
+      "title": "Kubernetes Secrets - Secure Storage for Sensitive Data - GeeksforGeeks"
+    },
+    {
+      "id": "devops-071",
+      "title": "Kubernetes - Kubectl - GeeksforGeeks"
+    },
+    {
+      "id": "devops-072",
+      "title": "Kubernetes Ingress - GeeksforGeeks"
+    },
+    {
+      "id": "devops-073",
+      "title": "Kubernetes RBAC - GeeksforGeeks"
+    },
+    {
+      "id": "devops-074",
+      "title": "Kubernetes - ConfigMaps - GeeksforGeeks"
+    },
+    {
+      "id": "devops-075",
+      "title": "Introduction to CI/CD - GeeksforGeeks"
+    },
+    {
+      "id": "devops-076",
+      "title": "Introduction to Jenkins - GeeksforGeeks"
+    },
+    {
+      "id": "devops-077",
+      "title": "Installation of Jenkins in Ubuntu - GeeksforGeeks"
+    },
+    {
+      "id": "devops-078",
+      "title": "Working with Jenkins Plugins - GeeksforGeeks"
+    },
+    {
+      "id": "devops-079",
+      "title": "CI-CD Pipeline in Jenkins - GeeksforGeeks"
+    },
+    {
+      "id": "devops-080",
+      "title": "Deploying An Application Using Jenkinsfile - GeeksforGeeks"
+    },
+    {
+      "id": "devops-081",
+      "title": "Introduction to Terraform - GeeksforGeeks"
+    },
+    {
+      "id": "devops-082",
+      "title": "Terraform Syntax With Examples - GeeksforGeeks"
+    },
+    {
+      "id": "devops-083",
+      "title": "Terraform Resources - GeeksforGeeks"
+    },
+    {
+      "id": "devops-084",
+      "title": "Modules Block in Terraform - GeeksforGeeks"
+    },
+    {
+      "id": "devops-085",
+      "title": "Create AWS EC2 using Terraform - GeeksforGeeks"
+    },
+    {
+      "id": "devops-086",
+      "title": "AWS Cloudformation - GeeksforGeeks"
+    },
+    {
+      "id": "devops-087",
+      "title": "Types of Monitoring in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "devops-088",
+      "title": "Prometheus Monitoring - GeeksforGeeks"
+    },
+    {
+      "id": "devops-089",
+      "title": "Scrape Config in Prometheus - GeeksforGeeks"
+    },
+    {
+      "id": "devops-090",
+      "title": "Prometheus Collector Registry - GeeksforGeeks"
+    },
+    {
+      "id": "devops-091",
+      "title": "Prometheus Blackbox Exporter - GeeksforGeeks"
+    },
+    {
+      "id": "devops-092",
+      "title": "Grafana - GeeksforGeeks"
+    },
+    {
+      "id": "devops-093",
+      "title": "How to Use Grafana to Visualize Kubernetes Metrics - GeeksforGeeks"
+    },
+    {
+      "id": "devops-094",
+      "title": "DevOps Engineer - Salary, Skills & Career Guide - GeeksforGeeks"
+    },
+    {
+      "id": "devops-095",
+      "title": "DevOps Interview Questions and Answers - GeeksforGeeks"
+    },
+    {
+      "id": "devops-096",
+      "title": "Companies That Use DevOps - GeeksforGeeks"
+    },
+    {
+      "id": "devops-097",
+      "title": "Careers and Jobs in DevOps - GeeksforGeeks"
+    },
+    {
+      "id": "devops-098",
+      "title": "The Evolution of DevOps - 3 Major Trends for Future - GeeksforGeeks"
+    },
+    {
+      "id": "devops-099",
+      "title": "Which Version Control System Should I Choose? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-100",
+      "title": "Understanding Deployment Automation - GeeksforGeeks"
+    },
+    {
+      "id": "devops-101",
+      "title": "What is Dockerfile Syntax? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-102",
+      "title": "Introduction to Kubernetes (K8s) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-103",
+      "title": "Fundamental Kubernetes Components and their role in Container Orchestration - GeeksforGeeks"
+    },
+    {
+      "id": "devops-104",
+      "title": "How to Use AWS ECS to Deploy and Manage Containerized Applications? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-105",
+      "title": "Infrastructure as Code (IaC) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-106",
+      "title": "Working with Prometheus and Grafana Using Helm - GeeksforGeeks"
+    },
+    {
+      "id": "devops-107",
+      "title": "Working with Monitoring and Logging Services - GeeksforGeeks"
+    },
+    {
+      "id": "devops-108",
+      "title": "Microsoft Teams vs Slack - GeeksforGeeks"
+    },
+    {
+      "id": "devops-109",
+      "title": "What is DevSecOps: Overview and Tools - GeeksforGeeks"
+    },
+    {
+      "id": "devops-110",
+      "title": "DevOps Best Practices for Kubernetes - GeeksforGeeks"
+    },
+    {
+      "id": "devops-111",
+      "title": "DevOps Projects with Source Code - GeeksforGeeks"
+    },
+    {
+      "id": "devops-112",
+      "title": "Complete DevOps & Cloud Engineering Course with AI Tools"
+    }
+  ]
+}

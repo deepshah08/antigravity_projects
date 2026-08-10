@@ -1,0 +1,698 @@
+{
+  "id": "java",
+  "title": "Java Tutorial",
+  "articles": [
+    {
+      "id": "java-001",
+      "title": "Introduction to Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-002",
+      "title": "Installing Java on Windows, Linux, and macOS - GeeksforGeeks"
+    },
+    {
+      "id": "java-003",
+      "title": "How to Install IntelliJ IDEA on Windows? - GeeksforGeeks"
+    },
+    {
+      "id": "java-004",
+      "title": "How to Download and Install Eclipse on Windows - GeeksforGeeks"
+    },
+    {
+      "id": "java-005",
+      "title": "Creating First Java Application in IntelliJ IDEA - GeeksforGeeks"
+    },
+    {
+      "id": "java-006",
+      "title": "Differences Between JDK, JRE and JVM - GeeksforGeeks"
+    },
+    {
+      "id": "java-007",
+      "title": "System.out.println in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-008",
+      "title": "Java User Input - Scanner Class - GeeksforGeeks"
+    },
+    {
+      "id": "java-009",
+      "title": "Java Identifiers - GeeksforGeeks"
+    },
+    {
+      "id": "java-010",
+      "title": "Java Keywords - GeeksforGeeks"
+    },
+    {
+      "id": "java-011",
+      "title": "Java Variables - GeeksforGeeks"
+    },
+    {
+      "id": "java-012",
+      "title": "Java Data Types - GeeksforGeeks"
+    },
+    {
+      "id": "java-013",
+      "title": "Literals in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-014",
+      "title": "Wrapper Classes in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-015",
+      "title": "Java Operators - GeeksforGeeks"
+    },
+    {
+      "id": "java-016",
+      "title": "Decision Making in Java - Conditional Statements - GeeksforGeeks"
+    },
+    {
+      "id": "java-017",
+      "title": "Java Loops - GeeksforGeeks"
+    },
+    {
+      "id": "java-018",
+      "title": "Jump Statements in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-019",
+      "title": "Number Guessing Game in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-020",
+      "title": "Java Methods - GeeksforGeeks"
+    },
+    {
+      "id": "java-021",
+      "title": "Static Method vs Instance Method in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-022",
+      "title": "Access Modifiers in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-023",
+      "title": "Command Line Arguments in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-024",
+      "title": "Variable Arguments (Varargs) in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-025",
+      "title": "Arrays in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-026",
+      "title": "Java Multi-Dimensional Arrays - GeeksforGeeks"
+    },
+    {
+      "id": "java-027",
+      "title": "Jagged Array in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-028",
+      "title": "Arrays Class in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-029",
+      "title": "Final Arrays in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-030",
+      "title": "Tic-Tac-Toe Game in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-031",
+      "title": "Java Strings - GeeksforGeeks"
+    },
+    {
+      "id": "java-032",
+      "title": "Why Java Strings are Immutable? - GeeksforGeeks"
+    },
+    {
+      "id": "java-033",
+      "title": "Difference Between  == Operator and equals() Method in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-034",
+      "title": "Java String concat() Method with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-035",
+      "title": "Java String Methods - GeeksforGeeks"
+    },
+    {
+      "id": "java-036",
+      "title": "String Class in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-037",
+      "title": "StringBuffer Class in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-038",
+      "title": "StringBuilder Class in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-039",
+      "title": "String vs StringBuilder vs StringBuffer in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-040",
+      "title": "Java OOP(Object Oriented Programming) Concepts - GeeksforGeeks"
+    },
+    {
+      "id": "java-041",
+      "title": "Classes and Objects in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-042",
+      "title": "Java Constructors - GeeksforGeeks"
+    },
+    {
+      "id": "java-043",
+      "title": "Java this Keyword - GeeksforGeeks"
+    },
+    {
+      "id": "java-044",
+      "title": "Super Keyword in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-045",
+      "title": "Encapsulation in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-046",
+      "title": "Inheritance in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-047",
+      "title": "Polymorphism in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-048",
+      "title": "Abstraction in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-049",
+      "title": "Object Class in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-050",
+      "title": "Java Packages - GeeksforGeeks"
+    },
+    {
+      "id": "java-051",
+      "title": "Mini Banking Application in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-052",
+      "title": "Java Interface - GeeksforGeeks"
+    },
+    {
+      "id": "java-053",
+      "title": "Java Class vs Interfaces - GeeksforGeeks"
+    },
+    {
+      "id": "java-054",
+      "title": "Java Functional Interfaces - GeeksforGeeks"
+    },
+    {
+      "id": "java-055",
+      "title": "Nested Interface in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-056",
+      "title": "Marker Interface in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-057",
+      "title": "Program for Employee Management System - GeeksforGeeks"
+    },
+    {
+      "id": "java-058",
+      "title": "Java Exception Handling - GeeksforGeeks"
+    },
+    {
+      "id": "java-059",
+      "title": "Java Try Catch Block - GeeksforGeeks"
+    },
+    {
+      "id": "java-060",
+      "title": "Java final, finally and finalize - GeeksforGeeks"
+    },
+    {
+      "id": "java-061",
+      "title": "throw and throws in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-062",
+      "title": "User-Defined Custom Exception in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-063",
+      "title": "Chained Exceptions in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-064",
+      "title": "Null Pointer Exception in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-065",
+      "title": "Exception Handling with Method Overriding in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-066",
+      "title": "Regular Expressions in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-067",
+      "title": "Matcher Class in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-068",
+      "title": "Regex Character Classes in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-069",
+      "title": "Java Quantifiers - GeeksforGeeks"
+    },
+    {
+      "id": "java-070",
+      "title": "Java Memory Management - GeeksforGeeks"
+    },
+    {
+      "id": "java-071",
+      "title": "How are Java Objects Stored in Memory? - GeeksforGeeks"
+    },
+    {
+      "id": "java-072",
+      "title": "How Many Types of Memory Areas are Allocated by JVM? - GeeksforGeeks"
+    },
+    {
+      "id": "java-073",
+      "title": "Java Stack vs Heap Memory Allocation - GeeksforGeeks"
+    },
+    {
+      "id": "java-074",
+      "title": "Garbage Collection in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-075",
+      "title": "JVM Garbage Collectors - GeeksforGeeks"
+    },
+    {
+      "id": "java-076",
+      "title": "Memory Leaks in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-077",
+      "title": "Generic Class in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-078",
+      "title": "Wildcards in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-079",
+      "title": "Bounded Types with Generics in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-080",
+      "title": "Type Erasure in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-081",
+      "title": "Collections Class in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-082",
+      "title": "Collection Interface in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-083",
+      "title": "List Interface in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-084",
+      "title": "ArrayList in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-085",
+      "title": "LinkedList in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-086",
+      "title": "Set in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-087",
+      "title": "HashSet in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-088",
+      "title": "LinkedHashSet in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-089",
+      "title": "TreeSet in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-090",
+      "title": "Queue Interface In Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-091",
+      "title": "PriorityQueue in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-092",
+      "title": "Deque Interface in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-093",
+      "title": "Map Interface in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-094",
+      "title": "HashMap in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-095",
+      "title": "Iterator in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-096",
+      "title": "Java Comparator Interface - GeeksforGeeks"
+    },
+    {
+      "id": "java-097",
+      "title": "Java Comparable Interface - GeeksforGeeks"
+    },
+    {
+      "id": "java-098",
+      "title": "Java Collections Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "java-099",
+      "title": "Image Processing in Java - Face Detection - GeeksforGeeks"
+    },
+    {
+      "id": "java-100",
+      "title": "Java Lambda Expressions - GeeksforGeeks"
+    },
+    {
+      "id": "java-101",
+      "title": "Java 8 Predicate with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-102",
+      "title": "Java 8 | Consumer Interface in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-103",
+      "title": "Supplier Interface in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-104",
+      "title": "Java Method References - GeeksforGeeks"
+    },
+    {
+      "id": "java-105",
+      "title": "Java 8 Stream Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "java-106",
+      "title": "Java 8 Optional Class - GeeksforGeeks"
+    },
+    {
+      "id": "java-107",
+      "title": "Java Collectors - GeeksforGeeks"
+    },
+    {
+      "id": "java-108",
+      "title": "New Date-Time API  in Java 8 - GeeksforGeeks"
+    },
+    {
+      "id": "java-109",
+      "title": "java.time.LocalDate Class in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-110",
+      "title": "java.time.LocalTime Class in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-111",
+      "title": "java.time.LocalDateTime Class in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-112",
+      "title": "Duration ofMinutes(long) method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-113",
+      "title": "java.time.Period Class in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-114",
+      "title": "java.time.format.DateTimeFormatterBuilder Class in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-115",
+      "title": "Multithreading in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-116",
+      "title": "Java Threads - GeeksforGeeks"
+    },
+    {
+      "id": "java-117",
+      "title": "Java  Thread.start() vs Thread.run() Method - GeeksforGeeks"
+    },
+    {
+      "id": "java-118",
+      "title": "Java Thread.sleep() Method - GeeksforGeeks"
+    },
+    {
+      "id": "java-119",
+      "title": "Java Runnable Interface - GeeksforGeeks"
+    },
+    {
+      "id": "java-120",
+      "title": "Main thread in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-121",
+      "title": "Java Thread Priority in Multithreading - GeeksforGeeks"
+    },
+    {
+      "id": "java-122",
+      "title": "Java Daemon Thread - GeeksforGeeks"
+    },
+    {
+      "id": "java-123",
+      "title": "Synchronization in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-124",
+      "title": "Java Thread Safety and How to Achieve it - GeeksforGeeks"
+    },
+    {
+      "id": "java-125",
+      "title": "How to Use Locks in Multi-Threaded Java Program - GeeksforGeeks"
+    },
+    {
+      "id": "java-126",
+      "title": "Difference Between Lock and Monitor in Java Concurrency - GeeksforGeeks"
+    },
+    {
+      "id": "java-127",
+      "title": "Java Lock Framework vs Thread Synchronization - GeeksforGeeks"
+    },
+    {
+      "id": "java-128",
+      "title": "ReentrantLock in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-129",
+      "title": "Deadlock in Java Multithreading - GeeksforGeeks"
+    },
+    {
+      "id": "java-130",
+      "title": "Thread Pool in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-131",
+      "title": "Java Executor Framework - GeeksforGeeks"
+    },
+    {
+      "id": "java-132",
+      "title": "Java Multithreading Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "java-133",
+      "title": "Design Snake Game - GeeksforGeeks"
+    },
+    {
+      "id": "java-134",
+      "title": "Input/Output in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-135",
+      "title": "Java Reader Class - GeeksforGeeks"
+    },
+    {
+      "id": "java-136",
+      "title": "Java Writer Class - GeeksforGeeks"
+    },
+    {
+      "id": "java-137",
+      "title": "File Handling in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-138",
+      "title": "Java File Class - GeeksforGeeks"
+    },
+    {
+      "id": "java-139",
+      "title": "Java FileInputStream Class - GeeksforGeeks"
+    },
+    {
+      "id": "java-140",
+      "title": "FileOutputStream in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-141",
+      "title": "Java FileReader Class - GeeksforGeeks"
+    },
+    {
+      "id": "java-142",
+      "title": "Java FileWriter Class - GeeksforGeeks"
+    },
+    {
+      "id": "java-143",
+      "title": "Java.io.BufferedReader Class in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-144",
+      "title": "Java BufferedOutputStream Class - GeeksforGeeks"
+    },
+    {
+      "id": "java-145",
+      "title": "Java FilePermission Class - GeeksforGeeks"
+    },
+    {
+      "id": "java-146",
+      "title": "Java FileDescriptor Class - GeeksforGeeks"
+    },
+    {
+      "id": "java-147",
+      "title": "Java Swing | Create a simple text editor - GeeksforGeeks"
+    },
+    {
+      "id": "java-148",
+      "title": "Java Networking - GeeksforGeeks"
+    },
+    {
+      "id": "java-149",
+      "title": "Socket Programming in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-150",
+      "title": "Java ServerSocket Class - GeeksforGeeks"
+    },
+    {
+      "id": "java-151",
+      "title": "Java URL Class - GeeksforGeeks"
+    },
+    {
+      "id": "java-152",
+      "title": "How to Implement a Simple Chat Application Using Sockets in Java? - GeeksforGeeks"
+    },
+    {
+      "id": "java-153",
+      "title": "JDBC (Java Database Connectivity) - GeeksforGeeks"
+    },
+    {
+      "id": "java-154",
+      "title": "JDBC Drivers - GeeksforGeeks"
+    },
+    {
+      "id": "java-155",
+      "title": "Establishing JDBC Connection in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-156",
+      "title": "Types of Statements in JDBC - GeeksforGeeks"
+    },
+    {
+      "id": "java-157",
+      "title": "Transactions in JDBC - GeeksforGeeks"
+    },
+    {
+      "id": "java-158",
+      "title": "JDBC Result Set - GeeksforGeeks"
+    },
+    {
+      "id": "java-159",
+      "title": "Retrieving Database Metadata Using JDBC - GeeksforGeeks"
+    },
+    {
+      "id": "java-160",
+      "title": "How to Handle Connection Pooling in JDBC in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-161",
+      "title": "Java Quiz - GeeksforGeeks"
+    },
+    {
+      "id": "java-162",
+      "title": "Java Coding Practice Problems - GeeksforGeeks"
+    },
+    {
+      "id": "java-163",
+      "title": "Java Interview Questions and Answers - GeeksforGeeks"
+    },
+    {
+      "id": "java-164",
+      "title": "Advanced Java Interview Questions and Answers - GeeksforGeeks"
+    },
+    {
+      "id": "java-165",
+      "title": "C vs C++ vs Java vs Python vs JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "java-166",
+      "title": "Companies That Use Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-167",
+      "title": "Careers & Jobs in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-168",
+      "title": "JDBC Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "java-169",
+      "title": "Java Programs - Java Programming Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-170",
+      "title": "Java Exercises - Basic to Advanced Java Practice Programs with Solutions - GeeksforGeeks"
+    },
+    {
+      "id": "java-171",
+      "title": "Java Project Ideas For Beginners to  Advanced - GeeksforGeeks"
+    },
+    {
+      "id": "java-172",
+      "title": "Java Backend Development Course with Spring Boot, Microservices & AI Tools"
+    },
+    {
+      "id": "java-173",
+      "title": "Placement 360 – The Complete Tech Interview Program"
+    }
+  ]
+}

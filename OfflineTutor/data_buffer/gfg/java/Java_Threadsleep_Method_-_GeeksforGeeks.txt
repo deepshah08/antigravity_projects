@@ -1,0 +1,111 @@
+# Java Thread.sleep() Method - GeeksforGeeks
+
+The Thread.sleep() method in Java is used to pause the execution of the currently running thread for a specified amount of time. After the sleep duration ends, the thread becomes runnable again and continues execution based on thread scheduling.Throws InterruptedException if another thread interrupts during sleep.Actual sleep duration may vary based on system load; higher load increases sleep time.
+            Java
+
+    public class SleepDemo {
+    public static void main(String[] args) throws InterruptedException {
+        for (int i = 0; i < 3; i++) {
+            System.out.print(i + " ");
+            Thread.sleep(1000);
+        }
+    }
+}
+
+Output:0 1 2Explanation: The main thread prints numbers from 0 to 2, and after each print, Thread.sleep(1000) pauses execution for 1 second. This results in a visible delay between each output.SyntaxThere are 2 variations of the sleep() method in Java Thread. These are:public static void sleep(long millis)public static void sleep(long millis, int nanos)Parameters:millis: Duration of time in milliseconds for which thread will sleepnanos: This is the additional time in nanoseconds for which we want the thread to sleep. It ranges from 0 to 999999..Common Examples of Thread.sleep()Example 1: Using Thread.sleep() Method for Main Thread 
+            Java
+
+    import java.io.*;
+import java.lang.Thread;
+
+class Geeks 
+{
+    public static void main(String[] args)
+    {
+        // we use throws keyword followed by exception
+      	// name for throwing the exception
+        try {
+            for (int i = 0; i < 5; i++) {
+              
+                // sleep the main thread for 1 sec
+                // for every loop runs
+                Thread.sleep(1000);
+              
+                System.out.print(i+" ");
+            }
+        }
+        catch (Exception e) {
+            // catching the exception
+            System.out.println(e);
+        }
+    }
+}
+
+Output:0 1 2 3 4Explanation: The main thread runs the loop and prints numbers from 0 to 2, pausing for 1 second after each print using Thread.sleep(1000). After the pause, the thread resumes execution and continues the loop.Example 2: Using Thread.sleep() method for Custom thread 
+            Java
+
+    import java.lang.Thread;
+
+// Class extending the Thread Class
+class MyThread extends Thread 
+{
+    // Overriding the run method
+    @Override
+    public void run()
+    {
+        // use throws keyword followed by exception
+      	// name for throwing the exception
+        try {
+            for (int i = 0; i < 5; i++) {
+              
+                // method will sleep the thread
+                Thread.sleep(1000);
+              
+                System.out.print(i+" ");
+            }
+        }
+        catch (Exception e) {
+            // catching the exception
+            System.out.println(e);
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        // created thread
+        MyThread obj = new MyThread();
+        obj.start();
+    }
+}
+
+Output:0 1 2 3 4Explanation: MyThread extends the Thread class and overrides the run() method to print numbers from 0 to 4, pausing for 1 second in each iteration using Thread.sleep(1000). The sleep call is wrapped in a try-catch block to handle InterruptedException, after which the thread resumes execution.Example 3: IllegalArgumentException when sleep time is Negative
+            Java
+
+    import java.lang.Thread;
+
+class Geeks 
+{
+    public static void main(String[] args)
+    {
+        // Use throws keyword followed by exception
+      	// name for throwing the exception
+        try {
+            for (int i = 0; i < 5; i++) {
+              
+                // this will throw the
+                // IllegalArgumentException
+                Thread.sleep(-100);
+              
+                // Printing the value of the variable
+                System.out.println(i);
+            }
+        }
+        catch (Exception e) {
+            // Catching the exception
+            System.out.println(e);
+        }
+    }
+}
+
+Outputjava.lang.IllegalArgumentException: timeout value is negative
+Explanation: Passing a negative value to Thread.sleep() is invalid, so Java immediately throws an IllegalArgumentException. This ensures that the sleep duration is always non-negative.

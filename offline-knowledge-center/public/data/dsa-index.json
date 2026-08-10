@@ -1,0 +1,2330 @@
+{
+  "id": "dsa",
+  "title": "Dsa Tutorial",
+  "articles": [
+    {
+      "id": "dsa-001",
+      "title": "Input and Output in Programming - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-002",
+      "title": "Conditional Statements in Programming - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-003",
+      "title": "For loop in Programming - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-004",
+      "title": "While loop in Programming - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-005",
+      "title": "Functions in programming - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-006",
+      "title": "Classes and Object in Programming - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-007",
+      "title": "Order of Growth - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-008",
+      "title": "Asymptotic Analysis - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-009",
+      "title": "Big O Notation - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-010",
+      "title": "Theta Notation for Analysis - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-011",
+      "title": "Omega Ω Notation - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-012",
+      "title": "Time Complexity with Simple Examples - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-013",
+      "title": "Space Complexity - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-014",
+      "title": "Introduction to Recursion - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-015",
+      "title": "Time Complexity Analysis of Recursive Functions - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-016",
+      "title": "Check Even or Odd - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-017",
+      "title": "Program for sum of n natural numbers - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-018",
+      "title": "Closest to n and Divisible by m - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-019",
+      "title": "Express a number as sum of consecutive numbers - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-020",
+      "title": "Print Solid Rectangle Star Pattern - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-021",
+      "title": "Program to Print Floyd's Triangle - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-022",
+      "title": "Print Right Half Pyramid Star Pattern - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-023",
+      "title": "Print Hollow Rectangle Pattern - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-024",
+      "title": "Print 1 to n using Recursion - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-025",
+      "title": "Print n to 1  using Recursion - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-026",
+      "title": "Factorial of a Number - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-027",
+      "title": "Program to Find GCD or HCF of Two Numbers - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-028",
+      "title": "Power Function Implementation - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-029",
+      "title": "Printing Pyramid Patterns - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-030",
+      "title": "Hollow Diamond Pattern - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-031",
+      "title": "Count digits - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-032",
+      "title": "Check for Prime Number - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-033",
+      "title": "Program for Armstrong Numbers - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-034",
+      "title": "Count trailing zeroes in factorial - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-035",
+      "title": "Prime factors of a number - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-036",
+      "title": "All Divisors of a Number - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-037",
+      "title": "Print Butterfly Pattern (Star Pattern) - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-038",
+      "title": "Check if a number is Palindrome - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-039",
+      "title": "Tower of Hanoi Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-040",
+      "title": "Non-Attacking Black and White Knights - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-041",
+      "title": "Josephus Problem - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-042",
+      "title": "The Water Jug Problem - Count Min Steps - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-043",
+      "title": "Array  Introduction - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-044",
+      "title": "Introduction to Strings - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-045",
+      "title": "Matrix or Grid or 2D Array  - Complete Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-046",
+      "title": "Check if an Array is Sorted - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-047",
+      "title": "Replace with Adjacent Multiplication - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-048",
+      "title": "Array Reverse - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-049",
+      "title": "Reverse an Array in groups - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-050",
+      "title": "Rotate an Array - Clockwise or Right - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-051",
+      "title": "Generating All Subarrays - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-052",
+      "title": "Rearrange Array by Sign - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-053",
+      "title": "Stock Buy and Sell - Max one Transaction Allowed - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-054",
+      "title": "Stock Buy and Sell - Multiple Transaction Allowed - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-055",
+      "title": "Leaders in an array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-056",
+      "title": "Check if two strings are same - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-057",
+      "title": "Palindrome String - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-058",
+      "title": "Toggle the Case of Each Character in a String - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-059",
+      "title": "Remove all occurrences of a character in a string - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-060",
+      "title": "Remove spaces from a given string - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-061",
+      "title": "Check if one string is subsequence of other - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-062",
+      "title": "First non-repeating character of given string - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-063",
+      "title": "Panagram Checking - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-064",
+      "title": "Majority Element - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-065",
+      "title": "Majority Element II - Elements occurring more than ⌊n/3⌋ times - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-066",
+      "title": "Sorted subsequence of size 3 - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-067",
+      "title": "Count Strictly Increasing Subarrays - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-068",
+      "title": "Next Permutation - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-069",
+      "title": "Maximum Subarray Sum  - Kadane's Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-070",
+      "title": "Sum of all Subarrays - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-071",
+      "title": "Maximum Product Subarray - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-072",
+      "title": "String to Integer - Write your own atoi() - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-073",
+      "title": "URLify a given string (Replace spaces with %20) - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-074",
+      "title": "Multiply Large Numbers represented as Strings - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-075",
+      "title": "Print the matrix diagonally downwards - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-076",
+      "title": "Magic Square or Not - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-077",
+      "title": "Boundary Elements of a Matrix - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-078",
+      "title": "Print a given matrix in spiral form - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-079",
+      "title": "Toeplitz Matrix or Not - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-080",
+      "title": "Print matrix in zig-zag fashion - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-081",
+      "title": "Program to Find Transpose of a Matrix - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-082",
+      "title": "Rotate Square Matrix by 90 Degrees Counterclockwise - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-083",
+      "title": "Conway's Game Of Life - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-084",
+      "title": "Queries in a Matrix - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-085",
+      "title": "Set Matrix Rows and Columns to Zeroes - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-086",
+      "title": "Maximum Circular Subarray Sum - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-087",
+      "title": "Next Smallest Palindrome - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-088",
+      "title": "Lexicographic rank of a String - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-089",
+      "title": "Text Justification - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-090",
+      "title": "Introduction to Searching - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-091",
+      "title": "Largest element in an Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-092",
+      "title": "Second Largest Element in an Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-093",
+      "title": "Local Min and Max Sequence Ordering - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-094",
+      "title": "Search insert position of K in a sorted array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-095",
+      "title": "Lower Bound - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-096",
+      "title": "Upper Bound - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-097",
+      "title": "Single Element in a Sorted Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-098",
+      "title": "Missing in a Sorted Array of Natural Numbers - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-099",
+      "title": "Number of Occurrence - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-100",
+      "title": "Search in a sorted matrix - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-101",
+      "title": "Search in Rotated Sorted Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-102",
+      "title": "Search in sorted rotated array with duplicates. - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-103",
+      "title": "Closest K Elements in a Sorted Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-104",
+      "title": "Search in an almost sorted array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-105",
+      "title": "Peak Element in Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-106",
+      "title": "Peak in a 2D Array/Matrix - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-107",
+      "title": "Range-Based Count of X in Sorted Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-108",
+      "title": "Kth Missing Positive Number in a Sorted Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-109",
+      "title": "Search in a row wise and column wise sorted matrix - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-110",
+      "title": "Program for Square Root of Integer - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-111",
+      "title": "N-th root of a number - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-112",
+      "title": "Check if a number is a power of another - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-113",
+      "title": "Pick k such that the pair wise min diff is maximized - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-114",
+      "title": "Smallest number with at least n trailing zeroes in factorial - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-115",
+      "title": "Koko Eating Bananas - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-116",
+      "title": "Aggressive Cows - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-117",
+      "title": "Median in row wise sorted matrix - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-118",
+      "title": "Kth smallest element in a row-wise and column-wise sorted 2D array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-119",
+      "title": "Minimum days to make M bouquets - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-120",
+      "title": "Kth Smallest Number in Multiplication Table - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-121",
+      "title": "Maximize median after doing K addition operation on the Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-122",
+      "title": "Minimum time to fulfil all orders - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-123",
+      "title": "Minimize cost of operation to equalize tower heights - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-124",
+      "title": "Median of two sorted arrays of same size - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-125",
+      "title": "K-th Element of Merged Two Sorted Arrays - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-126",
+      "title": "Introduction to Sorting Techniques - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-127",
+      "title": "Sort an array in wave form - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-128",
+      "title": "Sort an array of strings  according to string lengths - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-129",
+      "title": "Minimum difference pair in an array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-130",
+      "title": "Overlapping Intervals - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-131",
+      "title": "Create Largest Concatenated Number - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-132",
+      "title": "Tywin's War Strategy - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-133",
+      "title": "Shop in Candy Store | Practice | GeeksforGeeks "
+    },
+    {
+      "id": "dsa-134",
+      "title": "Minimum and Maximum Candy Cost - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-135",
+      "title": "Meeting Rooms - Check if a person can attend all meetings - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-136",
+      "title": "Insert and Merge Interval - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-137",
+      "title": "Minimize the moves required to seat each passenger in a chair - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-138",
+      "title": "Maximum sum of i*arr[i] among all rotations of a given array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-139",
+      "title": "Quick Sort - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-140",
+      "title": "Segregate 0s and 1s in an array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-141",
+      "title": "Move all Zeros to End of Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-142",
+      "title": "Sort an array of 0s, 1s and 2s - Dutch National Flag Problem - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-143",
+      "title": "Merge Sort - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-144",
+      "title": "Union of Two Sorted Arrays - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-145",
+      "title": "Intersection of Two Sorted Arrays - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-146",
+      "title": "Merge Two Sorted Arrays Without Extra Space - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-147",
+      "title": "Minimum Platforms Required - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-148",
+      "title": "Count Inversions of an Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-149",
+      "title": "Surpasser Count of Each Element in Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-150",
+      "title": "Cycle Sort - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-151",
+      "title": "Smallest Missing Positive Number - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-152",
+      "title": "Minimum  swaps to sort an array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-153",
+      "title": "Introduction to Bitwise Algorithms - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-154",
+      "title": "Swap Two Numbers - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-155",
+      "title": "K-th bit is set or not - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-156",
+      "title": "Position of the only set bit - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-157",
+      "title": "Check for Power of 2 - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-158",
+      "title": "Sort by Set Bit Count - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-159",
+      "title": "Check for Power of 4 - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-160",
+      "title": "Check if binary representation is palindrome - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-161",
+      "title": "Rotate bits of a number - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-162",
+      "title": "Swap all odd and even bits - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-163",
+      "title": "Count Set Bits - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-164",
+      "title": "Count total set bits in first N Natural Numbers - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-165",
+      "title": "Iterative function for pow(x, y) - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-166",
+      "title": "Maximum consecutive one’s (or zeros) in a binary array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-167",
+      "title": "Find the Missing Number - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-168",
+      "title": "Number occurring  odd number of  times - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-169",
+      "title": "Numbers with odd occurrences - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-170",
+      "title": "Palindrome Permutation or Anagram - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-171",
+      "title": "Missing and Repeating in an Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-172",
+      "title": "Unique Numbers || - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-173",
+      "title": "Generate n-bit Gray Codes - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-174",
+      "title": "Total Hamming Distance - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-175",
+      "title": "Sum of XOR of all pairs in an array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-176",
+      "title": "Sum of XOR of all possible subsets - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-177",
+      "title": "XOR of all subarray XORs - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-178",
+      "title": "Check Sudoku Board Configuration is Valid or Not - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-179",
+      "title": "Subsets of a given Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-180",
+      "title": "All subsequences of a string - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-181",
+      "title": "Introduction to Hashing - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-182",
+      "title": "Linear Probing in Hash Tables - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-183",
+      "title": "Hashing with Chaining Implementation - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-184",
+      "title": "Quadratic Probing in Hashing - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-185",
+      "title": "Diistinct elements in a given array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-186",
+      "title": "Check if an array is subset of another array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-187",
+      "title": "Union of Two Arrays - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-188",
+      "title": "Intersection of two Arrays - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-189",
+      "title": "Two Sum - Pair with given Sum - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-190",
+      "title": "Fizz Buzz - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-191",
+      "title": "Check If Array Pair Sums Divisible by k - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-192",
+      "title": "Roman to Integer Conversion - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-193",
+      "title": "Isomorphic Strings - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-194",
+      "title": "Counting frequencies of array elements - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-195",
+      "title": "Most frequent in an array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-196",
+      "title": "Minimum Subsets with Distinct Elements - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-197",
+      "title": "Check if two Strings are Anagrams of each other - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-198",
+      "title": "Longest Consecutive Subsequence - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-199",
+      "title": "Split into minimum consecutive subsets - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-200",
+      "title": "Two Pointers Technique - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-201",
+      "title": "Two Sum - Pair sum in sorted array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-202",
+      "title": "Smallest subarray with sum greater than a given value - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-203",
+      "title": "Remove duplicates from Sorted Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-204",
+      "title": "Sentence Palindrome - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-205",
+      "title": "Triplet Sum in Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-206",
+      "title": "The Celebrity Problem - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-207",
+      "title": "Closest Pairs Sum in Two Sorted Arrays - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-208",
+      "title": "Container with Most Water - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-209",
+      "title": "Common in 3 Sorted Arrays - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-210",
+      "title": "Reverse Words - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-211",
+      "title": "Policemen catch thieves - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-212",
+      "title": "4 Sum - All Distinct Quadruplets with given Sum in an Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-213",
+      "title": "3 Sum - Triplet Sum Closest to Target - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-214",
+      "title": "3 Sum - Count Triplets With Given Sum In Sorted Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-215",
+      "title": "Sliding Window Technique - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-216",
+      "title": "Maximum sum of a subarray of size k - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-217",
+      "title": "Maximum XOR of k Size Subset - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-218",
+      "title": "Count Distinct In Every Window of Size K - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-219",
+      "title": "Maximum MEX from all subarrays of length K - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-220",
+      "title": "Minimum Swaps to group all 1s - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-221",
+      "title": "First negative in every window of size k - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-222",
+      "title": "Chocolate Distribution Problem - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-223",
+      "title": "Maximum Consecutive Ones After Flipping Zeroes - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-224",
+      "title": "Longest equal substrings with cost less than K - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-225",
+      "title": "Fruit Into Baskets - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-226",
+      "title": "Subarray with Given Sum - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-227",
+      "title": "Minimum Window Subsequence - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-228",
+      "title": "Smallest window in a String containing all characters of other String - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-229",
+      "title": "Smallest window containing 0, 1 and 2 - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-230",
+      "title": "Subarrays with k odd numbers - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-231",
+      "title": "Subarrays having product less than K - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-232",
+      "title": "Count substrings with all vowels - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-233",
+      "title": "Subarrays having sum less than K - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-234",
+      "title": "Count Subarrays with K Equal Value Pairs - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-235",
+      "title": "Longest Substring Without Repeating Characters - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-236",
+      "title": "Longest substring having all same characters after k changes - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-237",
+      "title": "Longest substring with k unique characters - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-238",
+      "title": "Count substrings with k distinct characters - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-239",
+      "title": "Smallest window that contains all characters of string itself - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-240",
+      "title": "Count Anagrams of a Pattern - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-241",
+      "title": "Count Subarrays With Exactly K Distinct Elements - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-242",
+      "title": "Prefix Sum Technique - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-243",
+      "title": "Prefix Sum Array - Implementation - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-244",
+      "title": "Prefix Sum of Matrix (Or 2D Array) - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-245",
+      "title": "Range sum queries without updates - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-246",
+      "title": "Equilibrium Index - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-247",
+      "title": "Mean of Range in  Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-248",
+      "title": "Split an Array into Two Equal Sum Subarrays - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-249",
+      "title": "Largest Submatrix With Sum 0 - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-250",
+      "title": "Maximum sum rectangle in a 2D matrix - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-251",
+      "title": "Product of Array Except Self - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-252",
+      "title": "Original Array from given Prefix Sums - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-253",
+      "title": "Longest Span with same Sum in two Binary arrays - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-254",
+      "title": "1D Difference Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-255",
+      "title": "Two Dimensional Difference Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-256",
+      "title": "Maximum occurring integer in given ranges - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-257",
+      "title": "Compute Matrix before Given Operations - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-258",
+      "title": "Computing Point Counts from a Set of Intervals - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-259",
+      "title": "Subarray with Sum Zero - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-260",
+      "title": "Longest Subarray with 0 Sum - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-261",
+      "title": "Longest Subarray With Equal Number of 0s and 1s - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-262",
+      "title": "Longest Subarray With Sum Divisible By K - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-263",
+      "title": "Longest Subarray With Sum K - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-264",
+      "title": "Count Subarrays With Sum Divisible By K - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-265",
+      "title": "Count Subarrays having Sum K - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-266",
+      "title": "Count Subarrays with given XOR - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-267",
+      "title": "Introduction to Backtracking - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-268",
+      "title": "Permutations of given String - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-269",
+      "title": "Rat in a Maze - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-270",
+      "title": "Word Search in 4 Directions - Check if a word exists in a grid or not - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-271",
+      "title": "N Queen Problem - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-272",
+      "title": "Sudoku Solver - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-273",
+      "title": "Word Break - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-274",
+      "title": "The Knight's Tour - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-275",
+      "title": "Find all Palindromic Partitions of a String - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-276",
+      "title": "M-Coloring Problem - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-277",
+      "title": "Introduction to Linked List - Data Structure and Algorithm Tutorials - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-278",
+      "title": "Singly Linked List Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-279",
+      "title": "Doubly Linked List Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-280",
+      "title": "Introduction to Circular Linked List - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-281",
+      "title": "Reverse a Linked List - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-282",
+      "title": "Reverse a Doubly Linked List - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-283",
+      "title": "Reverse a Linked List in groups of given size - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-284",
+      "title": "Rearrange a linked list in alternat first and last - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-285",
+      "title": "Middle Node in a Linked List - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-286",
+      "title": "Remove Nth node from end of the Linked List - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-287",
+      "title": "Palindrome Linked List - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-288",
+      "title": "Detect Cycle in Linked List - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-289",
+      "title": "Length of cycle in Linked List - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-290",
+      "title": "Intersection point of two Linked Lists - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-291",
+      "title": "Sort a linked list of 0s, 1s and 2s - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-292",
+      "title": "Add Two Numbers in a Linked List - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-293",
+      "title": "Rotate a Linked List - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-294",
+      "title": "Merge K sorted linked lists - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-295",
+      "title": "Design Browser History - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-296",
+      "title": "Designing Twitter - A System Design Interview Question - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-297",
+      "title": "Design LRU Cache - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-298",
+      "title": "Least Frequently Used (LFU) Cache Implementation - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-299",
+      "title": "Flatten a multi-level linked list (Depth wise) - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-300",
+      "title": "Clone a Linked List with Random Pointer - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-301",
+      "title": "Introduction to Stack Data Structure - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-302",
+      "title": "Reverse a Stack - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-303",
+      "title": "Sort a Stack using Recursion - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-304",
+      "title": "Valid Parentheses in an Expression - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-305",
+      "title": "Evaluation of Postfix Expression - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-306",
+      "title": "Infix Expression Evaluation - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-307",
+      "title": "Infix to Postfix Expression - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-308",
+      "title": "Check Redundant Brackets - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-309",
+      "title": "Longest Valid Parentheses Substring - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-310",
+      "title": "Score of Balanced Parentheses - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-311",
+      "title": "Implement Stack using Queues - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-312",
+      "title": "Implement two Stacks in an Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-313",
+      "title": "Implement k stacks in an array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-314",
+      "title": "Stack with Minimum - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-315",
+      "title": "Lowest Number by Removing k digits - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-316",
+      "title": "Next Greater Element in Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-317",
+      "title": "Stock Span Problem - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-318",
+      "title": "Number of Buildings Facing the Sun - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-319",
+      "title": "Previous Smaller Element - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-320",
+      "title": "Largest Rectangular Area in a Histogram - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-321",
+      "title": "Maximum Area Rectangle of 1s in a Binary Matrix - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-322",
+      "title": "Max of Mins for All Window Sizes - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-323",
+      "title": "Trapping Rain Water Problem - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-324",
+      "title": "Sum of Subarray Ranges - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-325",
+      "title": "Opposite Sign Pair Reduction - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-326",
+      "title": "Longest Subarray Length - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-327",
+      "title": "Decode String - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-328",
+      "title": "Queue Introduction - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-329",
+      "title": "Implementation of Circular Queue Using Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-330",
+      "title": "Implement Queue using Stacks - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-331",
+      "title": "Reversing a Queue - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-332",
+      "title": "Reversing the first K of a Queue - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-333",
+      "title": "Interleave the First Half of the Queue with Second Half - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-334",
+      "title": "Implement k Queues in a single array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-335",
+      "title": "First Non Repeating Character - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-336",
+      "title": "Minimum steps to reach target by a Knight | Set 1 - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-337",
+      "title": "Introduction to Deque - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-338",
+      "title": "Implementation of Deque using Circular Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-339",
+      "title": "Lexicographically largest permutation by sequentially inserting Array elements at ends - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-340",
+      "title": "Nth term in product of previous K terms series - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-341",
+      "title": "Lexicographically Largest Bitonic Sequence - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-342",
+      "title": "Sliding Window Maximum (Maximum of All Subarrays of Size K) - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-343",
+      "title": "Longest Subarray With Limited Pairwise Difference - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-344",
+      "title": "Longest Equal Subarray with at Most K Increments - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-345",
+      "title": "Minimum deques to make array sorted - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-346",
+      "title": "Introduction to Tree Data Structure - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-347",
+      "title": "Inorder Traversal of Binary Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-348",
+      "title": "Preorder Traversal of Binary Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-349",
+      "title": "Postorder Traversal of Binary Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-350",
+      "title": "Level Order Traversal (Breadth First Search) of Binary Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-351",
+      "title": "Size of a Binary Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-352",
+      "title": "Maximum Depth or Height of a Binary Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-353",
+      "title": "Maximum width of a Binary Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-354",
+      "title": "Balanced Binary Tree or Not - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-355",
+      "title": "Check if Two Trees are Identical - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-356",
+      "title": "Check if two trees are Mirror - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-357",
+      "title": "Check if a given Binary Tree is Sum Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-358",
+      "title": "Left View of a Binary Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-359",
+      "title": "Right View of a Binary Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-360",
+      "title": "Root to leaf path sum equal to a given number - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-361",
+      "title": "Maximum Path Sum in a Binary Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-362",
+      "title": "Serialize and Deserialize a Binary Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-363",
+      "title": "Inorder Tree Traversal without Recursion - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-364",
+      "title": "Iterative Preorder Traversal - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-365",
+      "title": "Iterative Postorder Traversal | Set 2 (Using One Stack) - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-366",
+      "title": "Morris traversal for Inorder - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-367",
+      "title": "Sum of nodes on the longest path from root to leaf node - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-368",
+      "title": "Diameter of a Binary Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-369",
+      "title": "Tree Boundary Traversal | Practice | GeeksforGeeks "
+    },
+    {
+      "id": "dsa-370",
+      "title": "Binary Tree from Inorder and Preorder traversals - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-371",
+      "title": "Check if all leaves are at same level - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-372",
+      "title": "Connect nodes at same level - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-373",
+      "title": "Nodes without Sibling - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-374",
+      "title": "Invert Binary Tree - Change to Mirror Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-375",
+      "title": "Flatten a binary tree into linked list - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-376",
+      "title": "Node and Ancestor Max Diff - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-377",
+      "title": "Vertical Traversal of a  Binary Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-378",
+      "title": "Bottom View of a Binary Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-379",
+      "title": "Top View of Binary Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-380",
+      "title": "Diagonal Traversal of Binary Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-381",
+      "title": "Level order traversal in spiral form - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-382",
+      "title": "Lowest Common Ancestor in a Binary Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-383",
+      "title": "Print all nodes at distance k from a given node - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-384",
+      "title": "Distribute candies in a Binary Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-385",
+      "title": "Check if a Binary Tree is subtree of another Binary Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-386",
+      "title": "Introduction to Binary Search Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-387",
+      "title": "Searching in Binary Search Tree (BST) - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-388",
+      "title": "Insertion in Binary Search Tree (BST) - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-389",
+      "title": "Deletion in Binary Search Tree (BST) - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-390",
+      "title": "Ceil in a BST - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-391",
+      "title": "Floor in Binary Search Tree (BST) - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-392",
+      "title": "Inorder predecessor and successor in BST - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-393",
+      "title": "k-th Smallest in BST - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-394",
+      "title": "Two Sum in BST - Pair with given sum - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-395",
+      "title": "Sorted Array to Balanced  BST - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-396",
+      "title": "Merge two BSTs - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-397",
+      "title": "Check if a Binary Tree is BST or not - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-398",
+      "title": "Lowest Common Ancestor in a Binary Search Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-399",
+      "title": "Recover BST - Two Nodes are Swapped, Correct it - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-400",
+      "title": "Largest BST in a Binary Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-401",
+      "title": "Binary Heap - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-402",
+      "title": "Check if an Array is Max Heap - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-403",
+      "title": "Heap Sort - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-404",
+      "title": "Kth Largest Element in an Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-405",
+      "title": "Find k largest elements in an array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-406",
+      "title": "Height of a complete binary tree (or Heap) with N nodes - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-407",
+      "title": "Min Cost to Connect Ropes - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-408",
+      "title": "Nearly Sorted - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-409",
+      "title": "Convert BST to Min Heap - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-410",
+      "title": "K maximum sum combinations from two arrays - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-411",
+      "title": "Median of a Stream - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-412",
+      "title": "Kth largest in a stream - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-413",
+      "title": "Merge Sorted Arrays - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-414",
+      "title": "Smallest Range with Elements from k Sorted Lists - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-415",
+      "title": "The Skyline Problem - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-416",
+      "title": "Sort elements by frequency - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-417",
+      "title": "Representation of Graph - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-418",
+      "title": "Breadth First Search or BFS for a Graph - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-419",
+      "title": "Depth First Search or DFS for a Graph - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-420",
+      "title": "Flood Fill Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-421",
+      "title": "Number of Islands - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-422",
+      "title": "Connected  Components in an Undirected Graph - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-423",
+      "title": "Detect cycle in an undirected graph - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-424",
+      "title": "Detect Cycle in a Directed Graph - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-425",
+      "title": "Check whether a given graph is Bipartite or not - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-426",
+      "title": "Rotten Oranges - Minimum Time to Rot All - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-427",
+      "title": "Remove Invalid Parentheses - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-428",
+      "title": "Topological Sorting - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-429",
+      "title": "Course Schedule I - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-430",
+      "title": "Find Course Schedule II - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-431",
+      "title": "Alien Dictionary - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-432",
+      "title": "Dijkstra's Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-433",
+      "title": "Floyd Warshall Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-434",
+      "title": "Bellman–Ford Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-435",
+      "title": "Minimizing Infection Time in a Directed Graph - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-436",
+      "title": "Shortest path with one curved edge in an undirected Graph - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-437",
+      "title": "Minimum Cost Path with Left, Right, Bottom and Up moves allowed - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-438",
+      "title": "Shortest cycle in an undirected graph - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-439",
+      "title": "Distance of nearest cell having 1 in a binary matrix - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-440",
+      "title": "Unlock the Lock - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-441",
+      "title": "Shortest Transformation Length in a Word List - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-442",
+      "title": "Prim’s Algorithm for Minimum Spanning Tree (MST) - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-443",
+      "title": "Introduction to Disjoint Set (Union-Find Data Structure) - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-444",
+      "title": "Kruskal’s Minimum Spanning Tree (MST) Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-445",
+      "title": "Detect Cycle in Graph using DSU - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-446",
+      "title": "Number of Spanning Trees in a Graph - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-447",
+      "title": "Job Sequencing Problem using Disjoint Set - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-448",
+      "title": "Number of connected components of a graph ( using Disjoint Set Union ) - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-449",
+      "title": "Introduction to Greedy Algorithms - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-450",
+      "title": "Fractional Knapsack - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-451",
+      "title": "Assign Maximum  Cookies - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-452",
+      "title": "Smallest subset sum greater than all others - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-453",
+      "title": "Find minimum number of currency notes and values that sum to given amount - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-454",
+      "title": "Activity Selection - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-455",
+      "title": "Huffman Coding Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-456",
+      "title": "Jump Game - Minimum Jumps to Reach End - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-457",
+      "title": "Job Sequencing Problem - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-458",
+      "title": "Non-Overlapping Intervals - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-459",
+      "title": "Gas Station - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-460",
+      "title": "Stable Marriage Problem - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-461",
+      "title": "Minimize the maximum difference between the heights - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-462",
+      "title": "Rearrange To Make Adjacent Different - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-463",
+      "title": "Minimize Cash Flow - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-464",
+      "title": "Find minimum time to finish all jobs with given constraints - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-465",
+      "title": "Minimum Cost to cut a board into squares - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-466",
+      "title": "Dynamic Programming (DP) Introduction - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-467",
+      "title": "Climbing stairs to reach the top - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-468",
+      "title": "Count binary strings without consecutive 1's - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-469",
+      "title": "Minimum Cost to Reach the Top - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-470",
+      "title": "Frog Jump - Climbing Stairs with Cost - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-471",
+      "title": "House Robber - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-472",
+      "title": "Maximize the number of segments of length x, y and z - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-473",
+      "title": "Coin Change - Count Ways to Make Sum - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-474",
+      "title": "Count Possible Decodings of a given Digit Sequence - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-475",
+      "title": "Count Derangements - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-476",
+      "title": "Count Unique Paths in a Grid - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-477",
+      "title": "Min Cost Path - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-478",
+      "title": "Longest Common Subsequence (LCS) - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-479",
+      "title": "Edit Distance - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-480",
+      "title": "Count distinct occurrences as a subsequence - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-481",
+      "title": "Maximum Size Square Sub-Matrix with All 1s - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-482",
+      "title": "Partition a Set into Two Subsets of Equal Sum - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-483",
+      "title": "Subset Sum Problem - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-484",
+      "title": "Count subsets with sum equal to target - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-485",
+      "title": "Target Sum - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-486",
+      "title": "0/1 Knapsack Problem - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-487",
+      "title": "Coin Change - Minimum Coins to Make Sum - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-488",
+      "title": "Rod Cutting - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-489",
+      "title": "Unique paths in a Grid with Obstacles - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-490",
+      "title": "Find the longest path in a matrix with given constraints - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-491",
+      "title": "Longest Increasing Path in Matrix - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-492",
+      "title": "Longest Common Substring - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-493",
+      "title": "Shortest Common Supersequence - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-494",
+      "title": "Check if a String is Interleaving of Other Two - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-495",
+      "title": "Wildcard Pattern Matching - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-496",
+      "title": "Longest Palindromic Substring - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-497",
+      "title": "Stock Buy and Sell with Cooldown - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-498",
+      "title": "Stock Buy and Sell – Max 2 Transactions Allowed - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-499",
+      "title": "Stock Buy and Sell -  At most k Transactions Allowed - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-500",
+      "title": "Stock Buy and Sell with Transaction Fee - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-501",
+      "title": "Longest Increasing Subsequence (LIS) - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-502",
+      "title": "Number of Longest Increasing Subsequences - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-503",
+      "title": "Longest Bitonic Subsequence - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-504",
+      "title": "Largest divisible subset in array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-505",
+      "title": "Longest String Chain - Chain of words in an Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-506",
+      "title": "Maximum Number of Envelopes That Can be Put inside other bigger envelopes - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-507",
+      "title": "Matrix Chain Multiplication - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-508",
+      "title": "Minimum cost to cut a stick of length n - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-509",
+      "title": "Palindrome Partitioning - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-510",
+      "title": "Boolean Parenthesization Problem - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-511",
+      "title": "Partition Array into Atmost K Length Segments for Maximum Sum - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-512",
+      "title": "Egg Dropping Puzzle | DP-11 - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-513",
+      "title": "Optimal Strategy for a Game - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-514",
+      "title": "Program to calculate value of nCr - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-515",
+      "title": "Euler's Totient Function - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-516",
+      "title": "Sieve of Eratosthenes - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-517",
+      "title": "Program to Print Pascal's Triangle - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-518",
+      "title": "Modular Exponentiation (Power in Modular Arithmetic) - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-519",
+      "title": "Segmented Sieve - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-520",
+      "title": "Trie Data Structure - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-521",
+      "title": "Longest Valid Word with All Prefixes - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-522",
+      "title": "Distinct Substrings in a String - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-523",
+      "title": "Duplicate Rows in a Binary Matrix - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-524",
+      "title": "Maximum XOR of Two Numbers in an Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-525",
+      "title": "Maximum XOR Queries With an Element From Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-526",
+      "title": "Count pairs having Bitwise XOR less than K - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-527",
+      "title": "Auto-complete feature using Trie - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-528",
+      "title": "Palindrome Pairs - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-529",
+      "title": "Check if a string is substring of another - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-530",
+      "title": "Rabin-Karp Algorithm for Pattern Searching - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-531",
+      "title": "KMP Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-532",
+      "title": "Z algorithm (Linear time pattern searching Algorithm) - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-533",
+      "title": "Longest prefix which is also suffix - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-534",
+      "title": "Manacher's Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-535",
+      "title": "All Occurrences of Subarray in Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-536",
+      "title": "Palindrome Substring Queries - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-537",
+      "title": "Min Repeats for Substring Match - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-538",
+      "title": "Introduction to Segment Trees - Data Structure and Algorithm Tutorials - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-539",
+      "title": "Min-Max Range Queries in Array - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-540",
+      "title": "Range LCM Queries - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-541",
+      "title": "Segment Tree | (XOR of a given range ) - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-542",
+      "title": "Lazy Propagation in Segment Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-543",
+      "title": "Flipping Sign Problem | Lazy Propagation  Segment Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-544",
+      "title": "Build a segment tree for N-ary rooted tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-545",
+      "title": "Maximum of all subarrays of size K using Segment Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-546",
+      "title": "Binary Indexed Tree or Fenwick Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-547",
+      "title": "Sum and Update Queries on 3D Matrix in log(N) time - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-548",
+      "title": "Logic Building Problems - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-549",
+      "title": "Analysis of Algorithms - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-550",
+      "title": "Array Data Structure - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-551",
+      "title": "Hashing in Data Structure - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-552",
+      "title": "String in Data Structure - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-553",
+      "title": "Matrix Data Structure - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-554",
+      "title": "Linked List Data Structure - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-555",
+      "title": "Stack Data Structure - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-556",
+      "title": "Queue Data Structure - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-557",
+      "title": "Deque Data Structure - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-558",
+      "title": "Tree Data Structure - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-559",
+      "title": "Heap Data Structure - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-560",
+      "title": "Graph  Algorithms - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-561",
+      "title": "Searching Algorithms - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-562",
+      "title": "Sorting Algorithms - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-563",
+      "title": "Recursive Algorithms - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-564",
+      "title": "Greedy Algorithms Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-565",
+      "title": "Dynamic Programming or DP - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-566",
+      "title": "Segment Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-567",
+      "title": "Introduction to Red-Black Tree - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-568",
+      "title": "Bitwise Algorithms - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-569",
+      "title": "Backtracking Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-570",
+      "title": "Divide and Conquer Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-571",
+      "title": "Branch and Bound Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-572",
+      "title": "Geometric Algorithms - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-573",
+      "title": "Randomized Algorithms - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-574",
+      "title": "Graph Data Structure - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-575",
+      "title": "Square Root (Sqrt) Decomposition Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-576",
+      "title": "Software Developer Interview Preparation - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-577",
+      "title": "GfG 160 - 160 Days of Problem Solving"
+    },
+    {
+      "id": "dsa-578",
+      "title": "GeeksforGeeks Practice - Leading Online Coding Platform - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-579",
+      "title": "Problem of the Day | GeeksforGeeks | A computer science portal for geeks"
+    },
+    {
+      "id": "dsa-580",
+      "title": "Placement 360 – The Complete Tech Interview Program"
+    },
+    {
+      "id": "dsa-581",
+      "title": "DSA & System Design Course: The Complete SDE Interview Program"
+    }
+  ]
+}

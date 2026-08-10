@@ -1,0 +1,252 @@
+# End-to-End MLOps Pipeline: A Comprehensive Project - GeeksforGeeks
+
+Machine Learning Operations (MLOps) is a set of practices for deploying and maintaining machine learning models in production. It combines DevOps with machine learning to ensure a scalable and reliable lifecycle from development to deployment.Automate the ML lifecycle.Uses CI/CD for continuous delivery.Ensures smooth deployment and tracks performance.Building a MLOps PipelineThis project focuses on building an end to end MLOps pipeline to show how ML systems work in real world scenarios, from data to deployment.1. ObjectivesThis project focuses on building an end to end pipeline for predicting student academic risk, covering key stages from data processing to deployment.MLOps PipelineProblem and Data: Define the problem and use a real-world Kaggle dataset.Model Development: Preprocess data, train models and apply hyperparameter tuning.Model Evaluation: Evaluate model performance using metrics and validation techniques.Model Tracking: Track experiments and results using MLflow (local setup).CI/CD: Automate training and reporting using GitHub Actions and CML.API: Deploy the model using FastAPI for real-time predictions.Deployment: Containerize the application using Docker for scalable deployment.2. Problem StatementThe objective of this project is to predict academic risk in higher education to identify students facing performance challenges. It is based on a real world Kaggle competition making it practical for applying MLOps concepts.Objective: Predict students at risk of poor academic performance.Impact: Enable early intervention and support for students.3. Description of the DatasetThe dataset comes from a higher education institution and includes student details and academic performance across various programs.1. DataEnrollment Info: Demographics, academic background and socio economic factors.Performance: Academic results from first and second semesters.2. TargetThree classes: Dropout, Enrolled, Graduate (based on final course outcome).3. OverviewSize: 76,518 rows and 38 columns.Type: Mostly numerical features with encoded categorical variables.4. Key InsightsImbalance: Target classes are unevenly distributed.Structure: Clean dataset with no major missing values.Usage: Suitable for classification tasks and MLOps pipelines.You can download the dataset by clicking over here.4. Data Preprocessing and model buildingData preprocessing prepares the dataset for modeling by ensuring it is clean, consistent and in a machine readable format. These steps help improve model performance and reliability.Step 1: Import required librariesWe will import libraries like pandas, numpy and scikit learn
+            Python
+
+    import pandas as pd
+import numpy as np
+
+from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import GridSearchCV
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from imblearn.over_sampling import SMOTE
+
+Step 2: Load the DatasetRead the dataset with the correct separator to ensure proper structure.
+            Python
+
+    df = pd.read_csv("your dataset path", sep=';')
+df.head()
+
+Output: Few columns of  datasetStep 3: Basic ExplorationUnderstand the structure and data types.
+            Python
+
+    print(df.shape)
+print(df.info())
+
+Output:shape and info of the datasetStep 4: Handle Missing ValuesCheck and confirm missing values.
+            Python
+
+    df.isnull().sum()
+
+No missing values found, so no further preprocessing required to handle missing values.Step 5: Drop Irrelevant FeaturesRemove columns that do not contribute to prediction.
+            Python
+
+    df = df.drop(columns=['id'], errors='ignore')
+
+Step 6: Separate Features and TargetSplit dataset into input (X) and output (y).
+            Python
+
+    X = df.drop(columns=['Target'])
+y = df['Target']
+
+Step 7: Encode Target VariableConvert target labels into numerical form.
+            Python
+
+    le = LabelEncoder()
+y = le.fit_transform(y)
+
+Step 8: Feature EncodingConvert categorical features into numerical format.One-Hot Encoding (for nominal data like Course)
+            Python
+
+    X = pd.get_dummies(X, columns=['Course'], drop_first=True)
+
+Step 9: Feature ScalingNormalize numerical features for better model performance.
+            Python
+
+    scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+Step 10: Train-Test SplitSplit data for training and evaluation.
+            Python
+
+    X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
+
+Step 11: Handle Imbalance dataClass imbalance can be addressed using techniques like SMOTE 
+            Python
+
+    sm = SMOTE()
+X_train, y_train = sm.fit_resample(X_train, y_train)
+
+Step 12: Train a ModelStart with a simple and reliable model like Random Forest.
+            Python
+
+    model = RandomForestClassifier(random_state=42)
+model.fit(X_train, y_train)
+
+Step 13: Make Predictions
+            Python
+
+    y_pred = model.predict(X_test)
+
+Step 14: Evaluate the ModelUse multiple metrics for better understanding.
+            Python
+
+    print("Accuracy:", accuracy_score(y_test, y_pred))
+print(classification_report(y_test, y_pred))
+
+Output:Model Evaluation5. Hyperparameter TuningAfter training the initial model, the next step is to optimize its performance by tuning hyperparameters. This helps find the best configuration for better accuracy and generalization in predicting student academic risk.Step 1: Set Up MLflow for Experiment TrackingMLflow is used to track experiments, compare models and log parameters, metrics and results.mlflow.set_experiment(...) creates a project/experiment to group your runs
+            Python
+
+    mlflow.set_experiment("Student_Risk_Prediction")
+
+Step 2: Perform Hyperparameter TuningUse GridSearchCV to find the best parameters for the model.
+            Python
+
+    param_grid = {
+    'n_estimators': [100, 200],
+    'max_depth': [10, 20, None],
+    'min_samples_split': [2, 5]
+}
+
+grid = GridSearchCV(RandomForestClassifier(random_state=42),
+                    param_grid,
+                    cv=3,
+                    scoring='accuracy',
+                    n_jobs=-1)
+
+grid.fit(X_train, y_train)
+
+Output:Hyperparameter tuningStep 3: Log Results with MLflowTrack best parameters and performance.
+            Python
+
+    with mlflow.start_run():
+    mlflow.log_params(grid.best_params_)
+    mlflow.log_metric("best_accuracy", grid.best_score_)
+    mlflow.sklearn.log_model(grid.best_estimator_, "model")
+
+6. Model EvaluationAfter hyperparameter tuning, the best model is evaluated to ensure it performs well on unseen data. This step validates model performance and prepares it for real world use.Step 1: Load the Best ModelLoad the model selected during hyperparameter tuning.
+            Python
+
+    best_model = grid.best_estimator_
+
+Step 2: Make PredictionsUse the model to generate predictions on test data.
+            Python
+
+    y_pred = best_model.predict(X_test)
+
+Step 3: Evaluate PerformanceMeasure how well the model performs using key metrics.
+            Python
+
+    print("Accuracy:", accuracy_score(y_test, y_pred))
+print(classification_report(y_test, y_pred))
+
+Output:OutputOverall accuracy ~75.7% means moderate performance Class 2 shows best performance, recall = 0.89, F1-score = 0.84 Class 1 shows poor performance, precision = 0.48, recall = 0.46 Macro F1-score = 0.69 means balanced but slightly uneven across classes Weighted F1-score = 0.75 means better performance on classes with more samplesStep 4: Serialize the trained model
+            Python
+
+    import joblib
+
+joblib.dump(best_model, "model.pkl")
+
+Download full code from here7. Continuous Integration and Deployment (CI/CD) with CMLCI/CD automates model training, evaluation, reporting and deployment whenever changes are pushed to the repository. In this project, GitHub Actions and CML are used to track performance and simulate deployment of the student risk prediction model.Step 1: Workflow OverviewCode Checkout: Fetch latest code from repository.Environment Setup: Install Python and dependencies.Training: Train and evaluate the model.Reporting: Generate metrics and plots using CML.Deployment: Build and run Docker container (CD step).
+            XML
+
+    name: CI/CD using CML
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Setup CML
+        uses: iterative/setup-cml@v2
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Train and Evaluate Model
+        run: |
+          python train.py
+
+      - name: Generate CML Report
+        env:
+          REPO_TOKEN: ${{ secrets.CML_TOKEN }}
+        run: |
+          echo "# Student Risk Prediction Results" >> report.md
+          echo "## Model Performance Metrics" >> report.md
+          echo "![](./plots/results.png)" >> report.md
+          cml comment create report.md
+
+      - name: Build Docker Image
+        run: |
+          docker build -t student-risk-api .
+
+      - name: Run Docker Container
+        run: |
+          docker run -d -p 8000:8000 student-risk-api
+
+8. Model Deployment with FastAPIAfter training and evaluating the model, the final step is deployment to enable real time predictions. FastAPI is used to build a high performance API for the student risk prediction model.Step 1: Initialize FastAPI AppInitialize the application and serve static files for the frontend.
+            Python
+
+    from fastapi import FastAPI
+import pandas as pd
+import uvicorn
+
+app = FastAPI()
+
+Step 2: Load Trained Model
+            Python
+
+    import joblib
+
+model_pipe = joblib.load("model.pkl")
+
+Step 3: Define Prediction EndpointThis endpoint accepts input data and returns predicted student risk.
+            Python
+
+    from fastapi import HTTPException
+
+@app.post("/predict")
+def predict(data: dict):
+    try:
+        df = pd.DataFrame([data])
+        prediction = model_pipe.predict(df)
+        return {"prediction": prediction.tolist()[0]}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+Step 4: Run the API
+            Python
+
+    if __name__ == "__main__":
+    uvicorn.run("app:app", host="0.0.0.0", port=8000)
+
+Step 5: Test the APIOpen: http://127.0.0.1:8000/docsUse Swagger UI to send input and get predictions9. DockerizationDocker is used to containerize the FastAPI application, making the model portable, consistent and easy to deploy across environments.Step 1: Dockerfile ConfigurationThe Dockerfile defines the environment and dependencies required to run the API.
+            XML
+
+    FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY app.py /app/
+COPY model.pkl /app/
+COPY requirements.txt /app/
+COPY static/ /app/static/
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+EXPOSE 8000
+
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+
+Step 2: Build and Run Container
+            XML
+
+    docker build -t academic-success-predictor .
+docker run -p 8000:8000 academic-success-predictor
+
+Step 3: Live Application OutputThe container runs successfully and serves the application on localhost:8000.Users can input student details through the interface, and the model returns predictions in real time (e.g., predicted academic success class shown after submission).Step 4: Logs and API ActivityDocker logs confirm:Server startup using UvicornAPI requests (POST /predictions) returning status 200 OKSuccessful model inference without errorsOutput after running docker  Image

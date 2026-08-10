@@ -1,0 +1,69 @@
+# Java Stack vs Heap Memory Allocation - GeeksforGeeks
+
+In Java, memory allocation is primarily divided into two categories, i.e., Stack and Heap memory. Both are used for different purposes, and they have different characteristics.Stack Memory: Stores primitive local variables, method call information, and references to objects during program execution.Heap Memory: Stores actual objects and dynamic data allocated at runtime. Objects created with new are placed here, and this memory is managed by the Garbage Collector.
+            Java
+
+    class Employee {
+    int id;        // Primitive stored inside the object in Heap
+    String name;   // Reference points to String object in Heap
+    double salary; // Primitive stored inside the object in Heap
+
+    public Employee(int id, String name, double salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+
+    public void display() {
+        System.out.println("Employee ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Salary: " + salary);
+    }
+}
+
+public class Main {
+    // Reference variable 'emp' stored in Stack
+    public static void display(Employee emp) {
+        emp.display(); // Accesses Employee object in Heap
+    }
+
+    public static void main(String[] args) {
+        // 'emp1' and 'emp2' references in Stack, objects in Heap
+        Employee emp1 = new Employee(101, "Maddy", 50000.0);
+        Employee emp2 = new Employee(102, "Maddy", 60000.0);
+
+        display(emp1);
+        display(emp2);
+    }
+}
+
+OutputEmployee ID: 101
+Name: Maddy
+Salary: 50000.0
+Employee ID: 102
+Name: Maddy
+Salary: 60000.0
+Memory representation for the above example:Memory representationemp1 and emp2: references stored on stack.new Employee(...): objects stored in heap."Maddy"; stored once in String Pool (heap).Both emp1.name and emp2.name: point to the same string object.display(emp1): creates a stack frame, parameter e points to emp1.(emp1.name == emp2.name): true since both refer to the same pooled string.Stack Memory AllocationStack memory is used for method calls, local variables, and references. Memory is automatically allocated when a method starts and cleared when it ends. Data exists only during the method’s execution. If the stack runs out of space, a StackOverflowError occurs.
+            Java
+
+    class Geeks {
+    public static int add(int a, int b) { 
+        int res = a + b;  // local variable in stack
+        return res;
+    }
+
+    public static void main(String[] args) {
+        int a = 10;   // stored in stack
+        int b = 20;   // stored in stack
+        int sum = add(a, b);
+        System.out.println("The sum is: " + sum);
+    }
+}
+
+OutputThe sum is: 30
+Heap Memory AllocationHeap memory is used for objects and instance variables created using the new keyword. The size depends on the class structure. The Garbage Collector manages this area by removing unused objects.Heap Memory Regions:Young Generation: Stores newly created objects.Survivor Space: Holds objects that survive garbage collection from Eden space.Old Generation: Stores long-lived objects.Non-Heap Memory Areas:Metaspace (earlier Permanent Generation): Stores class metadata and uses native memory (introduced in Java 8).Code Cache: Stores JIT-compiled and optimized native code.Example: Object in heap
+            Java
+
+    Scanner sc = new Scanner(System.in);
+
+Here, the Scanner object is in the heap, while the reference sc is in the stack.Note: Garbage collection in the heap ensures automatic memory management.Difference Between Stack and Heap Memory in Java StackHeapMemory is allocated in a contiguous block.Memory is allocated in any random order.  Allocation and deallocation are automatic (handled by compiler).Allocation and deallocation are automatic (handled by the Garbage Collector).It is less costlyIt is more costlyIts implementation is easyIts implementation is hardAccess time is fasterAccess time is slower Limited memory size may lead to shortage issues. Can suffer from memory fragmentation due to dynamic allocation.Stack provides excellent memory localityHeap is adequate but not as efficientThread safe, data stored can only be accessed by the ownerNot thread safe, data stored is visible to all threadsStack is fixed in sizeHeap allows resizing as neededStack uses a linear data structure Heap uses a hierarchical data structureStatic memory allocation is preferred in an array.Heap memory allocation is preferred in the linked list.Smaller than heap memory.Larger than stack memory.

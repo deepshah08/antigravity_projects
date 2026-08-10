@@ -1,0 +1,69 @@
+# Quiz about Operators in C
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsOperators in CLast Updated : DiscussCommentsQuestion 1Which of the following is an arithmetic operator in C?&&||+==Question 2 What is the result of the expression 5 % 2 in C?21.510Question 3Which of the following is a relational operator in C?=!=&+=Question 4What is the precedence of the multiplication * operator compared to addition + in C?Lower HigherSame UndefinedQuestion 5Which operator is used to access the value at an address in C?&*->.Question 6 What will be the result of the expression 100 + 20 * 30 in C?900600800700Question 7Which of the following is a bitwise operator in C?&&||>>==Question 8Consider: int a = 10, b = 5; a += b; What is the value of a?5101520Question 9What does the expression (a > b) ? a : b do in C?Compares a and b, returns the smallerCompares a and b, returns the greaterReturns the average of a and bAlways returns aQuestion 10 What is the output of printf("%d", 5 && 0);?015ErrorTags:C QuizThere are 20 questions to complete.Take a part in the ongoing discussionView All Discussion

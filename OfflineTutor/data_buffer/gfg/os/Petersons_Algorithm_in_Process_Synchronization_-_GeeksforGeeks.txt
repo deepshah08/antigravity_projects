@@ -1,0 +1,248 @@
+# Peterson's Algorithm in Process Synchronization - GeeksforGeeks
+
+Peterson’s Algorithm is a classic software-based solution for the critical section problem in operating systems. It ensures mutual exclusion between two processes, meaning only one process can access a shared resource at a time, thus preventing race conditions.The algorithm uses two shared variables:flag[i]: shows whether process i wants to enter the critical section.turn: indicates whose turn it is to enter if both processes want to access the critical section at the same time.The AlgorithmFor process Pi:do {    flag[i] = true;         // Pi wants to enter   turn = j;               // Give turn to Pj    while (flag[j] && turn == j);  // Wait if Pj also wants to enter    // Critical Section    flag[i] = false;        // Pi leaves critical section    // Remainder Section} while (true);For process Pj:do {    flag[j] = true;             turn = i;                   while (flag[i] && turn == i);    // Critical Section    flag[j] = false;            // Remainder Section} while (true);Step-by-Step ExplanationIntent to Enter: A process sets its flag to true when it wants to enter the critical section.Turn Assignment: It sets the turn variable to the other process, giving the other process the chance to enter first if it also wants to.Waiting Condition: A process waits if the other process also wants to enter and it is the other’s turn.Critical Section: Once the condition is false, the process enters the critical section safely.Exit: On leaving, the process resets its flag to false, allowing the other process to proceed.This guarantees:Mutual Exclusion: Only one process enters CS.Progress: A process will eventually enter CS if no other is inside.Bounded Waiting; No process waits indefinitely.Example Use CasesPeterson’s Algorithm can be used (theoretically) in:Accessing a shared printer: Peterson's solution ensures that only one process can access the printer at a time when two processes are trying to print documents.Reading and writing to a shared file: It can be used when two processes need to read from and write to the same file, preventing concurrent access issues.Competing for a shared resource: When two processes are competing for a limited resource, such as a network connection or critical hardware, Peterson’s solution ensures mutual exclusion to avoid conflicts.Note: In practice, modern systems use hardware instructions or higher-level concurrency primitives.Peterson's algorithm Code
+            C++
+
+    #include <iostream>
+#include <thread>
+#include <vector>
+#include <atomic>
+
+const int N = 2;
+const int LOOP = 5;
+
+std::vector<std::atomic<bool>> flag(N);
+std::atomic<int> turn;
+
+void process(int id) {
+    int other = 1 - id;
+
+    for(int i = 0; i < LOOP; i++) {
+
+        // Entry Section
+        flag[id].store(true);
+        turn.store(other);
+
+        while (flag[other].load() && turn.load() == other) {
+            // busy wait
+        }
+
+        // Critical Section
+        std::cout << "Process " << id << " is in critical section\n";
+
+        // Exit Section
+        flag[id].store(false);
+
+        // Remainder Section
+        std::cout << "Process " << id << " is in remainder section\n";
+    }
+}
+
+int main() {
+
+    flag[0] = false;
+    flag[1] = false;
+    turn = 0;
+
+    std::thread t1(process, 0);
+    std::thread t2(process, 1);
+
+    t1.join();
+    t2.join();
+
+    return 0;
+}
+
+
+            C
+
+    #include <stdio.h>
+#include <pthread.h>
+#include <stdatomic.h>
+#include <stdbool.h>
+
+#define N 2
+#define LOOP 5
+
+atomic_bool flag[N];
+atomic_int turn;
+
+void* process(void* arg) {
+    int id = *((int*)arg);
+    int other = 1 - id;
+
+    for(int i = 0; i < LOOP; i++) {
+
+        // Entry Section
+        atomic_store(&flag[id], true);
+        atomic_store(&turn, other);
+
+        while (atomic_load(&flag[other]) && atomic_load(&turn) == other);
+
+        // Critical Section
+        printf("Process %d in critical section\n", id);
+
+        // Exit Section
+        atomic_store(&flag[id], false);
+
+        // Remainder Section
+        printf("Process %d in remainder section\n", id);
+    }
+
+    return NULL;
+}
+
+int main() {
+    pthread_t t1, t2;
+    int id1 = 0, id2 = 1;
+
+    atomic_init(&flag[0], false);
+    atomic_init(&flag[1], false);
+    atomic_init(&turn, 0);
+
+    pthread_create(&t1, NULL, process, &id1);
+    pthread_create(&t2, NULL, process, &id2);
+
+    pthread_join(t1, NULL);
+    pthread_join(t2, NULL);
+
+    return 0;
+}
+
+
+            Java
+
+    import java.util.concurrent.atomic.AtomicBoolean;
+
+public class Main {
+    private static final int N = 2;
+    private static final AtomicBoolean[] flag = new AtomicBoolean[N];
+    private static int turn = 0;
+
+    static {
+        for (int i = 0; i < N; i++) {
+            flag[i] = new AtomicBoolean(false);
+        }
+    }
+
+    public static void process(int id) {
+        int other = 1 - id;
+        while (true) {
+            // Entry Section
+            flag[id].set(true);        // Express intent to enter
+            turn = other;           // Give priority to the other process
+            while (flag[other].get() && turn == other) {
+                // Busy wait until it’s safe to enter
+            }
+
+            // Critical Section
+            System.out.println("Process " + id + " is in critical section");
+
+            // Exit Section
+            flag[id].set(false);
+
+            // Remainder Section
+            System.out.println("Process " + id + " is in remainder section");
+        }
+    }
+
+    public static void main(String[] args) {
+        Thread t1 = new Thread(() -> process(0));
+        Thread t2 = new Thread(() -> process(1));
+
+        t1.start();
+        t2.start();
+
+        try {
+            t1.join();
+            t2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+            Python
+
+    import threading
+import time
+
+N = 2
+flag = [False] * N
+turn = 0
+
+def process(id):
+    other = 1 - id
+    while True:
+        # Entry Section
+        flag[id] = True         # Express intent to enter
+        global turn
+        turn = other            # Give priority to the other process
+        while flag[other] and turn == other:
+            # Busy wait until it’s safe to enter
+            pass
+
+        # Critical Section
+        print(f'Process {id} is in critical section')
+
+        # Exit Section
+        flag[id] = False
+
+        # Remainder Section
+        print(f'Process {id} is in remainder section')
+
+if __name__ == '__main__':
+    t1 = threading.Thread(target=process, args=(0,))
+    t2 = threading.Thread(target=process, args=(1,))
+
+    t1.start()
+    t2.start()
+
+    t1.join()
+    t2.join()
+
+
+            JavaScript
+
+    const N = 2;
+let flag = Array(N).fill(false);
+let turn = 0;
+
+function process(id) {
+    let other = 1 - id;
+    while (true) {
+        // Entry Section
+        flag[id] = true;        // Express intent to enter
+        turn = other;           // Give priority to the other process
+        while (flag[other] && turn === other) {
+            // Busy wait until it’s safe to enter
+        }
+
+        // Critical Section
+        console.log(`Process ${id} is in critical section`);
+
+        // Exit Section
+        flag[id] = false;
+
+        // Remainder Section
+        console.log(`Process ${id} is in remainder section`);
+    }
+}
+
+function main() {
+    let t1 = new Worker(() => process(0));
+    let t2 = new Worker(() => process(1));
+
+    // JavaScript does not have built-in support for joining threads like in C++ or Java.
+    // This is a conceptual representation.
+}
+
+// Helper function to simulate threading in JavaScript
+function Worker(fn) {
+    fn();
+}
+
+main();
+
+Explanation of the above code:This program demonstrates Peterson’s Algorithm with two threads (P0 and P1).flag[id] = true: Process shows intent to enter the critical section.turn = other: Gives priority to the other process in case both want to enter.while(flag[other] && turn == other): If the other process also wants to enter and it’s their turn, wait.Critical Section: Only one process enters at a time.flag[id] = false: On exit, process resets its intent, allowing the other to enter.Related PostsRead more about Peterson's Solution for mutual exclusion | Set 1Read more about Peterson's Solution for mutual exclusion | Set 2

@@ -1,0 +1,155 @@
+# Map in C++ STL - GeeksforGeeks
+
+Maps are associative containers that store key–value pairs in sorted order using a self-balancing Red-Black Tree. They provide efficient O(log n) time complexity for insertion, deletion, and searching operations.Maps do not allow duplicate keys. They support ordered traversal and functions like upper_bound() and lower_bound().
+            C++
+
+    #include <iostream>
+#include <map>
+using namespace std;
+
+int main() {
+    
+    // Creating an empty map
+    map<int, string> m1;
+
+    // Initialize map with list
+    map<int, string> m2 = {{1, "Geeks"},
+              {2, "For"}, {3, "Geeks"}};
+
+    for (auto& p : m2)
+        cout << p.first << " " <<
+        p.second << endl;
+    return 0;
+}
+
+Output1 Geeks
+2 For
+3 Geeks
+Explanation: Above program demonstrates how to create and initialize a map in C++ using key–value pairs. It then iterates through the map using a range-based loop and prints each key along with its corresponding value.SyntaxThe map container is defined as std::map class templateinside the <map> header file.map<key_type, value_type> m;where,key_type: Data type of key.value_type: Data type of value.m: Name assigned to map.Basic OperationsBasic operations on map containers are shown below:1. Inserting ElementsThe insert() operation adds a new key-value pair to the map only if the key is not already present.If the key exists, insert() does not update the value and leaves the map unchanged.Time complexity to insert is O(log n).
+            C++
+
+    #include <iostream>
+#include <map>
+using namespace std;
+
+int main() {
+    map<int, string> m = {{2, "For"}, {3, "Geeks"}};
+
+    // Inserting a key value pair
+    m.insert({1, "Geeks"});
+
+    for (auto x: m)
+        cout << x.first << " " << x.second
+        << endl;
+    return 0;
+}
+
+Output1 Geeks
+2 For
+3 Geeks
+2. Accessing ElementsWe can access elements with [] operator which returns the value for a given key and inserts the key with a default value if it doesn't exist.To check if a key exists without adding it by we can use find().Time complexity to access elements by key is O(log n).
+            C++
+
+    #include <iostream>
+#include <map>
+using namespace std;
+
+int main() {
+    map<int, string> m = {{1, "Geeks"},
+             {2, "For"}, {3, "Geeks"}};
+
+    // Accessing elements
+    cout << m[1] << endl;
+    cout << m.at(2);
+
+    return 0;
+}
+
+OutputGeeks
+For3. Updating ElementsTo update a value, we can simply assign a new value to an existing key using map[key]= newValue; If the key already exists , the value gets updated.Time complexity to update element by key O(log n).
+            C++
+
+    #include <iostream>
+#include <map>
+using namespace std;
+
+int main() {
+    map<int, string> m = {{1, "Geeks"},
+             {2, "For"}, {3, "Geeks"}};
+
+    // Updating value
+    m[0] = "Tweaks";
+    m.at(1) = "By";
+    
+    cout << m[0] << endl;
+    cout << m.at(1);
+    return 0;
+}
+
+OutputTweaks
+By4. Finding Elementsfind() function is used to check if key exists in a map which looks for key and returns its position if found.If key is not present in the map, find() returns a special value called end(), meaning not found.Time complexity to find element by key is O(log n).
+            C++
+
+    #include <iostream>
+#include <map>
+using namespace std;
+
+int main() {
+    map<int, string> m = {{1, "Geeks"},
+             {2, "For"}, {3, "Geeks"}};
+
+    // Finding element with key 2
+    auto it = m.find(2);
+    
+    if (it != m.end())
+        cout << it->first << " " << it->second;
+    else cout << "Key not Found!";
+    return 0;
+}
+
+Output2 For5. TraversingLoops can be used to traverse all key-value pairs in a map, which visits each pair in order sorted by the keys.Time complexity to traverse in a map is O(n).
+            C++
+
+    #include <iostream>
+#include <map>
+using namespace std;
+
+int main() {
+    map<int, string> m = {{1, "Geeks"},
+             {2, "For"}, {3, "Geeks"}};
+    
+    // Traversing using iterators
+    for (auto it = m.begin(); it != m.end(); ++it) 
+        cout << it->first << " " << it->second
+        << endl;
+
+    return 0;
+}
+
+Output1 Geeks
+2 For
+3 Geeks
+6. Deleting ElementsTo delete a key and its value from map use erase(key), which deletes the pair if the key exists, else does nothing.Time complexity to delete an element by key O(log n).
+            C++
+
+    #include <iostream>
+#include <map>
+using namespace std;
+
+int main() {
+    map<int, string> m = {{1, "Geeks"},
+             {2, "For"}, {3, "Geeks"}};
+
+    // Deleting by key
+    m.erase(2);
+    
+    // Deleting by iterator
+    m.erase(m.begin());
+    
+    for(auto i : m)
+        cout << i.first << " " << i.second
+        << endl;
+    return 0;
+}
+
+Try It YourselfOutput3 Geeks

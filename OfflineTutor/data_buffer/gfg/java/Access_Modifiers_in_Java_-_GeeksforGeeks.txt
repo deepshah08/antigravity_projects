@@ -1,0 +1,139 @@
+# Access Modifiers in Java - GeeksforGeeks
+
+Access modifiers in Java are used to control the visibility and accessibility of classes, methods, and variables. They help enforce encapsulation by restricting access to different parts of a program. Java provides four types of access modifiers to define scope and protection levels.Public modifier: Accessible from anywhere in the programProtected modifier: Accessible within the same package and by subclassesPrivate modifier: Accessible only within the same classDefault modifier: Accessible only within the same packageReal-World Example :In a banking app, private is used for balance (hidden), default for internal helpers, protected for methods used in subclasses, and public for actions like deposit or view details.Types of Access Modifiers There are 4 types of access modifiers available in Java: Access Modifiers in JavaPrivate Access ModifierThe private access modifier is specified using the keyword private. The methods or data members declared as private are accessible only within the class in which they are declared.
+            Java
+
+    class Person {
+
+    // private variable
+    private String name;
+
+    public void setName(String name)  {
+
+        this.name = name; // accessible within class
+    }
+
+    public String getName() { return name; }
+}
+
+public class Geeks {
+    public static void main(String[] args)
+    {
+
+        Person p = new Person();
+        p.setName("Alice");
+
+        // System.out.println(p.name); // Error: 'name'
+        // has private access
+        System.out.println(p.getName());
+    }
+}
+
+OutputAlice
+Explanation: Direct access to name is not allowed outside Person, enforcing encapsulation.Default Access ModifierIf no access modifier is specified, the member has default (package-private) access and can only be accessed within the same package.This means only classes within the same package can access it.
+            Java
+
+    class Car {
+    String model; // default access
+}
+
+public class Main {
+    
+    public static void main(String[] args){
+        
+        Car c = new Car();
+        c.model = "Tesla"; // accessible within the same package
+        System.out.println(c.model);
+    }
+}
+
+OutputTesla
+Explanation: Members with default access cannot be accessed from classes in a different package.Geeks.java: Default class within the same package
+            Java
+
+    // default access modifier 
+package p1; 
+
+// Class Geek is having 
+// Default access modifier 
+class Geek 
+{ 
+    void display() 
+    { 
+        System.out.println("Hello World!"); 
+    } 
+}
+
+GeeksNew.java:  Default class from a different package (for contrast)
+            C++
+
+    // package with default modifier 
+package p2; 
+import p1.*;    // importing package p1
+
+// This class is having 
+// default access modifier 
+class GeekNew { 
+    public static void main(String args[]) { 
+      
+        // Accessing class Geek from package p1 
+        Geek o = new Geek(); 
+
+        o.display(); 
+    } 
+}
+
+Explanation: In this example, the program will show the compile-time error when we try to access a default modifier class from a different package.Protected Access ModifierThe protected access modifier is specified using the keyword protected. The methods or data members declared as protected are accessible within the same package or subclasses in different packages.
+            Java
+
+    // File: Vehicle.java in package p1
+package p1;
+public class Vehicle {
+    protected int speed;
+}
+
+// File: Bike.java in package p2
+package p2;
+import p1.Vehicle;
+public class Bike extends Vehicle {
+    void showSpeed() {
+        speed = 100; // allowed: subclass in different package
+        System.out.println(speed);
+    }
+}
+
+// File: Test.java in package p2
+package p2;
+import p1.Vehicle;
+public class Test {
+    public static void main(String[] args) {
+        Bike b = new Bike();
+        b.showSpeed(); // prints 100
+
+        Vehicle v = new Vehicle();
+        // System.out.println(v.speed); // ERROR: cannot access protected outside package & non-subclass
+    }
+}
+
+OutputAccess via subclass method: 100
+0
+Explanation: speed is accessible via subclass methods and other classes in the same package, but direct access from a different package (non-subclass) would fail.Public Access ModifierThe public access modifier is specified using the keyword public. Public members are accessible from everywhere in the program. There is no restriction on the scope of public data members.
+            Java
+
+    class MathUtils { 
+    
+    public static int add(int a, int b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    
+    public static void main(String[] args) {
+        
+        System.out.println(MathUtils.add(5, 10)); // accessible anywhere
+    }
+}
+
+Output15
+Explanation: add() is globally accessible due to the public modifier.Top-level classes or interfaces can not be declared as private because, private means "only visible within the enclosing class". Comparison Table of Access Modifiers in JavaAccess-ModifierWhen to Use Access Modifier in Real-World ProjectsPrivate: The idea should be use as restrictive access as possible, so private should be used as much as possible. Default (Package-Private): Often used in package-scoped utilities or helper classes.Protected: Commonly used in inheritance-based designs like framework extensions.Public: This is used for API endpoints, service classes, or utility methods shared across different parts of an application.

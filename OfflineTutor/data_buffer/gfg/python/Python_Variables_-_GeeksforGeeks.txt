@@ -1,0 +1,89 @@
+# Python Variables - GeeksforGeeks
+
+Variables are used to store data that can be referenced and manipulated during program execution. A variable is essentially a name that is assigned to a value.Unlike Java and many other languages, Python variables do not require explicit declaration of type. Type of the variable is inferred based on the value assigned.
+            Python
+
+    x = 5
+name = "Alex"  
+print(x)
+print(name)
+
+Output5
+Alex
+Rules for Naming VariablesTo use variables correctly, the following naming rules should be followed:Names can contain letters, digits and underscores (_).The first character cannot be a digit.Names are case-sensitive, so myVar and myvar are treated differently.Keywords such as if, else and for cannot be used as variable names.Below listed variable names are valid:
+            Python
+
+    age = 21
+_colour = "lilac"
+total_score = 90
+
+Below listed variables names are invalid:
+            Python
+
+    1name = "Error"  # Starts with a digit
+class = 10       # class is a reserved keyword
+user-name = "Doe"  # Contains a hyphen
+
+Assigning Values to Variables1. Basic Assignment: Variables are assigned values using the = operator.
+            Python
+
+    x = 5
+y = 3.14
+z = "Hi"
+
+2. Dynamic Typing: Python is dynamically typed, so the same variable can store different data types during execution.
+            Python
+
+    x = 10
+x = "Now a string"
+
+3. Assigning Same Value: same value can be assigned to multiple variables in a single line.
+            Python
+
+    a = b = c = 100
+print(a, b, c) 
+
+Output100 100 100
+4. Assigning Different Values: Multiple variables can also be assigned different values in a single line.
+            Python
+
+    x, y, z = 1, 2.5, "Python"
+print(x, y, z) 
+
+Output1 2.5 Python
+Concept of Object Reference Let us assign a variable x to value 5.x = 5When x = 5 is executed, Python creates an object to represent the value 5 and makes x reference this object.object referenceNow, let's assign another variable y to the variable x.y = xThis statement creates y and references the same object as x, not x itself. This is called a Shared Reference, where multiple variables reference the same object.shared referenceNow, if we writex = 'Geeks'Python creates a new object for the value "Geeks" and makes x reference this new object.value of variable x is changed to 'Geeks'The variable y remains unchanged, still referencing the original object 5. Now, If we assign a new value to y:y = "Computer"new value is assigned to variable y and previous object becomes eligible for garbage collectionPython variables store references to objects, not the actual values themselves. When a variable is reassigned, it starts referencing a new object while the old unreferenced object becomes eligible for garbage collection.Understanding Variable ReassignmentIn this example, we check whether modifying one variable affects another when both initially reference the same object.
+            Python
+
+    x = 1
+y = x
+y = y + 1
+
+print(x)
+print(y)
+
+Output1
+2
+Explanation:Initially, both x and y reference the object 1.After y = y + 1, y references a new object 2 while x still references 1, so changing y does not affect x.Deleting a Variable del keyword is used to delete a variable from memory. After deletion, the variable can no longer be accessed.
+            Python
+
+    x = 10
+del x
+print(x) 
+
+OutputERROR!Traceback (most recent call last):  File "<main.py>", line 3, in <module>NameError: name 'x' is not definedExplanation: del x deletes the variable x. Accessing x after deletion raises a NameError because the variable no longer exists.Practical Examples1. Swapping Two Variables: Using multiple assignments, we can swap the values of two variables without needing a temporary variable.
+            Python
+
+    a, b = 5, 10
+a, b = b, a
+print(a, b)  
+
+Output10 5
+2. Counting Characters in a String: Assign the results of multiple operations on a string to variables in one line.
+            Python
+
+    word = "Python"
+length = len(word)
+print("Length of the word:", length) 
+
+OutputLength of the word: 6
+Related Articles:OperatorType Castingtype() functionLocal and Global Scope Insert a Variable into a String

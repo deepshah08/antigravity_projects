@@ -1,0 +1,120 @@
+# Transactions in JDBC - GeeksforGeeks
+
+Transactions in JDBC are used to manage a group of SQL operations as a single unit to ensure data consistency and reliability. They help maintain data integrity by applying all changes together or rolling them back in case of failure.Groups multiple SQL operations into a single unit of execution Ensures reliable and controlled database operations Helps manage changes using commit and rollback mechanismsUnderstanding ACID PropertiesACID properties define the fundamental principles that ensure reliable and consistent transaction processing in databases.ACID PropertiesAtomicity: Ensures that all operations within a transaction are treated as a single unit—either all succeed or none do. If any part fails, the entire transaction is rolled back.Consistency: Guarantees that the database remains in a consistent state before and after the transaction.Isolation: Ensures that transactions are executed independently, without interference from other concurrent transactions.Durability: Once a transaction is committed, changes are permanent even in case of a system crash.Auto-Commit in JDBCBy default JDBC Connection is in auto-commit mode, then every SQL statement is committed to the database upon its completion. It is fine for simple applications, but there are three reasons why you may want to turn off the auto-commit and manage your own transactions To increase performance.To maintain the integrity.To use distributed transactions.Manual Transaction ManagementWe can manage transactions manually by turning off auto-commit and using commit() and rollback() methods.
+            Java
+
+    Connection conn = DriverManager.getConnection(url, user, password);
+conn.setAutoCommit(false); // Disable auto-commit
+// Execute multiple SQL statements using PreparedStatement
+conn.commit();   // Commit all changes if successful
+conn.rollback(); // Rollback if any error occurs
+
+Commit and RollbackIn Java, the commit() and rollback() methods play an essential role in database transactions, ensuring atomicity, consistency, isolation, and durability (ACID properties). Commit:  commit() saves all changes made during the transaction to the database.conn.commit( );Rollback: rollback() discards all changes made since the last commit, ensuring atomicity.conn.rollback( );JDBC Transaction Example Step-by-Step ImplementationThis example demonstrates how to execute multiple updates in a single transaction, ensuring either all updates succeed or none do.Step 1: Create a data base table
+            Java
+
+    CREATE DATABASE jdbc_Transaction;
+
+USE jdbc_Transaction;
+
+CREATE TABLE employee(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100),
+    Address VARCHAR(100)
+);
+
+INSERT INTO employee (name, email, address) VALUES
+('Aman', 'Aman@example.com', 'Haryana'),
+('Rohit', 'Rohit@example.com', 'Delhi'),
+('Ajay', 'Ajay@example.com', 'Gurgaon');
+
+Output table:employeeStep 2: Add MySQL JDBC Driver to Your ProjectTo interact with a database, you need to add the MySQL JDBC driver to your project. If you are using Maven, add the following dependency to your pom.xml file.
+            Java
+
+    <dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.30</version>
+</dependency>
+
+Step 3. Create EmployeeTransactionDemo classEmployeeTransactionDemo describe how to perform a JDBC transaction using Java. It shows how two related updates to the employee table can be executed as a single unit of work, either both succeed, or neither does.EmployeeTransactionDemo.java:
+            Java
+
+    import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class EmployeeTransactionDemo {
+
+    private static final String url
+        = "jdbc:mysql://localhost:3306/jdbc_Transaction";
+    private static final String user = "root";
+    private static final String pass
+        = "password"; // Change this if needed
+
+    public static void main(String[] args)
+    {
+        Connection conn = null;
+
+        try {
+            // Connect to the database
+            conn = DriverManager.getConnection(
+                url, user, pass);
+            conn.setAutoCommit(false); // Start transaction
+
+            // Update Aman’s address
+            String updateAddress
+                = "UPDATE employee SET Address = ? WHERE name = ?";
+            PreparedStatement stmt1
+                = conn.prepareStatement(updateAddress);
+            stmt1.setString(1, "Chandigarh");
+            stmt1.setString(2, "Aman");
+            stmt1.executeUpdate();
+
+            // Update Rohit’s email
+            String updateEmail
+                = "UPDATE employee SET email = ? WHERE name = ?";
+            PreparedStatement stmt2
+                = conn.prepareStatement(updateEmail);
+            stmt2.setString(1, "rohit_updated@example.com");
+            stmt2.setString(2, "Rohit");
+            stmt2.executeUpdate();
+
+            // Commit transaction
+            conn.commit();
+            System.out.println(
+                "Transaction committed successfully.");
+
+            // Close statements
+            stmt1.close();
+            stmt2.close();
+        }
+        catch (SQLException e) {
+            System.out.println(
+                "Error occurred. Rolling back changes");
+            try {
+                if (conn != null)
+                    conn.rollback();
+            }
+            catch (SQLException rollbackEx) {
+                rollbackEx.printStackTrace();
+            }
+            e.printStackTrace();
+        }
+        finally {
+            // Close connection
+            try {
+                if (conn != null)
+                    conn.close();
+                System.out.println(
+                    "Database connection closed.");
+            }
+            catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+}
+
+Explanation:conn.setAutoCommit(false): groups multiple queries into one transaction.PreparedStatement safely runs SQL with parameters and avoids SQL injection.stmt1.setString(...) and stmt2.setString(...) fill placeholders to update Aman’s address and Rohit’s email.conn.commit(): saves both updates together only if both succeed.If any error occurs, conn.rollback() undoes all changes.finally ensures the connection is always closed.Step 4: Run Program:After running the program, the console will display a message confirming whether the transaction was committed or rolled backoutputDatabase Table After Transaction:The changes to the employee table (updates to Aman’s address and Rohit’s email) will be reflected in the database only if the transaction was successfully committed.output

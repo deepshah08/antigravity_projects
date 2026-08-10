@@ -1,0 +1,40 @@
+# Complete Guide to Install  C++17 on Windows - GeeksforGeeks
+
+C++17 provides many modern language and Standard Library features that improve productivity and code quality. This article covers the installation of a C++17 compiler on Windows and the configuration of popular C++ IDEs and code editors.Installing a C++17 Compiler (GCC 9.2)GCC 9.2 provides full support for most C++17 features and can be used to compile C++17 programs on Windows.Step 1: Download GCC 9.2Download the GCC 9.2 compiler package and extract the downloaded archive.Step 2: Move MinGW FolderAfter extraction, copy the MinGW folder to the C:\ drive.Setting Up the Environment PathTo use GCC from the Command Prompt, add the MinGW bin directory to the system PATH.Step 1: Copy the MinGW Bin PathOpen the MinGW folder and copy the path of the bin directory.Example:C:\MinGW\binStep 2: Add the Path VariableNavigate to:Control Panel -> System -> Advanced System Settings-> Environment Variables -> Path -> Edit -> NewPaste the copied path and save the changes.Step 3: Verify InstallationOpen Command Prompt and run:gcc --versionIf the installation is successful, the installed GCC version will be displayed.Configuring Sublime Text for C++17By default, Sublime Text may not compile programs using the C++17 standard. You can create a custom build system to enable C++17 support.Step 1: Create a New Build SystemOpen:Tools -> Build System -> New Build SystemPaste the following configuration:
+            C++
+
+    {
+    "cmd": [
+        "g++.exe",
+        "-std=c++17",
+        "${file_name}",
+        "-o",
+        "${file_base_name}.exe",
+        "&&",
+        "start",
+        "cmd",
+        "/k",
+        "${file_base_name}.exe"
+    ],
+    "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+    "shell": true,
+    "working_dir": "$file_path",
+    "selector": "source.cpp"
+}
+
+Step 2: Save the Build FileSave the file with the .sublime-build extension.Step 3: Select the Build SystemGo to:Tools -> Build SystemSelect the build system you just created.Step 4: Run the ProgramPress:Ctrl + Bto build and run the C++17 program.Configuring Code::Blocks for C++17Step 1: Select GCC CompilerOpen:Settings -> CompilerChoose GNU GCC Compiler.Step 2: Enable C++17Under Compiler Settings, select the C++17 standard option.Step 3: Configure Toolchain ExecutablesSwitch to the Toolchain Executables tab and set the compiler installation directory to the MinGW folder stored in C:\.Update the executable paths using the files available in:C:\MinGW\binConfiguring Dev-C++Step 1: Add a Compiler SetOpen:Tools -> Compiler OptionsClick the + button to add a new compiler set.Step 2: Select the MinGW DirectoryBrowse to the MinGW folder stored in C:\ and click OK.Step 3: Switch Between CompilersYou can switch between installed compiler versions at any time using the compiler selection drop-down menu available in Dev-C++.Verifying C++17 SupportCreate and compile the following program:
+            C++
+
+    #include <iostream> 
+using namespace std; 
+
+int main() { 
+    if constexpr (true) { 
+        cout << "C++17 is enabled"; 
+        
+    } 
+    return 0; 
+    
+}
+
+OutputC++17 is enabledIf the program compiles successfully, your system is properly configured for C++17 development.

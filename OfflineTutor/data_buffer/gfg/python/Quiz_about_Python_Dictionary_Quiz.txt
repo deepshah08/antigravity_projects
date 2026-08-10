@@ -1,0 +1,168 @@
+# Quiz about Python Dictionary Quiz
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython Dictionary QuizLast Updated : DiscussCommentsQuestion 1What will be the output of the following code?
+        Python
+        
+        d = {'a': 5, 'b': 10}
+d['a'] = 15
+print(d)
+
+        
+    {'a': 5, 'b': 10}{'a': 15, 'b': 10}Error{'a': 15}Question 2Find the output of the following program:
+        Python
+        
+        d = dict() 
+for x in enumerate(range(2)): 
+	d[x[0]] = x[1] 
+	d[x[1]+7] = x[0] 
+print(d) 
+
+        
+    {0: 1, 7: 0, 1: 1, 8: 0}{1: 1, 7: 2, 0: 1, 8: 1}{0: 0, 7: 0, 1: 1, 8: 1}KeyErrorQuestion 3Find the output of the following program:
+        Python
+        
+        d1 = {'GFG' : 1, 'Google' : 2, 'GFG1' : 3} 
+print(d1['GFG'])
+
+        
+    Compilation error due to duplicate keysRuntime time error due to duplicate keys31Question 4Find the output of the following program:
+        Python
+        
+        d = {} 
+
+def addTodict(country): 
+	if country in d: 
+		d[country] += 1
+	else: 
+		d[country] = 1
+
+addTodict('China') 
+addTodict('Japan') 
+addTodict('china') 
+
+print (len(d))
+
+        
+    0123Question 5Find the output of the following program:
+        Python
+        
+        d = {1:'1', 2:'2', 3:'3'} 
+del d[1] 
+d[1] = '10'
+del d[2] 
+print (len(d) )
+
+        
+    1234Question 6Find the output of the following program:
+        Python
+        
+        a ={} 
+a['a']= 1
+a['b']=[2, 3, 4] 
+print(a) 
+
+        
+    {‘b’: [2], ‘a’: 1}{'a': 1, 'b': [2, 3, 4]}{‘b’: [2], ‘a’: [3]}ErrorQuestion 7Find the output of the following program:
+        Python
+        
+        d = {1:'A', 2:'B', 3:'C'} 
+del d[1] 
+d[1] = 'D'
+del d[2] 
+print(len(d)) 
+
+        
+    Error012Question 8Find the output of the following program:
+        Python
+        
+        a = {} 
+a[1] = 1
+a['1'] = 2
+a[1]= a[1]+1
+count = 0
+for i in a: 
+	count += a[i] 
+print(count) 
+
+        
+    241ErrorQuestion 9Find the output of the following program:
+        Python
+        
+        d ={1:"geek", 2:"for", 3:"geeks"} 
+del d 
+
+        
+    del deletes the entire dictionarydel doesn’t exist for the dictionarydel deletes the keys in the dictionarydel deletes the values in the dictionaryQuestion 10Find the output of the following program:
+        Python
+        
+        d = {"geek":10, "for":45, "geeks": 90} 
+print("geek" in d) 
+
+        
+    10FalseTrueErrorTags:Python-QuizzesThere are 24 questions to complete.Take a part in the ongoing discussionView All Discussion

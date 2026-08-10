@@ -1,0 +1,79 @@
+# Regex Character Classes in Java - GeeksforGeeks
+
+Regular Expressions in Java provide a way to match, search, and manipulate text. One of the most important building blocks of regex is the Character Class, which allows you to match one character from a defined set of characters.Match multiple characters using a single patternReduce complex conditionsWrite shorter and more readable regex patternsValidate inputs like usernames, phone numbers, and passwords
+            Java
+
+    public class GFG{
+    
+    public static void main(String[] args){
+        
+        String input = "abc123";
+        System.out.println(input.matches(".*[a-z]+.*")); // true
+
+    }
+}
+
+Outputtrue
+Explanation: .* allows any characters before and after the pattern.[a-z]+ checks that the string contains at least one lowercase letter, so "abc123" matches and returns true.Syntax[characters]Types of Character Classes in Java Regex1. Simple Character ClassA simple character class matches exactly one character from the given set inside square brackets. It is used when you want to allow multiple specific characters at a single position
+            Java
+
+    public class GFG{
+    
+    public static void main(String[] args){
+        
+        String regex = "[abc]";
+
+        System.out.println("a".matches(regex));
+        System.out.println("b".matches(regex)); 
+        System.out.println("d".matches(regex)); 
+    }
+}
+
+Outputtrue
+true
+false
+Explanation: The regex "[abc]" allows only one character, and it must be either a, b, or c, which is why "a" and "b" return true.The string "d" does not belong to the defined character set in the regex, so "d".matches(regex) returns false.2. Range Character ClassRange Character Class matches one character within a specified range using a hyphen (-). It is commonly used to validate digits, lowercase letters, or uppercase letters efficiently.
+            Java
+
+    public class Main {
+    public static void main(String[] args) {
+        String regex = "[0-9]";
+
+        System.out.println("5".matches(regex)); 
+        System.out.println("a".matches(regex)); 
+    }
+}
+
+Outputtrue
+false
+Explanation:The regex "[0-9]" matches any single digit from 0 to 9, so "5" returns true.The character "a" is outside the numeric range, so the match returns false.3. Multiple Ranges in a Character ClassMultiple Range Character Class allows combining several character ranges in one set. This is useful when validating inputs that can contain letters and digits together.
+            Java
+
+    public class Main {
+    public static void main(String[] args) {
+        String regex = "[a-zA-Z0-9]";
+
+        System.out.println("A".matches(regex)); 
+        System.out.println("7".matches(regex)); 
+        System.out.println("@".matches(regex)); 
+    }
+}
+
+Outputtrue
+true
+false
+Explanation:The regex "[a-zA-Z0-9]" accepts uppercase letters, lowercase letters, or digits, so "A" and "7" match successfully.The character "@" is not included in any specified range, so the match returns false.4. Negated Character ClassA Negated Character Class is used to match any single character except the ones specified inside the brackets. It is identified by the caret (^) placed at the beginning of the character set.
+            Java
+
+    public class Main {
+    public static void main(String[] args) {
+        String regex = "[^0-9]";
+
+        System.out.println("a".matches(regex)); 
+        System.out.println("5".matches(regex)); 
+    }
+}
+
+Outputtrue
+false
+Explanation:The regex [^0-9] matches any non-digit character, so "a" returns true.The character "5" is a digit and is explicitly excluded, so the match returns false.5. Predefined Character ClassesJava provides predefined character classes for commonly used patterns.RegexDescription\dDigit [0-9]\DNon-digit\wWord character [a-zA-Z0-9_]\WNon-word character\sWhitespace (space, tab, newline)\SNon-whitespaceQuantifiers with Character ClassesQuantifiers are used to specify how many times a character from a defined set or range should appear. They make regex patterns more powerful for validating repeated characters like digits, letters, or symbols.QuantifierMeaningDescriptionExample*Zero or more timesAllows any number of occurrences of a character class[0]*[0-9]+One or more timesRequires at least one occurrence of a character class[0]+[0-9]?Zero or one timeMakes a character class optional[A-Za-z][A-Za-z]-?[0-9][0-9]{m}Exactly m timesMatches a character class exactly m times[0-9]{3}{m,}At least m timesMatches a character class m or more times[0-9]{2,}{m,n}At least m and at most n timesMatches a character class between m and n times[0-9]{2,4}Note:Quantifiers always apply to the preceding character class[0-9]{3} -> digit class repeated 3 times-? -> optional hyphen using quantifier on a character

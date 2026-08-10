@@ -1,0 +1,125 @@
+# Basic Input and Output in C - GeeksforGeeks
+
+Input and Output (I/O) operations are fundamental in C programming as they allow programs to interact with users and external devices. Input operations are used to receive data from the user, while output operations display information on the screen or write data to files. Enables communication between the program and the user. Provided through the Standard Input/Output library (<stdio.h>). Supports formatted and unformatted input/output operations.OutputOutput operations in C are used to display data on the screen or write data to files. The most commonly used output function is printf(), which allows formatted output. Other functions such as fputs() can also be used to display strings.Supports formatted output using format specifiers. Can print text, variables, expressions, and strings.The following examples demonstrate the use of printf for output in different cases:Printing Some Text
+            C
+
+    #include <stdio.h>
+
+int main() {
+  
+    // Prints some text
+    printf("First Print");  
+  
+    return 0;
+}
+
+OutputFirst Print
+Explanation: The text inside "" is called a string in C. It is used to represent textual information. We can directly pass strings to the printf() function to print them in console screen.Printing Variables
+            C
+
+    #include <stdio.h>
+
+int main() {
+  	int age = 22;
+  
+    // Prints Age
+    printf("%d\n", age);  
+  
+    return 0;
+}
+
+Output22
+Here, the value of variable age is printed. You may have noticed %d in the formatted string. It is actually called format specifier which are used as placeholders for the value in the formatted string.Printing Variables Along with String
+            C
+
+    #include <stdio.h>
+
+int main() {
+  	int age = 22;
+  
+    // Prints Age
+    printf("The value of the variable age is %d\n", age);  
+  
+    return 0;
+}
+
+OutputThe value of the variable age is 22
+The printf function in C allows us to format the output string to console. This type of string is called formatted string as it allows us to format (change the layout the article).fputs()The fputs() function is used to output strings to the files but we can also use it to print strings to the console screen.
+            C
+
+    #include <stdio.h>
+
+int main() {
+    fputs("This is my string", stdout);
+    return 0;
+}
+
+OutputThis is my stringInputInput operations in C are used to receive data from users during program execution. Functions such as scanf(), fgets(), and getchar() allow programs to read different types of input, including numbers, characters, and strings.Supports multiple data types such as integers, characters, and strings. Provides both formatted (scanf()) and safer string input methods (fgets()).Syntaxscanf("formatted_string", address_of_variables);Remember that this function takes the address of the arguments where the read value is to be stored.Examples of Reading User InputReading an Integer
+            C
+
+    #include <stdio.h>
+
+int main() {
+    int age;
+    printf("Enter your age: ");
+  
+    // Reads an integer
+    scanf("%d", &age);  
+  
+    // Prints the age
+    printf("Age is: %d\n", age);  
+    return 0;
+}
+
+OutputEnter your age: 25 (Entered by the user)Age is: 25Explanation: %d is used to read an integer, and &age provides the address of the variable where the input will be stored.Reading a Character
+            C
+
+    #include <stdio.h>
+
+int main() {
+    char ch;
+    printf("Enter a character: \n");
+  
+    // Reads an Character
+    scanf("%c", &ch);  
+  
+    // Prints the Character
+    printf("Entered character is: %c\n", ch);  
+    return 0;
+}
+
+OutputEnter a character: a (Entered by the user)Entered character is: aReading a stringThe scanf() function can also be used to read string input from users. But it can only read single words. 
+            C
+
+    #include <stdio.h>
+
+int main() {
+    char str[100];  // Declare an array to hold the input string
+
+    printf("Enter a string: ");
+    scanf("%s", str);  // Reads input until the first space or newline
+
+    printf("You entered: %s\n", str);
+
+    return 0;
+}
+
+Output:Enter a String: Geeks (Entered by the user)Entered string is: GeeksThe scanf() function with %s stops at the first whitespace and does not read spaces. To handle this, we can use fgets(), which can read spaces and is safer because it limits the number of characters read, helping prevent buffer overflow.fgets()fgets() reads the given number of characters of a line from the input and stores it into the specified string. It can read multiple words at a time.
+            C
+
+    #include <stdio.h>
+#include <string.h>
+
+int main() {
+    
+    // String variable
+    char name[20];
+    
+    printf("Enter your name: \n");
+    fgets(name, sizeof(name), stdin);
+    
+    printf("Hello, %s", name);
+    return 0;
+}
+
+OutputEnter your name: John (Entered by User)Hello, JohnFor reading a single character, we use getchar() in C.

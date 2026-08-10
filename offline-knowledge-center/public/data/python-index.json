@@ -1,0 +1,522 @@
+{
+  "id": "python",
+  "title": "Python Tutorial",
+  "articles": [
+    {
+      "id": "python-001",
+      "title": "Download and Install Python 3 Latest Version - GeeksforGeeks"
+    },
+    {
+      "id": "python-002",
+      "title": "Python Introduction - GeeksforGeeks"
+    },
+    {
+      "id": "python-003",
+      "title": "Input and Output in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-004",
+      "title": "Python Variables - GeeksforGeeks"
+    },
+    {
+      "id": "python-005",
+      "title": "Python Operators - GeeksforGeeks"
+    },
+    {
+      "id": "python-006",
+      "title": "Python Keywords - GeeksforGeeks"
+    },
+    {
+      "id": "python-007",
+      "title": "Python Data Types - GeeksforGeeks"
+    },
+    {
+      "id": "python-008",
+      "title": "Conditional Statements in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-009",
+      "title": "Loops in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-010",
+      "title": "Hangman Game in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-011",
+      "title": "Python Functions - GeeksforGeeks"
+    },
+    {
+      "id": "python-012",
+      "title": "Python pass Statement - GeeksforGeeks"
+    },
+    {
+      "id": "python-013",
+      "title": "Global and Local Variables in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-014",
+      "title": "Recursion in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-015",
+      "title": "*args and **kwargs in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-016",
+      "title": "First Class functions in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-017",
+      "title": "Python Lambda Functions - GeeksforGeeks"
+    },
+    {
+      "id": "python-018",
+      "title": "Python map() function - GeeksforGeeks"
+    },
+    {
+      "id": "python-019",
+      "title": "reduce() in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-020",
+      "title": "filter() in python - GeeksforGeeks"
+    },
+    {
+      "id": "python-021",
+      "title": "Python Inner Functions - GeeksforGeeks"
+    },
+    {
+      "id": "python-022",
+      "title": "Decorators in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-023",
+      "title": "21 Number game in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-024",
+      "title": "Python String - GeeksforGeeks"
+    },
+    {
+      "id": "python-025",
+      "title": "Python Lists - GeeksforGeeks"
+    },
+    {
+      "id": "python-026",
+      "title": "Python Tuples - GeeksforGeeks"
+    },
+    {
+      "id": "python-027",
+      "title": "Python Dictionary - GeeksforGeeks"
+    },
+    {
+      "id": "python-028",
+      "title": "Python Sets - GeeksforGeeks"
+    },
+    {
+      "id": "python-029",
+      "title": "Python Arrays - GeeksforGeeks"
+    },
+    {
+      "id": "python-030",
+      "title": "List Comprehension in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-031",
+      "title": "2048 Game in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-032",
+      "title": "Python Collections Counter - GeeksforGeeks"
+    },
+    {
+      "id": "python-033",
+      "title": "Heap queue or heapq in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-034",
+      "title": "Deque in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-035",
+      "title": "OrderedDict in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-036",
+      "title": "Defaultdict in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-037",
+      "title": "DSA with Python - Data Structures and Algorithms - GeeksforGeeks"
+    },
+    {
+      "id": "python-038",
+      "title": "Python OOP Concepts - GeeksforGeeks"
+    },
+    {
+      "id": "python-039",
+      "title": "Python Classes and Objects - GeeksforGeeks"
+    },
+    {
+      "id": "python-040",
+      "title": "Constructors in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-041",
+      "title": "Why Python Uses 'Self' as Default Argument - GeeksforGeeks"
+    },
+    {
+      "id": "python-042",
+      "title": "Polymorphism in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-043",
+      "title": "Inheritance in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-044",
+      "title": "Abstraction in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-045",
+      "title": "Encapsulation in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-046",
+      "title": "Iterators in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-047",
+      "title": "Bank Account Implementation in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-048",
+      "title": "Python Exception Handling - GeeksforGeeks"
+    },
+    {
+      "id": "python-049",
+      "title": "Python Built-in Exceptions - GeeksforGeeks"
+    },
+    {
+      "id": "python-050",
+      "title": "User-defined Exceptions in Python with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "python-051",
+      "title": "File Handling in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-052",
+      "title": "Reading a File in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-053",
+      "title": "Writing to file in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-054",
+      "title": "OS Module in Python with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "python-055",
+      "title": "Pathlib Module in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-056",
+      "title": "Python Directory Management - GeeksforGeeks"
+    },
+    {
+      "id": "python-057",
+      "title": "MongoDB and Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-058",
+      "title": "Python MySQL - GeeksforGeeks"
+    },
+    {
+      "id": "python-059",
+      "title": "Boutique Management System using Python-MySQL Connectivity - GeeksforGeeks"
+    },
+    {
+      "id": "python-060",
+      "title": "Python Packages - GeeksforGeeks"
+    },
+    {
+      "id": "python-061",
+      "title": "Python Modules - GeeksforGeeks"
+    },
+    {
+      "id": "python-062",
+      "title": "Python DSA Libraries - GeeksforGeeks"
+    },
+    {
+      "id": "python-063",
+      "title": "List of Python GUI Library and Packages - GeeksforGeeks"
+    },
+    {
+      "id": "python-064",
+      "title": "Create a Screen recorder using Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-065",
+      "title": "NumPy Introduction - GeeksforGeeks"
+    },
+    {
+      "id": "python-066",
+      "title": "Pandas Introduction - GeeksforGeeks"
+    },
+    {
+      "id": "python-067",
+      "title": "Introduction to Matplotlib - GeeksforGeeks"
+    },
+    {
+      "id": "python-068",
+      "title": "Introduction to Seaborn - Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-069",
+      "title": "StatsModel Library - Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "python-070",
+      "title": "Learning Model Building in Scikit-learn - GeeksforGeeks"
+    },
+    {
+      "id": "python-071",
+      "title": "XGBoost - GeeksforGeeks"
+    },
+    {
+      "id": "python-072",
+      "title": "Train a model using LightGBM - GeeksforGeeks"
+    },
+    {
+      "id": "python-073",
+      "title": "Introduction to TensorFlow - GeeksforGeeks"
+    },
+    {
+      "id": "python-074",
+      "title": "What is Keras? - GeeksforGeeks"
+    },
+    {
+      "id": "python-075",
+      "title": "PyTorch - GeeksforGeeks"
+    },
+    {
+      "id": "python-076",
+      "title": "Data Science with Python Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "python-077",
+      "title": "Sentiment Analysis using LSTM - GeeksforGeeks"
+    },
+    {
+      "id": "python-078",
+      "title": "Introduction to Web development using Flask - GeeksforGeeks"
+    },
+    {
+      "id": "python-079",
+      "title": "Python Web Development With Django - GeeksforGeeks"
+    },
+    {
+      "id": "python-080",
+      "title": "Python SQLite - Connecting to Database - GeeksforGeeks"
+    },
+    {
+      "id": "python-081",
+      "title": "Connecting to SQL Database using SQLAlchemy in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-082",
+      "title": "Connecting a MySQL Database to a Django Project - GeeksforGeeks"
+    },
+    {
+      "id": "python-083",
+      "title": "Templating With Jinja2 in Flask - GeeksforGeeks"
+    },
+    {
+      "id": "python-084",
+      "title": "Django Templates - GeeksforGeeks"
+    },
+    {
+      "id": "python-085",
+      "title": "Build a REST API using Flask - Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-086",
+      "title": "Building a Simple API with Django REST Framework - GeeksforGeeks"
+    },
+    {
+      "id": "python-087",
+      "title": "Python for Web Development - GeeksforGeeks"
+    },
+    {
+      "id": "python-088",
+      "title": "ToDo webapp using Django - GeeksforGeeks"
+    },
+    {
+      "id": "python-089",
+      "title": "Quiz about Python Fundamentals"
+    },
+    {
+      "id": "python-090",
+      "title": "Quiz about Python Input Output"
+    },
+    {
+      "id": "python-091",
+      "title": "Quiz about Python Data Type"
+    },
+    {
+      "id": "python-092",
+      "title": "Quiz about Python Numbers"
+    },
+    {
+      "id": "python-093",
+      "title": "Quiz about Python Boolean"
+    },
+    {
+      "id": "python-094",
+      "title": "Quiz about Python Control Flow & Conditional Logic quiz"
+    },
+    {
+      "id": "python-095",
+      "title": "Quiz about Python Loops"
+    },
+    {
+      "id": "python-096",
+      "title": "Quiz about Python Functions"
+    },
+    {
+      "id": "python-097",
+      "title": "Quiz about Python String Quiz"
+    },
+    {
+      "id": "python-098",
+      "title": "Quiz about Python  List Quiz"
+    },
+    {
+      "id": "python-099",
+      "title": "Quiz about Python Tuples Quiz"
+    },
+    {
+      "id": "python-100",
+      "title": "Quiz about Python Dictionary Quiz"
+    },
+    {
+      "id": "python-101",
+      "title": "Quiz about Python Sets Quiz"
+    },
+    {
+      "id": "python-102",
+      "title": "Quiz about Python Arrays"
+    },
+    {
+      "id": "python-103",
+      "title": "Quiz about Python List Comprehension Quiz"
+    },
+    {
+      "id": "python-104",
+      "title": "Quiz about Python Collection Counters"
+    },
+    {
+      "id": "python-105",
+      "title": "Quiz about Python Heapq"
+    },
+    {
+      "id": "python-106",
+      "title": "Quiz about Python Deque"
+    },
+    {
+      "id": "python-107",
+      "title": "Quiz about Python OrderedDict"
+    },
+    {
+      "id": "python-108",
+      "title": "Quiz about Python OOP quiz"
+    },
+    {
+      "id": "python-109",
+      "title": "Quiz about Python Exception Handling quiz"
+    },
+    {
+      "id": "python-110",
+      "title": "Quiz about Python File Handling"
+    },
+    {
+      "id": "python-111",
+      "title": "Python Interview Questions and Answers - GeeksforGeeks"
+    },
+    {
+      "id": "python-112",
+      "title": "Python Exercise with Practice Questions and Solutions - GeeksforGeeks"
+    },
+    {
+      "id": "python-113",
+      "title": "Python Sets - GeeksforGeeks"
+    },
+    {
+      "id": "python-114",
+      "title": "Python Database Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "python-115",
+      "title": "Python MongoDB Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "python-116",
+      "title": "NumPy Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "python-117",
+      "title": "Pandas Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "python-118",
+      "title": "Matplotlib Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "python-119",
+      "title": "Python Seaborn Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "python-120",
+      "title": "TensorFlow Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "python-121",
+      "title": "PyTorch Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "python-122",
+      "title": "Flask Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "python-123",
+      "title": "Django Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "python-124",
+      "title": "Django ORM - Inserting, Updating & Deleting Data - GeeksforGeeks"
+    },
+    {
+      "id": "python-125",
+      "title": "Python Quiz - GeeksforGeeks"
+    },
+    {
+      "id": "python-126",
+      "title": "Python Exercise with Practice Questions and Solutions - GeeksforGeeks"
+    },
+    {
+      "id": "python-127",
+      "title": "Placement 360 – The Complete Tech Interview Program"
+    },
+    {
+      "id": "python-128",
+      "title": "Complete Data Analytics with AI"
+    },
+    {
+      "id": "python-129",
+      "title": "DSA & System Design Course: The Complete SDE Interview Program"
+    }
+  ]
+}

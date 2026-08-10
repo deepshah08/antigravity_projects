@@ -1,0 +1,158 @@
+{
+  "id": "web-dev",
+  "title": "Web Dev Tutorial",
+  "articles": [
+    {
+      "id": "web-dev-001",
+      "title": "Web Development Prerequisites - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-002",
+      "title": "Terminologies of Web Development - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-003",
+      "title": "Why to learn Web Development? - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-004",
+      "title": "HTML Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-005",
+      "title": "CSS Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-006",
+      "title": "JavaScript Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-007",
+      "title": "Difference between Server Side Scripting and Client Side Scripting - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-008",
+      "title": "Node.js Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-009",
+      "title": "PHP Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-010",
+      "title": "Python Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-011",
+      "title": "Ruby Programming Language - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-012",
+      "title": "Go Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-013",
+      "title": "C# Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-014",
+      "title": "SQL Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-015",
+      "title": "PostgreSQL Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-016",
+      "title": "MongoDB Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-017",
+      "title": "Apache Cassandra (NOSQL Database) - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-018",
+      "title": "Redis Introduction - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-019",
+      "title": "Introduction of DBMS - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-020",
+      "title": "HTML Canvas Basics - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-021",
+      "title": "HTML SVG Basics - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-022",
+      "title": "History And Evolution of Web Development - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-023",
+      "title": "Difference Between Web 1.0, Web 2.0, and Web 3.0 - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-024",
+      "title": "Top 10 Web Development Trends - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-025",
+      "title": "Top 9 Technologies Transforming the Future of Web Development- Comprehensive Guide - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-026",
+      "title": "CSS Projects - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-027",
+      "title": "JSON Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-028",
+      "title": "TypeScript Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-029",
+      "title": "Vue.js Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-030",
+      "title": "jQuery Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-031",
+      "title": "React Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-032",
+      "title": "Next.js Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-033",
+      "title": "Angular Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-034",
+      "title": "Express.js Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-035",
+      "title": "Django Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-036",
+      "title": "MySQL Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-037",
+      "title": "Java Backend Development Course with Spring Boot, Microservices & AI Tools"
+    },
+    {
+      "id": "web-dev-038",
+      "title": "MERN Full Stack Web Development Course with AI"
+    }
+  ]
+}

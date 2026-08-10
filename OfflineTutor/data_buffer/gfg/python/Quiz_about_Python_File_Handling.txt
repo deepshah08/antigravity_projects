@@ -1,0 +1,69 @@
+# Quiz about Python File Handling
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython File HandlingLast Updated : DiscussCommentsQuestion 1What is file handling in Python?Managing foldersReading and writing fileControlling system filesHandling exceptions in filesQuestion 2Which function is used to open a file in Python?open_file()read_file()file_open()open()Question 3Which method is used to read the entire content of a file as a string?read()read_all()read_full()readfile()Question 4What is the purpose of the 'rb' mode in file opening? Read binary Replace binaryRead and backupRename binaryQuestion 5What is the purpose of the 'a' mode in file opening?AppendAddAccessAssignQuestion 6How can you read the first five characters of a file in Python?file.read(5)read(file, 5)read_first(file, 5)file.read_first(5)Question 7How do you check whether a file or directory exists in Python?check_file_existence()file_exists()os.path.exists()verify_file()Question 8What is the purpose of the 'with' statement in file handling?It creates a new fileIt automatically closes the fileIt appends data to a fileIt reads the entire file at onceQuestion 9How do you read a file line by line in Python efficiently?read_all_lines()file.read_line()Iterate over the file object (e.g., for line in file:)read_line(file)Question 10How can you write data to a file without overwriting its existing content?Open the file with mode 'w' and call write()Open the file with mode 'a' and call write()Use file.write_append()Use file.write('a')Tags:Python-QuizzesThere are 20 questions to complete.Take a part in the ongoing discussionView All Discussion

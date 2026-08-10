@@ -1,0 +1,478 @@
+{
+  "id": "ml-ai",
+  "title": "Ml Ai Tutorial",
+  "articles": [
+    {
+      "id": "ml-ai-001",
+      "title": "Supervised Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-002",
+      "title": "Unsupervised Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-003",
+      "title": "Reinforcement Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-004",
+      "title": "Self-Supervised Learning (SSL) - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-005",
+      "title": "Semi-Supervised Learning in ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-006",
+      "title": "Introduction to Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-007",
+      "title": "Machine Learning Lifecycle - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-008",
+      "title": "Data Cleaning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-009",
+      "title": "Data Preprocessing in Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-010",
+      "title": "Feature Engineering - Scaling, Normalization and Standardization - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-011",
+      "title": "Feature Extraction - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-012",
+      "title": "Feature Engineering - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-013",
+      "title": "Feature Selection Techniques in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-014",
+      "title": "Exploratory Data Analysis - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-015",
+      "title": "EDA - Exploratory Data Analysis in Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-016",
+      "title": "Advanced EDA - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-017",
+      "title": "Time Series Analysis & Visualization in Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-018",
+      "title": "Regularization in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-019",
+      "title": "Understanding the Confusion Matrix in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-020",
+      "title": "Precision and Recall in  Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-021",
+      "title": "F1 Score in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-022",
+      "title": "AUC-ROC Curve in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-023",
+      "title": "Cross Validation in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-024",
+      "title": "Hyperparameter Tuning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-025",
+      "title": "Getting started with Classification - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-026",
+      "title": "Regression in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-027",
+      "title": "Linear Regression in Machine learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-028",
+      "title": "Gradient Descent in Linear Regression - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-029",
+      "title": "Multiple Linear Regression using Python - ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-030",
+      "title": "Logistic Regression in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-031",
+      "title": "Cost function in Logistic Regression - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-032",
+      "title": "Decision Tree in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-033",
+      "title": "Decision Tree Algorithms - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-034",
+      "title": "Implementing Decision Tree Regression using Scikit-Learn - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-035",
+      "title": "Implementing Decision Tree Classifiers with Scikit-Learn - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-036",
+      "title": "Support Vector Machine (SVM) Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-037",
+      "title": "SVM Hyperparameter Tuning using GridSearchCV - ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-038",
+      "title": "Non-Linear SVM - ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-039",
+      "title": "K-Nearest Neighbor(KNN) Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-040",
+      "title": "Understanding Decision Boundaries in K-Nearest Neighbours (KNN) - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-041",
+      "title": "Naive Bayes Classifiers - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-042",
+      "title": "Gaussian Naive Bayes - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-043",
+      "title": "Multinomial Naive Bayes - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-044",
+      "title": "Bernoulli Naive Bayes - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-045",
+      "title": "Complement Naive Bayes (CNB) Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-046",
+      "title": "Random Forest Algorithm in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-047",
+      "title": "Random Forest Classifier using Scikit-learn - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-048",
+      "title": "Random Forest Regression in Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-049",
+      "title": "Random Forest Hyperparameter Tuning in Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-050",
+      "title": "Ensemble Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-051",
+      "title": "Bagging Classifier - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-052",
+      "title": "AdaBoost in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-053",
+      "title": "Clustering in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-054",
+      "title": "Association Rule - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-055",
+      "title": "Introduction to Dimensionality Reduction - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-056",
+      "title": "K means Clustering – Introduction - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-057",
+      "title": "Elbow Method for optimal value of k in KMeans - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-058",
+      "title": "K-means++ Algorithm - ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-059",
+      "title": "K-Mode Clustering in Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-060",
+      "title": "Fuzzy Clustering - ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-061",
+      "title": "Gaussian Mixture Model - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-062",
+      "title": "Expectation-Maximization Algorithm - ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-063",
+      "title": "Dirichlet Process Mixture Models (DPMMs) - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-064",
+      "title": "Hierarchical Clustering in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-065",
+      "title": "Implementing Agglomerative Clustering using Sklearn - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-066",
+      "title": "Divisive Clustering - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-067",
+      "title": "Affinity Propagation - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-068",
+      "title": "DBSCAN Clustering in ML - Density based clustering - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-069",
+      "title": "OPTICS Clustering - ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-070",
+      "title": "Principal Component Analysis (PCA) - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-071",
+      "title": "T-distributed Stochastic Neighbor Embedding (t-SNE) Algorithm - ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-072",
+      "title": "Non-Negative Matrix Factorization - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-073",
+      "title": "Independent Component Analysis - ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-074",
+      "title": "Isomap - A Non-linear Dimensionality Reduction Technique - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-075",
+      "title": "Swiss Roll Reduction with LLE in Scikit Learn - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-076",
+      "title": "Market Basket Analysis in Data Mining - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-077",
+      "title": "Apriori Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-078",
+      "title": "Implementing Apriori algorithm in Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-079",
+      "title": "Frequent Pattern Growth Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-080",
+      "title": "ECLAT Algorithm - ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-081",
+      "title": "Markov Decision Process - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-082",
+      "title": "Bellman Equation - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-083",
+      "title": "Implement Value Iteration in Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-084",
+      "title": "Monte Carlo Tree Search (MCTS) in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-085",
+      "title": "Q-Learning in Reinforcement Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-086",
+      "title": "SARSA (State-Action-Reward-State-Action) in Reinforcement Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-087",
+      "title": "Monte Carlo integration in Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-088",
+      "title": "REINFORCE Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-089",
+      "title": "Actor-Critic Algorithm in Reinforcement Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-090",
+      "title": "Semi Supervised Classification - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-091",
+      "title": "Self-Training in Semi-Supervised Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-092",
+      "title": "Few Shot Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-093",
+      "title": "ARIMA - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-094",
+      "title": "SARIMA  (Seasonal Autoregressive Integrated Moving Average) - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-095",
+      "title": "Exponential Smoothing for Time Series Forecasting - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-096",
+      "title": "Machine learning deployment - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-097",
+      "title": "Deploy an AI Model using Streamlit Library - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-098",
+      "title": "Deploy your Machine Learning  model on Render - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-099",
+      "title": "Python - Create UIs for Prototyping Machine Learning Model with Gradio - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-100",
+      "title": "Deploy Machine Learning Model using Flask - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-101",
+      "title": "Deploying ML Models as API using FastAPI - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-102",
+      "title": "MLOps: Everything You Need to Know - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-103",
+      "title": "Continuous Integration and Continuous Deployment (CI/CD) in MLOps - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-104",
+      "title": "End-to-End MLOps Pipeline: A Comprehensive Project - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-105",
+      "title": "100+ Machine Learning Projects with Source Code - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-106",
+      "title": "Deep Learning Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-107",
+      "title": "Types of Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-108",
+      "title": "What is Machine Learning Pipeline? - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-109",
+      "title": "Applications of Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-110",
+      "title": "Machine Learning with Python Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-111",
+      "title": "NumPy Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-112",
+      "title": "Pandas Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-113",
+      "title": "Evaluation Metrics in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-114",
+      "title": "Underfitting and Overfitting in ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-115",
+      "title": "Bias and Variance in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-116",
+      "title": "Machine Learning Interview Questions and Answers - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-117",
+      "title": "Complete Machine Learning & Data Science Course"
+    },
+    {
+      "id": "ml-ai-118",
+      "title": "Generative AI Training Program - Live"
+    }
+  ]
+}

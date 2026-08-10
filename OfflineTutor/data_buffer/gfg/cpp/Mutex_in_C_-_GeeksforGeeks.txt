@@ -1,0 +1,114 @@
+# Mutex in C++ - GeeksforGeeks
+
+A mutex (Mutual Exclusion) is a synchronization primitive that protects shared resources from concurrent access, helping prevent race conditions in multithreaded programs.Allows exclusive access to critical sections. Ensures predictable behavior while accessing shared data.
+            C++
+
+    #include <iostream>
+#include <thread>
+using namespace std;
+
+int counter = 0;
+
+void increment() {
+    counter++;
+}
+
+int main() {
+    thread t1(increment);
+    thread t2(increment);
+
+    t1.join();
+    t2.join();
+
+    cout << counter;
+}
+
+Output2Explanation: Both threads update the shared variable counter concurrently. Since the update is not synchronized, the final value is unpredictable. A mutex can be used to ensure that only one thread modifies the shared resource at a time.Syntax The use of mutex can be divided into three steps:Create mutex std::mutex mtx;Locking a Mutexmtx.lock();Locks the mutex so that no other thread can access the protected resource.Unlocking a Mutexmtx.unlock();Releases the mutex, allowing waiting threads to access the shared resource.Need for MutexA mutex is required when multiple threads access the same shared resource concurrently.Shared data may be modified simultaneously by multiple threads. Concurrent updates can produce inconsistent or unpredictable results. Critical sections require exclusive access to shared resources. A mutex allows only one thread to access the resource at a time.Working of Mutex Mutex synchronization follows these steps:Working of Mutex in C++A thread requests ownership of the mutex using lock().If the mutex is available, the thread enters the critical section. Other threads wait until the mutex is released. After completing its work, the thread calls unlock(). Example Without MutexThe following program demonstrates a race condition caused by two threads updating the same shared variable simultaneously.
+            C++
+
+    #include <iostream>
+#include <thread>
+
+using namespace std;
+
+// Shared resource
+int number = 0;
+
+// function to increment the number
+void increment(){
+    
+    // increment number by 1 for 1000000 times
+    for(int i=0; i<1000000; i++){
+        number++;
+    }
+}
+
+int main()
+{
+    // Create thread t1 to perform increment()
+    thread t1(increment);
+    
+    // Create thread t2 to perform increment()
+    thread t2(increment);
+    
+    // Start both threads simultaneously
+    t1.join();
+    t2.join();
+    
+    // Print the number after the execution of both threads
+    cout << "Number after execution of t1 and t2 is " << number;
+    
+    return 0;
+}
+
+OutputThe same program is executed three times to observe the behavior when modifying shared resources without thread synchronization.Run 1:Number after execution of t1 and t2 is 1058072Without Mutex Output 1Run 2:Number after execution of t1 and t2 is 1456656Without Mutex Output 2Run 3:Number after execution of t1 and t2 is 2000000Without Mutex Output 3Explanation: Since both threads update the shared variable without synchronization, race conditions occur and the output becomes unpredictable.Example Using MutexThe following program uses a mutex to synchronize access to the shared variable.
+            C++
+
+    #include <iostream>
+#include <thread>
+
+using namespace std;
+
+// import mutex from C++ standard library
+#include <mutex>
+
+// Create object for mutex
+mutex mtx;
+
+// Shared resource
+int number = 0;
+
+// function to increment the number
+void increment(){
+    
+    // Lock the thread using lock
+    mtx.lock();
+    
+    // increment number by 1 for 1000000 times
+    for(int i=0; i<1000000; i++){
+        number++;
+    }
+    
+    // Release the lock using unlock()
+    mtx.unlock();
+}
+
+int main()
+{
+    // Create thread t1 to perform increment()
+    thread t1(increment);
+    
+    // Create thread t2 to perform increment()
+    thread t2(increment);
+    
+    // Start both threads simultaneously
+    t1.join();
+    t2.join();
+    
+    // Print the number after the execution of both threads
+    std::cout<<"Number after execution of t1 and t2 is "<<number;
+    
+    return 0;
+}
+
+OutputThe same program is executed three times to observe the behavior when modifying shared resource with thread synchronization using mutex.Run 1:Number after execution of t1 and t2 is 2000000Mutex Output 1Run 2:Number after execution of t1 and t2 is 2000000Mutex Output 2Run 3:Number after execution of t1 and t2 is 2000000Mutex Output 3Explanation: The mutex ensures that only one thread updates the shared variable at a time. Other threads wait until the mutex is released, eliminating race conditions and producing a consistent result.Advantages of MutexUsing a mutex provides several benefits:Prevents race conditions while accessing shared resources. Ensures data consistency in multithreaded programs. Allows safe execution of critical sections. Limitations of MutexDespite its usefulness, mutexes have some drawbacks:Threads may spend time waiting for a lock. Excessive locking can reduce application performance. Manual lock and unlock management is error-prone.

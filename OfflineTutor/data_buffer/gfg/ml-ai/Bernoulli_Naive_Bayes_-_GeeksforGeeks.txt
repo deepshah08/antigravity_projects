@@ -1,0 +1,42 @@
+# Bernoulli Naive Bayes - GeeksforGeeks
+
+Bernoulli Naive Bayes is a subcategory of the Naive Bayes Algorithm. It is typically used when the data is binary and it models the occurrence of features using Bernoulli distribution. It is used for the classification of binary features such as 'Yes' or 'No', '1' or '0', 'True' or 'False' etc. Here it is to be noted that the features are independent of one another.MathematicsIn Bernoulli Naive Bayes model we assume that each feature is conditionally independent given the class y. This means that we can calculate the likelihood of each feature occurring as:p(x_i|y)=p(i|y)x_i+(1-p(i|y))(1-x_i)Here, p(x_i |y) is the conditional probability of xi occurring provided y has occurred. i is the feature indexx_i holds binary value either 0 or 1Now we will learn Bernoulli distribution as Bernoulli Naive Bayes works on that.Bernoulli distributionBernoulli distribution is used for discrete probability calculation. It either calculates success or failure. Here the random variable is either 1 or 0 whose chance of occurring is either denoted by p or (1-p) respectively. The mathematical formula is given f(x)=\begin{cases} p^x*(1-p)^{1-x} & \text{if x=0,1} \\  0 \; otherwise\\   \end{cases} Now in the above function if we put x=1 then the value of f(x) is p and if we put x=0 then the value of f(x) is 1-p. Here p denotes the success of an event.Example:To understand how Bernoulli Naive Bayes works, here's a simple binary classification problem.Message IDMessage TextClassM1"buy cheap now"SpamM2"limited offer buy"SpamM3"meet me now"Not SpamM4"let's catch up"Not Spam1. VocabularyExtract all unique words from the training data:\text{Vocabulary} = \{\text{buy, cheap, now, limited, offer, meet, me, let's, catch, up}\}Vocabulary size V = 102. Binary Feature Matrix (Presence = 1, Absence = 0)Each message is represented using binary features indicating the presence (1) or absence (0) of a word.IDbuycheapnowlimitedoffermeetmelet'scatchupClassM11110000000SpamM21001100000Spam M30010011000Not SpamM40000000111Not Spam3. Apply Laplace SmoothingP(w_i = 1 \mid C) = \frac{\text{count}(w_i, C) + 1}{N_C + 2}where N_C = 2 for both classes (2 documents per class), so the denominator becomes 4.4. Word ProbabilitiesFor Spam class:P(\text{buy} \mid \text{Spam}) = \frac{2+1}{4} = 0.75 P(\text{cheap} \mid \text{Spam}) = \frac{1+1}{4} = 0.5 P(\text{now} \mid \text{Spam}) = \frac{1+1}{4} = 0.5 P(\text{limited} \mid \text{Spam}) = \frac{1+1}{4} = 0.5 P(\text{offer} \mid \text{Spam}) = \frac{1+1}{4} = 0.5 P(\text{others} \mid \text{Spam}) = \frac{0+1}{4} = 0.25For Not Spam class:P(\text{now} \mid \text{Not Spam}) = \frac{1+1}{4} = 0.5 P(\text{meet} \mid \text{Not Spam}) = \frac{1+1}{4} = 0.5 P(\text{me} \mid \text{Not Spam}) = \frac{1+1}{4} = 0.5 P(\text{let's} \mid \text{Not Spam}) = \frac{1+1}{4} = 0.5 P(\text{catch} \mid \text{Not Spam}) = \frac{1+1}{4} = 0.5 P(\text{up} \mid \text{Not Spam}) = \frac{1+1}{4} = 0.5 P(\text{others} \mid \text{Not Spam}) = \frac{0+1}{4} = 0.25  5. Classify Message "buy now"The message contains words "buy" and "now, so the feature vector is:\text{buy}=1, \quad \text{now}=1, \quad \text{others}=05.1 For Spam:P(\text{Spam} \mid d) \propto P(\text{Spam}) \cdot P(\text{buy}=1 \mid \text{Spam}) \cdot P(\text{now}=1 \mid \text{Spam}) = 0.5 \cdot 0.75 \cdot 0.5 = 0.1875 5.2 For Not Spam:P(\text{Not Spam} \mid d) \propto P(\text{Not Spam}) \cdot P(\text{buy}=1 \mid \text{Not Spam}) \cdot P(\text{now}=1 \mid \text{Not Spam}) = 0.5 \cdot 0.25 \cdot 0.5 = 0.0625 6. Final ClassificationP(\text{Spam} \mid d) = 0.1875,\quad P(\text{Not Spam} \mid d) = 0.0625Since P(\text{Spam} \mid d) > P(\text{Not Spam} \mid d), the message is classified as: \boxed{\text{Spam}}Implementing Bernoulli Naive BayesFor performing classification using Bernoulli Naive Bayes we have considered an email dataset. The email dataset comprises of four columns named Unnamed: 0, label, label_num and text. The category of label is either ham or spam. For ham the number assigned is 0 and for spam 1 is assigned. Text comprises the body of the mail.  The length of the dataset is 5171. The dataset can be downloaded from here. 1. Importing LibrariesIn the code we have imported necessary libraries like pandas, numpy and sklearn. Bernoulli Naive Bayes is a part of sklearn package.
+            Python
+
+    import numpy as np
+import pandas as pd
+from sklearn.naive_bayes import BernoulliNB
+from sklearn.feature_extraction.text import CountVectorizer
+
+2. Data AnalysisIn this code we have performed a quick data analysis that includes reading the data, dropping unnecessary columns, printing shape of data, information about dataset etc.
+            Python
+
+    df=pd.read_csv("spam_ham_dataset.csv")
+print(df.shape)
+print(df.columns)
+df= df.drop(['Unnamed: 0'], axis=1)
+
+Output:(5171, 4) Index(['Unnamed: 0', 'label', 'text', 'label_num'], dtype='object')3. Count VectorizerIn the code since text data is used to train our classifier we convert the text into a matrix comprising numbers using Count Vectorizer so that the model can perform well.
+            Python
+
+    x = df["text"].values
+y = df["label_num"].values
+
+cv = CountVectorizer()
+
+x = cv.fit_transform(x)
+
+4. Data Splitting, Model Training and Prediction
+            Python
+
+    from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.20, random_state=0)\
+
+bnb = BernoulliNB(binarize=0.0)
+model = bnb.fit(X_train, y_train)
+y_pred = bnb.predict(X_test)
+
+from sklearn.metrics import classification_report
+print(classification_report(y_test, y_pred))
+
+Output: classification_reportThe classification report shows that for class 0 (not spam) precision, recall and F1 score are 0.84, 0.98 and 0.91 respectively. For class 1 (spam) they are 0.92, 0.56 and 0.70. The recall for class 1 drops due to the 13% spam data. The overall accuracy of the model is 86%, which is good.Bernoulli Naive Bayes is used for spam detection, text classification, Sentiment Analysis and used to determine whether a certain word is present in a document or not.Difference Between Different Naive Bayes ModelAspectGaussian Naive BayesMultinomial Naive BayesBernoulli Naive BayesFeature TypeContinuous (real-valued features)Discrete (count data or frequency-based features)Binary (presence or absence of features)AssumptionAssumes data follows a Gaussian (normal) distributionAssumes data follows a multinomial distributionAssumes data follows a Bernoulli (binary) distributionCommon Use CaseSuitable for continuous features like height, weight, etc.Suitable for text classification (word counts)Suitable for binary classification tasks (e.g., spam detection)Data RepresentationFeatures are treated as continuous variablesFeatures are treated as discrete counts or frequenciesFeatures are treated as binary (0 or 1) valuesMathematical ModelUses Gaussian distribution (mean and variance) for each featureUses the multinomial distribution for word counts in text classificationUses Bernoulli distribution (probability of a feature being present)ExamplePredicting whether an email is spam based on numeric featuresPredicting whether a document is spam based on word countsClassifying a document as spam or not based on word presenceHere is the quick comparison between types of Naive Bayes that are Gaussian Naive Bayes, Multinomial Naive Bayes and Bernoulli Naive Bayes.

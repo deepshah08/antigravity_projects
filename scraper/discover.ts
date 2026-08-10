@@ -4,6 +4,18 @@ import fs from 'fs-extra';
 import path from 'path';
 
 const DEFAULT_URLS = [
+  'https://www.geeksforgeeks.org/dsa-tutorial-learn-data-structures-and-algorithms/',
+  'https://www.geeksforgeeks.org/python-tutorial/',
+  'https://www.geeksforgeeks.org/java/',
+  'https://www.geeksforgeeks.org/c-plus-plus/',
+  'https://www.geeksforgeeks.org/c-programming-language/',
+  'https://www.geeksforgeeks.org/sql-tutorial/',
+  'https://www.geeksforgeeks.org/system-design-tutorial/',
+  'https://www.geeksforgeeks.org/operating-systems/',
+  'https://www.geeksforgeeks.org/computer-network-tutorials/',
+  'https://www.geeksforgeeks.org/web-development/',
+  'https://www.geeksforgeeks.org/devops-tutorial/',
+  'https://www.geeksforgeeks.org/machine-learning/',
   'https://www.geeksforgeeks.org/linux-tutorial/',
   'https://www.geeksforgeeks.org/distributed-systems/distributed-systems-tutorial/'
 ];
@@ -33,9 +45,24 @@ interface Manifest {
 function generateTopicId(urlStr: string): string {
   try {
     const url = new URL(urlStr);
+    const pathname = url.pathname.toLowerCase();
+    if (pathname.includes('dsa-tutorial')) return 'dsa';
+    if (pathname.includes('python')) return 'python';
+    if (pathname.includes('java')) return 'java';
+    if (pathname.includes('c-plus-plus')) return 'cpp';
+    if (pathname.includes('c-programming')) return 'c';
+    if (pathname.includes('sql')) return 'sql';
+    if (pathname.includes('system-design')) return 'system-design';
+    if (pathname.includes('operating-system')) return 'os';
+    if (pathname.includes('computer-network')) return 'networking';
+    if (pathname.includes('web-development')) return 'web-dev';
+    if (pathname.includes('devops')) return 'devops';
+    if (pathname.includes('machine-learning')) return 'ml-ai';
+    if (pathname.includes('linux')) return 'linux';
+    if (pathname.includes('distributed-systems')) return 'distributed-systems';
+
     const parts = url.pathname.split('/').filter(p => p);
     if (parts.length === 0) return 'unknown';
-    
     const lastPart = parts[parts.length - 1];
     return lastPart.replace(/-tutorial$/, '');
   } catch (e) {

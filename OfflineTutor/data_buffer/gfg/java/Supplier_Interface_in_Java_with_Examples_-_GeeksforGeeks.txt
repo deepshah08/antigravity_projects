@@ -1,0 +1,54 @@
+# Supplier Interface in Java with Examples - GeeksforGeeks
+
+The Supplier<T> interface is a functional interface introduced in Java 8 and available in the java.util.function package. It represents a supplier of results that does not accept any input arguments but returns a value of a specified type.Represents a function with no input and one output. Useful for lazy value generation and object creation. Supports lambda expressions and method references.
+            Java
+
+    import java.util.function.Supplier;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Supplier<String> message =
+            () -> "Welcome to Java";
+
+        System.out.println(message.get());
+    }
+}
+
+OutputWelcome to Java
+Explanation: In this example, the Supplier does not take any input. When the get() method is called, it returns the string "Welcome to Java".Syntax@FunctionalInterfacepublic interface Supplier<T>Here,T :Type of the result supplied by the function.Method of Supplier Interface1. get() MethodThe get() method is the functional method of the Supplier interface. It generates and returns a value without taking any input parameters.Takes no arguments. Returns a value of type T. Commonly used for lazy initialization and object creation.Syntax:T get()Return Value: Returns a value of type T
+
+            Java
+
+    import java.util.function.Supplier;
+
+public class Main{
+    public static void main(String args[])
+    {
+
+        // This function returns a random value.
+        Supplier<Double> randomValue = () -> Math.random();
+
+        // Print the random value using get()
+        System.out.println(randomValue.get());
+    }
+}
+
+Output0.33157850608822403
+Explanation: In this example, the Supplier generates a random double value whenever the get() method is called. Since no input is required, the value is produced directly by the supplier.Example: Supplying an Object
+            Java
+
+    import java.util.function.Supplier;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Supplier<StringBuilder> supplier =
+            () -> new StringBuilder("Java");
+
+        System.out.println(supplier.get());
+    }
+}
+
+OutputJava
+Explanation: Here, the Supplier creates and returns a new StringBuilder object whenever get() is invoked.Supplier vs FunctionFeatureSupplierFunction<T, R>Input ArgumentsNoneOneReturn ValueYesYesFunctional Methodget()apply()Generic ParametersOne (T)Two (T, R)Common UseValue GenerationData TransformationAdvantages of Supplier InterfaceDoes not require any input arguments. Useful for generating values on demand. Supports lazy initialization. Works seamlessly with lambda expressions. Reduces boilerplate code. Commonly used in streams, factories, and object creation patterns

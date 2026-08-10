@@ -1,0 +1,175 @@
+# Java 8 | Consumer Interface in Java with Examples - GeeksforGeeks
+
+The Consumer Interface is a functional interface available in the java.util.function package, introduced in Java 8. It represents an operation that accepts a single input argument and performs an action on it without returning any result. Consumer is commonly used for operations such as printing values, modifying collections, logging data, and performing side effects.Functional interface containing a single abstract method. Commonly used with Lambda Expressions and Streams. Useful for performing side-effect operations.
+            Java
+
+    import java.util.function.Consumer;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Consumer<String> display =
+            name -> System.out.println("Hello, " + name);
+
+        display.accept("John");
+    }
+}
+
+OutputHello, John
+Explanation: In this example, a Consumer<String> accepts a string value and prints a greeting message. The accept() method passes "John" to the Consumer, which performs the operation without returning any value.Syntax@FunctionalInterfacepublic interface Consumer<T>T: denotes the type of the input argument to the operation.Methods of Consumer InterfaceThe Consumer interface consists of the following two functions:1. accept() MethodThe accept() method accepts a single argument and performs the specified operation on it. Since Consumer is designed for side effects, this method does not return any value.Syntax: void accept(T t)Parameters: This method takes in one parameter: t- the input argumentReturns: This method does not return any value.
+            Java
+
+    import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.function.Consumer;
+
+public class Main {
+    public static void main(String args[])
+    {
+        // Consumer to display a number
+        Consumer<Integer> display = a -> System.out.println(a);
+
+        // Implement display using accept()
+        display.accept(10);
+
+        // Consumer to multiply 2 to every integer of a list
+        Consumer<List<Integer> > modify = list ->
+        {
+            for (int i = 0; i < list.size(); i++)
+                list.set(i, 2 * list.get(i));
+        };
+
+        // Consumer to display a list of numbers
+        Consumer<List<Integer> >
+            dispList = list -> list.stream().forEach(a -> System.out.print(a + " "));
+
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(2);
+        list.add(1);
+        list.add(3);
+
+        // Implement modify using accept()
+        modify.accept(list);
+
+        // Implement dispList using accept()
+        dispList.accept(list);
+    }
+}
+
+Output10
+4 2 6Explanation: In this example, a Consumer is created to display an integer value. When accept(10) is called, the Consumer receives the value 10 and prints it to the console. The Consumer receives a list and doubles each element. The accept() method executes the operation directly on the provided list.2. andThen() MethodThe andThen() method combines two Consumer operations into a single Consumer. The current Consumer executes first, followed by the Consumer passed as an argument.Syntax: default Consumer<T>andThen(Consumer<? super T> after)Parameters: This method accepts a parameter after which is the Consumer to be applied after the current one.Return Value: This method returns a composed Consumer that first applies the current Consumer first and then the after operation.Exception: This method throws NullPointerException if the after operation is null.Example 1: Chaining Consumers with andThen()
+            Java
+
+    import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.function.Consumer;
+
+public class Main {
+    public static void main(String args[])
+    {
+
+        // Consumer to multiply 2 to every integer of a list
+        Consumer<List<Integer> > modify = list ->
+        {
+            for (int i = 0; i < list.size(); i++)
+                list.set(i, 2 * list.get(i));
+        };
+
+        // Consumer to display a list of integers
+        Consumer<List<Integer> >
+            dispList = list -> list.stream().forEach(a -> System.out.print(a + " "));
+
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(2);
+        list.add(1);
+        list.add(3);
+
+        // using addThen()
+        modify.andThen(dispList).accept(list);
+        ;
+    }
+}
+
+Output4 2 6Explanation: First, the modify Consumer doubles each element in the list. After completion, the dispList Consumer displays the modified list. Both operations are executed in sequence using andThen()Example 2: NullPointerException with andThen()
+            Java
+
+    // Java Program to demonstrate
+// Consumer's andThen() method
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.function.Consumer;
+
+public class Main {
+    public static void main(String args[])
+    {
+
+        // Consumer to multiply 2 to every integer of a list
+        Consumer<List<Integer> > modify = list ->
+        {
+            for (int i = 0; i < list.size(); i++)
+                list.set(i, 2 * list.get(i));
+        };
+
+        // Consumer to display a list of integers
+        Consumer<List<Integer> >
+            dispList = list -> list.stream().forEach(a -> System.out.print(a + " "));
+
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(2);
+        list.add(1);
+        list.add(3);
+        try {
+            // using addThen()
+            modify.andThen(null).accept(list);
+        }
+        catch (Exception e) {
+            System.out.println("Exception: " + e);
+        }
+    }
+}
+
+OutputException: java.lang.NullPointerExceptionExplanation: Since the Consumer passed to andThen() is null, Java throws a NullPointerException when attempting to create the composed Consumer. Example 3: Exception Handling in Chained Consumers
+            Java
+
+    import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.function.Consumer;
+
+public class Main {
+    public static void main(String args[])
+    {
+
+        // Consumer to multiply 2 to every integer of a list
+        Consumer<List<Integer> > modify = list ->
+        {
+            for (int i = 0; i <= list.size(); i++)
+                list.set(i, 2 * list.get(i));
+        };
+
+        // Consumer to display a list of integers
+        Consumer<List<Integer> >
+            dispList = list -> list.stream().forEach(a -> System.out.print(a + " "));
+        System.out.println();
+
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(2);
+        list.add(1);
+        list.add(3);
+
+        // using addThen()
+        try {
+            dispList.andThen(modify).accept(list);
+            ;
+        }
+        catch (Exception e) {
+            System.out.println("Exception: " + e);
+        }
+    }
+}
+
+Output2 1 3 Exception: java.lang.IndexOutOfBoundsException: Index: 3, Size: 3Explanation: The dispList Consumer executes successfully and prints the list. After that, the modify Consumer runs and throws an IndexOutOfBoundsException due to incorrect loop logic. The exception is propagated to the caller.

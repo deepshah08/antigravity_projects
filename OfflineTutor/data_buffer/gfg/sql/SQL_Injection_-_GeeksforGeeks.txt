@@ -1,0 +1,119 @@
+# SQL Injection - GeeksforGeeks
+
+SQL Injection (SQLi) is a web application vulnerability where attackers inject malicious SQL queries through user inputs to manipulate backend database operations, potentially leading to unauthorized access, modification, or deletion of data. It is one of the most critical and widely exploited security flaws in web applications.Exploits improper validation of user input in SQL queriesCan expose sensitive data such as passwords, emails and financial recordsEnables bypass of authentication mechanismsMay result in full database or server compromisePrevented through secure coding and input sanitization practicesSQL Injection Security Levels (DVWA)DVWA (Damn Vulnerable Web Application) provides different security levels for SQL Injection to help learners understand how security measures affect vulnerability and exploitation techniques.1. Low SecurityAt this level, user input is directly included in the SQL query without any validation or sanitization, making it highly vulnerable to SQL injection attacks.$id = $_GET['id'];$query = "SELECT first_name, last_name FROM users WHERE user_id = '$id';";Input ': Breaks the query and causes a database error, revealing vulnerabilityInput 1' OR '1'='1: Always true condition, returns all user recordsInput 1' UNION SELECT user, password FROM users: Extracts sensitive data like usernames and passwords2. Medium SecurityAt this level, basic input sanitization is applied using functions like addslashes(), which escapes special characters such as '.$id = addslashes($_GET['id']);$query = "SELECT first_name, last_name FROM users WHERE user_id = '$id';";Simple injection using ' is neutralized (converted to \')However, attackers may still bypass protection using numeric-based injectionsExample:1 OR 1=1: Can still manipulate query logic and return all records3. High Security At this level, the application uses prepared statements (parameterized queries), which separate SQL logic from user input.$stmt = $pdo->prepare("SELECT first_name, last_name FROM users WHERE user_id = ?");$stmt->execute([$id]);Security impact:Input is treated strictly as data, not executable SQL codeCommon injection attempts like ', OR 1=1, or UNION SELECT are ineffectivePrevents unauthorized data extraction and query manipulationTypes of SQL InjectionThere are different types of SQL Injection1. Error-Based SQL Injection Error-based SQL injection is a type of in-band SQL injection where an attacker intentionally causes the database to generate an error message. The attacker then analyzes this error message to gain valuable information about the database's structure, like table names and column names, which can be used to craft further, more precise attacks.How It Works:This attack targets applications that reveal raw database errors instead of showing generic messages. By injecting malicious input that breaks the SQL syntax, attackers trigger these errors and gain valuable clues about the database structure.Identify a Vulnerable Input: The attacker finds an input field (such as a search box or URL parameter) that interacts directly with the database without proper validation or sanitization.Inject Malicious Input: The attacker inserts special characters (such as a single quote ') or malformed SQL queries to break the normal query execution.Trigger Database Errors: The database returns error messages due to incorrect query syntax or structure.Analyze Error Messages: These errors may reveal like database type (MySQL, Oracle, SQL Server, etc.), database version, SQL query structure, table and column names.Refine the Attack: Using the extracted information, the attacker can modify their payload to perform more advanced attacks such as data extraction.Example (DVWA Setup)Step 1: Set Up EnvironmentLaunch DVWA. It's typically accessed by navigating to a URL like http://localhost/dvwa in your browser. Log in to DVWA with the default credentials: admin / password. Go to the DVWA Security tab and set the security level to low. This will ensure the vulnerabilities are easy to exploit. Step 2: Identify VulnerabilityThe SQL Injection page has a simple input box where you can enter a user ID.The backend query is typically:SELECT * FROM users WHERE id = 'user_input';Enter a valid ID, like 1, into the input box and click "Submit." You should see the details for the user with ID 1. SQL Injection Source:
+            PHP
+
+    <?php
+
+    $id = $_REQUEST[ 'id' ];
+
+    switch ($_DVWA['SQLI_DB']) {
+        case MYSQL:
+            // Check database
+            $query  = "SELECT first_name, last_name FROM users WHERE user_id = '$id';";
+            $result = mysqli_query($GLOBALS["___mysqli_ston"],  $query ) or die( '<pre>' . ((is_object($GLOBALS["___mysqli_ston"])) ? mysqli_error($GLOBALS["___mysqli_ston"]) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)) . '</pre>' );
+
+            // Get results
+            while( $row = mysqli_fetch_assoc( $result ) ) {
+                // Get values
+                $first = $row["first_name"];
+                $last  = $row["last_name"];
+
+                // Feedback for end user
+                echo "<pre>ID: {$id}<br />First name: {$first}<br />Surname: {$last}</pre>";
+            }
+
+            mysqli_close($GLOBALS["___mysqli_ston"]);
+            break;
+        case SQLITE:
+            global $sqlite_db_connection;
+
+            #$sqlite_db_connection = new SQLite3($_DVWA['SQLITE_DB']);
+            #$sqlite_db_connection->enableExceptions(true);
+
+            $query  = "SELECT first_name, last_name FROM users WHERE user_id = '$id';";
+            #print $query;
+            try {
+                $results = $sqlite_db_connection->query($query);
+            } catch (Exception $e) {
+                echo 'Caught exception: ' . $e->getMessage();
+                exit();
+            }
+
+            if ($results) {
+                while ($row = $results->fetchArray()) {
+                    // Get values
+                    $first = $row["first_name"];
+                    $last  = $row["last_name"];
+
+                    // Feedback for end user
+                    echo "<pre>ID: {$id}<br />First name: {$first}<br />Surname: {$last}</pre>";
+                }
+            } else {
+                echo "Error in fetch ".$sqlite_db->lastErrorMsg();
+            }
+            break;
+    } 
+}
+ode
+?>
+
+Step 3: Trigger the ErrorNow, try to break the query. Enter a single quote ' in the input box and submit. The query becomes:SELECT * FROM users WHERE id = ''';The database encounters an extra quote and cannot complete the queryInstead of returning data, it displays an SQL error message (something like "You have an error in your SQL syntax…")This is called Error-Based SQL Injection because:The attacker sends invalid input (')The database throws an errorThat error leaks useful information about the database (like type of DB, number of columns, structure, etc.)2. Union-Based SQL InjectionUnion-based SQL Injection is a technique where attackers use the UNION operator to combine the results of two or more SELECT statements into a single result set. This can allow them to extract information from other tables in the database. The UNION operator can only be used if:Both queries have the same number of columnsThe columns have similar data typesThe columns are in the same orderUNION Operator: The UNION operator is used to combine the result-set of two or more SELECT statements.Each SELECT statement within UNION must have the same number of columnsThe columns must have similar data typesThe columns must be in the same orderUNION Syntax:SELECT column_name(s) FROM table1UNIONSELECT column_name(s) FROM table2;Example (DVWA Setup):Step 1: Identify VulnerabilityFirstly we have to find the number of columns of the existing table in the website to inject UNION based SQL InjectionThe SQL Injection page has a simple input box where you can enter a user ID. The backend query is likely something likeSELECT * FROM users WHERE id = 'user_input';Now, try to break the query. Enter a single quote ' in the input box and submit.If vulnerable, the application may return an SQL error such as:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1Step 2: Find Number of ColumnsUse the UNION Keyword to Discover the Number of ColumnsBefore using UNION, the attacker must determine how many columns exist in the query.Try to sort the results by column:1 ORDER BY 1Submit. It should work. SQL Injection Source
+            PHP
+
+    <?php
+if( isset( $_REQUEST[ 'Submit' ] ) ) {
+    // Get input
+    $id = $_REQUEST[ 'id' ];
+
+    switch ($_DVWA['SQLI_DB']) {
+        case MYSQL:
+            // Check database
+            $query  = "SELECT first_name, last_name FROM users WHERE user_id = '$id';";
+            $result = mysqli_query($GLOBALS["___mysqli_ston"],  $query ) or die( '<pre>' . ((is_object($GLOBALS["___mysqli_ston"])) ? mysqli_error($GLOBALS["___mysqli_ston"]) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)) . '</pre>' );
+
+            // Get results
+            while( $row = mysqli_fetch_assoc( $result ) ) {
+                // Get values
+                $first = $row["first_name"];
+                $last  = $row["last_name"];
+
+                // Feedback for end user
+                echo "<pre>ID: {$id}<br />First name: {$first}<br />Surname: {$last}</pre>";
+            }
+
+            mysqli_close($GLOBALS["___mysqli_ston"]);
+            break;
+        case SQLITE:
+            global $sqlite_db_connection;
+
+            #$sqlite_db_connection = new SQLite3($_DVWA['SQLITE_DB']);
+            #$sqlite_db_connection->enableExceptions(true);
+
+            $query  = "SELECT first_name, last_name FROM users WHERE user_id = '$id';";
+            #print $query;
+            try {
+                $results = $sqlite_db_connection->query($query);
+            } catch (Exception $e) {
+                echo 'Caught exception: ' . $e->getMessage();
+                exit();
+            }
+
+            if ($results) {
+                while ($row = $results->fetchArray()) {
+                    // Get values
+                    $first = $row["first_name"];
+                    $last  = $row["last_name"];
+
+                    // Feedback for end user
+                    echo "<pre>ID: {$id}<br />First name: {$first}<br />Surname: {$last}</pre>";
+                }
+            } else {
+                echo "Error in fetch ".$sqlite_db->lastErrorMsg();
+            }
+            break;
+    } 
+}
+?>
+
+Increment the number:1 ORDER BY 2Submit. It should work. Keep incrementing until you get an error.For example, 1 ORDER BY 4 might give you: Unknown column '4' in 'order clause'This means the query has 3 columns.Step 3: Prepare for UNION InjectionOnce the number of columns is known, the attacker can use the UNION operator to combine their own query with the original one and extract additional data.3. Blind-Based SQL InjectionBlind SQL Injection occurs when attackers cannot see query results directly on the webpage. Instead, they infer information from subtle changes in the application’s behavior or response time. Although slower and more tedious than classic SQLi, it can be equally effective.Types of Blind SQL Injection:1. Boolean-Based Blind SQL InjectionThe attacker sends SQL queries that return either true or false conditionsThe application behaves differently based on the resultDifferences may appear as changes in page content, messages, or layout2. Time-Based Blind SQL InjectionThe attacker injects SQL commands that delay database response (e.g., SLEEP() function)If the condition is true, the response is delayedIf false, the response is immediateThe attacker uses response time to infer informationExample:Consider a login page where you enter a username and password. The application constructs a SQL query like this:SELECT * FROM users WHERE username = 'user_input' AND password = 'password_input';Boolean-Based Testing:A blind SQL injection would involve manipulating the user_input field to ask the database a question.Instead of getting a direct response, the attacker might try something like this:user_input = 'admin' AND 1=1; --If the page loads normally, the attacker knows that 1=1 is a true statement.user_input = 'admin' AND 1=2; --If the page shows an error or behaves differently, the attacker knows that 1=2 is a false statement. By using a series of these true/false questions, an attacker can systematically guess and extract information, one character at a time. The process can be automated to guess everything from table names to user passwords.Impact of SQL Injection AttacksUnauthorized access to sensitive data: Attackers can retrieve personal, financial, or confidential information stored in the database.Data integrity issues: Attackers can modify, delete, or corrupt critical data, impacting the application's functionality.Privilege escalation: Attackers can bypass authentication mechanisms and gain administrative privileges.Service downtime: SQL injection can overload the server, causing performance degradation or system crashes.Reputation damage: A successful attack can severely harm the reputation of an organization, leading to a loss of customer trust.Preventing SQL Injection AttacksThere are several best practices to prevent SQL injection attacks:1. Use Prepared Statements and Parameterized QueriesTreats user input as data, not executable SQL codePrevents attackers from modifying query structureExample in PHP (using MySQLi):$stmt = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = ?");$stmt->bind_param("ss", $username, $password);$stmt->execute();2. Employ Stored ProceduresPredefined SQL queries stored in the databaseReduces risk of dynamic query manipulationHelps separate application logic from SQL codeExample:CREATE PROCEDURE GetUserByUsername (IN username VARCHAR(50))BEGIN   SELECT * FROM users WHERE username = username;END;3. Whitelist Input ValidationAllow only valid input formats (e.g., letters, numbers)Blocks malicious characters like ', --, or ;Commonly used for fields like usernames and emails4. Use ORM FrameworksTools like Hibernate or Entity Framework generate safe queries automaticallyReduces direct SQL query writing and injection risk5. Restrict Database PrivilegesGive users only necessary permissions (e.g., SELECT, INSERT)Prevent dangerous actions like DROP or DELETE where not needed6. Error HandlingAvoid showing detailed database errors to usersDisplay generic error messages insteadLog technical errors securely for developers

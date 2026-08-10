@@ -1,0 +1,79 @@
+# Defaultdict in Python - GeeksforGeeks
+
+Defaultdict is a subclass of the built-in dict class from the collections module. It automatically assigns a default value to keys that do not exist which means no need to manually check for missing keys and avoid KeyError.This example shows how a defaultdict automatically creates missing keys with a default empty list.
+            Python
+
+    from collections import defaultdict
+d = defaultdict(list)
+
+d['fruits'].append('apple')
+d['vegetables'].append('carrot')
+print(d)
+print(d['juices'])
+
+Outputdefaultdict(<class 'list'>, {'fruits': ['apple'], 'vegetables': ['carrot']})
+[]
+Explanation: Code creates a defaultdict with list as the default factory. Whenever a missing key is accessed, list() is automatically called to create and return a new empty list.It adds elements to the 'fruits' and 'vegetables' keys. When trying to access the 'juices' key, no KeyError is raised, and an empty list is returned since it doesn't exist in the dictionary.Syntaxdefaultdict(default_factory)Parameters:default_factory: A callable (like int, list, set, str or a custom function) that provides the default value for missing keys. If this argument is None, accessing a missing key raises a KeyError.Return Value: It returns a dictionary-like object that automatically supplies a default value for missing keys instead of raising KeyError.Why do we need defaultdict()In a normal dictionary, accessing a missing key raises a KeyError. defaultdict solves this by:Automatically creating missing keys with a default value.Reducing repetitive if key not in dict checks.Making tasks like counting, grouping, or collecting items easier.Being especially useful for histograms, graph building, text grouping, and caching.How Does defaultdict Work?When you create a defaultdict, you specify a default_factory (a callable).If the key exists: its value is returned.If the key does not exist: default_factory is called to generate a default value.For example:int: returns 0list: returns []str: returns ""This mechanism avoids errors and makes code simpler when handling missing keys.Use Cases of defaultdict1. Using List as Default FactoryWhen the list class is passed as the default_factory argument, a defaultdict is created in which the values are lists.Example: This example shows how we can use list as the default factory, so every missing key will automatically start with an empty list.
+            Python
+
+    from collections import defaultdict
+d = defaultdict(list)
+for i in range(5):
+    d[i].append(i)
+    
+print("Dictionary with values as list:")
+print(d)
+
+OutputDictionary with values as list:
+defaultdict(<class 'list'>, {0: [0], 1: [1], 2: [2], 3: [3], 4: [4]})
+Explanation: A defaultdict is created with list, which means any missing key will automatically have an empty list as its value. The loop appends the value of i to the list of the corresponding key.2. Using int Default FactoryWhen the int class is passed as the default_factory argument, then a defaultdict is created with default value as zero.Example: This example demonstrates using int as the default factory, making missing keys default to 0.
+            Python
+
+    from collections import defaultdict
+d = defaultdict(int)
+a = [1, 2, 3, 4, 2, 4, 1, 2]
+for i in a:
+    d[i] += 1
+    
+print(d)
+
+Outputdefaultdict(<class 'int'>, {1: 2, 2: 3, 3: 1, 4: 2})
+Explanation: int() returns 0, so missing keys will have a default value of 0. The loop counts the occurrences of each number in the list a and updates the dictionary accordingly.3. Using str Default FactoryWith defaultdict(str), any new key automatically maps to '', so you can concatenate text without key checks.Example: This example shows how str as a factory creates empty strings ("") for missing keys.
+            Python
+
+    from collections import defaultdict
+sd = defaultdict(str)
+sd['greeting'] = 'Hello'
+print(sd)
+
+Outputdefaultdict(<class 'str'>, {'greeting': 'Hello'})
+Explanation: str() returns an empty string, so missing keys will have an empty string as their default value. A value ('Hello') is explicitly set for the key 'greeting'.4. Grouping Words by First Letterdefaultdict is very handy in text processing, for example grouping words by their starting letter.Example: This example demonstrates how defaultdict(list) can be used to group words by their first letter, very useful in text processing.
+            Python
+
+    from collections import defaultdict
+words = ["apple", "ant", "banana", "bat", "carrot", "cat"]
+grouped = defaultdict(list)
+for word in words:
+    grouped[word[0]].append(word)
+
+print(grouped)
+
+Outputdefaultdict(<class 'list'>, {'a': ['apple', 'ant'], 'b': ['banana', 'bat'], 'c': ['carrot', 'cat']})
+Explanation: Here, defaultdict(list) automatically creates an empty list for each new first letter, so we can group words without checking if the key exists.Python defaultdict Type for Handling Missing KeysBehind the scenes, defaultdict uses the special __missing__() method:It is automatically called when a key is not found.If a default_factory is provided: its return value is used.If default_factory is None: a KeyError is raised.Example: This example shows how the __missing__() method works behind the scenes in defaultdict. It is automatically called when a key is not found, returning the default value instead of raising a KeyError.
+            Python
+
+    from collections import defaultdict
+d = defaultdict(lambda: "Not Present")
+d["a"] = 1
+d["b"] = 2
+
+print(d.__missing__('x'))
+print(d.__missing__('d'))
+
+# Normal access to existing key
+print(d['a'])              
+
+OutputNot Present
+Not Present
+1
+Explanation:Missing keys 'x' and 'd' trigger __missing__() and return "Not Present".Calling __missing__('a') directly does not return the stored value but instead triggers the default_factory.Normal access with d['a'] returns the correct stored value (1).Note: __missing__() is intended for internal use in defaultdict. To safely access values, use d[key] or d.get(key, default) instead of calling __missing__ directly.

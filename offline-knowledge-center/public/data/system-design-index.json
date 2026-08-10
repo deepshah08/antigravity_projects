@@ -1,0 +1,570 @@
+{
+  "id": "system-design",
+  "title": "System Design Tutorial",
+  "articles": [
+    {
+      "id": "system-design-001",
+      "title": "System Design Introduction -  LLD & HLD - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-002",
+      "title": "Functional and Non Functional Requirements - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-003",
+      "title": "Introduction to High level Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-004",
+      "title": "Draw High Level Design Diagram - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-005",
+      "title": "Monolithic Architecture - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-006",
+      "title": "Microservices - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-007",
+      "title": "Monolithic Vs Microservices Architecture - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-008",
+      "title": "Event-Driven Architecture(EDA) - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-009",
+      "title": "Event-Driven Architecture in an E-commerce System - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-010",
+      "title": "Serverless Architecture - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-011",
+      "title": "Stateless and Stateful Systems in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-012",
+      "title": "Stateful Vs Stateless Architecture - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-013",
+      "title": "Pub/Sub Architecture - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-014",
+      "title": "Scalability in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-015",
+      "title": "Horizontal and Vertical Scaling | System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-016",
+      "title": "Choosing the Right Scalability Approach - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-017",
+      "title": "Guide for Designing Highly Scalable Systems - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-018",
+      "title": "Primary Scalability Bottlenecks in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-019",
+      "title": "Database Design - System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-020",
+      "title": "Types of Databases in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-021",
+      "title": "SQL Vs NoSQL Databases in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-022",
+      "title": "File and Database Storage Systems in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-023",
+      "title": "Database Replication in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-024",
+      "title": "Types of Database Replication - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-025",
+      "title": "Database Sharding - System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-026",
+      "title": "Data Partitioning Techniques in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-027",
+      "title": "Block, Object, and File Storage in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-028",
+      "title": "Introduction to Database Normalization - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-029",
+      "title": "SQL Query Optimizations - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-030",
+      "title": "Denormalization in Databases - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-031",
+      "title": "Redis Introduction - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-032",
+      "title": "Availability in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-033",
+      "title": "High Availability in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-034",
+      "title": "Consistency in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-035",
+      "title": "Consistency Patterns - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-036",
+      "title": "CAP Theorem in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-037",
+      "title": "Reliability in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-038",
+      "title": "Fault Tolerance in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-039",
+      "title": "Maintainability in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-040",
+      "title": "Load Balancer - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-041",
+      "title": "Types of Load Balancer - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-042",
+      "title": "Load Balancing Algorithms - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-043",
+      "title": "Difference between Concurrency and Parallelism - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-044",
+      "title": "Stateless Vs Stateful Load Balancing - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-045",
+      "title": "Load Balancing Vs Failover - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-046",
+      "title": "Consistent Hashing - System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-047",
+      "title": "Latency and Throughput - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-048",
+      "title": "Caching - System Design Concept - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-049",
+      "title": "Distributed Cache - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-050",
+      "title": "Design Distributed Cache | System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-051",
+      "title": "Edge Caching - System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-052",
+      "title": "CDN Vs Edge Server - System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-053",
+      "title": "Cache Eviction Policies | System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-054",
+      "title": "Cold and Warm Cache in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-055",
+      "title": "API Gateway - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-056",
+      "title": "Message Queues - System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-057",
+      "title": "Rate Limiting in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-058",
+      "title": "Rate Limiting Algorithms - System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-059",
+      "title": "Communication Protocols in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-060",
+      "title": "Domain Name System (DNS) - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-061",
+      "title": "DNS Caching - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-062",
+      "title": "DNS Cache Flushing - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-063",
+      "title": "Time-To-Live (TTL) - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-064",
+      "title": "Content Delivery Network(CDN) in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-065",
+      "title": "Proxies in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-066",
+      "title": "Difference between Forward Proxy and Reverse Proxy - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-067",
+      "title": "Web and Application Server in Designing Systems - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-068",
+      "title": "Long Polling and Short Polling - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-069",
+      "title": "WebSocket and Its Difference from HTTP - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-070",
+      "title": "Event Sourcing Pattern - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-071",
+      "title": "Event Sourcing Vs Event Streaming in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-072",
+      "title": "Event-Driven APIs in Microservice Architectures - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-073",
+      "title": "Error Handling in Event-Driven Architecture - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-074",
+      "title": "Restore State in an Event-Based, Message-Driven Microservice Architecture on Failure Scenario - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-075",
+      "title": "Event-Driven Architecture Patterns in Cloud Native Applications - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-076",
+      "title": "Request-driven Vs Event-driven Microservices - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-077",
+      "title": "Event-Driven Architecture vs. Microservices Architecture - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-078",
+      "title": "Message-Driven Architecture Vs Event-Driven Architecture - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-079",
+      "title": "Unit Testing - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-080",
+      "title": "Integration Testing - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-081",
+      "title": "Load Testing - Software Testing - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-082",
+      "title": "Stress Testing - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-083",
+      "title": "CI/CD Pipeline - System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-084",
+      "title": "Security Measures in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-085",
+      "title": "Secure Socket Layer (SSL) vs. Transport Layer Security (TLS) - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-086",
+      "title": "What is  Secure Software Development Life Cycle (SSDLC) - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-087",
+      "title": "Data Backup and Disaster Recovery - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-088",
+      "title": "Introduction to Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-089",
+      "title": "Consensus Algorithms in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-090",
+      "title": "Distributed Tracing - System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-091",
+      "title": "Secure Communication in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-092",
+      "title": "Design Issues of Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-093",
+      "title": "Software Cost Estimation - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-094",
+      "title": "Performance Optimization Techniques for System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-095",
+      "title": "Cost Vs Performance - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-096",
+      "title": "OOP Concepts for System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-097",
+      "title": "Modularity and Interfaces In System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-098",
+      "title": "Low Level Design or LLD - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-099",
+      "title": "Difference between High Level Design(HLD) and Low Level Design(LLD) - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-100",
+      "title": "SOLID Principles with Real Life Examples - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-101",
+      "title": "DRY Principle in Software Development - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-102",
+      "title": "KISS Principle in Software Development - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-103",
+      "title": "YAGNI Principle in Software Development - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-104",
+      "title": "Unified Modeling Language (UML) Diagrams - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-105",
+      "title": "Design Patterns Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-106",
+      "title": "Most Commonly Asked System Design Interview Questions - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-107",
+      "title": "Cracking the System Design Interview Round - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-108",
+      "title": "Crack Low-Level System Design Interviews - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-109",
+      "title": "System Design Concepts for Interview Preparation - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-110",
+      "title": "Approach Object-Oriented Design Questions in Interview - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-111",
+      "title": "System Design Life Cycle (SDLC) - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-112",
+      "title": "What are the components of System Design? - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-113",
+      "title": "Goals and Objectives of System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-114",
+      "title": "Why is it Important to Learn System Design? - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-115",
+      "title": "Important Key Concepts and Terminologies – Learn System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-116",
+      "title": "Analysis of Monolithic and Distributed Systems - Learn System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-117",
+      "title": "Requirements Gathering in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-118",
+      "title": "Differences between System Analysis and System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-119",
+      "title": "Capacity Estimation in Systems Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-120",
+      "title": "How to Answer a System Design Interview Problem/Question? - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-121",
+      "title": "Activity Diagrams - Unified Modeling Language (UML) - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-122",
+      "title": "Object-Oriented Analysis and Design(OOAD) - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-123",
+      "title": "Data Structures and Algorithms for System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-124",
+      "title": "Containerization Architecture in System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-125",
+      "title": "System Design Interview Questions and Answers - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-126",
+      "title": "Creational Design Patterns - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-127",
+      "title": "Structural Design Patterns - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-128",
+      "title": "Behavioral Design Patterns - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-129",
+      "title": "Design Patterns Cheat Sheet - Selecting the Appropriate Design Pattern - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-130",
+      "title": "System Design Interview Questions and Answers - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-131",
+      "title": "Design Dropbox - A System Design Interview Question - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-132",
+      "title": "Designing Twitter - A System Design Interview Question - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-133",
+      "title": "System Design Netflix - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-134",
+      "title": "System Design of Uber App | Uber System Architecture - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-135",
+      "title": "Design BookMyShow - A System Design Interview Question - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-136",
+      "title": "Designing Facebook Messenger | System Design Interview - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-137",
+      "title": "Complete Roadmap to Learn System Design for Beginners - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-138",
+      "title": "Guide to System Design for Freshers - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-139",
+      "title": "System Design Training Program"
+    },
+    {
+      "id": "system-design-140",
+      "title": "DSA & System Design Course: The Complete SDE Interview Program"
+    },
+    {
+      "id": "system-design-141",
+      "title": "Java Backend Development Course with Spring Boot, Microservices & AI Tools"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+# Quiz about Python Heapq
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython HeapqLast Updated : DiscussCommentsQuestion 1What is the primary characteristic of a min-heap data structure?The smallest element is at the leaf nodes.Each parent node is larger than its children.The smallest element is always at the root.Elements are stored in a random order.Question 2Which function in the heapq module is used to add an element while maintaining the heap property?heapq.pop()heapq.insert()heapq.heappush()heapq.add()Question 3What operation does the heapq.heapreplace() function perform?It only adds an element to the heap.It pops the largest element from the heap.It pops the smallest element and adds a new element.It merges two heaps into one.Question 4Which of the following functions allows retrieval of the n largest elements from a heap?heapq.nlargest()heapq.getlargest()heapq.maxelements(n)heapq.retrievelargest()Question 5What is a disadvantage of using a heap queue?It supports random access to elements.It allows efficient sorting of all elements.It is not thread-safe.It requires more memory than linked lists.Question 6In Python's heapq module, which function is used to merge multiple sorted iterables into a single sorted heap?heapq.combine()heapq.merge()heapq.concat()heapq.join()Question 7When using the heappop() function, what is the result?It adds a new element to the heap.It returns the largest element in the heap.It removes and returns the smallest element in the heap.It checks the size of the heap.Question 8Which of the following statements about heaps is true?Heaps can be implemented using binary trees only.Heaps support random access to elements efficiently.Heaps do not allow duplicate elements.Heaps can be implemented using lists in Python.Question 9What is the time complexity of the heappush() operation in a heap?O(1)O(n)O(log n)O(n log n)Question 10Which heap operation is more efficient when replacing the smallest element with a new value?Using heappop() followed by heappush()Using heapq.replace()Using heappushpop()Using heapq.merge()Tags:PythonPython-QuizzesThere are 11 questions to complete.Take a part in the ongoing discussionView All Discussion

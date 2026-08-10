@@ -1,0 +1,200 @@
+# TreeSet in Java - GeeksforGeeks
+
+A TreeSet is a collection class that stores unique elements in a sorted order. It is part of java.util package that implements the SortedSet interface, and internally uses a Red-Black tree to maintain sorting.Does not allow null elements because sorting is based on comparison, which may cause NullPointerException.Implements the NavigableSet interface and provides navigation methods like higher(), lower(), ceiling() and floor().It is not synchronized and can be made synchronized using Collections.synchronizedSet().SyntaxTreeSet<DataType> ts = new TreeSet<>();This statement creates a TreeSet object in Java that stores elements in sorted order automatically
+            Java
+
+    import java.util.TreeSet;
+
+public class Main {
+    public static void main(String[] args) {
+
+        TreeSet<Integer> ts = new TreeSet<>();
+
+        ts.add(10);
+        ts.add(5);
+        ts.add(20);
+        ts.add(10); // duplicate (ignored)
+
+        System.out.println(ts);
+    }
+}
+
+Output[5, 10, 20]
+Hierarchy Diagram of TreeSetTreeSet implements NavigableSet, which extends SortedSet, which extends Set.TreeSet-HeirarchyNote:A class must implement Comparable or provide a Comparator to avoid ClassCastException at runtime.Built-in classes like String and wrapper classes already implement Comparable.Constructors of TreeSet In order to create a TreeSet, we need to create an object of the TreeSet class. The TreeSet class consists of various constructors which allow the possible creation of the TreeSet. The following are the constructors available in this class:1. TreeSet()Creates an empty TreeSet that sorts elements in their natural orderTreeSet<> ts = new TreeSet<>(); 2. TreeSet(Comparator)This constructor is used to build an empty TreeSet object in which elements will need an external specification of the sorting order.TreeSet <> ts = new TreeSet<>(comp); 3. TreeSet(Collection)Creates a TreeSet containing all elements from the given collection, stored in their natural sorted order. It is useful for converting a collection to a TreeSet.TreeSet <> t = new TreeSet<>(col);  4. TreeSet(SortedSet)Creates a TreeSet containing the same elements and order as the specified SortedSet.TreeSet <> t = new TreeSet<>(s);Common Operations on TreeSetHere we will be performing various operations over the TreeSet object to get familiar with the methods and concepts of TreeSet in java. Let’s see how to perform a few frequently used operations on the TreeSet.1. Adding ElementsTo add elements to a TreeSet, use the add() method. Elements are stored in ascending order, duplicates are ignored, and null values are not allowed.
+            Java
+
+    import java.util.*;
+class GFG {
+
+    public static void main(String[] args)
+    {
+        // Creating a Set interface with reference to TreeSet class
+        Set<String> ts = new TreeSet<>();
+
+        // Elements are added using add() method
+        ts.add("Geek");
+        ts.add("For");
+        ts.add("Geeks");
+
+        // Print all elements inside object
+        System.out.println(ts);
+    }
+}
+
+Output[For, Geek, Geeks]
+2. Accessing the ElementsAfter adding the elements, if we wish to access the elements, we can use inbuilt methods like contains(), first(), last(), etc. 
+            Java
+
+    import java.util.*;
+class GFG {
+
+    public static void main(String[] args){
+        
+        // Creating a NavigableSet object  with reference to
+        // TreeSet class
+        NavigableSet<String> ts = new TreeSet<>();
+
+        // Elements are added using add() method
+        ts.add("Geek");
+        ts.add("For");
+        ts.add("Geeks");
+
+        System.out.println("Tree Set is " + ts);
+        String check = "Geeks";
+
+        // Check if the above string exists in the treeset
+        // or not
+        System.out.println("Contains " + check + " "
+                           + ts.contains(check));
+
+        // Print the first element in the TreeSet
+        System.out.println("First Value " + ts.first());
+
+        // Print the last element in the TreeSet
+        System.out.println("Last Value " + ts.last());
+
+        String val = "Geek";
+
+        // Find the values just greater and smaller than the
+        // above string
+        System.out.println("Higher " + ts.higher(val));
+        System.out.println("Lower " + ts.lower(val));
+    }
+}
+
+OutputTree Set is [For, Geek, Geeks]
+Contains Geeks true
+First Value For
+Last Value Geeks
+Higher Geeks
+Lower For
+3. Removing the ValuesThe values can be removed from the TreeSet using the remove() method. There are various other methods that are used to remove the first value or the last value. 
+            Java
+
+    import java.util.*;
+
+class GFG {
+
+    public static void main(String[] args){
+        
+        // Creating an object of NavigableSet with reference
+        // to TreeSet class
+        NavigableSet<String> ts = new TreeSet<>();
+
+        // Elements are added using add() method
+        ts.add("Geek");
+        ts.add("For");
+        ts.add("Geeks");
+        ts.add("A");
+        ts.add("B");
+        ts.add("Z");
+
+        System.out.println("Initial TreeSet " + ts);
+
+        // Removing a specific existing element inserted
+        // above
+        ts.remove("B");
+
+        // Printing the updated TreeSet
+        System.out.println("After removing element " + ts);
+
+        // Now removing the first element using pollFirst()
+        // method
+        ts.pollFirst();
+
+        // Again printing the updated TreeSet
+        System.out.println("After removing first " + ts);
+
+        // Removing the last element using pollLast() method
+        ts.pollLast();
+
+        System.out.println("After removing last " + ts);
+    }
+}
+
+OutputInitial TreeSet [A, B, For, Geek, Geeks, Z]
+After removing element [A, For, Geek, Geeks, Z]
+After removing first [For, Geek, Geeks, Z]
+After removing last [For, Geek, Geeks]
+4. Iterating the TreeSetThere are various ways to iterate through the TreeSet. The most famous one is to use the enhanced for loop. 
+            Java
+
+    import java.util.*;
+
+class GFG{
+
+    public static void main(String[] args){
+        
+        // Creating an object of Set with reference to
+        // TreeSet class
+        Set<String> ts = new TreeSet<>();
+
+        // Adding elements in above object using add()
+        // method
+        ts.add("Geek");
+        ts.add("For");
+        ts.add("Geeks");
+        ts.add("A");
+        ts.add("B");
+        ts.add("Z");
+        
+        for (String value : ts)
+            System.out.print(value + ", ");
+
+        System.out.println();
+    }
+}
+
+OutputA, B, For, Geek, Geeks, Z, 
+5. Using TreeSet with Custom ObjectsIf a class does not implement Comparable (e.g., StringBuffer), provide a Comparator.
+            Java
+
+    import java.util.*;
+
+class Geeks {
+
+    public static void main(String[] args)
+    {
+        // Creating a TreeSet with a custom Comparator
+        Set<StringBuffer> ts = new TreeSet<>(new Comparator<StringBuffer>() {
+            @Override
+            public int compare(StringBuffer sb1, StringBuffer sb2) {
+                return sb1.toString().compareTo(sb2.toString());
+            }
+        });
+
+        // Adding elements to the TreeSet
+        ts.add(new StringBuffer("A"));
+        ts.add(new StringBuffer("Z"));
+        ts.add(new StringBuffer("L"));
+        ts.add(new StringBuffer("B"));
+        ts.add(new StringBuffer("O"));
+        ts.add(new StringBuffer("1"));
+
+        // Printing the elements
+        System.out.println(ts); 
+    }
+}
+
+Try It YourselfOutput[1, A, B, L, O, Z]
+Methods of TreeSetMethod of TreeSet Class are depicted below in tabular format which later on we will be implementing to showcase in the implementation part.MethodDescriptionadd(Object o)Adds element in sorted order; ignores duplicates.addAll(Collection c)Adds all elements from a collection; ignores duplicates..ceiling(E e)This method returns the least element in this set greater than or equal to the given element, or null if there is no such element.clear()This method will remove all the elements.clone()The method is used to return a shallow copy of the set, which is just a simple copied set.Comparator comparator()This method will return the Comparator used to sort elements in TreeSet or it will return null if the default natural sorting order is used.contains(Object o)This method will return true if a given element is present in TreeSet else it will return false.descendingIterator()This method returns an iterator over the elements in this set in descending order.descendingSet()This method returns a reverse order view of the elements contained in this set.first()This method will return the first element in TreeSet if TreeSet is not null else it will throw NoSuchElementException.floor(E e)This method returns the greatest element in this set less than or equal to the given element, or null if there is no such element.headSet(Object toElement)This method will return elements of TreeSet which are less than the specified element.higher(E e)This method returns the least element in this set strictly greater than the given element, or null if there is no such element.isEmpty()This method is used to return true if this set contains no elements or is empty and false for the opposite case.Iterator iterator()Returns an iterator for iterating over the elements of the set.last()This method will return the last element in TreeSet if TreeSet is not null else it will throw NoSuchElementException.lower(E e)This method returns the greatest element in this set strictly less than the given element, or null if there is no such element.pollFirst()This method retrieves and removes the first (lowest) element, or returns null if this set is empty.pollLast()This method retrieves and removes the last (highest) element, or returns null if this set is empty.remove(Object o)It returns true/false whether the element was removedsize()This method is used to return the size of the set or the number of elements present in the set.spliterator()This method creates a late-binding and fail-fast Spliterator over the elements in this set.subSet(Object fromElement, Object toElement)This method will return elements ranging from fromElement to toElement. fromElement is inclusive and toElement is exclusive.tailSet(Object fromElement)This method will return elements of TreeSet which are greater than or equal to the specified element.

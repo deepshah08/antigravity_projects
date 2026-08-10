@@ -1,0 +1,69 @@
+# Quiz about Process Scheduling
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsProcess SchedulingLast Updated : DiscussCommentsQuestion 1Consider the 3 processes, P1, P2 and P3 shown in the table. Process           Arrival time         Time Units Required   P1                0                         5   P2                1                         7   P3                3                         4 The completion order of the 3 processes under the policies FCFS and RR2 (round robin scheduling with CPU quantum of 2 time units) areFCFS: P1, P2, P3 RR2: P1, P2, P3 FCFS: P1, P3, P2 RR2: P1, P3, P2FCFS: P1, P2, P3 RR2: P1, P3, P2FCFS: P1, P3, P2 RR2: P1, P2, P3Question 2A scheduling algorithm assigns priority proportional to the waiting time of a process. Every process starts with priority zero (the lowest priority). The scheduler re-evaluates the process priorities every T time units and decides the next process to schedule. Which one of the following is TRUE if the processes have no I/O operations and all arrive at time zero?This algorithm is equivalent to the first-come-first-serve algorithmThis algorithm is equivalent to the round-robin algorithm.This algorithm is equivalent to the shortest-job-first algorithm.. This algorithm is equivalent to the shortest-remaining-time-first algorithmQuestion 3Consider the following table of arrival time and burst time for three processes P0, P1 and P2. Process   Arrival time   Burst TimeP0            0 ms          9 msP1            1 ms          4 msP2            2 ms          9 ms The pre-emptive shortest job first scheduling algorithm is used. Scheduling is carried out only at arrival or completion of processes. What is the average waiting time for the three processes?5.0 ms4.33 ms6.337.33Question 4Which of the following statements are true? I. Shortest remaining time first scheduling may cause starvationII. Preemptive scheduling may cause starvationIII. Round robin is better than FCFS in terms of response timeI only I and III onlyII and III onlyI, II and IIIQuestion 5In the following process state transition diagram for a uniprocessor system, assume that there are always some processes in the ready state: Now consider the following statements:  I. If a process makes a transition D, it would result in    another process making transition A immediately.II. A process P2 in blocked state can make transition E     while another process P1 is in running state.III. The OS uses preemptive scheduling.IV. The OS uses non-preemptive scheduling.  Which of the above statements are TRUE?  I and III and IIIII and IIIII and IVQuestion 6An operating system uses Shortest Remaining Time first (SRT) process scheduling algorithm. Consider the arrival times and execution times for the following processes: Process  Execution time  Arrival timeP1             20            0P2             25            15P3             10            30P4             15            45 What is the total waiting time for process P2? 5154055Question 7Group 1 contains some CPU scheduling algorithms and Group 2 contains some applications. Match entries in Group 1 to entries in Group 2.     Group I                          Group II(P) Gang Scheduling              (1) Guaranteed Scheduling(Q) Rate Monotonic Scheduling    (2) Real-time Scheduling(R) Fair Share Scheduling        (3) Thread SchedulingP – 3 Q – 2 R – 1P – 1 Q – 2 R – 3P – 2 Q – 3 R – 1P – 1 Q – 3 R – 2Question 8Consider three CPU-intensive processes, which require 10, 20 and 30 time units and arrive at times 0, 2 and 6, respectively. How many context switches are needed if the operating system implements a shortest remaining time first scheduling algorithm? Do not count the context switches at time zero and at the end.1234Question 9Three processes A, B and C each execute a loop of 100 iterations. In each iteration of the loop, a process performs a single computation that requires tc CPU milliseconds and then initiates a single I/O operation that lasts for tio milliseconds. It is assumed that the computer where the processes execute has sufficient number of I/O devices and the OS of the computer assigns different I/O devices to each process. Also, the scheduling overhead of the OS is negligible. The processes have the following characteristics: Process id      tc           tio     A        100 ms    500 ms     B        350 ms    500 ms     C        200 ms    500 msThe processes A, B, and C are started at times 0, 5 and 10 milliseconds respectively, in a pure time sharing system (round robin scheduling) that uses a time slice of 50 milliseconds. The time in milliseconds at which process C would complete its first I/O operation is ___________.5001000200010000Question 10An operating system uses shortest remaining time first scheduling algorithm for pre-emptive scheduling of processes. Consider the following set of processes with their arrival times and CPU burst times (in milliseconds): Process      Arrival Time    Burst Time  P1           0               12  P2           2               4  P3           3               6  P4           8               5 The average waiting time (in milliseconds) of the processes is _________.4.55.05.56.5Tags:Operating SystemsThere are 54 questions to complete.Take a part in the ongoing discussionView All Discussion

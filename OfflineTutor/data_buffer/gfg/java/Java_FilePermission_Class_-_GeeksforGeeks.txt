@@ -1,0 +1,91 @@
+# Java FilePermission Class - GeeksforGeeks
+
+The FilePermission class in Java represents access control to a file or directory by specifying a path name and permitted actions. It is used by the Java security framework to enforce read, write, execute, or delete operations.Part of the java.io package and extends the Permission classSupports actions like read, write, execute, and delete
+            Java
+
+    import java.io.FilePermission;
+
+public class Main {
+    public static void main(String[] args) {
+        FilePermission fp = new FilePermission("GEEKS.txt", "read");
+        System.out.println(fp.getActions());
+    }
+}
+
+Output:readExplanation:The FilePermission object is created with the action "read".The getActions() method returns the canonical string representing the allowed actions.Since only one action is specified, it simply prints read.Supported ActionsThe FilePermission class supports the following actions:read: Grants permission to read the file.write: Grants permission to modify/write to the file.delete: Grants permission to delete the file using File.delete().readlink: Grants permission to read symbolic links.execute: Grants permission to execute the file.Class Declaration of FilePermission Classpublic final class FilePermission  extends Permission    implements SerializableConstructorCreates a new FilePermission object with the specified actions.FilePermission(String path, String actions)Parameters:path: The file or directory path.actions: Actions to be allowed (e.g., "read", "write").Methods of FilePermission Class1. equals(Object obj)Used to compare two FilePermission objects for equality. It returns true only when both the file path and the permitted actions are exactly the same.Syntax:public boolean equals(Object obj)Parameters: obj - the FilePermission object to compare.Returns: true if equal, otherwise false.
+            Java
+
+    import java.io.FilePermission;
+
+public class EqualsExample {
+    public static void main(String[] args) {
+        FilePermission fp1 = new FilePermission("GEEKS.txt", "read");
+        FilePermission fp2 = new FilePermission("GEEKS.txt", "read");
+
+        System.out.println(fp1.equals(fp2)); // Output: true
+    }
+}
+
+Outputtrue
+2. getActions() Provides a standardized (canonical) string of all actions granted to the permission. The actions are returned in a fixed order and separated by commas.Syntax:public String getActions()Returns: Canonical string: representing the actions associated with the object.
+            Java
+
+    import java.io.FilePermission;
+
+public class GetActionsExample {
+    public static void main(String[] args) {
+        FilePermission fp = new FilePermission("GEEKS.txt", "read,write");
+        System.out.println(fp.getActions()); // Output: read,write
+    }
+}
+
+Outputread,write
+3. hashCode() Generates a hash value that represents the FilePermission object. This value is consistent with equals() and is useful when permissions are stored in hash-based collections.Syntax:public int hashCode()Returns: Returns the hash code value for the FilePermission object.
+            Java
+
+    import java.io.FilePermission;
+
+public class HashCodeExample {
+    public static void main(String[] args) {
+        FilePermission fp = new FilePermission("GEEKS.txt", "read");
+        System.out.println(fp.hashCode()); // Output: some integer hash value
+    }
+}
+
+Output-989797644
+4. implies(Permission arg)Determines whether the current permission fully covers another permission. It returns true if the current object allows all actions requested by the given permission.Syntax:public boolean implies(Permission p)Parameters: p - the permission to check.Returns: true if the permission is implied, otherwise false.
+            Java
+
+    import java.io.FilePermission;
+import java.security.Permission;
+
+public class ImpliesExample {
+    public static void main(String[] args) {
+        FilePermission fp1 = new FilePermission("GEEKS.txt", "read,write");
+        FilePermission fp2 = new FilePermission("GEEKS.txt", "read");
+
+        System.out.println(fp1.implies(fp2)); // Output: true
+    }
+}
+
+Outputtrue
+5. newPermissionCollection()Creates a container designed specifically to hold multiple FilePermission objects. This collection helps manage permissions efficiently within Java’s security framework.Syntax:public PermissionCollection newPermissionCollection()Return: A new PermissionCollection object to hold FilePermission objects.
+            Java
+
+    import java.io.FilePermission;
+import java.security.PermissionCollection;
+
+public class PermissionCollectionExample {
+    public static void main(String[] args) {
+        FilePermission fp1 = new FilePermission("GEEKS.txt", "read");
+        FilePermission fp2 = new FilePermission("GEEKS.txt", "write");
+
+        PermissionCollection pc = fp1.newPermissionCollection();
+        pc.add(fp1);
+        pc.add(fp2);
+
+        System.out.println(pc.elements().hasMoreElements()); // Output: true
+    }
+}
+
+Outputtrue

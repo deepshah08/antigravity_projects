@@ -1,0 +1,158 @@
+# Bounded Types with Generics in Java - GeeksforGeeks
+
+Sometimes, you may want to restrict the types used in generics. For example, if a method should only work with numbers, you can use a bounded type like <T extends Number> to allow only Number and its subclasses.If you don’t want to make the entire class generic, you can define generic methods instead.Constructors, being special types of methods, can also use generic type parameters.Sometimes, you may want to allow only types that implement the Comparable interface (e.g., when comparing two objects).To do this, you use bounded types like <T extends Comparable <T>>.If a non-Comparable type is passed, the compiler throws a compile-time error, ensuring safe and correct usage.How to Declare a Bounded Type Parameter in Java? List the type parameter's name,Along with the extends keywordAnd by its upper bound. (which in the below example c is A.)Syntax<T extends superClassName>Note: In generics, extends means that T can be any subclass of the specified type or the type itself. It sets an inclusive upper bound for the type parameter.Example: Let’s take understand how to implement bounded types (extend superclass) with generics.
+            Java
+
+    class Bound<T extends A>
+{
+    private T objRef;
+    
+    public Bound(T obj){
+        this.objRef = obj;
+    }
+    
+    public void doRunTest(){
+        this.objRef.displayClass();
+    }
+}
+
+class A
+{
+    public void displayClass()
+    {
+        System.out.println("Inside super class A");
+    }
+}
+
+class B extends A
+{
+    public void displayClass()
+    {
+        System.out.println("Inside sub class B");
+    }
+}
+
+class C extends A
+{
+    public void displayClass()
+    {
+        System.out.println("Inside sub class C");
+    }
+}
+
+public class BoundedClass
+{
+    public static void main(String[] args)
+    {
+        // Creating object of sub class C and passing it to Bound as a type parameter.
+        Bound<C> bec = new Bound<C>(new C());
+        bec.doRunTest();
+        
+        // Creating object of sub class B and passing it to Bound as a type parameter.
+        Bound<B> beb = new Bound<B>(new B());
+        beb.doRunTest();
+        
+        // similarly passing super class A
+        Bound<A> bea = new Bound<A>(new A());
+        bea.doRunTest();
+    }
+}
+
+OutputInside sub class C
+Inside sub class B
+Inside super class ANow, we are restricted to only type A and its subclasses, So it will throw an error for any other type of subclasses.Example: Bounded Type Parameters in Generics (T extends A) . Only classes that extend class A can be used as type arguments
+            Java
+
+    class Bound<T extends A>
+{
+    private T objRef;
+    
+    public Bound(T obj){
+        this.objRef = obj;
+    }
+    
+    public void doRunTest(){
+        this.objRef.displayClass();
+    }
+}
+
+class A
+{
+    public void displayClass()
+    {
+        System.out.println("Inside super class A");
+    }
+}
+
+class B extends A
+{
+    public void displayClass()
+    {
+        System.out.println("Inside sub class B");
+    }
+}
+
+class C extends A
+{
+    public void displayClass()
+    {
+        System.out.println("Inside sub class C");
+    }
+}
+
+public class BoundedClass
+{
+    public static void main(String a[])
+    {
+        Bound<C> bec = new Bound<C>(new C());
+        bec.doRunTest();
+        
+        Bound<B> beb = new Bound<B>(new B());
+        beb.doRunTest();
+
+        Bound<A> bea = new Bound<A>(new A());
+        bea.doRunTest();
+        
+        Bound<String> bes = new Bound<String>(new String());
+        bes.doRunTest();
+    }
+}
+
+Output :error: type argument String is not within bounds of type-variable TMultiple BoundsMultiple Bounds can restrict a type to inherit from one class and implement multiple interfaces.The class must come first.You can’t use more than one class in the bounds.Example: <T extends ClassName & Interface1 & Interface2>Syntax:<T extends superClassName & Interface>Example:  Bound Type Parameters using multiple bounds in Generics (T extends A & B)
+            Java
+
+    class Bound<T extends A & B>
+{
+    private T objRef;
+    
+    public Bound(T obj){
+        this.objRef = obj;
+    }
+    
+    public void doRunTest(){
+        this.objRef.displayClass();
+    }
+}
+interface B
+{
+    public void displayClass();
+}
+
+class A implements B
+{
+    public void displayClass()
+    {
+        System.out.println("Inside super class A");
+    }
+}
+public class BoundedClass
+{
+    public static void main(String a[])
+    {
+        Bound<A> bea = new Bound<A>(new A());
+        bea.doRunTest();
+        
+    }
+}
+
+OutputInside super class A

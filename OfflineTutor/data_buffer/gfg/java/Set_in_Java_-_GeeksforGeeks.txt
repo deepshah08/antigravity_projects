@@ -1,0 +1,126 @@
+# Set in Java - GeeksforGeeks
+
+In Java, the Set interface is a part of the Java Collection Framework, located in the java.util package. It represents a collection of unique elements, meaning it does not allow duplicate values.The set interface does not allow duplicate elements.It can contain at most one null value except TreeSet implementation which does not allow null.The set interface provides efficient search, insertion, and deletion operations.Declaration of Set InterfaceThe declaration of Set interface is listed below:public interface Set<E> extends Collection <E>
+            Java
+
+    import java.util.HashSet;
+import java.util.Set;
+
+public class Geeks {
+    
+  	public static void main(String args[]) 
+    {
+        // Create a Set using HashSet
+        Set<String> s = new HashSet<>();
+
+        // Displaying the Set
+        System.out.println("Set Elements: " + s);
+    }
+}
+
+Explanation: In the above example, HashSet will appear as an empty set, as no elements were added. The order of elements in HashSet is not guaranteed, so the elements will be displayed in a random order if any are added.Hierarchy of Set interfaceThe image below demonstrates the hierarchy of Java Set interface.Set-HierarchyClasses that implement the Set interfaceHashSet: A set that stores unique elements without any specific order, using a hash table and allows one null element.EnumSet : A high-performance set designed specifically for enum types, where all elements must belong to the same enum.LinkedHashSet: A set that maintains the order of insertion while storing unique elements.TreeSet: A set that stores unique elements in sorted order, either by natural ordering or a specified comparator.Creating Set ObjectsSince Set is an interface, objects cannot be created of the typeset. We always need a class that implements this interface in order to create an object. And also, after the introduction of Generics in Java 1.5, it is possible to restrict the type of object that can be stored in the Set. This type-safe set can be defined as:// Obj is the type of the object to be stored in Set Set<Obj> set = new HashSet<Obj> (); Performing Various Operations on SetSet interface provides commonly used operations to manage unique elements in a collection. Now let us discuss these operations individually as follows:1. Adding ElementsTo add elements to a Set in Java, use the add() method.
+            Java
+
+    import java.util.*;
+
+// Main class
+class Geeks {
+ 
+    public static void main(String[] args)
+    {
+        Set<String> s = new HashSet<String>();
+
+        s.add("B");
+        s.add("B");
+        s.add("C");
+        s.add("A");
+
+        System.out.println(s);
+    }
+}
+
+Output[A, B, C]2. Accessing the ElementsAfter adding the elements, if we wish to access the elements, we can use inbuilt methods like contains().
+            Java
+
+    import java.util.*;
+
+class Geeks {
+
+    public static void main(String[] args)
+    {
+        Set<String> h = new HashSet<String>();
+
+        h.add("A");
+        h.add("B");
+        h.add("C");
+        h.add("A");
+
+        System.out.println("Set is " + h);
+
+        String s = "D";
+
+        System.out.println("Contains " + s + " " + h.contains(s));
+    }
+}
+
+OutputSet is [A, B, C]
+Contains D false
+3. Removing ElementsThe values can be removed from the Set using the remove() method.
+            Java
+
+    import java.util.*;
+class Geeks {
+
+    public static void main(String[] args)
+    {
+        // Declaring object of Set of type String
+        Set<String> h = new HashSet<String>();
+
+        // Elements are added using add() method, Custom input elements
+        h.add("A");
+        h.add("B");
+        h.add("C");
+        h.add("B");
+        h.add("D");
+        h.add("E");
+        
+        System.out.println("Initial HashSet " + h);
+
+        // Removing custom element using remove() method
+        h.remove("B");
+        System.out.println("After removing element " + h);
+    }
+}
+
+OutputInitial HashSet [A, B, C, D, E]
+After removing element [A, C, D, E]4. Iterating elementsThere are various ways to iterate through the Set. The most famous one is to use the enhanced for loop.
+            Java
+
+     import java.util.*;
+
+class Geeks {
+
+    public static void main(String[] args)
+    {
+        // Creating object of Set and declaring String type
+        Set<String> h = new HashSet<String>();
+
+        // Adding elements to Set using add() method, Custom input elements 
+        h.add("A");
+        h.add("B");
+        h.add("C");
+        h.add("B");
+        h.add("D");
+        h.add("E");
+
+        // Iterating through the Set via for-each loop 
+        for (String value : h)
+
+            // Printing all the values inside the object 
+            System.out.print(value + ", ");
+        
+        System.out.println();
+    }
+}
+
+OutputA, B, C, D, E, Methods of Set InterfaceLet us discuss methods present in the Set interface provided below in a tabular format below as follows:MethodDescriptionadd(element)Adds element if not already present. Returns true if added.addAll(collection)Adds all elements from the given collection.clear()Removes all elements from the set.contains(element)Checks if the set contains the specified element.containsAll(collection)Checks if the set contains all elements from the given collection.hashCode()Returns the hash code of the set.isEmpty()This method is used to check whether the set is empty or not.iterator()This method is used to return the iterator of the set.remove(element)Removes the specified element from the set.removeAll(collection)Removes all elements in the given collection from the set.retainAll(collection)	Retains only elements present in the given collection.size()Returns the number of elements in the set.toArray()This method is used to form an array of the same elements as that of the Set.

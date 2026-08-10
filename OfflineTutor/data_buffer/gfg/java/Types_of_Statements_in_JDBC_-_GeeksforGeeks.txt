@@ -1,0 +1,155 @@
+# Types of Statements in JDBC - GeeksforGeeks
+
+In JDBC (Java Database Connectivity), Statement objects are used to send SQL commands to a database and process the results. JDBC provides various types of statements to execute SQL queries efficiently, tailored to the application’s specific needs.There are three main types of statements in JDBC:Types of Statements1. StatementA Statement object is used for general-purpose access to databases and is useful for executing static SQL statements at runtime.Syntax:Statement statement = connection.createStatement();Execution Methodsexecute(String sql): Executes any SQL (SELECT, INSERT, UPDATE, DELETE). Returns true if a ResultSet is returned.executeUpdate(String sql): Executes DML (INSERT, UPDATE, DELETE). Returns number of rows affected.executeQuery(String sql): Executes SELECT queries. Returns a ResultSet.Example: Java Program illustrating Statement in JDBC
+            Java
+
+    import java.sql.*;
+
+public class Geeks {
+    public static void main(String[] args) {
+        try {
+          
+            // Load the driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Establish the connection
+            Connection con = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/world", "root", "12345");
+
+            // Create a statement
+            Statement st = con.createStatement();
+
+            // Execute a query
+            String sql = "SELECT * FROM people";
+            ResultSet rs = st.executeQuery(sql);
+
+            // Process the results
+            while (rs.next()) {
+                System.out.println("Name: " + rs.getString("name") +
+                                   ", Age: " + rs.getInt("age"));
+            }
+
+            // Close resources
+            rs.close();
+            st.close();
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+Output: Name and age are as shown for random inputs.2. Prepared StatementA PreparedStatement is a precompiled SQL statement. It supports parameters (?) which can be set dynamically, making it faster and safer than Statement.Syntax:String query = "INSERT INTO people(name, age) VALUES (?, ?)";PreparedStatement pstmt = con.prepareStatement(query);Execution Methodsexecute(): This returns a boolean value and executes a static SQL statement that is present in the prepared statement object.executeQuery(): This returns a ResultSet from the current prepared statement.executeUpdate(): This returns the number of rows affected by the DML statements such as INSERT, DELETE and more that is present in the current Prepared Statement.Example: Java Program illustrating Prepared Statement in JDBC
+            Java
+
+    import java.sql.*;
+
+import java.util.Scanner;
+
+class Geeks {
+
+    public static void main(String[] args) {
+      
+        // try block to check for exceptions
+        try {
+
+            // Loading drivers using forName() method
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Scanner class to take input from user
+            Scanner sc = new Scanner(System.in);
+
+            System.out.println(
+                "What age do you want to search?? ");
+
+            // Reading age an primitive datatype from user using nextInt() method
+            int age = sc.nextInt();
+
+            // Registering drivers using DriverManager
+            Connection con = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/world", "root", "12345");
+
+            // Create a statement
+            PreparedStatement ps = con.prepareStatement(
+                "select name from world.people where age = ?");
+
+            // Execute the query
+            ps.setInt(1, age);
+            ResultSet res = ps.executeQuery();
+
+            // Condition check using next() method to check for element
+            while (res.next()) {
+
+                // Print and display elements(Names)
+                System.out.println("Name : "
+                                   + res.getString(1));
+            }
+
+        }
+
+        // Catch block to handle database exceptions
+        catch (SQLException e) {
+
+            // Display the DB exception if any
+            System.out.println(e);
+        }
+
+        // Catch block to handle class exceptions
+        catch (ClassNotFoundException e) {
+
+            e.printStackTrace();
+        }
+    }
+}
+
+Output: 3. Callable StatementA CallableStatement is used to execute stored procedures in the database. Stored procedures are precompiled SQL logic stored on the server, often used for complex operations.Syntax: CallableStatement cstmt = con.prepareCall("{call ProcedureName(?, ?)}");Execution Methodsexecute(): Executes the stored procedure and returns a boolean indicating whether the result is a ResultSet (true) or an update count (false).executeQuery(): Executes a stored procedure that returns a ResultSet.executeUpdate(): Executes a stored procedure that performs an update and returns the number of rows affected.Example: Java Program illustrating Callable Statement in JDBC
+            Java
+
+    import java.sql.*;
+
+public class Geeks {
+
+    public static void main(String[] args) {
+      
+        // Try block to check if any exceptions occur
+        try {
+          
+            // Load and register the driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Establish a connection
+            Connection con = DriverManager
+              .getConnection("jdbc:mysql://localhost:3306/world", "root", "12345");
+
+            // Create a CallableStatement
+            CallableStatement cs = 
+              con.prepareCall("{call GetPeopleInfo()}");
+
+            // Execute the stored procedure
+            ResultSet res = cs.executeQuery();
+
+            // Process the results
+            while (res.next()) {
+              
+                // Print and display elements (Name and Age)
+                System.out.println("Name : " + res.getString("name"));
+                System.out.println("Age : " + res.getInt("age"));
+            }
+
+            // Close resources
+            res.close();
+            cs.close();
+            con.close();
+        } 
+        // Catch block for SQL exceptions
+        catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        // Catch block for ClassNotFoundException
+        catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+Output: Difference Between Statement, PreparedStatement and CallableStatementFeature/AspectStatementPreparedStatementCallableStatementPurposeUsed for executing simple/static SQL queriesUsed for executing parameterized SQL queriesUsed for executing stored proceduresSQL ReusabilitySQL query written directly inside executeQuery() or executeUpdate()SQL query is precompiled and stored; can be executed multiple times with different parametersCalls stored procedures that may contain multiple SQL statementsParameters SupportNot supported (values must be hard-coded in query)Supported using ? placeholdersSupported using ? placeholders for IN, OUT and INOUT parametersPerformanceSlower for repeated queries (query compiled each time)Faster for repeated queries (query compiled once and reused)Efficient when using stored procedures, since logic is precompiled in DBSecurity (SQL Injection)Vulnerable to SQL injection if user input is concatenated directly into queryPrevents SQL injection (parameters are bound safely)Prevents SQL injection (parameters are bound safely)Return TypeReturns single/multiple ResultSet or update countReturns single/multiple ResultSet or update countReturns single/multiple ResultSet, update count and can handle output parameters

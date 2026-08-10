@@ -1,0 +1,69 @@
+# Functions in C++ - GeeksforGeeks
+
+A function is a reusable block of code that performs a specific task. It divides a program into smaller logical units, improves readability, and makes code easier to maintain. A function can accept parameters, execute statements, and optionally return a value.A function allows you to write a piece of logic once and reuse it wherever needed in the program. This helps keep your code clean, organized, easier to understand and manage.Note: C++ also supports advanced features like function overloading, default arguments, and inline functions, which give more flexibility compared to C.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+// function definition
+int square(int x) {
+    return x * x;
+}
+
+int main() {
+
+    // Calling the function
+    int result = square(5);
+    
+    cout << "Square of 5 is: " << result << endl;
+
+    return 0;
+}
+
+OutputSquare of 5 is: 25
+Function UsageFunction SyntaxTo work with functions in C++, it is important to understand how they are written, declared, and called. This section covers function syntax, declaration vs definition, and how to call a function in a program.Function Syntax in C++A function in C++ follows this general format:Basic structure of a C++ function.Each part has a specific role:Return type: Specifies what type of value the function returns. Use void if there is no return value.Function name: The name you will use to call the function.Parameter list: Inputs that the function accepts. It can be empty if no inputs are needed.Function body: The block of code that runs when the function is called.Function Declaration vs DefinitionA function declaration introduces a function to the compiler by specifying its return type, name, and parameters without the body, and is used when the function is defined later or in another file.// Declarationint add(int, int); Function definition contains the actual code that specifies what the function does when it is called.//Definitionint add(int a, int b) {return a + b;}Purpose of Function Declaration in C++A function must be declared before it is used so the compiler knows its name, return type, and parameters. This can be done either by defining the function before main() or by declaring it using a function prototype if the definition appears later.This allows the compiler to correctly recognize and validate function calls in larger or multi-file programs.Calling a FunctionA function is used by calling its name followed by parentheses, passing required arguments if any, which executes the code inside the function.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+void greet() {
+    cout << "Welcome to C++ Programming!" << endl;
+}
+int multiply(int a, int b) {
+    return a * b;
+}
+
+int main() {
+    
+    greet();
+    int result = multiply(4, 5);
+    cout << "Multiplication result: " << result << endl;
+    return 0;
+}
+
+OutputWelcome to C++ Programming!
+Multiplication result: 20
+Explanation:greet() function: A parameterless void function that prints a welcome message and is called in main() using greet();.multiply(int a, int b) function: Takes two integers, returns their product, and is called in main() with 4 and 5, storing the result in result which is then printed.Note: Function calls allow you to reuse code easily. You can call the same function multiple times with different inputs to perform repeated tasks in a structured and clean way.Parameters or ArgumentsA function can accept input values called arguments, which are passed during the function call and received through typed parameters defined inside the function’s parentheses.Syntax: return_type name(type1 name1, type2 name2...) {    // Function body    return val;}
+            C++
+
+    #include <iostream>
+using namespace std;
+
+void printNum(int n){
+    cout << n << endl;
+}
+
+int main() {
+    int num1 = 10;
+    int num2 = 99;
+    
+    printNum(num1);
+    printNum(num2);
+    return 0;
+}
+
+Output10
+99
+Explanation: printNum() is defined with one integer parameter n, so it can accept and print only one integer value at a time.The function is called twice , once with num1 and once with num2 , and prints each value separately.Inside the function, the passed value is accessed using the parameter name n, not num1 or num2, due to variable scope.We cannot pass both numbers in a single call because the function is defined to accept only one parameter.Note: A function can only take as many arguments as specified in the function definition and it is compulsory to pass them while calling it. Also, they should be of same type as in the function definition.Types of Functions in C++In C++, functions can be broadly categorized based on two criteria:1. Based on originLibrary Functions: These are built-in functions provided by C++ standard libraries, such as sqrt(), abs(), and getline(). You can use them by including appropriate headers like <iostream>, <cmath>, or <string>.User-Defined Functions: These are functions created by the programmer to perform specific tasks in the program.2. Based on input and return typeUser-defined functions can be further classified based on whether they accept parameters or return a value:No parameters, no return value: The function performs a task but does not take input or return anything.Parameters, no return value: The function takes input but does not return a result.No parameters, return value: The function returns a result but does not take any input.Parameters and return value: The function takes input and returns a result.Note: These types help you design functions according to the task they need to perform. Choosing the right form improves code flexibility and clarity.Related Article: lamda function in cppFunction pass by reference in cpp

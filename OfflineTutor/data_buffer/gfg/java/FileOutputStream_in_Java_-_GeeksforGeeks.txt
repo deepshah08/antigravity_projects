@@ -1,0 +1,60 @@
+# FileOutputStream in Java - GeeksforGeeks
+
+The FileOutputStream class in Java is used to write data to a file in the form of bytes. It is ideal for writing binary data, such as images, audio, or video files. For writing character data, We should use FileWriter instead.Byte-Oriented Stream: Writes data byte by byte.Direct Access: Writes data directly to the disk without buffering.Platform Independent: Works across all operating systems.Example: write data to a file using FileOutputStream 
+            Java
+
+    import java.io.*;
+
+class Geeks {
+    public static void main(String[] args)
+    {
+        String data = "Hello, World!";
+
+        try (FileOutputStream fos = new FileOutputStream("output.txt")) {
+                 
+            // Convert the string into bytes
+            byte[] dataBytes = data.getBytes();
+
+            // Write the bytes to the file
+            fos.write(dataBytes);
+
+            System.out.println("Data successfully written to the file.");
+        }
+        catch (IOException e) {
+            System.out.println("An error occurred: " + e.getMessage());
+        }
+    }
+}
+
+OutputData successfully written to the file.
+What is meant by storing data in Java filesData Flow from RAM to Hard Disk using FileOutputStreamThis image shows how FileOutputStream works in Java. Data stored in RAM (variables) is sent to an output stream object, which transfers the data to a file. Finally, the file is saved on the hard disk, making the data persistent.Hierarchy of FileOutputStreamHierarchy of FileOutputStreamDeclaration of FileOutputStreampublic class FileOutputStream extends OutputStream FileOutputStream is a subclass of OutputStream. It implements the Closeable and Flushable interfaces.Constructors of FileOutputStream1. FileOutputStream( String name):Creates an object of file output stream to write to the file with the particular name mentioned.FileOutputStream fos = new FileOutputStream( "output.txt");2. FileOutputStream(File file): Creates a file output stream to write to the file represented by the specified File object. The file is overwritten if it already exists.File f = new File("output.txt"); FileOutputStream fos = new FileOutputStream(fi);3. FileOutputStream( File file, boolean append): Creates a file output stream object represented by specified file object. Appends data to the file if append is trueFile f = new File("output.txt");FileOutputStream fos = new FileOutputStream(fi, true);4. FileOutputStream( String name, boolean append): Creates an object of file output stream to write to the file with the specified name. If append is true, data is appended to the file instead of overwriting it.FileOutputStream fos = new FileOutputStream("output.txt", true);5. FileOutputStream(FileDescripter fdobj): Creates a file output stream for writing to the specified file descriptor, which represents an existing connection with the actual file in the file system.FileOutputStream fout = new FileOutputStream(FileDescripter fdobj);Steps to Write Data to a File using FileOutputStreamStep 1: Attach a File Path to FileOutputStreamFileOutputStream  f = new FileOutputStream(“file1.txt”);Step 2: Write data to the file. Use the write() to write data.f.write(data.getBytes());Step 3: Use close() to close the stream f.close()
+            Java
+
+    import java.io.*;
+
+public class Geeks {
+    public static void main(String[] args) {
+
+        String s = System.getProperty("user.dir");
+
+        // Print the current directory
+        System.out.println("Current working directory: " + s);
+
+        // Use try-with-resources to ensure the stream is closed automatically
+        try (FileOutputStream fout = new FileOutputStream("name3.txt", false)) { 
+
+            // String to be written to the file
+            String st = "TATA";
+
+            // Convert the string to a byte array and write it directly
+            fout.write(st.getBytes());
+
+        } catch (IOException e) {
+            
+            // Handle exceptions if file operations fail
+            System.out.println("An error occurred: " + e.getMessage());
+        }
+    }
+}
+
+Explanation: This code writes the String "TATA" to a file names as name3.txt. The file will be created or overwritten in the current working directory. The file name3.txt will be located in the directory from which the program is executed.The FileOutputStream is opened in overwrite mode (with false), meaning any existing content in name3.txt will be deleted and only "TATA" will be written to the file.The try-with-resources block ensures that the file stream is properly closed after the writing operationThe string "TATA" is converted into a byte array using st.getBytes() and written to the file directly.If name3.txt does not exist, it will be created in the current working directory.If name3.txt already exists, its content will be replaced with "TATA".The data i.e. the string TATA will be transferred to file.Before running the program:Before running programAfter running the program:name3.txt file is created and the text "TATA" is saved in the file.after running programOutput:OutputMethods of fileOutputStreamMethodDescriptionvoid close() It closes the file output stream.protected void finalize()It is used to clean up all the connection with the file output stream and finalize the data.FileChannel getChannel() Returns the unique FileChannel object associated with this file output stream.FileDescriptor getFD() It returns the file descriptor associated with the stream.void write()It writes the single byte to the file output stream.void write(int b)It is used to write the specified byte to the file output stream.void write(byte[] arr)It is used to write data in bytes of arr[] to file output stream.void write(byte[] ary, int off, int len)It is used to write the number of bytes equal to length to the output stream from an array starting from the position start.Methods inherited from OutputStreamMethodDescriptionflush()this method forces to write all data present in the output stream to the destination(hard disk).nullOutputStream()this method returns a new OutputStream which discards all bytes. The stream returned is initially open.

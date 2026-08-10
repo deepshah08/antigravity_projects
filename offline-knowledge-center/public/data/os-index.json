@@ -1,0 +1,362 @@
+{
+  "id": "os",
+  "title": "Os Tutorial",
+  "articles": [
+    {
+      "id": "os-001",
+      "title": "Introduction to Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-002",
+      "title": "Types of Operating Systems - GeeksforGeeks"
+    },
+    {
+      "id": "os-003",
+      "title": "Kernel in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-004",
+      "title": "System Call - GeeksforGeeks"
+    },
+    {
+      "id": "os-005",
+      "title": "What Happens When We Turn on Computer? - GeeksforGeeks"
+    },
+    {
+      "id": "os-006",
+      "title": "Process in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-007",
+      "title": "Process Control Block  in OS - GeeksforGeeks"
+    },
+    {
+      "id": "os-008",
+      "title": "Process Table in OS - GeeksforGeeks"
+    },
+    {
+      "id": "os-009",
+      "title": "Introduction of Process Management - GeeksforGeeks"
+    },
+    {
+      "id": "os-010",
+      "title": "States of a Process in Operating Systems - GeeksforGeeks"
+    },
+    {
+      "id": "os-011",
+      "title": "Process Schedulers in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-012",
+      "title": "CPU Scheduling in Operating Systems - GeeksforGeeks"
+    },
+    {
+      "id": "os-013",
+      "title": "Preemptive and Non-Preemptive Scheduling - GeeksforGeeks"
+    },
+    {
+      "id": "os-014",
+      "title": "Dispatcher vs Scheduler in OS - GeeksforGeeks"
+    },
+    {
+      "id": "os-015",
+      "title": "Starvation and Aging  in Operating Systems - GeeksforGeeks"
+    },
+    {
+      "id": "os-016",
+      "title": "Quiz about Process Scheduling"
+    },
+    {
+      "id": "os-017",
+      "title": "Inter Process Communication (IPC) - GeeksforGeeks"
+    },
+    {
+      "id": "os-018",
+      "title": "Introduction to Process Synchronization - GeeksforGeeks"
+    },
+    {
+      "id": "os-019",
+      "title": "Race condition - GeeksforGeeks"
+    },
+    {
+      "id": "os-020",
+      "title": "Critical Section in Synchronization - GeeksforGeeks"
+    },
+    {
+      "id": "os-021",
+      "title": "Solutions to Process Synchronization Problems - GeeksforGeeks"
+    },
+    {
+      "id": "os-022",
+      "title": "Peterson's Algorithm in Process Synchronization - GeeksforGeeks"
+    },
+    {
+      "id": "os-023",
+      "title": "Dekker's algorithm in Process Synchronization - GeeksforGeeks"
+    },
+    {
+      "id": "os-024",
+      "title": "Bakery Algorithm in Process Synchronization - GeeksforGeeks"
+    },
+    {
+      "id": "os-025",
+      "title": "Hardware Based Solutions in Process Synchronization - GeeksforGeeks"
+    },
+    {
+      "id": "os-026",
+      "title": "Semaphores in Process Synchronization - GeeksforGeeks"
+    },
+    {
+      "id": "os-027",
+      "title": "Mutex vs Semaphore - GeeksforGeeks"
+    },
+    {
+      "id": "os-028",
+      "title": "Monitors in Process Synchronization - GeeksforGeeks"
+    },
+    {
+      "id": "os-029",
+      "title": "Priority Inversion in Operating Systems - GeeksforGeeks"
+    },
+    {
+      "id": "os-030",
+      "title": "Classical IPC Problems - GeeksforGeeks"
+    },
+    {
+      "id": "os-031",
+      "title": "Quiz about OS Process Management"
+    },
+    {
+      "id": "os-032",
+      "title": "Introduction of Deadlock in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-033",
+      "title": "Handling Deadlocks - GeeksforGeeks"
+    },
+    {
+      "id": "os-034",
+      "title": "Deadlock Prevention - GeeksforGeeks"
+    },
+    {
+      "id": "os-035",
+      "title": "Banker's Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "os-036",
+      "title": "Deadlock Detection And Recovery - GeeksforGeeks"
+    },
+    {
+      "id": "os-037",
+      "title": "Starvation and Livelock - GeeksforGeeks"
+    },
+    {
+      "id": "os-038",
+      "title": "Resource Allocation Graph (RAG) - GeeksforGeeks"
+    },
+    {
+      "id": "os-039",
+      "title": "Resource Allocation Techniques for Processes - GeeksforGeeks"
+    },
+    {
+      "id": "os-040",
+      "title": "Program for Deadlock Free Condition in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-041",
+      "title": "Quiz about Deadlock"
+    },
+    {
+      "id": "os-042",
+      "title": "Thread in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-043",
+      "title": "User Level  vs Kernel Level Threads - GeeksforGeeks"
+    },
+    {
+      "id": "os-044",
+      "title": "Process-Based and Thread-Based Multitasking - GeeksforGeeks"
+    },
+    {
+      "id": "os-045",
+      "title": "Multi Threading Models in Process Management - GeeksforGeeks"
+    },
+    {
+      "id": "os-046",
+      "title": "Benefits of Multithreading in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-047",
+      "title": "Quiz about Threads in Operating Systems"
+    },
+    {
+      "id": "os-048",
+      "title": "Introduction to Memory and Memory Units - GeeksforGeeks"
+    },
+    {
+      "id": "os-049",
+      "title": "Memory Management in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-050",
+      "title": "Logical and Physical Address in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-051",
+      "title": "Implementation of Contiguous Memory Management Techniques - GeeksforGeeks"
+    },
+    {
+      "id": "os-052",
+      "title": "Internal Fragmentation in OS - GeeksforGeeks"
+    },
+    {
+      "id": "os-053",
+      "title": "External Fragmentation in OS - GeeksforGeeks"
+    },
+    {
+      "id": "os-054",
+      "title": "Program for Next Fit algorithm in Memory Management - GeeksforGeeks"
+    },
+    {
+      "id": "os-055",
+      "title": "Buddy System - Memory Allocation Technique - GeeksforGeeks"
+    },
+    {
+      "id": "os-056",
+      "title": "Non-Contiguous Allocation in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-057",
+      "title": "Paging - GeeksforGeeks"
+    },
+    {
+      "id": "os-058",
+      "title": "Segmentation in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-059",
+      "title": "Segmentation with Paging - GeeksforGeeks"
+    },
+    {
+      "id": "os-060",
+      "title": "Overlays in Memory Management - GeeksforGeeks"
+    },
+    {
+      "id": "os-061",
+      "title": "Virtual Memory in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-062",
+      "title": "Demand Paging in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-063",
+      "title": "Swap Space in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-064",
+      "title": "Thrashing - GeeksforGeeks"
+    },
+    {
+      "id": "os-065",
+      "title": "Working Set in Paging - GeeksforGeeks"
+    },
+    {
+      "id": "os-066",
+      "title": "Allocating kernel memory (buddy system and slab system) - GeeksforGeeks"
+    },
+    {
+      "id": "os-067",
+      "title": "Memory Interleaving - GeeksforGeeks"
+    },
+    {
+      "id": "os-068",
+      "title": "Operating system  based Virtualization - GeeksforGeeks"
+    },
+    {
+      "id": "os-069",
+      "title": "Quiz about OS Memory Management"
+    },
+    {
+      "id": "os-070",
+      "title": "File Systems in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-071",
+      "title": "Unix File System - GeeksforGeeks"
+    },
+    {
+      "id": "os-072",
+      "title": "Path Name in File Directory - GeeksforGeeks"
+    },
+    {
+      "id": "os-073",
+      "title": "Structures of Directory in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-074",
+      "title": "File Allocation Methods - GeeksforGeeks"
+    },
+    {
+      "id": "os-075",
+      "title": "File Access Methods in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-076",
+      "title": "Secondary Memory - GeeksforGeeks"
+    },
+    {
+      "id": "os-077",
+      "title": "Hard Disk Drive (HDD) Secondary Memory - GeeksforGeeks"
+    },
+    {
+      "id": "os-078",
+      "title": "Disk Scheduling Algorithms - GeeksforGeeks"
+    },
+    {
+      "id": "os-079",
+      "title": "Program for SSTF Disk Scheduling Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "os-080",
+      "title": "Spooling in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-081",
+      "title": "Spooling vs Buffering - GeeksforGeeks"
+    },
+    {
+      "id": "os-082",
+      "title": "Free Space Management in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-083",
+      "title": "Quiz about OS Input Output Systems"
+    },
+    {
+      "id": "os-084",
+      "title": "Last Minute Notes – Operating Systems - GeeksforGeeks"
+    },
+    {
+      "id": "os-085",
+      "title": "Operating System Interview Questions - GeeksforGeeks"
+    },
+    {
+      "id": "os-086",
+      "title": "Operating Systems - GATE CSE Previous Year Questions - GeeksforGeeks"
+    },
+    {
+      "id": "os-087",
+      "title": "Multithreading in OS - Different Models - GeeksforGeeks"
+    },
+    {
+      "id": "os-088",
+      "title": "Implementing Directory Management using Shell Script - GeeksforGeeks"
+    },
+    {
+      "id": "os-089",
+      "title": "DSA & System Design Course: The Complete SDE Interview Program"
+    }
+  ]
+}

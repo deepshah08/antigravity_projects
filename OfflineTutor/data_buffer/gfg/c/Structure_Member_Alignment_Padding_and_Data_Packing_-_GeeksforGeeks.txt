@@ -1,0 +1,144 @@
+# Structure Member Alignment, Padding and Data Packing - GeeksforGeeks
+
+Structures group variables of different data types into a single user-defined type. To improve memory access efficiency, compilers may insert extra unused bytes between members, a process known as structure padding.Data alignment stores data at efficient memory boundaries.Padding and packing control the memory layout of structures.Data Alignment in MemoryEvery data type has a natural alignment requirement that depends on the processor architecture.For example, on most systems:Data TypeTypical Alignmentchar1 byteshort2 bytesint4 bytesfloat4 bytesdouble8 bytesWhen a variable is stored at its natural alignment boundary, the processor can usually access it in fewer memory operations, improving performance. The above figure illustrates how properly aligned data can be fetched efficiently by the processor.If a variable is placed at a misaligned address, the processor may require additional memory accesses to retrieve it. Structure PaddingStructure padding is the process of inserting unused bytes between members or at the end of a structure to satisfy alignment requirements.Without padding, some members would begin at misaligned addresses, reducing memory access efficiency. Consider the following structures:
+            C
+
+    // structure A
+typedef struct structa_tag
+{
+    char c;
+    short int s;
+} structa_t;
+
+// structure B
+typedef struct structb_tag
+{
+    short int s;
+    char c;
+    int i;
+} structb_t;
+
+// structure C
+typedef struct structc_tag
+{
+    char c;
+    double d;
+    int s;
+} structc_t;
+
+// structure D
+typedef struct structd_tag
+{
+    double d;
+    int s;
+    char c;
+} structd_t;
+
+If we simply add the sizes of the members, we get:Size of Structure A = Size of (char + short int) = 1 + 2 = 3.Size of Structure B = Size of (short int + char + int) = 2 + 1 + 4 = 7.Size of Structure C = Size of (char + double + int) = 1 + 8 + 4 = 13.Size of Structure A = Size of (double + int + char) = 8 + 4 + 1= 13.However, the compiler produces different results because of padding.Example: Checking Structure Size
+            c
+
+    #include <stdio.h>
+
+// Alignment requirements
+// (typical 32 bit machine)
+
+// char         1 byte
+// short int    2 bytes
+// int          4 bytes
+// double       8 bytes
+
+// structure A
+typedef struct structa_tag
+{
+    char c;
+    short int s;
+} structa_t;
+
+// structure B
+typedef struct structb_tag
+{
+    short int s;
+    char c;
+    int i;
+} structb_t;
+
+// structure C
+typedef struct structc_tag
+{
+    char c;
+    double d;
+    int s;
+} structc_t;
+
+// structure D
+typedef struct structd_tag
+{
+    double d;
+    int s;
+    char c;
+} structd_t;
+
+int main()
+{
+    printf("sizeof(structa_t) = %lu\n", sizeof(structa_t));
+    printf("sizeof(structb_t) = %lu\n", sizeof(structb_t));
+    printf("sizeof(structc_t) = %lu\n", sizeof(structc_t));
+    printf("sizeof(structd_t) = %lu\n", sizeof(structd_t));
+
+    return 0;
+}
+
+Outputsizeof(structa_t) = 4
+sizeof(structb_t) = 8
+sizeof(structc_t) = 24
+sizeof(structd_t) = 16The actual sizes are larger because the compiler inserts padding bytes to align members correctly.Understanding Structure PaddingLet's see why each structure has a different size.Structure Achar occupies 1 byte, while short requires 2-byte alignment.The compiler inserts 1 byte of padding after char so that short begins at an even address.char (1)padding (1)short (2)Total = 4 bytesStructure Bshort int is already 2-byte aligned.short int occupies 2 bytes. char occupies 1 byte. One padding byte is inserted before int. int occupies 4 bytes. Total size:2 + 1 + 1 (padding) + 4 = 8 bytesStructure Cdouble requires 8-byte alignment.char occupies 1 byte. Seven padding bytes are inserted before double. double occupies 8 bytes. int occupies 4 bytes. Four additional padding bytes are added at the end. Therefore,1 + 7 + 8 + 4 + 4 = 24 bytesThe extra padding at the end ensures that every element in an array of this structure is also properly aligned.Structure DThe members are arranged from largest to smallest.double occupies 8 bytes. int occupies 4 bytes. char occupies 1 byte.  Three padding bytes are added at the end. Total size:8 + 4 + 1 + 3 = 16 bytesThis layout requires less padding than Structure C.Reducing Structure PaddingPadding cannot always be avoided, but it can often be minimized by arranging structure members carefully.Some good practices are:Place larger data types before smaller ones. Group members with similar sizes together. Avoid placing small members between larger members. Structure D is a good example, where reordering members reduces the structure size from 24 bytes to 16 bytes.Structure PackingSometimes, structures must exactly match the layout of external data, such as file headers or network packets. In such cases, padding must be disabled.Structure packing removes the padding bytes inserted by the compiler.It is commonly used for: Binary file formats (BMP, JPEG, ELF)  Network protocols  Hardware registers  Embedded systems In GCC, structure packing can be enabled using:#pragma pack(1)orstruct name {    ...}__attribute__((packed));Example: C Program to demonstrate the structure packing
+            C
+
+    #include <stdio.h>
+#pragma pack(1)
+
+// structure A
+typedef struct structa_tag
+{
+    char c;
+    short int s;
+} structa_t;
+
+// structure B
+typedef struct structb_tag
+{
+    short int s;
+    char c;
+    int i;
+} structb_t;
+
+// structure C
+typedef struct structc_tag
+{
+    char c;
+    double d;
+    int s;
+} structc_t;
+
+// structure D
+typedef struct structd_tag
+{
+    double d;
+    int s;
+    char c;
+} structd_t;
+
+int main()
+{
+    printf("sizeof(structa_t) = %lu\n", sizeof(structa_t));
+    printf("sizeof(structb_t) = %lu\n", sizeof(structb_t));
+    printf("sizeof(structc_t) = %lu\n", sizeof(structc_t));
+    printf("sizeof(structd_t) = %lu\n", sizeof(structd_t));
+
+    return 0;
+}
+
+Outputsizeof(structa_t) = 3
+sizeof(structb_t) = 7
+sizeof(structc_t) = 13
+sizeof(structd_t) = 13Since padding is disabled, the structure size becomes the direct sum of the sizes of its members.

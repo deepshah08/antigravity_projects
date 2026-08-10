@@ -1,0 +1,26 @@
+# Setting up C++ Development Environment - GeeksforGeeks
+
+A C++ development environment provides the tools required to write, compile, run, and debug C++ programs. It can be configured on Windows, Linux, and macOS using a compiler and a code editor or IDE.Supports both online and local development workflows. Includes tools for code editing, compilation, execution, and debugging.Setting up a C++ Development EnvironmentA C++ development environment provides the tools required to write, compile, run, and debug C++ programs. The two main components of a C++ environment are:C++ Compiler - Converts C++ source code into machine-executable code. Code Editor or IDE - Used to write, edit, and manage C++ programs. Depending on your requirements, you can either use an online IDE or configure a local development environment.Using an Online IDEAn online IDE allows you to write, compile, and execute C++ programs directly from a web browser without installing any software.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+int main()
+{
+    cout << "Learning C++ at GeekforGeeks";
+    return 0;
+}
+
+OutputLearning C++ at GeekforGeeksExplanation: The program prints a message on the screen. Online IDEs compile and execute the code without requiring any local setup.Time Complexity: O(1)Auxiliary Space: O(1)Setting up a Local EnvironmentTo create a local C++ development environment, install: A C++ compiler and A code editor or IDE1. Installing a C++ CompilerA compiler translates C++ source code into machine code that the operating system can execute.Installing GCC on LinuxGCC (GNU Compiler Collection) is one of the most widely used C++ compilers on Linux.Step 1: Update Package Informationsudo apt-get updateStep 2: Install GCC and G++sudo apt-get install gccsudo apt-get install g++Alternatively, install all required build tools using:sudo apt-get install build-essentialStep 3: Verify InstallationCheck whether GCC is installed successfully:g++ --versionThe installed compiler version should be displayed.Step 4: Create a C++ ProgramCreate a file named helloworld.cpp:
+            C++
+
+    #include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello World";
+    return 0;
+}
+
+Step 5: Compile the Programg++ helloworld.cpp -o helloStep 6: Run the Program./helloOutputHello WorldExplanation: The compiler creates an executable file named hello, which is then executed from the terminal.2. Installing a Code Editor or IDEA code editor or IDE provides features such as syntax highlighting, debugging, project management, and code completion.Code::Blocks InstallationCode::Blocks is a free and popular IDE for C++ development.Download Code::Blocks from the official website. Run the installer and complete the installation process. Open Code::Blocks. Select File -> New -> Empty File. Write your C++ program and save it with a .cpp extension. Select Build -> Build and Run to compile and execute the program.Installing Visual Studio Code on WindowsVisual Studio Code is one of the most widely used editors for C++ development.Step 1: Install VS CodeDownload and install Visual Studio Code from the official website.Step 2: Install MinGWInstall the MinGW compiler package and ensure the GCC compiler is available on your system.Step 3: Configure Environment VariablesOpen the MinGW installation directory. Copy the path of the bin folder. Open: This PC -> Properties -> Advanced System Settings -> Environment Variables       4. Edit the Path variable and add the copied path. Step 4: Install Useful ExtensionsInstall the following extensions from the Extensions Marketplace:C/C++ Code Runner Step 5: Configure Code RunnerOpen:Settings -> Search "Run In Terminal"Enable:Code Runner: Run In TerminalStep 6: Create and Run a ProgramCreate a file with the .cpp extension and run it using VS Code.Installing Visual Studio Code on macOSStep 1: Install VS CodeDownload and install Visual Studio Code for macOS.Step 2: Install HomebrewOpen Terminal and run:/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"Step 3: Install GCCbrew install gccStep 4: Verify Installationg++ --versionStep 5: Install VS Code ExtensionsInstall:C/C++ Code Runner Enable Code Runner: Run In Terminal from VS Code settings.Step 6: Create and Run ProgramsCreate .cpp files and compile or run them directly from VS Code.Installing Xcode on macOSXcode provides Apple's development tools and includes support for C++ development.Download Xcode from the Mac App Store. Launch Xcode after installation. Create a new project: File -> New -> ProjectSelect: Command Line ToolChoose C++ as the programming language. Complete project creation. Open main.cpp and write your code. Run the project using: Product -> Run

@@ -1,0 +1,60 @@
+# Duration ofMinutes(long) method in Java with Examples - GeeksforGeeks
+
+The ofMinutes(long) method of the Duration class in the java.time package is used to create a Duration object representing the specified number of minutes. Internally, the duration is stored in seconds and nanoseconds, where 1 minute = 60 seconds.Creates a Duration representing the specified number of minutes. Accepts both positive and negative minute values. Commonly used for representing time intervals in scheduling, delays, and timeout operations
+            Java
+
+    import java.time.Duration;
+
+public class Geeks {
+
+    public static void main(String[] args) {
+
+        // Create a duration of 10 minutes
+        Duration duration = Duration.ofMinutes(10);
+
+        System.out.println("Minutes : " + duration.toMinutes());
+        System.out.println("Seconds : " + duration.getSeconds());
+    }
+}
+
+OutputMinutes : 10
+Seconds : 600
+Explanation: The ofMinutes(10) method creates a duration of 10 minutes. The toMinutes() method returns the duration in minutes, while getSeconds() returns the equivalent duration in seconds (600 seconds). Syntaxpublic static Duration ofMinutes(long minutes)Parameters-> minutes: The number of minutes to represent. It can be positive, zero, or negative. Return Value: Returns a Duration representing the specified number of minutes. Exception: Throws ArithmeticException if the specified value exceeds the supported range of Duration.Example: Creating a Positive Duration
+            Java
+
+    import java.time.Duration;
+
+public class GFG {
+    public static void main(String[] args)
+    {
+
+        // input number of Minutes
+        long noOfMinutes = 5;
+
+        // Duration using ofMinutes() method
+        Duration duration
+            = Duration.ofMinutes(noOfMinutes);
+
+        System.out.println(duration.getSeconds());
+    }
+}
+
+Output300
+Explanation: The ofMinutes(5) method creates a duration of 5 minutes, which is equivalent to 300 seconds.Example: Creating a Negative Duration
+            Java
+
+    import java.time.Duration;
+
+public class Geeks {
+
+    public static void main(String[] args) {
+
+        // Create a negative duration
+        Duration duration = Duration.ofMinutes(-15);
+
+        System.out.println(duration.getSeconds());
+    }
+}
+
+Output-900
+Explanation: The ofMinutes(-15) method creates a duration representing -15 minutes, which is equal to -900 seconds.Common Methods Used with DurationMethodDescriptiongetSeconds()Returns the duration in seconds.toMinutes()Returns the total duration in minutes.toHours()Returns the total duration in hours.plus(Duration)Adds another duration.minus(Duration)Subtracts another duration.isNegative()Checks whether the duration is negative.isZero()Checks whether the duration is zero.Advantages of ofMinutes(long) MethodCreates a Duration directly from minute values. Supports positive, negative, and zero durations. Improves readability compared to manually converting minutes into seconds. Useful for scheduling, delays, timeout values, and time interval calculations.

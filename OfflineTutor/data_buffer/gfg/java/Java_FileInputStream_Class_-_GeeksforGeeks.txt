@@ -1,0 +1,101 @@
+# Java FileInputStream Class - GeeksforGeeks
+
+The FileInputStream class in Java is used to read data from a file in the form of bytes. It’s ideal for reading binary data such as images or audio files. For reading text files, it’s better to use FileReader.Direct Access: It directly reads the file content from the disk without bufferingPlatform Independent: It can work on any operating systemDeclarationThe FileInputStream class extends the InputStream class, which means it inherits methods for reading raw byte data from files.public class FileInputStream extends InputStreamExample: FileInputStream class to read data from file.
+            Java
+
+    import java.io.*;
+
+public class Geeks{
+    
+    public static void main(String[] args){
+        
+        // Use try-with-resources to automatically close the
+        // stream
+        try (FileInputStream fi
+             = new FileInputStream("file1.txt")) {
+
+            // Display file channel information
+            System.out.println("Channel: "
+                               + fi.getChannel());
+
+            // Display file descriptor
+            System.out.println("File Descriptor: "
+                               + fi.getFD());
+
+            // Show available bytes in the stream
+            System.out.println("Number of remaining bytes: "
+                               + fi.available());
+
+            // Skip first few bytes
+            fi.skip(4);
+
+            System.out.println("File Contents:");
+
+            // Read and print file content
+            int ch;
+            while ((ch = fi.read()) != -1) {
+                System.out.print((char)ch);
+            }
+        }
+        catch (FileNotFoundException e) {
+            System.out.println(
+                "File not found: Ensure 'file1.txt' exists in the working directory.");
+        }
+        catch (IOException e) {
+            System.out.println(
+                "An error occurred while reading the file: "
+                + e.getMessage());
+        }
+    }
+}
+
+Output: OutputConstructors of FileInputStream Class1. FileInputStream(String name)Creates an input file stream to read from a file with the specified name. FileInputStream fi = new FileInputStream("example.txt");2. FileInputStream(File file)Creates an input file stream to read from the specified File object. File f = new File("example.txt");FileInputStream fi = new FileInputStream(f);3. FileInputStream(FileDescriptor fdobj) Creates an input file stream to read from the specified file descriptor. FileDescriptor fd = FileDescriptor.in;  FileInputStream fi = new FileInputStream(fd); Read Data from a File Using FileInputStreamCreate a file named file.txt in your project directory with the following content:this is my first codethis is my second code
+            Java
+
+    import java.io.*;
+
+public class Geeks {
+
+    public static void main(String[] args)
+    {
+
+         // Use try-with-resources to automatically close the stream
+        try (FileInputStream fi
+             = new FileInputStream("file1.txt")) {
+
+            // Display file channel information
+            System.out.println("Channel: "
+                               + fi.getChannel());
+
+            // Display file descriptor
+            System.out.println("File Descriptor: "
+                               + fi.getFD());
+
+            // Illustrating available method
+            System.out.println("Number of remaining bytes: "
+                               + fi.available());
+
+            // Illustrating skip() method
+            fi.skip(4);
+
+            System.out.println("File Contents:");
+
+            // Reading characters from FileInputStream
+            int ch;
+            while ((ch = fi.read()) != -1) {
+                System.out.print((char)ch);
+            }
+        }
+        catch (FileNotFoundException e) {
+            System.out.println(
+                "File not found: Ensure 'file1.txt' exists in the working directory.");
+        }
+        catch (IOException e) {
+            System.out.println(
+                "An error occurred while reading the file: "
+                + e.getMessage());
+        }
+    }
+}
+
+Output: OutputMethods of Java FileInputStream Class Methods Action Performed available()Returns an estimate of the number of remaining bytes that can be read (or skipped over) from this input stream.close()Closes this file input stream and releases any system resources associated with the stream.finalize()Ensures that the close method of this file input stream is called when there are no more references to it. getChannel()Returns the unique FileChannel object associated with this file input stream. getFD()Returns the FileDescriptor object that represents the connection to the actual file in the file system being used by this FileInputStream.read()Reads a byte of data from this input streamread(byte[] b)Reads up to b.length bytes of data from this input stream into an array of bytes. read(byte[] b, int off, int len)Reads up to len bytes of data from this input stream into an array of bytes.skip()Skips over and discards n bytes of data from the input stream

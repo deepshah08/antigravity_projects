@@ -1,0 +1,17 @@
+# Connecting a MySQL Database to a Django Project - GeeksforGeeks
+
+Django uses SQLite as the default database for development because of its simplicity and ease of setup. For real-world and production-oriented applications, MySQL is commonly preferred due to its strong performance, reliability, and widespread industry adoption.Step 1: Install MySQLInstall MySQL on WindowsDownload the MySQL Installer from the official website:https://dev.mysql.com/downloads/installer/During installation:Set the MySQL root passwordEnsure the MySQL server is runningVerify installation:mysql -u root -pInstall MySQL on macOSDownload the macOS DMG installer from the official MySQL website:https://dev.mysql.com/downloads/mysql/After installation:Run the .dmg installer and complete setupSet the MySQL root passwordStart MySQL Server from System Settings -> MySQLVerify installation:mysql -u root -pInstall MySQL on macOS Using HomebrewMySQL can also be installed using Homebrew for a package manager–based installation on macOS.Install MySQL:brew install mysqlStart the MySQL service:brew services start mysqlVerify installation:mysql --versionmysql -u rootStep 2: Install MySQL Connectormysqlclient is a C-based MySQL/MariaDB database driver that Django uses as a DB-API 2.0–compliant backend to execute SQL queries and manage connections to a MySQL database. Install it using the following pip command:pip install mysqlclientStep 3: Create a Django ProjectCreate a new Django project:django-admin startproject MyDBcd MyDBStep 4: Create a MySQL DatabaseLog in to MySQL:mysql -u root -pCreate a database:CREATE DATABASE mydbStep 5: Configure MySQL in settings.pyOpen MyDB/settings.py and replace the default SQLite configuration with MySQL:
+            Python
+
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mydb',
+        'USER': 'root',
+        'PASSWORD': 'your_mysql_password',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+
+In the above configuration:ENGINE: Specifies MySQL as the database backendNAME: Database nameUSER: MySQL usernamePASSWORD: Database passwordHOST / PORT: MySQL server connection detailsNote: The same steps apply when connecting other databases such as PostgreSQL, MariaDB, or Oracle. Only the database driver and configuration in settings.py need to be updated according to the selected database backend.Step 6: Apply Database MigrationsRun the following commands to create the required database tables:python manage.py makemigrationspython manage.py migrateStep 7: Verify Database OutputLog in to the MySQL database:mysql -u root -p mydbVerify the tables created by Django:SHOW TABLES;Output:Snapshot of DBStep 8: Run the Django Development ServerStart the Django development server:python manage.py runserverIf the server starts without errors, Django is successfully connected to the MySQL database.

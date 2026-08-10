@@ -1,0 +1,89 @@
+# Data Types in C - GeeksforGeeks
+
+Data types form the foundation of data representation in C. Every variable in C must be associated with a data type that defines the kind of value it can store and how the compiler handles it.Data types define memory allocation, value range, and valid operations on a variable. Understanding data types is essential for writing correct and efficient C programs.Classification of Data Types in CData types in C are broadly classified into three categories:Data Types in CPrimitive Data TypesPrimitive data types are the basic built-in data types in C used to store simple values like integers, characters, and floating-point numbers.Integer Data TypeStores whole numbers (positive, negative, or zero).We use int keyword to declare the integer variable:Size: typically 4 bytes, Range: -2,147,483,648 to 2,147,483,647.Format specifier: %d.Format specifiers are the symbols that are used for printing and scanning values of given data types.
+            C++
+
+    #include <stdio.h>
+
+int main() {
+    int var = 22;
+    
+    printf("var = %d", var);
+    return 0;
+}
+
+Outputvar = 22Character Data TypeStores a single character (like ‘A’, ‘b’, or ‘5’).Size: typically 1 byte, Range: -128 to 127 (signed by default).Format specifier: %c.
+            C++
+
+    #include <stdio.h>
+
+int main() {
+    char ch = 'A';
+    
+    printf("ch = %c", ch);
+    return 0;
+}
+
+Outputch = AFloat Data TypeStores decimal numbers (numbers with fractional part).Size: typically 4 bytes, Approximate range: 3.4e-38 to 3.4e+38.Format specifier: %f.
+            C++
+
+    #include <stdio.h>
+
+int main() {
+    float val = 12.45;
+    
+    printf("val = %f", val);
+    return 0;
+}
+
+Outputval = 12.450000Double Data TypeStores decimal numbers with more precision than float.Size: typically 8 bytes, Approximate range: 1.7e-308 to 1.7e+308.Format specifier: %lf.
+            C++
+
+    #include <stdio.h>
+
+int main() {
+    double val = 1.4521;
+    
+    printf("val = %lf", val);
+    return 0;
+}
+
+Outputval = 1.452100Void Data TypeRepresents no value or empty type.Used in functions that do not return any value.Can also be used for generic pointers (void *) in memory operations.
+            C++
+
+    #include <stdio.h>
+
+// Function with void return type
+void greet()
+{
+    printf("Hello, welcome!\n");
+}
+
+int main()
+{
+    greet();
+    return 0;
+}
+
+OutputHello, welcome!
+Derived Data Types in CDerived data types are created from primitive data types.ArraysAn array stores multiple values of the same type in contiguous memory locations.int arr[5] = {1, 2, 3, 4, 5};PointersA pointer stores the memory address of another variable.int x = 10;int *ptr = &x;FunctionsFunctions are also considered derived types based on return type and parameters.int add(int a, int b) {    return a + b;}User Defined Data Types in CUser-defined data types allow programmers to create custom data structures.Structure (struct)A structure groups related variables under one namestruct Student {    char name[50];    int age;};UnionA union allows multiple members to share the same memory location.union Data {    int i;    float f;};Enumeration (enum)Enum is used to define named integer constants.enum Day {    MON, TUE, WED, THU, FRI, SAT, SUN};Size of Data Types in CThe size of the data types in C is dependent on the size of the architecture, so we cannot define the universal size of the data types. For that, the C language provides the sizeof() operator to check the size of the data types.
+            C
+
+    #include <stdio.h>
+
+int main()
+{
+
+    // Use sizeof() to know size of the data types
+    printf("The size of int: %d\n", sizeof(int));
+    printf("The size of char: %d\n", sizeof(char));
+    printf("The size of float: %d\n", sizeof(float));
+    printf("The size of double: %d", sizeof(double));
+
+    return 0;
+}
+
+OutputThe size of int: 4
+The size of char: 1
+The size of float: 4
+The size of double: 8Different data types also have different ranges up to which can vary from compiler to compiler. If you want to know more about ranges refer to this Ranges of Datatypes in C.Note: The long, short, signed and unsigned are datatype modifier that can be used with some primitive data types to change the size or length of the datatype.Related ArticleLiteralsType conversion

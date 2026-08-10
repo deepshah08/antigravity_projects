@@ -1,0 +1,204 @@
+# Dynamic Memory Allocation in C - GeeksforGeeks
+
+Dynamic memory allocation allows a programmer to allocate, resize, and free memory at runtime. Key advantages include.Memory is allocated on the heap area instead of stack. Please refer memory layout of C programs for detailsArray size can be increased or decreased as needed.Memory persists even after the function that allocated it finishes, allowing functions to return pointers to it. This is different from stack allocated variables as it is not safe to return address of those variable.The malloc(), calloc(), realloc() and free() functions are the primary tools for dynamic memory management in C, they are part of the C Standard Library and are defined in the <stdlib.h> header file.malloc()The malloc() (stands for memory allocation) function is used to allocate a single block of contiguous memory on the heap at runtime. The memory allocated by malloc() is uninitialized, meaning it contains garbage values.Assume that we want to create an array to store 5 integers. Since the size of int is 4 bytes, we need 5 * 4 bytes = 20 bytes of memory. This can be done as shown:
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *ptr = (int *)malloc(20);
+    
+    // Populate the array
+    for (int i = 0; i < 5; i++)
+        ptr[i] = i + 1;
+        
+    // Print the array
+    for (int i = 0; i < 5; i++)
+        printf("%d ", ptr[i]);
+    return 0;
+}
+
+Output1 2 3 4 5 Explanation: In the above malloc call, we hardcoded the number of bytes we need to store 5 integers. But we know that the size of the integer in C depends on the architecture. So, it is better to use the sizeof operator to find the size of type you want to store.
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *ptr = (int *)malloc(sizeof(int) * 5);
+
+    // Populate the array
+    for (int i = 0; i < 5; i++)
+        ptr[i] = i + 1;
+
+    // Print the array
+    for (int i = 0; i < 5; i++)
+        printf("%d ", ptr[i]);
+    return 0;
+}
+
+Output1 2 3 4 5 Moreover, if there is no memory available, the malloc will fail and return NULL. So, it is recommended to check for failure by comparing the ptr to NULL.
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *ptr = (int *)malloc(sizeof(int) * 5);
+    
+    // Checking if failed or pass
+    if (ptr == NULL) {
+        printf("Allocation Failed");
+        exit(0);
+    }
+    
+    // Populate the array
+    for (int i = 0; i < 5; i++)
+        ptr[i] = i + 1;
+        
+    // Print the array
+    for (int i = 0; i < 5; i++)
+        printf("%d ", ptr[i]);
+    return 0;
+}
+
+Output1 2 3 4 5  This function returns a void pointer to the allocated memory that needs to be converted to the pointer of required type to be usable. If allocation fails, it returns NULL pointer.calloc()The calloc() (stands for contiguous allocation) function is similar to malloc(), but it initializes the allocated memory to zero. It is used when you need memory with default zero values. 
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *ptr = (int *)calloc(5, sizeof(int));
+    
+    // Checking if failed or pass
+    if (ptr == NULL) {
+        printf("Allocation Failed");
+        exit(0);
+    }
+    
+    // No need to populate as already
+    // initialized to 0
+        
+    // Print the array
+    for (int i = 0; i < 5; i++)
+        printf("%d ", ptr[i]);
+    return 0;
+}
+
+Output0 0 0 0 0  This function also returns a void pointer to the allocated memory that is converted to the pointer of required type to be usable. If allocation fails, it returns NULL pointer.free()The memory allocated using functions malloc() and calloc() is not de-allocated on their own. The free() function is used to release dynamically allocated memory back to the operating system. It is essential to free memory that is no longer needed to avoid memory leaks.
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *ptr = (int *)calloc(5, sizeof(int));
+    
+    // Do some operations.....
+    for (int i = 0; i < 5; i++)
+        printf("%d ", ptr[i]);
+        
+    // Free the memory after completing
+    // operations
+    free(ptr);
+    
+    return 0;
+}
+
+Output0 0 0 0 0 After calling free(), it is a good practice to set the pointer to NULL to avoid using a "dangling pointer," which points to a memory location that has been deallocated. After freeing a memory block, the pointer becomes invalid, and it is no longer pointing to a valid memory location.realloc()realloc() function is used to resize a previously allocated memory block. It allows you to change the size of an existing memory allocation without needing to free the old memory and allocate a new block. Suppose we initially allocate memory for 5 integers but later need to expand the array to hold 10 integers. We can use realloc() to resize the memory block:
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *ptr = (int *)malloc(5 * sizeof(int));
+
+    // Resize the memory block to hold 10 integers
+    ptr = (int *)realloc(ptr, 10 * sizeof(int));
+    
+    // Check for allocation failure
+    if (ptr == NULL) {
+        printf("Memory Reallocation Failed");
+        exit(0);
+    }
+
+    return 0;
+}
+
+ It is important to note that if realloc() fails and returns NULL, the original memory block is not freed, so you should not overwrite the original pointer until you've successfully allocated a new block. To prevent memory leaks, it’s a good practice to handle the NULL return value carefully:
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *ptr = (int *)malloc(5 * sizeof(int));
+
+    // Reallocation
+    int *temp = (int *)realloc(ptr, 10 * sizeof(int));
+
+    // Only update the pointer if reallocation is successful
+    if (temp == NULL)
+        printf("Memory Reallocation Failed\n");
+    else
+        ptr = temp;
+
+    return 0;
+}
+
+Practical ExampleConsider the first scenario where we were having issues with the fixes size array. Let's see how we can resolve both of these issues using dynamic memory allocation.
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    
+    // Initially allocate memory for 5 integers
+    int *ptr = (int *)malloc(5 * sizeof(int));
+    
+    // Check if allocation was successful
+    if (ptr == NULL) {
+        printf("Memory Allocation Failed\n");
+        exit(0);
+    }
+    
+    // Now, we need to store 8 elements so
+    // Reallocate to store 8 integers
+    ptr = (int *)realloc(ptr, 8 * sizeof(int)); 
+    
+    // Check if reallocation was successful
+    if (ptr == NULL) {
+        printf("Memory Reallocation Failed\n");
+        exit(0);
+    }
+    
+    // Assume we only use 5 elements now
+    for (int i = 0; i < 5; i++) {
+        ptr[i] = (i + 1) * 10;
+    }
+    
+    // Shrink the array back to 5 elements
+    ptr = (int *)realloc(ptr, 5 * sizeof(int));
+    
+    // Check if shrinking was successful
+    if (ptr == NULL) {
+        printf("Memory Reallocation Failed\n");
+        exit(0);
+    }
+    
+    for (int i = 0; i < 5; i++)
+        printf("%d ", ptr[i]);
+    
+    // Finally, free the memory when done
+    free(ptr);
+    
+    return 0;
+}
+
+Output10 20 30 40 50 Explanation: In this program, we are managing the memory allocated to the pointer ptr according to our needs by changing the size using realloc(). It can be a fun exercise to implement an array which grows according to the elements inserted in it. This kind of arrays are called dynamically growing arrays.Issues Associated with Dynamic Memory AllocationAs useful as dynamic memory allocation is, it is also prone to errors that requires careful handling to avoid the high memory usage or even system crashes. Few of the common errors are given below:Memory Leaks: Failing to free dynamically allocated memory leads to memory leaks, exhausting system resources.Dangling Pointers: Using a pointer after freeing its memory can cause undefined behavior or crashes.Fragmentation: Repeated allocations and deallocations can fragment memory, causing inefficient use of heap space.Allocation Failures: If memory allocation fails, the program may crash unless the error is handled properly.Read this article Difference between Calloc() and Malloc().

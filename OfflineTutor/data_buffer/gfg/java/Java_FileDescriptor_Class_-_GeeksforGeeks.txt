@@ -1,0 +1,78 @@
+# Java FileDescriptor Class - GeeksforGeeks
+
+The java.io.FileDescriptor class represents an open file, device, or socket handle provided by the underlying operating system. It acts as a bridge between Java I/O streams and native system resources.Provides low-level access to native file system objectsCommonly used internally by Java I/O streams
+            Java
+
+    import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        FileOutputStream fos = new FileOutputStream("demo.txt");
+        FileDescriptor fd = fos.getFD();
+
+        System.out.println("Is FileDescriptor valid? " + fd.valid());
+        fos.close();
+    }
+}
+
+OutputIs FileDescriptor valid? true
+Explanation: The FileDescriptor object is obtained from a FileOutputStream and valid() method checks whether the descriptor is connected to an open file. Since the file is open, the output is true.Class Declarationpublic final class FileDescriptor extends ObjectThe main practical use for a file descriptor is to create a FileInputStream or FileOutputStream to contain it.Applications should not create their own file descriptors.ConstructorCreates a new, empty file descriptor object that represents an underlying operating system file handle.Syntax:FileDescriptor fd = new FileDescriptor();Common FileDescriptor ObjectsFileDescriptor.in: Represents the standard input (keyboard)FileDescriptor.out: Represents the standard output (console)FileDescriptor.err: Represents the standard error (error output)MethodsThere are two main methods as mentioned below:void sync(): Forces all system buffers to synchronize with the underlying device, ensuring that data is physically written.java.io.File.valid(): Checks whether the file descriptor object is valid (i.e., connected to an open file or socket).Method Example1. sync() MethodEnsures that all buffered data is written to the underlying storage device.This method forces synchronization between system buffers and the physical device.Syntax:public void sync()Return : voidException: SyncFailedException - This is exception is thrown if there is no guarantee of synchronization of buffers with the device. 
+            Java
+
+    import java.io.*;
+
+public class FileDescriptorValidity {
+    public static void main(String[] args) throws Exception {
+        FileOutputStream fos = new FileOutputStream("example.txt");
+        FileDescriptor fd = fos.getFD();
+
+        System.out.println("Is FileDescriptor valid? " + fd.valid());
+
+        fos.close();
+        System.out.println("Is FileDescriptor valid after close? " + fd.valid());
+    }
+}
+
+OutputIs FileDescriptor valid? true
+Is FileDescriptor valid after close? false
+2. valid() Method Checks whether the FileDescriptor object is currently valid. It returns true if the descriptor is associated with an open file or socket.Syntax:public boolean valid()Return: true if the FileDescriptor object is valid else, false
+            Java
+
+    import java.io.*;
+
+public class FileDescriptorSync {
+    public static void main(String[] args) throws Exception {
+        FileOutputStream fos = new FileOutputStream("syncDemo.txt");
+        FileDescriptor fd = fos.getFD();
+
+        fos.write("GeeksForGeeks FileDescriptor Example".getBytes());
+        fd.sync();  // Ensures data is written to disk
+
+        System.out.println("Data synchronized successfully.");
+        fos.close();
+    }
+}
+
+OutputData synchronized successfully.
+Example:  with Standard FileDescriptors
+            Java
+
+    import java.io.*;
+
+public class StandardFileDescriptors {
+    public static void main(String[] args) throws Exception {
+        FileInputStream fis = new FileInputStream(FileDescriptor.in);
+        FileOutputStream fos = new FileOutputStream(FileDescriptor.out);
+        FileOutputStream fes = new FileOutputStream(FileDescriptor.err);
+
+        fos.write("Enter something: ".getBytes());
+        int data = fis.read();
+        fes.write(("You entered: " + (char)data + "\n").getBytes());
+
+        fis.close();
+        fos.close();
+        fes.close();
+    }
+}
+
+Output:Enter something: AYou entered: A

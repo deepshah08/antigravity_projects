@@ -1,0 +1,1083 @@
+# Count distinct occurrences as a subsequence - GeeksforGeeks
+
+Given two strings pat and txt, where pat is always shorter than txt, count the distinct occurrences of pat as a subsequence in txt.Examples: Input: txt = abba, pat = abaOutput: 2Explanation: pat appears in txt as below two subsequences.[abba], [abba]Input: txt = banana, pat = banOutput: 3Explanation: pat appears in txt as below three subsequences.[banana], [banana], [banana]Input: txt = geeks, pat = geOutput: 2Explanation: pat appears in txt as below two subsequences.[geeks], [geeks]  Try It YourselfTable of Content[Naive Approach ] Using  Recursion - O(2^n) Time and O(n) Space[Better Approach 1 ] Using Top-Down DP (Recursion) - O(m*n) Time and O(m*n) Space[Better Approach 2] Using Bottom-Up DP (Tabulation) - O(m*n) Time and O(m*n) Space[Expected Approach ] Using Space Optimized DP – O(m*n) Time and O(m) Space[Naive Approach ] Using  Recursion - O(2^n) Time and O(n) SpaceWe can easily identify the recursive nature of this problem. If we match the current character in the pattern with the current character in the text, we have two options: we can either include this character and move to the next character in both the pattern and the text, or we can skip the current character in the text and try to match the same character in the pattern with the next character in the text.This leads to the following recursive relationship:1. If the characters match (i.e., txt[i-1] == pat[j-1]), the count of distinct subsequences can be expressed as the sum of:The count of subsequences by including this character from both txt and pat (subCountRec(i-1, j-1, txt, pat)).The count of subsequences by excluding the character from txt (subCountRec(i-1, j, txt, pat)).2. If the characters do not match, we can only exclude the character from txt, which gives us:The count of subsequences without considering the current character in txt (subCountRec(i-1, j, txt, pat)).
+            C++
+
+    // C++ program to Count distinct
+// occurrences as a subsequence
+#include <bits/stdc++.h>
+using namespace std;
+
+// i and j are current starting
+// addresses in txt and pat respectively
+int subCountRec(int i, int j, string &txt, string &pat)
+{
+    if (j == 0)
+    {
+
+        // Empty pattern is found in
+        // all suffixes
+        return 1;
+    }
+
+    if (i == 0)
+    {
+
+        // No more characters in
+        // txt to match pat
+        return 0;
+    }
+
+    if (txt[i - 1] == pat[j - 1])
+    {
+
+        // Count both cases
+        return subCountRec(i - 1, j - 1, txt, pat) + subCountRec(i - 1, j, txt, pat);
+    }
+
+    return subCountRec(i - 1, j, txt, pat);
+}
+
+int subseqCount(string &txt, string &pat)
+{
+    return subCountRec(txt.size(), pat.size(), txt, pat);
+}
+
+int main()
+{
+    string pat = "aba";
+    string txt = "abba";
+    cout << subseqCount(txt, pat) << endl;
+    return 0;
+}
+
+
+            Java
+
+    // Java program to Count distinct
+// occurrences as a subsequence
+import java.util.Scanner;
+
+class GfG {
+
+    // i and j are current starting addresses in
+    // txt and pat respectively
+    static int subCountRec(int i, int j, String txt,
+                           String pat)
+    {
+        if (j == 0) {
+
+            // Empty pattern is found in all suffixes
+            return 1;
+        }
+
+        if (i == 0) {
+
+            // No more characters in txt to match pat
+            return 0;
+        }
+
+        if (txt.charAt(i - 1) == pat.charAt(j - 1)) {
+
+            // Count both cases
+            return subCountRec(i - 1, j - 1, txt, pat)
+                + subCountRec(i - 1, j, txt, pat);
+        }
+
+        return subCountRec(i - 1, j, txt, pat);
+    }
+
+    static int subseqCount(String txt, String pat)
+    {
+        return subCountRec(txt.length(), pat.length(), txt,
+                           pat);
+    }
+
+    public static void main(String[] args)
+    {
+        String pat = "aba";
+        String txt = "abba";
+        System.out.println(subseqCount(txt, pat));
+    }
+}
+
+
+            Python
+
+    # Python program to Count distinct
+# occurrences as a subsequence
+def subCountRec(i, j, txt, pat):
+    if j == 0:
+
+        # Empty pattern is found in all suffixes
+        return 1
+
+    if i == 0:
+
+        # No more characters in txt to match pat
+        return 0
+
+    if txt[i - 1] == pat[j - 1]:
+
+        # Count both cases
+        return subCountRec(i - 1, j - 1, txt, pat) \
+            + subCountRec(i - 1, j, txt, pat)
+
+    return subCountRec(i - 1, j, txt, pat)
+
+
+def subseqCount(txt, pat):
+    return subCountRec(len(txt), len(pat), txt, pat)
+
+
+if __name__ == "__main__":
+    pat = "aba"
+    txt = "abba"
+    print(subseqCount(txt, pat))
+
+
+            C#
+
+    // C# program to Count distinct
+// occurrences as a subsequence
+using System;
+
+class GfG {
+
+    // i and j are current starting addresses in txt
+    // and pat respectively
+    static int SubCountRec(int i, int j, string txt,
+                           string pat)
+    {
+        if (j == 0) {
+
+            // Empty pattern is found in all suffixes
+            return 1;
+        }
+
+        if (i == 0) {
+
+            // No more characters in txt to match pat
+            return 0;
+        }
+
+        if (txt[i - 1] == pat[j - 1]) {
+
+            // Count both cases
+            return SubCountRec(i - 1, j - 1, txt, pat)
+                + SubCountRec(i - 1, j, txt, pat);
+        }
+
+        return SubCountRec(i - 1, j, txt, pat);
+    }
+
+    static int subseqCount(string txt, string pat)
+    {
+        return SubCountRec(txt.Length, pat.Length, txt,
+                           pat);
+    }
+
+    static void Main(string[] args)
+    {
+
+        string pat = "aba";
+        string txt = "abba";
+        Console.WriteLine(subseqCount(txt, pat));
+    }
+}
+
+
+            JavaScript
+
+    // JavaScript program to count distinct occurrences of pat
+// as a subsequence in txt
+function subCountRec(i, j, txt, pat)
+{
+    // If the pattern is empty, there is exactly one way to
+    // match it (by choosing nothing)
+    if (j === 0)
+        return 1;
+
+    // If txt is empty but pat is not, it's impossible to
+    // form the subsequence
+    if (i === 0)
+        return 0;
+
+    if (txt[i - 1] === pat[j - 1]) {
+        // If the last characters match, count both
+        // including and excluding the character
+        return subCountRec(i - 1, j - 1, txt, pat)
+               + subCountRec(i - 1, j, txt, pat);
+    }
+
+    // If the last characters don't match, exclude the
+    // current character from txt
+    return subCountRec(i - 1, j, txt, pat);
+}
+
+function subseqCount(txt, pat)
+{
+    return subCountRec(txt.length, pat.length, txt, pat);
+}
+
+// Test cases
+let txt = "abba";
+let pat = "aba";
+
+console.log(subseqCount(txt, pat));
+
+Output2
+[Better Approach 1 ] Using Top-Down DP (Recursion) - O(m*n) Time and O(m*n) SpaceIf we notice carefully, we can observe that the above recursive solution holds the following two properties of Dynamic Programming.Overlapping Subproblems: While employing a recursive approach to this problem, we notice that certain subproblems are computed multiple times, leading to redundancy. For example, when calculating countSubsequences(i, j), we might find need to calculate countSubsequences(i-1, j-1) and countSubsequences(i, j-1) multiple times for the same indices. This overlapping of computations makes it clear that a simple recursive approach would be inefficient. The recursive solution involves changing of two parameters,  the current index in the pattern (i) and the current index in the text (j). We need to track both parameters, so we create a 2D array of size (m+1) x (n+1) because the value of i will be in the range [0,m] and j in the range [0,n], where m is the length of the pattern and n is the length of the text.We initialize the 2D array with -1 to indicate that no subproblems have been computed yet.We check if the value at memo[i][j] is -1. If it is, we proceed to compute else we return the stored result.
+            C++
+
+    // C++ program to Count distinct occurrences as
+// a subsequence using memoization
+#include <bits/stdc++.h>
+using namespace std;
+
+int countSubsequences(int i, int j, string &pat, string &txt, vector<vector<int>> &memo)
+{
+    if (i == 0)
+        return 1;
+    if (j == 0)
+        return 0;
+
+    // If already computed, return the result
+    if (memo[i][j] != -1)
+        return memo[i][j];
+
+    // If last characters don't match
+    if (pat[i - 1] != txt[j - 1])
+    {
+        memo[i][j] = countSubsequences(i, j - 1, pat, txt, memo);
+    }
+    else
+    {
+
+        // Both characters match
+        memo[i][j] =
+            countSubsequences(i, j - 1, pat, txt, memo) + countSubsequences(i - 1, j - 1, pat, txt, memo);
+    }
+
+    return memo[i][j];
+}
+
+int subseqCount(string &txt, string &pat)
+{
+    int m = pat.length(), n = txt.length();
+
+    // pat can't appear as a subsequence in txt
+    if (m > n)
+        return 0;
+
+    // Create a 2D vector for memoization
+    vector<vector<int>> memo(m + 1, vector<int>(n + 1, -1));
+
+    return countSubsequences(m, n, pat, txt, memo);
+}
+
+int main()
+{
+    string pat = "aba";
+    string txt = "abba";
+    cout << subseqCount(txt, pat) << endl;
+    return 0;
+}
+
+
+            Java
+
+    // Java program to Count distinct occurrences as
+// a subsequence using memoization
+import java.util.Arrays;
+
+class GfG {
+
+    static int subseqCount(String txt, String pat)
+    {
+
+        int m = pat.length(), n = txt.length();
+
+        // pat can't appear as a subsequence in txt
+        if (m > n)
+            return 0;
+
+        // Create a 2D array for memoization
+        int[][] memo = new int[m + 1][n + 1];
+
+        // Initialize the memoization array with -1
+        for (int[] row : memo) {
+            Arrays.fill(row, -1);
+        }
+
+        return countSubsequences(m, n, pat, txt, memo);
+    }
+
+    // Helper function for memoization
+    static int countSubsequences(int i, int j, String pat,
+                                 String txt, int[][] memo)
+    {
+        if (i == 0)
+            return 1;
+        if (j == 0)
+            return 0;
+
+        // If already computed, return the result
+        if (memo[i][j] != -1)
+            return memo[i][j];
+
+        // If last characters don't match
+        if (pat.charAt(i - 1) != txt.charAt(j - 1)) {
+            memo[i][j] = countSubsequences(i, j - 1, pat,
+                                           txt, memo);
+        }
+        else {
+
+            // Both characters match
+            memo[i][j] = countSubsequences(i, j - 1, pat,
+                                           txt, memo)
+                         + countSubsequences(
+                             i - 1, j - 1, pat, txt, memo);
+        }
+
+        return memo[i][j];
+    }
+
+    public static void main(String[] args)
+    {
+        String pat = "aba";
+        String txt = "abba";
+        System.out.println(subseqCount(txt, pat));
+    }
+}
+
+
+            Python
+
+    # Python program to Count distinct occurrences as
+# a subsequence using memoization
+
+def countSubsequences(i, j, pat, txt, memo):
+    if i == 0:
+        return 1
+    if j == 0:
+        return 0
+
+    # If already computed, return the result
+    if memo[i][j] != -1:
+        return memo[i][j]
+
+    # If last characters don't match
+    if pat[i - 1] != txt[j - 1]:
+        memo[i][j] = countSubsequences(i, j - 1, pat, txt, memo)
+    else:
+
+        # Both characters match
+        memo[i][j] = (countSubsequences(i, j - 1, pat, txt, memo)
+                      + countSubsequences(i - 1, j - 1, pat, txt, memo))
+
+    return memo[i][j]
+
+
+def subseqCount(txt, pat):
+    m, n = len(pat), len(txt)
+
+    # pat can't appear as a subsequence in txt
+    if m > n:
+        return 0
+
+    # Create a memoization table
+    memo = [[-1 for _ in range(n + 1)] for _ in range(m + 1)]
+
+    return countSubsequences(m, n, pat, txt, memo)
+
+
+if __name__ == "__main__":
+    pat = "aba"
+    txt = "abba"
+    print(subseqCount(txt, pat))
+
+
+            C#
+
+    // C# program to Count distinct occurrences as
+// a subsequence using memoization
+using System;
+
+class GfG {
+    static int CountSubsequences(int i, int j, string pat,
+                                 string txt, int[, ] memo)
+    {
+        if (i == 0)
+            return 1;
+        if (j == 0)
+            return 0;
+
+        // If already computed, return the result
+        if (memo[i, j] != -1)
+            return memo[i, j];
+
+        // If last characters don't match
+        if (pat[i - 1] != txt[j - 1]) {
+            memo[i, j] = CountSubsequences(i, j - 1, pat,
+                                           txt, memo);
+        }
+        else {
+
+            // Both characters match
+            memo[i, j] = CountSubsequences(i, j - 1, pat,
+                                           txt, memo)
+                         + CountSubsequences(
+                             i - 1, j - 1, pat, txt, memo);
+        }
+
+        return memo[i, j];
+    }
+
+    static int subseqCount(string txt, string pat)
+    {
+        int m = pat.Length, n = txt.Length;
+
+        // pat can't appear as a subsequence in txt
+        if (m > n)
+            return 0;
+
+        // Create a 2D array for memoization
+        int[, ] memo = new int[m + 1, n + 1];
+
+        // Initialize the memoization array with -1
+        for (int i = 0; i <= m; i++)
+            for (int j = 0; j <= n; j++)
+                memo[i, j] = -1;
+
+        return CountSubsequences(m, n, pat, txt, memo);
+    }
+
+    static void Main(string[] args)
+    {
+        string pat = "aba";
+        string txt = "abba";
+        Console.WriteLine(subseqCount(txt, pat));
+    }
+}
+
+
+            JavaScript
+
+    // Javascript program to Count distinct occurrences as
+// a subsequence using memoization
+function countSubsequences(i, j, pat, txt, memo)
+{
+    if (i === 0)
+        return 1;
+    if (j === 0)
+        return 0;
+
+    // If already computed, return the result
+    if (memo[i][j] !== -1)
+        return memo[i][j];
+
+    // If last characters don't match
+    if (pat[i - 1] !== txt[j - 1]) {
+        memo[i][j]
+            = countSubsequences(i, j - 1, pat, txt, memo);
+    }
+    else {
+
+        // Both characters match
+        memo[i][j]
+            = countSubsequences(i, j - 1, pat, txt, memo)
+              + countSubsequences(i - 1, j - 1, pat, txt,
+                                  memo);
+    }
+
+    return memo[i][j];
+}
+
+function subseqCount(txt, pat)
+{
+    const m = pat.length;
+    const n = txt.length;
+
+    // pat can't appear as a subsequence in txt
+    if (m > n)
+        return 0;
+
+    // Create a 2D array for memoization
+    const memo = Array.from({length : m + 1},
+                            () => Array(n + 1).fill(-1));
+
+    return countSubsequences(m, n, pat, txt, memo);
+}
+
+const pat = "aba";
+const txt = "abba";
+console.log(subseqCount(txt, pat));
+
+Output2
+[Better Approach 2] Using Bottom-Up DP (Tabulation) - O(m*n) Time and O(m*n) SpaceThe approach is similar to the previous one, just instead recursion, we iteratively build up the solution by calculating in bottom-up manner. Maintain 2D table dp of size (m + 1) x (n + 1), where m is the length of the pattern and n is the length of the text. This table will store the number of distinct subsequences of the pattern in the text at various indices.For all j from 0 to n, set dp[0][j] = 1. This represents the fact that an empty pattern is a subsequence of any text (including an empty text).For i > 0, set dp[i][0] = 0. This indicates that a non-empty pattern cannot be found in an empty text.Iterate through the table filling it out from 1 to m for the pattern and 1 to n for the text. For each i (from 1 to m) and j (from 1 to n):if pat[i - 1] == txt[j - 1], then we have two choices:Include this character in the subsequence, which gives dp[i - 1][j - 1].Exclude this character, which gives dp[i][j - 1]If the characters do not match, we can only exclude the current character of txt, dp[i][j]=dp[i][j-1].
+            C++
+
+    // C++ program to Count distinct occurrences as
+// a subsequence using tabulation
+#include <bits/stdc++.h>
+using namespace std;
+
+int subseqCount(string &txt, string &pat)
+{
+    int m = pat.length(), n = txt.length();
+
+    // pat can't appear as a subsequence in txt
+    if (m > n)
+        return 0;
+
+    // Create a 2D vector initialized with 0
+    vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
+
+    // Initializing first row with all 1s. An empty
+    // string is a subsequence of all.
+    for (int j = 0; j <= n; j++)
+        dp[0][j] = 1;
+
+    // Fill mat[][] in bottom up manner
+    for (int i = 1; i <= m; i++)
+    {
+        for (int j = 1; j <= n; j++)
+        {
+
+            // If last characters don't match, then value
+            // is same as the value without last character
+            // in txt.
+            if (pat[i - 1] != txt[j - 1])
+                dp[i][j] = dp[i][j - 1];
+            else
+
+                // Value is obtained considering two cases.
+                // a) All substrings without last character in txt
+                // b) All substrings without last characters in both.
+                dp[i][j] = (dp[i][j - 1] + dp[i - 1][j - 1]);
+        }
+    }
+
+    return dp[m][n];
+}
+
+int main()
+{
+
+    string pat = "aba";
+    string txt = "abba";
+    cout << subseqCount(txt, pat) << endl;
+    return 0;
+}
+
+
+            Java
+
+    // Java program to Count distinct occurrences as
+// a subsequence using tabulation
+class GfG {
+
+    static int subseqCount(String txt, String pat)
+    {
+        int m = pat.length();
+        int n = txt.length();
+
+        // pat can't appear as a subsequence in txt
+        if (m > n)
+            return 0;
+
+        // Create a 2D array initialized with 0
+        int[][] dp = new int[m + 1][n + 1];
+
+        // Initializing first row with all 1s. An empty
+        // string is a subsequence of all.
+        for (int j = 0; j <= n; j++) {
+            dp[0][j] = 1;
+        }
+
+        // Fill mat[][] in bottom-up manner
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+
+                // If last characters don't match
+                if (pat.charAt(i - 1)
+                    != txt.charAt(j - 1)) {
+                    dp[i][j] = dp[i][j - 1];
+                }
+                else {
+
+                    // Value is obtained considering two
+                    // cases. a) All substrings without last
+                    // character in txt b) All substrings
+                    // without last characters in both.
+                    dp[i][j]
+                        = (dp[i][j - 1] + dp[i - 1][j - 1]);
+                }
+            }
+        }
+
+        return dp[m][n];
+    }
+
+    public static void main(String[] args)
+    {
+        String pat = "aba";
+        String txt = "abba";
+        System.out.println(subseqCount(txt, pat));
+    }
+}
+
+
+            Python
+
+    # Python program to Count distinct occurrences as
+# a subsequence using tabulation
+
+def subseqCount(txt, pat):
+    m = len(pat)
+    n = len(txt)
+
+    # pat can't appear as a subsequence
+    # in txt
+    if m > n:
+        return 0
+
+    # Create a 2D list initialized with 0
+    dp = [[0] * (n + 1) for _ in range(m + 1)]
+
+    # Initializing first row with all 1s. An empty string
+    # is a subsequence of all.
+    for j in range(n + 1):
+        dp[0][j] = 1
+
+    # Fill mat[][] in bottom-up manner
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+
+            # If last characters don't match, then value
+            # is the same as the value without the last character in txt.
+            if pat[i - 1] != txt[j - 1]:
+                dp[i][j] = dp[i][j - 1]
+            else:
+
+                # Value is obtained considering two cases:
+                # a) All substrings without last character in txt
+                # b) All substrings without last characters in both.
+                dp[i][j] = (dp[i][j - 1] + dp[i - 1][j - 1])
+
+    return dp[m][n]
+
+
+if __name__ == "__main__":
+    pat = "aba"
+    txt = "abba"
+    print(subseqCount(txt, pat))
+
+
+            C#
+
+    // C# program to Count distinct occurrences as
+// a subsequence using tabulation
+using System;
+
+class GfG {
+    static int subseqCount(string txt, string pat)
+    {
+        int m = pat.Length;
+        int n = txt.Length;
+
+        // pat can't appear as a subsequence in txt
+        if (m > n)
+            return 0;
+
+        // Create a 2D array initialized with 0
+        int[, ] dp = new int[m + 1, n + 1];
+
+        // Initializing first row with all 1s. An empty
+        // string is a subsequence of all.
+        for (int j = 0; j <= n; j++) {
+            dp[0, j] = 1;
+        }
+
+        // Fill mat[][] in bottom-up manner
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+
+                // If last characters don't match
+                if (pat[i - 1] != txt[j - 1]) {
+                    dp[i, j] = dp[i, j - 1];
+                }
+                else {
+
+                    // Value is obtained considering two
+                    // cases: a) All substrings without last
+                    // character in txt b) All substrings
+                    // without last characters in both.
+                    dp[i, j]
+                        = (dp[i, j - 1] + dp[i - 1, j - 1]);
+                }
+            }
+        }
+
+        return dp[m, n];
+    }
+
+    static void Main(string[] args)
+    {
+        string pat = "aba";
+        string txt = "abba";
+        Console.WriteLine(subseqCount(txt, pat));
+    }
+}
+
+
+            JavaScript
+
+    // Javascript program to Count distinct occurrences as
+// a subsequence using tabulation
+function subseqCount(txt, pat)
+{
+    const m = pat.length;
+    const n = txt.length;
+
+    // pat can't appear as a subsequence
+    // in txt
+    if (m > n)
+        return 0;
+
+    // Create a 2D array initialized with 0
+    const dp = Array.from({length : m + 1},
+                          () => Array(n + 1).fill(0));
+
+    // Initializing first row with all 1s. An empty
+    // string is a subsequence of all.
+    for (let j = 0; j <= n; j++) {
+        dp[0][j] = 1;
+    }
+
+    // Fill mat[][] in bottom-up manner
+    for (let i = 1; i <= m; i++) {
+        for (let j = 1; j <= n; j++) {
+
+            // If last characters don't match
+            if (pat[i - 1] !== txt[j - 1]) {
+                dp[i][j] = dp[i][j - 1];
+            }
+            else {
+
+                // Value is obtained considering two cases:
+                // a) All substrings without last character
+                // in txt b) All substrings without last
+                // characters in both.
+                dp[i][j]
+                    = (dp[i][j - 1] + dp[i - 1][j - 1]);
+            }
+        }
+    }
+
+    return dp[m][n];
+}
+
+const pat = "aba";
+const txt = "abba";
+console.log(subseqCount(txt, pat));
+
+Output2
+[Expected Approach ] Using Space Optimized DP – O(m*n) Time and O(m) SpaceSince dp[i][j] accesses elements of the current and previous rows only, we can optimize auxiliary space just by using two rows only reducing space from m*n to 2*m.So we maintain two arrays prev and curr to store previous and current rows of dp[][].if pat[i - 1] == txt[j - 1], then we have two choices:Include this character in the subsequence, which gives prev[j-1] is added to curr[j]Exclude this character, which means prev[j] is added to curr[j]If the characters do not match, we can only exclude the current character which means curr[j] = prev[j]
+            C++
+
+    // C++ program to Count distinct occurrences
+// as a subsequence using space optimized dp
+#include <bits/stdc++.h>
+using namespace std;
+
+// Function to count distinct occurrences of pat in txt
+int subseqCount(string &txt, string &pat)
+{
+    int m = pat.length(), n = txt.length();
+
+    // If pattern is longer than the text, return 0
+    if (m > n)
+        return 0;
+
+    // Create two 1D arrays for dynamic programming
+    vector<int> prev(m + 1, 0);
+    vector<int> curr(m + 1, 0);
+
+    // Base case: An empty pattern can be
+    // formed from any text
+    prev[0] = 1;
+
+    // Iterate over each character in the text
+    for (int i = 1; i <= n; i++)
+    {
+
+        // Base case: An empty pattern is always
+        // a subsequence
+        curr[0] = 1;
+
+        // Iterate over each character in the pattern
+        for (int j = 1; j <= m; j++)
+        {
+
+            // If characters match, include or
+            // exclude the current character
+            if (txt[i - 1] == pat[j - 1])
+            {
+                curr[j] = (prev[j - 1] + prev[j]);
+            }
+            else
+            {
+                curr[j] = prev[j];
+            }
+        }
+
+        // Update prev array for
+        // the next iteration
+        prev = curr;
+    }
+
+    return prev[m];
+}
+
+int main()
+{
+
+    string pat = "aba";
+    string txt = "abba";
+    cout << subseqCount(txt, pat) << endl;
+    return 0;
+}
+
+
+            Java
+
+    // Java program to Count distinct occurrences
+// as a subsequence using space optimized dp
+import java.util.Arrays;
+
+class GfG {
+
+    // Function to count distinct occurrences of pat in txt
+    static int subseqCount(String txt, String pat)
+    {
+        int m = pat.length();
+        int n = txt.length();
+
+        // If pattern is longer than the
+        // text, return 0
+        if (m > n)
+            return 0;
+
+        // Create two 1D arrays for dynamic
+        // programming
+        int[] prev = new int[m + 1];
+        int[] curr = new int[m + 1];
+
+        // Base case: An empty pattern can be
+        // formed from any text
+
+        prev[0] = 1;
+
+        // Iterate over each character in the text
+        for (int i = 1; i <= n; i++) {
+
+            // Base case: An empty pattern is always a
+            // subsequence
+            curr[0] = 1;
+
+            // Iterate over each character in the pattern
+            for (int j = 1; j <= m; j++) {
+
+                // If characters match, include or exclude
+                // the current character
+                if (txt.charAt(i - 1)
+                    == pat.charAt(j - 1)) {
+                    curr[j] = (prev[j - 1] + prev[j]);
+                }
+                else {
+                    curr[j] = prev[j];
+                }
+            }
+
+            // Update prev array for the next iteration
+            System.arraycopy(curr, 0, prev, 0, curr.length);
+        }
+
+        return (int)prev[m];
+    }
+
+    public static void main(String[] args)
+    {
+        String pat = "aba";
+        String txt = "abba";
+        System.out.println(subseqCount(txt, pat));
+    }
+}
+
+
+            Python
+
+    # Python program to Count distinct occurrences
+# as a subsequence using space optimized dp
+
+def subseqCount(txt, pat):
+    m, n = len(pat), len(txt)
+
+    # If pattern is longer than the
+    # text, return 0
+    if m > n:
+        return 0
+
+    # Create two 1D arrays for
+    # dynamic programming
+    prev = [0] * (m + 1)
+    curr = [0] * (m + 1)
+
+    # Base case: An empty pattern can
+    # be formed from any text
+    prev[0] = 1
+
+    # Iterate over each character in the text
+    for i in range(1, n + 1):
+        curr[0] = 1
+
+        # Iterate over each character in the pattern
+        for j in range(1, m + 1):
+
+            # If characters match, include or
+            # exclude the current character
+            if txt[i - 1] == pat[j - 1]:
+                curr[j] = (prev[j - 1] + prev[j])
+            else:
+                curr[j] = prev[j]
+
+        # Update prev array for the
+        # next iteration
+        prev = curr.copy()
+
+    return prev[m]
+
+
+if __name__ == "__main__":
+    pat = "aba"
+    txt = "abba"
+    print(subseqCount(txt, pat))
+
+
+            C#
+
+    // C# program to Count distinct occurrences
+// as a subsequence using space optimized dp
+using System;
+
+class GfG {
+    public static int subseqCount(string txt, string pat)
+    {
+        int m = pat.Length, n = txt.Length;
+
+        // If pattern is longer than the
+        // text, return 0
+        if (m > n)
+            return 0;
+
+        // Create two arrays for dynamic
+        // programming
+        int[] prev = new int[m + 1];
+        int[] curr = new int[m + 1];
+
+        // Base case: An empty pattern can
+        // be formed from any text
+        prev[0] = 1;
+
+        // Iterate over each character in the text
+        for (int i = 1; i <= n; i++) {
+            curr[0] = 1;
+
+            // Iterate over each character in the pattern
+            for (int j = 1; j <= m; j++) {
+
+                // If characters match, include or exclude
+                // the current character
+                if (txt[i - 1] == pat[j - 1]) {
+                    curr[j] = (prev[j - 1] + prev[j]);
+                }
+                else {
+                    curr[j] = prev[j];
+                }
+            }
+
+            // Update prev array for the next
+            // iteration
+            Array.Copy(curr, prev, m + 1);
+        }
+
+        // Return the count of distinct subsequences
+        // matching the complete pattern
+        return prev[m];
+    }
+
+    static void Main()
+    {
+        string pat = "aba";
+        string txt = "abba";
+        Console.WriteLine(subseqCount(txt, pat));
+    }
+}
+
+
+            JavaScript
+
+    // Javascript program to Count distinct occurrences
+// as a subsequence using space optimized dp
+function subseqCount(txt, pat)
+{
+    const m = pat.length;
+    const n = txt.length;
+
+    // If pattern is longer than the text, return 0
+    if (m > n)
+        return 0;
+
+    // Create two arrays for dynamic programming
+    const prev = new Array(m + 1).fill(0);
+    const curr = new Array(m + 1).fill(0);
+
+    // Base case: An empty pattern can
+    // be formed from any text
+    prev[0] = 1;
+
+    // Iterate over each character in the text
+    for (let i = 1; i <= n; i++) {
+        curr[0] = 1;
+
+        // Iterate over each character in the pattern
+        for (let j = 1; j <= m; j++) {
+
+            // If characters match, include or exclude the
+            // current character
+            if (txt[i - 1] === pat[j - 1]) {
+                curr[j] = (prev[j - 1] + prev[j]);
+            }
+            else {
+                curr[j] = prev[j];
+            }
+        }
+
+        // Update prev array for the next iteration
+        for (let k = 0; k <= m; k++) {
+            prev[k] = curr[k];
+        }
+    }
+
+    // Return the count of distinct subsequences matching
+    // the complete pattern
+    return prev[m];
+}
+
+const txt = "aba";
+const pat = "abba";
+console.log(subseqCount(txt, pat));
+
+Output2

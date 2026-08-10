@@ -1,0 +1,69 @@
+# Quiz about Data types in C Programming
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsData types in C ProgrammingLast Updated : DiscussCommentsQuestion 1Which of the following is a basic data type in C?stringfloatbooleanarrayQuestion 2How many bytes does an int typically occupy on a 32-bit system?1234Question 3Which of the following can be used to find the memory size of any data type in C?memsize()length()size()sizeofQuestion 4Which of the following stores a single character?intcharfloatdoubleQuestion 5What is the range of char in a typical C compiler?0 to 255-128 to 127-127 to 127-256 to 255Question 6Which data type would you use to store a large floating-point number with high precision?floatcharintdoubleQuestion 7What is the keyword for an unsigned integer in C?no_signnegative signunsignedpositiveQuestion 8Which of the following is a derived data type in C?floatarrayintcharQuestion 9Which data type is used for storing numbers in exponential form?charfloatdoubleboth B and CQuestion 10What is the size of a double on most 64-bit systems?4 bytes6 bytes8 bytes10 bytesTags:C LanguageThere are 19 questions to complete.Take a part in the ongoing discussionView All Discussion

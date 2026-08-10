@@ -1,0 +1,87 @@
+# Quiz about Quiz on C++ File Handling
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsQuiz on C++ File HandlingLast Updated : DiscussCommentsQuestion 1How can you create a temporary file that is automatically deleted when closed?Using the tmpfile() functionUsing the tempfile() functionUsing the tmpstream classUsing the tempstream classQuestion 2Which of the following is used to open a file for reading in C++?ofstream file("data.txt");ifstream file("data.txt");fstream file("data.txt", ios::out);file.open("data.txt", ios::write);Question 3What happens if an exception is thrown but no catch block matches it?Program skips the exception Program terminates using std::terminate()It is silently ignored Control goes back to the main functionQuestion 4Which standard exception class is thrown when memory allocation with new fails?std::runtime_errorstd::bad_allocstd::overflow_errorstd::invalid_argumentQuestion 5What is the output of the following code?
+        C++
+        
+        #include <iostream>
+using namespace std;
+int main() {
+try {
+throw 10;
+}
+catch (char e) {
+cout << "Char Exception";
+}
+catch (...) {
+cout << "Default Handler";
+}
+}
+
+        
+    Char ExceptionDefault Handler Compilation ErrorNo OutputQuestion 6 Which keyword is used to rethrow the currently handled exception inside a catch block?retrythrowcatchthrow eTags:C++C++ QuizThere are 6 questions to complete.Take a part in the ongoing discussionView All Discussion

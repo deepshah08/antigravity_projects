@@ -1,0 +1,196 @@
+# Monte Carlo Tree Search (MCTS) in Machine Learning - GeeksforGeeks
+
+Monte Carlo Tree Search (MCTS) is a method used for problems with very large decision spaces, such as game Go, which has around 10170 possible states. It builds a search tree step-by-step using random simulations to choose better moves.Avoids exploring every possible move.Balances trying new moves (exploration) and using good known moves (exploitation).Uses statistical sampling to guide decisions.Works well when the search space is too large to evaluate fully.The Four-Phase AlgorithmMCTS steps1. Selection : Starting at the root node, MCTS moves down the tree using a selection rule. The most common rule is UCT (Upper Confidence Bounds for Trees), which balances:Exploitation: choosing moves with higher average rewardExploration: trying moves with less information2. Expansion :  When the selection phase reaches a leaf node that isn't terminal, the algorithm expands the tree by adding one or more child nodes representing possible actions from that state.3. Simulation Phase: From the newly added node, a random playout is performed until reaching a terminal state. During this phase, moves are chosen randomly or using simple heuristics, making the simulation computationally inexpensive.4. Backpropagation Phase: The result of the simulation is propagated back up the tree to the root, updating statistics (visit counts and win rates) for all nodes visited during the selection phase.Mathematical Foundation: UCB1 FormulaThe selection phase relies on the UCB1 (Upper Confidence Bound) formula to determine which child node to visit next:UCB1(i) = \bar{X}_i + c \sqrt{\frac{\ln N}{n_i}}Where:\bar{X}_i is the average reward of node ic is the exploration parameter (typically √2)N is the total number of visits to the parent noden_i is the number of visits to node iThe first part encourages exploitation, while the second drives exploration. The logarithm ensures exploration reduces as data increases.Monte Carlo Tree Search ExampleGame: PairPlayers: 2Board: 4 boxesWinning Condition: A player wins by marking any two adjacent boxes.Empty board for the Pair gameThe full game tree contains three types of terminal (leaf) states:Yellow leaves: Winning positions (+1) -> Total: 6 nodesBlue leaves: Draw positions (0) -> Total: 4 nodesRed leaves: Losing positions (–1) -> Total: 2 nodesThese values will be used during simulation and backpropagation.Monte carlo tree search game tree for pair game0Iteration 11. Selection & ExpansionStart at root S0; two moves m1 and m2 lead to S1 and S2.Compute UCB for S1 and S2. Both are unvisited leaf nodes -> UCB = ∞ -> pick randomly -> select S1.Second selection phase for Monte Carlo tree search2. Simulation (from S1)Roll out randomly from S1 to a terminal state.One playout (moves m3, m4) ends in a draw (0).Record: e.g., S4 = 0, N4 = 1.3. BackpropagationBackpropagate the 0 result along the path to S0 (update values/visits on each node).Tree search backpropagation to the rootIteration 21. SelectionNow we compare S1 and S2:S1 has been visited once -> finite UCBS2 not visited -> UCB = ∞So we select S2.Second selection phase for Monte Carlo tree search2. Simulation (from S2)Roll out randomly from S2.One playout (moves m5, m6) ends in a win (+1).Record: e.g., S6 = +1, N6 = 1.3. BackpropagationUpdate values along the path:Value(S2) = 1Visits(S2) = 1The root now has results from both S1 and S2.Backpropagation for the second iteration of Monte Carlo tree searchIteration 31. SelectionAfter two interactions, both S1 and S2 have N = 1.UCB favors S2 (it has a win), so select S2 again.Python Implementation1. Importing LibrariesWe will start by importing required libraries:math: to perform mathematical operations like logarithms and square roots for UCB1 calculations.random: to randomly pick moves during simulations (rollouts).deepcopy: to safely copy board state
+            Python
+
+    import math
+import random
+from copy import deepcopy
+
+BOARD_SIZE = 3
+
+2. check_winner_state(state)Checks if any player (1 or 2) has won. Returns:1: Player 1 wins2: Player 2 winsNone: No winner
+            Python
+
+    def check_winner_state(state):
+    for i in range(BOARD_SIZE):
+        if state[i][0] == state[i][1] == state[i][2] != 0:
+            return state[i][0]
+        if state[0][i] == state[1][i] == state[2][i] != 0:
+            return state[0][i]
+    if state[0][0] == state[1][1] == state[2][2] != 0:
+        return state[0][0]
+    if state[0][2] == state[1][1] == state[2][0] != 0:
+        return state[0][2]
+    return None
+
+3. available_actions(state)Returns all empty cells (i, j) where a move can be placed.
+            Python
+
+    def available_actions(state):
+    return [(i, j) for i in range(BOARD_SIZE) for j in range(BOARD_SIZE) if state[i][j] == 0]
+
+4. get_current_player(state)Determines whose turn it is by counting Xs and Os.If equal: Player 1Else: Player 2
+            Python
+
+    def get_current_player(state):
+    x_count = sum(row.count(1) for row in state)
+    o_count = sum(row.count(2) for row in state)
+    return 1 if x_count == o_count else 2
+
+5. MCTS Node ClassEach node represents a game state in the search tree.state: 3×3 boardparent: previous nodeaction: move applied at the parent to get hereplayer: who made that movechildren: child nodesvisits: number of times this node was visitedwins: total reward from simulationsuntried_actions: moves not explored yet
+            Python
+
+    class MCTSNode:
+    def __init__(self, state, parent=None, action=None, player=None):
+        self.state = state
+        self.parent = parent
+        self.action = action        
+        self.player = player         
+        self.children = []
+        self.visits = 0
+        self.wins = 0.0
+        self.untried_actions = available_actions(state)
+
+6. Helper Functionis_terminal(): Checks if the game is finished.is_fully_expanded(): Returns True if all moves are explored.expand(): Takes one untried move → creates a child node → adds it to the tree.best_child(): Selects the best child using UCB1 formula (exploitation + exploration).
+            Python
+
+    class MCTSNode:
+    def __init__(self, state, parent=None, action=None, player=None):
+        self.state = state
+        self.parent = parent
+        self.action = action
+        self.player = player
+        self.children = []
+        self.visits = 0
+        self.wins = 0.0
+        self.untried_actions = available_actions(state)
+
+    # Check if node is terminal
+    def is_terminal(self):
+        return check_winner_state(self.state) is not None or not available_actions(self.state)
+
+    # Check if all actions are explored
+    def is_fully_expanded(self):
+        return len(self.untried_actions) == 0
+
+    # Expand node
+    def expand(self):
+        action = self.untried_actions.pop()
+        new_state = deepcopy(self.state)
+
+        player_to_move = get_current_player(self.state)
+        new_state[action[0]][action[1]] = player_to_move
+
+        child = MCTSNode(new_state, parent=self, action=action, player=player_to_move)
+        self.children.append(child)
+        return child
+
+    # Select best child using UCB
+    def best_child(self, c=1.4):
+        for child in self.children:
+            if child.visits == 0:
+                return child
+
+        def ucb(child):
+            exploit = child.wins / child.visits
+            explore = c * math.sqrt(math.log(self.visits) / child.visits)
+            return exploit + explore
+
+        return max(self.children, key=ucb)
+
+7. rollout()Plays random moves until the game finishes. Returns:1 or 2: winnerNone: draw
+            Python
+
+    def rollout(self):
+    state = deepcopy(self.state)
+    player = get_current_player(state)
+
+    while True:
+        winner = check_winner_state(state)
+        if winner is not None:
+            return winner
+        actions = available_actions(state)
+        if not actions:
+            return None
+        move = random.choice(actions)
+        state[move[0]][move[1]] = player
+        player = 1 if player == 2 else 2
+
+8. backpropagate()Updates the wins and visits from simulation results.
+            Python
+
+    def backpropagate(self, winner):
+    self.visits += 1
+
+    if self.player is not None:
+        if winner is None:
+            self.wins += 0.5
+        elif winner == self.player:
+            self.wins += 1.0
+
+    if self.parent:
+        self.parent.backpropagate(winner)
+
+9. MCTS Search FunctionRuns the complete MCTS process:SelectionExpansionSimulationBackpropagation
+            Python
+
+    def mcts_search(root_state, iterations=500):
+    root = MCTSNode(root_state, player=None)
+
+    for _ in range(iterations):
+        node = root
+
+        while not node.is_terminal() and node.is_fully_expanded():
+            node = node.best_child()
+
+        if not node.is_terminal() and not node.is_fully_expanded():
+            node = node.expand()
+
+        winner = node.rollout()
+        node.backpropagate(winner)
+
+    best = max(root.children, key=lambda c: c.visits)
+    return best.action
+
+10. Playing the Game (MCTS vs Random)
+            Python
+
+    def play_game():
+    board = [[0]*3 for _ in range(3)]
+    current_player = 1
+
+    print("MCTS Tic-Tac-Toe Demo")
+    print("0 = empty, 1 = X, 2 = O\n")
+
+    for turn in range(9):
+        for row in board: print(row)
+        print()
+
+        if current_player == 1:
+            move = mcts_search(board, iterations=300)
+            print(f"MCTS plays: {move}")
+        else:
+            empty = available_actions(board)
+            move = random.choice(empty)
+            print(f"Random plays: {move}")
+
+        board[move[0]][move[1]] = current_player
+
+        winner = check_winner_state(board)
+        if winner:
+            for row in board: print(row)
+            print(f"Player {winner} wins!")
+            return
+
+        current_player = 1 if current_player == 2 else 2
+
+    print("Draw!")
+
+11. Run the Game
+            Python
+
+    if __name__ == "__main__":
+    play_game()
+
+Output:Sample run outputWith enough iterations, MCTS plays strong and avoids losing lines. Increasing simulation count improves decision quality. A real-world example is AlphaGo, which combined MCTS with neural networks and achieved world-class performance by running millions of simulations per move.Practical Applications Beyond GamesPlanning and Scheduling: The algorithm can optimize resource allocation and task scheduling in complex systems where traditional optimization methods struggle.Neural Architecture Search: MCTS guides the exploration of neural network architectures, helping to discover optimal designs for specific tasks.Portfolio Management: Financial applications use MCTS for portfolio optimization under uncertainty, where the algorithm balances risk and return through simulated market scenarios.AdvantagesNo domain knowledge needed: MCTS only needs valid moves and end conditions.Balances exploration and exploitation: Uses UCB to pick promising and less-explored moves.Anytime algorithm: Can stop at any moment and still return the best estimated move.Works well with large search spaces: Focuses on useful parts of the tree instead of exploring everything.Asymmetric tree growth: Spends more time on good branches, improving decision quality efficiently.LimitationsSimulation-heavy: needs many rollouts for consistent resultsHigh variance: random rollouts can lead to noisy estimatesTactical blindness: may miss short forced sequencesParameter tuning: exploration constant (c) impacts results

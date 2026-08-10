@@ -1,0 +1,56 @@
+# SQL Quiz : Practice SQL Questions Online - GeeksforGeeks
+
+SQL (Structured Query Language) is used to store, manage and retrieve data in databases. This quiz helps you test and improve your understanding of SQL concepts.Practice SQL queries and database operations.Strengthen problem-solving skills for interviews and real-world tasks.For a complete guide to SQL, refer to the SQL Tutorial.These are the following Questions:
+        .child {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .child div {
+            flex: 0 0 calc(33.33% - 20px);
+            margin: 10px;
+            text-align: center;
+        }
+
+        .child1, .child2, .child3, .child4, .child5, .child6, .child7{
+            border: 5px solid #ccc; 
+            border-radius: 15px;
+            padding: 10px;
+            margin: 10px; 
+            text-align: center;
+            background-color: #f3f3f3; 
+            transition: transform 0.3s ease;
+        }
+        .child1:hover, .child2:hover, .child3:hover, .child4:hover, .child5:hover, .child6:hover, .child7:hover {
+            background-color: #41b085;
+            transform: scale(1.1);
+        }
+        img {
+            max-width: 100%; 
+            height: auto; 
+        }
+        h3 {
+            margin-top: 10px;
+        }
+        a {
+            color: #333333 !important; 
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .child div {
+                flex: 0 0 calc(50% - 20px); /* Two columns on medium screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .child div {
+                flex: 0 0 calc(100% - 20px); /* Single column on small screens */
+            }
+        }
+    
+
+
+SQL Basics Quiz QuestionsSQL CRUD Operations Quiz QuestionsSQL Operators Quiz QuestionsSQL Aggregation Functions & Constraints Quiz QuestionsSQL Joins & Functions Quiz QuestionsSQL Indexes & Transactions Quiz QuestionsSQL Query-Based Quiz Questions

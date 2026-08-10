@@ -1,0 +1,87 @@
+# Quiz about Python Deque
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython DequeLast Updated : DiscussCommentsQuestion 1What is the primary advantage of using a deque over a traditional list in Python?Deque allows random access to elements.Deque supports efficient append and pop operations from both ends.Deque automatically sorts elements upon insertion.Deque has a fixed size and cannot grow dynamically.Question 2In a double-ended queue (deque), which operation is inefficient compared to lists?Appending elements to both ends.Popping elements from both ends.Random access to elements by index.Removing elements from both ends.Question 3What is the time complexity of the remove(value) operation in a deque?O(1)O(n)O(k)O(log n)Question 4Which of the following best describes an Input Restricted Deque?Elements can be added from both ends, but removed only from one end.Elements can be added and removed from both ends.Elements can only be added from one end and removed from both ends.Elements can be added and removed only from the right end.Question 5When using the rotate(n) method on a deque, what does a negative value for n signify?Rotate to the left by n steps.Rotate to the right by n steps.Reverse the deque entirely.No rotation occurs.Question 6Which method can be used to append an element to the right side of a deque?insert()appendleft()append()rightappend()Question 7Which of the following is a valid way to initialize a deque in Python?d = deque([1, 2, 3, 4])d = deque("hello")d = deque()All of the aboveQuestion 8What will be the output of the following code?
+        Python
+        
+        from collections import deque
+d = deque([1, 2, 3, 4])
+d.rotate(1)
+print(d)
+
+        
+    [2, 3, 4, 1][4, 1, 2, 3][1, 2, 3, 4][3, 4, 1, 2]Question 9Which of the following deque methods can be used to remove an element from the right end of the deque?pop()remove()popright()removeleft()Question 10What will be the output of the following code?
+        Python
+        
+        from collections import deque
+d = deque([1, 2, 3, 4])
+d.extendleft([0, -1])
+print(d)
+
+        
+    [-1, 0, 1, 2, 3, 4][0, -1, 1, 2, 3, 4][1, 2, 3, 4, 0, -1][0, 1, 2, 3, 4, -1]Tags:PythonPython-QuizzesThere are 10 questions to complete.Take a part in the ongoing discussionView All Discussion

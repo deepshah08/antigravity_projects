@@ -1,0 +1,275 @@
+# Inheritance in C++ - GeeksforGeeks
+
+Inheritance is one of the fundamental concepts of Object-Oriented Programming (OOP) that allows a class to acquire the properties and behaviors of another class. It promotes code reusability by enabling new classes to extend existing ones instead of rewriting code.Allows derived classes to reuse members of an existing class. Supports code reusability and hierarchical class design.Example: In the following example, Animal is the base class and Dog, Cat and Cow are derived classes that extend the Animal class. 
+            C++
+
+    #include <iostream>
+using namespace std;
+
+class Animal
+{
+  public:
+    void sound()
+    {
+        cout << "Animal makes a sound" << endl;
+    }
+};
+
+class Dog : public Animal
+{
+  public:
+    void sound()
+    {
+        cout << "Dog barks" << endl;
+    }
+};
+
+class Cat : public Animal
+{
+  public:
+    void sound()
+    {
+        cout << "Cat meows" << endl;
+    }
+};
+
+class Cow : public Animal
+{
+  public:
+    void sound()
+    {
+        cout << "Cow moos" << endl;
+    }
+};
+
+int main()
+{
+    Dog d;
+    d.sound();
+
+    Cat c;
+    c.sound();
+
+    Cow cow;
+    cow.sound();
+
+    return 0;
+}
+
+OutputDog barks
+Cat meows
+Cow moos
+Explanation: Animal is the base class, while Dog, Cat, and Cow are derived classes. Each derived class provides its own implementation of sound(), demonstrating how inheritance allows specialized behavior.Syntaxclass ChildClass : public ParentClass{    // Additional fields and methods};Where:DerivedClass is the class inheriting from another class. BaseClass is the class being inherited. accessSpecifier can be public, protected, or private.How Inheritance WorksInheritance establishes a parent-child relationship between classes. The derived class automatically acquires the accessible members of the base class and can also define its own members.Inherits accessible data members and member functions. Can add new members specific to the derived class. Can override inherited virtual functions. Eliminates duplicate code across related classes. Types of Inheritance C++ supports five types of inheritance. 1. Single InheritanceIn single inheritance, a sub-class is derived from only one super class. It inherits the properties and behavior of a single-parent class. Sometimes, it is also known as simple inheritance. Single Inheritance
+            C++
+
+    #include <iostream>
+using namespace std;
+
+class Vehicle {
+public:
+    Vehicle() {
+        cout << "This is a Vehicle" << endl;
+    }
+};
+
+class Car : public Vehicle {
+public:
+    Car() {
+        cout << "This Vehicle is Car" << endl;
+    }
+};
+
+int main() {
+   
+    Car obj;
+    return 0;
+}
+
+OutputThis is a Vehicle
+This Vehicle is Car
+2. Multiple InheritanceIn Multiple inheritance, one class can have more than one superclass and inherit features from all parent classes.Multiple Inheritance
+            C++
+
+    #include <iostream>
+using namespace std;
+
+class LandVehicle
+{
+  public:
+    void landInfo()
+    {
+        cout << "This is a LandVehicle" << endl;
+    }
+};
+
+class WaterVehicle
+{
+  public:
+    void waterInfo()
+    {
+        cout << "This is a WaterVehicle" << endl;
+    }
+};
+
+// Derived class inheriting from both base classes
+class AmphibiousVehicle : public LandVehicle, public WaterVehicle
+{
+  public:
+    AmphibiousVehicle()
+    {
+        cout << "This is an AmphibiousVehicle" << endl;
+    }
+};
+
+int main()
+{
+    AmphibiousVehicle obj;
+
+    obj.waterInfo();
+    obj.landInfo();
+
+    return 0;
+}
+
+OutputThis is an AmphibiousVehicle
+This is a WaterVehicle
+This is a LandVehicle
+3. Multilevel InheritanceMultilevel inheritance means a class is derived from another derived class, forming a chain of inheritance.Multilevel Inheritance
+            C++
+
+    #include <iostream>
+using namespace std;
+
+class Vehicle
+{
+  public:
+    Vehicle()
+    {
+        cout << "This is a Vehicle" << endl;
+    }
+};
+
+// Derived class from Vehicle
+class FourWheeler : public Vehicle
+{
+  public:
+    FourWheeler()
+    {
+        cout << "4 Wheeler Vehicles" << endl;
+    }
+};
+
+// Derived class from FourWheeler
+class Car : public FourWheeler
+{
+  public:
+    Car()
+    {
+        cout << "This 4 Wheeler Vehicle is a Car" << endl;
+    }
+};
+
+int main()
+{
+    Car obj;
+    return 0;
+}
+
+OutputThis is a Vehicle
+4 Wheeler Vehicles
+This 4 Wheeler Vehicle is a Car
+4. Hierarchical InheritanceIn hierarchical inheritance, more than one subclass is inherited from a single base class. i.e. more than one derived class is created from a single base class. For example, cars and buses both are vehicle.Hierarchical Inheritance
+            C++
+
+    #include <iostream>
+using namespace std;
+
+class Vehicle
+{
+  public:
+    Vehicle()
+    {
+        cout << "This is a Vehicle" << endl;
+    }
+};
+
+class Car : public Vehicle
+{
+  public:
+    Car()
+    {
+        cout << "This Vehicle is Car" << endl;
+    }
+};
+
+class Bus : public Vehicle
+{
+  public:
+    Bus()
+    {
+        cout << "This Vehicle is Bus" << endl;
+    }
+};
+
+int main()
+{
+    Car obj1;
+    Bus obj2;
+    return 0;
+}
+
+OutputThis is a Vehicle
+This Vehicle is Car
+This is a Vehicle
+This Vehicle is Bus
+5. Hybrid InheritanceIn hybrid inheritence when two or more types of inheritance are combined in one program. For example, a class might use multiple inheritance and also be part of a multilevel inheritance chain.Hybrid Inheritance
+            C++
+
+    #include <iostream>
+using namespace std;
+
+class Vehicle
+{
+  public:
+    Vehicle()
+    {
+        cout << "This is a Vehicle" << endl;
+    }
+};
+
+class Fare
+{
+  public:
+    Fare()
+    {
+        cout << "Fare of Vehicle" << endl;
+    }
+};
+
+class Car : public Vehicle
+{
+  public:
+    Car()
+    {
+        cout << "This Vehicle is a Car" << endl;
+    }
+};
+
+class Bus : public Vehicle, public Fare
+{
+  public:
+    Bus()
+    {
+        cout << "This Vehicle is a Bus with Fare";
+    }
+};
+
+int main()
+{
+    Bus obj2;
+    return 0;
+}
+
+OutputThis is a Vehicle
+Fare of Vehicle
+This Vehicle is a Bus with FareDiamond ProblemHybrid inheritance may create the Diamond Problem, where a class inherits the same base class through multiple inheritance paths.Multiple copies of the base class are created. Leads to ambiguity while accessing inherited members. Solved using virtual inheritance.Virtual InheritanceVirtual inheritance ensures that only one shared copy of the common base class exists.Eliminates ambiguity caused by the Diamond Problem. Prevents duplication of base class members. Used together with multiple inheritance.Advantages of Inheritance in C++Inheritance improves software organization by promoting reuse and extensibility.Reduces code duplication through reuse. Simplifies maintenance by centralizing common functionality. Supports hierarchical class organization. Enables runtime polymorphism through virtual functions. Makes applications easier to extend.Limitations of InheritanceAlthough inheritance is powerful, excessive use can make programs difficult to maintain.Creates tight coupling between base and derived classes. Changes in the base class can affect all derived classes. Deep inheritance hierarchies reduce readability. Multiple inheritance may introduce ambiguity. Virtual functions add slight runtime overhead.

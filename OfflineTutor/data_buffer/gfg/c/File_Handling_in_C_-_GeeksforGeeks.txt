@@ -1,0 +1,260 @@
+# File Handling in C - GeeksforGeeks
+
+File handling in C is the process in which we create, open, read, write, and close operations on a file. C language provides different functions such as fopen(), fwrite(), fread(), fseek(), fprintf(), etc. to perform input, output, and many different C file operations in our program.Open a File in CFor opening a file in C, the fopen() function is used with the filename or file path along with the required access modes.
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    
+    // File pointer to store the 
+    // value returned by fopen
+    FILE* fptr;
+
+    // Opening the file in read mode
+    fptr = fopen("filename.txt", "r");
+
+    // checking if the file is 
+    // opened successfully
+    if (fptr == NULL) {
+        printf("The file is not opened.");
+    }
+    return 0;
+}
+
+OutputThe file is not opened.The file is not opened because it does not exist in the source directory. But the fopen() function is also capable of creating a file if it does not exist.Note: It is essential to check for NULL values that might be returned by the fopen() function to avoid any errors.Syntax of fopen()
+            C
+
+    FILE* fopen(*file_name, *access_mode);
+
+Parametersfile_name: name of the file when present in the same directory as the source file. Otherwise, full path.access_mode: Specifies for what operation the file is being opened.Return ValueIf the file is opened successfully, returns a file pointer to it.If the file is not opened, then returns NULL.File Opening ModesFile opening modes or access modes specify the allowed operations on the file to be opened. They are passed as an argument to the fopen() function. Some of the commonly used file access modes are listed below:Opening   Modes  DescriptionrSearches file. If the file is opened successfully fopen( ) loads it into memory and sets up a pointer that points to the first character in it. If the file cannot be opened fopen( ) returns NULL.rb Open for reading in binary mode. If the file does not exist, fopen( ) returns NULL.wOpen for writing in text mode. If the file exists, its contents are overwritten. If the file doesn’t exist, a new file is created. Returns NULL, if unable to open the file.wbOpen for writing in binary mode. If the file exists, its contents are overwritten. If the file does not exist, it will be created.aSearches file. If the file is opened successfully fopen( ) loads it into memory and sets up a pointer that points to the last character in it. It opens only in the append mode. If the file doesn’t exist, a new file is created. Returns NULL, if unable to open the file.ab Open for append in binary mode. Data is added to the end of the file. If the file does not exist, it will be created.r+Searches file. It is opened successfully fopen( ) loads it into memory and sets up a pointer that points to the first character in it. Returns NULL, if unable to open the file.rb+ Open for both reading and writing in binary mode. If the file does not exist, fopen( ) returns NULL.w+Searches file. If the file exists, its contents are overwritten. If the file doesn’t exist a new file is created. Returns NULL, if unable to open the file.wb+Open for both reading and writing in binary mode. If the file exists, its contents are overwritten. If the file does not exist, it will be created.a+Searches file. If the file is opened successfully fopen( ) loads it into memory and sets up a pointer that points to the last character in it. It opens the file in both reading and append mode. If the file doesn’t exist, a new file is created. Returns NULL, if unable to open the file.ab+Open for both reading and appending in binary mode. If the file does not exist, it will be created.As given above, if you want to perform operations on a binary file, then you have to append 'b' at the last. For example, instead of “w”, you have to use “wb”, instead of “a+” you have to use “a+b”.Create a FileThe fopen() function can not only open a file but also can create a file if it does not exist already. For that, we have to use the modes that allow the creation of a file if not found such as w, w+, wb, wb+, a, a+, ab, and ab+.
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    
+    // File pointer
+    FILE* fptr;
+
+    // Creating file using fopen()
+    // with access mode "w"
+    fptr = fopen("file.txt", "w");
+
+    // checking if the file is created
+    if (fptr == NULL) 
+        printf("The file is not opened.");
+    else 
+        printf("The file is created Successfully.");
+    return 0;
+}
+
+OutputThe file is created Successfully.File CreatedWrite to a FileThe file write operations can be performed by the functions fprintf() and fputs(). C programming also provides some other functions that can be used to write data to a file such as:FunctionDescriptionfprintf()Similar to printf(), this function uses formatted string and variable arguments list to print output to the file.fputs()Prints the whole line in the file and a newline at the end.fputc()Prints a single character into the file.fputw()Prints a number to the file.fwrite()This function writes the specified number of bytes to the binary file.
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    
+    // File pointer
+    FILE* fptr;
+
+    // Get the data to be written in file
+    char data[50] = "GeeksforGeeks-A Computer "
+                    "Science Portal for Geeks";
+
+    // Creating file using fopen()
+    // with access mode "w"
+    fptr = fopen("file.txt", "w");
+
+    // Checking if the file is created
+    if (fptr == NULL) 
+        printf("The file is not opened.");
+    else{
+        printf("The file is now opened.\n");
+        fputs(data, fptr);
+        fputs("\n", fptr);
+
+        // Closing the file using fclose()
+        fclose(fptr);
+        printf("Data successfully written in file "
+               "file.txt\n");
+        printf("The file is now closed.");
+    }
+    return 0;
+}
+
+OutputThe file is now opened.
+Data successfully written in file file.txt
+The file is now closed. Reading From a FileThe file read operation in C can be performed using functions fscanf() or fgets(). Both the functions performed the same operations as that of scanf() and gets but with an additional parameter, the file pointer. There are also other functions we can use to read from a file. Such functions are listed below:FunctionDescriptionfscanf()Use formatted string and variable arguments list to take input from a file.fgets()Input the whole line from the file.fgetc()Reads a single character from the file.fgetw()Reads a number from a file.fread()Reads the specified bytes of data from a binary file.
+            C
+
+    #include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    FILE *fptr;
+
+    // Declare the character array
+    // for the data to be read from file
+    char data[50];
+    fptr = fopen("file.txt", "r");
+
+    if (fptr == NULL)
+    {
+        printf("file.txt file failed to open.");
+    }
+    else
+    {
+
+        printf("The file is now opened.\n");
+
+        // Read the data from the file
+        // using fgets() method
+        while (fgets(data, 50, fptr) != NULL)
+        {
+
+            // Print the data
+            printf("%s", data);
+        }
+
+        // Closing the file using fclose()
+        fclose(fptr);
+    }
+    return 0;
+}
+
+OutputThe file is now opened.GeeksforGeeks-A Computer Science Portal for GeeksThe getc() and some other file reading functions return EOF (End Of File) when they reach the end of the file while reading. EOF indicates the end of the file, and its value is implementation-defined. Reading more after EOF results in undefined error so, it is always recommended to check for EOF while reading a file.Note: One thing to note here is that after reading a particular part of the file, the file pointer will be automatically moved to the end of the last read character.Closing a FileThe fclose() function is used to close the file. After successful file operations, you must always close a file to remove it from the memory.Syntax:
+            C
+
+    fclose(file_pointer);
+
+Move File PointerFile pointer generally points to the position according to the mode or last read/write operation. We can manually move this pointer to any position in the file using fseek() function.Syntax:
+            C
+
+    fseek(fptr, offset, pos);
+
+where, pos is the position from where offset is counted and offset is the number of positions to shift from pos (it can be negative or positive).Example:While writing to a file opened in rw+ mode, the file pointer moves to the end of the file. In case where we want to replace a word, then first we have to move the file pointer to the position where that word starts.
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    
+    // File pointer
+    FILE* fptr;
+
+    // Get the data to be written in file
+    char data[50] = "GeeksforGeeks-A Computer "
+                    "Science Portal for Geeks";
+
+    // Creating file using fopen()
+    // with access mode "w"
+    fptr = fopen("file.txt", "w");
+
+    // Checking if the file is created
+    if (fptr == NULL) 
+        printf("The file is not opened.");
+    else{
+        printf("The file is now opened.\n");
+        fputs(data, fptr);
+        fputs("\n", fptr);
+        fseek(fptr, -6, SEEK_END);
+        
+        fputs("GeeksforGeeks", fptr);
+
+        // Closing the file using fclose()
+        fclose(fptr);
+        printf("Data successfully written in file "
+               "file.txt\n");
+        printf("The file is now closed.");
+    }
+    return 0;
+}
+
+OutputThe file is now opened.
+Data successfully written in file file.txt
+The file is now closed.Now, imagine you want to read this file after writing. We can use fseek() here too, but there is one more function specifically for this purpose which is rewind().Read and Write in a Binary FileTill now, we have only discussed text file operations. The operations on a binary file are similar to text file operations with little difference.Opening a Binary FileTo open a file in binary mode, we use the rb, rb+, ab, ab+, wb, and wb+ access mode in the fopen() function. We also use the .bin file extension in the binary filename.Example:
+            C
+
+    fptr = fopen("filename.bin", "rb");
+
+Write to a Binary FileWe use fwrite() function to write data to a binary file. The data is written to the binary file in the form of bits (0's and 1's).Syntax of fwrite()
+            C
+
+    fwrite(ptr, size, nmemb, file_pointer);
+
+Parameters:ptr: pointer to the block of memory to be written.size: size of each element to be written (in bytes).nmemb: number of elements.file_pointer: FILE pointer to the output file stream.Return Value:Number of objects written.
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+struct threeNum {
+    int n1, n2, n3;
+};
+
+int main() {
+    int n =1 ;
+    
+    // Structure variable declared.
+    struct threeNum num;
+    FILE* fptr;
+    fptr = fopen("binaryFile.bin", "wb");
+    int flag = 0;
+    num.n1 = n;
+    num.n2 = 5 * n;
+    num.n3 = 5 * n + 1;
+    
+    // Write the Structure data
+    // to binary file.
+    flag = fwrite(&num, sizeof(struct threeNum), 1,
+                  fptr);
+
+    // Checking if the data is written.
+    if (!flag)
+        printf("Write Operation Failure");
+    else
+        printf("Write Operation Successful");
+    fclose(fptr);
+    return 0;
+}
+
+OutputWrite Operation SuccessfulData Written in Binary FileReading from Binary FileThe fread() function can be used to read data from a binary file in C. The data is read from the file in the same form as it is stored i.e. binary form.Syntax:
+            C
+
+    fread(ptr, size, nmemb, file_pointer);
+
+Parameters:ptr: pointer to the block of memory to read.size: the size of each element to read (in bytes).nmemb: number of elements.file_pointer: FILE pointer to the input file stream.Return Value:Number of objects read.
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+// Structure that store
+// binary file data
+struct threeNum {
+    int n1, n2, n3;
+};
+
+int main() {
+    int n;
+    struct threeNum num;
+    FILE* fptr;
+    fptr = fopen("binaryFile.bin", "rb");
+    
+    // Read the data from binary 
+    // file and print that data
+    fread(&num, sizeof(struct threeNum), 1, fptr);
+    printf("n1: %d\tn2: %d\tn3: %d\n", num.n1, num.n2,
+           num.n3);
+    fclose(fptr);
+    return 0;
+}
+
+Outputn1: 1   n2: 5   n3: 6More Functions for C File OperationsThe following table lists some more functions that can be used to perform file operations or assist in performing them.FunctionsDescriptionfopen()It is used to create a file or to open a file.fclose()It is used to close a file.fgets()It is used to read a file.fprintf()It is used to write blocks of data into a file.fscanf()It is used to read blocks of data from a file.getc()It is used to read a single character from a file.putc()It is used to write a single character to a file.fseek()It is used to set the position of a file pointer to a mentioned location.ftell()It is used to return the current position of a file pointer.rewind()It is used to set the file pointer to the beginning of a file.putw()It is used to write an integer to a file.getw()It is used to read an integer from a file.

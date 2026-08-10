@@ -1,0 +1,447 @@
+# Program for Next Fit algorithm in Memory Management - GeeksforGeeks
+
+The Next Fit algorithm is a modified version of the First Fit memory allocation technique. While the First Fit algorithm always starts searching from the beginning of the memory block list for each new process, the Next Fit algorithm optimizes this behavior by continuing the search from where it last left off.Note: This is achieved by maintaining a roving pointer, which remembers the position of the last allocated block and begins the next search from there instead of restarting from the beginning.Advantages of Next Fit over First FitReduces fragmentation near the beginning: Unlike First Fit, which continuously fills the initial part of memory, Next Fit distributes allocations more evenly across the memory space.Improved performance: Since it doesn’t restart the search every time, the average time to find a free block is reduced, making it faster than First Fit and Best Fit in many scenarios.Better load balancing: Memory usage gets spread more uniformly, reducing the chances of creating too many small fragments in a specific region.ExampleInput:Block sizes:  [5, 10, 20]Process sizes: [10, 20, 30]Output:Process No.     Process Size    Block No.1               10              22               20              33               30              Not AllocatedAlgorithm StepsInput the number and size of memory blocks.Mark all blocks as free.Input the number and size of processes.For each process: Check if it can be allocated in the current block.If yes, allocate and move the pointer to the current block.If not, continue checking further blocks in a circular fashion.Print the allocation results.Next FitImplementation
+            C++
+
+    // C/C++ program for next fit
+// memory management algorithm
+#include <bits/stdc++.h>
+using namespace std;
+
+// Function to allocate memory to blocks as per Next fit
+// algorithm
+void NextFit(int blockSize[], int m, int processSize[], int n)
+{
+    // Stores block id of the block allocated to a
+    // process
+    int allocation[n], j = 0, t = m - 1;
+
+    // Initially no block is assigned to any process
+    memset(allocation, -1, sizeof(allocation));
+
+    // pick each process and find suitable blocks
+    // according to its size ad assign to it
+    for(int i = 0; i < n; i++){
+
+        // Do not start from beginning
+        while (j < m){
+            if(blockSize[j] >= processSize[i]){
+                
+                // allocate block j to p[i] process
+                allocation[i] = j;
+                
+                // Reduce available memory in this block.
+                blockSize[j] -= processSize[i];
+                
+                // sets a new end point
+                t = (j - 1) % m;
+                break;
+            }
+            if (t == j){
+                // sets a new end point
+                t = (j - 1) % m;
+                // breaks the loop after going through all memory block
+                break;
+            }
+            
+            // mod m will help in traversing the
+            // blocks from starting block after
+            // we reach the end.
+            j = (j + 1) % m;
+        }
+    }
+
+    cout << "\nProcess No.\tProcess Size\tBlock no.\n";
+    for (int i = 0; i < n; i++) {
+        cout << " " << i + 1 << "\t\t\t\t" << processSize[i]
+            << "\t\t\t\t";
+        if (allocation[i] != -1)
+            cout << allocation[i] + 1;
+        else
+            cout << "Not Allocated";
+        cout << endl;
+    }
+}
+
+// Driver program
+int main()
+{
+    int blockSize[] = { 5, 10, 20 };
+    int processSize[] = { 10, 20, 5 };
+    int m = sizeof(blockSize) / sizeof(blockSize[0]);
+    int n = sizeof(processSize) / sizeof(processSize[0]);
+
+    NextFit(blockSize, m, processSize, n);
+
+    return 0;
+}
+
+
+            Java
+
+    // Java program for next fit
+// memory management algorithm
+import java.util.*;
+
+public class GFG {
+
+// Function to allocate memory to blocks as per Next fit
+// algorithm
+    static void NextFit(int blockSize[], int m, int processSize[], int n) {
+        // Stores block id of the block allocated to a
+        // process
+        int allocation[] = new int[n], j = 0, t = m - 1;
+
+        // Initially no block is assigned to any process
+        Arrays.fill(allocation, -1);
+
+        // pick each process and find suitable blocks
+        // according to its size ad assign to it
+       // pick each process and find suitable blocks
+    // according to its size ad assign to it
+    for(int i = 0; i < n; i++){
+
+        // Do not start from beginning
+        while (j < m){
+            if(blockSize[j] >= processSize[i]){
+                
+                // allocate block j to p[i] process
+                allocation[i] = j;
+                
+                // Reduce available memory in this block.
+                blockSize[j] -= processSize[i];
+                
+                // sets a new end point
+                t = (j - 1) % m;
+                break;
+            }
+            if (t == j){
+                // sets a new end point
+                t = (j - 1) % m;
+                // breaks the loop after going through all memory block
+                break;
+            }
+            
+            // mod m will help in traversing the
+            // blocks from starting block after
+            // we reach the end.
+            j = (j + 1) % m;
+        }
+    }
+
+        System.out.print("\nProcess No.\tProcess Size\tBlock no.\n");
+        for (int i = 0; i < n; i++) {
+            System.out.print( i + 1 + "\t\t\t\t" + processSize[i]
+                    + "\t\t\t\t");
+            if (allocation[i] != -1) {
+                System.out.print(allocation[i] + 1);
+            } else {
+                System.out.print("Not Allocated");
+            }
+            System.out.println("");
+        }
+    }
+
+// Driver program
+    public static void main(String[] args) {
+        int blockSize[] = {5, 10, 20};
+        int processSize[] = {10, 20, 5};
+        int m = blockSize.length;
+        int n = processSize.length;
+        NextFit(blockSize, m, processSize, n);
+    }
+}
+
+// This code is contributed by Rajput-Ji
+
+
+            Python
+
+    # Python3 program for next fit
+# memory management algorithm
+
+# Function to allocate memory to
+# blocks as per Next fit algorithm
+def NextFit(blockSize, m, processSize, n):
+        
+    # Stores block id of the block
+    # allocated to a process
+
+    # Initially no block is assigned
+    # to any process
+    allocation = [-1] * n
+    j = 0
+    t = m-1
+    # pick each process and find suitable blocks
+    # according to its size ad assign to it
+    for i in range(n):
+
+        # Do not start from beginning
+        while j < m:
+            if blockSize[j] >= processSize[i]:
+                
+                # allocate block j to p[i] process
+                allocation[i] = j
+                
+                # Reduce available memory in this block.
+                blockSize[j] -= processSize[i]
+                
+                # sets a new end point
+                t = (j - 1) % m
+                break
+            if t == j:
+                # sets a new end point
+                t = (j - 1) % m
+                # breaks the loop after going through all memory block
+                break
+            
+            # mod m will help in traversing the
+            # blocks from starting block after
+            # we reach the end.
+            j = (j + 1) % m
+             
+    print("Process No. Process Size Block no.")
+    
+    for i in range(n):
+        print("\t", i + 1, "\t\t\t", processSize[i],end = "\t\t\t")
+        if allocation[i] != -1:
+            print(allocation[i] + 1)
+        else:
+            print("Not Allocated")
+
+# Driver Code
+if __name__ == '__main__':
+    blockSize = [5, 10, 20]
+    processSize = [10, 20, 5]
+    m = len(blockSize)
+    n = len(processSize)
+
+    NextFit(blockSize, m, processSize, n)
+
+
+            C#
+
+    // C# program for next fit
+// memory management algorithm
+using System;
+public class GFG {
+
+  // Function to allocate memory to blocks as per Next fit
+  // algorithm
+  static void NextFit(int[] blockSize, int m,
+                      int[] processSize, int n)
+  {
+    // Stores block id of the block allocated to a
+    // process
+    int[] allocation = new int[n];
+    int j = 0, t = m - 1;
+
+    // Initially no block is assigned to any process
+    for (int i = 0; i < n; i++)
+      allocation[i] = -1;
+
+    // pick each process and find suitable blocks
+    // according to its size ad assign to it
+    // pick each process and find suitable blocks
+    // according to its size ad assign to it
+    for (int i = 0; i < n; i++) {
+
+      // Do not start from beginning
+      while (j < m) {
+        if (blockSize[j] >= processSize[i]) {
+
+          // allocate block j to p[i] process
+          allocation[i] = j;
+
+          // Reduce available memory in this
+          // block.
+          blockSize[j] -= processSize[i];
+
+          // sets a new end point
+          t = (j - 1) % m;
+          break;
+        }
+        if (t == j) {
+          // sets a new end point
+          t = (j - 1) % m;
+          // breaks the loop after going through
+          // all memory block
+          break;
+        }
+
+        // mod m will help in traversing the
+        // blocks from starting block after
+        // we reach the end.
+        j = (j + 1) % m;
+      }
+    }
+
+    Console.Write(
+      "\nProcess No.\tProcess Size\tBlock no.\n");
+    for (int i = 0; i < n; i++) {
+      Console.Write(i + 1 + "\t\t\t\t"
+                    + processSize[i] + "\t\t\t\t");
+      if (allocation[i] != -1) {
+        Console.Write(allocation[i] + 1);
+      }
+      else {
+        Console.Write("Not Allocated");
+      }
+      Console.WriteLine("");
+    }
+  }
+
+  // Driver program
+  public static void Main(string[] args)
+  {
+    int[] blockSize = { 5, 10, 20 };
+    int[] processSize = { 10, 20, 5 };
+    int m = blockSize.Length;
+    int n = processSize.Length;
+    NextFit(blockSize, m, processSize, n);
+  }
+}
+
+// This code is contributed by karandeep1234
+
+
+            JavaScript
+
+    // Function to allocate memory to blocks as per Next fit
+// memory management algorithm
+function NextFit(blockSize, m, processSize, n) {
+    // Stores block id of the block allocated to a
+    // process
+    let allocation = new Array(n).fill(-1);
+    let j = 0, t = m - 1;
+
+    // pick each process and find suitable blocks
+    // according to its size ad assign to it
+    for (let i = 0; i < n; i++) {
+
+        // Do not start from beginning
+        while (j < m) {
+            if (blockSize[j] >= processSize[i]) {
+
+                // allocate block j to p[i] process
+                allocation[i] = j;
+
+                // Reduce available memory in this block.
+                blockSize[j] -= processSize[i];
+
+                // sets a new end point
+                t = (j - 1) % m;
+                break;
+            }
+            if (t == j) {
+                // sets a new end point
+                t = (j - 1) % m;
+                // breaks the loop after going through all memory block
+                break;
+            }
+
+            // mod m will help in traversing the
+            // blocks from starting block after
+            // we reach the end.
+            j = (j + 1) % m;
+        }
+    }
+
+    console.log("\nProcess No.\tProcess Size\tBlock no.\n");
+    for (let i = 0; i < n; i++) {
+        console.log(" " + (i + 1) + "\t\t\t\t" + processSize[i] + "\t\t\t\t");
+        if (allocation[i] != -1)
+            console.log(allocation[i] + 1);
+        else
+            console.log("Not Allocated");
+        console.log("\n");
+    }
+}
+
+// Driver program
+let blockSize = [5, 10, 20];
+let processSize = [10, 20, 5];
+let m = blockSize.length;
+let n = processSize.length;
+
+NextFit(blockSize, m, processSize, n);
+
+
+            PHP
+
+    <?php
+// PHP program for next fit
+// memory management algorithm
+
+// Function to allocate memory to blocks as per Next fit
+// algorithm
+function NextFit($blockSize, $m, $processSize, $n)
+{
+    // Stores block id of the block allocated to a
+    // process
+    $allocation = array_fill(0, $n, -1);
+    $j = 0;
+    $t = $m - 1;
+
+    // Initially no block is assigned to any process above
+
+    // pick each process and find suitable blocks
+    // according to its size ad assign to it
+    for($i = 0; $i < $n; $i++){
+
+        // Do not start from beginning
+        while ($j < $m){
+            if($blockSize[$j] >= $processSize[$i]){
+                
+                // allocate block j to p[i] process
+                $allocation[$i] = $j;
+                
+                // Reduce available memory in this block.
+                $blockSize[$j] -= $processSize[$i];
+                
+                // sets a new end point
+                $t = ($j - 1) % $m;
+                break;
+            }
+            if ($t == $j){
+                // sets a new end point
+                $t = ($j - 1) % $m;
+                // breaks the loop after going through all memory block
+                break;
+            }
+            
+            // mod m will help in traversing the
+            // blocks from starting block after
+            // we reach the end.
+            $j = ($j + 1) % $m;
+        }
+    }
+
+    echo "\nProcess No.\tProcess Size\tBlock no.\n";
+    for ($i = 0; $i < $n; $i++)
+    {
+        echo " ".($i + 1)."\t\t\t\t".$processSize[$i]."\t\t\t\t";
+        if ($allocation[$i] != -1)
+            echo ($allocation[$i] + 1);
+        else
+            echo "Not Allocated";
+        echo "\n";
+    }
+}
+
+    // Driver program
+    $blockSize = array( 5, 10, 20 );
+    $processSize = array( 10, 20, 5 );
+    $m = count($blockSize);
+    $n = count($processSize);
+
+    NextFit($blockSize, $m, $processSize, $n);
+
+
+// This code is contributed by mits
+?>
+
+OutputProcess No.    Process Size    Block no.
+ 1                10                2
+ 2                20                3
+ 3                5                1Time and Space ComplexityTime Complexity: O(N × M) (For each process, in the worst case, the algorithm may traverse all blocks once.)Auxiliary Space: O(N) (For storing allocation results.)How Next Fit Reduce FragmentationThe Next Fit algorithm helps in reducing external fragmentation by:Avoiding repeated use of initial memory blocks.Spreading allocations more evenly across memory.Leaving larger free gaps between allocated partitions that can accommodate future large processes.Note: By doing so, it minimizes the number of small unusable fragments that typically occur at the beginning of the memory in First Fit.

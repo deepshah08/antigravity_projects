@@ -1,0 +1,109 @@
+# Java Thread Priority in Multithreading - GeeksforGeeks
+
+Java supports multithreading, where multiple threads run concurrently and the Thread Scheduler decides their execution order. Each thread is assigned a priority (1–10) that influences scheduling but does not guarantee execution order.Changing priority does not guarantee faster execution or immediate schedulingHigher-priority threads are generally preferred by the schedulerActual execution order depends on the JVM and underlying OS
+            Java
+
+    class SimpleThread extends Thread {
+    public void run() {
+        System.out.println(getName() + " is running with priority " + getPriority());
+    }
+}
+
+public class GFG {
+    public static void main(String[] args) {
+        SimpleThread t1 = new SimpleThread();
+        SimpleThread t2 = new SimpleThread();
+
+        t1.setName("HighPriorityThread");
+        t2.setName("LowPriorityThread");
+
+        t1.setPriority(Thread.MAX_PRIORITY); // 10
+        t2.setPriority(Thread.MIN_PRIORITY); // 1
+
+        t1.start();
+        t2.start();
+    }
+}
+
+OutputLowPriorityThread is running with priority 1
+HighPriorityThread is running with priority 10
+Explanation:Two threads are created: HighPriorityThread and LowPriorityThread.HighPriorityThread is assigned maximum priority (10), and LowPriorityThread gets minimum priority (1).When start() is called, both threads run concurrently.Higher-priority threads may get more CPU time, but the actual execution order is not guaranteed because it depends on the JVM and the OS scheduler.Thread Priority Constants Java provides three constant values in the Thread class:Thread.MIN_PRIORITY (1): Lowest possible priority for a thread.Thread.NORM_PRIORITY (5): Default priority assigned to a thread.Thread.MAX_PRIORITY (10): Highest possible priority for a thread.Setting and Getting Thread PriorityWe can use the following methods of the Thread class to manage thread priority:setPriority(int newPriority): This method is used to set the priority of a thread.getPriority(): This method is used to returns the current priority of the thread.
+            Java
+
+    class MyThread extends Thread {
+
+    public MyThread(String name){
+        super(name); 
+        
+    }
+
+    public void run()
+    {
+
+        System.out.println(
+            Thread.currentThread().getName()
+            + " with priority "
+            + Thread.currentThread().getPriority());
+    }
+}
+
+public class Geeks{
+    public static void main(String[] args){
+        
+        MyThread t1 = new MyThread("Thread-1");
+        MyThread t2 = new MyThread("Thread-2");
+        MyThread t3 = new MyThread("Thread-3");
+
+        // Setting thread priorities
+        t1.setPriority(Thread.MIN_PRIORITY); // 1
+        t2.setPriority(Thread.NORM_PRIORITY); // 5
+        t3.setPriority(Thread.MAX_PRIORITY); // 10
+
+        // Start threads
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}
+
+OutputThread-2 with priority 5
+Thread-1 with priority 1
+Thread-3 with priority 10
+Explanation: The program creates three threads, assigns them different priorities (1, 5, and 10), and starts them using start(). Each thread runs concurrently and prints its name and priority, but the execution order is not fixed and depends on the scheduler.Note: The output order may vary because thread scheduling depends on the JVM and the underlying operating system.If multiple threads have the same priority, their execution order is decided by the thread scheduler. The example below demonstrates this, followed by an explanation of the output for better conceptual and practical understanding.
+            Java
+
+    class MyThread extends Thread{
+    
+    public void run(){
+        
+        System.out.println(getName()
+                           + " is running with priority "
+                           + getPriority());
+    }
+
+    public static void main(String[] args){
+        
+        // Set main thread priority
+        Thread.currentThread().setPriority(5);
+
+        // Create two threads
+        MyThread t1 = new MyThread();
+        MyThread t2 = new MyThread();
+
+        // Both threads inherit main thread priority (5)
+        System.out.println("t1 priority: "
+                           + t1.getPriority());
+        System.out.println("t2 priority: "
+                           + t2.getPriority());
+
+        // Start threads
+        t1.start();
+        t2.start();
+    }
+}
+
+Outputt1 priority: 5
+t2 priority: 5
+Thread-1 is running with priority 5
+Thread-0 is running with priority 5
+Explanation: The main thread sets its priority to 5, and both t1 and t2 inherit this priority when created. When start() is called, both threads run concurrently and print their details, and since they have the same priority, their execution order depends on the OS scheduler.

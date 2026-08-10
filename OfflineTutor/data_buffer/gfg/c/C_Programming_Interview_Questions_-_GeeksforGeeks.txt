@@ -1,0 +1,1093 @@
+# C Programming Interview Questions - GeeksforGeeks
+
+C is one of the oldest and most widely used programming languages, developed by Dennis Ritchie at Bell Labs between 1971 and 1973. It is a structured, procedural, and general-purpose programming language that serves as the foundation for many modern programming languages and systems.C is widely used for developing operating systems, compilers, embedded systems, databases, network drivers, and system software. Interview questions on C help evaluate your understanding of programming fundamentals, memory management, pointers, data structures, and problem-solving skills. This article covers the most frequently asked C interview questions, arranged from beginner to intermediate and advanced levels to help you prepare effectively.C Programming Interview Questions - For Freshers1. Why is C called a mid-level programming language?C is called a mid-level programming language because it combines the features of both low-level and high-level programming languages. It provides direct access to hardware while also supporting structured programming for application development.C supports low-level programming through features like pointers, memory manipulation, and inline assembly (asm/__asm__).It also provides high-level programming features such as functions, loops, conditionals, and structured programming, making it suitable for both system and application development.Example:Low-level use: Accessing hardware or memory directly using pointers.High-level use: Writing applications using functions, loops, and conditional statements.2. What are the features of the C programming language? Procedural Programming: Organizes programs into functions, making code modular and easier to understand.Modularity: Large programs can be divided into smaller, reusable functions for better maintenance. Statically Typed: All variables must be declared with a data type before they are used, helping detect errors at compile time. Compiled Language: C code is compiled into machine code before execution, resulting in fast program performance. General-Purpose Language: Can be used to develop system software, application software, embedded systems, and compilers. Rich Set of Built-in Operators: Provides arithmetic, logical, relational, bitwise, assignment, and other operators for efficient programming. Rich Standard Library: Includes a wide range of built-in functions for input/output, string handling, memory management, mathematics, and file operations. Middle-Level Language: Combines the features of both high-level and low-level languages, allowing direct memory access while maintaining readable syntax. Portability: Programs written in C can be compiled and executed on different platforms with minimal modifications. Easy to Extend: Developers can create custom functions and libraries, making C flexible and scalable for large applications.3. What are basic data types supported in the C Programming Language?C provides several basic data types that are used to store different kinds of values, such as integers, characters, and floating-point numbers. Each data type has a specific size and range depending on the system architecture.The five fundamental data types in C are int, char, float, double, and void.These data types form the foundation for creating variables, functions, arrays, pointers, and user-defined data types.Data TypeDescriptionintStores integer values.charStores a single character.floatStores single-precision floating-point values.doubleStores double-precision floating-point values.voidRepresents the absence of a value or type.4. What are tokens in C?Tokens are the smallest meaningful units of a C program that the compiler recognizes. Every C program is made up of different types of tokens.Tokens are the basic building blocks of a C program and help the compiler understand the program.The main types of tokens in C are keywords, identifiers, constants, strings, operators, and special symbols.TokenDescriptionKeywordsReserved words with predefined meanings (e.g., int, if, return).IdentifiersUser-defined names for variables, functions, and arrays.ConstantsFixed values that cannot be changed during program execution.StringsA sequence of characters enclosed in double quotes (" ").OperatorsSymbols used to perform operations (e.g., +, -, *, ==).Special SymbolsSymbols with predefined meanings such as (), {}, [], ;, #, and ,.5. What do you mean by the scope of the variable?The scope of a variable defines the region of a program where the variable can be accessed. Once the execution moves outside its scope, the variable is no longer accessible.The scope determines the visibility and lifetime of a variable within a program. Based on where they are declared, variables in C are classified into local variables, global variables, and function parameters (formal parameters).ScopeDescriptionLocal VariableDeclared inside a function or block and accessible only within that block.Global VariableDeclared outside all functions and accessible throughout the program.Formal ParameterVariables declared in a function's parameter list that receive values when the function is called.6. What are preprocessor directives in C?Preprocessor directives are special instructions that are processed by the C preprocessor before the actual compilation of the program. They begin with the # symbol and are used to control various aspects of the compilation process.Preprocessor directives are commonly used for macro definitions, header file inclusion, and conditional compilation.Some commonly used directives are #define, #include, #if, #ifdef, #undef, and #pragma.DirectivePurpose#includeIncludes a header file.#defineDefines a macro or constant.#if, #ifdefPerforms conditional compilation.#undefRemoves a previously defined macro.#pragmaProvides compiler-specific instructions.Processor in C7. What is the use of static variables in C?A static variable retains its value between multiple function calls and is initialized only once during program execution. Unlike local variables, it is not destroyed when the function exits.A static variable preserves its value across function calls, making it useful for maintaining state. If not explicitly initialized, a static variable is automatically initialized to 0.
+            C
+
+    #include <stdio.h>
+
+void countCalls() {
+    static int count = 0;
+    count++;
+    printf("%d\n", count);
+}
+
+int main() {
+    countCalls();
+    countCalls();
+    countCalls();
+    return 0;
+}
+
+Output1
+2
+3
+ExplanationThe static variable count is initialized only once and retains its value after each function call. As a result, its value increments on every call instead of being reset to 0.8. What is the difference between malloc() and calloc() in the C programming language?malloc()calloc()Allocates a single block of memory.Allocates multiple contiguous blocks of memory.Takes one argument (total memory size in bytes).Takes two arguments (number of elements and size of each element).Allocated memory is not initialized (contains garbage values).Allocated memory is initialized to zero.Faster because it does not initialize memory.Slightly slower due to memory initialization.Syntax: malloc(size);Syntax: calloc(n, size);9. What do you mean by dangling pointers and how are dangling pointers different from memory leaks in C programming?A dangling pointer is a pointer that continues to point to a memory location after the memory has been deallocated. A memory leak occurs when dynamically allocated memory is not released using free(), causing memory to remain occupied unnecessarily.A dangling pointer refers to invalid (freed) memory, whereas a memory leak occurs when allocated memory becomes unreachable without being freed.Dangling pointers can lead to undefined behavior, while memory leaks gradually increase memory usage and can degrade application performance.Dangling PointerMemory LeakPoints to memory that has already been freed.Allocated memory is never freed.Occurs after deallocating memory while the pointer still exists.Occurs when allocated memory becomes unreachable without calling free().Can cause undefined behavior or crashes when dereferenced.Increases memory usage and may slow down or crash long-running programs.Fixed by assigning the pointer to NULL after free().Fixed by ensuring every allocated memory block is properly released using free().10. Write a program to convert a number to a string with the help of sprintf() function in the C library.sprintf() is a standard library function that converts formatted data, such as numbers, into a string and stores it in a character array.It writes the formatted output to a string instead of displaying it on the screen.It is commonly used to convert numbers into strings using format specifiers like %d, %f, and %c.
+            C
+
+    // C program to convert number to string using sprintf()
+#include <stdio.h>
+#include <string.h>
+
+// Driver code
+int main()
+{
+    char res[20];
+    float a = 32.23;
+    sprintf(res, "%f", a);
+    printf("\nThe string for the num is %s", res);
+    return 0;
+}
+
+OutputThe string for the num is 32.23000011. What is recursion in C?Recursion is a programming technique in which a function calls itself directly or indirectly to solve a problem. It breaks a large problem into smaller subproblems until a base case is reached.Every recursive function must have a base case to stop further recursive calls and prevent infinite recursion. Recursive calls are managed using the call stack (LIFO), so each call consumes additional stack memory.Example
+            C
+
+    int factorial(int n) {
+    if (n == 0)
+        return 1;
+    return n * factorial(n - 1);
+}
+
+ExplanationThe factorial() function calls itself with a smaller value of n until it reaches the base case (n == 0). After reaching the base case, the recursive calls return one by one to produce the final result.12. What is the difference between the local and global variables in C?Local variables are declared inside a block or function but global variables are declared outside the block or function to be accessed globally.Local VariablesGlobal VariablesDeclared inside a block or a function.Variables that are declared outside the block or a function.By default, variables store a garbage value.By default value of the global value is zero.The life of the local variables is destroyed after the block or a function.The life of the global variable exists until the program is executed.Variables are stored inside the stack unless they are specified by the programmer.The storage location of the global variable is decided by the compiler.To access the local variables in other functions parameter passing is required.No parameter passing is required. They are globally visible throughout the program.13. What are pointers and their uses? A pointer is a variable that stores the memory address of another variable. Pointers are widely used in C for efficient memory management and direct access to data.Pointers improve program efficiency by allowing direct memory access and avoiding unnecessary data copying.They are essential for dynamic memory allocation, implementing data structures, and passing arguments by reference.Common Uses of PointersPassing arguments to functions by reference. Accessing and traversing array elements efficiently. Returning multiple values from a function. Dynamically allocating and freeing memory using malloc() and free(). Implementing data structures such as linked lists, stacks, queues, and trees. Performing system-level programming and direct memory manipulation.
+            C
+
+    int x = 10;
+int *ptr = &x;
+
+Here, ptr stores the address of x and can be used to access or modify its value.Working of Pointer14. What is typedef in C?The typedef keyword in C is used to create a new name (alias) for an existing data type. It improves code readability and makes complex type declarations easier to use.typedef does not create a new data type; it simply provides an alternate name for an existing one.It is commonly used with structures, pointers, and long data types to make code simpler and more readable.Syntaxtypedef existing_type alias_name;
+            C
+
+    typedef long long ll;
+
+ll num = 1000000000;
+
+15. What are loops and how can we create an infinite loop in C?A loop is a control statement used to execute a block of code repeatedly until a specified condition is met. C supports both entry-controlled (for, while) and exit-controlled (do...while) loops.An infinite loop is a loop that continues to execute indefinitely because its termination condition is never met.Infinite loops are commonly created intentionally using while(1) or for(;;), or unintentionally due to an incorrect loop condition.Types of Loops
+            C
+
+    #include <stdio.h>
+
+// Driver code
+int main()
+{
+    for (;;) {
+        printf("Infinite-loop\n");
+    }
+
+    while (1) {
+        printf("Infinite-loop\n");
+    }
+
+    do {
+        printf("Infinite-loop\n");
+    } while (1);
+
+    return 0;
+}
+
+16. What is the difference between type casting and type conversion?Type CastingType ConversionThe data type is converted to another data type by a programmer with the help of a casting operator.The data type is converted to another data by a compiler.It can be applied to both compatible data types as well as incompatible data types.Type conversion can only be applied to only compatible data types.In Type casting in order to cast the data type into another data type, a caste operator is neededIn type conversion, there is no need for a casting operator.Type casting is more efficient and reliable.Type conversion is less efficient and less reliable than type casting.Type casting takes place during the program design by the programmer.Type conversion is done at compile time.Syntax: destination_data_type = (target_data_type) variable_to_be_converted;Syntax: int a = 20; float b; b = a; // a = 20.0000 17. What are header files and their uses?A header file is a file that contains function declarations, macros, constants, and data type definitions that can be reused across multiple C programs. It is included using the #include preprocessor directive.Header files are of two types: standard (predefined) and user-defined header files.They promote code reusability, reduce duplication, and provide access to predefined library functions.
+            C
+
+    #include <stdio.h>
+
+int main() {
+    printf("Hello, World!");
+    return 0;
+}
+
+Here, the stdio.h header file provides the declaration of the printf() function used for output.18. What are the functions and their types?A function is a block of code that performs a specific task and can be called whenever needed. Functions help reduce code duplication, improve readability, and make programs easier to maintain.C provides two types of functions: user-defined functions and library (built-in) functions.Functions make programs modular, reusable, and easier to debug.Function TypeDescriptionUser-defined FunctionsFunctions created by the programmer to perform specific tasks.Library (Built-in) FunctionsPredefined functions provided by C libraries, such as printf(), scanf(), and strlen().
+            C
+
+    #include <stdio.h>
+
+void greet() {
+    printf("Welcome!\n");
+}
+
+int main() {
+    greet();
+    return 0;
+}
+
+Here, greet() is a user-defined function, while printf() is a library function.19. What is the difference between macro and functions?A macro is a name that is given to a block of C statements as a pre-processor directive. Macro is defined with the pre-processor directive. Macros are pre-processed which means that all the macros would be preprocessed before the compilation of our program. However, functions are not preprocessed but compiled. MacroFunctionMacros are preprocessed.Functions are compiled.Code length is increased using macro.Code length remains unaffected using function.Execution speed using a macro is faster.Execution speed using function is slower.The macro name is replaced by the macro value before compilation.Transfer of control takes place during the function call.Macro doesn't check any Compile-Time Errors.Function check Compile-time errors.20. What is the difference between declaration and definition in C?A declaration tells the compiler about the name and type of a variable or function, whereas a definition allocates memory for it or provides its actual implementation.A variable or function can be declared multiple times, but it can be defined only once in a program.Declarations help the compiler recognize an identifier before it is used, while definitions create the actual object or function.DeclarationDefinitionIntroduces the variable or function to the compiler.Creates the variable or function.Does not allocate memory (for variables using extern).Allocates memory for variables or provides the function body.Can appear multiple times.Can appear only once.
+            C
+
+    #include <stdio.h>
+
+extern int num;   // Declaration
+
+int num = 10;     // Definition
+
+int main() {
+    printf("%d", num);
+    return 0;
+}
+
+Output1021. What is the Difference Between Compile-Time Errors, Runtime Errors, and Logical Errors?Errors in C programs can occur during compilation, execution, or due to incorrect program logic. Understanding these errors helps in debugging programs effectively.Compile-time errors are detected by the compiler before the program runs. Runtime errors occur while the program is executing, whereas logical errors produce incorrect output without generating any error message.Error TypeDescriptionExampleCompile-Time ErrorDetected by the compiler before execution due to syntax or semantic mistakes.Missing ;, undeclared variableRuntime ErrorOccurs while the program is running due to invalid operations.Division by zero, invalid memory accessLogical ErrorThe program runs successfully but produces incorrect results due to faulty logic.Using + instead of * in a formula
+            C
+
+    #include <stdio.h>
+
+int main() {
+    int a = 10, b = 0;
+
+    // Runtime error
+    printf("%d", a / b);
+
+    return 0;
+}
+
+ExplanationCompile-time errors prevent the program from compiling. Runtime errors occur during execution and may cause the program to terminate. Logical errors are the hardest to detect because the program runs normally but produces incorrect output.22. What is the Difference Between printf() and scanf()?printf() and scanf() are standard input/output functions provided by the <stdio.h> library. printf() is used to display output, while scanf() is used to read input from the user.printf() sends formatted data to the output screen, whereas scanf() reads formatted data from the keyboard. scanf() requires the address of variables (using & for most data types), while printf() prints the variable values directly.printf()scanf()Used to display output on the screen.Used to read input from the user.Writes data to the standard output (stdout).Reads data from the standard input (stdin).Prints the value of variables.Stores user input into variables.Does not require & before variables.Requires & before variables (except character arrays/strings).23. What is the Difference Between = and == in C?The = operator is an assignment operator used to assign a value to a variable, whereas == is a relational operator used to compare two values.= assigns the value on the right-hand side to the variable on the left-hand side.== checks whether two values are equal and returns true (1) or false (0).===Assignment operator.Equality (comparison) operator.Assigns a value to a variable.Compares two values for equality.Does not return a Boolean result.Returns 1 (true) or 0 (false).Example: a = 10;Example: a == 10
+            C
+
+    #include <stdio.h>
+
+int main() {
+    int a = 10;   // Assignment
+
+    if (a == 10)  // Comparison
+        printf("Equal");
+
+    return 0;
+}
+
+OutputEqualExplanationa = 10 assigns the value 10 to the variable a.a == 10 checks whether a is equal to 10. Since the condition is true, "Equal" is printed.24. What is the Purpose of the sizeof Operator in C?The sizeof operator is used to determine the size (in bytes) of a data type, variable, or expression at compile time. It helps in memory allocation and writing portable programs.sizeof returns the memory occupied by a variable or data type in bytes. It is commonly used with arrays, structures, and dynamic memory allocation (malloc()).
+            C
+
+    #include <stdio.h>
+
+int main() {
+    int num = 10;
+
+    printf("Size of int: %zu bytes\n", sizeof(int));
+    printf("Size of num: %zu bytes", sizeof(num));
+
+    return 0;
+}
+
+OutputSize of int: 4 bytes
+Size of num: 4 bytes25. What is a Character Array? How is It Different from a String?A character array is an array that stores individual characters. A string is a character array that ends with a special null character ('\0'), which marks the end of the string.Every string is a character array, but not every character array is a string. A character array becomes a string only when it is null-terminated ('\0').Character ArrayStringStores a sequence of characters.Stores a sequence of characters ending with '\0'.May or may not be null-terminated.Always null-terminated.Cannot always be used with string library functions.Can be used with string functions like strlen() and strcpy().
+            C
+
+    #include <stdio.h>
+
+int main() {
+    char arr[] = {'H', 'e', 'l', 'l', 'o'};
+    char str[] = "Hello";
+
+    printf("%s", str);
+
+    return 0;
+}
+
+OutputHelloExplanationarr is a character array without a null terminator, so it is not a string. str is a string because the compiler automatically appends the null character ('\0').26. What is the Difference Between while and do-while Loops?Both while and do-while are looping statements used to execute a block of code repeatedly. The main difference is when the loop condition is checked.In a while loop, the condition is checked before executing the loop body. In a do-while loop, the loop body executes at least once because the condition is checked after execution.while Loopdo-while LoopCondition is checked before execution.Condition is checked after execution.May execute zero or more times.Executes at least one time.Entry-controlled loop.Exit-controlled loop.
+            C
+
+    #include <stdio.h>
+
+int main() {
+    int i = 1;
+
+    while (i <= 3) {
+        printf("%d ", i);
+        i++;
+    }
+
+    return 0;
+}
+
+Output1 2 3 ExplanationThe while loop checks the condition before each iteration. In a do-while loop, the loop body executes first and the condition is checked afterward, ensuring at least one execution.27. What are Escape Sequences in C? Give Some Examples.Escape sequences are special character combinations that begin with a backslash (\). They are used to represent special characters that cannot be typed directly in a string or character constant.Escape sequences are commonly used for formatting output, such as creating a new line or inserting a tab. Each escape sequence starts with \ followed by a specific character.Escape SequenceDescription\nNew line\tHorizontal tab\\Backslash (\)\"Double quotation mark\'Single quotation mark\0Null character\bBackspace\rCarriage return
+            C
+
+    #include <stdio.h>
+
+int main() {
+    printf("Hello\nWorld");
+    return 0;
+}
+
+OutputHello
+WorldExplanation\n inserts a new line, causing World to be printed on the next line. Escape sequences make it easier to format text and represent special characters in C programs.28. What is the Difference Between Local and Global Variables?A local variable is declared inside a function or block and can only be accessed within that scope. A global variable is declared outside all functions and can be accessed throughout the program.Local variables exist only while the function or block is executing, whereas global variables exist for the entire program execution. Local variables are accessible only within their scope, while global variables can be accessed by all functions.Local VariableGlobal VariableDeclared inside a function or block.Declared outside all functions.Accessible only within its scope.Accessible throughout the program.Created when the function is called and destroyed when it exits.Exists for the entire program execution.Not automatically initialized.Automatically initialized to 0 if not explicitly initialized.
+            C
+
+    #include <stdio.h>
+
+int globalVar = 100;
+
+void display() {
+    int localVar = 10;
+
+    printf("Local Variable: %d\n", localVar);
+    printf("Global Variable: %d\n", globalVar);
+}
+
+int main() {
+    display();
+    return 0;
+}
+
+OutputLocal Variable: 10
+Global Variable: 100
+ExplanationlocalVar is a local variable and can only be accessed inside the display() function. globalVar is a global variable and can be accessed from any function in the program.29. How are Arrays Initialized in C?An array in C can be initialized at the time of declaration by providing values enclosed in curly braces {}. If fewer values are provided than the array size, the remaining elements are automatically initialized to 0.Arrays can be initialized with all values, partial values, or by letting the compiler determine the array size. Multidimensional arrays are also initialized using nested curly braces.
+            C
+
+    #include <stdio.h>
+
+int main() {
+    int arr1[5] = {10, 20, 30, 40, 50};
+    int arr2[5] = {1, 2};
+    int arr3[] = {5, 10, 15};
+
+    printf("%d %d %d\n", arr1[0], arr2[2], arr3[1]);
+
+    return 0;
+}
+
+Output10 0 10
+Explanationarr1 is fully initialized with five elements. arr2 is partially initialized, so the remaining elements are automatically set to 0. arr3 lets the compiler determine the array size based on the number of values provided.30. What is the Difference Between ++i and i++ in C?Both ++i and i++ are increment operators used to increase the value of a variable by 1. The difference lies in when the increment takes place.++i (pre-increment) increments the variable first and then returns the updated value. i++ (post-increment) returns the current value first and then increments the variable.++i (Pre-increment)i++ (Post-increment)Increments the value before it is used.Uses the current value before incrementing it.Returns the updated value.Returns the original value, then increments it.
+            C
+
+    #include <stdio.h>
+
+int main() {
+    int i = 5;
+
+    printf("%d\n", ++i);
+    i = 5;
+    printf("%d", i++);
+
+    return 0;
+}
+
+Output6
+5Explanation++i increments i to 6 before printing it.i++ prints the current value (5) first and then increments i to 6.C Programming Interview Questions - Intermediate Level31. What is the Difference Between malloc(), calloc(), realloc(), and free()?These are dynamic memory management functions provided by the <stdlib.h> library. They are used to allocate, resize, and release memory during program execution.malloc(), calloc(), and realloc() allocate or modify heap memory, while free() releases it. Memory allocated using these functions must be released using free() to avoid memory leaks.FunctionPurposemalloc()Allocates a single block of memory without initialization.calloc()Allocates multiple memory blocks and initializes them to 0.realloc()Resizes an existing memory block while preserving its data.free()Releases dynamically allocated memory back to the system.
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *arr = (int *)malloc(5 * sizeof(int));
+
+    arr = (int *)realloc(arr, 10 * sizeof(int));
+
+    free(arr);
+
+    return 0;
+}
+
+Explanationmalloc() allocates memory for 5 integers. realloc() resizes the memory block to store 10 integers. free() releases the allocated memory, preventing memory leaks.32. What is Pointer Arithmetic? Explain with an Example.Pointer arithmetic refers to performing arithmetic operations on pointers to move between memory locations. It is mainly used to traverse arrays and access elements efficiently.You can increment (++), decrement (--), add, or subtract an integer from a pointer. When a pointer is incremented, it moves to the next element based on the size of its data type.
+            C
+
+    #include <stdio.h>
+
+int main() {
+    int arr[] = {10, 20, 30};
+    int *ptr = arr;
+
+    printf("%d\n", *ptr);
+
+    ptr++;
+
+    printf("%d", *ptr);
+
+    return 0;
+}
+
+Output10
+20ExplanationInitially, ptr points to the first element (10) of the array. After ptr++, it moves to the next integer in memory and points to 20.33. What is a Double Pointer in C?A double pointer (pointer to a pointer) is a pointer that stores the address of another pointer. It is declared using two asterisks (**).A double pointer is commonly used to modify a pointer inside a function and to work with dynamic memory allocation. It provides an additional level of indirection, allowing access to the original variable through another pointer.
+            C
+
+    #include <stdio.h>
+
+int main() {
+    int num = 10;
+    int *ptr = &num;
+    int **dptr = &ptr;
+
+    printf("Value = %d", **dptr);
+
+    return 0;
+}
+
+OutputValue = 10Explanationptr stores the address of num. dptr stores the address of ptr, and **dptr accesses the value of num (10).34. What is a Void Pointer?A void pointer (void *) is a generic pointer that can store the address of any data type. Since it has no associated data type, it must be typecast before dereferencing.A void pointer can point to variables of any data type, making it useful for generic programming. It cannot be dereferenced directly because the compiler does not know the type of data it points to.
+            C
+
+    #include <stdio.h>
+
+int main() {
+    int num = 10;
+    void *ptr = &num;
+
+    printf("%d", *(int *)ptr);
+
+    return 0;
+}
+
+Output10Explanationptr is a void pointer that stores the address of num. Before accessing the value, ptr is typecast to int * because a void pointer cannot be dereferenced directly.35. What are NULL, Wild, Dangling, and Void Pointers?These are special types of pointers in C that differ based on how they are initialized and what they point to.Each pointer type has a specific purpose, and improper use can lead to undefined behavior. Understanding these pointers helps prevent common memory-related bugs.Pointer TypeDescriptionNULL PointerA pointer initialized to NULL that does not point to any valid memory location.Wild PointerA pointer that has been declared but not initialized, so it contains a garbage address.Dangling PointerA pointer that points to memory that has already been deallocated or is no longer valid.Void PointerA generic pointer (void *) that can store the address of any data type but must be typecast before dereferencing.
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *nullPtr = NULL;       // NULL pointer
+
+    int *wildPtr;              // Wild pointer
+
+    int *ptr = (int *)malloc(sizeof(int));
+    free(ptr);                 // ptr becomes a dangling pointer
+
+    int num = 10;
+    void *voidPtr = &num;      // Void pointer
+
+    return 0;
+}
+
+ExplanationnullPtr points to no valid memory location. wildPtr is uninitialized and contains a garbage address. ptr becomes a dangling pointer after the allocated memory is freed. voidPtr stores the address of num and must be typecast before dereferencing.36. What is the Difference Between an Array and a Pointer?An array is a collection of elements of the same data type stored in contiguous memory locations, whereas a pointer is a variable that stores the memory address of another variable.An array has a fixed size, while a pointer can point to different memory locations. The name of an array represents the address of its first element, but it is not a pointer.ArrayPointerStores a collection of elements.Stores the address of a variable or memory location.Size is fixed after declaration.Can point to different memory locations.Memory is allocated automatically.Can point to dynamically allocated memory.Array name cannot be reassigned.A pointer variable can be reassigned.
+            C
+
+    #include <stdio.h>
+
+int main() {
+    int arr[] = {10, 20, 30};
+    int *ptr = arr;
+
+    printf("%d\n", arr[0]);
+    printf("%d", *ptr);
+
+    return 0;
+}
+
+Output10
+10Explanationarr is an array that stores three integers. ptr points to the first element of the array, so *ptr and arr[0] access the same value.37. What is the Difference Between strcpy() and strncpy()?Both strcpy() and strncpy() are string handling functions declared in the <string.h> library and are used to copy one string to another. The main difference is how many characters they copy.strcpy() copies the entire source string, including the null character ('\0'). strncpy() copies only the specified number of characters and may not append a null character if the source string is longer than the specified limit.strcpy()strncpy()Copies the entire source string.Copies up to a specified number of characters.Always appends the null character ('\0').May not append '\0' if the limit is reached.Can cause buffer overflow if the destination is too small.Helps limit copying and reduce buffer overflow risk.
+            C
+
+    #include <stdio.h>
+#include <string.h>
+
+int main() {
+    char src[] = "GeeksforGeeks";
+    char dest[20];
+
+    strncpy(dest, src, 5);
+    dest[5] = '\0';
+
+    printf("%s", dest);
+
+    return 0;
+}
+
+OutputGeeksExplanationstrncpy(dest, src, 5) copies only the first 5 characters from src. Since strncpy() may not automatically add the null character, dest[5] = '\0'; is used to terminate the string properly.38. What is the Difference Between strcmp() and strncmp()?Both strcmp() and strncmp() are string comparison functions declared in the <string.h> library. They compare two strings lexicographically, but they differ in how many characters they compare.strcmp() compares the entire strings until a difference is found or the null character ('\0') is reached. strncmp() compares only the first n characters of the two strings.strcmp()strncmp()Compares the entire strings.Compares only the first n characters.Stops at the first mismatch or '\0'.Stops after comparing n characters or at '\0'.Takes two arguments.Takes three arguments (two strings and n).
+            C
+
+    #include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str1[] = "GeeksforGeeks";
+    char str2[] = "GeeksQuiz";
+
+    if (strncmp(str1, str2, 5) == 0)
+        printf("First 5 characters are equal");
+    else
+        printf("First 5 characters are different");
+
+    return 0;
+}
+
+OutputFirst 5 characters are equalExplanationstrncmp(str1, str2, 5) compares only the first 5 characters of both strings. Since the first five characters are the same ("Geeks"), the function returns 0, indicating that they are equal.39. What is the Difference Between Stack Memory and Heap Memory?Stack and heap are two memory areas used by a program during execution. The stack stores local variables and function calls, while the heap is used for dynamic memory allocation.Stack memory is automatically managed by the compiler, whereas heap memory must be allocated and released manually by the programmer. Stack allocation is faster, while heap allocation is more flexible for storing data whose size is determined at runtime.Stack MemoryHeap MemoryMemory is allocated automatically.Memory is allocated dynamically using malloc(), calloc(), or realloc().Stores local variables and function call information.Stores dynamically allocated data.Faster access.Slower than stack memory.Memory is released automatically when the function ends.Memory must be released manually using free().Limited memory size.Larger memory size than the stack.
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int x = 10;                          // Stack memory
+
+    int *ptr = (int *)malloc(sizeof(int)); // Heap memory
+    *ptr = 20;
+
+    printf("Stack: %d\n", x);
+    printf("Heap: %d", *ptr);
+
+    free(ptr);
+
+    return 0;
+}
+
+OutputStack: 10
+Heap: 20Explanationx is a local variable stored in stack memory. ptr points to memory allocated on the heap using malloc(), which is released using free().40. How to convert a string to numbers in C?A string can be converted to a numeric value in C using standard library functions. The most commonly used functions are atoi(), strtol(), and sscanf().atoi() converts a numeric string to an integer, while sscanf() reads formatted data from a string.strtol() is generally preferred over atoi() because it provides better error handling.FunctionDescriptionatoi()Converts a string to an integer.strtol()Converts a string to a long integer with error checking.sscanf()Reads formatted data from a string.
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    char str[] = "123";
+    int num = atoi(str);
+
+    printf("%d", num);
+    return 0;
+}
+
+Note: stoi() is a C++ function and is not available in C. For C programs, use functions such as atoi(), strtol(), or sscanf().41. What are reserved keywords?Reserved keywords are predefined words in C that have special meanings to the compiler. They cannot be used as names for variables, functions, or other identifiers.C has 32 reserved keywords (in the ANSI C standard), each designed to perform a specific task.Examples of reserved keywords include int, if, else, return, while, switch, typedef, and auto.
+            C
+
+    int num = 10;
+
+if (num > 0) {
+    printf("Positive");
+}
+
+Here, int and if are reserved keywords used to declare a variable and perform conditional execution, respectively.42. What is a structure?A structure (struct) is a user-defined data type in C that allows you to group variables of different data types under a single name. It is commonly used to represent related data as a single unit.A structure can store multiple data members of different types, such as int, char, and float.Structure members are accessed using the dot (.) operator through a structure variable.
+            C
+
+    // C Program to show the
+// use of structure
+#include <stdio.h>
+#include <string.h>
+
+// Structure student declared
+struct student {
+    char name[20];
+    int roll_no;
+    char address[50];
+    char branch[50];
+};
+
+// Driver code
+int main()
+{
+    struct student obj;
+
+    strcpy(obj.name, "Kamlesh_Joshi");
+    obj.roll_no = 27;
+    strcpy(obj.address, "Haldwani");
+    strcpy(obj.branch, "Computer Science And Engineering");
+
+    // Accessing members of student obj
+    printf("Name: %s\n", obj.name);
+    printf("Roll_No: %d \n", obj.roll_no);
+    printf("Address: %s\n", obj.address);
+    printf("Branch: %s", obj.branch);
+
+    return 0;
+}
+
+OutputName: Kamlesh_Joshi
+Roll_No: 27 
+Address: Haldwani
+Branch: Computer Science And Engineering43. What is union?A union is a user-defined data type in C that allows multiple members to share the same memory location. At any given time, only one member can hold a valid value.A union allocates memory equal to its largest member, making it more memory-efficient than a structure.Since all members share the same memory, updating one member overwrites the value of the others.Syntaxunion name_of_union{   data_type name;   data_type name;};
+            C
+
+    #include <stdio.h>
+
+union Data {
+    int i;
+    float f;
+};
+
+int main() {
+    union Data d;
+
+    d.i = 10;
+    printf("%d\n", d.i);
+
+    d.f = 3.14;
+    printf("%.2f", d.f);
+
+    return 0;
+}
+
+Output10
+3.14Here, both i and f share the same memory location, so only one member should be used at a time.44. What is an r-value and value?An l-value is an expression that refers to a memory location and can appear on the left side of an assignment. An r-value is a value or expression that does not have a persistent memory location and can only appear on the right side of an assignment.An l-value has an identifiable memory address and can be assigned a new value.An r-value represents a temporary value or expression and cannot be assigned to.L-valueR-valueRefers to a memory location.Represents a value or temporary expression.Can appear on both the left and right side of =.Can appear only on the right side of =.Has an identifiable memory address.Does not have a persistent memory address.Exampleint a = 10;int b = a + 5;Here, a and b are l-values, while 10 and a + 5 are r-values.45. What is the difference between call by value and call by reference?Call by valueCall by ReferenceValues of the variable are passed while function calls.The address of a variable(location of variable) is passed while the function call.Dummy variables copy the value of each variable in the function call.Dummy variables copy the address of actual variables.Changes made to dummy variables in the called function have no effect on actual variables in the calling function.We can manipulate the actual variables using addresses.A simple technique is used to pass the values of variables.The address values of variables must be stored in pointer variables.46. What is the sleep() function?The sleep() function pauses the execution of the current program for a specified amount of time. During this period, the CPU can execute other processes or threads.sleep() suspends the current thread for the specified number of seconds.It returns 0 if the requested sleep time completes successfully (on POSIX systems).
+            C
+
+    #include <stdio.h>
+#include <unistd.h>
+
+int main() {
+    printf("Waiting...\n");
+    sleep(3);
+    printf("Done!");
+    return 0;
+}
+
+OutputWaiting...
+Done!Note: sleep() is declared in <unistd.h> and is available on POSIX systems (Linux/macOS). On Windows, use Sleep() from <windows.h>, which takes the delay in milliseconds.47. What are enumerations?An enumeration (enum) is a user-defined data type that assigns meaningful names to a set of integral constants. It improves code readability and makes programs easier to maintain.Each enumerator is assigned an integer value, starting from 0 by default.Enumerations are commonly used to represent a fixed set of related constants, such as days, months, or states.Syntaxenum enum_name {    constant1,    constant2,    constant3};
+            C
+
+    // An example program to demonstrate working
+// of enum in C
+#include <stdio.h>
+
+enum week { Mon, Tue, Wed, Thur, Fri, Sat, Sun };
+
+int main()
+{
+    enum week day;
+    day = Wed;
+    printf("%d", day);
+    return 0;
+}
+
+Output2In the above example, we declared “day” as the variable, and the value of “Wed” is allocated to day, which is 2. So as a result, 2 is printed.48. What is a volatile keyword?The volatile keyword tells the compiler that a variable's value may change unexpectedly, so it should always read the value from memory instead of applying compiler optimizations.It is commonly used with hardware registers, interrupt service routines (ISRs), and shared variables modified by external sources.The compiler does not optimize accesses to a volatile variable, ensuring the latest value is always read from memory.
+            C
+
+    volatile int flag = 0;
+
+Here, flag is declared as volatile, so the compiler always fetches its current value from memory whenever it is accessed.49. Write a C program to print the Fibonacci series using recursion and without using recursion.The Fibonacci series is a sequence of numbers in which each number is the sum of the two preceding numbers. The series starts with 0 and 1.The first two Fibonacci numbers are 0 and 1, and each subsequent number is obtained by adding the previous two numbers.It is commonly used to demonstrate recursion, loops, and dynamic programming concepts in C.Fibonacci Numbers
+            C
+
+    // C program to print Fibonacci Series
+// with recursion and without recursion
+#include <stdio.h>
+
+// Recursive Function to print
+// Fibonacci Series
+void Fibonacci(int num, int first, int second, int third)
+{
+    if (num > 0) {
+        third = first + second;
+        first = second;
+        second = third;
+
+        printf("%d ", third);
+
+        // Recursive call for it's
+        // n-1 value
+        Fibonacci(num - 1, first, second, third)
+    }
+}
+
+// Driver code
+int main()
+{
+    int num;
+
+    printf("Please Enter number of Elements: ");
+    scanf("%d", &num);
+
+    printf(
+        "Fibonacci Series with the help of Recursion:\n");
+
+    printf("%d %d ", 0, 1);
+
+    // we are passing n-2 because we have
+    // already printed 2 numbers i.e, 0 and 1
+
+    Fibonacci(num - 2, 0, 1, 0);
+
+    printf("\nFibonacci Series without Using Recursion:\n");
+
+    int first = 0, second = 1, third = 0;
+
+    printf("%d %d ", 0, 1);
+
+    // Loop will start from 2 because we have
+    // already printed 0 and 1
+    for (int i = 2; i < num; i++) {
+        third = first + second;
+
+        printf("%d ", third);
+
+        first = second;
+        second = third;
+    }
+
+    return 0;
+}
+
+Output:Please Enter number of Elements: 5Fibonacci Series with the help of Recursion:0 1 1 2 3 Fibonacci Series without Using Recursion:0 1 1 2 3 50. Write a C program to check whether a number is prime or not.A prime number is a natural number greater than 1 that has exactly two factors: 1 and itself.A prime number is divisible only by 1 and the number itself.Numbers with more than two factors are called composite numbers, while 0 and 1 are neither prime nor composite.Number Prime or not
+            C
+
+    // C program to check if a
+// number is prime
+#include <math.h>
+#include <stdio.h>
+
+// Driver code
+int main()
+{
+    int num;
+    int check = 1;
+
+    printf("Enter a number: \n");
+    scanf("%d", &num);
+
+    // Iterating from 2 to sqrt(num)
+    for (int i = 2; i <= sqrt(num); i++) {
+        // If the given number is divisible by
+        // any number between 2 and n/2 then
+        // the given number is not a prime number
+        if (num % i == 0) {
+            check = 0;
+            break;
+        }
+    }
+
+    if (num <= 1) {
+        check = 0;
+    }
+
+    if (check == 1) {
+        printf("%d is a prime number", num);
+    }
+    else {
+        printf("%d is not a prime number", num);
+    }
+
+    return 0;
+}
+
+51. How is source code different from object code?Source CodeObject CodeSource code is generated by the programmer.object code is generated by a compiler or another translator.High-level code which is human-understandable.Low-level code is not human-understandable.Source code can be easily modified and contains less number of statements than object code.Object code cannot be modified and contains more statements than source code.Source code can be changed over time and is not system specific.Object code can be modified and is system specific.Source code is less close to the machine and is input to the compiler or any other translator.Object code is more close to the machine and is the output of the compiler or any other translator.Language translators like compilers, assemblers, and interpreters are used to translate source code to object code.Object code is machine code so it does not require any translation.52. What is static memory allocation and dynamic memory allocation?Static memory allocation is performed at compile time, where the memory size is fixed before program execution. Dynamic memory allocation is performed at runtime, allowing memory to be allocated and released as needed.Static memory allocation uses the stack, while dynamic memory allocation uses the heap.Static allocation is faster but less flexible, whereas dynamic allocation is slower but allows efficient memory management.Static Memory AllocationDynamic Memory AllocationMemory is allocated at compile time.Memory is allocated at runtime.Uses stack memory.Uses heap memory.Memory size is fixed.Memory size can be allocated and freed as needed.Faster than dynamic allocation.Slightly slower due to runtime allocation.Commonly used with arrays and local variables.Commonly used with linked lists, trees, and other dynamic data structures.53. What is pass-by-reference in functions? Pass-by-reference is a technique in which the address of a variable is passed to a function instead of its value. This allows the function to directly modify the original variable.In C, pass-by-reference is implemented using pointers.Any changes made through the pointer inside the function are reflected in the original variable.
+            C
+
+    // C program to change a variable
+// using pass by reference
+#include <stdio.h>
+
+// * used to dereference the variable
+void change(int* num)
+{
+    // value of num changed to 30
+    *num = 30;
+}
+
+// Driver code
+int main()
+{
+    int num = 20;
+    printf("Value of num before passing is: %d\n", num);
+
+    // Calling change function by passing address
+    change(&num);
+
+    printf("Value of num after changing with the help of "
+           "function is: %d",
+           num);
+
+    return 0;
+}
+
+54. What is a memory leak and how to avoid it?A memory leak occurs when dynamically allocated memory is not released after it is no longer needed. As a result, the memory remains occupied, reducing the amount of available memory for the program.Memory leaks can increase memory usage over time, slowing down the program or causing it to crash.They can be avoided by freeing dynamically allocated memory using free() in C as soon as it is no longer required.
+            C
+
+    #include <stdlib.h>
+
+int main() {
+    int *ptr = (int *)malloc(sizeof(int));
+
+    *ptr = 10;
+
+    free(ptr);   // Prevents memory leak
+    ptr = NULL;
+
+    return 0;
+}
+
+Here, the allocated memory is released using free(), and the pointer is set to NULL to avoid a dangling pointer.55. What are command line arguments?Command-line arguments are values passed to a C program when it is executed from the command line. They allow users to provide input without modifying the program.Command-line arguments are received by the main() function through the argc and argv parameters.argc stores the number of arguments, while argv is an array of strings containing the argument values.Syntaxint main(int argc, char *argv[]) {    // Code}56. What is an auto keyword?The auto keyword specifies the default storage class for local variables in C. Variables declared with auto are automatically created when a function or block is entered and destroyed when it exits.auto variables are accessible only within the function or block in which they are declared.If not initialized, auto variables contain garbage values.
+            C
+
+    #include <stdio.h>
+
+int main() {
+    auto int x = 10;
+    printf("%d", x);
+
+    return 0;
+}
+
+Output10Here, x is an automatic (local) variable that exists only inside the main() function.57. Write a program to print "Hello-World" without using a semicolon.
+            C
+
+    // C program to print hello-world
+// without using semicolon
+#include <stdio.h>
+
+// Driver code
+int main()
+{
+    // This will print the hello-world
+    // on the screen without giving any error
+    if (printf(“Hello - World”)) {
+    }
+    return 0;
+}
+
+58. Write a C program to swap two numbers without using a third variable.Swap Two Number
+            C
+
+    // C program to swap two variables
+// without using a third variable
+#include <stdio.h>
+
+int main()
+{
+    // Variable declaration
+    int var1 = 50;
+    int var2 = 60;
+
+    printf(
+        "Values before swap are var1 = %d and var2 = %d\n",
+        var1, var2);
+
+    // var1 = 110 ( 50 + 60) 
+    var1 = var1 + var2;
+
+    // var2 = 50 (110 - 50)
+    var2 = var1 - var2;
+
+    // var1 = 60 (110 - 50)
+    var1 = var1 - var2;
+
+    printf("Values after swap are var1 = %d  and var2 = %d",
+           var1, var2);
+
+    return 0;
+}
+
+OutputValues before swap are var1 = 50 and var2 = 60
+Values after swap are var1 = 60  and var2 = 5059. Write a program to check whether a string is a palindrome or not.
+            C
+
+    // C program to check whether a
+// string is palindrome or not.
+#include <stdio.h>
+#include <string.h>
+
+// Palindrome function to check
+// whether a string is palindrome
+// or not
+void Palindrome(char s[])
+{
+    // Start will start from 0th index
+    // and end will start from length-1 
+    int start = 0;
+    int end = strlen(s) - 1;
+
+    // Comparing characters until they
+    // are same 
+    while (end > start) {
+        if (s[start++] != s[end--]) {
+            printf("%s is not a Palindrome \n", s);
+            return;
+        }
+    }
+    printf("%s is a Palindrome \n", s);
+}
+
+// Driver code
+int main()
+{
+    Palindrome("abba");
+    return 0;
+}
+
+Outputabba is a Palindrome 60. Explain modifiers.Modifiers are keywords that modify the size, range, or sign of basic data types in C. They help optimize memory usage and control the range of values a variable can store.C provides five data type modifiers: short, long, long long, signed, and unsigned.Modifiers are commonly used with data types such as int and char to change their storage size or value range.ModifierPurposeshortReduces the size of an integer type.longIncreases the size of an integer type.long longProvides a larger integer range than long.signedAllows storing both positive and negative values.unsignedAllows storing only non-negative values, increasing the positive range.C Programming Interview Questions – For Experienced61. Write a program to print the factorial of a given number with the help of recursion.The factorial of a number n is the product of all positive integers from 1 to n. In recursion, the function calls itself with a smaller value until it reaches the base case.The base case is 0! = 1 (or 1! = 1), which stops the recursive calls.Each recursive call computes n × factorial(n - 1) until the base case is reached.Factorial of a Number
+            C
+
+    #include <stdio.h>
+
+int factorial(int n) {
+    if (n == 0 || n == 1)
+        return 1;
+
+    return n * factorial(n - 1);
+}
+
+int main() {
+    int n = 5;
+
+    printf("Factorial = %d", factorial(n));
+
+    return 0;
+}
+
+OutputFactorial of 5 is 120ExplanationThe function recursively calls itself with n - 1 until n becomes 1.The recursive calls then return in reverse order to calculate the final factorial value.62. Write a program to check an Armstrong number.An Armstrong number is a number that is equal to the sum of its digits raised to the power of the total number of digits. For example, 153 = 1³ + 5³ + 3³.The program extracts each digit, raises it to the required power, and adds the results.If the computed sum equals the original number, the number is an Armstrong number.
+            C
+
+    #include <stdio.h>
+#include <math.h>
+
+// Function to calculate the number of digits
+int countDigits(int n) {
+    int count = 0;
+    while (n != 0) {
+        count++;
+        n /= 10;
+    }
+    return count;
+}
+
+int main() {
+    int n;
+    printf("Enter Number: \n");
+    scanf("%d", &n);
+
+    int var = n;
+    int sum = 0;
+
+    // Get number of digits
+    int D = countDigits(n);
+
+    // Calculate the sum of digits raised
+    // to the power D
+    while (n > 0) {
+        int rem = n % 10;
+        sum += pow(rem, D);
+        n = n / 10;
+    }
+    
+    // If the sum equals the original number,
+    // it's an Armstrong number
+    if (var == sum) {
+        printf("%d is an Armstrong number \n", var);
+    } else {
+        printf("%d is not an Armstrong number \n", var);
+    }
+
+    return 0;
+}
+
+OutputEnter number: 82088208 is an Armstrong number63. Write a program to reverse a given number.Reversing a number means changing the order of its digits from last to first. This is done by repeatedly extracting the last digit and building the reversed number.The last digit is obtained using the modulus (%) operator and appended to the reversed number.The process continues until all digits are processed.
+            C
+
+    #include <stdio.h>
+
+int main() {
+    int n = 12345;
+    int rev = 0, rem;
+
+    while (n != 0) {
+        rem = n % 10;
+        rev = rev * 10 + rem;
+        n /= 10;
+    }
+
+    printf("Reversed Number: %d", rev);
+
+    return 0;
+}
+
+OutputReversed Number: 5432164. What is the use of an extern storage specifier?The extern keyword is used to declare a variable or function that is defined in another source file. It allows multiple files in a program to share the same global variable or function.extern declares a variable without allocating new memory; the memory is allocated where the variable is defined.It is mainly used to share global variables and functions across multiple source files.Examplefile1.cint count = 10;file2.c
+            C
+
+    #include <stdio.h>
+
+extern int count;
+
+int main() {
+    printf("%d", count);
+    return 0;
+}
+
+Here, count is defined in file1.c and accessed in file2.c using the extern keyword.65. What is the use of printf() and scanf() functions in C Programming language? Also, explain format specifiers.printf() function is used to print the value which is passed as the parameter to it on the console screen.Syntax:print("%X",variable_of_X_type);scanf() method, reads the values from the console as per the data type specified.Syntax:scanf("%X",&variable_of_X_type);In C format specifiers are used to tell the compiler what type of data will be present in the variable during input using scanf() or output using print().%c: Character format specifier used to display and scan character.%d, %i: Signed Integer format specifier used to print or scan an integer value.%f, %e, or %E: Floating-point format specifiers are used for printing or scanning float values.%s: This format specifier is used for String printing.%p: This format specifier is used for Address Printing.66. What is near, far, and huge pointers in C?Near, far, and huge pointers are pointer types used in 16-bit DOS compilers (such as Turbo C) to access memory. They are obsolete and are not supported in modern C compilers.These pointers were introduced to overcome the memory limitations of the 16-bit segmented memory model.Modern compilers use a flat memory model, so near, far, and huge pointers are no longer required.Pointer TypeDescriptionNear PointerStores a 16-bit offset and can access memory only within the current memory segment.Far PointerStores a 32-bit segment:offset address and can access memory across different segments.Huge PointerSimilar to a far pointer but is automatically normalized, allowing access to objects larger than a single memory segment.Note: Near, far, and huge pointers are compiler-specific features of older 16-bit systems and are not available in modern C standards (C99, C11, C17, C23).67. Mention file operations in C.File operations in C are used to create, open, read, write, append, and close files. They allow programs to store and retrieve data permanently.C provides several library functions in <stdio.h> to perform file handling operations.Every file should be closed using fclose() after the required operations are completed.
+            C
+
+    FILE *fp = fopen("data.txt", "w");
+fprintf(fp, "Hello, World!");
+fclose(fp);
+
+Here, fopen() creates or opens a file, fprintf() writes data to it, and fclose() closes the file.FunctionPurposefopen()Opens or creates a file.fclose()Closes an opened file.fprintf()Writes formatted data to a file.fscanf()Reads formatted data from a file.fgetc()Reads a single character from a file.fputc()Writes a single character to a file.fgets()Reads a string (line) from a file.fputs()Writes a string to a file.fread()Reads binary data from a file.fwrite()Writes binary data to a file.fseek()Moves the file pointer to a specified location.ftell()Returns the current position of the file pointer.rewind()Moves the file pointer back to the beginning of the file.68. Write a Program to check whether a linked list is circular or not.A circular linked list is a linked list in which the last node points back to the first node instead of pointing to NULL. It can be detected efficiently using Floyd's Cycle Detection Algorithm (Tortoise and Hare).The algorithm uses two pointers: a slow pointer (moves one node at a time) and a fast pointer (moves two nodes at a time).If the two pointers meet, the linked list is circular; otherwise, it is not circular.
+            C
+
+    // C program to check if the linked list is circular
+#include <stdio.h>
+#include <stdlib.h>
+struct Node {
+    int data;
+    struct Node* next;
+};
+int isCircular(struct Node* head)
+{
+
+    // If given linked list is null then it is circular
+    if (head == NULL) {
+        return 1;
+    }
+    struct Node* ptr;
+    ptr = head->next;
+
+    // Traversing linked list till last node
+    while (ptr != NULL && ptr != head) {
+        ptr = ptr->next;
+    }
+
+    // will return 1 if Linked list is circular else 0
+    return (ptr == head);
+}
+
+struct Node* newnode(int data)
+{
+    struct Node* first;
+    first = (struct Node*)malloc(sizeof(struct Node));
+    first->data = data;
+    first->next = NULL;
+    return first;
+}
+
+int main()
+{
+
+    struct Node* head = newnode(10);
+    head->next = newnode(12);
+    head->next->next = newnode(14);
+    head->next->next->next = newnode(16);
+    head->next->next->next->next = head;
+
+    // if it will be 1 then it means linked list is
+    // circular 
+    if (isCircular(head)) {
+        printf("Linked List is Circular\n");
+    }
+    else {
+        printf("Linked List is Not Circular\n");
+    }
+
+    return 0;
+}
+
+69. Write a program to Merge two sorted linked lists.Merging two sorted linked lists means creating a single sorted linked list by combining the nodes of both lists while maintaining the sorted order.Compare the current nodes of both lists and append the smaller node to the merged list.Continue until one list becomes empty, then attach the remaining nodes of the other list.Merge two sorted linked lists
+            C
+
+    // C program to merge two sorted
+// linked lists
+#include <assert.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+// Linked List Node
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+/* Pull off the front node of the
+   source and put it in dest
+ */
+void MoveNode(struct Node** destRef,
+              struct Node** sourceRef);
+
+/* Takes two lists sorted in increasing order,
+   and splices their nodes together to make
+   one big sorted list which is returned.  */
+struct Node* SortedMerge(struct Node* a, struct Node* b)
+{
+    /* A dummy first node to hang the
+       result on */
+    struct Node dummy;
+
+    /* tail points to the last result node  */
+    struct Node* tail = &dummy;
+
+    /* so tail->next is the place to add new
+       nodes to the result. */
+    dummy.next = NULL;
+    while (1) {
+        if (a == NULL) {
+            /* if either list runs out, use the
+               other list */
+            tail->next = b;
+            break;
+        }
+        else if (b == NULL) {
+            tail->next = a;
+            break;
+        }
+        if (a->data <= b->data)
+            MoveNode(&(tail->next), &a);
+        else
+            MoveNode(&(tail->next), &b);
+        tail = tail->next;
+    }
+    return (dummy.next);
+}
+
+/* UTILITY FUNCTIONS */
+/* MoveNode() function takes the node
+   from the front of the source, and
+   move it to the front of the dest.
+   It is an error to call this with the
+   source list empty.
+
+   Before calling MoveNode():
+   source == {1, 2, 3}
+   dest == {1, 2, 3}
+
+   After calling MoveNode():
+   source == {2, 3}
+   dest == {1, 1, 2, 3} */
+void MoveNode(struct Node** destRef,
+              struct Node** sourceRef)
+{
+    /* The front source node  */
+    struct Node* newNode = *sourceRef;
+    assert(newNode != NULL);
+
+    /* Advance the source pointer */
+    *sourceRef = newNode->next;
+
+    /* Link the old dest off the new node */
+    newNode->next = *destRef;
+
+    /* Move dest to point to the new node */
+    *destRef = newNode;
+}
+
+/* Function to insert a node at the beginning of the
+   linked list */
+void push(struct Node** head_ref, int new_data)
+{
+    /* allocate node */
+    struct Node* new_node
+        = (struct Node*)malloc(sizeof(struct Node));
+
+    /* put in the data  */
+    new_node->data = new_data;
+
+    /* link the old list off the new node */
+    new_node->next = (*head_ref);
+
+    /* move the head to point to the new node */
+    (*head_ref) = new_node;
+}
+
+/* Function to print nodes in a given linked list */
+void printList(struct Node* node)
+{
+    while (node != NULL) {
+        printf("%d ", node->data);
+        node = node->next;
+    }
+}
+
+/* Driver program to test above functions*/
+int main()
+{
+    /* Start with the empty list */
+    struct Node* res = NULL;
+    struct Node* a = NULL;
+    struct Node* b = NULL;
+
+    /* Let us create two sorted linked lists to test
+      the functions
+       Created lists, a: 5->10->15,  b: 2->3->20 */
+    push(&a, 15);
+    push(&a, 10);
+    push(&a, 5);
+
+    push(&b, 20);
+    push(&b, 3);
+    push(&b, 2);
+
+    /* Remove duplicates from linked list */
+    res = SortedMerge(a, b);
+
+    printf("Merged Linked List is: \n");
+    printList(res);
+
+    return 0;
+}
+
+OutputMerged Linked List is: 
+2 3 5 10 15 20 70. What is the difference between getc(), getchar(), getch() and getche().These functions are used to read characters in C, but they differ in input source, echo behavior, and standard support.getc() and getchar() are standard C library functions declared in <stdio.h>.getch() and getche() are non-standard functions declared in <conio.h> and are mainly supported by older DOS compilers like Turbo C.FunctionDescriptiongetc()Reads a single character from the specified input stream.getchar()Reads a single character from the standard input (stdin).getch()Reads a character from the keyboard without displaying it and without waiting for Enter.getche()Reads a character from the keyboard, displays it, and does not wait for Enter.

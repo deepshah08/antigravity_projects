@@ -1,0 +1,91 @@
+# Learning Model Building in Scikit-learn - GeeksforGeeks
+
+Scikit-learn is an open-source Python library that simplifies the process of building machine learning models. It offers a clean and consistent interface that helps both beginners and experienced users work efficiently.Supports tasks like classification, regression, clustering and preprocessingMakes model building fast and reliableProvides ready-to-use tools for training and evaluationReduces complexity by avoiding manual implementation of algorithmsInstalling and Using Scikit-learn Before we start building models we need to install Scikit-learn. It requires Python 3.8 or newer and depends on two important libraries: NumPy and SciPy. Make sure these are installed first.To install Scikit-learn run the following command:pip install -U scikit-learnThis will download and install the latest version of Scikit-learn along with its dependencies. Lets see various steps involved in the process of building Model using Scikit-learn library. Step 1: Loading a DatasetA dataset consists of:Features (X): Input variables that describe the dataTarget (y): The value we want to predictScikit-learn provides built-in datasets like Iris, Digits and Boston Housing. Using the Iris dataset:load_iris() loads the dataX stores feature datay stores target labelsfeature_names and target_names give descriptive namesWe can inspect the first few rows to understand the structure. For custom datasets, Pandas is commonly used to load external files such as CSVs.
+            Python
+
+    from sklearn.datasets import load_iris 
+iris = load_iris() 
+
+X = iris.data 
+y = iris.target 
+  
+feature_names = iris.feature_names 
+target_names = iris.target_names 
+  
+print("Feature names:", feature_names) 
+print("Target names:", target_names) 
+
+print("\nType of X is:", type(X)) 
+
+print("\nFirst 5 rows of X:\n", X[:5])
+
+Output:  Loading datasetSometimes we need to work on our own custom data then we load an external dataset. For this we can use the pandas library for easy loading and manipulating datasets.For this you can refer to our article on How to import csv file in pandas?Step 2: Splitting the DatasetTo evaluate a model fairly, we split data into:Training set: Used to train the modelTesting set: Used to evaluate how well the model generalizesUsing train_test_split, we split the Iris dataset so that 60% is for training and 40% for testing (test_size=0.4). random_state=1 ensures reproducibility.After splitting, we get:X_train, y_train -> Training dataX_test, y_test -> Testing dataChecking the shapes ensures the data is split correctly.
+            Python
+
+    from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=1)
+
+Now lets check the Shapes of the Splitted Data to ensures that both sets have correct proportions of data avoiding any potential errors in model evaluation or training.
+            Python
+
+    print("X_train Shape:",  X_train.shape)
+print("X_test Shape:", X_test.shape)
+print("Y_train Shape:", y_train.shape)
+print("Y_test Shape:", y_test.shape)
+
+Output:Shape of Splitted DataStep 3: Handling Categorical DataMachine learning algorithms work with numerical inputs, so categorical (text) data must be converted into numbers. If not encoded properly, models can misinterpret categories. Scikit-learn provides multiple encoding methods:1. Label Encoding: It converts each category into a unique integer. For example in a column with categories like 'cat', 'dog' and 'bird', it would convert them to 0, 1 and 2 respectively. This method works well when the categories have a meaningful order such as “Low”, “Medium” and “High”. LabelEncoder(): It is initialized to create an encoder object that will convert categorical values into numerical labels.fit_transform(): This method first fits the encoder to the categorical data and then transforms the categories into corresponding numeric labels.
+            Python
+
+    from sklearn.preprocessing import LabelEncoder
+
+categorical_feature = ['cat', 'dog', 'dog', 'cat', 'bird']
+
+encoder = LabelEncoder()
+
+encoded_feature = encoder.fit_transform(categorical_feature)
+
+print("Encoded feature:", encoded_feature)
+
+Output:Encoded feature: [1 2 2 1 0]2. One-Hot Encoding: One-Hot Encoding creates separate binary columns for each category. This is useful when categories do not have any natural ordering. Example: cat, dog, bird -> 3 new columns (cat/dog/bird) with 1s and 0s.Input must be reshaped into a 2D arrayOneHotEncoder(sparse_output=False) generates binary columns
+            Python
+
+    from sklearn.preprocessing import OneHotEncoder
+import numpy as np
+
+categorical_feature = ['cat', 'dog', 'dog', 'cat', 'bird']
+
+categorical_feature = np.array(categorical_feature).reshape(-1, 1)
+
+encoder = OneHotEncoder(sparse_output=False)
+
+encoded_feature = encoder.fit_transform(categorical_feature)
+
+print("OneHotEncoded feature:\n", encoded_feature)
+
+Output: Besides Label Encoding and One-Hot Encoding there are other techniques like Mean Encoding.Step 4: Training the ModelNow that our data is ready, it’s time to train a machine learning model. Scikit-learn has many algorithms with a consistent interface for training, prediction and evaluation. Here we’ll use Logistic Regression as an example.Note: We will not go into the details of how the algorithm works as we are interested in understanding its implementation only. log_reg = LogisticRegression(max_iter=200): Creating a logistic regression classifier object.log_reg.fit(X_train, y_train): Using this the logistic regression model adjusts the model’s parameters to best fit the data.
+            Python
+
+    from sklearn.linear_model import LogisticRegression
+log_reg = LogisticRegression(max_iter=200)
+log_reg.fit(X_train, y_train)
+
+Training Using Logistic Regression. Step 5: Make PredictionsOnce trained we use the model to make predictions on the test data X_test by calling the predict method. This returns predicted labels y_pred. log_reg.predict: It uses trained logistic regression model to predict labels for the test data X_test.
+            Python
+
+    y_pred = log_reg.predict(X_test)
+
+Step 6: Evaluating Model AccuracyCheck how well our model is performing by comparing y_test and y_pred. Here we are using the metrics module's method accuracy_score.
+            Python
+
+    from sklearn import metrics
+print("Logistic Regression model accuracy:", metrics.accuracy_score(y_test, y_pred))
+
+Output:Logistic Regression model accuracy: 0.9666666666666667Now we want our model to make predictions on new sample data. Then the sample input can simply be passed in the same way as we pass any feature matrix. Here we used it as sample = [[3, 5, 4, 2], [2, 3, 5, 4]]
+            Python
+
+    sample = [[3, 5, 4, 2], [2, 3, 5, 4]]
+preds = log_reg.predict(sample)
+pred_species = [iris.target_names[p] for p in preds]
+print("Predictions:", pred_species)
+
+Output: Predictions: [np.str_('virginica'), np.str_('virginica')]Features of Scikit-learn Scikit-learn is used because it makes building machine learning models straightforward and efficient. Here are some important reasons:Ready-to-Use Tools: It provides built-in functions for common tasks like data preprocessing, training models and making predictions. This saves time by avoiding the need to code algorithms from scratch.Easy Model Evaluation: With tools like cross-validation and performance metrics it helps to measure how well our model works and identify areas for improvement.Wide Algorithm Support: It offers many popular machine learning algorithms including classification, regression and clustering which gives us flexibility to choose the right model for our problem.Smooth Integration: Built on top of important Python libraries like NumPy and SciPy so it fits into our existing data analysis workflow.Simple and Consistent Interface: The same straightforward syntax works across different models helps in making it easier to learn and switch between algorithms.Model Tuning Made Easy: Tools like grid search help us fine-tune our model’s settings to improve accuracy without extra hassle.Benefits of using Scikit-learnUser-Friendly: Scikit-learn’s consistent and simple interface makes it accessible for beginners and best for experts.Time-Saving: Pre-built tools and algorithms reduce development time which allows us to focus more on solving problems than coding details.Better Model Performance: Easy-to-use tuning and evaluation tools helps in improving model accuracy and reliability.Flexible and Scalable: Supports a wide range of algorithms and integrates smoothly with other Python libraries helps in making it suitable for projects of any size.Strong Community Support: A large, active community ensures regular updates, extensive documentation and plenty of resources to help when we get stuck.

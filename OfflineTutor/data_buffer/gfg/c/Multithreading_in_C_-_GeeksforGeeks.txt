@@ -1,0 +1,131 @@
+# Multithreading in C - GeeksforGeeks
+
+Multithreading is a technique in which a process is divided into multiple threads that execute concurrently. It allows a program to perform multiple tasks simultaneously within a single process, improving performance and responsiveness.Threads are lightweight execution units within a process. Multiple threads share resources while executing independently.Example: The following program demonstrates the creation and execution of a thread using the POSIX Threads (pthreads) library.
+            C++
+
+    #include <pthread.h>
+#include <stdio.h>
+
+void* foo(void* arg)
+{
+    printf("Thread is running\n");
+    return NULL;
+}
+
+int main()
+{
+    pthread_t thread;
+
+    pthread_create(&thread, NULL, foo, NULL);
+    pthread_join(thread, NULL);
+
+    return 0;
+}
+
+OutputThread is running
+Explanation: The program creates a new thread using pthread_create(). The main thread waits for the created thread to finish using pthread_join().ThreadsA thread represents an independent sequence of execution within a process. Unlike processes, threads share the same memory space and operating system resources.Each thread has its own program counter, registers, and stack. Threads share code, data, files, and signals. Thread creation is faster than process creation. Multiple threads can execute concurrently. Single-Threaded vs Multithreaded ProcessImplementing Multithreading Using PthreadsThe POSIX Threads (pthread) library provides APIs for creating, managing, synchronizing, and terminating threads in C. To use pthreads, include the header file:#include <pthread.h>If required, compile the program using:gcc program.c -lpthreadCreating a ThreadThe pthread_create() function creates and starts a new thread.Syntaxpthread_create(thread, attr, routine, arg);Parametersthread - Stores the ID of the newly created thread. attr - Specifies thread attributes (NULL for default). routine - Function executed by the thread. arg - Argument passed to the thread function.
+            C
+
+    #include <pthread.h>
+#include <stdio.h>
+
+void* foo(void* arg) {
+    printf("Created a new thread");
+    return NULL;
+ }
+int main() {
+    
+    // Create a pthread_t variable to store
+    // thread ID
+    pthread_t thread1;
+    
+    // Creating a new thread. 
+    pthread_create(&thread1, NULL, foo, NULL);
+    return 0;
+}
+
+Output Created a new threadExplanation: pthread_create() creates a thread that executes the foo() function.Waiting for a Thread to FinishThe pthread_join() function blocks the calling thread until the specified thread terminates.
+            C
+
+    #include <pthread.h>
+#include <stdio.h>
+
+void* foo(void* arg) {
+    printf("Thread is running.\n");
+    return NULL;
+}
+
+int main() {
+    pthread_t thread1;
+    pthread_create(&thread1, NULL, foo, NULL);
+
+    // Wait for thread to finish
+    pthread_join(thread1, NULL);
+
+    return 0;
+}
+
+OutputThread is runningExplicitly Terminating a ThreadThe pthread_exit() function terminates the calling thread explicitly.Syntaxpthread_exit(value);
+            C
+
+    void* foo(void* arg)
+{
+    printf("Thread is running.\n");
+
+    pthread_exit(NULL);
+
+    printf("This statement never executes.\n");
+}
+
+OutputThread is running.Explanation: Once pthread_exit() is called, the thread terminates immediately.Cancelling a ThreadThe pthread_cancel() function is used to request the cancellation of a thread. It sends a cancellation request to the target thread, but the actual termination depends on whether the thread is in a cancellable state and if it handles cancellation. Example:
+            C
+
+    #include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+void* myThreadFunc(void* arg) {
+    while(1) {
+        printf("Thread is running...\n");
+        sleep(1);
+    }
+    return NULL;
+}
+
+int main() {
+    pthread_t thread;
+    pthread_create(&thread, NULL, myThreadFunc, NULL);
+    sleep(5);
+    //Requesting to cancel the thread after 5 seconds. 
+    pthread_cancel(thread);
+    // Wait for the thread to terminate
+    pthread_join(thread, NULL);  
+
+    printf("Main thread finished.\n");
+    return 0;
+}
+
+OutputThread is running...Thread is running...Thread is running...Thread is running...Thread is running...Thread is running...Main thread finished.Getting the Current Thread IDpthread_self() function returns the thread ID of the calling thread. This is useful when you need to identify or store the ID of the current thread in multi-threaded programs. Example
+            C
+
+    #include <pthread.h>
+#include <stdio.h>
+
+void* foo(void* arg) {
+    
+    // Get current thread ID
+    pthread_t thisThread = pthread_self();
+    printf("Current thread ID: %lu\n",
+        (unsigned long)thisThread);
+    return NULL;
+}
+
+int main() {
+    pthread_t thread1;
+    pthread_create(&thread1, NULL, foo, NULL);
+    pthread_join(thread1, NULL);
+    return 0;
+}
+
+OutputCurrent thread ID: 134681321096896Common Multithreading IssuesMultithreading improves performance but also introduces several challenges.Race Conditions: A race condition occurs when multiple threads access shared data simultaneously, producing unpredictable results.Example: Two threads updating the same counter variable.Deadlocks: A deadlock occurs when multiple threads wait indefinitely for resources held by each other.Example: Thread A waits for a resource held by Thread B, while Thread B waits for a resource held by Thread A.Starvation: Starvation occurs when a thread is continuously denied access to resources.Example: A low-priority thread waiting indefinitely while high-priority threads continue executing.Thread SynchronizationThread synchronization ensures safe access to shared resources. Common synchronization mechanisms include:Mutexes - Allow only one thread to access a resource at a time. Semaphores - Control access using counters. Condition Variables - Allow threads to wait for specific conditions. Barriers - Synchronize multiple threads at predefined points. Read-Write Locks - Permit multiple readers and a single writer.Advantages of MultithreadingMultithreading offers several benefits that improve the efficiency and responsiveness of modern applications:Improves overall application performance and enhances CPU utilization.Provides better responsiveness and improves the user experience.Enables efficient sharing and utilization of system resources.Improves scalability when handling multiple concurrent tasks.Disadvantages of MultithreadingDespite its advantages, multithreading also introduces several challenges:Increases the complexity of program design and implementation.Requires careful synchronization to manage shared resources safely.Introduces concurrency-related issues such as race conditions and deadlocks.Adds additional overhead for thread creation, scheduling, and management.

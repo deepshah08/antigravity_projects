@@ -1,0 +1,156 @@
+# Java Lambda Expressions - GeeksforGeeks
+
+lambda expressions, introduced in Java 8, allow developers to write concise, functional-style code by representing anonymous functions. They enable passing code as parameters or assigning it to variables, resulting in cleaner and more readable programs.Lambda expressions implement a functional interface (An interface with only one abstract function)Enable passing code as data (method arguments).Lambda expressions can access only final or effectively final variables from the enclosing scope.Lambdas cannot throw checked exceptions unless the functional interface declares them.Syntax(parameters) -> {           // multiple statements} Parameter List: Parameters for the lambda expressionArrow Token (->): Separates the parameter list and the bodyBody: Logic to be executed.
+            Java
+
+    interface Add{
+    
+    int addition(int a, int b);
+}
+
+public class GFG{
+    
+    public static void main(String[] args){
+        
+        // Lambda expression to add two numbers
+        Add add = (a, b) -> a + b;
+        
+        int result = add.addition(10, 20);
+        System.out.println("Sum: " + result);
+    }
+}
+
+Functional interfaceA functional interface has exactly one abstract method. Lambda expressions provide its implementation. @FunctionalInterface annotation is optional but recommended to enforce this rule at compile time.A functional interface contains exactly one abstract method, but it can have multiple default and static methods.It is mainly used with lambda expressions and method references to enable functional programming in Java.
+            Java
+
+    interface FuncInterface{
+    
+    void abstractFun(int x);
+    default void normalFun(){
+        System.out.println("Hello");
+        }
+}
+
+public class GFG{
+    
+    public static void main(String[] args){
+        
+        FuncInterface fobj = (int x) -> System.out.println(2 * x);
+        fobj.abstractFun(5);
+    }
+}
+
+Output10
+Types of Lambda ParametersThere are three Lambda Expression Parameters are mentioned below:1. Lambda with Zero Parameters Lambda with Zero Parameters is a lambda expression that does not take any input values. It is commonly used to implement methods that perform a task without requiring any arguments.Empty parentheses () are used to indicate that the lambda accepts no parameters.It is commonly used for tasks such as printing messages, triggering events, or executing background operationsSyntax:() -> System.out.println("Zero parameter lambda");
+            Java
+
+    @FunctionalInterface
+interface ZeroParameter{
+    
+    void display();
+}
+
+public class Geeks{
+    
+    public static void main(String[] args){
+        
+        // Lambda expression with zero parameters
+        ZeroParameter zeroParamLambda = ()
+            -> System.out.println(
+                "This is a zero-parameter lambda expression!");
+
+        // Invoke the method
+        zeroParamLambda.display();
+    }
+}
+
+OutputThis is a zero-parameter lambda expression!
+2. Lambda with a Single ParameterLambda with a Single Parameter is a lambda expression that accepts one input value. It is used when the operation needs a single argument to produce a result or perform a task.It is not mandatory to use parentheses if the type of that variable can be inferred from the context.Parentheses are optional if the compiler can infer the parameter type from the functional interface.Syntax:(p) -> System.out.println("One parameter: " + p)
+            Java
+
+    import java.util.ArrayList;
+
+public class GFG{
+    
+    public static void main(String[] args){
+        
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+        System.out.println("All elements:");
+        list.forEach(n -> System.out.println(n));
+
+        System.out.println("Even elements:");
+        list.forEach(n -> {
+            if (n % 2 == 0)
+                System.out.println(n);
+        });
+    }
+}
+
+OutputAll elements:
+1
+2
+3
+Even elements:
+2
+Note: The forEach() method internally uses the Consumer<T> functional interface, which takes one argument and performs an action.3. Lambda Expression with Multiple ParametersLambda with Multiple Parameters is a lambda expression that accepts two or more input values. It is used when an operation requires multiple arguments to perform a calculation or execute a task.Parentheses () are mandatory when a lambda expression has multiple parameters.Parameter types can be specified explicitly or omitted if the compiler can infer them.Syntax:(p1, p2) -> System.out.println("Multiple parameters: " + p1 + ", " + p2);
+            Java
+
+    @FunctionalInterface
+interface Functional {
+    int operation(int a, int b);
+}
+
+public class Test {
+
+    public static void main(String[] args) {
+        
+        // Using lambda expressions to define the operations
+        Functional add = (a, b) -> a + b;
+        Functional multiply = (a, b) -> a * b;
+
+        // Using the operations
+        System.out.println(add.operation(6, 3));  
+        System.out.println(multiply.operation(4, 5));  
+    }
+}
+
+Output9
+20
+Note: Lambda expressions are just like functions and they accept parameters just like functions. Examples in Collections / StreamsLambda expressions are widely used with Java Collections and Streams for concise operations
+            Java
+
+    import java.util.Arrays;
+import java.util.List;
+
+public class GFG{
+    
+    public static void main(String[] args){
+        
+        List<String> names = Arrays.asList(
+            "Alice", "Bob", "Charlie", "Adam");
+
+        System.out.println("All names:");
+        names.forEach(name -> System.out.println(name));
+
+        System.out.println("\nNames starting with 'A':");
+        names.stream()
+            .filter(n -> n.startsWith("A"))
+            .map(n -> n.toUpperCase())
+            .forEach(System.out::println);
+    }
+}
+
+OutputAll names:
+Alice
+Bob
+Charlie
+Adam
+
+Names starting with 'A':
+ALICE
+ADAM
+AdvantagesConcise Code: Reduce boilerplate compared to anonymous classes.Functional Programming: Treat functions as first-class citizens.Improved Readability: Code is easier to read and maintain.Enhanced Collections and Streams: Simplify operations like filtering, mapping, and iterating.Common Built-in Functional InterfacesInterfaceMethodPurposePredicateboolean test(T t)Tests a given condition and returns true or false.Consumervoid accept(T t)Performs an action on the given argument without returning a result.SupplierT get()Supplies or generates a result without taking any input.Comparator<T>int compare(T o1, T o2)Compares two objects to determine their order.Comparable<T>int compareTo(T o)Defines the natural ordering for objects of a class.Validity Check: Example Lambda ExpressionsExpressionValidityReason() -> {}ValidNo parameters, empty body() -> "geeksforgeeks"ValidSingle expression returns value() -> { return "geeksforgeeks"; }ValidUses braces with return keyword(Integer i) -> { return "geeksforgeeks" + i; }ValidCorrect syntax with typed parameter(String s) -> { return "geeksforgeeks"; }ValidParameter unused but valid() -> { return "Hello" }InvalidMissing semicolon after return statementx -> { return x + 1; }InvalidInvalid if type inference not possible(int x, y) -> x + yInvalidIf one parameter has type, all must

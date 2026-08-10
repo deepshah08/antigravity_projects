@@ -1,0 +1,68 @@
+# main Function in C - GeeksforGeeks
+
+The main function is the entry point of a C program. It is a user-defined function where program execution begins. Every C program must contain a main function and its return value typically indicates the success or failure of the program. For Example:
+            C
+
+    #include <stdio.h>
+
+int main() {
+  
+    printf("Hello, World!\n");
+    return 0;
+}
+
+OutputHello, World!
+Explanation: This basic example demonstrates a simple main() function. It prints "Hello, World!" and returns 0 to indicate that the program executed successfully.If we try create a function with another name, the program wont be able to execute:
+            C
+
+    #include <stdio.h>
+
+int func() {
+  
+    printf("Hello, World!\n");
+    return 0;
+}
+
+Output/usr/lib/x86_64-linux-gnu/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit statusSyntax of main()The syntax of the main() function can be written in two common forms:Without Command-Line Argumentsreturn_type main() {    // Code goes here    // Returning}We can write the main function in many ways in C language as follows:int main(){} or int main(void){}main(){} or void main(){} or main(void){} or void main(void){}In the above notations, int means integer return type, and void return type means that does not return any information, and (void) or () means that does not take any information.Note: The void return type is supported but generally not recommended as the OS may not get any notification about the program execution if no value is returnedWith Command-Line ArgumentsThe argument of main function is different from the rest of user defined functions. As main function is called by OS, the user has to provide arguments at the time of starting program from the command line. That is why these arguments are also called command line arguments.return_type main(int argc, char *argv[]) {    // Code goes here....}Here,argc: Stands for ARGument Count, it is an integer variable that stores the number of command-line arguments passed.argv: Stands for ARGument Vector, it is an array of character pointers listing all the arguments.Types of main() in CThere are 3 variations of main() in C:main() with No Arguments and void Return Type - Not Recommendedmain() with no arguments and int return type - Recommendedmain() with the Command Line Arguments1. main() with No Arguments and void Return Type (Not Recommended)This does not accept any command-line arguments and does not return any value. While it may be supported by some compilers, it is not standard practice in C, as the C standard expects main() to return an int. Example
+            C
+
+    #include <stdio.h>
+
+// Can also be 'void main(void)'
+void main() {   
+    printf("Hello Geek!");
+}
+
+OutputHello Geek!Note: The return type of main function according to C standard should be int only. Even if your compiler is able to run void main(), it is recommended to avoid it.2. main() with No Arguments and int Return Type (Recommended)This is the most commonly used form of main() in C. It does not take any command-line arguments but returns an integer value to the operating system. By convention, returning 0 indicates successful execution, while returning a non-zero value signals an error or abnormal termination. Example
+            C
+
+    #include <stdio.h>
+
+// Can be 'int main(void)' or 'main(void)'
+// or just 'main()'
+int main() {
+    printf("Hello Geek!");
+    return 0;
+}
+
+OutputHello Geek!Explanation: This basic example demonstrates a simple main() function. It prints "Hello, Geek!" and returns 0 to indicate that the program executed successfully.3. main() with Command Line ArgumentsThis version of main() is used when a program needs to accept command-line arguments. The arguments are passed through argc (argument count) and argv (argument vector). argc holds the number of arguments, and argv is an array of strings representing the arguments.This type is useful for programs that need to handle external input, such as filenames, options, or parameters passed at the time of execution. Example
+            C
+
+    #include <stdio.h>
+
+int main(int argc, char* argv[]) {
+
+    // Printing the count of arguments
+  	printf("The value of argc is %d\n", argc);
+
+    // Printing each argument
+    for (int i = 0; i < argc; i++) {
+        printf("%s \n", argv[i]);
+    }
+
+    return 0;
+}
+
+Now, run the programs in the command prompt or terminal as seen below screenshot and passed any arguments. main.exe is the name of the executable file created when the program runs for the first time. We passed three arguments "geeks for geeks" and print them using a loop.Output of Main with Command Line Arguments

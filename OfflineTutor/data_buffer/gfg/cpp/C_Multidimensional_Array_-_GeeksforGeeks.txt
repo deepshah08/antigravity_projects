@@ -1,0 +1,298 @@
+# C++ Multidimensional Array - GeeksforGeeks
+
+A multi-dimensional array can be defined as an array that has more than one dimension. Having more than one dimension means that it can grow in multiple directions. Some popular multidimensional arrays include:Two-Dimensional Array: It is an array that has exactly two dimensions. It can be visualized in the form of rows and columns organized in a two-dimensional plane.Three-Dimensional Array: A 3D array has exactly three dimensions. It can be visualized as a collection of 2D arrays stacked on top of each other to create the third dimension.Example:
+            C++
+
+    #include <iostream>
+using namespace std;
+
+int main() {
+    
+    // declaring and initializing a 2D array
+    // with 3 rows and 4 columns
+    int matrix[3][4] = {
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12}
+    };
+
+    // printing the elements of the 2D array
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 4; j++) {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+
+Output1 2 3 4 
+5 6 7 8 
+9 10 11 12 
+Explanation:int matrix[3][4] declares a 2D array with 3 rows and 4 columns.The array is initialized using nested braces {} for each row.We use two nested for loops to access and print each element: the outer loop for rows and the inner loop for columns.matrix[i][j] accesses the element at the i-th row and j-th column.Syntax of Multidimensional Arrays
+            C++
+
+    data_type array_name[s1][s2]...[sn];
+
+where s1, s2,…, sn are the size of each dimension.Example:
+            C++
+
+    // Two dimensional array
+int two_d[2][4];
+
+// Three dimensional array
+int three_d[2][4][8];
+
+Multidimensional Arrays SizeFor 1D array, the length of the array is simply its size too. But multidimensional arrays have extra dimensions. So, the size of each dimension is considered separately. The size of multidimensional array is the product of all its dimensions' size. It is similar to calculating area in 2D and volume in 3D.For example, consider the below array:
+            C++
+
+    int arr1[2][4];
+
+The array int arr[2][4] can store total (2 * 4) = 8 elements (product of its dimensions).The size in bytes can be calculated by multiplying the number of elements by size of each element or we can just use sizeof operator.In this case, size in bytes = 4*8 = 32 bytes.To verify the above calculation, we can use sizeof() method to find the size of an array.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+int main() {
+    
+    // creating 2d and 3d array
+    int arr[2][4];
+
+    // using sizeof() operator to 
+    // get size of arr
+    cout << sizeof(arr) << " bytes";
+    return 0;
+}
+
+Output32 bytesTypes of Multidimensional ArraysWe can have any number of dimensions in an array as per requirement, but the complexity of handling them also increases exponentially. That is why, the most widely used multidimensional arrays are:Two-Dimensional Array (2D Array)Three-Dimensional Array (3D Array)2D ArrayA two-dimensional array in C++ is a collection of elements organized the form of rows and columns. It can be visualized as a table or a grid.2D ArrayCreate 2D array
+            C++
+
+    int arr[2][4];
+
+Initialize 2D ArrayLike 1D arrays, 2D arrays can also be initialized using a list of values enclosed inside {} curly brackets, but as 2D arrays have two dimensions, the list is nested inside another list to initialize each dimension one by one. It means that each row values are nested inside one big list.
+            C++
+
+    int arr[2][4] = {{0, 1, 2, 3}, {4, 5, 6, 7}};
+
+Nesting can also be omitted, and values will still be assigned sequentially.
+            C++
+
+    int arr[2][4] = {0, 1, 2, 3, 4, 5, 6, 7};
+
+The above array has 2 rows and 4 columns. The elements are filled in a way that the first 4 elements are filled in the first row and the next 4 elements are filled in the second row. The values will be initialized sequentially.It is to be noted that the number of values should not exceed the total number of elements an array can store. It can have less values (partial initialization) but cannot have more values.If all the elements are to be initialized to 0, then this syntax can be used:
+            C++
+
+    int arr[2][4] = {0};
+
+This can be only done for 0, not for any other value.Access and Update ElementsElements of a 2D array have to be accessed using row and column indices inside [] square brackets. It is similar to matrix element position, but the only difference is that here indexing starts from 0.The value of any element can be updated by using = assignment operator.
+            C++
+
+    arr[i][j];
+array_name[i][j] = new_value
+
+where, i is the index of row, j is the index of the column, and new_value to updated. The range of indexes should be:0 ≤ i ≤ (row_size - 1)0 ≤ j ≤ (col_size - 1)Any values other than that leads to the segmentation fault.Example:
+            C++
+
+    #include <iostream>
+using namespace std;
+
+int main() {
+    int arr[2][4] = {0, 1, 2, 3, 4, 5, 6, 7};
+    
+    // Accessing 3rd element is 1st row
+    cout << arr[0][2] << endl;
+    
+    // Accessing first element in 2nd row
+    cout << arr[1][0] << endl;
+    
+    // Updating 3rd element is 1st row
+    arr[0][2] = 22;
+    cout << arr[0][2] << endl;
+    
+    // Updating first element in 2nd row
+    arr[1][0] = 99;
+    cout << arr[1][0];
+    return 0;
+}
+
+Output2
+4
+22
+99Traverse 2D ArrayTwo loops nested inside each other are needed to traverse a 2D array. First loop is used to move though the rows of 2D array, while other is used to move though columns in each row to access all the elements of the row.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+int main() {
+    int arr[2][4] = {0, 1, 2, 3, 4, 5, 6, 7};
+    
+    // Outer loop to move through rows
+    for (int i = 0; i < 2; i++) {
+        
+        // Inner loop to move though elements in each row
+        for (int j = 0; j < 4; j++) {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+    
+    return 0;
+}
+
+Output0 1 2 3 
+4 5 6 7 
+3D Array A three-dimensional array in C++ is a collection of elements organized in a 3D cuboid-like structure. It can be visualized as a series of two-dimensional arrays stacked on top of each other.Create 3D ArrayTo declare a 3D array in C++, we need to specify its third dimension along with 2D dimensions.
+            C++
+
+    int arr[2][2][3];
+
+Initialize 3D ArrayLike 2D arrays, 3D arrays can also be initialized using a list of values enclosed inside {} curly brackets. However, in a 3D array, the values are grouped into 2D arrays, and each 2D array is nested inside another set of curly brackets.
+            C++
+
+    int arr[2][2][3] = {
+    {{0, 1, 2}, {3, 4, 5}},
+    {{6, 7, 8}, {9, 10, 11}}
+};
+
+Alternatively, nesting can be omitted, and the values will still be filled sequentially:
+            C++
+
+    int arr[2][2][3] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+
+This array has 2 layers (depth), 2 rows per layer, and 3 columns per row. The values are filled sequentially across the layers.If all the elements are to be initialized to 0, then this syntax can be used:
+            C++
+
+    int arr[2][2][3] = {0};
+
+This can be only done for 0, not for any other value.Access and Update ElementsThe elements of a 3D array are accessed and updated using three indices: depth, row, and column. These indices must be within the following ranges:0 ≤ depth ≤ (depth_size - 1)0 ≤ row ≤ (row_size - 1)0 ≤ column ≤ (column_size - 1)Example:
+            C++
+
+    #include <iostream>
+using namespace std;
+
+int main() {
+    int arr[2][2][3] = {
+        {{0, 1, 2}, {3, 4, 5}},
+        {{6, 7, 8}, {9, 10, 11}}
+    };
+
+    // Accessing element at depth 
+    // 0, row 1, column 2
+    cout << arr[0][1][2] << endl;
+    
+    // Accessing element at depth 
+    // 1, row 0, column 1
+    cout << arr[1][0][1] << endl;
+    
+    // Updating element at depth 
+    // 0, row 1, column 2
+    arr[0][1][2] = 22;
+    cout << arr[0][1][2] << endl;
+    
+    // Updating element at depth \
+    
+    // 1, row 0, column 1
+    arr[1][0][1] = 99;
+    cout << arr[1][0][1];
+    return 0;
+}
+
+Output5
+7
+22
+99Traverse 3D ArrayTo traverse a 3D array, you need three nested loops: one for each dimension (depth, row, column).Example:
+            C++
+
+    #include <iostream>
+using namespace std;
+
+int main() {
+    int arr[2][2][3] = {
+        {{0, 1, 2}, {3, 4, 5}},
+        {{6, 7, 8}, {9, 10, 11}}
+    };
+    
+    // Traverse through all elements of 3D array
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            for (int k = 0; k < 3; k++) {
+                cout << arr[i][j][k] << " ";
+            }
+            cout << endl;
+        }
+    }
+    return 0;
+}
+
+Output0 1 2 
+3 4 5 
+6 7 8 
+9 10 11 
+Pass Multidimensional Arrays to FunctionsIn C++, you can pass multidimensional arrays to functions. Since multidimensional arrays have more than one dimension, the function signature needs to account for all dimensions.Passing a 2D Array to a FunctionTo pass a 2D array to a function, you can specify the number of columns (or other dimensions) in the function signature. The number of rows can be deduced automatically.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+// Function to print a 2D array
+void print2DArray(int arr[2][3]) {
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main() {
+    // Initializing a 2D array
+    int arr[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    
+    // Passing the 2D array to the function
+    print2DArray(arr);
+
+    return 0;
+}
+
+Output1 2 3 
+4 5 6 
+Passing a 3D Array to a FunctionTo pass a 3D array to a function, you need to specify the size of the second and third dimensions.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+// Function to print a 3D array
+void print3DArray(int arr[2][3][4]) {
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 3; j++) {
+            for (int k = 0; k < 4; k++) {
+                cout << arr[i][j][k] << " ";
+            }
+            cout << endl;
+        }
+    }
+}
+
+int main() {
+    // Initializing a 3D array
+    int arr[2][3][4] = {
+        {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}},
+        {{13, 14, 15, 16}, {17, 18, 19, 20}, {21, 22, 23, 24}}
+    };
+    
+    // Passing the 3D array to the function
+    print3DArray(arr);
+
+    return 0;
+}
+
+Output1 2 3 4 
+5 6 7 8 
+9 10 11 12 
+13 14 15 16 
+17 18 19 20 
+21 22 23 24

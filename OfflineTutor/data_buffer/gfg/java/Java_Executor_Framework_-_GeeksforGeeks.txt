@@ -1,0 +1,51 @@
+# Java Executor Framework - GeeksforGeeks
+
+The Executor Framework is a high-level concurrency utility introduced in Java 5 that simplifies thread management and task execution. Instead of creating and managing threads manually, developers can submit tasks to an executor, which handles thread scheduling and execution efficiently.Separates task submission from thread management.Improves application performance by reusing threads through thread pools.Provides better control over concurrent task execution and resource utilization.Key Components of the Executor FrameworkThe Executor Framework consists of several core interfaces and classes that simplify concurrent programming in Java. 1. Executor InterfaceExecutor Interface is root interface of the framework is used to execute submitted tasks without explicitly creating threads. Defines a single method:Executor executor = command -> new Thread(command).start();executor.execute(() -> System.out.println("Task executed"));2. ExecutorService InterfaceThe ExecutorService extends the Executor interface and provides advanced methods for task management, such as submitting tasks that return results and controlling executor shutdown.Supports both Runnable and Callable tasks.Provides lifecycle management (shutdown, awaitTermination).Can execute multiple tasks simultaneously.ExecutorService service = Executors.newFixedThreadPool(2);service.submit(() -> System.out.println("Running a task"));service.shutdown();3. ScheduledExecutorService InterfaceScheduledExecutorService Interface is extends ExecutorService and supports task scheduling, running tasks periodically or after a delay.ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);scheduler.scheduleAtFixedRate(task, 0, 5, TimeUnit.SECONDS);4. ThreadPoolExecutor ClassThreadPoolExecutor is the most commonly used implementation of ExecutorService. It manages a pool of worker threads to execute tasks efficiently, reusing threads to reduce overhead.Controls core pool size, maximum pool size, and queue capacity.Supports custom thread factory and rejection policies.ExecutorService executor = Executors.newFixedThreadPool(3);executor.execute(task);5. AbstractExecutorService ClassA base class that provides default implementations for ExecutorService methods. Simplifies creating custom executors by handling common functionalities like submit() and invokeAll().Common Types of Executors in JavaThe Executors utility class provides factory methods to easily create different kinds of thread pools. Each type is designed for specific concurrency requirements.Executor TypeDescriptionSyntax ExampleSingleThreadExecutorCreates a thread pool with a single thread that executes tasks sequentially.ExecutorService executor = Executors.newSingleThreadExecutor();FixedThreadPoolCreates a pool with a fixed number of threads. Excess tasks are queued until a thread becomes available.ExecutorService pool = Executors.newFixedThreadPool(2);CachedThreadPoolCreates threads as needed and reuses idle ones. Suitable for many short-lived asynchronous tasks.ExecutorService pool = Executors.newCachedThreadPool();ScheduledThreadPoolExecutes tasks periodically or after a specified delay.ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);Java Program to Create and Execute a Simple ExecutorCreating and Executing a Simple Executor in which we will create a task and execute it in a fixed poolThe Task class implements Callable and is parameterized to String type. It is also declared to throw Exception.Now in order to execute task in class “Task” we have to instantiate the Task class and are passing it to the executor for execution.Print and display the result that is returned by the Future object
+            Java
+
+    import java.util.concurrent.*;
+
+class Task implements Callable<String> {
+
+    private String message;
+
+    public Task(String message)
+    {
+        this.message = message;
+    }
+
+    public String call() throws Exception
+    {
+        return "Hi " + message + "!";
+    }
+}
+
+public class Geeks {
+
+    public static void main(String[] args)
+    {
+
+        Task task = new Task("GeeksForGeeks");
+
+        // Creating object of ExecutorService class and Future object Class
+        ExecutorService executorService = Executors.newFixedThreadPool(4);
+        Future<String> result = executorService.submit(task);
+
+        // Try block to check for exceptions
+        try {
+            System.out.println(result.get());
+        }
+
+        // Catch block to handle the exception
+        catch (InterruptedException  | ExecutionException e) {
+
+            System.out.println("Error occurred while executing the submitted task");
+            e.printStackTrace();
+        }
+
+        // Cleaning resource and shutting down JVM by saving JVM state using shutdown() method
+        executorService.shutdown();
+    }
+}
+
+OutputHi GeeksForGeeks!

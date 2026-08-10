@@ -1,0 +1,152 @@
+# Java Methods - GeeksforGeeks
+
+Java Methods are blocks of code that perform a specific task. A method allows us to reuse code, improving both efficiency and organization. All methods in Java must belong to a class. Methods are similar to functions and expose the behavior of objects. A method allows  to write a piece of logic once and reuse it wherever needed in the program. This helps keep your code clean, organized, easier to understand and manage.
+            Java
+
+    public class Geeks
+{
+    // An example method
+    public void printMessage() {
+        System.out.println("Hello, Geeks!");
+    }
+    
+    public static void main(String[] args) {
+        
+        // Create an instance of the class
+        // containing the method
+        Geeks obj = new Geeks();
+        
+        // Calling the method
+        obj.printMessage(); 
+    }
+}
+
+OutputHello, Geeks!
+Explanation: Here, first we create a method which prints Hello, Geeks! printMessage() is a simple method that prints a message.It has no parameters and does not return anything.Syntax of Java MethodsreturnType methodName(parameters) {  // method body return value; // optional (only if returnType is not void)}Key Components of a Method Declaration:Modifier: Defines access level (public, private, protected, default) Return Type: Specifies what value the method returns or void if no return Method Name: Name of the method, follows camelCase convention Parameters: Optional inputs passed to the method Method Body: Contains the logic or statements to be executedWhy Use Methods?Breaking code into separate methods helps improve readability, reusability, and maintainability Code Reusability:  Write once, use multiple times without repeating code so that code reusability increase.Modularity: Dividing a program into separate methods allows each method to handle a specific task, making the code more organized and easier to manage.Readability: Smaller, named methods make the code easier to read and understand.Maintainability: It’s easier to fix bugs or update code when it's organized into methods.Method Call Stack in JavaJava is an object-oriented and stack-based programming language where methods play a key role in controlling the program's execution flow. When a method is called, Java uses an internal structure known as the call stack to manage execution, variables, and return addresses.Call StackThe call stack is a data structure used by the program during runtime to manage method calls and local variables. It operates in a Last-In-First-Out (LIFO) manner, meaning the last method called is the first one to complete and exit. Methods Execution When a method is called:A new stack frame is added to the call stack to store method details.The method runs its code.After execution, the stack frame is removed, and control goes back to the calling method.Java automatically manages the call stack using the Java Virtual Machine (JVM).Let's use an image to understand how the method call stack worksExample: Let’s understand how the above image works with the help of a Java code example
+            Java
+
+    public class CallStackExample {
+
+    public static void D() {
+        float d = 40.5f;
+        System.out.println("In Method D");
+    }
+
+    public static void C() {
+        double c = 30.5;
+        System.out.println("In Method C");
+    }
+
+    public static void B() {
+        int b = 20;
+        C(); // Calling C
+        System.out.println("In Method B");
+    }
+
+    public static void A() {
+        int a = 10;
+        B(); // Calling B
+        System.out.println("In Method A");
+    }
+
+    public static void main(String[] args) {
+        A(); // Start with function A
+        D(); // Then call D
+    }
+}
+
+OutputIn Method C
+In Method B
+In Method A
+In Method D
+Types of Methods in Java 1. Predefined Method Predefined methods are the method that is already defined in the Java class libraries. It is also known as the standard library method or built-in method. For example, random() method which is present in the Math class and we can call it using the ClassName.methodName() as shown in the below example.
+            Java
+
+    Math.random()    // returns random value
+Math.PI     //returns the value of π as a constant. it is a Constant not a Method
+
+2. User-defined Method The method written by the user or programmer is known as a user-defined method. These methods are modified according to the requirement. Example:
+            Java
+
+    sayHello         // user define method created above in the article
+Greet() 
+setName()
+
+Different Ways to Create Java Method There are two ways to create a method in Java: 1. Instance Method:  Access the instance data using the object name. Declared inside a class.Example:
+            Java
+
+    // Instance Method
+void method_name() {
+    // instance method body
+}
+
+2. Static Method: Access the static data using class name. Declared inside class with static keyword.Example:
+            Java
+
+    // Static Method
+static void method_name() {
+    // static method body
+}
+
+Method SignatureIt consists of the method name and a parameter list.Number of parametersType of the parametersOrder of the parametersNote: The return type and exceptions are not considered as part of it.Method Signature of the above function:  max(int x, int y) Number of parameters is 2, Type of parameter is int.Naming a Method In Java language method name is typically a single word that should be a verb in lowercase or a multi-word, that begins with a verb in lowercase followed by an adjective, noun. After the first word, the first letter of each word should be capitalized.Rules to Name a Method:Method names must start with a verb in lowercase.Multi-word names should follow camelCase format.Method names should be unique within a class unless method overloading is allowed in Java.Calling Different Types of Methods in JavaMethod calling in Java means invoking a method to execute the code it contains. It transfers control to the process, runs its logic, and then returns to the calling point after execution.1. Calling a User-Defined Method User-defined methods are blocks of code written by the programmer. To execute a user-defined method, we first create an object of the class (if the method is non-static) and then call the method using that object.Example:
+            Java
+
+    class Geeks {
+    void hello() {
+        System.out.println("This is a user-defined method.");
+    }
+
+    public static void main(String[] args) {
+        Geeks obj = new Geeks(); // Create object
+        obj.hello();             // Call method
+    }
+}
+
+OutputThis is a user-defined method.
+Explanation: In the above code a class Geeks with a method hello() that displays a message. In the main() method, we create an object of the class and use it to call the hello() method.2. Calling an Abstract MethodAbstract methods have no body and must be overridden in a subclass. They are called using an object of the subclass.Example 2: Calling Methods in Different Ways
+            Java
+
+    abstract class GeeksHelp {
+    abstract void check(String name); // Abstract method
+}
+
+public class Geeks extends GeeksHelp {
+    @Override
+    void check(String name) {
+        System.out.println(name);
+    }
+
+    public static void main(String[] args) {
+        Geeks obj = new Geeks(); // Subclass object
+        obj.check("GeeksforGeeks");
+    }
+}
+
+OutputGeeksforGeeks
+Explanation: In the above code an abstract class GeeksHelp with an abstract method check(), which is implemented in the subclass Geeks. In the main() method, an object of Geeks is created to call the implemented check() method.3. Calling the Predefined MethodsJava provides many built-in methods via the Java Standard Library, like hashCode().
+            Java
+
+    public class Geeks {
+    public static void main(String[] args) {
+        Geeks obj = new Geeks();
+        System.out.println(obj.hashCode()); // Predefined method
+    }
+}
+
+Output1510467688
+Explanation:  In the above code an object of the Geeks class and calls the predefined hashCode() method.hashCode() returns an integer hash code for the object. This value is used in hash-based collections like HashMap and HashSet. It is not guaranteed to be unique or represent the memory address.4. Calling a Static Method Static methods belong to the class, not the object. They can be called without creating an object.
+            Java
+
+    class Test {
+    static void hello() {
+        System.out.println("Hello");
+    }
+}
+public class Geeks {
+    public static void main(String[] args) {
+        Test.hello(); // Call static method directly
+    }
+}
+
+OutputHello
+Explanation: we call a static method hello() from the test class without creating an instance of the class. The method prints "Hello" when invoked from the main method.Related Posts:AbstractionInstance MethodStatic Method

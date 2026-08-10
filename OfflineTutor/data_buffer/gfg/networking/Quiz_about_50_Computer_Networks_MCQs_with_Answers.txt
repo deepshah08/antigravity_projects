@@ -1,0 +1,69 @@
+# Quiz about 50 Computer Networks MCQs  with Answers
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOps50 Computer Networks MCQs  with AnswersLast Updated : DiscussCommentsQuestion 1Consider a source computer(S) transmitting a file of size 106 bits to a destination computer(D)over a network of two routers (R1 and R2) and three links(L1, L2, and L3). L1connects S to R1; L2 connects R1 to R2; and L3 connects R2 to D.Let each link be of length 100 km. Assume signals travel over each link at a speed of 108 meters per second.Assume that the link bandwidth on each link is 1Mbps. Let the file be broken down into 1000 packets each of size 1000 bits. Find the total sum of transmission and propagation delays in transmitting the file from S to D?1005 ms1010 ms3000 ms3003 msQuestion 2Consider the cyclic redundancy check (CRC) based error detecting scheme having the generator polynomial X3+X+1. Suppose the message m4m3m2m1m0 = 11000 is to be transmitted. Check bits c2c1c0 are appended at the end of the message by the transmitter using the above CRC scheme. The transmitted bit string is denoted by m4m3m2m1m0c2c1c0. The value of the checkbit sequence c2c1c0 is101110100111Question 3Consider a link with packet loss probability of 0.2. What is the expected number of transmissions it would take to transfer 200 packets given that the stop and wait protocol is used?125250225150Question 4Assume that Source S and Destination D are connected through an intermediate router R. How many times a packet has to visit the network layer and data link layer during a transmission from S to D?Network layer – 4 times, Data link layer – 4 timesNetwork layer – 4 times, Data link layer – 6 timesNetwork layer – 2 times, Data link layer – 4 timesNetwork layer – 3 times, Data link layer – 4 timesQuestion 5An Ethernet frame that is less than the IEEE 802.3 minimum length of 64 octets is calledShort frameSmall frameMini frameRunt frameQuestion 6How many bytes of data can be sent in 15 seconds over a serial link with baud rate of 9600 in asynchronous mode with odd parity and two stop bits in the frame?10,000 bytes12,000 bytes15,000 bytes27,000 bytesQuestion 7Consider a network using the pure ALOHA medium access control protocol, where each frame is of length 1,000 bits. The channel transmission rate is 1 Mbps (=106 bits per second). The aggregate number of transmissions across all the nodes (including new frame transmissions and retransmitted frames due to collisions) is modelled as a Poisson process with a rate of 1,000 frames per second. Throughput is defined as the average number of frames successfully transmitted per second. The throughput of the network (rounded to the nearest integer) is ______________ .130 to 140140 to 150120 to 130100 to 110Question 8Match the following: (1)(2)(3)(4)Question 9The minimum positive integer p such that 3p modulo 17 = 1 is581216Question 10Consider a network with five nodes, N1 to N5, as shown below.    The network uses a Distance Vector Routing protocol. Once the routes have stabilized, the distance vectors at different nodes are as following.  N1: (0, 1, 7, 8, 4) N2: (1, 0, 6, 7, 3) N3: (7, 6, 0, 2, 6) N4: (8, 7, 2, 0, 4) N5: (4, 3, 6, 4, 0)  Each distance vector is the distance of the best known path at the instance to nodes, N1 to N5, where the distance to itself is 0. Also, all links are symmetric and the cost is identical in both directions. In each round, all nodes exchange their distance vectors with their respective neighbors. Then all nodes update their distance vectors. In between two rounds, any change in cost of a link will cause the two incident nodes to change only that entry in their distance vectors. 52. The cost of link N2-N3 reduces to 2(in both directions). After the next round of updates, what will be the new distance vector at node, N3.(3, 2, 0, 2, 5) (3, 2, 0, 2, 6) (7, 2, 0, 2, 5)  (7, 2, 0, 2, 6)Tags:Computer Networks QuizThere are 50 questions to complete.Take a part in the ongoing discussionView All Discussion

@@ -1,0 +1,117 @@
+# Quiz about Quiz on C++ Pointers
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsQuiz on C++ PointersLast Updated : DiscussCommentsQuestion 1What is a pointer in C++?A variable that stores a data typeA function that points to a variableA variable that stores the memory address of another variable A reference variableQuestion 2Which of the following is the correct syntax to declare a pointer?int ptr;int &ptr;ptr *int; int *ptr;Question 3What is the output of the following C++ code?
+        C++
+        
+        #include<iostream>
+using namespace std;
+
+int main() {
+    int var = 5;
+    int *ptr = &var;
+    cout << *ptr;
+    return 0;
+}
+
+        
+    05Address of varGarbage valueQuestion 4How do you dynamically allocate memory for an array in C++ using pointers?int arr[10];int *arr = new int[10];int *arr = malloc(10 * sizeof(int));int *arr = int[10];Question 5What does the following C++ code do?
+        C++
+        
+        #include<iostream>
+using namespace std;
+
+int main() {
+    int *ptr = NULL;
+    ptr = new int;
+    *ptr = 7;
+    cout << *ptr;
+    delete ptr;
+    return 0;
+}
+
+        
+    Outputs 0Outputs 7Causes a compile-time errorCauses a segmentation faultQuestion 6What happens if you dereference a NULL pointer in C++?Outputs 0Undefined behaviorCauses a compile-time errorOutputs NULLQuestion 7How to release the memory allocated by a pointer in C++?delete pointer;free(pointer);release(pointer);remove(pointer);Question 8Which operator is used to access the value stored at the address stored in a pointer variable?&->*::Question 9What is the correct way to declare a constant pointer to an integer in C++?int const *ptr; const int * const ptr; const int *ptr;int * const ptr;Question 10What will be the output of the following C++ code?
+        C++
+        
+        #include<iostream>
+using namespace std;
+
+void updateValue(int *ptr) {
+    *ptr = 20;
+}
+
+int main() {
+    int var = 10;
+    updateValue(&var);
+    cout << var;
+    return 0;
+}
+
+        
+    100 20Garbage valueTags:C++C++ QuizThere are 25 questions to complete.Take a part in the ongoing discussionView All Discussion

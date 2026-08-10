@@ -1,0 +1,76 @@
+# Internal Linkage and External Linkage in C - GeeksforGeeks
+
+Linkage is the property that determines how identifiers (variables and functions) are connected across different parts of a program.Linkage determines whether an identifier can be shared across files or remains restricted to the file in which it is declared (or a single translation unit). It is different from scope, scope controls visibility, while linkage controls accessibility across files. A translation unit is a source file along with its included header files and dependencies, processed as a single unit by the compiler to generate object code.In a multi-file C program, each source file is compiled separately, and the linker combines multiple object files to produce the final executable. There are three types of linkage in C: Internal linkage, External linkage and No linkage.Internal LinkageAn identifier implementing internal linkage is not accessible outside the translation unit it is declared in. Any identifier within the unit can access an identifier having internal linkage. It is implemented by the keyword static. An internally linked identifier is stored in initialized or uninitialized segment of RAM. For example,Consider a source file: animals.c
+            C
+
+    #include <stdio.h>
+
+// Variable with internal linkage
+static int animals = 8;
+
+The above code implements static linkage on identifier animals.Consider another source file: feed.c is located in the same translation unit using #include
+            C
+
+    #include <stdio.h>
+#include "animals.c"
+
+int main() {
+  
+  	// Accessing variable.
+    printf("%d", animals);
+    return 0;
+}
+
+On compiling and executing feed.c using the following command:gcc feed.c -o feed./feedWe get the output,8Now, consider that feed.c is located in a different translation unit (means we are not including the animals.c using #include). Trying to compile it using the following command:gcc feed.c animals.c -o feed./feedCompiler will throw an errorfeed.c: In function 'main':feed.c:6:18: error: 'animals' undeclared (first use in this function)    6 |     printf("%d", animals);      |                  ^~~~~~~feed.c:6:18: note: each undeclared identifier is reported only once for each function it appears inExternal LinkageAn identifier implementing external linkage is visible to every translation unit. Externally linked identifiers are shared between translation units and are considered to be located at the outermost level of the program. It is the default linkage for globally scoped variables and functions.The keyword extern implements external linkage. When we use the keyword extern, we tell the linker to look for the definition elsewhere. Thus, the declaration of an externally linked identifier does not take up any space. Extern identifiers are generally stored in initialized/uninitialized or text segment of RAM.Take the above example of internal linkage and remove the static keyword.animals.c
+            C
+
+    #include <stdio.h>
+
+// Variable with external linkage
+int animals = 8;
+
+As the variable animals is declared globally, it is accessible to all the translation units.Now, consider the file feed.c is in the different translational unit
+            C
+
+    #include <stdio.h>
+
+// Telling compiler that the variable has
+// external linkage
+extern int animals;
+
+int main() {
+  
+  	// Accessing variable.
+    printf("%d", animals);
+    return 0;
+}
+
+Compile and execute both files using the command:gcc feed.c animals.c -o feed./feedOutput:8 The variable animals have external linkage that's why we can access it in the other translation unit.Example of External and Internal LinkageBelow is an example of external and internal linkage. Modify the file animals.c as shown:
+            C
+
+    #include <stdio.h>
+
+// Variable with internal linkage
+static int animals = 8;
+
+// Function with external linkage
+void printAnimals() {
+  	printf("%d\n", animals);
+}
+
+Here, animals variable have internal linkage (as it is declared static) while the function printAnimals() have external linkage (as it is declared globally).Update the feed.c file as well
+            C
+
+    #include <stdio.h>
+
+// Telling compiler that the function have
+// external linkage
+extern void printAnimals();
+
+int main() {
+  
+  	printAnimals();
+    return 0;
+}
+
+The above code will print the value of "animals" variable because we are not accessing the value of animals in other translation unit. We are just accessing the function printAnimals() which is externally linked and in turn belongs to the same translation unit as animals. So it is able to access the value of the variable animals.
