@@ -98,7 +98,7 @@ function HomeView() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('/data/topics-registry.json')
+    fetch('./data/topics-registry.json')
       .then(res => {
         if (!res.ok) throw new Error('Failed to fetch topics registry');
         return res.json();
@@ -148,7 +148,7 @@ function TopicIndex() {
   const [completedState] = useLocalStorage<Record<string, boolean>>('completed-articles', {});
 
   useEffect(() => {
-    fetch(`/data/${topicId}-index.json`)
+    fetch(`./data/${topicId}-index.json`)
       .then(res => {
         if (!res.ok) throw new Error('Topic not found or data missing');
         return res.json();
@@ -338,13 +338,13 @@ function ArticleReader() {
     setError('');
 
     // Fetch index for navigation
-    fetch(`/data/${topicId}-index.json`)
+    fetch(`./data/${topicId}-index.json`)
       .then(res => res.json())
       .then(setIndexData)
       .catch(console.warn);
 
     // Fetch article content
-    fetch(`/data/${articleId}.json`)
+    fetch(`./data/${articleId}.json`)
       .then(res => {
         if (!res.ok) throw new Error('Failed to load article content');
         return res.json();
