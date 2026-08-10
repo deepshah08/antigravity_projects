@@ -1,25 +1,55 @@
-# Offline Knowledge Center
+# Offline Knowledge Center & Socratic AI Tutor
 
-This project allows you to scrape tutorial websites (currently configured for GeeksForGeeks) and build a lightweight, offline-compatible Single Page Application (PWA) to read those tutorials without ads or distractions.
+Welcome to the **Offline Knowledge Center & Socratic AI Tutor**. This project is a comprehensive solution for offline learning with an integrated Socratic AI tutor.
 
-## Technical Details
+## Architecture Diagram
 
-### Architecture
-- **Frontend (SPA):** Built with Vite, React, and Tailwind CSS. We use `vite-plugin-pwa` to turn the site into a Progressive Web App. The frontend fetches article data from statically generated JSON files in the `/public/data` directory, meaning no backend server is required.
-- **Scraper:** A Node.js module (using TypeScript, Axios, JSDOM, and Mozilla Readability).
-  - The scraper fetches a main index page, discovers all links within a specific CSS selector, and queues them up.
-  - To respect rate limits and ensure we bypass basic protections, we implement a delay between requests.
-  - Mozilla Readability (the same library behind Firefox's Reader View) is used to cleanly extract the title and core article content while ignoring sidebars, ads, and footers.
-  - Images are downloaded locally and rewritten in the HTML, ensuring full offline functionality.
-- **State Management:** User progress (bookmarks and "completed" articles) is stored in the browser's `localStorage`.
+```mermaid
+graph TD
+    A[Scraper] -->|Outputs| B(Static Data)
+    B -->|Consumed by| C[PWA React Reader]
+    C <-->|Interacts with| D[FastAPI Backend]
+    D <-->|RAG Pipeline| E[Gemini 2.5 Flash + Keenable RAG]
+```
 
-### Why this stack?
-- **Vite + React:** extremely fast development cycle, minimal overhead, and easy to configure as a static PWA.
-- **Mozilla Readability:** The most robust, battle-tested automatic article extraction tool available. It means we don't have to write custom CSS selectors for every single paragraph or code block on GeeksForGeeks.
-- **TailwindCSS:** Provides quick utility classes, making it simple to implement the requested "Terminal Pro" aesthetic (dark mode, Outfit font, orange accents).
+## Feature Highlights
 
-## Usage
+* **100% Offline-First PWA tutorial reader**
+* **Decoupled content scraper and markdown exporter**
+* **Socratic AI Tutor powered by Gemini 2.5 Flash**
+* **Real-time Web Search Fallback via Keenable CLI**
 
-1. Run the scraper: `cd scraper && npx tsx index.ts`
-2. Run the frontend: `cd offline-knowledge-center && npm run dev`
-3. Build for production: `cd offline-knowledge-center && npm run build`
+## Setup & Running Instructions
+
+### Environment Variables
+
+Set up the required environment variables:
+
+```bash
+export GEMINI_API_KEY="your_gemini_api_key"
+export KEENABLE_API_KEY="your_keenable_api_key"
+```
+
+### Running the Scraper & Exporter
+
+Execute the pipeline script to scrape content and export markdown:
+
+```bash
+./run_pipeline.sh
+```
+
+### Launching the Offline Reader
+
+Start the React PWA offline reader:
+
+```bash
+cd offline-knowledge-center && npm run dev
+```
+
+### Starting the AI Backend
+
+Run the FastAPI backend for the Socratic AI Tutor:
+
+```bash
+cd OfflineTutor && uvicorn api:app --reload
+```
