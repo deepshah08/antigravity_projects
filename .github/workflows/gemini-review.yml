@@ -20,5 +20,6 @@ jobs:
         uses: google-github-actions/run-gemini-cli@v1
         with:
           gemini_api_key: ${{ secrets.GEMINI_API_KEY }}
+          model: "gemini-3.6-flash"
           prompt: |
             You are an expert code reviewer. Please review this Pull Request for security, performance, code cleanliness, and adherence to project conventions. Highlight any potential bugs or regressions.
