@@ -85,7 +85,28 @@ function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
+interface TopicRegistry {
+  topics: {
+    id: string;
+    title: string;
+    description: string;
+  }[];
+}
+
 function HomeView() {
+  const [topics, setTopics] = useState<TopicRegistry['topics'] | null>(null);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    fetch('/data/topics-registry.json')
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to fetch topics registry');
+        return res.json();
+      })
+      .then(data => setTopics(data.topics))
+      .catch(e => setError(e.message));
+  }, []);
+
   return (
     <div className="space-y-12 py-12">
       <div className="text-center space-y-4">
@@ -95,22 +116,27 @@ function HomeView() {
         </p>
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-        <Link to="/topic/linux" className="group p-6 rounded-2xl bg-surface border border-white/5 hover:border-primary/50 transition-all hover:-translate-y-1">
-          <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-            <Book className="w-6 h-6 text-primary" />
-          </div>
-          <h2 className="text-2xl font-semibold mb-2">Linux Tutorial</h2>
-          <p className="text-textMuted">Master the command line, file systems, and core Linux administration concepts.</p>
-        </Link>
-        <Link to="/topic/distributed-systems" className="group p-6 rounded-2xl bg-surface border border-white/5 hover:border-primary/50 transition-all hover:-translate-y-1">
-          <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-            <Book className="w-6 h-6 text-primary" />
-          </div>
-          <h2 className="text-2xl font-semibold mb-2">Distributed Systems</h2>
-          <p className="text-textMuted">Learn about network architectures, consensus, and scalable systems.</p>
-        </Link>
-      </div>
+      {error && <div className="text-red-400 p-4 text-center bg-red-400/10 rounded-xl">{error}</div>}
+      
+      {!topics && !error && (
+        <div className="flex justify-center items-center py-12">
+          <Loader2 className="w-8 h-8 animate-spin text-primary" />
+        </div>
+      )}
+
+      {topics && (
+        <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          {topics.map(topic => (
+            <Link key={topic.id} to={`/topic/${topic.id}`} className="group p-6 rounded-2xl bg-surface border border-white/5 hover:border-primary/50 transition-all hover:-translate-y-1">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <Book className="w-6 h-6 text-primary" />
+              </div>
+              <h2 className="text-2xl font-semibold mb-2">{topic.title}</h2>
+              <p className="text-textMuted">{topic.description}</p>
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -122,7 +148,7 @@ function TopicIndex() {
   const [completedState] = useLocalStorage<Record<string, boolean>>('completed-articles', {});
 
   useEffect(() => {
-    fetch(`http://localhost:8000/api/curriculum/${topicId}`)
+    fetch(`/data/${topicId}-index.json`)
       .then(res => {
         if (!res.ok) throw new Error('Topic not found or data missing');
         return res.json();
@@ -312,7 +338,7 @@ function ArticleReader() {
     setError('');
 
     // Fetch index for navigation
-    fetch(`http://localhost:8000/api/curriculum/${topicId}`)
+    fetch(`/data/${topicId}-index.json`)
       .then(res => res.json())
       .then(setIndexData)
       .catch(console.warn);
