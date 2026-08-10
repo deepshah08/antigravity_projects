@@ -1,0 +1,16 @@
+{
+  "topics": [
+    {
+      "id": "linux",
+      "title": "Linux Tutorial",
+      "articleCount": 117,
+      "icon": "terminal"
+    },
+    {
+      "id": "distributed-systems",
+      "title": "Distributed Systems Tutorial",
+      "articleCount": 110,
+      "icon": "network"
+    }
+  ]
+}

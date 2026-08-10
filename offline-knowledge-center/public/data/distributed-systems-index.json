@@ -1,0 +1,446 @@
+{
+  "id": "distributed-systems",
+  "title": "Distributed Systems Tutorial",
+  "articles": [
+    {
+      "id": "distributed-systems-001",
+      "title": "Goals of Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-002",
+      "title": "Types of Transparency in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-003",
+      "title": "Centralized vs. Decentralized vs. Distributed Systems - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-004",
+      "title": "Loosely Coupled vs Tightly Coupled Multiprocessor System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-005",
+      "title": "Design Issues of Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-006",
+      "title": "Various Failures in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-007",
+      "title": "Parallel Computing vs Distributed Computing - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-008",
+      "title": "Scalable System in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-009",
+      "title": "Middleware in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-010",
+      "title": "Hardware vs Middleware - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-011",
+      "title": "Groupware in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-012",
+      "title": "Interprocess Communication in Distributed Systems - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-013",
+      "title": "gRPC Communication in Distributed Systems - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-014",
+      "title": "Gossip Protocol in Disrtibuted Systems - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-015",
+      "title": "Message Passing in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-016",
+      "title": "Issues in IPC By Message Passing in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-017",
+      "title": "Remote Procedural Call (RPC) Mechanism - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-018",
+      "title": "Distributed System - Transparency of RPC - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-019",
+      "title": "RPC Implementation Mechanism in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-020",
+      "title": "Stub Generation in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-021",
+      "title": "Marshalling in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-022",
+      "title": "Server Management in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-023",
+      "title": "Distributed System - Parameter Passing Semantics in RPC - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-024",
+      "title": "Distributed System - Call Semantics in RPC - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-025",
+      "title": "Communication Protocols For RPCs - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-026",
+      "title": "Client-Server Model - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-027",
+      "title": "Synchronization in Distributed Systems - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-028",
+      "title": "Clock Synchronization in Distributed Systems - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-029",
+      "title": "Logical Clock in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-030",
+      "title": "Lamport's Algorithm for Mutual Exclusion in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-031",
+      "title": "Vector Clocks in Distributed Systems - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-032",
+      "title": "Event Ordering in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-033",
+      "title": "Mutual exclusion in distributed system - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-034",
+      "title": "Cristian's Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-035",
+      "title": "Berkeley's Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-036",
+      "title": "Difference between Token based and Non-Token based Algorithms in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-037",
+      "title": "Ricart–Agrawala Algorithm in Mutual Exclusion in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-038",
+      "title": "Suzuki–Kasami Algorithm for Mutual Exclusion in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-039",
+      "title": "Features of Global Scheduling Algorithm in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-040",
+      "title": "What is Task Assignment Approach in Distributed System? - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-041",
+      "title": "Load Balancing Approach in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-042",
+      "title": "Load-Sharing Approach in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-043",
+      "title": "Difference Between Load Balancing and Load Sharing in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-044",
+      "title": "Scheduling and Load Balancing in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-045",
+      "title": "Introduction of Process Management - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-046",
+      "title": "Process Migration in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-047",
+      "title": "What is DFS (Distributed File System)? - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-048",
+      "title": "Network File System (NFS) - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-049",
+      "title": "Andrew File System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-050",
+      "title": "File Service Architecture in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-051",
+      "title": "File Models in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-052",
+      "title": "File Accessing Models in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-053",
+      "title": "File Sharing Semantics in Distributed Systems - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-054",
+      "title": "File Caching in Distributed File Systems - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-055",
+      "title": "What is Replication in Distributed System? - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-056",
+      "title": "Atomic Commit Protocol in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-057",
+      "title": "Design Principles of Distributed File System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-058",
+      "title": "Architecture of Distributed Shared Memory(DSM) - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-059",
+      "title": "Uniform Memory Access (UMA) vs Non-uniform Memory Access (NUMA) - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-060",
+      "title": "Design and Implementation Issue of Distributed Shared Memory - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-061",
+      "title": "Algorithm for implementing Distributed Shared Memory - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-062",
+      "title": "Consistency Model in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-063",
+      "title": "Distributed System - Thrashing in Distributed Shared Memory - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-064",
+      "title": "Issues Related to Load Balancing in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-065",
+      "title": "Components of Load Distributing Algorithm - Distributed Systems - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-066",
+      "title": "Phantom Deadlock in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-067",
+      "title": "Distributed System - Types of Distributed Deadlock - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-068",
+      "title": "Deadlock Detection in Distributed Systems - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-069",
+      "title": "Conditions for Deadlock in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-070",
+      "title": "Deadlock Handling Strategies in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-071",
+      "title": "Banker's Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-072",
+      "title": "Deadlock Prevention Policies in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-073",
+      "title": "WFG-Based Distributed Algorithm For Deadlock Detection - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-074",
+      "title": "Chandy-Misra-Haas's Distributed Deadlock Detection Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-075",
+      "title": "Hierarchical Deadlock Detection in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-076",
+      "title": "Security in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-077",
+      "title": "Types of Cyber Attacks - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-078",
+      "title": "Cryptography and its Types - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-079",
+      "title": "User Authentication and its Importance - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-080",
+      "title": "Implementation of Access Matrix in Distributed OS - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-081",
+      "title": "Digital Signatures and Certificates - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-082",
+      "title": "Design Principles of Security in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-083",
+      "title": "Distributed Database System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-084",
+      "title": "Functions of Distributed Database System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-085",
+      "title": "Types of Database Management Systems - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-086",
+      "title": "Comparison of Homogeneous and Heterogeneous Databases - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-087",
+      "title": "Distributed Multimedia Systems - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-088",
+      "title": "Multimedia Database - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-089",
+      "title": "What is Destination Based Routing? - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-090",
+      "title": "Deadlock-Free Packet Switching - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-091",
+      "title": "Wave and Traversal Algorithm in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-092",
+      "title": "Election algorithm and distributed processing - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-093",
+      "title": "Difference Between Ring and Bully Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-094",
+      "title": "Introduction to Common Object Request Broker Architecture (CORBA) - Client-Server Software Development - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-095",
+      "title": "Difference between CORBA and DCOM - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-096",
+      "title": "Difference Between COM and DCOM - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-097",
+      "title": "Life cycle of Component Object Model (COM) Object - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-098",
+      "title": "Distributed Component Object Model (DCOM) - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-099",
+      "title": "What is a Distributed Transaction? - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-100",
+      "title": "Flat &amp; Nested Distributed Transactions - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-101",
+      "title": "Concurrency Control in Distributed Transactions - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-102",
+      "title": "Transaction Recovery in Distributed System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-103",
+      "title": "Mechanism for Building Distributed File System - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-104",
+      "title": "Two Phase Commit Protocol (Distributed Transaction Management) - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-105",
+      "title": "DSA Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-106",
+      "title": "System Design Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-107",
+      "title": "Aptitude Questions and Answers - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-108",
+      "title": "Web Development Technologies - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-109",
+      "title": "AI, ML and Data Science Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-110",
+      "title": "DevOps Tutorial - GeeksforGeeks"
+    }
+  ]
+}

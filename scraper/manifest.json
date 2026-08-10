@@ -1,0 +1,1154 @@
+{
+  "generatedAt": "2026-08-10T04:32:01.251Z",
+  "topics": [
+    {
+      "id": "linux",
+      "title": "Linux Tutorial",
+      "indexUrl": "https://www.geeksforgeeks.org/linux-tutorial/",
+      "articles": [
+        {
+          "id": "linux-001",
+          "title": "Introduction",
+          "url": "https://www.geeksforgeeks.org/linux-unix/introduction-to-linux-operating-system/"
+        },
+        {
+          "id": "linux-002",
+          "title": "Installing",
+          "url": "https://www.geeksforgeeks.org/linux-unix/installing-linux-using-virtual-machine/"
+        },
+        {
+          "id": "linux-003",
+          "title": "Distributions",
+          "url": "https://www.geeksforgeeks.org/linux-unix/what-are-linux-distributions/"
+        },
+        {
+          "id": "linux-004",
+          "title": "Architecture",
+          "url": "https://www.geeksforgeeks.org/linux-unix/architecture-of-linux-operating-system/"
+        },
+        {
+          "id": "linux-005",
+          "title": "Difference between Linux Vs Unix",
+          "url": "https://www.geeksforgeeks.org/linux-unix/linux-vs-unix/"
+        },
+        {
+          "id": "linux-006",
+          "title": "File System",
+          "url": "https://www.geeksforgeeks.org/linux-unix/linux-file-system/"
+        },
+        {
+          "id": "linux-007",
+          "title": "File Hierarchy Structure",
+          "url": "https://www.geeksforgeeks.org/linux-unix/linux-file-hierarchy-structure/"
+        },
+        {
+          "id": "linux-008",
+          "title": "Directory Structure",
+          "url": "https://www.geeksforgeeks.org/linux-unix/linux-directory-structure/"
+        },
+        {
+          "id": "linux-009",
+          "title": "File System Navigation Commands",
+          "url": "https://www.geeksforgeeks.org/linux-unix/file-system-navigation-commands-in-linux/"
+        },
+        {
+          "id": "linux-010",
+          "title": "Absolute and Relative Pathnames in UNIX",
+          "url": "https://www.geeksforgeeks.org/linux-unix/absolute-relative-pathnames-unix/"
+        },
+        {
+          "id": "linux-011",
+          "title": "Basic Commands",
+          "url": "https://www.geeksforgeeks.org/linux-unix/basic-linux-commands/"
+        },
+        {
+          "id": "linux-012",
+          "title": "Complete Commands",
+          "url": "https://www.geeksforgeeks.org/linux-unix/linux-commands/"
+        },
+        {
+          "id": "linux-013",
+          "title": "File Management",
+          "url": "https://www.geeksforgeeks.org/linux-unix/file-management-in-linux/"
+        },
+        {
+          "id": "linux-014",
+          "title": "Directory Management",
+          "url": "https://www.geeksforgeeks.org/linux-unix/how-to-manage-directories-in-linux/"
+        },
+        {
+          "id": "linux-015",
+          "title": "Permissions",
+          "url": "https://www.geeksforgeeks.org/linux-unix/set-file-permissions-linux/"
+        },
+        {
+          "id": "linux-016",
+          "title": "Changing Permissions using chmod",
+          "url": "https://www.geeksforgeeks.org/linux-unix/chmod-command-linux/"
+        },
+        {
+          "id": "linux-017",
+          "title": "Changing Ownership using chown",
+          "url": "https://www.geeksforgeeks.org/linux-unix/chown-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-018",
+          "title": "Creating and Extracting Archives using tar",
+          "url": "https://www.geeksforgeeks.org/linux-unix/tar-command-linux-examples/"
+        },
+        {
+          "id": "linux-019",
+          "title": "Compressing Files using gzip",
+          "url": "https://www.geeksforgeeks.org/linux-unix/gzip-command-linux/"
+        },
+        {
+          "id": "linux-020",
+          "title": "Decompressing Files using gunzip",
+          "url": "https://www.geeksforgeeks.org/linux-unix/gunzip-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-021",
+          "title": "Compressing and Extracting Files using zip and unzip",
+          "url": "https://www.geeksforgeeks.org/linux-unix/zip-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-022",
+          "title": "High-Compression Archiving using bzip2",
+          "url": "https://www.geeksforgeeks.org/linux-unix/bzip2-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-023",
+          "title": "High-Efficiency Compression using xz",
+          "url": "https://www.geeksforgeeks.org/linux-unix/xz-lossless-data-compression-tool-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-024",
+          "title": "Package Managers & systemctl",
+          "url": "https://www.geeksforgeeks.org/linux-unix/understanding-package-managers-and-systemctl/"
+        },
+        {
+          "id": "linux-025",
+          "title": "apt-get Package Manager (Debian/Ubuntu)",
+          "url": "https://www.geeksforgeeks.org/linux-unix/apt-get-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-026",
+          "title": "dpkg – Debian Package Manager",
+          "url": "https://www.geeksforgeeks.org/linux-unix/debian-software-package-managementdpkg-in-linux/"
+        },
+        {
+          "id": "linux-027",
+          "title": "dnf Package Manager (Fedora/RHEL 8+)",
+          "url": "https://www.geeksforgeeks.org/linux-unix/what-is-fedoras-dnf-package-manager-and-how-to-use-it/"
+        },
+        {
+          "id": "linux-028",
+          "title": "yum Package Manager (CentOS/RHEL)",
+          "url": "https://www.geeksforgeeks.org/linux-unix/yum-commands-for-linux-package-management/"
+        },
+        {
+          "id": "linux-029",
+          "title": "User Management",
+          "url": "https://www.geeksforgeeks.org/linux-unix/user-management-in-linux/"
+        },
+        {
+          "id": "linux-030",
+          "title": "Creating Users",
+          "url": "https://www.geeksforgeeks.org/linux-unix/useradd-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-031",
+          "title": "Creating Users Interactively",
+          "url": "https://www.geeksforgeeks.org/linux-unix/adduser-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-032",
+          "title": "Deleting Users",
+          "url": "https://www.geeksforgeeks.org/linux-unix/userdel-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-033",
+          "title": "Managing User Passwords",
+          "url": "https://www.geeksforgeeks.org/linux-unix/passwd-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-034",
+          "title": "Viewing User Information",
+          "url": "https://www.geeksforgeeks.org/linux-unix/id-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-035",
+          "title": "Group Management",
+          "url": "https://www.geeksforgeeks.org/linux-unix/group-management-in-linux/"
+        },
+        {
+          "id": "linux-036",
+          "title": "Managing Groups",
+          "url": "https://www.geeksforgeeks.org/linux-unix/groups-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-037",
+          "title": "Creating Groups",
+          "url": "https://www.geeksforgeeks.org/linux-unix/groupadd-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-038",
+          "title": "Deleting Groups",
+          "url": "https://www.geeksforgeeks.org/linux-unix/groupdel-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-039",
+          "title": "Checking User Group Membership",
+          "url": "https://www.geeksforgeeks.org/linux-unix/how-to-check-the-groups-a-user-belongs-to-in-linux/"
+        },
+        {
+          "id": "linux-040",
+          "title": "Managing Administrative Access",
+          "url": "https://www.geeksforgeeks.org/linux-unix/sudo-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-041",
+          "title": "Configuring Network Interfaces",
+          "url": "https://www.geeksforgeeks.org/linux-unix/ifconfig-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-042",
+          "title": "Managing IP Addresses and Interfaces",
+          "url": "https://www.geeksforgeeks.org/linux-unix/ip-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-043",
+          "title": "Managing Network Connections",
+          "url": "https://www.geeksforgeeks.org/linux-unix/nmcli-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-044",
+          "title": "Testing Network Connectivity",
+          "url": "https://www.geeksforgeeks.org/linux-unix/ping-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-045",
+          "title": "Monitoring Network Connections",
+          "url": "https://www.geeksforgeeks.org/linux-unix/netstat-command-linux/"
+        },
+        {
+          "id": "linux-046",
+          "title": "Inspecting Socket Statistics",
+          "url": "https://www.geeksforgeeks.org/linux-unix/ss-command-in-linux/"
+        },
+        {
+          "id": "linux-047",
+          "title": "Tracing Network Routes",
+          "url": "https://www.geeksforgeeks.org/linux-unix/traceroute-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-048",
+          "title": "Dynamic Host Configuration Protocol (DHCP)",
+          "url": "https://www.geeksforgeeks.org/computer-networks/dynamic-host-configuration-protocol-dhcp/"
+        },
+        {
+          "id": "linux-049",
+          "title": "Domain Name System (DNS)",
+          "url": "https://www.geeksforgeeks.org/computer-networks/domain-name-system-dns-in-application-layer/"
+        },
+        {
+          "id": "linux-050",
+          "title": "File Transfer Protocol (FTP)",
+          "url": "https://www.geeksforgeeks.org/computer-networks/file-transfer-protocol-ftp-in-application-layer/"
+        },
+        {
+          "id": "linux-051",
+          "title": "Linux Firewall",
+          "url": "https://www.geeksforgeeks.org/linux-unix/linux-firewall/"
+        },
+        {
+          "id": "linux-052",
+          "title": "Setting up firewalls",
+          "url": "https://www.geeksforgeeks.org/ethical-hacking/add-a-linux-firewall-ufw-or-iptables/"
+        },
+        {
+          "id": "linux-053",
+          "title": "Basic iptables commands",
+          "url": "https://www.geeksforgeeks.org/linux-unix/iptables-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-054",
+          "title": "Managing firewall configuration",
+          "url": "https://www.geeksforgeeks.org/linux-unix/how-to-setup-firewall-in-linux/"
+        },
+        {
+          "id": "linux-055",
+          "title": "Configure network interfaces in CentOS",
+          "url": "https://www.geeksforgeeks.org/linux-unix/how-to-configure-network-interfaces-in-centos/"
+        },
+        {
+          "id": "linux-056",
+          "title": "Network configuration and troubleshooting",
+          "url": "https://www.geeksforgeeks.org/linux-unix/network-configuration-trouble-shooting-commands-linux/"
+        },
+        {
+          "id": "linux-057",
+          "title": "System Monitoring",
+          "url": "https://www.geeksforgeeks.org/linux-unix/linux-system-monitoring-commands-and-tools/"
+        },
+        {
+          "id": "linux-058",
+          "title": "Viewing Processes",
+          "url": "https://www.geeksforgeeks.org/linux-unix/ps-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-059",
+          "title": "Real-Time Process Monitoring",
+          "url": "https://www.geeksforgeeks.org/linux-unix/top-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-060",
+          "title": "Enhanced Process Monitoring",
+          "url": "https://www.geeksforgeeks.org/linux-unix/htop-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-061",
+          "title": "Managing Processes",
+          "url": "https://www.geeksforgeeks.org/linux-unix/kill-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-062",
+          "title": "Controlling Process Priority",
+          "url": "https://www.geeksforgeeks.org/linux-unix/nice-and-renice-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-063",
+          "title": "Running Jobs in Background",
+          "url": "https://www.geeksforgeeks.org/linux-unix/bg-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-064",
+          "title": "Bringing Jobs to Foreground",
+          "url": "https://www.geeksforgeeks.org/linux-unix/fg-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-065",
+          "title": "Monitoring Disk Usage",
+          "url": "https://www.geeksforgeeks.org/linux-unix/du-command-linux/"
+        },
+        {
+          "id": "linux-066",
+          "title": "Systemd Introduction",
+          "url": "https://www.geeksforgeeks.org/linux-unix/linux-systemd-and-its-components/"
+        },
+        {
+          "id": "linux-067",
+          "title": "Linux Boot Process",
+          "url": "https://www.geeksforgeeks.org/linux-unix/boot-process-with-systemd-in-linux/"
+        },
+        {
+          "id": "linux-068",
+          "title": "Controlling Systemd Services",
+          "url": "https://www.geeksforgeeks.org/linux-unix/how-to-control-systemd-services-on-remote-linux-server/"
+        },
+        {
+          "id": "linux-069",
+          "title": "Systemctl Command",
+          "url": "https://www.geeksforgeeks.org/linux-unix/systemctl-in-unix/"
+        },
+        {
+          "id": "linux-070",
+          "title": "Journalctl",
+          "url": "https://www.geeksforgeeks.org/linux-unix/journalctl-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-071",
+          "title": "Checking Disk Space",
+          "url": "https://www.geeksforgeeks.org/linux-unix/df-command-in-linux/"
+        },
+        {
+          "id": "linux-072",
+          "title": "Monitoring Memory Usage",
+          "url": "https://www.geeksforgeeks.org/linux-unix/free-command-linux-examples/"
+        },
+        {
+          "id": "linux-073",
+          "title": "Viewing CPU Information",
+          "url": "https://www.geeksforgeeks.org/linux-unix/how-to-use-linux-lscpu-command/"
+        },
+        {
+          "id": "linux-074",
+          "title": "Checking System Uptime and Load",
+          "url": "https://www.geeksforgeeks.org/blogs/linux-uptime-command-with-examples/"
+        },
+        {
+          "id": "linux-075",
+          "title": "Monitoring CPU and I/O Performance",
+          "url": "https://www.geeksforgeeks.org/linux-unix/iostat-command-in-linux/"
+        },
+        {
+          "id": "linux-076",
+          "title": "Listing Open Files and Processes",
+          "url": "https://www.geeksforgeeks.org/linux-unix/lsof-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-077",
+          "title": "Enabling SSH",
+          "url": "https://www.geeksforgeeks.org/linux-unix/enabling-ssh-on-ubuntu/"
+        },
+        {
+          "id": "linux-078",
+          "title": "Installing JDK",
+          "url": "https://www.geeksforgeeks.org/techtips/how-to-install-java-in-ubuntu/"
+        },
+        {
+          "id": "linux-079",
+          "title": "Installing Atom Editor",
+          "url": "https://www.geeksforgeeks.org/linux-unix/how-to-install-atom-text-editor-in-linux/"
+        },
+        {
+          "id": "linux-080",
+          "title": "Installing Ubuntu on VMware in Windows",
+          "url": "https://www.geeksforgeeks.org/installation-guide/how-to-install-ubuntu-on-windows-using-vmware/"
+        },
+        {
+          "id": "linux-081",
+          "title": "SCP Command for Secure File and Folder Transfer",
+          "url": "https://www.geeksforgeeks.org/linux-unix/scp-command-in-linux-with-examples/"
+        },
+        {
+          "id": "linux-082",
+          "title": "Installing and Configuring Nginx from Source",
+          "url": "https://www.geeksforgeeks.org/linux-unix/how-to-install-and-configure-nginx-from-source-on-linux/"
+        },
+        {
+          "id": "linux-083",
+          "title": "Linux Shell",
+          "url": "https://www.geeksforgeeks.org/linux-unix/introduction-linux-shell-shell-scripting/"
+        },
+        {
+          "id": "linux-084",
+          "title": "Kernel",
+          "url": "https://www.geeksforgeeks.org/linux-unix/the-linux-kernel/"
+        },
+        {
+          "id": "linux-085",
+          "title": "Different Shells",
+          "url": "https://www.geeksforgeeks.org/linux-unix/different-shells-in-linux/"
+        },
+        {
+          "id": "linux-086",
+          "title": "Difference between Shell and Kernel",
+          "url": "https://www.geeksforgeeks.org/operating-systems/difference-between-shell-and-kernel/"
+        },
+        {
+          "id": "linux-087",
+          "title": "Terminal",
+          "url": "https://www.geeksforgeeks.org/operating-systems/what-is-terminal-console-shell-and-kernel/"
+        },
+        {
+          "id": "linux-088",
+          "title": "Creating a Shell Script",
+          "url": "https://www.geeksforgeeks.org/linux-unix/how-to-create-a-shell-script-in-linux/"
+        },
+        {
+          "id": "linux-089",
+          "title": "Comments in the Shell Script",
+          "url": "https://www.geeksforgeeks.org/linux-unix/comments-in-shell-script/"
+        },
+        {
+          "id": "linux-090",
+          "title": "Storing and Displaying Messages in a Shell Script",
+          "url": "https://www.geeksforgeeks.org/linux-unix/shell-script-to-broadcast-a-message/"
+        },
+        {
+          "id": "linux-091",
+          "title": "Storing the Output of Commands",
+          "url": "https://www.geeksforgeeks.org/linux-unix/how-to-save-output-of-command-in-a-file-in-linux/"
+        },
+        {
+          "id": "linux-092",
+          "title": "Exit Codes of Shell Commands",
+          "url": "https://www.geeksforgeeks.org/linux-unix/how-to-exit-when-errors-occur-in-bash-scripts/"
+        },
+        {
+          "id": "linux-093",
+          "title": "Shell Variables",
+          "url": "https://www.geeksforgeeks.org/linux-unix/shell-scripting-shell-variables/"
+        },
+        {
+          "id": "linux-094",
+          "title": "Rules for Variable Definition",
+          "url": "https://www.geeksforgeeks.org/linux-unix/shell-scripting-rules-for-naming-variable-name/"
+        },
+        {
+          "id": "linux-095",
+          "title": "Bash Scripting",
+          "url": "https://www.geeksforgeeks.org/linux-unix/bash-scripting-introduction-to-bash-and-bash-scripting/"
+        },
+        {
+          "id": "linux-096",
+          "title": "Define Bash Variables and Its Types",
+          "url": "https://www.geeksforgeeks.org/linux-unix/bash-script-define-bash-variables-and-its-types/"
+        },
+        {
+          "id": "linux-097",
+          "title": "Working",
+          "url": "https://www.geeksforgeeks.org/linux-unix/bash-scripting-working-of-bash-scripting/"
+        },
+        {
+          "id": "linux-098",
+          "title": "Run Bash Script",
+          "url": "https://www.geeksforgeeks.org/linux-unix/how-to-run-bash-script-in-linux/"
+        },
+        {
+          "id": "linux-099",
+          "title": "Functions",
+          "url": "https://www.geeksforgeeks.org/linux-unix/bash-scripting-functions/"
+        },
+        {
+          "id": "linux-100",
+          "title": "Difference between Shell (sh) and Bash",
+          "url": "https://www.geeksforgeeks.org/computer-networks/difference-between-sh-and-bash/"
+        },
+        {
+          "id": "linux-101",
+          "title": "Basic Operators",
+          "url": "https://www.geeksforgeeks.org/linux-unix/basic-operators-in-shell-scripting/"
+        },
+        {
+          "id": "linux-102",
+          "title": "Making Your Own Linux Shell in C",
+          "url": "https://www.geeksforgeeks.org/c/making-linux-shell-c/"
+        },
+        {
+          "id": "linux-103",
+          "title": "Common Linux Shell Script",
+          "url": "https://www.geeksforgeeks.org/linux-unix/shell-script-examples/"
+        },
+        {
+          "id": "linux-104",
+          "title": "Linux in Cloud Computing and DevOps",
+          "url": "https://www.geeksforgeeks.org/cloud-computing/role-of-linux-in-cloud-computing-and-devops/"
+        },
+        {
+          "id": "linux-105",
+          "title": "Linux commands in DevOps",
+          "url": "https://www.geeksforgeeks.org/linux-unix/linux-command-in-devops/"
+        },
+        {
+          "id": "linux-106",
+          "title": "Deploying and Managing Linux in the Cloud",
+          "url": "https://www.geeksforgeeks.org/linux-unix/deploying-and-managing-linux-in-the-cloud/"
+        },
+        {
+          "id": "linux-107",
+          "title": "Linux Interview Questions and Answers",
+          "url": "https://www.geeksforgeeks.org/linux-unix/linux-interview-questions/"
+        },
+        {
+          "id": "linux-108",
+          "title": "Approach to Learn Linux",
+          "url": "https://www.geeksforgeeks.org/linux-unix/approach-to-learn-linux/"
+        },
+        {
+          "id": "linux-109",
+          "title": "Linux Certifications",
+          "url": "https://www.geeksforgeeks.org/linux-unix/linux-certifications/"
+        },
+        {
+          "id": "linux-110",
+          "title": "Career & Jobs in Linux",
+          "url": "https://www.geeksforgeeks.org/linux-unix/career-jobs-in-linux/"
+        },
+        {
+          "id": "linux-111",
+          "title": "A List of Companies That Use Linux",
+          "url": "https://www.geeksforgeeks.org/linux-unix/list-of-companies-use-linux/"
+        },
+        {
+          "id": "linux-112",
+          "title": "File Permission and Ownership Commands in Linux2 min read",
+          "url": "https://www.geeksforgeeks.org/linux-unix/file-permission-and-ownership-commands-in-linux/"
+        },
+        {
+          "id": "linux-113",
+          "title": "Shell Scripting - Shell Variables in Linux4 min read",
+          "url": "https://www.geeksforgeeks.org/linux-unix/shell-scripting-different-types-of-variables/"
+        },
+        {
+          "id": "linux-114",
+          "title": "Bash Script - Difference between Bash Script and Shell Script4 min read",
+          "url": "https://www.geeksforgeeks.org/linux-unix/bash-script-difference-between-bash-script-and-shell-script/"
+        },
+        {
+          "id": "linux-115",
+          "title": "DevOps Engineering Course2 min read",
+          "url": "https://www.geeksforgeeks.org/courses/devops-live"
+        },
+        {
+          "id": "linux-116",
+          "title": "DSA and System Design Course2 min read",
+          "url": "https://www.geeksforgeeks.org/courses/interviewe-101-data-structures-algorithm-system-design"
+        },
+        {
+          "id": "linux-117",
+          "title": "MERN Full Stack Course2 min read",
+          "url": "https://www.geeksforgeeks.org/courses/full-stack-node"
+        }
+      ]
+    },
+    {
+      "id": "distributed-systems",
+      "title": "Distributed Systems Tutorial",
+      "indexUrl": "https://www.geeksforgeeks.org/distributed-systems/distributed-systems-tutorial/",
+      "articles": [
+        {
+          "id": "distributed-systems-001",
+          "title": "Goals of Distributed System",
+          "url": "https://www.geeksforgeeks.org/operating-systems/goals-of-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-002",
+          "title": "Types of Transparency in a Distributed System",
+          "url": "https://www.geeksforgeeks.org/computer-networks/types-of-transparency-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-003",
+          "title": "Centralized vs Decentralized vs Distributed",
+          "url": "https://www.geeksforgeeks.org/system-design/comparison-centralized-decentralized-and-distributed-systems/"
+        },
+        {
+          "id": "distributed-systems-004",
+          "title": "Loosely coupled and tightly coupled system",
+          "url": "https://www.geeksforgeeks.org/computer-organization-architecture/difference-between-loosely-coupled-and-tightly-coupled-multiprocessor-system/"
+        },
+        {
+          "id": "distributed-systems-005",
+          "title": "Design Issues of Distributed System",
+          "url": "https://www.geeksforgeeks.org/system-design/design-issues-of-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-006",
+          "title": "Various Failures in a distributed system",
+          "url": "https://www.geeksforgeeks.org/computer-networks/various-failures-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-007",
+          "title": "Parallel computing vs Distributed computing",
+          "url": "https://www.geeksforgeeks.org/dbms/difference-between-parallel-computing-and-distributed-computing/"
+        },
+        {
+          "id": "distributed-systems-008",
+          "title": "What is Scalable System?",
+          "url": "https://www.geeksforgeeks.org/computer-networks/what-is-scalable-system-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-009",
+          "title": "Role of Middleware in a distributed system",
+          "url": "https://www.geeksforgeeks.org/operating-systems/role-of-middleware-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-010",
+          "title": "Hardware vs Middleware",
+          "url": "https://www.geeksforgeeks.org/computer-organization-architecture/difference-between-hardware-and-middleware/"
+        },
+        {
+          "id": "distributed-systems-011",
+          "title": "What is Groupware",
+          "url": "https://www.geeksforgeeks.org/computer-networks/what-is-groupware-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-012",
+          "title": "Interprocess Communication",
+          "url": "https://www.geeksforgeeks.org/operating-systems/interprocess-communication-in-distributed-systems/"
+        },
+        {
+          "id": "distributed-systems-013",
+          "title": "gRPC Communication",
+          "url": "https://www.geeksforgeeks.org/cloud-computing/grpc-communication-in-distributed-systems/"
+        },
+        {
+          "id": "distributed-systems-014",
+          "title": "Gossip Protocol",
+          "url": "https://www.geeksforgeeks.org/system-design/gossip-protocol-in-disrtibuted-systems/"
+        },
+        {
+          "id": "distributed-systems-015",
+          "title": "Introduction of Message Passing",
+          "url": "https://www.geeksforgeeks.org/operating-systems/message-passing-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-016",
+          "title": "Issues in IPC by Message Passing",
+          "url": "https://www.geeksforgeeks.org/computer-networks/issues-in-ipc-by-message-passing-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-017",
+          "title": "What is RPC Mechanism?",
+          "url": "https://www.geeksforgeeks.org/computer-networks/what-is-rpc-mechanism-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-018",
+          "title": "Transparency of RPC",
+          "url": "https://www.geeksforgeeks.org/computer-networks/distributed-system-transparency-of-rpc/"
+        },
+        {
+          "id": "distributed-systems-019",
+          "title": "RPC Implementation Mechanism",
+          "url": "https://www.geeksforgeeks.org/computer-networks/rpc-implementation-mechanism-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-020",
+          "title": "Stub Generation",
+          "url": "https://www.geeksforgeeks.org/computer-networks/stub-generation-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-021",
+          "title": "Marshalling",
+          "url": "https://www.geeksforgeeks.org/computer-networks/marshalling-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-022",
+          "title": "Server Management",
+          "url": "https://www.geeksforgeeks.org/computer-networks/server-management-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-023",
+          "title": "Parameter-Passing Semantics",
+          "url": "https://www.geeksforgeeks.org/computer-networks/distributed-system-parameter-passing-semantics-in-rpc/"
+        },
+        {
+          "id": "distributed-systems-024",
+          "title": "Call Semantics issues in RPC",
+          "url": "https://www.geeksforgeeks.org/computer-networks/distributed-system-call-semantics-in-rpc/"
+        },
+        {
+          "id": "distributed-systems-025",
+          "title": "Communication Protocols for RPCs",
+          "url": "https://www.geeksforgeeks.org/computer-networks/communication-protocols-for-rpcs/"
+        },
+        {
+          "id": "distributed-systems-026",
+          "title": "Client-Server Model",
+          "url": "https://www.geeksforgeeks.org/system-design/client-server-model/"
+        },
+        {
+          "id": "distributed-systems-027",
+          "title": "Synchronization",
+          "url": "https://www.geeksforgeeks.org/computer-networks/synchronization-in-distributed-systems/"
+        },
+        {
+          "id": "distributed-systems-028",
+          "title": "Clock Synchronization",
+          "url": "https://www.geeksforgeeks.org/macroeconomics/clock-synchronization-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-029",
+          "title": "Logical clock",
+          "url": "https://www.geeksforgeeks.org/computer-networks/logical-clock-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-030",
+          "title": "Lamport's algorithm",
+          "url": "https://www.geeksforgeeks.org/operating-systems/lamports-algorithm-for-mutual-exclusion-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-031",
+          "title": "Vector clocks",
+          "url": "https://www.geeksforgeeks.org/computer-networks/vector-clocks-in-distributed-systems/"
+        },
+        {
+          "id": "distributed-systems-032",
+          "title": "Event Ordering",
+          "url": "https://www.geeksforgeeks.org/computer-networks/event-ordering-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-033",
+          "title": "Mutual Exclusion and its classification",
+          "url": "https://www.geeksforgeeks.org/operating-systems/mutual-exclusion-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-034",
+          "title": "Cristian's algorithm",
+          "url": "https://www.geeksforgeeks.org/dsa/cristians-algorithm/"
+        },
+        {
+          "id": "distributed-systems-035",
+          "title": "Berkeley algorithm",
+          "url": "https://www.geeksforgeeks.org/operating-systems/berkeleys-algorithm/"
+        },
+        {
+          "id": "distributed-systems-036",
+          "title": "Broken based vs Non-Token based Algorithms",
+          "url": "https://www.geeksforgeeks.org/computer-networks/difference-between-token-based-and-non-token-based-algorithms-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-037",
+          "title": "Ricart algorithm",
+          "url": "https://www.geeksforgeeks.org/operating-systems/ricart-agrawala-algorithm-in-mutual-exclusion-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-038",
+          "title": "Token-based algorithm",
+          "url": "https://www.geeksforgeeks.org/operating-systems/suzuki-kasami-algorithm-for-mutual-exclusion-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-039",
+          "title": "Features of Global Scheduling Algorithm",
+          "url": "https://www.geeksforgeeks.org/operating-systems/features-of-global-scheduling-algorithm-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-040",
+          "title": "What is Task Assignment Approach?",
+          "url": "https://www.geeksforgeeks.org/computer-networks/what-is-task-assignment-approach-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-041",
+          "title": "Load-Balancing Approach",
+          "url": "https://www.geeksforgeeks.org/computer-networks/load-balancing-approach-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-042",
+          "title": "Load-Sharing Approach",
+          "url": "https://www.geeksforgeeks.org/cloud-computing/load-sharing-approach-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-043",
+          "title": "Load Balancing vs Load Sharing",
+          "url": "https://www.geeksforgeeks.org/operating-systems/difference-between-load-balancing-and-load-sharing-in-distributed-system-2/"
+        },
+        {
+          "id": "distributed-systems-044",
+          "title": "Scheduling and Load Balancing",
+          "url": "https://www.geeksforgeeks.org/computer-networks/scheduling-and-load-balancing-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-045",
+          "title": "Introduction of process management",
+          "url": "https://www.geeksforgeeks.org/operating-systems/introduction-of-process-management/"
+        },
+        {
+          "id": "distributed-systems-046",
+          "title": "Process Migration",
+          "url": "https://www.geeksforgeeks.org/computer-networks/process-migration-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-047",
+          "title": "DFS",
+          "url": "https://www.geeksforgeeks.org/computer-networks/what-is-dfsdistributed-file-system/"
+        },
+        {
+          "id": "distributed-systems-048",
+          "title": "Network file system architecture",
+          "url": "https://www.geeksforgeeks.org/operating-systems/network-file-system-nfs/"
+        },
+        {
+          "id": "distributed-systems-049",
+          "title": "Andrew file system",
+          "url": "https://www.geeksforgeeks.org/operating-systems/andrew-file-system/"
+        },
+        {
+          "id": "distributed-systems-050",
+          "title": "File Service Architecture",
+          "url": "https://www.geeksforgeeks.org/computer-networks/file-service-architecture-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-051",
+          "title": "File Models",
+          "url": "https://www.geeksforgeeks.org/computer-networks/file-models-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-052",
+          "title": "File-Accessing Models",
+          "url": "https://www.geeksforgeeks.org/computer-networks/file-accessing-models-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-053",
+          "title": "File-Sharing Semantics",
+          "url": "https://www.geeksforgeeks.org/operating-systems/file-sharing-semantics-in-distributed-systems/"
+        },
+        {
+          "id": "distributed-systems-054",
+          "title": "File-Caching Schemes",
+          "url": "https://www.geeksforgeeks.org/operating-systems/file-caching-in-distrubuted-file-systems/"
+        },
+        {
+          "id": "distributed-systems-055",
+          "title": "What is Replication",
+          "url": "https://www.geeksforgeeks.org/operating-systems/what-is-replication-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-056",
+          "title": "Atomic commit protocol",
+          "url": "https://www.geeksforgeeks.org/computer-networks/atomic-commit-protocol-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-057",
+          "title": "Design Principles of DFS",
+          "url": "https://www.geeksforgeeks.org/operating-systems/design-principles-of-distributed-file-system/"
+        },
+        {
+          "id": "distributed-systems-058",
+          "title": "The architecture of Distributed shared memory",
+          "url": "https://www.geeksforgeeks.org/operating-systems/architecture-of-distributed-shared-memorydsm/"
+        },
+        {
+          "id": "distributed-systems-059",
+          "title": "Uniform Memory Access (UMA) vs Non-uniform Memory Access (NUMA)",
+          "url": "https://www.geeksforgeeks.org/computer-organization-architecture/difference-between-uniform-memory-access-uma-and-non-uniform-memory-access-numa/"
+        },
+        {
+          "id": "distributed-systems-060",
+          "title": "Design and implementation issue of distributed shared memory.",
+          "url": "https://www.geeksforgeeks.org/computer-networks/design-and-implementation-issue-of-distributed-shared-memory/"
+        },
+        {
+          "id": "distributed-systems-061",
+          "title": "Algorithm for implementing DSM",
+          "url": "https://www.geeksforgeeks.org/operating-systems/algorithm-for-implementing-distributed-shared-memory/"
+        },
+        {
+          "id": "distributed-systems-062",
+          "title": "Consistency models",
+          "url": "https://www.geeksforgeeks.org/operating-systems/consistency-model-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-063",
+          "title": "Thrashing in Distributed shared memory",
+          "url": "https://www.geeksforgeeks.org/operating-systems/distributed-system-thrashing-in-distributed-shared-memory/"
+        },
+        {
+          "id": "distributed-systems-064",
+          "title": "Issues related to Load balancing in DS",
+          "url": "https://www.geeksforgeeks.org/operating-systems/issues-related-to-load-balancing-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-065",
+          "title": "Components of load distribution",
+          "url": "https://www.geeksforgeeks.org/operating-systems/components-of-load-distributing-algorithm-distributed-systems/"
+        },
+        {
+          "id": "distributed-systems-066",
+          "title": "Phantom deadlock",
+          "url": "https://www.geeksforgeeks.org/operating-systems/phantom-deadlock-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-067",
+          "title": "Deadlock",
+          "url": "https://www.geeksforgeeks.org/operating-systems/distributed-system-types-of-distributed-deadlock/"
+        },
+        {
+          "id": "distributed-systems-068",
+          "title": "Deadlock Detection",
+          "url": "https://www.geeksforgeeks.org/operating-systems/deadlock-detection-in-distributed-systems-2/"
+        },
+        {
+          "id": "distributed-systems-069",
+          "title": "A necessary condition for deadlock",
+          "url": "https://www.geeksforgeeks.org/computer-networks/conditions-for-deadlock-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-070",
+          "title": "Deadlock handling strategies",
+          "url": "https://www.geeksforgeeks.org/computer-networks/deadlock-handling-strategies-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-071",
+          "title": "Banker's algorithm",
+          "url": "https://www.geeksforgeeks.org/operating-systems/bankers-algorithm-in-operating-system-2/"
+        },
+        {
+          "id": "distributed-systems-072",
+          "title": "Deadlock prevention policies",
+          "url": "https://www.geeksforgeeks.org/operating-systems/deadlock-prevention-policies-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-073",
+          "title": "A WFG-based distributed algorithm for deadlock detection",
+          "url": "https://www.geeksforgeeks.org/operating-systems/wfg-based-distributed-algorithm-for-deadlock-detection/"
+        },
+        {
+          "id": "distributed-systems-074",
+          "title": "Chandy-Misra-Haas's distributed deadlock detection algorithm",
+          "url": "https://www.geeksforgeeks.org/operating-systems/chandy-misra-haass-distributed-deadlock-detection-algorithm/"
+        },
+        {
+          "id": "distributed-systems-075",
+          "title": "Hierarchical deadlock detection",
+          "url": "https://www.geeksforgeeks.org/operating-systems/hierarchical-deadlock-detection-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-076",
+          "title": "What is security?",
+          "url": "https://www.geeksforgeeks.org/ethical-hacking/security-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-077",
+          "title": "Types of Cyberattacks",
+          "url": "https://www.geeksforgeeks.org/computer-networks/types-of-cyber-attacks/"
+        },
+        {
+          "id": "distributed-systems-078",
+          "title": "Cryptography",
+          "url": "https://www.geeksforgeeks.org/computer-networks/cryptography-and-its-types/"
+        },
+        {
+          "id": "distributed-systems-079",
+          "title": "Authentication",
+          "url": "https://www.geeksforgeeks.org/ethical-hacking/what-is-user-authentication-and-why-is-it-important/"
+        },
+        {
+          "id": "distributed-systems-080",
+          "title": "Implementation of Access Matrix",
+          "url": "https://www.geeksforgeeks.org/operating-systems/implementation-of-access-matrix-in-distributed-os/"
+        },
+        {
+          "id": "distributed-systems-081",
+          "title": "Digital Signatures and Certificates",
+          "url": "https://www.geeksforgeeks.org/computer-networks/digital-signatures-certificates/"
+        },
+        {
+          "id": "distributed-systems-082",
+          "title": "Design Principles of Security",
+          "url": "https://www.geeksforgeeks.org/computer-networks/design-principles-of-security-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-083",
+          "title": "What is Distributed DBMS?",
+          "url": "https://www.geeksforgeeks.org/dbms/distributed-database-system/"
+        },
+        {
+          "id": "distributed-systems-084",
+          "title": "Functions of DDBMS",
+          "url": "https://www.geeksforgeeks.org/dbms/functions-of-distributed-database-system/"
+        },
+        {
+          "id": "distributed-systems-085",
+          "title": "Types of DBMS",
+          "url": "https://www.geeksforgeeks.org/dbms/types-of-database-management-systems/"
+        },
+        {
+          "id": "distributed-systems-086",
+          "title": "Comparison of Homogeneous and Heterogeneous databases",
+          "url": "https://www.geeksforgeeks.org/dbms/comparison-of-homogeneous-and-heterogeneous-databases/"
+        },
+        {
+          "id": "distributed-systems-087",
+          "title": "What are distributed multimedia system and its characteristics",
+          "url": "https://www.geeksforgeeks.org/computer-networks/distributed-multimedia-systems/"
+        },
+        {
+          "id": "distributed-systems-088",
+          "title": "Multimedia database",
+          "url": "https://www.geeksforgeeks.org/dbms/multimedia-database/"
+        },
+        {
+          "id": "distributed-systems-089",
+          "title": "Destination based routing",
+          "url": "https://www.geeksforgeeks.org/computer-networks/what-is-destination-based-routing/"
+        },
+        {
+          "id": "distributed-systems-090",
+          "title": "Deadlock-free packet switching",
+          "url": "https://www.geeksforgeeks.org/computer-networks/deadlock-free-packet-switching/"
+        },
+        {
+          "id": "distributed-systems-091",
+          "title": "Wave and traversal algorithm",
+          "url": "https://www.geeksforgeeks.org/computer-networks/wave-and-traversal-algorithm-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-092",
+          "title": "Election algorithm (Bully algorithm, Ring algorithm)",
+          "url": "https://www.geeksforgeeks.org/dsa/election-algorithm-and-distributed-processing/"
+        },
+        {
+          "id": "distributed-systems-093",
+          "title": "Comparison between Ring and Bully algorithm",
+          "url": "https://www.geeksforgeeks.org/dsa/difference-between-ring-and-bully-algorithm/"
+        },
+        {
+          "id": "distributed-systems-094",
+          "title": "CORBA (Object model, CORBA services)",
+          "url": "https://www.geeksforgeeks.org/software-engineering/client-server-software-development-introduction-to-common-object-request-broker-architecture-corba/"
+        },
+        {
+          "id": "distributed-systems-095",
+          "title": "Difference between CORBA and DCOM",
+          "url": "https://www.geeksforgeeks.org/computer-networks/difference-between-corba-and-dcom/"
+        },
+        {
+          "id": "distributed-systems-096",
+          "title": "COM vs DCOM",
+          "url": "https://www.geeksforgeeks.org/computer-networks/difference-between-com-and-dcom/"
+        },
+        {
+          "id": "distributed-systems-097",
+          "title": "Lifecycle of COM",
+          "url": "https://www.geeksforgeeks.org/software-engineering/life-cycle-of-component-object-model-com-object/"
+        },
+        {
+          "id": "distributed-systems-098",
+          "title": "Distributed Component Object Model (DCOM)",
+          "url": "https://www.geeksforgeeks.org/computer-networks/distributed-component-object-model-dcom/"
+        },
+        {
+          "id": "distributed-systems-099",
+          "title": "What is a Distributed Transaction?",
+          "url": "https://www.geeksforgeeks.org/operating-systems/what-is-a-distributed-transaction/"
+        },
+        {
+          "id": "distributed-systems-100",
+          "title": "Nested transactions and Flat transactions",
+          "url": "https://www.geeksforgeeks.org/dbms/flat-nested-distributed-transactions/"
+        },
+        {
+          "id": "distributed-systems-101",
+          "title": "Concurrency Control in Distributed Transactions",
+          "url": "https://www.geeksforgeeks.org/operating-systems/concurrency-control-in-distributed-transactions/"
+        },
+        {
+          "id": "distributed-systems-102",
+          "title": "Transaction Recovery",
+          "url": "https://www.geeksforgeeks.org/operating-systems/transaction-recovery-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-103",
+          "title": "The mechanism for building",
+          "url": "https://www.geeksforgeeks.org/operating-systems/mechanism-for-building-distributed-file-system/"
+        },
+        {
+          "id": "distributed-systems-104",
+          "title": "Two-phase commit protocol",
+          "url": "https://www.geeksforgeeks.org/dbms/two-phase-commit-protocol-distributed-transaction-management/"
+        },
+        {
+          "id": "distributed-systems-105",
+          "title": "DSA Tutorial10 min read",
+          "url": "https://www.geeksforgeeks.org/dsa/dsa-tutorial-learn-data-structures-and-algorithms/"
+        },
+        {
+          "id": "distributed-systems-106",
+          "title": "System Design Tutorial4 min read",
+          "url": "https://www.geeksforgeeks.org/system-design/system-design-tutorial/"
+        },
+        {
+          "id": "distributed-systems-107",
+          "title": "Aptitude Questions and Answers3 min read",
+          "url": "https://www.geeksforgeeks.org/aptitude/aptitude-questions-and-answers/"
+        },
+        {
+          "id": "distributed-systems-108",
+          "title": "Web Development Technologies5 min read",
+          "url": "https://www.geeksforgeeks.org/web-tech/web-technology/"
+        },
+        {
+          "id": "distributed-systems-109",
+          "title": "AI, ML and Data Science Tutorial3 min read",
+          "url": "https://www.geeksforgeeks.org/machine-learning/ai-ml-and-data-science-tutorial-learn-ai-ml-and-data-science/"
+        },
+        {
+          "id": "distributed-systems-110",
+          "title": "DevOps Tutorial3 min read",
+          "url": "https://www.geeksforgeeks.org/devops/devops-tutorial/"
+        }
+      ]
+    }
+  ]
+}

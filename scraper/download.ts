@@ -2,10 +2,7 @@ import fs from 'fs-extra';
 import axios from 'axios';
 import { JSDOM } from 'jsdom';
 import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Node CommonJS provides __dirname and __filename natively
 
 const USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 
@@ -40,6 +37,15 @@ async function run() {
     } catch (e) {
         console.error(`Could not read manifest from ${manifestPath}`);
         return;
+    }
+
+    // Build a URL -> { topicId, articleId } lookup map
+    const urlMap = new Map<string, { topicId: string; articleId: string }>();
+    for (const topic of manifest.topics || []) {
+        for (const article of topic.articles || []) {
+            const normUrl = article.url.replace(/\/$/, '');
+            urlMap.set(normUrl, { topicId: topic.id, articleId: article.id });
+        }
     }
 
     const topicsRegistry: any = { topics: [] };
@@ -99,6 +105,26 @@ async function run() {
                             
                             img.setAttribute('src', `/images/${filename}`);
                             imgIndex++;
+                        }
+                    }
+
+                    // Handle hyperlinks (rewrite internal GFG links to SPA router links)
+                    const links = contentNode.querySelectorAll('a');
+                    for (const a of Array.from(links)) {
+                        const href = a.getAttribute('href');
+                        if (href) {
+                            try {
+                                const fullUrl = new URL(href, articleInfo.url).href.replace(/\/$/, '');
+                                const targetArticle = urlMap.get(fullUrl);
+                                if (targetArticle) {
+                                    a.setAttribute('href', `/#/article/${targetArticle.topicId}/${targetArticle.articleId}`);
+                                } else if (href.startsWith('http://') || href.startsWith('https://')) {
+                                    a.setAttribute('target', '_blank');
+                                    a.setAttribute('rel', 'noopener noreferrer');
+                                }
+                            } catch (e) {
+                                // ignore invalid URL
+                            }
                         }
                     }
 

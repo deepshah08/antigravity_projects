@@ -1,9 +1,8 @@
-name: Deploy PWA to GitHub Pages
+name: Deploy Offline Knowledge Center to GitHub Pages
 
 on:
   push:
-    branches: ["main", "master"]
-  workflow_dispatch:
+    branches: [ main ]
 
 permissions:
   contents: read
@@ -11,46 +10,44 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: 'pages'
+  cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
-          cache-dependency-path: './offline-knowledge-center/package-lock.json'
-
-      - name: Install Frontend Dependencies
-        working-directory: ./offline-knowledge-center
-        run: npm ci
-
-      - name: Build Frontend
-        working-directory: ./offline-knowledge-center
-        run: npm run build
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './offline-knowledge-center/dist'
-
-  deploy:
+  build-and-deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: 'offline-knowledge-center/package-lock.json'
+
+      - name: Install Frontend Dependencies
+        run: |
+          cd offline-knowledge-center
+          npm ci
+
+      - name: Build Vite PWA App
+        run: |
+          cd offline-knowledge-center
+          npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Build Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'offline-knowledge-center/dist'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "discover": "ts-node discover.ts",
+    "scrape": "ts-node download.ts",
+    "export": "ts-node export-markdown.ts"
   },
   "keywords": [],
   "author": "",

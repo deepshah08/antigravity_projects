@@ -1,0 +1,92 @@
+# Flat &amp; Nested Distributed Transactions - GeeksforGeeks
+
+Introduction : A transaction is a series of object operations that must be done in an ACID-compliant manner.
+
+Atomicity - The transaction is completed entirely or not at all.Consistency - It is a term that refers to the transition from one consistent state to another.Isolation - It is carried out separately from other transactions.Durability - Once completed, it is long lasting.
+
+Transactions - Commands :
+
+Begin -initiate a new transaction.Commit - End a transaction and the changes made during the transaction are saved. Also, it allows other transactions to see the modifications you've made.Abort - End a transaction and all changes made during the transaction will be undone.
+
+Various roles are allocated to running a transaction successfully :
+
+Client - The transactions are issued by the clients.Coordinator - The execution of the entire transaction is controlled by it (handles Begin, commit & abort).Server -Every component that accesses or modifies a resource is subject to transaction control. The coordinator must be known by the transactional server. The transactional server registers its participation in a transaction with the coordinator.
+
+A flat or nested transaction that accesses objects handled by different servers is referred to as a distributed transaction.When a distributed transaction reaches its end, in order to maintain the atomicity property of the transaction , it is mandatory that all of the servers involved in the transaction either commit the transaction or abort it.  To do this, one of the servers takes on the job of coordinator, which entails ensuring that the same outcome is achieved across all servers. The method by which the coordinator accomplishes this is determined by the protocol selected. The most widely used protocol is the 'two-phase commit protocol.' This protocol enables the servers to communicate with one another in order to come to a joint decision on whether to commit or abort the complete transaction. 
+
+
+
+Flat & Nested Distributed Transactions :If a client transaction calls actions on multiple servers, it is said to be distributed. Distributed transactions can be structured in two different ways: 
+
+Flat transactionsNested transactions
+
+FLAT TRANSACTIONS :A flat transaction has a single initiating point(Begin) and a single end point(Commit or abort). They are usually very simple and are generally used for short activities rather than larger ones.A client makes requests to multiple servers in a flat transaction. Transaction T, for example, is a flat transaction that performs operations on objects in servers X, Y, and Z. Before moving on to the next request, a flat client transaction completes the previous one. As a result, each transaction visits the server object in order. A transaction can only wait for one object at a time when servers utilize locking.
+
+Flat Transaction
+
+Limitations of a flat Transaction :
+
+All work is lost in the event of a crash.Only one DBMS may be used at a time.No partial rollback is possible.
+
+NESTED TRANSACTIONS :A transaction that includes other transactions within its initiating point and a end point are known as nested transactions. So the nesting of the transactions is done in a transaction. The nested transactions here are called sub-transactions.The top-level transaction in a nested transaction can open sub-transactions, and each sub-transaction can open more sub-transactions down to any depth of nesting. A client's transaction T opens up two sub-transactions, T1 and T2, which access objects on servers X and Y, as shown in the diagram below. T1.1, T1.2, T2.1, and T2.2, which access the objects on the servers M,N, and P, are opened by the sub-transactions T1 and T2. 
+
+Nested Transaction
+
+Concurrent Execution of the Sub-transactions is done which are at the same level - in the nested transaction strategy.Here, in the above diagram,  T1 and T2 invoke objects on different servers and hence they can run in parallel and are therefore concurrent.T1.1,  T1.2, T2.1, and T2.2 are four sub-transactions. These sub-transactions can also run in parallel. 
+
+
+
+Consider a distributed transaction (T)  in which a customer transfers :
+
+Rs. 105 from account A to account C andSubsequently, Rs. 205 from account B to account D.
+
+It can be viewed/ thought of as :
+
+Transaction T :
+Start
+Transfer Rs 105 from A to C : 
+Deduct Rs 105 from A(withdraw from A) & Add Rs 105 to C(deposit to C)
+Transfer Rs 205 from B to D : 
+Deduct Rs 205 from B (withdraw from B)& Add Rs 205 to D(deposit to D)
+End
+
+Assuming :
+
+Account A is on server XAccount B is on server Y,andAccounts C and D are on server Z.
+
+The transaction T involves four requests - 2 for deposits and 2 for withdrawals. Now they can be treated as sub transactions (T1, T2, T3, T4) of the transaction T.As shown in the figure below, transaction T is designed as a set of four nested transactions : T1, T2, T3 and T4.Advantage :  The  performance is higher than a single transaction in which four operations are invoked one after the other in sequence. 
+
+Nested Transaction
+
+So, the Transaction T may be divided into sub-transactions as :
+
+//Start the  Transaction
+T = open transaction
+//T1
+openSubtransaction
+a.withdraw(105);
+//T2
+openSubtransaction
+b.withdraw(205);
+//T3
+openSubtransaction
+c.deposit(105);
+//T4
+openSubtransaction
+d.deposit(205);
+//End the Transaction
+close Transaction
+
+Role of coordinator  :When the Distributed Transaction commits, the servers that are involved in the transaction execution,for proper coordination,  must be able to communicate with one another .When a client initiates a transaction, an "openTransaction" request is sent to any coordinator server. The contacted coordinator carries out the "openTransaction" and returns the transaction identifier to the client.
+
+
+
+Distributed transaction identifiers must be unique within the distributed system. A simple way is  to generate a TID contains two parts - the 'server identifier'' (example : IP address) of the server that created it and a number  unique  to the server.The coordinator who initiated the transaction becomes the distributed transaction's coordinator and  has the responsibility of either aborting it or committing it. 
+
+
+
+Every server that manages an object accessed by a transaction is a participant in the transaction & provides an object we call the participant. The participants are responsible for working together with the coordinator to complete the commit process. 
+
+
+
+The  coordinator every time,  records the new participant in the participants list. Each participant knows the coordinator & the coordinator knows all the participants. This enables them to collect the information that will be needed at the time of commit and hence work in coordination.

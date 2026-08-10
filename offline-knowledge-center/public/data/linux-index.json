@@ -1,0 +1,474 @@
+{
+  "id": "linux",
+  "title": "Linux Tutorial",
+  "articles": [
+    {
+      "id": "linux-001",
+      "title": "Introduction to Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-002",
+      "title": "Installing Linux Using a Virtual Machine - GeeksforGeeks"
+    },
+    {
+      "id": "linux-003",
+      "title": "Linux Distributions - GeeksforGeeks"
+    },
+    {
+      "id": "linux-004",
+      "title": "Architecture of Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-005",
+      "title": "Unix Vs Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-006",
+      "title": "Linux File System - GeeksforGeeks"
+    },
+    {
+      "id": "linux-007",
+      "title": "Linux File Hierarchy Structure - GeeksforGeeks"
+    },
+    {
+      "id": "linux-008",
+      "title": "Linux Directory Structure - GeeksforGeeks"
+    },
+    {
+      "id": "linux-009",
+      "title": "File System Navigation Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-010",
+      "title": "Absolute and Relative Pathnames in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-011",
+      "title": "Basic Linux Commands - GeeksforGeeks"
+    },
+    {
+      "id": "linux-012",
+      "title": "Linux Commands - GeeksforGeeks"
+    },
+    {
+      "id": "linux-013",
+      "title": "File Management in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-014",
+      "title": "Directory Management in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-015",
+      "title": "Linux Permissions - GeeksforGeeks"
+    },
+    {
+      "id": "linux-016",
+      "title": "chmod Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-017",
+      "title": "chown Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-018",
+      "title": "Tar Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-019",
+      "title": "Gzip Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-020",
+      "title": "gunzip Command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-021",
+      "title": "ZIP command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-022",
+      "title": "bzip2 command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-023",
+      "title": "XZ (Lossless Data Compression) Tool in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-024",
+      "title": "Introduction to Package Managers and systemctl in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-025",
+      "title": "apt-get command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-026",
+      "title": "Debian Software Package Management(dpkg) in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-027",
+      "title": "Fedora’s DNF Package Management System - GeeksforGeeks"
+    },
+    {
+      "id": "linux-028",
+      "title": "YUM Package  Management in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-029",
+      "title": "User Management in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-030",
+      "title": "useradd Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-031",
+      "title": "adduser command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-032",
+      "title": "userdel Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-033",
+      "title": "passwd Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-034",
+      "title": "id command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-035",
+      "title": "Group Management in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-036",
+      "title": "Groups Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-037",
+      "title": "groupadd Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-038",
+      "title": "groupdel Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-039",
+      "title": "Linux Command to Check User Groups - GeeksforGeeks"
+    },
+    {
+      "id": "linux-040",
+      "title": "sudo Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-041",
+      "title": "ifconfig Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-042",
+      "title": "ip Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-043",
+      "title": "Manage Network Connections From the Linux Command Line with nmcli - GeeksforGeeks"
+    },
+    {
+      "id": "linux-044",
+      "title": "Ping Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-045",
+      "title": "Netstat command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-046",
+      "title": "ss command in linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-047",
+      "title": "Traceroute Command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-048",
+      "title": "Dynamic Host Configuration Protocol (DHCP) - GeeksforGeeks"
+    },
+    {
+      "id": "linux-049",
+      "title": "Domain Name System (DNS) - GeeksforGeeks"
+    },
+    {
+      "id": "linux-050",
+      "title": "File Transfer Protocol (FTP) in Application Layer - GeeksforGeeks"
+    },
+    {
+      "id": "linux-051",
+      "title": "LINUX Firewall - GeeksforGeeks"
+    },
+    {
+      "id": "linux-052",
+      "title": "Add a Linux Firewall ( ufw or iptables) - GeeksforGeeks"
+    },
+    {
+      "id": "linux-053",
+      "title": "iptables command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-054",
+      "title": "Configuring Linux Firewall - GeeksforGeeks"
+    },
+    {
+      "id": "linux-055",
+      "title": "Configuring Network Interfaces in CentOS - GeeksforGeeks"
+    },
+    {
+      "id": "linux-056",
+      "title": "Network Configuration and Troubleshooting Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-057",
+      "title": "Linux System Monitoring Commands and Tools - GeeksforGeeks"
+    },
+    {
+      "id": "linux-058",
+      "title": "ps Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-059",
+      "title": "top Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-060",
+      "title": "htop Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-061",
+      "title": "kill Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-062",
+      "title": "Nice and Renice Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-063",
+      "title": "bg command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-064",
+      "title": "fg command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-065",
+      "title": "du Command in LINUX - GeeksforGeeks"
+    },
+    {
+      "id": "linux-066",
+      "title": "Systemd and its Components in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-067",
+      "title": "Boot Process with Systemd in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-068",
+      "title": "Controling systemd Services on Remote Linux Server - GeeksforGeeks"
+    },
+    {
+      "id": "linux-069",
+      "title": "Managing System Services in Linux - systemctl Command - GeeksforGeeks"
+    },
+    {
+      "id": "linux-070",
+      "title": "journalctl Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-071",
+      "title": "df Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-072",
+      "title": "free Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-073",
+      "title": "lscpu Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-074",
+      "title": "uptime Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-075",
+      "title": "iostat Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-076",
+      "title": "lsof Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-077",
+      "title": "Enabling SSH on Ubuntu - GeeksforGeeks"
+    },
+    {
+      "id": "linux-078",
+      "title": "Installing JDK on Ubuntu - GeeksforGeeks"
+    },
+    {
+      "id": "linux-079",
+      "title": "Installing Atom Editor on Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-080",
+      "title": "Installation of Ubuntu on Windows using VMware - GeeksforGeeks"
+    },
+    {
+      "id": "linux-081",
+      "title": "scp Command for Secure File and Folder Transfer - GeeksforGeeks"
+    },
+    {
+      "id": "linux-082",
+      "title": "Installing and Configuring Nginx from Source on Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-083",
+      "title": "Introduction to Linux Shell and Shell Scripting - GeeksforGeeks"
+    },
+    {
+      "id": "linux-084",
+      "title": "Linux Kernel - GeeksforGeeks"
+    },
+    {
+      "id": "linux-085",
+      "title": "Different Shells in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-086",
+      "title": "Shell vs Kernel - GeeksforGeeks"
+    },
+    {
+      "id": "linux-087",
+      "title": "Understanding Terminal, Console, Shell and Kernel - GeeksforGeeks"
+    },
+    {
+      "id": "linux-088",
+      "title": "Writing and executing shell scripts - GeeksforGeeks"
+    },
+    {
+      "id": "linux-089",
+      "title": "Comments in Shell Script - GeeksforGeeks"
+    },
+    {
+      "id": "linux-090",
+      "title": "Shell Script To Broadcast A Message - GeeksforGeeks"
+    },
+    {
+      "id": "linux-091",
+      "title": "Saving Command Output to a File in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-092",
+      "title": "Handling Script Failures in Bash - GeeksforGeeks"
+    },
+    {
+      "id": "linux-093",
+      "title": "Shell Scripting - Shell Variables - GeeksforGeeks"
+    },
+    {
+      "id": "linux-094",
+      "title": "Shell Scripting - Rules for Naming Variables in Shell Scripting - GeeksforGeeks"
+    },
+    {
+      "id": "linux-095",
+      "title": "Bash Scripting Fundamentals - GeeksforGeeks"
+    },
+    {
+      "id": "linux-096",
+      "title": "Bash Script - Define Bash Variables and its types - GeeksforGeeks"
+    },
+    {
+      "id": "linux-097",
+      "title": "Bash Scripting - Working of Bash Scripting - GeeksforGeeks"
+    },
+    {
+      "id": "linux-098",
+      "title": "Running Bash Script In Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-099",
+      "title": "Bash Scripting - Functions - GeeksforGeeks"
+    },
+    {
+      "id": "linux-100",
+      "title": "Difference between sh and bash - GeeksforGeeks"
+    },
+    {
+      "id": "linux-101",
+      "title": "Basic Operators in Shell Scripting - GeeksforGeeks"
+    },
+    {
+      "id": "linux-102",
+      "title": "Making your own Linux Shell in C - GeeksforGeeks"
+    },
+    {
+      "id": "linux-103",
+      "title": "Shell Script Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-104",
+      "title": "The Role of Linux in Cloud Computing and DevOps - GeeksforGeeks"
+    },
+    {
+      "id": "linux-105",
+      "title": "Linux command in DevOps - GeeksforGeeks"
+    },
+    {
+      "id": "linux-106",
+      "title": "Deploying and Managing Linux in the Cloud - GeeksforGeeks"
+    },
+    {
+      "id": "linux-107",
+      "title": "Linux Interview Questions and Answers - GeeksforGeeks"
+    },
+    {
+      "id": "linux-108",
+      "title": "Approach to Learn Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-109",
+      "title": "Linux Certifications - GeeksforGeeks"
+    },
+    {
+      "id": "linux-110",
+      "title": "Career & Jobs in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-111",
+      "title": "List of Companies Use Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-112",
+      "title": "File Permission and Ownership Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-113",
+      "title": "Shell Scripting - Shell Variables in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-114",
+      "title": "Bash Script - Difference between Bash Script and Shell Script - GeeksforGeeks"
+    },
+    {
+      "id": "linux-115",
+      "title": "Complete DevOps & Cloud Engineering Course with AI Tools"
+    },
+    {
+      "id": "linux-116",
+      "title": "DSA & System Design Course: The Complete SDE Interview Program"
+    },
+    {
+      "id": "linux-117",
+      "title": "MERN Full Stack Web Development Course with AI"
+    }
+  ]
+}

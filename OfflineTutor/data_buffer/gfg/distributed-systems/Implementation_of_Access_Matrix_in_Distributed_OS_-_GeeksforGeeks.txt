@@ -1,0 +1,28 @@
+# Implementation of Access Matrix in Distributed OS - GeeksforGeeks
+
+As earlier discussed access matrix is likely to be very sparse and takes up a large chunk of memory. Therefore direct implementation of access matrix for access control is storage inefficient. The inefficiency can be removed by decomposing the access matrix into rows or columns.Rows can be collapsed by deleting null values and so for the columns to increase efficiency. From these approaches of decomposition three implementation of access matrix can be formed which are widely used. They are as follows:
+
+1. Capabilities
+2. Access Control List
+3. Lock and Key Method 
+
+So we are going to discuss in brief about the above implementation. Its worth remembering that we are denoting subjects by s and objects by O and putting them on columns and rows respectively.
+
+Capabilities: This method refers to row wise decomposition of the access matrix. Each Subject is assigned with a list of tuples (o, M[s, o]) for all objects o that it is allowed to access. This tuples are called Capabilities. If a subject possess a capability (o, M[s, o]) then it is allowed to access object o in the manner which is described in M[s, o]. A subject is allowed to access any objects for which it holds the capabilities.Capabilities are not meant to be forged. Capabilities contain two fields:(i) Object Descriptor, 
+(ii) Access Rights 
+
+Object Descriptor may contain the address of the objects and Access Rights may contain the rights which the subject has on object, mainly read write, execute. Since object Descriptor contains address it may be used as an addressing mechanism also. Below is the format of capability. 
+
+Access Control List: This method refers to column wise decomposition of the access matrix . Each object o has a list containing tuples like (s, M[s, o]) for all subjects s which can access the object.P[s, o] denotes the rights of the subject s on the object o. when a subject s request to access \alpha     to the object o it is executed in the following manner.The system searches the access control list of o to find out if an entry (s, \phi     ) exist for subject sIf and entry (s, \phi     ) exists for subject s then the system checks to see if the requested access is permitted or not.(i.e., \alpha \epsilon \phi     )If the requested access is permitted then the request is executed else an appropriate exception is raised.Lock and key Method: The lock and key method is an hybrid of the access control list and capabilities method. In the lock and key method, every subject has a capability list that contains tuples of the form (o, key), indicating the subject can access object o using key key. Objects has an access control list that contains tuples of the form (lock, \phi     ), called a lock entry indicating lock lock can be accessed by modes in the set \phi     . When the subject makes the request to access object o in mode \alpha     , the system executes in the following manner.The system locates the tuple (o, key) in the capability list of the subject. If no such tuple id found, the access is not permitted.Otherwise the access is permitted only if there exists a lock entry (lock, \phi     ) in the access control list of object o such that key=lock and \alpha \epsilon \phi 
+
+So this were the  implementations of the access matrix that are most commonly used . We have Discussed the Processes in a brief and compact way. The usage, advantages and disadvantages can be covered in later posts.
+
+
+
+Advantages of Access Matrix in Distributed OS:
+
+Flexibility: Access Matrix provides a flexible mechanism for defining and managing access control policies in distributed operating systems. It allows administrators to define fine-grained access rights for subjects and objects based on their specific requirements.Granular Access Control: With an Access Matrix, access control can be enforced at the individual subject-object level. This means that different subjects can have varying levels of access to different objects, allowing for precise control over system resources.Scalability: Access Matrix is scalable and can handle a large number of subjects and objects in a distributed environment. It can accommodate changes in the system's structure by easily adding or removing subjects and objects without affecting the overall access control mechanism.Accountability: Access Matrix facilitates accountability in a distributed system by providing an audit trail of access requests and permissions. This can be valuable for monitoring and investigating security breaches or unauthorized access attempts.
+
+Disadvantages of Access Matrix in Distributed OS:
+
+Complexity: The implementation and management of an Access Matrix in a distributed operating system can be complex. Defining access rights for each subject-object pair and ensuring consistency across multiple nodes require careful planning and administration.Resource Overhead: The storage requirements for maintaining the Access Matrix can be substantial, especially in large-scale distributed systems with numerous subjects and objects. The matrix can become memory-intensive and may impact system performance.Lack of Dynamic Adaptability: Access Matrix is static in nature and may not easily adapt to dynamic changes in the system, such as the addition or removal of subjects or objects. Reconfiguration of the matrix may require manual intervention and can be time-consuming.Vulnerabilities and Misconfigurations: If the access control policies are not correctly defined or if there are misconfigurations in the Access Matrix, it can lead to security vulnerabilities. Improper access rights or errors in assigning permissions can result in unauthorized access or information leakage.
