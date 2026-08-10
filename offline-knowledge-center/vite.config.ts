@@ -1,23 +1,19 @@
 import { defineConfig } from 'vite'
-
-
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
+// https://vite.dev/config/
 export default defineConfig({
-  base: './',
   plugins: [
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg', 'images/**/*', 'data/**/*'],
+      includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
         name: 'Offline Knowledge Center',
-        short_name: 'TerminalPro',
-        description: 'Offline, distraction-free tutorial reader',
-        theme_color: '#121212',
-        background_color: '#121212',
-        display: 'standalone',
+        short_name: 'KnowledgeCenter',
+        description: 'An offline-capable knowledge center.',
+        theme_color: '#1e1e2e',
         icons: [
           {
             src: 'pwa-192x192.png',
@@ -32,24 +28,21 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,json,jpg,jpeg,webp}'],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,json}'],
         runtimeCaching: [
           {
-            urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
+            urlPattern: /^\/images\/.*/i,
             handler: 'CacheFirst',
             options: {
-              cacheName: 'google-fonts-cache',
+              cacheName: 'image-cache',
               expiration: {
-                maxEntries: 10,
-                maxAgeSeconds: 60 * 60 * 24 * 365
+                maxEntries: 50,
+                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
               },
-              cacheableResponse: {
-                statuses: [0, 200]
-              }
-            }
-          }
-        ]
-      }
+            },
+          },
+        ],
+      },
     })
   ],
 })
