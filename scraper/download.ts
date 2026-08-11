@@ -22,6 +22,35 @@ async function downloadImage(url: string, outputPath: string) {
     }
 }
 
+function isGfgArticleUrl(urlStr: string): boolean {
+    try {
+        const urlObj = new URL(urlStr);
+        if (!urlObj.hostname.includes('geeksforgeeks.org')) return false;
+        const lower = urlObj.href.toLowerCase();
+        if (lower.includes('#') ||
+            lower.includes('/tag/') ||
+            lower.includes('/author/') ||
+            lower.includes('/category/') ||
+            lower.includes('/page/') ||
+            lower.includes('/login') ||
+            lower.includes('/signup') ||
+            lower.includes('/courses/') ||
+            lower.includes('/problems/') ||
+            lower.includes('/quizzes') ||
+            lower.includes('/practice/') ||
+            lower.includes('/user/') ||
+            lower.includes('/events/') ||
+            lower.includes('/jobs/') ||
+            lower.includes('/podcasts/') ||
+            lower.includes('/webinars/')) {
+            return false;
+        }
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+
 async function run() {
     const basePath = path.join(__dirname, '..');
     const dataDir = path.join(basePath, 'offline-knowledge-center', 'public', 'data');
@@ -61,12 +90,19 @@ async function run() {
             articles: []
         };
 
+        const articlesQueue = [...(topic.articles || [])];
+        const processedArticleIds = new Set<string>();
         let articleCount = 0;
+        let topicArticleCounter = articlesQueue.length + 1;
 
-        for (const articleInfo of topic.articles || []) {
-            console.log(`Processing article ${articleInfo.id} from ${articleInfo.url}`);
+        while (articlesQueue.length > 0) {
+            const articleInfo = articlesQueue.shift()!;
+            if (processedArticleIds.has(articleInfo.id)) continue;
+            processedArticleIds.add(articleInfo.id);
+
+            console.log(`Processing article ${articleInfo.id} (${articlesQueue.length} remaining in queue) from ${articleInfo.url}`);
             try {
-                await wait(2000); // Respect rate limits
+                await wait(1500); // Respect rate limits
 
                 const response = await axios.get(articleInfo.url, {
                     headers: { 'User-Agent': USER_AGENT }
@@ -103,21 +139,35 @@ async function run() {
                             
                             await downloadImage(imgUrl, localPath);
                             
-                            img.setAttribute('src', `/images/${filename}`);
+                            img.setAttribute('src', `./images/${filename}`);
                             imgIndex++;
                         }
                     }
 
-                    // Handle hyperlinks (rewrite internal GFG links to SPA router links)
+                    // Handle hyperlinks (rewrite internal GFG links & recursively queue missing GFG articles)
                     const links = contentNode.querySelectorAll('a');
                     for (const a of Array.from(links)) {
                         const href = a.getAttribute('href');
                         if (href) {
                             try {
                                 const fullUrl = new URL(href, articleInfo.url).href.replace(/\/$/, '');
-                                const targetArticle = urlMap.get(fullUrl);
-                                if (targetArticle) {
-                                    a.setAttribute('href', `/#/article/${targetArticle.topicId}/${targetArticle.articleId}`);
+                                
+                                if (isGfgArticleUrl(fullUrl)) {
+                                    let targetArticle = urlMap.get(fullUrl);
+                                    if (!targetArticle) {
+                                        // Dynamically register missing article into this topic's queue!
+                                        const newId = `${topic.id}-${String(topicArticleCounter++).padStart(3, '0')}`;
+                                        targetArticle = { topicId: topic.id, articleId: newId };
+                                        urlMap.set(fullUrl, targetArticle);
+                                        
+                                        const linkTitle = a.textContent?.trim().replace(/\s+/g, ' ') || newId;
+                                        if (topicArticleCounter <= 300) {
+                                            articlesQueue.push({ id: newId, title: linkTitle, url: fullUrl });
+                                        }
+                                    }
+                                    
+                                    // Set relative HashRouter link: #/article/topicId/articleId (No leading slash!)
+                                    a.setAttribute('href', `#/article/${targetArticle.topicId}/${targetArticle.articleId}`);
                                 } else if (href.startsWith('http://') || href.startsWith('https://')) {
                                     a.setAttribute('target', '_blank');
                                     a.setAttribute('rel', 'noopener noreferrer');
@@ -130,7 +180,7 @@ async function run() {
 
                     const cleanedHtml = contentNode.innerHTML;
                     const textContent = contentNode.textContent || '';
-                    const title = document.querySelector('title')?.textContent || articleInfo.id;
+                    const title = document.querySelector('title')?.textContent || articleInfo.title || articleInfo.id;
 
                     const articleData = {
                         id: articleInfo.id,

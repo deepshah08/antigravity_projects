@@ -449,6 +449,754 @@
     {
       "id": "devops-112",
       "title": "Complete DevOps & Cloud Engineering Course with AI Tools"
+    },
+    {
+      "id": "devops-113",
+      "title": "Introduction to GitLab and CI/CD Pipelines - GeeksforGeeks"
+    },
+    {
+      "id": "devops-114",
+      "title": "Terraform Configuration File - GeeksforGeeks"
+    },
+    {
+      "id": "devops-115",
+      "title": "Ansible - GeeksforGeeks"
+    },
+    {
+      "id": "devops-116",
+      "title": "What is Ubuntu? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-117",
+      "title": "Introduction to Debian Linux - GeeksforGeeks"
+    },
+    {
+      "id": "devops-118",
+      "title": "MX Linux - GeeksforGeeks"
+    },
+    {
+      "id": "devops-119",
+      "title": "Installing and configuring Jenkins on Arch-based Linux Distributions (Manjaro) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-120",
+      "title": "What Is Linux Mint? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-121",
+      "title": "Solus Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "devops-122",
+      "title": "Fedora Linux Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "devops-123",
+      "title": "How to Find openSUSE Linux Version? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-124",
+      "title": "How to Install Deepin on VirtualBox? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-125",
+      "title": "Displaying the Current Working Directory in Linux | pwd Command - GeeksforGeeks"
+    },
+    {
+      "id": "devops-126",
+      "title": "du command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "devops-127",
+      "title": "kill all Command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "devops-128",
+      "title": "pidof Command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "devops-129",
+      "title": "Head Command in Linux With Examples - GeeksforGeeks"
+    },
+    {
+      "id": "devops-130",
+      "title": "Find Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "devops-131",
+      "title": "iwconfig command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "devops-132",
+      "title": "egrep command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "devops-133",
+      "title": "Network and Communication - GeeksforGeeks"
+    },
+    {
+      "id": "devops-134",
+      "title": "Elements of Network protocol - GeeksforGeeks"
+    },
+    {
+      "id": "devops-135",
+      "title": "Why is TCP Called a Connection Oriented Protocol? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-136",
+      "title": "How To Troubleshoot Common HTTP Error Codes ? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-137",
+      "title": "What is Git? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-138",
+      "title": "Introduction to Mercurial - GeeksforGeeks"
+    },
+    {
+      "id": "devops-139",
+      "title": "Git Commit - GeeksforGeeks"
+    },
+    {
+      "id": "devops-140",
+      "title": "Git Clone - GeeksforGeeks"
+    },
+    {
+      "id": "devops-141",
+      "title": "Introduction to BitBucket - GeeksforGeeks"
+    },
+    {
+      "id": "devops-142",
+      "title": "History of Git - GeeksforGeeks"
+    },
+    {
+      "id": "devops-143",
+      "title": "BLOB Full Form - GeeksforGeeks"
+    },
+    {
+      "id": "devops-144",
+      "title": "Git - Working Tree - GeeksforGeeks"
+    },
+    {
+      "id": "devops-145",
+      "title": "Git - Object Model - GeeksforGeeks"
+    },
+    {
+      "id": "devops-146",
+      "title": "Git Add - GeeksforGeeks"
+    },
+    {
+      "id": "devops-147",
+      "title": "Installation of Git on Windows - GeeksforGeeks"
+    },
+    {
+      "id": "devops-148",
+      "title": "Repositories and Commands in Git - GeeksforGeeks"
+    },
+    {
+      "id": "devops-149",
+      "title": "Git Bash - GeeksforGeeks"
+    },
+    {
+      "id": "devops-150",
+      "title": "Git Merge and Merge Conflict - GeeksforGeeks"
+    },
+    {
+      "id": "devops-151",
+      "title": "Git Flow vs Github Flow - GeeksforGeeks"
+    },
+    {
+      "id": "devops-152",
+      "title": "Git Origin Master - GeeksforGeeks"
+    },
+    {
+      "id": "devops-153",
+      "title": "Trunk-Based Development in Software Development - GeeksforGeeks"
+    },
+    {
+      "id": "devops-154",
+      "title": "How to Install Git On Mac - GeeksforGeeks"
+    },
+    {
+      "id": "devops-155",
+      "title": "How to Install Git on Linux - GeeksforGeeks"
+    },
+    {
+      "id": "devops-156",
+      "title": "Git  Fork - GeeksforGeeks"
+    },
+    {
+      "id": "devops-157",
+      "title": "How to Git Clone a Local Repository? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-158",
+      "title": "Git Pull Request - GeeksforGeeks"
+    },
+    {
+      "id": "devops-159",
+      "title": "How to Merge a Git Branch into Master? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-160",
+      "title": "Git Cheat Sheet - GeeksforGeeks"
+    },
+    {
+      "id": "devops-161",
+      "title": "Git Commands for Every Developer - GeeksforGeeks"
+    },
+    {
+      "id": "devops-162",
+      "title": "cron Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "devops-163",
+      "title": "Amazon Web Services (AWS) - Free Tier Account Set up - GeeksforGeeks"
+    },
+    {
+      "id": "devops-164",
+      "title": "Amazon Web Services - Setting Up an AWS Account - GeeksforGeeks"
+    },
+    {
+      "id": "devops-165",
+      "title": "AWS Management Console - GeeksforGeeks"
+    },
+    {
+      "id": "devops-166",
+      "title": "AWS CLI (Command Line Interface) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-167",
+      "title": "AWS: Identity and Access Management - GeeksforGeeks"
+    },
+    {
+      "id": "devops-168",
+      "title": "SAML Authentication - GeeksforGeeks"
+    },
+    {
+      "id": "devops-169",
+      "title": "IAM Role Creation and Management in AWS - GeeksforGeeks"
+    },
+    {
+      "id": "devops-170",
+      "title": "Amazon Web Services - Denying Access using IAM policy for EC2 and EBS Instance - GeeksforGeeks"
+    },
+    {
+      "id": "devops-171",
+      "title": "How to Enable MFA in AWS? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-172",
+      "title": "Elastic Compute Cloud (EC2) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-173",
+      "title": "Create EC2 Instance in AWS (Amazon) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-174",
+      "title": "Amazon EC2 - Instance Types - GeeksforGeeks"
+    },
+    {
+      "id": "devops-175",
+      "title": "Amazon EC2 Pricing Explained: An EC2 Cost Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "devops-176",
+      "title": "Amazon Web Services - Introduction to EC2 Spot Instances - GeeksforGeeks"
+    },
+    {
+      "id": "devops-177",
+      "title": "How to Connect to your Windows Instance using RDP - GeeksforGeeks"
+    },
+    {
+      "id": "devops-178",
+      "title": "Introduction to AWS Elastic Beanstalk - GeeksforGeeks"
+    },
+    {
+      "id": "devops-179",
+      "title": "Amazon Web Services - Replacing Unhealthy EC2 Instance in Elastic Beanstalk Environment - GeeksforGeeks"
+    },
+    {
+      "id": "devops-180",
+      "title": "Launching an Application on AWS Beanstalk - GeeksforGeeks"
+    },
+    {
+      "id": "devops-181",
+      "title": "Amazon Web Services - Adding Security Group to Elastic Beanstalk Environment - GeeksforGeeks"
+    },
+    {
+      "id": "devops-182",
+      "title": "What is Amazon Machine Image (AMI)? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-183",
+      "title": "Amazon Web Services - Creating an Amazon Machine Image(AMI) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-184",
+      "title": "AWS Lambda - GeeksforGeeks"
+    },
+    {
+      "id": "devops-185",
+      "title": "Configure AWS Lambda - GeeksforGeeks"
+    },
+    {
+      "id": "devops-186",
+      "title": "AWS DynamoDB - Insert Data Using AWS Lambda - GeeksforGeeks"
+    },
+    {
+      "id": "devops-187",
+      "title": "Amazon Elastic Container Service (ECS) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-188",
+      "title": "Amazon Web Services - Introduction to Amazon EKS - GeeksforGeeks"
+    },
+    {
+      "id": "devops-189",
+      "title": "Introduction to Amazon Elastic Container Registry - GeeksforGeeks"
+    },
+    {
+      "id": "devops-190",
+      "title": "AWS Simple Storage Service (AWS S3) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-191",
+      "title": "Amazon S3 - Creating a S3 Bucket - GeeksforGeeks"
+    },
+    {
+      "id": "devops-192",
+      "title": "Amazon S3 - Storage Classes - GeeksforGeeks"
+    },
+    {
+      "id": "devops-193",
+      "title": "Amazon S3 - Lifecycle Management - GeeksforGeeks"
+    },
+    {
+      "id": "devops-194",
+      "title": "AWS Elastic Block Store(EBS) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-195",
+      "title": "How to Attach EBS Volume in EC2 Instance? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-196",
+      "title": "AWS EBS (Elastic Block Store) Snapshot - GeeksforGeeks"
+    },
+    {
+      "id": "devops-197",
+      "title": "AWS Elastic File System(EFS) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-198",
+      "title": "Difference Between Amazon EBS and Amazon EFS - GeeksforGeeks"
+    },
+    {
+      "id": "devops-199",
+      "title": "Difference Between AWS S3 and AWS EBS - GeeksforGeeks"
+    },
+    {
+      "id": "devops-200",
+      "title": "What is Amazon Glacier? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-201",
+      "title": "AWS Disaster Recovery Strategies - GeeksforGeeks"
+    },
+    {
+      "id": "devops-202",
+      "title": "AWS CloudFront: CDN Cloud Service - GeeksforGeeks"
+    },
+    {
+      "id": "devops-203",
+      "title": "How to Create Cloudfront Distribution in AWS for S3 Bucket ? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-204",
+      "title": "What is AWS Snowball - GeeksforGeeks"
+    },
+    {
+      "id": "devops-205",
+      "title": "AWS Storage Gateway - GeeksforGeeks"
+    },
+    {
+      "id": "devops-206",
+      "title": "AWS - Simple Queue Service(SQS) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-207",
+      "title": "Amazon Web Services - Amazon S3 Notifications to SNS - GeeksforGeeks"
+    },
+    {
+      "id": "devops-208",
+      "title": "AWS SNS Setup using AWS CLI - GeeksforGeeks"
+    },
+    {
+      "id": "devops-209",
+      "title": "Amazon Web Services - Introduction to Simple Workflow Service - GeeksforGeeks"
+    },
+    {
+      "id": "devops-210",
+      "title": "AWS Elemental MediaConvert Guide - GeeksforGeeks"
+    },
+    {
+      "id": "devops-211",
+      "title": "Amazon Web Service - Introduction to API Gateway - GeeksforGeeks"
+    },
+    {
+      "id": "devops-212",
+      "title": "AWS - Amazon Kinesis - GeeksforGeeks"
+    },
+    {
+      "id": "devops-213",
+      "title": "Relational Database vs NoSQL - GeeksforGeeks"
+    },
+    {
+      "id": "devops-214",
+      "title": "AWS DynamoDB - Introduction - GeeksforGeeks"
+    },
+    {
+      "id": "devops-215",
+      "title": "AWS DynamoDB - Working with Tables - GeeksforGeeks"
+    },
+    {
+      "id": "devops-216",
+      "title": "AWS DynamoDB - Introduction to NoSQL Workbench - GeeksforGeeks"
+    },
+    {
+      "id": "devops-217",
+      "title": "AWS DynamoDB - Working with Backups - GeeksforGeeks"
+    },
+    {
+      "id": "devops-218",
+      "title": "Amazon Aurora - GeeksforGeeks"
+    },
+    {
+      "id": "devops-219",
+      "title": "Amazon RDS - GeeksforGeeks"
+    },
+    {
+      "id": "devops-220",
+      "title": "Create a Database Using AWS RDS - GeeksforGeeks"
+    },
+    {
+      "id": "devops-221",
+      "title": "Amazon RDS - Working with Backups - GeeksforGeeks"
+    },
+    {
+      "id": "devops-222",
+      "title": "AWS RDS vs Aurora: How to Choose the Right AWS Database Solution - GeeksforGeeks"
+    },
+    {
+      "id": "devops-223",
+      "title": "Amazon Redshift - GeeksforGeeks"
+    },
+    {
+      "id": "devops-224",
+      "title": "Amazon Web Services - Introduction to Elastic Cache - GeeksforGeeks"
+    },
+    {
+      "id": "devops-225",
+      "title": "How to Create a Custom VPC in AWS: Step by Step Guide - GeeksforGeeks"
+    },
+    {
+      "id": "devops-226",
+      "title": "Amazon VPC Networking Components - GeeksforGeeks"
+    },
+    {
+      "id": "devops-227",
+      "title": "Amazon VPC - Security in Amazon Virtual Private Cloud - GeeksforGeeks"
+    },
+    {
+      "id": "devops-228",
+      "title": "AWS - VPC Peering - GeeksforGeeks"
+    },
+    {
+      "id": "devops-229",
+      "title": "What is AWS Bastion Host - GeeksforGeeks"
+    },
+    {
+      "id": "devops-230",
+      "title": "Connecting an AWS EC2 Instance of a Private Subnet using Bastion Host - GeeksforGeeks"
+    },
+    {
+      "id": "devops-231",
+      "title": "Amazon EC2 Auto Scaling - GeeksforGeeks"
+    },
+    {
+      "id": "devops-232",
+      "title": "Create and Configure the Auto Scaling Group in EC2 - GeeksforGeeks"
+    },
+    {
+      "id": "devops-233",
+      "title": "Security Group and Network ACL in AWS - GeeksforGeeks"
+    },
+    {
+      "id": "devops-234",
+      "title": "Amazon Web Services - Introduction to Amazon Lightsail - GeeksforGeeks"
+    },
+    {
+      "id": "devops-235",
+      "title": "Amazon Web Services - Working with DNS - GeeksforGeeks"
+    },
+    {
+      "id": "devops-236",
+      "title": "Introduction to Amazon Route53 - GeeksforGeeks"
+    },
+    {
+      "id": "devops-237",
+      "title": "Load Balancing using AWS - GeeksforGeeks"
+    },
+    {
+      "id": "devops-238",
+      "title": "AWS Cost Explorer - GeeksforGeeks"
+    },
+    {
+      "id": "devops-239",
+      "title": "Amazon Web Services Budget Setup - GeeksforGeeks"
+    },
+    {
+      "id": "devops-240",
+      "title": "Amazon Web Services - Cost and Usage Report - GeeksforGeeks"
+    },
+    {
+      "id": "devops-241",
+      "title": "What is SageMaker in AWS? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-242",
+      "title": "Amazon Web Services - Using Custom UI Templates in SageMaker - GeeksforGeeks"
+    },
+    {
+      "id": "devops-243",
+      "title": "Amazon Web Services - IoT Products - GeeksforGeeks"
+    },
+    {
+      "id": "devops-244",
+      "title": "Amazon Web Services - Introduction to Amazon CloudWatch Synthetics - GeeksforGeeks"
+    },
+    {
+      "id": "devops-245",
+      "title": "Difference between AWS Cloudwatch and AWS Cloudtrail - GeeksforGeeks"
+    },
+    {
+      "id": "devops-246",
+      "title": "Bash Script - Features - GeeksforGeeks"
+    },
+    {
+      "id": "devops-247",
+      "title": "What is Google Cloud Platform (GCP)? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-248",
+      "title": "Cloud Storage in Google Cloud Platform (GCP) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-249",
+      "title": "Features of Google Cloud Platform - GeeksforGeeks"
+    },
+    {
+      "id": "devops-250",
+      "title": "Google Cloud Platform - Compute Services - GeeksforGeeks"
+    },
+    {
+      "id": "devops-251",
+      "title": "Introduction to Google Compute Engine - GeeksforGeeks"
+    },
+    {
+      "id": "devops-252",
+      "title": "How To Use Compute Engine To Launch And Manage Virtual Machines ? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-253",
+      "title": "Google App Engine (GAE) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-254",
+      "title": "Google Kubernetes Engine - GeeksforGeeks"
+    },
+    {
+      "id": "devops-255",
+      "title": "Cloud Functions in GCP - GeeksforGeeks"
+    },
+    {
+      "id": "devops-256",
+      "title": "Google Cloud Run - Working with Python - GeeksforGeeks"
+    },
+    {
+      "id": "devops-257",
+      "title": "How to Use Google Cloud Function with Python ? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-258",
+      "title": "Difference Between Google Cloud Compute Engine and App Engine - GeeksforGeeks"
+    },
+    {
+      "id": "devops-259",
+      "title": "Google Cloud Platform - Cloud Storage - GeeksforGeeks"
+    },
+    {
+      "id": "devops-260",
+      "title": "Google Persistent Disk & Google Filestore Services - GeeksforGeeks"
+    },
+    {
+      "id": "devops-261",
+      "title": "Google Cloud SQL - GeeksforGeeks"
+    },
+    {
+      "id": "devops-262",
+      "title": "Google Cloud Platform - Introduction to Cloud Spanner - GeeksforGeeks"
+    },
+    {
+      "id": "devops-263",
+      "title": "Use Cloud Datastore For NoSQL Database On GCP - GeeksforGeeks"
+    },
+    {
+      "id": "devops-264",
+      "title": "Introduction to Google Cloud Bigtable - GeeksforGeeks"
+    },
+    {
+      "id": "devops-265",
+      "title": "Google File System - GeeksforGeeks"
+    },
+    {
+      "id": "devops-266",
+      "title": "Introduction to Firebase Cloud Storage - GeeksforGeeks"
+    },
+    {
+      "id": "devops-267",
+      "title": "Google Cloud Platform - MemoryStore - GeeksforGeeks"
+    },
+    {
+      "id": "devops-268",
+      "title": "Google Cloud Platform Networking Services - GeeksforGeeks"
+    },
+    {
+      "id": "devops-269",
+      "title": "Google Cloud VPC (Virtual Private Cloud) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-270",
+      "title": "Google Cloud Load Balancer - GeeksforGeeks"
+    },
+    {
+      "id": "devops-271",
+      "title": "What is Google Cloud CDN? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-272",
+      "title": "Google Cloud DNS - GeeksforGeeks"
+    },
+    {
+      "id": "devops-273",
+      "title": "Google Cloud Platform Security - GeeksforGeeks"
+    },
+    {
+      "id": "devops-274",
+      "title": "Access Control for Disaster Avoidance in Google Cloud IoT Core using IAM Policy - GeeksforGeeks"
+    },
+    {
+      "id": "devops-275",
+      "title": "Google Cloud Security Scanner - GeeksforGeeks"
+    },
+    {
+      "id": "devops-276",
+      "title": "How to Use Cloud Identity and Access Management (IAM) For Access Control on GCP? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-277",
+      "title": "Google Cloud Armor (Working and Features) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-278",
+      "title": "Google Cloud Platform - Automatic Vs User-Managed Replication Policy - GeeksforGeeks"
+    },
+    {
+      "id": "devops-279",
+      "title": "Introduction to Databricks - GeeksforGeeks"
+    },
+    {
+      "id": "devops-280",
+      "title": "Google Cloud Platform - Introduction to BigQuery - GeeksforGeeks"
+    },
+    {
+      "id": "devops-281",
+      "title": "Google Cloud Platform - Introduction to BigQuery Sandbox - GeeksforGeeks"
+    },
+    {
+      "id": "devops-282",
+      "title": "Google Cloud Platform - Tables in BigQuery - GeeksforGeeks"
+    },
+    {
+      "id": "devops-283",
+      "title": "Google Cloud Platform- BigQuery(Running Queries, advantage and disadvantage) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-284",
+      "title": "Google Cloud Platform - User Defined Functions in BigQuery - GeeksforGeeks"
+    },
+    {
+      "id": "devops-285",
+      "title": "Google Cloud Platform - Working with External Data in BigQuery - GeeksforGeeks"
+    },
+    {
+      "id": "devops-286",
+      "title": "Google Cloud Platform - Loading Data to BigQuery - GeeksforGeeks"
+    },
+    {
+      "id": "devops-287",
+      "title": "Google Cloud Platform - Implementing Authorized View in BigQuery - GeeksforGeeks"
+    },
+    {
+      "id": "devops-288",
+      "title": "Google Cloud Platform - Query History vs Saved Query vs Shared Query in BigQuery - GeeksforGeeks"
+    },
+    {
+      "id": "devops-289",
+      "title": "Google Cloud Platform - Managing Access using IAM in BigQuery - GeeksforGeeks"
+    },
+    {
+      "id": "devops-290",
+      "title": "Google Cloud Platform - Data Visualization in BigQuery - GeeksforGeeks"
+    },
+    {
+      "id": "devops-291",
+      "title": "Building Data Pipelines with Google Cloud Dataflow: ETL Processing - GeeksforGeeks"
+    },
+    {
+      "id": "devops-292",
+      "title": "Datafusion in Google Cloud Platform (GCP) - GeeksforGeeks"
+    },
+    {
+      "id": "devops-293",
+      "title": "How To Create a Pub/Sub Topic on GCP? - GeeksforGeeks"
+    },
+    {
+      "id": "devops-294",
+      "title": "Google Cloud Platform - A High level Overview of Data Catalog Service - GeeksforGeeks"
+    },
+    {
+      "id": "devops-295",
+      "title": "Google Cloud Deployment Manager - GeeksforGeeks"
+    },
+    {
+      "id": "devops-296",
+      "title": "Google Cloud Error Reporting and Google Cloud Profiler - GeeksforGeeks"
+    },
+    {
+      "id": "devops-297",
+      "title": "Introduction to Google Cloud Trace and Google Cloud Debugger - GeeksforGeeks"
+    },
+    {
+      "id": "devops-298",
+      "title": "How to Use Cloud Billing to Monitor Your Costs - GeeksforGeeks"
+    },
+    {
+      "id": "devops-299",
+      "title": "Which Google Cloud Certification Pays the Most? - GeeksforGeeks"
     }
   ]
 }

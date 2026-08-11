@@ -317,6 +317,886 @@
     {
       "id": "c-079",
       "title": "DSA & System Design Course: The Complete SDE Interview Program"
+    },
+    {
+      "id": "c-080",
+      "title": "C Comments - GeeksforGeeks"
+    },
+    {
+      "id": "c-081",
+      "title": "printf in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-082",
+      "title": "Return Statement in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-083",
+      "title": "History and Applications of C - GeeksforGeeks"
+    },
+    {
+      "id": "c-084",
+      "title": "Practice | GeeksforGeeks | A computer science portal for geeks"
+    },
+    {
+      "id": "c-085",
+      "title": "How to Install GCC Compiler on Linux? - GeeksforGeeks"
+    },
+    {
+      "id": "c-086",
+      "title": "Installing MinGW Tools for C/C++ and Changing Environment Variable - GeeksforGeeks"
+    },
+    {
+      "id": "c-087",
+      "title": "How to Install Code Blocks for C++ on Windows? - GeeksforGeeks"
+    },
+    {
+      "id": "c-088",
+      "title": "How to Install Code Blocks for C++ on Linux? - GeeksforGeeks"
+    },
+    {
+      "id": "c-089",
+      "title": "How to Install Sublime Text 3 in Windows? - GeeksforGeeks"
+    },
+    {
+      "id": "c-090",
+      "title": "How To Add Extensions in VS Code? - GeeksforGeeks"
+    },
+    {
+      "id": "c-091",
+      "title": "C++ Compilation process - GeeksforGeeks"
+    },
+    {
+      "id": "c-092",
+      "title": "How To Compile And Run a C/C++ Code In Linux - GeeksforGeeks"
+    },
+    {
+      "id": "c-093",
+      "title": "How to Compile and Run C/C++/Java Programs in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "c-094",
+      "title": "Linker - GeeksforGeeks"
+    },
+    {
+      "id": "c-095",
+      "title": "Working with Shared Libraries | Set 1 - GeeksforGeeks"
+    },
+    {
+      "id": "c-096",
+      "title": "int keyword in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-097",
+      "title": "C Float and Double - GeeksforGeeks"
+    },
+    {
+      "id": "c-098",
+      "title": "C Long - GeeksforGeeks"
+    },
+    {
+      "id": "c-099",
+      "title": "Binary Representation of Signed Numbers - GeeksforGeeks"
+    },
+    {
+      "id": "c-100",
+      "title": "C - if Statement - GeeksforGeeks"
+    },
+    {
+      "id": "c-101",
+      "title": "C if else Statement - GeeksforGeeks"
+    },
+    {
+      "id": "c-102",
+      "title": "Switch Statement in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-103",
+      "title": "C for Loop - GeeksforGeeks"
+    },
+    {
+      "id": "c-104",
+      "title": "while Loop in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-105",
+      "title": "do...while Loop in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-106",
+      "title": "Break Statement in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-107",
+      "title": "Continue Statement in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-108",
+      "title": "Static Variables in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-109",
+      "title": "C typedef - GeeksforGeeks"
+    },
+    {
+      "id": "c-110",
+      "title": "Constants in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-111",
+      "title": "Understanding \"volatile\" qualifier in C | Set 2 (Examples) - GeeksforGeeks"
+    },
+    {
+      "id": "c-112",
+      "title": "Format Specifiers in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-113",
+      "title": "fgets() in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-114",
+      "title": "getchar Function in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-115",
+      "title": "Scope rules in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-116",
+      "title": "Ranges of Data Types in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-117",
+      "title": "Data Type Modifiers in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-118",
+      "title": "Literals in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-119",
+      "title": "Type Conversion in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-120",
+      "title": "Arithmetic Operators in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-121",
+      "title": "C Logical Operators - GeeksforGeeks"
+    },
+    {
+      "id": "c-122",
+      "title": "Comma in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-123",
+      "title": "Conditional or Ternary Operator (?:) in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-124",
+      "title": "Address Operator &amp; in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-125",
+      "title": "Dereference Pointer in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-126",
+      "title": "Operator Precedence and Associativity in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-127",
+      "title": "Jump Statements in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-128",
+      "title": "C Library Functions - GeeksforGeeks"
+    },
+    {
+      "id": "c-129",
+      "title": "User-Defined Function in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-130",
+      "title": "scanf in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-131",
+      "title": "sqrt() Function in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-132",
+      "title": "Function Declaration Vs Function Definition - GeeksforGeeks"
+    },
+    {
+      "id": "c-133",
+      "title": "Function Call Stack in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-134",
+      "title": "Java is Strictly Pass by Value! - GeeksforGeeks"
+    },
+    {
+      "id": "c-135",
+      "title": "Command Line Arguments in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-136",
+      "title": "Types of Recursion in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-137",
+      "title": "Difference between Inline and Macro in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "c-138",
+      "title": "Properties of Array in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-139",
+      "title": "Length of Array in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-140",
+      "title": "Initialization of 2D Array in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-141",
+      "title": "Initialization of 3D Array in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-142",
+      "title": "strcpy() in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-143",
+      "title": "Pass Array to Functions in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-144",
+      "title": "strncpy() Function in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-145",
+      "title": "strcat() in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-146",
+      "title": "strncat() function in C/C++ - GeeksforGeeks"
+    },
+    {
+      "id": "c-147",
+      "title": "C strcmp() - GeeksforGeeks"
+    },
+    {
+      "id": "c-148",
+      "title": "strchr in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-149",
+      "title": "strrchr() in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-150",
+      "title": "strstr() in C/C++ - GeeksforGeeks"
+    },
+    {
+      "id": "c-151",
+      "title": "sprintf() in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-152",
+      "title": "strtok() and strtok_r() functions in C with examples - GeeksforGeeks"
+    },
+    {
+      "id": "c-153",
+      "title": "What are Wild Pointers? How can we avoid? - GeeksforGeeks"
+    },
+    {
+      "id": "c-154",
+      "title": "Difference between constant pointer, pointers to constant, and constant pointers to constants - GeeksforGeeks"
+    },
+    {
+      "id": "c-155",
+      "title": "Chain of Pointers in C with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "c-156",
+      "title": "Segmentation Fault (SIGSEGV) Vs Bus Error (SIGBUS) - GeeksforGeeks"
+    },
+    {
+      "id": "c-157",
+      "title": "Pointer Vs Array in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-158",
+      "title": "Standard in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-159",
+      "title": "Nested Structure in C with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "c-160",
+      "title": "Bit Fields in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-161",
+      "title": "free() Function in C Library With Examples - GeeksforGeeks"
+    },
+    {
+      "id": "c-162",
+      "title": "Use of realloc() - GeeksforGeeks"
+    },
+    {
+      "id": "c-163",
+      "title": "Creating Dynamically Growing Arrays in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-164",
+      "title": "Fragmentation in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "c-165",
+      "title": "Difference Between malloc() and calloc() - GeeksforGeeks"
+    },
+    {
+      "id": "c-166",
+      "title": "C fopen() Function - GeeksforGeeks"
+    },
+    {
+      "id": "c-167",
+      "title": "fprintf() in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-168",
+      "title": "fputs() Function in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-169",
+      "title": "fgetc() and fputc() in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-170",
+      "title": "scanf() and fscanf() in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-171",
+      "title": "C fread() Function - GeeksforGeeks"
+    },
+    {
+      "id": "c-172",
+      "title": "fseek() in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-173",
+      "title": "rewind() in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-174",
+      "title": "fclose() Function in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-175",
+      "title": "Difference between  getc(), getchar(), getch() and getche() - GeeksforGeeks"
+    },
+    {
+      "id": "c-176",
+      "title": "C Library Function - putc() - GeeksforGeeks"
+    },
+    {
+      "id": "c-177",
+      "title": "ftell() in C with example - GeeksforGeeks"
+    },
+    {
+      "id": "c-178",
+      "title": "fseek() vs rewind() in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-179",
+      "title": "Opening Modes in Standard I/O in C/C++ with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "c-180",
+      "title": "fwrite() in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-181",
+      "title": "C File Pointer - GeeksforGeeks"
+    },
+    {
+      "id": "c-182",
+      "title": "ferror() in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-183",
+      "title": "C Preprocessor Directives - GeeksforGeeks"
+    },
+    {
+      "id": "c-184",
+      "title": "#pragma Directive in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-185",
+      "title": "&lt;cfloat&gt; float.h in C/C++ with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "c-186",
+      "title": "C Library - math.h - GeeksforGeeks"
+    },
+    {
+      "id": "c-187",
+      "title": "log2() function in C++ with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "c-188",
+      "title": "ctype.h(&lt;cctype&gt;) library in C/C++ with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "c-189",
+      "title": "Return values of printf() and scanf() in C/C++ - GeeksforGeeks"
+    },
+    {
+      "id": "c-190",
+      "title": "perror() in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-191",
+      "title": "strcpy in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "c-192",
+      "title": "(limits.h) in C/C++ - GeeksforGeeks"
+    },
+    {
+      "id": "c-193",
+      "title": "time() function in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-194",
+      "title": "getdate() and setdate() function in C with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "c-195",
+      "title": "How Do I Create a Library in C? - GeeksforGeeks"
+    },
+    {
+      "id": "c-196",
+      "title": "asctime() and asctime_s() functions in C with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "c-197",
+      "title": "clock() function in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-198",
+      "title": "C Library Function - difftime() - GeeksforGeeks"
+    },
+    {
+      "id": "c-199",
+      "title": "strftime() function in C/C++ - GeeksforGeeks"
+    },
+    {
+      "id": "c-200",
+      "title": "Socket in Computer Network - GeeksforGeeks"
+    },
+    {
+      "id": "c-201",
+      "title": "IP Address vs Port Number - GeeksforGeeks"
+    },
+    {
+      "id": "c-202",
+      "title": "Interesting Facts about Macros and Preprocessors in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-203",
+      "title": "POSIX Threads in OS - GeeksforGeeks"
+    },
+    {
+      "id": "c-204",
+      "title": "What are Threads in Computer Processor or CPU? - GeeksforGeeks"
+    },
+    {
+      "id": "c-205",
+      "title": "pthread_cancel() in C with example - GeeksforGeeks"
+    },
+    {
+      "id": "c-206",
+      "title": "pthread_self() in C with Example - GeeksforGeeks"
+    },
+    {
+      "id": "c-207",
+      "title": "Threading Issues - GeeksforGeeks"
+    },
+    {
+      "id": "c-208",
+      "title": "sleep() Function in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-209",
+      "title": "Prime Number Program in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-210",
+      "title": "Decision Making in C (if , if..else, Nested if, if-else-if ) - GeeksforGeeks"
+    },
+    {
+      "id": "c-211",
+      "title": "Multidimensional Arrays in C - 2D and 3D Arrays - GeeksforGeeks"
+    },
+    {
+      "id": "c-212",
+      "title": "User-Defined Data Types In C - GeeksforGeeks"
+    },
+    {
+      "id": "c-213",
+      "title": "Practice | GeeksforGeeks | A computer science portal for geeks"
+    },
+    {
+      "id": "c-214",
+      "title": "Practice | GeeksforGeeks | A computer science portal for geeks"
+    },
+    {
+      "id": "c-215",
+      "title": "Practice | GeeksforGeeks | A computer science portal for geeks"
+    },
+    {
+      "id": "c-216",
+      "title": "Top 50 Problems on Matrix/Grid Data Structure asked in SDE Interviews - GeeksforGeeks"
+    },
+    {
+      "id": "c-217",
+      "title": "Practice | GeeksforGeeks | A computer science portal for geeks"
+    },
+    {
+      "id": "c-218",
+      "title": "Implementation of Hash Table in C/C++ using Separate Chaining - GeeksforGeeks"
+    },
+    {
+      "id": "c-219",
+      "title": "Practice | GeeksforGeeks | A computer science portal for geeks"
+    },
+    {
+      "id": "c-220",
+      "title": "Practice | GeeksforGeeks | A computer science portal for geeks"
+    },
+    {
+      "id": "c-221",
+      "title": "String Coding Interview Questions - GeeksforGeeks"
+    },
+    {
+      "id": "c-222",
+      "title": "Practice | GeeksforGeeks | A computer science portal for geeks"
+    },
+    {
+      "id": "c-223",
+      "title": "Recursion Interview Questions - GeeksforGeeks"
+    },
+    {
+      "id": "c-224",
+      "title": "Practice | GeeksforGeeks | A computer science portal for geeks"
+    },
+    {
+      "id": "c-225",
+      "title": "Stack Interview Questions - GeeksforGeeks"
+    },
+    {
+      "id": "c-226",
+      "title": "Queue in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-227",
+      "title": "Practice | GeeksforGeeks | A computer science portal for geeks"
+    },
+    {
+      "id": "c-228",
+      "title": "Queue Interview Questions - GeeksforGeeks"
+    },
+    {
+      "id": "c-229",
+      "title": "Linked List in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-230",
+      "title": "Practice | GeeksforGeeks | A computer science portal for geeks"
+    },
+    {
+      "id": "c-231",
+      "title": "Linked List Interview Questions - GeeksforGeeks"
+    },
+    {
+      "id": "c-232",
+      "title": "Binary Tree in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-233",
+      "title": "Practice | GeeksforGeeks | A computer science portal for geeks"
+    },
+    {
+      "id": "c-234",
+      "title": "Heap in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-235",
+      "title": "Practice | GeeksforGeeks | A computer science portal for geeks"
+    },
+    {
+      "id": "c-236",
+      "title": "Implementation of Graph in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-237",
+      "title": "Practice | GeeksforGeeks | A computer science portal for geeks"
+    },
+    {
+      "id": "c-238",
+      "title": "Graph Data Structure Interview Questions - GeeksforGeeks"
+    },
+    {
+      "id": "c-239",
+      "title": "Practice | GeeksforGeeks | A computer science portal for geeks"
+    },
+    {
+      "id": "c-240",
+      "title": "Practice | GeeksforGeeks | A computer science portal for geeks"
+    },
+    {
+      "id": "c-241",
+      "title": "Dynamic Programming Interview Questions - GeeksforGeeks"
+    },
+    {
+      "id": "c-242",
+      "title": "Practice | GeeksforGeeks | A computer science portal for geeks"
+    },
+    {
+      "id": "c-243",
+      "title": "Practice | GeeksforGeeks | A computer science portal for geeks"
+    },
+    {
+      "id": "c-244",
+      "title": "Practice | GeeksforGeeks | A computer science portal for geeks"
+    },
+    {
+      "id": "c-245",
+      "title": "clearerr() in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-246",
+      "title": "C++ Comments - GeeksforGeeks"
+    },
+    {
+      "id": "c-247",
+      "title": "gcc command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "c-248",
+      "title": "Difference Between gcc and g++ - GeeksforGeeks"
+    },
+    {
+      "id": "c-249",
+      "title": "C | Advanced Pointer | Question 5"
+    },
+    {
+      "id": "c-250",
+      "title": "c-250"
+    },
+    {
+      "id": "c-251",
+      "title": "c-251"
+    },
+    {
+      "id": "c-252",
+      "title": "c-252"
+    },
+    {
+      "id": "c-253",
+      "title": "c-253"
+    },
+    {
+      "id": "c-254",
+      "title": "c-254"
+    },
+    {
+      "id": "c-255",
+      "title": "c-255"
+    },
+    {
+      "id": "c-256",
+      "title": "c-256"
+    },
+    {
+      "id": "c-257",
+      "title": "Introduction of Assembler - GeeksforGeeks"
+    },
+    {
+      "id": "c-258",
+      "title": "Random Access Memory (RAM) and Read Only Memory (ROM) - GeeksforGeeks"
+    },
+    {
+      "id": "c-259",
+      "title": "Static and Dynamic Libraries | Set 1 - GeeksforGeeks"
+    },
+    {
+      "id": "c-260",
+      "title": "Dead Code Elimination - GeeksforGeeks"
+    },
+    {
+      "id": "c-261",
+      "title": "Working with Shared Libraries | Set 2 - GeeksforGeeks"
+    },
+    {
+      "id": "c-262",
+      "title": "One's Complement - GeeksforGeeks"
+    },
+    {
+      "id": "c-263",
+      "title": "Two's Complement - GeeksforGeeks"
+    },
+    {
+      "id": "c-264",
+      "title": "Break Statement in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-265",
+      "title": "Entry Controlled Loops in Programming - GeeksforGeeks"
+    },
+    {
+      "id": "c-266",
+      "title": "Difference between while and do-while loop in C, C++, Java - GeeksforGeeks"
+    },
+    {
+      "id": "c-267",
+      "title": "Difference between break and continue statement in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-268",
+      "title": "What are the default values of static variables in C? - GeeksforGeeks"
+    },
+    {
+      "id": "c-269",
+      "title": "Initialization of Static Variables in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-270",
+      "title": "Difference between typedef and #define in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-271",
+      "title": "Difference between #define and const in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-272",
+      "title": "Understanding \"volatile\" qualifier in C | Set 1 (Introduction) - GeeksforGeeks"
+    },
+    {
+      "id": "c-273",
+      "title": "Scansets in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-274",
+      "title": "Static and Dynamic Scoping - GeeksforGeeks"
+    },
+    {
+      "id": "c-275",
+      "title": "Local Variable in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-276",
+      "title": "Integer literal in C/C++ (Prefixes and Suffixes) - GeeksforGeeks"
+    },
+    {
+      "id": "c-277",
+      "title": "Escape Sequence in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-278",
+      "title": "User Defined Literals in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "c-279",
+      "title": "Raw String Literal in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "c-280",
+      "title": "Octal literals in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-281",
+      "title": "Compound Literals in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-282",
+      "title": "Type Difference of Character Literals in C and C++ - GeeksforGeeks"
+    },
+    {
+      "id": "c-283",
+      "title": "Unary Operators in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-284",
+      "title": "Increment and Decrement Operators in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-285",
+      "title": "Passing Pointers to Functions in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-286",
+      "title": "Evaluation order of operands - GeeksforGeeks"
+    },
+    {
+      "id": "c-287",
+      "title": "Difference between ++*p, *p++ and *++p - GeeksforGeeks"
+    },
+    {
+      "id": "c-288",
+      "title": "What’s difference between header files \"stdio.h\" and \"stdlib.h\" ? - GeeksforGeeks"
+    },
+    {
+      "id": "c-289",
+      "title": "puts() vs printf() for printing a string - GeeksforGeeks"
+    },
+    {
+      "id": "c-290",
+      "title": "C Library math.h Functions - GeeksforGeeks"
+    },
+    {
+      "id": "c-291",
+      "title": "sin() function for complex number in C++ with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "c-292",
+      "title": "C++ Program to Illustrate Trigonometric functions - GeeksforGeeks"
+    },
+    {
+      "id": "c-293",
+      "title": "tan() function for complex number in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "c-294",
+      "title": "log() Function in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "c-295",
+      "title": "Character Arithmetic in C - GeeksforGeeks"
+    },
+    {
+      "id": "c-296",
+      "title": "strcat() vs strncat() in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "c-297",
+      "title": "&lt;complex.h&gt; header file in C with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "c-298",
+      "title": "Complex numbers in C++ | Set 1 - GeeksforGeeks"
+    },
+    {
+      "id": "c-299",
+      "title": "Assertions in C/C++ - GeeksforGeeks"
     }
   ]
 }

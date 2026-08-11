@@ -9,79 +9,79 @@
     {
       "id": "python",
       "title": "Python Tutorial",
-      "articleCount": 129,
+      "articleCount": 299,
       "icon": "book"
     },
     {
       "id": "java",
       "title": "Java Tutorial",
-      "articleCount": 173,
+      "articleCount": 299,
       "icon": "book"
     },
     {
       "id": "cpp",
       "title": "Cpp Tutorial",
-      "articleCount": 97,
+      "articleCount": 299,
       "icon": "book"
     },
     {
       "id": "c",
       "title": "C Tutorial",
-      "articleCount": 79,
+      "articleCount": 299,
       "icon": "book"
     },
     {
       "id": "sql",
       "title": "Sql Tutorial",
-      "articleCount": 144,
+      "articleCount": 299,
       "icon": "book"
     },
     {
       "id": "system-design",
       "title": "System Design Tutorial",
-      "articleCount": 141,
+      "articleCount": 299,
       "icon": "book"
     },
     {
       "id": "os",
       "title": "Os Tutorial",
-      "articleCount": 89,
+      "articleCount": 299,
       "icon": "book"
     },
     {
       "id": "networking",
       "title": "Networking Tutorial",
-      "articleCount": 128,
+      "articleCount": 299,
       "icon": "book"
     },
     {
       "id": "web-dev",
       "title": "Web Dev Tutorial",
-      "articleCount": 38,
+      "articleCount": 298,
       "icon": "book"
     },
     {
       "id": "devops",
       "title": "Devops Tutorial",
-      "articleCount": 112,
+      "articleCount": 299,
       "icon": "book"
     },
     {
       "id": "ml-ai",
       "title": "Ml Ai Tutorial",
-      "articleCount": 118,
+      "articleCount": 295,
       "icon": "book"
     },
     {
       "id": "linux",
       "title": "Linux Tutorial",
-      "articleCount": 117,
+      "articleCount": 294,
       "icon": "terminal"
     },
     {
       "id": "distributed-systems",
       "title": "Distributed Systems Tutorial",
-      "articleCount": 110,
+      "articleCount": 299,
       "icon": "network"
     }
   ]

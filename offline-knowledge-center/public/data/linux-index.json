@@ -469,6 +469,714 @@
     {
       "id": "linux-117",
       "title": "MERN Full Stack Web Development Course with AI"
+    },
+    {
+      "id": "linux-118",
+      "title": "Installation of Virtual machine - GeeksforGeeks"
+    },
+    {
+      "id": "linux-119",
+      "title": "Introduction to Kali Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-120",
+      "title": "Introduction to Arch Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-121",
+      "title": "Selecting a Linux Distribution Based on Your Requirements - GeeksforGeeks"
+    },
+    {
+      "id": "linux-122",
+      "title": "Top 10 Best Linux Distros For Laptops - GeeksforGeeks"
+    },
+    {
+      "id": "linux-123",
+      "title": "10 Best Linux Apps and Software in 2025 - GeeksforGeeks"
+    },
+    {
+      "id": "linux-124",
+      "title": "Monolithic Kernel and Key Differences From Microkernel - GeeksforGeeks"
+    },
+    {
+      "id": "linux-125",
+      "title": "Exokernel in OS - GeeksforGeeks"
+    },
+    {
+      "id": "linux-126",
+      "title": "How to Create Directory in Linux | mkdir Command - GeeksforGeeks"
+    },
+    {
+      "id": "linux-127",
+      "title": "uname command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-128",
+      "title": "locate command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-129",
+      "title": "ln command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-130",
+      "title": "Soft and Hard links in Unix/Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-131",
+      "title": "clear Command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-132",
+      "title": "How to Read Manual Pages in Linux | man Command - GeeksforGeeks"
+    },
+    {
+      "id": "linux-133",
+      "title": "echo command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-134",
+      "title": "Wget Command in Linux/Unix - GeeksforGeeks"
+    },
+    {
+      "id": "linux-135",
+      "title": "How to Display the current Username in Linux | whoami Command - GeeksforGeeks"
+    },
+    {
+      "id": "linux-136",
+      "title": "sort Command in Linux with Example - GeeksforGeeks"
+    },
+    {
+      "id": "linux-137",
+      "title": "cal command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-138",
+      "title": "whereis command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-139",
+      "title": "wc command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-140",
+      "title": "File Operation Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-141",
+      "title": "Displaying Directory Structure in a Tree Format in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-142",
+      "title": "Directory Operation Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-143",
+      "title": "chgrp command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-144",
+      "title": "User Management Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-145",
+      "title": "usermod command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-146",
+      "title": "Group Management Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-147",
+      "title": "Process Management Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-148",
+      "title": "mpstat Command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-149",
+      "title": "pmap command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-150",
+      "title": "time command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-151",
+      "title": "Terminal and Session Management Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-152",
+      "title": "stty command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-153",
+      "title": "reset command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-154",
+      "title": "Job Scheduling Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-155",
+      "title": "atd command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-156",
+      "title": "Disk and File System Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-157",
+      "title": "cfdisk command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-158",
+      "title": "Unmount File System in Linux Using the umount Command - GeeksforGeeks"
+    },
+    {
+      "id": "linux-159",
+      "title": "File System Consistency Checker (FSCK) - GeeksforGeeks"
+    },
+    {
+      "id": "linux-160",
+      "title": "dump command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-161",
+      "title": "restore command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-162",
+      "title": "Hardware and System Information Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-163",
+      "title": "Networking Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-164",
+      "title": "Package Management Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-165",
+      "title": "Compression and Archiving Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-166",
+      "title": "Text Processing and Formatting Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-167",
+      "title": "Checksum and File Integrity Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-168",
+      "title": "Shell Built-in and Scripting Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-169",
+      "title": "Development and Build Automation Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-170",
+      "title": "Kernel and Module Management Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-171",
+      "title": "System Control and Power Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-172",
+      "title": "Logging and Monitoring Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-173",
+      "title": "Mail and User Communication Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-174",
+      "title": "Date and Time Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-175",
+      "title": "Printing and Media Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-176",
+      "title": "Help and Documentation Commands in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-177",
+      "title": "Basic Linux Commands for day to day life - GeeksforGeeks"
+    },
+    {
+      "id": "linux-178",
+      "title": "Daily life Linux Commands - GeeksforGeeks"
+    },
+    {
+      "id": "linux-179",
+      "title": "Basic Shell Commands in Linux: Complete List - GeeksforGeeks"
+    },
+    {
+      "id": "linux-180",
+      "title": "Difference between grep and fgrep command - GeeksforGeeks"
+    },
+    {
+      "id": "linux-181",
+      "title": "Running previous command with sudo - GeeksforGeeks"
+    },
+    {
+      "id": "linux-182",
+      "title": "Run commands as root with sudo - GeeksforGeeks"
+    },
+    {
+      "id": "linux-183",
+      "title": "How to Make Custom Commands for Linux Terminal? - GeeksforGeeks"
+    },
+    {
+      "id": "linux-184",
+      "title": "Implementation of ls | wc command - GeeksforGeeks"
+    },
+    {
+      "id": "linux-185",
+      "title": "Linux man page entries | different types - GeeksforGeeks"
+    },
+    {
+      "id": "linux-186",
+      "title": "Commands in Unix when things go wrong - GeeksforGeeks"
+    },
+    {
+      "id": "linux-187",
+      "title": "Regular Expression in grep - GeeksforGeeks"
+    },
+    {
+      "id": "linux-188",
+      "title": "Essential Unix Commands - GeeksforGeeks"
+    },
+    {
+      "id": "linux-189",
+      "title": "Important Linux Commands (leave, diff, cal, ncal, locate and ln) - GeeksforGeeks"
+    },
+    {
+      "id": "linux-190",
+      "title": "mindepth and maxdepth in Linux find() command for limiting search to a specific directory. - GeeksforGeeks"
+    },
+    {
+      "id": "linux-191",
+      "title": "How to Access All Users in Linux Using Different Commands? - GeeksforGeeks"
+    },
+    {
+      "id": "linux-192",
+      "title": "How to Build Your Own Commands in Linux? - GeeksforGeeks"
+    },
+    {
+      "id": "linux-193",
+      "title": "SetUID, SetGID, and Sticky Bits in Linux File Permissions - GeeksforGeeks"
+    },
+    {
+      "id": "linux-194",
+      "title": "Unzip Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-195",
+      "title": "How to Install apt-file package on Ubuntu? - GeeksforGeeks"
+    },
+    {
+      "id": "linux-196",
+      "title": "Disabling and Enabling an Interface on Linux System - GeeksforGeeks"
+    },
+    {
+      "id": "linux-197",
+      "title": "What is RTT(Round Trip Time)? - GeeksforGeeks"
+    },
+    {
+      "id": "linux-198",
+      "title": "What is IPv6? - GeeksforGeeks"
+    },
+    {
+      "id": "linux-199",
+      "title": "Time-To-Live (TTL) - GeeksforGeeks"
+    },
+    {
+      "id": "linux-200",
+      "title": "Domain Name System (DNS) - GeeksforGeeks"
+    },
+    {
+      "id": "linux-204",
+      "title": "host command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-205",
+      "title": "arp command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-206",
+      "title": "dig Command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-207",
+      "title": "hostname command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-208",
+      "title": "iotop Command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-209",
+      "title": "iftop command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-210",
+      "title": "Difference Between User-CPU-Time and System-CPU-Time in UNIX - GeeksforGeeks"
+    },
+    {
+      "id": "linux-211",
+      "title": "Linux Sysstat Utilities For Monitoring System Performance - GeeksforGeeks"
+    },
+    {
+      "id": "linux-212",
+      "title": "Process Control Commands in Unix/Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-213",
+      "title": "How to Start, Stop and Restart Services in Linux Using systemctl Command - GeeksforGeeks"
+    },
+    {
+      "id": "linux-214",
+      "title": "How to mask a systemd unit in Linux? - GeeksforGeeks"
+    },
+    {
+      "id": "linux-215",
+      "title": "View Kernel Messages in Linux | dmesg Command - GeeksforGeeks"
+    },
+    {
+      "id": "linux-216",
+      "title": "How Linux Kernel Boots? - GeeksforGeeks"
+    },
+    {
+      "id": "linux-217",
+      "title": "How to Read and Edit Systemd Logs using Journalctl in linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-218",
+      "title": "Difference between SSH and SSL - GeeksforGeeks"
+    },
+    {
+      "id": "linux-219",
+      "title": "cmd | Dir command - GeeksforGeeks"
+    },
+    {
+      "id": "linux-220",
+      "title": "Linux sftp command with Example - GeeksforGeeks"
+    },
+    {
+      "id": "linux-221",
+      "title": "rsync command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-222",
+      "title": "How to use make utility to build C projects? - GeeksforGeeks"
+    },
+    {
+      "id": "linux-223",
+      "title": "Cd cmd command - GeeksforGeeks"
+    },
+    {
+      "id": "linux-224",
+      "title": "Difference between CLI and GUI - GeeksforGeeks"
+    },
+    {
+      "id": "linux-225",
+      "title": "Linux Terminal - GeeksforGeeks"
+    },
+    {
+      "id": "linux-226",
+      "title": "Shell Scripting – Understanding Shebang (#!/bin/bash) - GeeksforGeeks"
+    },
+    {
+      "id": "linux-227",
+      "title": "write command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-228",
+      "title": "wall command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-229",
+      "title": "export command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-230",
+      "title": "How to Create a Text File Using the Command Line in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-231",
+      "title": "Bash Scripting - For Loop - GeeksforGeeks"
+    },
+    {
+      "id": "linux-232",
+      "title": "Shell Scripting - Standard Input, Output and Error - GeeksforGeeks"
+    },
+    {
+      "id": "linux-233",
+      "title": "declare command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-234",
+      "title": "Bash Scripting - Array - GeeksforGeeks"
+    },
+    {
+      "id": "linux-235",
+      "title": "Command-line arguments and user input | Shell Scripting - GeeksforGeeks"
+    },
+    {
+      "id": "linux-236",
+      "title": "Bash Scripting - How to read a file line by line - GeeksforGeeks"
+    },
+    {
+      "id": "linux-237",
+      "title": "30 Days of Azure: A Complete Guide For Beginners - GeeksforGeeks"
+    },
+    {
+      "id": "linux-238",
+      "title": "Alibaba Cloud - Introduction to IaaS - GeeksforGeeks"
+    },
+    {
+      "id": "linux-239",
+      "title": "Introduction to CentOS - GeeksforGeeks"
+    },
+    {
+      "id": "linux-240",
+      "title": "Inode in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "linux-241",
+      "title": "How to Check Kernel Version in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-242",
+      "title": "Check the OS Version in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-243",
+      "title": "Searching In Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-244",
+      "title": "How to Display Command History in Linux | history Command - GeeksforGeeks"
+    },
+    {
+      "id": "linux-245",
+      "title": "df command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-246",
+      "title": "more command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-247",
+      "title": "less command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-248",
+      "title": "Understanding the /etc/passwd File - GeeksforGeeks"
+    },
+    {
+      "id": "linux-249",
+      "title": "Basic Input/Output System (BIOS) Vs Unified Extensible Firmware Interface (UEFI) - GeeksforGeeks"
+    },
+    {
+      "id": "linux-250",
+      "title": "Logical Volume Manager (LVM) Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "linux-251",
+      "title": "What is SELinux? - GeeksforGeeks"
+    },
+    {
+      "id": "linux-252",
+      "title": "Daemon Processes - GeeksforGeeks"
+    },
+    {
+      "id": "linux-253",
+      "title": "Disk Striping (RAID 0) - GeeksforGeeks"
+    },
+    {
+      "id": "linux-254",
+      "title": "Disk Mirroring (RAID 1) - GeeksforGeeks"
+    },
+    {
+      "id": "linux-255",
+      "title": "How to install Ubuntu on VirtualBox? - GeeksforGeeks"
+    },
+    {
+      "id": "linux-256",
+      "title": "5 Tips to Make a Career as a Linux Kernel Developer - GeeksforGeeks"
+    },
+    {
+      "id": "linux-257",
+      "title": "chattr and lsattr commands in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-259",
+      "title": "How to Install Latest ‘Thunderbird’ Email Client in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-260",
+      "title": "How to Install python 'bottle package' on Linux? - GeeksforGeeks"
+    },
+    {
+      "id": "linux-262",
+      "title": "How to install LibreOffice on Arch-based Linux Distributions(Manjaro) ? - GeeksforGeeks"
+    },
+    {
+      "id": "linux-263",
+      "title": "How to install GIMP on Linux? - GeeksforGeeks"
+    },
+    {
+      "id": "linux-264",
+      "title": "How to Install ProtonVPN in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-265",
+      "title": "How to Install Krita on Ubuntu - GeeksforGeeks"
+    },
+    {
+      "id": "linux-266",
+      "title": "Device Driver and It's Purpose - GeeksforGeeks"
+    },
+    {
+      "id": "linux-267",
+      "title": "Listing Files and Directories in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-268",
+      "title": "basename Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-269",
+      "title": "cksum Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-270",
+      "title": "cmp Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-271",
+      "title": "File Compression in Linux Using the Compress Command - GeeksforGeeks"
+    },
+    {
+      "id": "linux-272",
+      "title": "cpio Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-273",
+      "title": "csplit Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-274",
+      "title": "cut Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-275",
+      "title": "How to Compare Files Line by Line in Linux | diff Command - GeeksforGeeks"
+    },
+    {
+      "id": "linux-276",
+      "title": "diff3 command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-277",
+      "title": "expand Command in LINUX with examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-278",
+      "title": "file command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-279",
+      "title": "fold command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-280",
+      "title": "join Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "linux-281",
+      "title": "look command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-282",
+      "title": "od command in Linux with example - GeeksforGeeks"
+    },
+    {
+      "id": "linux-283",
+      "title": "Paste command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-284",
+      "title": "readlink command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-285",
+      "title": "How to Rename File in Linux | rename Command - GeeksforGeeks"
+    },
+    {
+      "id": "linux-286",
+      "title": "rev command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-287",
+      "title": "shred Command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-288",
+      "title": "Split Command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-289",
+      "title": "tac command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-290",
+      "title": "tee command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-291",
+      "title": "unexpand command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-292",
+      "title": "uniq Command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-293",
+      "title": "dir command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-294",
+      "title": "Dirname Command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-295",
+      "title": "dirs command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-296",
+      "title": "lsblk Command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-297",
+      "title": "chfn command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-298",
+      "title": "chsh command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-299",
+      "title": "chpasswd command in Linux with examples - GeeksforGeeks"
     }
   ]
 }

@@ -693,6 +693,510 @@
     {
       "id": "java-173",
       "title": "Placement 360 – The Complete Tech Interview Program"
+    },
+    {
+      "id": "java-174",
+      "title": "Spring Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "java-175",
+      "title": "Spring Boot Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "java-176",
+      "title": "Introduction and Working of Struts Web Framework - GeeksforGeeks"
+    },
+    {
+      "id": "java-177",
+      "title": "Hibernate Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "java-178",
+      "title": "JavaFX Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "java-179",
+      "title": "Introduction to Java Swing - GeeksforGeeks"
+    },
+    {
+      "id": "java-180",
+      "title": "Introduction to Hadoop - GeeksforGeeks"
+    },
+    {
+      "id": "java-181",
+      "title": "What is Apache Kafka? - GeeksforGeeks"
+    },
+    {
+      "id": "java-182",
+      "title": "Microsoft Azure Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "java-183",
+      "title": "The Complete History of Java Programming Language - GeeksforGeeks"
+    },
+    {
+      "id": "java-184",
+      "title": "Naming Conventions in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-185",
+      "title": "Java Comments - GeeksforGeeks"
+    },
+    {
+      "id": "java-186",
+      "title": "Download and Install JDK on Windows, Mac and Linux - GeeksforGeeks"
+    },
+    {
+      "id": "java-187",
+      "title": "What is a Command Prompt? - GeeksforGeeks"
+    },
+    {
+      "id": "java-188",
+      "title": "Advanced RISC Machine (ARM) Processor - GeeksforGeeks"
+    },
+    {
+      "id": "java-189",
+      "title": "Introduction to macOS - GeeksforGeeks"
+    },
+    {
+      "id": "java-190",
+      "title": "Introduction to Apache Maven - GeeksforGeeks"
+    },
+    {
+      "id": "java-191",
+      "title": "Introduction to Gradle - GeeksforGeeks"
+    },
+    {
+      "id": "java-192",
+      "title": "How to Install Eclipse IDE For Java? - GeeksforGeeks"
+    },
+    {
+      "id": "java-193",
+      "title": "How to Turn on Code Suggestion in Eclipse or Spring Tool Suite? - GeeksforGeeks"
+    },
+    {
+      "id": "java-194",
+      "title": "How to Use MongoDB in Eclipse? - GeeksforGeeks"
+    },
+    {
+      "id": "java-195",
+      "title": "How to Use Git with Eclipse? - GeeksforGeeks"
+    },
+    {
+      "id": "java-196",
+      "title": "Introduction to Kotlin - GeeksforGeeks"
+    },
+    {
+      "id": "java-197",
+      "title": "JAR files in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-198",
+      "title": "JDK in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-199",
+      "title": "JRE in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-200",
+      "title": "How JVM Works - JVM Architecture - GeeksforGeeks"
+    },
+    {
+      "id": "java-201",
+      "title": "Java.lang.System class in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-202",
+      "title": "print vs println in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-203",
+      "title": "PrintStream println() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-204",
+      "title": "Redirecting System.out.println() Output to a File in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-205",
+      "title": "Scanner nextBoolean() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-206",
+      "title": "Scanner nextByte() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-207",
+      "title": "Scanner nextDouble() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-208",
+      "title": "Scanner nextFloat() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-209",
+      "title": "Scanner nextInt() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-210",
+      "title": "Scanner nextLine() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-211",
+      "title": "Scanner nextLong() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-212",
+      "title": "Scanner nextShort() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-213",
+      "title": "Reserved Words in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-214",
+      "title": "Scope of Variables in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-215",
+      "title": "Types of Java Variables - GeeksforGeeks"
+    },
+    {
+      "id": "java-216",
+      "title": "Rounding off errors in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-217",
+      "title": "Java Arithmetic Operators with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-218",
+      "title": "Java Unary Operator with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-219",
+      "title": "Java Assignment Operators with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-220",
+      "title": "Java Relational Operators with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-221",
+      "title": "Java Logical Operators with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-222",
+      "title": "Java Ternary Operator - GeeksforGeeks"
+    },
+    {
+      "id": "java-223",
+      "title": "instanceof Keyword in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-224",
+      "title": "Operator Precedence and Associativity in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-225",
+      "title": "Java if statement - GeeksforGeeks"
+    },
+    {
+      "id": "java-226",
+      "title": "Java if-else Statement - GeeksforGeeks"
+    },
+    {
+      "id": "java-227",
+      "title": "Java Nested if - GeeksforGeeks"
+    },
+    {
+      "id": "java-228",
+      "title": "Switch Statements in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-229",
+      "title": "Java For Loop - GeeksforGeeks"
+    },
+    {
+      "id": "java-230",
+      "title": "Java while Loop - GeeksforGeeks"
+    },
+    {
+      "id": "java-231",
+      "title": "Java Do While Loop - GeeksforGeeks"
+    },
+    {
+      "id": "java-232",
+      "title": "Java Continue Statement - GeeksforGeeks"
+    },
+    {
+      "id": "java-233",
+      "title": "Java Break Statement - GeeksforGeeks"
+    },
+    {
+      "id": "java-234",
+      "title": "Java return Keyword - GeeksforGeeks"
+    },
+    {
+      "id": "java-235",
+      "title": "Java Math random() Method - GeeksforGeeks"
+    },
+    {
+      "id": "java-236",
+      "title": "Instance Methods in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-237",
+      "title": "Static Method in Java With Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-238",
+      "title": "Method Overloading in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-239",
+      "title": "For-Each Loop in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-240",
+      "title": "Array Index Out Of Bounds Exception in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-241",
+      "title": "Java.util Package in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-242",
+      "title": "Arrays asList() Method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-243",
+      "title": "Java Arrays compare() Method with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-244",
+      "title": "Importance of hashCode() Method  in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-245",
+      "title": "Java Array mismatch() Method with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-246",
+      "title": "Arrays.parallelPrefix() in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-247",
+      "title": "Java.util.Arrays.parallelSetAll(), Arrays.setAll() in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-248",
+      "title": "Java ArrayList spliterator() Method - GeeksforGeeks"
+    },
+    {
+      "id": "java-249",
+      "title": "Scanner Class in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-250",
+      "title": "new operator in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-251",
+      "title": "Java StringTokenizer Class - GeeksforGeeks"
+    },
+    {
+      "id": "java-252",
+      "title": "String Constant Pool in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-253",
+      "title": "Java String equals() Method - GeeksforGeeks"
+    },
+    {
+      "id": "java-254",
+      "title": "Equality (==) operator in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-255",
+      "title": "Java String length() Method - GeeksforGeeks"
+    },
+    {
+      "id": "java-256",
+      "title": "Java String charAt() Method - GeeksforGeeks"
+    },
+    {
+      "id": "java-257",
+      "title": "Java String substring() Method - GeeksforGeeks"
+    },
+    {
+      "id": "java-258",
+      "title": "Java String indexOf() Method - GeeksforGeeks"
+    },
+    {
+      "id": "java-259",
+      "title": "Java String lastIndexOf() Method with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-260",
+      "title": "Boolean equals() method in Java with examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-261",
+      "title": "Java String equalsIgnoreCase() Method - GeeksforGeeks"
+    },
+    {
+      "id": "java-262",
+      "title": "Java String compareTo() Method with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-263",
+      "title": "Java String toLowerCase() Method - GeeksforGeeks"
+    },
+    {
+      "id": "java-264",
+      "title": "Java String toUpperCase() Method - GeeksforGeeks"
+    },
+    {
+      "id": "java-265",
+      "title": "Java String trim() Method - GeeksforGeeks"
+    },
+    {
+      "id": "java-266",
+      "title": "String replace() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-267",
+      "title": "Java String contains() Method with Example - GeeksforGeeks"
+    },
+    {
+      "id": "java-268",
+      "title": "Java String toCharArray() Method With Example - GeeksforGeeks"
+    },
+    {
+      "id": "java-269",
+      "title": "Java String startsWith() Method with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-270",
+      "title": "Java.lang.String class in Java | Set 2 - GeeksforGeeks"
+    },
+    {
+      "id": "java-271",
+      "title": "StringBuffer ensureCapacity() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-272",
+      "title": "StringBuffer appendCodePoint() Method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-273",
+      "title": "StringBuffer codePointAt() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-274",
+      "title": "StringBuffer codePointBefore() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-275",
+      "title": "StringBuffer codePointCount() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-276",
+      "title": "StringBuffer getChars() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-277",
+      "title": "StringBuffer indexOf() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-278",
+      "title": "StringBuffer lastIndexOf() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-279",
+      "title": "StringBuffer offsetByCodePoints() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-280",
+      "title": "StringBuffer setCharAt()  method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-281",
+      "title": "StringBuffer setLength() in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-282",
+      "title": "StringBuffer subSequence() in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-283",
+      "title": "StringBuffer substring() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-284",
+      "title": "StringBuffer toString() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-285",
+      "title": "StringBuffer trimToSize() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-286",
+      "title": "Serializable Interface in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-287",
+      "title": "StringBuilder append() Method in Java - GeeksforGeeks"
+    },
+    {
+      "id": "java-288",
+      "title": "StringBuilder replace() in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-289",
+      "title": "StringBuilder delete() in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-290",
+      "title": "StringBuilder reverse() in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-291",
+      "title": "StringBuilder capacity() Method in Java  - GeeksforGeeks"
+    },
+    {
+      "id": "java-292",
+      "title": "StringBuilder length()  in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-293",
+      "title": "StringBuilder charAt() in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-294",
+      "title": "StringBuilder setCharAt() in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-295",
+      "title": "StringBuilder substring() method in Java with examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-296",
+      "title": "StringBuilder ensureCapacity() in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-297",
+      "title": "StringBuilder deleteCharAt() in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-298",
+      "title": "StringBuilder lastIndexOf() method in Java with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "java-299",
+      "title": "StringBuilder toString() method in Java with Examples - GeeksforGeeks"
     }
   ]
 }

@@ -357,6 +357,846 @@
     {
       "id": "os-089",
       "title": "DSA & System Design Course: The Complete SDE Interview Program"
+    },
+    {
+      "id": "os-090",
+      "title": "Shell in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-091",
+      "title": "Need and Functions of Operating Systems - GeeksforGeeks"
+    },
+    {
+      "id": "os-092",
+      "title": "Difference Between 32-bit and 64-bit Operating Systems - GeeksforGeeks"
+    },
+    {
+      "id": "os-093",
+      "title": "Functions of Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-094",
+      "title": "History of Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-095",
+      "title": "Batch Processing Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-096",
+      "title": "Multiprogramming in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-097",
+      "title": "Multi Processing Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-098",
+      "title": "What is a Distributed Operating System? - GeeksforGeeks"
+    },
+    {
+      "id": "os-099",
+      "title": "Difference Between Hard Real Time and Soft Real Time System - GeeksforGeeks"
+    },
+    {
+      "id": "os-100",
+      "title": "Different Types of System Calls in OS - GeeksforGeeks"
+    },
+    {
+      "id": "os-101",
+      "title": "What is Dynamic Memory Allocation? - GeeksforGeeks"
+    },
+    {
+      "id": "os-102",
+      "title": "What is Program Counter? - GeeksforGeeks"
+    },
+    {
+      "id": "os-103",
+      "title": "Different Classes of CPU Registers - GeeksforGeeks"
+    },
+    {
+      "id": "os-104",
+      "title": "Process Creation and Deletions in Operating Systems - GeeksforGeeks"
+    },
+    {
+      "id": "os-105",
+      "title": "5 State Process Model in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-106",
+      "title": "Short Term Scheduler in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-107",
+      "title": "Medium Term Scheduler in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-108",
+      "title": "Types of Scheduling Queues - GeeksforGeeks"
+    },
+    {
+      "id": "os-109",
+      "title": "FCFS - First Come First Serve CPU Scheduling - GeeksforGeeks"
+    },
+    {
+      "id": "os-110",
+      "title": "Shortest Job First or SJF CPU Scheduling - GeeksforGeeks"
+    },
+    {
+      "id": "os-111",
+      "title": "Shortest Remaining Time First (Preemptive SJF) Scheduling Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "os-112",
+      "title": "Round Robin Scheduling in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-113",
+      "title": "Priority Scheduling in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-114",
+      "title": "Highest Response Ratio Next (HRRN) CPU Scheduling - GeeksforGeeks"
+    },
+    {
+      "id": "os-115",
+      "title": "Multilevel Queue (MLQ) CPU Scheduling - GeeksforGeeks"
+    },
+    {
+      "id": "os-116",
+      "title": "Multilevel Feedback Queue Scheduling (MLFQ) CPU Scheduling - GeeksforGeeks"
+    },
+    {
+      "id": "os-117",
+      "title": "Deadlock vs Starvation in OS - GeeksforGeeks"
+    },
+    {
+      "id": "os-118",
+      "title": "Methods in Inter Process Communication - GeeksforGeeks"
+    },
+    {
+      "id": "os-119",
+      "title": "Dining Philosopher Solution using Semaphores - GeeksforGeeks"
+    },
+    {
+      "id": "os-120",
+      "title": "Readers-Writers Problem - GeeksforGeeks"
+    },
+    {
+      "id": "os-121",
+      "title": "Sleeping Barber problem in Process Synchronization - GeeksforGeeks"
+    },
+    {
+      "id": "os-122",
+      "title": "Deadlock in DBMS - GeeksforGeeks"
+    },
+    {
+      "id": "os-123",
+      "title": "Software Based Solutions in Process Synchronization - GeeksforGeeks"
+    },
+    {
+      "id": "os-124",
+      "title": "OS Based Solutions in Process Synchronization - GeeksforGeeks"
+    },
+    {
+      "id": "os-125",
+      "title": "Peterson's Algorithm for Mutual Exclusion | Set 1 (Basic C implementation) - GeeksforGeeks"
+    },
+    {
+      "id": "os-126",
+      "title": "Peterson's Algorithm for Mutual Exclusion | Set 2 (CPU Cycles and Memory Fence) - GeeksforGeeks"
+    },
+    {
+      "id": "os-127",
+      "title": "Producer Consumer Problem in C - GeeksforGeeks"
+    },
+    {
+      "id": "os-128",
+      "title": "Microkernel in Operating Systems - GeeksforGeeks"
+    },
+    {
+      "id": "os-129",
+      "title": "Readers-Writers Problem | Writers Preference Solution - GeeksforGeeks"
+    },
+    {
+      "id": "os-130",
+      "title": "Dining-Philosophers Solution Using Monitors - GeeksforGeeks"
+    },
+    {
+      "id": "os-131",
+      "title": "Deadlock Ignorance - GeeksforGeeks"
+    },
+    {
+      "id": "os-132",
+      "title": "Introduction to Data Structures - GeeksforGeeks"
+    },
+    {
+      "id": "os-133",
+      "title": "Wait For Graph Deadlock Detection - GeeksforGeeks"
+    },
+    {
+      "id": "os-134",
+      "title": "Real Time Operating System (RTOS) - GeeksforGeeks"
+    },
+    {
+      "id": "os-135",
+      "title": "Deadlock Detection Algorithm in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-136",
+      "title": "What are the Functions of a CPU? - GeeksforGeeks"
+    },
+    {
+      "id": "os-137",
+      "title": "Random Access Memory (RAM) - GeeksforGeeks"
+    },
+    {
+      "id": "os-138",
+      "title": "Read Only Memory (ROM) - GeeksforGeeks"
+    },
+    {
+      "id": "os-139",
+      "title": "Understanding file sizes  | Bytes, KB, MB, GB, TB, PB, EB, ZB, YB - GeeksforGeeks"
+    },
+    {
+      "id": "os-140",
+      "title": "Swapping in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-141",
+      "title": "Page Replacement Algorithms in Operating Systems - GeeksforGeeks"
+    },
+    {
+      "id": "os-142",
+      "title": "First-Fit Allocation in Operating Systems - GeeksforGeeks"
+    },
+    {
+      "id": "os-143",
+      "title": "Best-Fit Allocation in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-144",
+      "title": "Worst-Fit Allocation in Operating Systems - GeeksforGeeks"
+    },
+    {
+      "id": "os-145",
+      "title": "Fixed (or static) Partitioning in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-146",
+      "title": "Difference between Internal and External fragmentation - GeeksforGeeks"
+    },
+    {
+      "id": "os-147",
+      "title": "Variable (or Dynamic) Partitioning in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-148",
+      "title": "Compaction in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-149",
+      "title": "Translation Lookaside Buffer (TLB) in Paging - GeeksforGeeks"
+    },
+    {
+      "id": "os-150",
+      "title": "Page Table Entries in Page Table - GeeksforGeeks"
+    },
+    {
+      "id": "os-151",
+      "title": "Virtual Memory | Questions - GeeksforGeeks"
+    },
+    {
+      "id": "os-152",
+      "title": "FIFO (First-In-First-Out) approach in Programming - GeeksforGeeks"
+    },
+    {
+      "id": "os-153",
+      "title": "Types of Server Virtualization in Computer Network - GeeksforGeeks"
+    },
+    {
+      "id": "os-154",
+      "title": "Hardware Based Virtualization - GeeksforGeeks"
+    },
+    {
+      "id": "os-155",
+      "title": "Beginner's Guide to Linux System Administration - GeeksforGeeks"
+    },
+    {
+      "id": "os-156",
+      "title": "Universal Serial Bus (USB) - GeeksforGeeks"
+    },
+    {
+      "id": "os-157",
+      "title": "SATA Full Form - GeeksforGeeks"
+    },
+    {
+      "id": "os-158",
+      "title": "HDD Full Form - GeeksforGeeks"
+    },
+    {
+      "id": "os-159",
+      "title": "Difference between Desktop and Laptop - GeeksforGeeks"
+    },
+    {
+      "id": "os-160",
+      "title": "GATE | IT | 2007 | COA | Secondary Memory | Question 44"
+    },
+    {
+      "id": "os-161",
+      "title": "FCFS Disk Scheduling Algorithms - GeeksforGeeks"
+    },
+    {
+      "id": "os-162",
+      "title": "SCAN (Elevator) Disk Scheduling Algorithms - GeeksforGeeks"
+    },
+    {
+      "id": "os-163",
+      "title": "LOOK Disk Scheduling Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "os-164",
+      "title": "C-LOOK Disk Scheduling Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "os-165",
+      "title": "N-Step-SCAN disk scheduling - GeeksforGeeks"
+    },
+    {
+      "id": "os-166",
+      "title": "FScan disk scheduling algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "os-167",
+      "title": "Buffering in OS - GeeksforGeeks"
+    },
+    {
+      "id": "os-168",
+      "title": "Page Fault Handling in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-169",
+      "title": "Operating System Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "os-170",
+      "title": "States of a Process in Operating Systems - GeeksforGeeks"
+    },
+    {
+      "id": "os-171",
+      "title": "Thread in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-172",
+      "title": "Process vs Thread - GeeksforGeeks"
+    },
+    {
+      "id": "os-173",
+      "title": "Virtual Memory in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-174",
+      "title": "Random Access Memory (RAM) - GeeksforGeeks"
+    },
+    {
+      "id": "os-175",
+      "title": "Demand Paging in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-176",
+      "title": "Kernel in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-177",
+      "title": "FCFS - First Come First Serve CPU Scheduling - GeeksforGeeks"
+    },
+    {
+      "id": "os-178",
+      "title": "Shortest Job Next (SJN) in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-179",
+      "title": "Shortest Remaining Time First (Preemptive SJF) Scheduling Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "os-180",
+      "title": "Round Robin Scheduling Algorithm with Different Arrival Time - GeeksforGeeks"
+    },
+    {
+      "id": "os-181",
+      "title": "Multilevel Queue (MLQ) CPU Scheduling - GeeksforGeeks"
+    },
+    {
+      "id": "os-182",
+      "title": "Multiprogramming in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-183",
+      "title": "Time Sharing Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-184",
+      "title": "Banker's Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "os-185",
+      "title": "Fragmentation in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-186",
+      "title": "Paging - GeeksforGeeks"
+    },
+    {
+      "id": "os-187",
+      "title": "Swapping in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-188",
+      "title": "Readers-Writers Problem - GeeksforGeeks"
+    },
+    {
+      "id": "os-189",
+      "title": "Dining Philosophers Problem - GeeksforGeeks"
+    },
+    {
+      "id": "os-190",
+      "title": "Direct Memory Access (DMA) Controller - GeeksforGeeks"
+    },
+    {
+      "id": "os-191",
+      "title": "Multitasking Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-192",
+      "title": "Spooling in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-193",
+      "title": "Introduction of Assembler - GeeksforGeeks"
+    },
+    {
+      "id": "os-194",
+      "title": "Graphical User Interface - GeeksforGeeks"
+    },
+    {
+      "id": "os-195",
+      "title": "Inter Process Communication (IPC) - GeeksforGeeks"
+    },
+    {
+      "id": "os-196",
+      "title": "Zombie Processes and their Prevention - GeeksforGeeks"
+    },
+    {
+      "id": "os-197",
+      "title": "Context Switching in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-198",
+      "title": "Race Condition Vulnerability - GeeksforGeeks"
+    },
+    {
+      "id": "os-199",
+      "title": "Starvation and Aging  in Operating Systems - GeeksforGeeks"
+    },
+    {
+      "id": "os-200",
+      "title": "Introduction of Deadlock in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-201",
+      "title": "Address Binding and its Types - GeeksforGeeks"
+    },
+    {
+      "id": "os-202",
+      "title": "Difference Between Compile Time and Load Time Address Binding - GeeksforGeeks"
+    },
+    {
+      "id": "os-203",
+      "title": "Difference Between Compile Time and Execution Time Address Binding - GeeksforGeeks"
+    },
+    {
+      "id": "os-204",
+      "title": "Last Minute Notes – Operating Systems - GeeksforGeeks"
+    },
+    {
+      "id": "os-205",
+      "title": "Process Management Interview Questions - Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-206",
+      "title": "Memory Management Interview Questions - Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-207",
+      "title": "File & I/O Management Interview Questions - Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-208",
+      "title": "Synchronization & Concurrency Interview Questions - Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-209",
+      "title": "Thread in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-210",
+      "title": "Operating Systems | Set 3 - GeeksforGeeks"
+    },
+    {
+      "id": "os-211",
+      "title": "Operating Systems | Set 4 - GeeksforGeeks"
+    },
+    {
+      "id": "os-212",
+      "title": "Operating Systems | Set 5 - GeeksforGeeks"
+    },
+    {
+      "id": "os-213",
+      "title": "Operating Systems | Set 6 - GeeksforGeeks"
+    },
+    {
+      "id": "os-214",
+      "title": "Operating Systems | Set 7 - GeeksforGeeks"
+    },
+    {
+      "id": "os-215",
+      "title": "Operating Systems | Set 8 - GeeksforGeeks"
+    },
+    {
+      "id": "os-216",
+      "title": "Operating Systems | Set 9 - GeeksforGeeks"
+    },
+    {
+      "id": "os-217",
+      "title": "Operating Systems | Set 10 - GeeksforGeeks"
+    },
+    {
+      "id": "os-218",
+      "title": "Operating Systems | Set 11 - GeeksforGeeks"
+    },
+    {
+      "id": "os-219",
+      "title": "Operating Systems | Set 12 - GeeksforGeeks"
+    },
+    {
+      "id": "os-220",
+      "title": "Operating Systems | Set 13 - GeeksforGeeks"
+    },
+    {
+      "id": "os-221",
+      "title": "Operating Systems | Set 14 - GeeksforGeeks"
+    },
+    {
+      "id": "os-222",
+      "title": "Operating Systems | Set 15 - GeeksforGeeks"
+    },
+    {
+      "id": "os-223",
+      "title": "Operating Systems | Set 16 - GeeksforGeeks"
+    },
+    {
+      "id": "os-224",
+      "title": "GATE CSE and DA Previous Years Papers PDF Download Link - GeeksforGeeks"
+    },
+    {
+      "id": "os-225",
+      "title": "Command Line Interface - GeeksforGeeks"
+    },
+    {
+      "id": "os-226",
+      "title": "Shortest Job First CPU Scheduling with Predicted Burst Time - GeeksforGeeks"
+    },
+    {
+      "id": "os-227",
+      "title": "Program for Round Robin Scheduling for the Same Arrival Time - GeeksforGeeks"
+    },
+    {
+      "id": "os-228",
+      "title": "Priority CPU Scheduling with different arrival time - Set 2 - GeeksforGeeks"
+    },
+    {
+      "id": "os-229",
+      "title": "Dual Core vs Quad Core Processor - GeeksforGeeks"
+    },
+    {
+      "id": "os-230",
+      "title": "CAD Full Form - GeeksforGeeks"
+    },
+    {
+      "id": "os-231",
+      "title": "Difference Between x64 and x86 Architecture - GeeksforGeeks"
+    },
+    {
+      "id": "os-232",
+      "title": "List of “Difference Between” Operating System (OS) Topics - GeeksforGeeks"
+    },
+    {
+      "id": "os-233",
+      "title": "Difference Between 32-bit and 64-bit JVM in Java - GeeksforGeeks"
+    },
+    {
+      "id": "os-234",
+      "title": "Primary Memory - GeeksforGeeks"
+    },
+    {
+      "id": "os-235",
+      "title": "Spooling in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-236",
+      "title": "Device Management in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-237",
+      "title": "Operating System Security - GeeksforGeeks"
+    },
+    {
+      "id": "os-238",
+      "title": "Interrupt In Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-239",
+      "title": "Difference between Multi-tasking and Multi-threading - GeeksforGeeks"
+    },
+    {
+      "id": "os-240",
+      "title": "Real Time Systems - GeeksforGeeks"
+    },
+    {
+      "id": "os-241",
+      "title": "Difference Between IoT Devices and Computers - GeeksforGeeks"
+    },
+    {
+      "id": "os-242",
+      "title": "Addressing Modes in 8086 - GeeksforGeeks"
+    },
+    {
+      "id": "os-243",
+      "title": "Flag register in 8085 microprocessor - GeeksforGeeks"
+    },
+    {
+      "id": "os-244",
+      "title": "CPU vs GPU - GeeksforGeeks"
+    },
+    {
+      "id": "os-245",
+      "title": "fork() in C - GeeksforGeeks"
+    },
+    {
+      "id": "os-246",
+      "title": "Difference between Short-Term, Medium Term, and Long-Term Scheduler - GeeksforGeeks"
+    },
+    {
+      "id": "os-247",
+      "title": "Difference between Short-Term and Medium-Term Scheduler - GeeksforGeeks"
+    },
+    {
+      "id": "os-248",
+      "title": "Long Term Scheduler in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-249",
+      "title": "Program for FCFS CPU Scheduling | Set 1 - GeeksforGeeks"
+    },
+    {
+      "id": "os-250",
+      "title": "Program for FCFS CPU Scheduling | Set 2 (Processes with different arrival times) - GeeksforGeeks"
+    },
+    {
+      "id": "os-251",
+      "title": "Convoy Effect in Operating Systems - GeeksforGeeks"
+    },
+    {
+      "id": "os-252",
+      "title": "Difference Between Turn Around Time (TAT) and Waiting Time (WT) in CPU Scheduling - GeeksforGeeks"
+    },
+    {
+      "id": "os-253",
+      "title": "Introduction of Shortest Remaining Time First (SRTF) algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "os-254",
+      "title": "Shortest Job First (or SJF) CPU Scheduling Non-preemptive algorithm using Segment Tree - GeeksforGeeks"
+    },
+    {
+      "id": "os-255",
+      "title": "Round Robin Scheduling Algorithm with Different Arrival Time - GeeksforGeeks"
+    },
+    {
+      "id": "os-256",
+      "title": "Program for Priority CPU Scheduling | Set 1 - GeeksforGeeks"
+    },
+    {
+      "id": "os-257",
+      "title": "Shortest Job Next (SJN) in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-258",
+      "title": "Program for HRRN CPU Scheduling Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "os-259",
+      "title": "IPC through shared memory - GeeksforGeeks"
+    },
+    {
+      "id": "os-260",
+      "title": "IPC using Message Queues - GeeksforGeeks"
+    },
+    {
+      "id": "os-261",
+      "title": "Lock Variable Synchronization Mechanism - GeeksforGeeks"
+    },
+    {
+      "id": "os-262",
+      "title": "OpenMP | Introduction with Installation Guide - GeeksforGeeks"
+    },
+    {
+      "id": "os-263",
+      "title": "What is a General Purpose Computer? - GeeksforGeeks"
+    },
+    {
+      "id": "os-264",
+      "title": "RADAR - GeeksforGeeks"
+    },
+    {
+      "id": "os-265",
+      "title": "What is Bandwidth? Definition, Working, Importance, Uses - GeeksforGeeks"
+    },
+    {
+      "id": "os-266",
+      "title": "Introduction to Control Unit and its Design - GeeksforGeeks"
+    },
+    {
+      "id": "os-267",
+      "title": "Cache Memory in Computer Organization - GeeksforGeeks"
+    },
+    {
+      "id": "os-268",
+      "title": "Special Purpose Computer Systems - GeeksforGeeks"
+    },
+    {
+      "id": "os-269",
+      "title": "ALU Functions and Bus Organization - GeeksforGeeks"
+    },
+    {
+      "id": "os-270",
+      "title": "Keyboard module in Python - GeeksforGeeks"
+    },
+    {
+      "id": "os-271",
+      "title": "Multilevel Cache Organisation - GeeksforGeeks"
+    },
+    {
+      "id": "os-272",
+      "title": "Input and Output Devices - GeeksforGeeks"
+    },
+    {
+      "id": "os-273",
+      "title": "Peripherals Devices in Computer Organization - GeeksforGeeks"
+    },
+    {
+      "id": "os-274",
+      "title": "Why ROM is Called Non Volatile Memory? - GeeksforGeeks"
+    },
+    {
+      "id": "os-275",
+      "title": "Encoders and Decoders in Digital Logic - GeeksforGeeks"
+    },
+    {
+      "id": "os-276",
+      "title": "BCD or Binary Coded Decimal - GeeksforGeeks"
+    },
+    {
+      "id": "os-277",
+      "title": "What is Firmware? - GeeksforGeeks"
+    },
+    {
+      "id": "os-278",
+      "title": "RAM vs ROM - GeeksforGeeks"
+    },
+    {
+      "id": "os-279",
+      "title": "Program for Least Recently Used (LRU) Page Replacement algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "os-280",
+      "title": "Second Chance (or Clock) Page Replacement Policy - GeeksforGeeks"
+    },
+    {
+      "id": "os-281",
+      "title": "Partition Allocation Methods in Memory Management - GeeksforGeeks"
+    },
+    {
+      "id": "os-282",
+      "title": "Virtualization in Cloud Computing and Types - GeeksforGeeks"
+    },
+    {
+      "id": "os-283",
+      "title": "Hypervisor - GeeksforGeeks"
+    },
+    {
+      "id": "os-284",
+      "title": "Introduction to Linux System Administration - GeeksforGeeks"
+    },
+    {
+      "id": "os-285",
+      "title": "Understanding File System - GeeksforGeeks"
+    },
+    {
+      "id": "os-286",
+      "title": "Compare file system in Windows and Linux - GeeksforGeeks"
+    },
+    {
+      "id": "os-287",
+      "title": "Changing the Directory in Linux | cd Command - GeeksforGeeks"
+    },
+    {
+      "id": "os-288",
+      "title": "Listing Files and Directories in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "os-289",
+      "title": "vi Editor in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "os-290",
+      "title": "Creating an Empty File in Linux | Touch Command - GeeksforGeeks"
+    },
+    {
+      "id": "os-291",
+      "title": "Nano Text Editor in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "os-292",
+      "title": "mv Command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "os-293",
+      "title": "rm command in Linux - GeeksforGeeks"
+    },
+    {
+      "id": "os-294",
+      "title": "fdisk command in Linux with examples - GeeksforGeeks"
+    },
+    {
+      "id": "os-295",
+      "title": "How to Mount File System in Linux | mount Command - GeeksforGeeks"
+    },
+    {
+      "id": "os-296",
+      "title": "Nslookup Command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "os-297",
+      "title": "tracepath command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "os-298",
+      "title": "Difference between SSH and Telnet - GeeksforGeeks"
+    },
+    {
+      "id": "os-299",
+      "title": "curl Command in Linux with Examples - GeeksforGeeks"
     }
   ]
 }

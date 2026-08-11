@@ -517,6 +517,686 @@
     {
       "id": "python-129",
       "title": "DSA & System Design Course: The Complete SDE Interview Program"
+    },
+    {
+      "id": "python-130",
+      "title": "How to Install Python on Mac [2025 Guide for M1, M2, M3, and M4 Macs] - GeeksforGeeks"
+    },
+    {
+      "id": "python-131",
+      "title": "Python Comments - GeeksforGeeks"
+    },
+    {
+      "id": "python-132",
+      "title": "Python Applications, Advantages and Disadvantages - GeeksforGeeks"
+    },
+    {
+      "id": "python-133",
+      "title": "Taking Input in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-134",
+      "title": "Taking multiple inputs from user in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-135",
+      "title": "Python split() Method - GeeksforGeeks"
+    },
+    {
+      "id": "python-136",
+      "title": "Change the Type of Input in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-137",
+      "title": "Type Casting in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-138",
+      "title": "Take Input from stdin in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-139",
+      "title": "Python Input Methods for Competitive Programming - GeeksforGeeks"
+    },
+    {
+      "id": "python-140",
+      "title": "Shared Reference in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-141",
+      "title": "Python del keyword - GeeksforGeeks"
+    },
+    {
+      "id": "python-142",
+      "title": "type() function in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-143",
+      "title": "Insert a Variable into a String - Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-144",
+      "title": "Python Arithmetic Operators - GeeksforGeeks"
+    },
+    {
+      "id": "python-145",
+      "title": "Difference between / vs. // operator in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-146",
+      "title": "Python Object Comparison : \"is\" vs \"==\" - GeeksforGeeks"
+    },
+    {
+      "id": "python-147",
+      "title": "Python Logical Operators - GeeksforGeeks"
+    },
+    {
+      "id": "python-148",
+      "title": "Assignment Operators in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-149",
+      "title": "Python Membership and Identity Operators - GeeksforGeeks"
+    },
+    {
+      "id": "python-150",
+      "title": "Ternary Operator in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-151",
+      "title": "Precedence and Associativity of Operators in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-152",
+      "title": "Why There Are No ++ and -- Operators in Python? - GeeksforGeeks"
+    },
+    {
+      "id": "python-153",
+      "title": "Difference between == and is operator in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-154",
+      "title": "Python True Keyword - GeeksforGeeks"
+    },
+    {
+      "id": "python-155",
+      "title": "Python False Keyword - GeeksforGeeks"
+    },
+    {
+      "id": "python-156",
+      "title": "Python None Keyword - GeeksforGeeks"
+    },
+    {
+      "id": "python-157",
+      "title": "Python and Keyword - GeeksforGeeks"
+    },
+    {
+      "id": "python-158",
+      "title": "Python OR Keyword - GeeksforGeeks"
+    },
+    {
+      "id": "python-159",
+      "title": "not Operator in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-160",
+      "title": "is keyword in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-161",
+      "title": "Python in Keyword - GeeksforGeeks"
+    },
+    {
+      "id": "python-162",
+      "title": "Nested-if statement in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-163",
+      "title": "Python If Else Statements - Conditional Statements - GeeksforGeeks"
+    },
+    {
+      "id": "python-164",
+      "title": "Python If Else Statements - Conditional Statements - GeeksforGeeks"
+    },
+    {
+      "id": "python-165",
+      "title": "Python For Loops - GeeksforGeeks"
+    },
+    {
+      "id": "python-166",
+      "title": "Python While Loop - GeeksforGeeks"
+    },
+    {
+      "id": "python-167",
+      "title": "Python Break Statement - GeeksforGeeks"
+    },
+    {
+      "id": "python-168",
+      "title": "Python Continue Statement - GeeksforGeeks"
+    },
+    {
+      "id": "python-169",
+      "title": "Python Try Except - GeeksforGeeks"
+    },
+    {
+      "id": "python-170",
+      "title": "Finally keyword in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-171",
+      "title": "Python Raise Keyword - GeeksforGeeks"
+    },
+    {
+      "id": "python-172",
+      "title": "Python assert keyword - GeeksforGeeks"
+    },
+    {
+      "id": "python-173",
+      "title": "Python def Keyword - GeeksforGeeks"
+    },
+    {
+      "id": "python-174",
+      "title": "Python return statement - GeeksforGeeks"
+    },
+    {
+      "id": "python-175",
+      "title": "yield Keyword - Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-176",
+      "title": "Python class keyword - GeeksforGeeks"
+    },
+    {
+      "id": "python-177",
+      "title": "with statement in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-178",
+      "title": "as Keyword - Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-179",
+      "title": "Import module in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-180",
+      "title": "Python from Keyword - GeeksforGeeks"
+    },
+    {
+      "id": "python-181",
+      "title": "Global keyword in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-182",
+      "title": "Python nonlocal Keyword - GeeksforGeeks"
+    },
+    {
+      "id": "python-183",
+      "title": "Python async - GeeksforGeeks"
+    },
+    {
+      "id": "python-184",
+      "title": "await in python - GeeksforGeeks"
+    },
+    {
+      "id": "python-185",
+      "title": "Python Keywords and Identifiers - GeeksforGeeks"
+    },
+    {
+      "id": "python-186",
+      "title": "Literals in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-187",
+      "title": "Python Tokens and Character Sets - GeeksforGeeks"
+    },
+    {
+      "id": "python-188",
+      "title": "Python Boolean - GeeksforGeeks"
+    },
+    {
+      "id": "python-189",
+      "title": "Truthy vs Falsy Values in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-190",
+      "title": "Python Numbers - GeeksforGeeks"
+    },
+    {
+      "id": "python-191",
+      "title": "Convert Integer to String in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-192",
+      "title": "Convert String to Int in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-193",
+      "title": "Primitive Data Types vs Non Primitive Data Types in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-194",
+      "title": "Python Match Case Statement - GeeksforGeeks"
+    },
+    {
+      "id": "python-195",
+      "title": "Check Multiple Conditions with If Statement - Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-196",
+      "title": "Taking Conditional User Inputs - Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-197",
+      "title": "Python range() function - GeeksforGeeks"
+    },
+    {
+      "id": "python-198",
+      "title": "Python len() Function - GeeksforGeeks"
+    },
+    {
+      "id": "python-199",
+      "title": "Python Nested Loops - GeeksforGeeks"
+    },
+    {
+      "id": "python-200",
+      "title": "Python | for vs while loop - GeeksforGeeks"
+    },
+    {
+      "id": "python-201",
+      "title": "Eliminating Loop from Python Code - GeeksforGeeks"
+    },
+    {
+      "id": "python-202",
+      "title": "Loop Control Statements - GeeksforGeeks"
+    },
+    {
+      "id": "python-203",
+      "title": "Default arguments in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-204",
+      "title": "Assign Function to a Variable in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-205",
+      "title": "Returning Functions from Functions in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-206",
+      "title": "Passing Function as an Argument in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-207",
+      "title": "Higher Order Functions in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-208",
+      "title": "Python | def vs lambda keyword - GeeksforGeeks"
+    },
+    {
+      "id": "python-209",
+      "title": "Python String upper() Method - GeeksforGeeks"
+    },
+    {
+      "id": "python-210",
+      "title": "Python String strip() Method - GeeksforGeeks"
+    },
+    {
+      "id": "python-211",
+      "title": "Scope Resolution in Python | LEGB Rule - GeeksforGeeks"
+    },
+    {
+      "id": "python-212",
+      "title": "Python Closures - GeeksforGeeks"
+    },
+    {
+      "id": "python-213",
+      "title": "Function Wrappers in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-214",
+      "title": "Chain Multiple Decorators in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-215",
+      "title": "Slicing with Negative Numbers in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-216",
+      "title": "String Slicing in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-217",
+      "title": "Python String replace() Method - GeeksforGeeks"
+    },
+    {
+      "id": "python-218",
+      "title": "String lower() Method in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-219",
+      "title": "Python String Methods - GeeksforGeeks"
+    },
+    {
+      "id": "python-220",
+      "title": "f-strings in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-221",
+      "title": "Python String format() Method - GeeksforGeeks"
+    },
+    {
+      "id": "python-222",
+      "title": "String Comparison in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-223",
+      "title": "Convert String to a List in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-224",
+      "title": "Python list() Function - GeeksforGeeks"
+    },
+    {
+      "id": "python-225",
+      "title": "Iterate Over a List in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-226",
+      "title": "Multi-dimensional Lists in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-227",
+      "title": "Tuple Slicing - Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-228",
+      "title": "Python -  Reversing a Tuple - GeeksforGeeks"
+    },
+    {
+      "id": "python-229",
+      "title": "Convert a List of Tuples into Dictionary - Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-230",
+      "title": "Namedtuple in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-231",
+      "title": "Python dict() Function - GeeksforGeeks"
+    },
+    {
+      "id": "python-232",
+      "title": "Python Dictionary get() Method - GeeksforGeeks"
+    },
+    {
+      "id": "python-233",
+      "title": "Python Dictionary keys() method - GeeksforGeeks"
+    },
+    {
+      "id": "python-234",
+      "title": "Python dictionary values() - GeeksforGeeks"
+    },
+    {
+      "id": "python-235",
+      "title": "Python Dictionary items() method - GeeksforGeeks"
+    },
+    {
+      "id": "python-236",
+      "title": "Iterate Over a Dictionary in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-237",
+      "title": "Python Nested Dictionary - GeeksforGeeks"
+    },
+    {
+      "id": "python-238",
+      "title": "Python Dictionary Comprehension - GeeksforGeeks"
+    },
+    {
+      "id": "python-239",
+      "title": "Python Dictionary Methods - GeeksforGeeks"
+    },
+    {
+      "id": "python-240",
+      "title": "Python Dictionary | Shallow Copy vs Deep Copy - GeeksforGeeks"
+    },
+    {
+      "id": "python-241",
+      "title": "set() Function in python - GeeksforGeeks"
+    },
+    {
+      "id": "python-242",
+      "title": "frozenset() in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-243",
+      "title": "Set add() Method in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-244",
+      "title": "Union() Function in Set Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-245",
+      "title": "Intersection() function Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-246",
+      "title": "Python Set difference() - GeeksforGeeks"
+    },
+    {
+      "id": "python-247",
+      "title": "Python Set Exercise - GeeksforGeeks"
+    },
+    {
+      "id": "python-248",
+      "title": "Python Set Methods - GeeksforGeeks"
+    },
+    {
+      "id": "python-249",
+      "title": "Python Set Operations (Union, Intersection, Difference and Symmetric Difference) - GeeksforGeeks"
+    },
+    {
+      "id": "python-250",
+      "title": "Basics of NumPy Arrays - GeeksforGeeks"
+    },
+    {
+      "id": "python-251",
+      "title": "Python NumPy - GeeksforGeeks"
+    },
+    {
+      "id": "python-252",
+      "title": "Python List insert() Method - GeeksforGeeks"
+    },
+    {
+      "id": "python-253",
+      "title": "Python List append() Method - GeeksforGeeks"
+    },
+    {
+      "id": "python-254",
+      "title": "Python Unpack Array - GeeksforGeeks"
+    },
+    {
+      "id": "python-255",
+      "title": "Python List remove() Method - GeeksforGeeks"
+    },
+    {
+      "id": "python-256",
+      "title": "Python List pop() Method - GeeksforGeeks"
+    },
+    {
+      "id": "python-257",
+      "title": "Python List Slicing - GeeksforGeeks"
+    },
+    {
+      "id": "python-258",
+      "title": "Python List index() - Find Index of Item - GeeksforGeeks"
+    },
+    {
+      "id": "python-259",
+      "title": "Python List count() method - GeeksforGeeks"
+    },
+    {
+      "id": "python-260",
+      "title": "Difference between List and Array in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-261",
+      "title": "Find Common Elements in Two Arrays in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-262",
+      "title": "How to Pass an Array to a Function in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-263",
+      "title": "How to Create String Array in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-264",
+      "title": "Map vs List comprehension - Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-265",
+      "title": "Python List Comprehension Using If-Else - GeeksforGeeks"
+    },
+    {
+      "id": "python-266",
+      "title": "Python Collections Module - GeeksforGeeks"
+    },
+    {
+      "id": "python-267",
+      "title": "Python heapq.heappush() Method - GeeksforGeeks"
+    },
+    {
+      "id": "python-268",
+      "title": "Python heapq.heappop() Method - GeeksforGeeks"
+    },
+    {
+      "id": "python-269",
+      "title": "Python heapq.heappushpop() Method - GeeksforGeeks"
+    },
+    {
+      "id": "python-270",
+      "title": "Python heapq.nlargest() Method - GeeksforGeeks"
+    },
+    {
+      "id": "python-271",
+      "title": "Python heapq.nsmallest() Method - GeeksforGeeks"
+    },
+    {
+      "id": "python-272",
+      "title": "Python heapq.heapreplace() Method - GeeksforGeeks"
+    },
+    {
+      "id": "python-273",
+      "title": "Python heapq.merge() Method - GeeksforGeeks"
+    },
+    {
+      "id": "python-274",
+      "title": "Python reversed() Method - GeeksforGeeks"
+    },
+    {
+      "id": "python-275",
+      "title": "Python Dictionary popitem() method - GeeksforGeeks"
+    },
+    {
+      "id": "python-276",
+      "title": "Python Linked List - GeeksforGeeks"
+    },
+    {
+      "id": "python-277",
+      "title": "Trees in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-278",
+      "title": "Graphs in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-279",
+      "title": "Dynamic Programming in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-280",
+      "title": "__init__ in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-281",
+      "title": "self in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-282",
+      "title": "Python object - GeeksforGeeks"
+    },
+    {
+      "id": "python-283",
+      "title": "Python @staticmethod - GeeksforGeeks"
+    },
+    {
+      "id": "python-284",
+      "title": "Operator Overloading in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-285",
+      "title": "Class (Static) and Instance Variables in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-286",
+      "title": "__new__ in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-287",
+      "title": "Introduction of Object Oriented Programming - GeeksforGeeks"
+    },
+    {
+      "id": "python-288",
+      "title": "Duck Typing in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-289",
+      "title": "Method Overriding in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-290",
+      "title": "Types of Inheritance in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-291",
+      "title": "Multiple Inheritance in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-292",
+      "title": "Python super() - GeeksforGeeks"
+    },
+    {
+      "id": "python-293",
+      "title": "Method Resolution Order in Python Inheritance - GeeksforGeeks"
+    },
+    {
+      "id": "python-294",
+      "title": "Name mangling in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-295",
+      "title": "ZeroDivisionError: float division by zero in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-296",
+      "title": "Define Custom Exceptions in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-297",
+      "title": "Errors and Exceptions in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-298",
+      "title": "ArithmeticError - Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-299",
+      "title": "Python Overflowerror: Math Range Error - GeeksforGeeks"
     }
   ]
 }

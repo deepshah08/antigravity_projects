@@ -153,6 +153,1046 @@
     {
       "id": "web-dev-038",
       "title": "MERN Full Stack Web Development Course with AI"
+    },
+    {
+      "id": "web-dev-039",
+      "title": "Getting started with Databases : Essential Guide for Beginners - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-040",
+      "title": "Top 7 Programming Languages for Backend Web Development - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-041",
+      "title": "Fullstack Web Development - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-042",
+      "title": "What Is Git Version Control? - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-043",
+      "title": "Browsers Complete Overview - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-044",
+      "title": "Bootstrap Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-045",
+      "title": "The Future of Remote Work in Tech: Top Trends and Predictions - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-046",
+      "title": "Freelancing vs Full-Time Employment: Choosing the Right Path - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-047",
+      "title": "HTML Features, Application and History - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-048",
+      "title": "HTML Editors - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-049",
+      "title": "HTML Comments - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-050",
+      "title": "Structure of an HTML Document - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-051",
+      "title": "HTML Elements - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-052",
+      "title": "HTML Attributes - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-053",
+      "title": "HTML5 Semantics - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-054",
+      "title": "HTML Entities - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-055",
+      "title": "HTML Symbols - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-056",
+      "title": "Simple Portfolio Website Design using HTML - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-057",
+      "title": "Design an Event Webpage using HTML and CSS - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-058",
+      "title": "HTML Projects - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-059",
+      "title": "Most Commonly Used Tags in HTML - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-060",
+      "title": "HTML Tags - A to Z List - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-061",
+      "title": "HTML Tables - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-062",
+      "title": "HTML Table Row Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-063",
+      "title": "HTML Table Header Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-064",
+      "title": "HTML Table Data Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-065",
+      "title": "HTML caption Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-066",
+      "title": "HTML col Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-067",
+      "title": "HTML Lists - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-068",
+      "title": "HTML Ordered Lists - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-069",
+      "title": "HTML Unordered List - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-070",
+      "title": "HTML Description Lists - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-071",
+      "title": "HTML Italic Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-072",
+      "title": "HTML small Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-073",
+      "title": "HTML ins Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-074",
+      "title": "HTML sub Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-075",
+      "title": "HTML strong Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-076",
+      "title": "HTML b Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-077",
+      "title": "HTML mark Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-078",
+      "title": "HTML del Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-079",
+      "title": "HTML em Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-080",
+      "title": "HTML sup Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-081",
+      "title": "HTML form Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-082",
+      "title": "HTML input Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-083",
+      "title": "HTML label Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-084",
+      "title": "Button Tag vs Input Type=\"button\" Attribute - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-085",
+      "title": "HTML select Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-086",
+      "title": "HTML text Attribute - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-087",
+      "title": "HTML fieldset form Attribute - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-088",
+      "title": "HTML legend Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-089",
+      "title": "HTML datalist Tag - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-090",
+      "title": "HTML Form Design - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-091",
+      "title": "HTML iframes - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-092",
+      "title": "HTML File Paths - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-093",
+      "title": "HTML Favicon - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-094",
+      "title": "HTML Computer Code Elements - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-095",
+      "title": "HTML Emojis - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-096",
+      "title": "HTML Charsets - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-097",
+      "title": "HTML URL Encoding - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-098",
+      "title": "HTML Responsive Web Design - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-099",
+      "title": "HTML Layout - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-100",
+      "title": "HTML Audio - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-101",
+      "title": "HTML Video - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-102",
+      "title": "HTML Attributes Complete Reference - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-103",
+      "title": "HTML Global Attributes - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-104",
+      "title": "HTML Event Attributes Reference - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-105",
+      "title": "HTML DOM Complete Reference - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-106",
+      "title": "HTML DOM Audio/Video Complete Reference - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-107",
+      "title": "HTML5 Complete Reference - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-108",
+      "title": "Interesting Facts about HTML - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-109",
+      "title": "Interesting Facts About HTML Links and Navigation - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-110",
+      "title": "Interesting Facts About HTML Tables - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-111",
+      "title": "Interesting Facts About HTML Lists - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-112",
+      "title": "Interesting Facts About  HTML Meta Tags and SEO - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-113",
+      "title": "Interesting Facts About  HTML5 APIs - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-114",
+      "title": "HTML Interview Questions and Answers - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-115",
+      "title": "HTML Cheat Sheet - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-116",
+      "title": "Best HTML Coding Practices You Must Know - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-117",
+      "title": "CSS Syntax - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-118",
+      "title": "Adding CSS to HTML - 3 Approaches - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-119",
+      "title": "CSS Ruleset - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-120",
+      "title": "CSS Comments - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-121",
+      "title": "CSS Selectors - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-122",
+      "title": "CSS Combinators - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-123",
+      "title": "CSS Display Property - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-124",
+      "title": "CSS Background - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-125",
+      "title": "CSS Borders - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-126",
+      "title": "CSS Fonts - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-127",
+      "title": "CSS Colors - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-128",
+      "title": "CSS Margins - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-129",
+      "title": "CSS Padding - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-130",
+      "title": "CSS Positioning Elements - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-131",
+      "title": "CSS white-space Property - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-132",
+      "title": "CSS  Height and Width - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-133",
+      "title": "CSS Overflow - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-134",
+      "title": "CSS Shadow Effect - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-135",
+      "title": "CSS Units - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-136",
+      "title": "CSS Text Formatting - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-137",
+      "title": "CSS Images - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-138",
+      "title": "CSS Lists - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-139",
+      "title": "CSS Tables - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-140",
+      "title": "CSS Forms Styling - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-141",
+      "title": "CSS Links - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-142",
+      "title": "Create GeeksforGeeks Logo Using HTML and CSS - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-143",
+      "title": "Design Meet the Team Page using HTML and CSS - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-144",
+      "title": "Design a Tribute Page using HTML and CSS - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-145",
+      "title": "Create a Website Using HTML and CSS - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-146",
+      "title": "Design a Contact us Page using HTML and CSS - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-147",
+      "title": "Create Browsers Window using HTML and CSS - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-148",
+      "title": "Creating an Email Newsletter - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-149",
+      "title": "CSS Media Queries - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-150",
+      "title": "CSS  Website Layout - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-151",
+      "title": "CSS Box Model - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-152",
+      "title": "Responsive Web Design - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-153",
+      "title": "Nesting and grouping in CSS - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-154",
+      "title": "CSS Counters - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-155",
+      "title": "CSS Multiple Columns - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-156",
+      "title": "CSS Conditional Rules - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-157",
+      "title": "Logical Properties in CSS - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-158",
+      "title": "CSS Math Functions - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-159",
+      "title": "Interesting Facts About CSS Image Styling - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-160",
+      "title": "Interesting  Facts About CSS Text Styling - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-161",
+      "title": "Interesting Facts About CSS Grid - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-162",
+      "title": "Interesting Facts About CSS Box Model - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-163",
+      "title": "Interesting Facts About CSS Flexbox - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-164",
+      "title": "Interesting Facts About CSS - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-165",
+      "title": "CSS Specificity - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-166",
+      "title": "CSS Variables - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-167",
+      "title": "Way to Apply Concept of Inheritance in CSS - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-168",
+      "title": "CSS 3D Transforms - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-169",
+      "title": "CSS Transitions - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-170",
+      "title": "CSS Animations - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-171",
+      "title": "CSS Functions Complete Reference - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-172",
+      "title": "CSS Interview Questions and Answers - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-173",
+      "title": "CSS Frameworks - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-174",
+      "title": "CSS Preprocessor SASS - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-175",
+      "title": "CSS Preprocessor LESS - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-176",
+      "title": "Adding JavaScript in HTML Document - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-177",
+      "title": "Console in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-178",
+      "title": "JavaScript Variables - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-179",
+      "title": "JavaScript Data Types - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-180",
+      "title": "Type Conversion and Type Coercion in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-181",
+      "title": "JavaScript Operators - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-182",
+      "title": "JavaScript Control Flow Statements - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-183",
+      "title": "Scope of Variables in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-184",
+      "title": "Functions in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-185",
+      "title": "JavaScript Hoisting - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-186",
+      "title": "JavaScript Function Binding - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-187",
+      "title": "Closure in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-188",
+      "title": "JavaScript Higher Order Functions - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-189",
+      "title": "JavaScript Iterator - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-190",
+      "title": "JavaScript Function Generator - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-191",
+      "title": "JavaScript Events - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-192",
+      "title": "JavaScript addEventListener() with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-193",
+      "title": "Event Propagation in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-194",
+      "title": "Event Delegation in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-195",
+      "title": "Prevent the default action of an event in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-196",
+      "title": "Event Loop in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-197",
+      "title": "Design a Simple Counter Using HTML CSS and JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-198",
+      "title": "JavaScript Application For Random Number Generator - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-199",
+      "title": "JavaScript Application To Check Prime and Non-Prime Number - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-200",
+      "title": "JavaScript Application - Get Unicode Character Value - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-201",
+      "title": "Build a Palindrome Checker App using JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-202",
+      "title": "Show And Hide Password Using JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-203",
+      "title": "JavaScript Application For Email Validation - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-204",
+      "title": "Generate a Random Password using JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-205",
+      "title": "Building a Carousel with Vanilla JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-206",
+      "title": "JavaScript Numbers - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-207",
+      "title": "JavaScript Strings - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-208",
+      "title": "Implementation of LinkedList in Javascript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-209",
+      "title": "Sorting Algorithms in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-210",
+      "title": "Introduction to TypedArray - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-211",
+      "title": "JavaScript WeakMap - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-212",
+      "title": "JavaScript WeakSet - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-213",
+      "title": "Implementation of Priority Queue in Javascript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-214",
+      "title": "DSA in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-215",
+      "title": "JavaScript Object Constructors - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-216",
+      "title": "JavaScript this Keyword - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-217",
+      "title": "JavaScript Prototype - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-218",
+      "title": "JavaScript Classes - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-219",
+      "title": "Constructor in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-220",
+      "title": "JavaScript Getters and Setters - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-221",
+      "title": "JavaScript Static Methods and Properties - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-222",
+      "title": "JavaScript Inheritance - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-223",
+      "title": "Encapsulation in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-224",
+      "title": "Abstraction in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-225",
+      "title": "Polymorphism in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-226",
+      "title": "JavaScript - Browser Object Model - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-227",
+      "title": "JavaScript HTML DOM - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-228",
+      "title": "JavaScript DOM Manipulation - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-229",
+      "title": "Working with the DOM and Events - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-230",
+      "title": "JavaScript Callbacks - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-231",
+      "title": "JavaScript Promise - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-232",
+      "title": "JavaScript Promise Chaining - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-233",
+      "title": "Async and Await in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-234",
+      "title": "Toast Notification in HTML CSS and JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-235",
+      "title": "Create OTP Input Field using HTML CSS and JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-236",
+      "title": "Create multi step progress bar using Bootstrap - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-237",
+      "title": "Design a Student Grade Calculator using JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-238",
+      "title": "Create a Quiz App with Timer using HTML CSS and JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-239",
+      "title": "Price Range Slider with Min-Max Input using HTML CSS and JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-240",
+      "title": "Create a GitHub Profile Search using HTML CSS and JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-241",
+      "title": "Create a Sortable and Filterable Table using JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-242",
+      "title": "Build an Expense Tracker with HTML CSS and JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-243",
+      "title": "Dynamic Resume Creator using HTML CSS and JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-244",
+      "title": "JSON Vs JavaScript Object - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-245",
+      "title": "Parse JSON Data in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-246",
+      "title": "JavaScript JSON Parser - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-247",
+      "title": "Read JSON File Using JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-248",
+      "title": "JavaScript JSON Complete Reference - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-249",
+      "title": "JavaScript RegExp (Regular Expression) - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-250",
+      "title": "JavaScript Form Validation - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-251",
+      "title": "Validate Email Address using RegExp in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-252",
+      "title": "Number Validation in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-253",
+      "title": "JavaScript - Username Validation using Regex - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-254",
+      "title": "JavaScript - Validate Password in JS - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-255",
+      "title": "JavaScript - Validate URL in JS - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-256",
+      "title": "Javascript Error and Exceptional Handling - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-257",
+      "title": "JavaScript Errors Throw and Try to Catch - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-258",
+      "title": "How to create custom errors in JavaScript ? - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-259",
+      "title": "Debugging in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-260",
+      "title": "Testing with Jest - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-261",
+      "title": "Memory Management in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-262",
+      "title": "Garbage Collection in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-263",
+      "title": "Lazy Loading - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-264",
+      "title": "Debouncing in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-265",
+      "title": "JavaScript Throttling - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-266",
+      "title": "Interesting Facts About JavaScript Data Types - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-267",
+      "title": "Interesting Facts About JavaScript Strings - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-268",
+      "title": "Interesting Facts about JavaScript Functions - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-269",
+      "title": "JavaScript - Interesting Facts About 'this' keyword - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-270",
+      "title": "Interesting Facts about JavaScript Set - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-271",
+      "title": "Interesting Facts About Map in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-272",
+      "title": "Interesting Facts about JavaScript Arrays - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-273",
+      "title": "Interesting Facts about Object in JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-274",
+      "title": "Interesting Facts About JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-275",
+      "title": "JavaScript Exercises, Practice Questions and Solutions - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-276",
+      "title": "JavaScript String Exercise - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-277",
+      "title": "JavaScript Array Exercise - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-278",
+      "title": "JavaScript Coding Questions and Answers - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-279",
+      "title": "JavaScript Programming Examples - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-280",
+      "title": "JavaScript Interview Questions and Answers - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-281",
+      "title": "Javascript Projects - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-283",
+      "title": "Difference between Preact and Angular - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-284",
+      "title": "Lodash - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-285",
+      "title": "Moment.js - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-286",
+      "title": "Axios in React: A Guide for Beginners - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-287",
+      "title": "Introduction to Sockets.IO in NodeJS - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-288",
+      "title": "NPM bcrypt - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-289",
+      "title": "Explain passport in Node.js - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-290",
+      "title": "NPM CORS - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-291",
+      "title": "NuxtJS - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-292",
+      "title": "Gatsby Introduction - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-293",
+      "title": "Getting Started with Remix - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-294",
+      "title": "NestJS Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-295",
+      "title": "Express.js vs KoaJS in Node.js - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-296",
+      "title": "Difference Between Express and Fastify Web App Frameworks - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-297",
+      "title": "Meteor | Introduction to Meteor - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-298",
+      "title": "Top JavaScript Frameworks For Mobile Apps Development - GeeksforGeeks"
+    },
+    {
+      "id": "web-dev-299",
+      "title": "Top 7 JavaScript Frameworks & Libraries For Building Games in 2025 - GeeksforGeeks"
     }
   ]
 }

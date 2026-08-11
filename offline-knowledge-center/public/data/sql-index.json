@@ -577,6 +577,626 @@
     {
       "id": "sql-144",
       "title": "DSA & System Design Course: The Complete SDE Interview Program"
+    },
+    {
+      "id": "sql-145",
+      "title": "SQL Concepts and Queries - GeeksforGeeks"
+    },
+    {
+      "id": "sql-146",
+      "title": "MySQL Introduction - GeeksforGeeks"
+    },
+    {
+      "id": "sql-147",
+      "title": "SQL | Arithmetic Operators - GeeksforGeeks"
+    },
+    {
+      "id": "sql-148",
+      "title": "SQL Comparison Operators - GeeksforGeeks"
+    },
+    {
+      "id": "sql-149",
+      "title": "DROP and TRUNCATE  in SQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-150",
+      "title": "SQL RENAME TABLE - GeeksforGeeks"
+    },
+    {
+      "id": "sql-151",
+      "title": "SQL FROM keyword - GeeksforGeeks"
+    },
+    {
+      "id": "sql-152",
+      "title": "MySQL LIMIT Clause - GeeksforGeeks"
+    },
+    {
+      "id": "sql-153",
+      "title": "Database Schemas - GeeksforGeeks"
+    },
+    {
+      "id": "sql-154",
+      "title": "ACID Properties in DBMS - GeeksforGeeks"
+    },
+    {
+      "id": "sql-155",
+      "title": "How to Become a Data Analyst in 2025: Step by Step Guide - GeeksforGeeks"
+    },
+    {
+      "id": "sql-156",
+      "title": "How to Become a Software Tester - GeeksforGeeks"
+    },
+    {
+      "id": "sql-157",
+      "title": "How to become a Database Administrator - GeeksforGeeks"
+    },
+    {
+      "id": "sql-158",
+      "title": "How to become Business Intelligence Analyst in 2025 - GeeksforGeeks"
+    },
+    {
+      "id": "sql-159",
+      "title": "How to Become a Backend Developer in 2025 - GeeksforGeeks"
+    },
+    {
+      "id": "sql-160",
+      "title": "Introduction to Database - GeeksforGeeks"
+    },
+    {
+      "id": "sql-161",
+      "title": "SQL | Constraints - GeeksforGeeks"
+    },
+    {
+      "id": "sql-162",
+      "title": "Difference between DELETE, DROP and TRUNCATE - GeeksforGeeks"
+    },
+    {
+      "id": "sql-163",
+      "title": "Introduction to PostgreSQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-164",
+      "title": "Difference between Microsoft Excel and Microsoft Access - GeeksforGeeks"
+    },
+    {
+      "id": "sql-165",
+      "title": "PostgreSQL - ROLLBACK - GeeksforGeeks"
+    },
+    {
+      "id": "sql-166",
+      "title": "Difference Between COMMIT and ROLLBACK in SQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-167",
+      "title": "SQL MIN() and MAX() Functions - GeeksforGeeks"
+    },
+    {
+      "id": "sql-168",
+      "title": "Difference between Static and Dynamic SQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-169",
+      "title": "SQL COUNT(), AVG() and SUM() Function - GeeksforGeeks"
+    },
+    {
+      "id": "sql-170",
+      "title": "CREATE SCHEMA in SQL Server - GeeksforGeeks"
+    },
+    {
+      "id": "sql-171",
+      "title": "MS Access – A GUI Database - GeeksforGeeks"
+    },
+    {
+      "id": "sql-172",
+      "title": "SQL AND and OR Operators - GeeksforGeeks"
+    },
+    {
+      "id": "sql-173",
+      "title": "SQL | SOME - GeeksforGeeks"
+    },
+    {
+      "id": "sql-174",
+      "title": "COUNT() Function in MySQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-175",
+      "title": "SQL | BETWEEN & IN Operator - GeeksforGeeks"
+    },
+    {
+      "id": "sql-176",
+      "title": "IN vs EXISTS in SQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-177",
+      "title": "CONCAT() function in SQL Server - GeeksforGeeks"
+    },
+    {
+      "id": "sql-178",
+      "title": "CHAR_LENGTH() Function in MySQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-179",
+      "title": "Using LENGTH() Function in SQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-180",
+      "title": "LOWER() function in SQL Server - GeeksforGeeks"
+    },
+    {
+      "id": "sql-181",
+      "title": "Using REPLACE Function in SQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-182",
+      "title": "SQL Server SUBSTRING() Function - GeeksforGeeks"
+    },
+    {
+      "id": "sql-183",
+      "title": "LEFT() Function in MySQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-184",
+      "title": "RIGHT() Function in MySQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-185",
+      "title": "INSTR() function in MySQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-186",
+      "title": "SQL Server TRIM() Function - GeeksforGeeks"
+    },
+    {
+      "id": "sql-187",
+      "title": "REVERSE() Function in SQL Server - GeeksforGeeks"
+    },
+    {
+      "id": "sql-188",
+      "title": "SQL Server SPACE() function - GeeksforGeeks"
+    },
+    {
+      "id": "sql-189",
+      "title": "ASCII() Function in SQL Server - GeeksforGeeks"
+    },
+    {
+      "id": "sql-190",
+      "title": "CONCAT_WS() Function in SQL Server - GeeksforGeeks"
+    },
+    {
+      "id": "sql-191",
+      "title": "SQL Server FORMAT() Function - GeeksforGeeks"
+    },
+    {
+      "id": "sql-192",
+      "title": "MySQL LOCATE() Function - GeeksforGeeks"
+    },
+    {
+      "id": "sql-193",
+      "title": "LPAD() Function in MySQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-194",
+      "title": "POSITION() function in MySQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-195",
+      "title": "REPEAT() function in MySQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-196",
+      "title": "RPAD() Function in MySQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-197",
+      "title": "STRCMP() Function in MySQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-198",
+      "title": "SQL Server ABS() Function - GeeksforGeeks"
+    },
+    {
+      "id": "sql-199",
+      "title": "FLOOR() and CEILING() Function in SQL Server - GeeksforGeeks"
+    },
+    {
+      "id": "sql-200",
+      "title": "SQL Server ROUND() Function - GeeksforGeeks"
+    },
+    {
+      "id": "sql-201",
+      "title": "TRUNCATE() Function in MySQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-202",
+      "title": "MOD() Function in MySQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-203",
+      "title": "SQL Server POWER() Function - GeeksforGeeks"
+    },
+    {
+      "id": "sql-204",
+      "title": "SQRT() Function in SQL Server - GeeksforGeeks"
+    },
+    {
+      "id": "sql-205",
+      "title": "EXP() Function in SQL Server - GeeksforGeeks"
+    },
+    {
+      "id": "sql-206",
+      "title": "LOG() Function in SQL Server - GeeksforGeeks"
+    },
+    {
+      "id": "sql-207",
+      "title": "SQL Server RAND() Function - GeeksforGeeks"
+    },
+    {
+      "id": "sql-208",
+      "title": "SUM() Function in SQL Server - GeeksforGeeks"
+    },
+    {
+      "id": "sql-209",
+      "title": "COUNT() Function in SQL Server - GeeksforGeeks"
+    },
+    {
+      "id": "sql-210",
+      "title": "SQL MIN() Function - GeeksforGeeks"
+    },
+    {
+      "id": "sql-211",
+      "title": "VARIANCE() function in MySQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-212",
+      "title": "STDDEV() function in MySQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-213",
+      "title": "STDDEV_POP() function in MySQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-214",
+      "title": "SQL Inner Join - GeeksforGeeks"
+    },
+    {
+      "id": "sql-215",
+      "title": "SQL Natural Join - GeeksforGeeks"
+    },
+    {
+      "id": "sql-216",
+      "title": "Inner Join vs Outer Join - GeeksforGeeks"
+    },
+    {
+      "id": "sql-217",
+      "title": "SQL Aggregate functions - GeeksforGeeks"
+    },
+    {
+      "id": "sql-218",
+      "title": "Difference between Strong and Weak Entity - GeeksforGeeks"
+    },
+    {
+      "id": "sql-219",
+      "title": "Types of Attributes in ER Model - GeeksforGeeks"
+    },
+    {
+      "id": "sql-220",
+      "title": "Degree of Relations in DBMS - GeeksforGeeks"
+    },
+    {
+      "id": "sql-221",
+      "title": "Recursive Relationships in ER diagrams - GeeksforGeeks"
+    },
+    {
+      "id": "sql-222",
+      "title": "Cardinality in DBMS - GeeksforGeeks"
+    },
+    {
+      "id": "sql-223",
+      "title": "Participation Constraints in DBMS - GeeksforGeeks"
+    },
+    {
+      "id": "sql-224",
+      "title": "Primary Key in DBMS - GeeksforGeeks"
+    },
+    {
+      "id": "sql-225",
+      "title": "Anomalies in Relational Model - GeeksforGeeks"
+    },
+    {
+      "id": "sql-226",
+      "title": "First Normal Form (1NF) - GeeksforGeeks"
+    },
+    {
+      "id": "sql-227",
+      "title": "Second Normal Form (2NF) - GeeksforGeeks"
+    },
+    {
+      "id": "sql-228",
+      "title": "Third Normal Form (3NF) - GeeksforGeeks"
+    },
+    {
+      "id": "sql-229",
+      "title": "4th Normal Form in DBMS - GeeksforGeeks"
+    },
+    {
+      "id": "sql-230",
+      "title": "Boyce-Codd Normal Form (BCNF) - GeeksforGeeks"
+    },
+    {
+      "id": "sql-231",
+      "title": "Fifth Normal Form (5NF) in DBMS - GeeksforGeeks"
+    },
+    {
+      "id": "sql-232",
+      "title": "Attributes in DBMS - GeeksforGeeks"
+    },
+    {
+      "id": "sql-233",
+      "title": "14. Attribute Closure in DBMS - GeeksforGeeks | Videos"
+    },
+    {
+      "id": "sql-234",
+      "title": "Candidate Key in DBMS - GeeksforGeeks"
+    },
+    {
+      "id": "sql-235",
+      "title": "Finding Attribute Closure and Candidate Keys using Functional Dependencies - GeeksforGeeks"
+    },
+    {
+      "id": "sql-236",
+      "title": "Functional Dependency in DBMS - GeeksforGeeks"
+    },
+    {
+      "id": "sql-237",
+      "title": "Multivalued Dependency (MVD) in DBMS - GeeksforGeeks"
+    },
+    {
+      "id": "sql-238",
+      "title": "Fully Functional Dependency in DBMS - GeeksforGeeks"
+    },
+    {
+      "id": "sql-239",
+      "title": "Partial Dependency in DBMS - GeeksforGeeks"
+    },
+    {
+      "id": "sql-240",
+      "title": "Partial, Full, and Transitive Dependencies - GeeksforGeeks"
+    },
+    {
+      "id": "sql-241",
+      "title": "Super Key in DBMS - GeeksforGeeks"
+    },
+    {
+      "id": "sql-242",
+      "title": "GATE | GATE CS 2012 | Question 2"
+    },
+    {
+      "id": "sql-243",
+      "title": "GATE | GATE CS 2013 | Question 54"
+    },
+    {
+      "id": "sql-244",
+      "title": "GATE | CS | 2013 | Databases | Normal Forms | Question 55"
+    },
+    {
+      "id": "sql-245",
+      "title": "GATE | CS | 2005 | DBMS | Normalization | Question 29"
+    },
+    {
+      "id": "sql-246",
+      "title": "GATE | CS | 2002 | Database | Normal Forms | Question 19"
+    },
+    {
+      "id": "sql-247",
+      "title": "GATE | CS | 2002 | Databases | Normal Forms | Question 49"
+    },
+    {
+      "id": "sql-248",
+      "title": "GATE | CS | 2001 | Databases | Decomposition | Question 48"
+    },
+    {
+      "id": "sql-249",
+      "title": "GATE | GATE CS 1999 | Question 32"
+    },
+    {
+      "id": "sql-250",
+      "title": "GATE | IT | 2005 | DBMS | Normalization | Question 22"
+    },
+    {
+      "id": "sql-251",
+      "title": "GATE | IT | 2008 | DBMS | Functional dependency |Question 60"
+    },
+    {
+      "id": "sql-252",
+      "title": "GAT | CS | 2016 | Set 1 | Databases | Key Concepts | Question 31"
+    },
+    {
+      "id": "sql-253",
+      "title": "Concurrency Control in DBMS - GeeksforGeeks"
+    },
+    {
+      "id": "sql-254",
+      "title": "Difference between Primary Key and Foreign Key - GeeksforGeeks"
+    },
+    {
+      "id": "sql-255",
+      "title": "Introduction of MS SQL Server - GeeksforGeeks"
+    },
+    {
+      "id": "sql-256",
+      "title": "Introduction to NoSQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-257",
+      "title": "What is Metadata? - GeeksforGeeks"
+    },
+    {
+      "id": "sql-258",
+      "title": "DBMS Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "sql-259",
+      "title": "SQL Syntax - GeeksforGeeks"
+    },
+    {
+      "id": "sql-260",
+      "title": "Software Framework vs Library - GeeksforGeeks"
+    },
+    {
+      "id": "sql-261",
+      "title": "DDL Full Form - Data Definition Language - GeeksforGeeks"
+    },
+    {
+      "id": "sql-262",
+      "title": "DML Full Form - Data Manipulation Language - GeeksforGeeks"
+    },
+    {
+      "id": "sql-263",
+      "title": "Features of Oracle Server - GeeksforGeeks"
+    },
+    {
+      "id": "sql-264",
+      "title": "SQL Server Management Studio (SSMS) - GeeksforGeeks"
+    },
+    {
+      "id": "sql-265",
+      "title": "MySQL HAVING Clause - GeeksforGeeks"
+    },
+    {
+      "id": "sql-266",
+      "title": "Clustering Indexing in Databases - GeeksforGeeks"
+    },
+    {
+      "id": "sql-267",
+      "title": "Which SQL statement is used to begin a transaction?"
+    },
+    {
+      "id": "sql-268",
+      "title": "MySQL PARTITION BY Clause - GeeksforGeeks"
+    },
+    {
+      "id": "sql-269",
+      "title": "RANK() Function in SQL Server - GeeksforGeeks"
+    },
+    {
+      "id": "sql-270",
+      "title": "PostgreSQL - DENSE_RANK Function - GeeksforGeeks"
+    },
+    {
+      "id": "sql-271",
+      "title": "SQL Server Row_Number Function With PARTITION BY - GeeksforGeeks"
+    },
+    {
+      "id": "sql-272",
+      "title": "PostgreSQL - PERCENT_RANK Function - GeeksforGeeks"
+    },
+    {
+      "id": "sql-273",
+      "title": "PL/SQL Introduction - GeeksforGeeks"
+    },
+    {
+      "id": "sql-274",
+      "title": "Implicit Join vs Explicit Join in SQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-275",
+      "title": "SQL | DESCRIBE Statement - GeeksforGeeks"
+    },
+    {
+      "id": "sql-276",
+      "title": "ROUND() Function in  MySQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-277",
+      "title": "MySQL DATE_FORMAT() Function - GeeksforGeeks"
+    },
+    {
+      "id": "sql-278",
+      "title": "DATEDIFF() Function in MySQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-279",
+      "title": "How to Insert a Value that Contains an Apostrophe in SQL? - GeeksforGeeks"
+    },
+    {
+      "id": "sql-280",
+      "title": "How to Select Row With Max Value in SQL? - GeeksforGeeks"
+    },
+    {
+      "id": "sql-281",
+      "title": "How to Efficiently Convert Rows to Columns in SQL? - GeeksforGeeks"
+    },
+    {
+      "id": "sql-282",
+      "title": "How To Use Nested SELECT Queries in SQLite - GeeksforGeeks"
+    },
+    {
+      "id": "sql-283",
+      "title": "How to Select Row With Max Value on a Column in SQL? - GeeksforGeeks"
+    },
+    {
+      "id": "sql-284",
+      "title": "How  to Specify Condition in Count() in SQL? - GeeksforGeeks"
+    },
+    {
+      "id": "sql-285",
+      "title": "How to Find the Maximum of Multiple Columns in SQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-286",
+      "title": "How to Update Top 100 Records in SQL? - GeeksforGeeks"
+    },
+    {
+      "id": "sql-287",
+      "title": "How to Select the Last Records in a One-To-Many Relationship Using SQL Join - GeeksforGeeks"
+    },
+    {
+      "id": "sql-288",
+      "title": "How to Join First Row in SQL? - GeeksforGeeks"
+    },
+    {
+      "id": "sql-289",
+      "title": "How to Insert Row If Not Exists in SQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-290",
+      "title": "How to Use GROUP BY to Concatenate Strings in SQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-291",
+      "title": "How Inner Join works in LINQ  to SQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-292",
+      "title": "How to Get the Identity of an Inserted Row in SQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-293",
+      "title": "Unique Key in DBMS - GeeksforGeeks"
+    },
+    {
+      "id": "sql-294",
+      "title": "SQL LAG() Function - GeeksforGeeks"
+    },
+    {
+      "id": "sql-295",
+      "title": "SQL Server LEAD() function Overview - GeeksforGeeks"
+    },
+    {
+      "id": "sql-296",
+      "title": "SQL | Union Clause - GeeksforGeeks"
+    },
+    {
+      "id": "sql-297",
+      "title": "Basic SQL Commands - GeeksforGeeks"
+    },
+    {
+      "id": "sql-298",
+      "title": "SQL Server COALESCE() Function - GeeksforGeeks"
+    },
+    {
+      "id": "sql-299",
+      "title": "SQL Functions (Aggregate and Scalar Functions) - GeeksforGeeks"
     }
   ]
 }
