@@ -1,3 +1,0 @@
-# Career & Jobs in Linux - GeeksforGeeks
-
-Linux  offers diverse career opportunities across industries. Here’s a list of  the best career options available for professionals with Linux  expertise, along with their average salaries.CareerAverage Salary (USD) Per AnnumLinux System Administrator$50,000 – $90,000DevOps Engineer$80,000 – $140,000Cloud Engineer$90,000 – $150,000Security Analyst$75,000 – $130,000Network Engineer$55,000 – $100,000Linux Kernel Developer$100,000 – $160,000Technical Support Engineer$40,000 – $70,000Automation Engineer$55,000 – $100,000Embedded Systems Engineer$70,000 – $120,000Database Administrator$60,000 – $120,000Also read - 5 Tips to Make a Career as a Linux Kernel Developer

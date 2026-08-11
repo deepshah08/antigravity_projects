@@ -1,3 +1,0 @@
-# Python Quiz - GeeksforGeeks
-
-These Python quiz questions are designed to help you become more familiar with Python and test your knowledge across various topics. From Python basics to advanced concepts, these topic-specific quizzes offer a comprehensive way to practice and assess your understanding of Python concepts. These  Python Quizzes  are designed for both beginners and experienced Python professionals. No registration is required to start the test. Simply choose a test and begin your Python journey! FundamentalsVariableData TypesOperatorControl FlowFor Loop While LoopPython ListString TuplesDictionarySetFunctionsNamespace and ScopeOOPClasses Exception HandlingFile HandlingHeapDequeueMiscellaneous

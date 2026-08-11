@@ -1,3 +1,0 @@
-# Analysis of Algorithms - GeeksforGeeks
-
-Analysis of Algorithms is a fundamental aspect of computer science that involves evaluating performance of algorithms and programs. Efficiency is measured in terms of time and space.BasicsWhy is Analysis Important?Order of GrowthAsymptotic Analysis Worst, Average and Best Cases  Asymptotic NotationsBig-O Notation Θ NotationBig – Ω (Big- Omega) NotationTime ComplexitySpace Complexity Practice Questions Quiz  Analysis ExamplesAnalyzing LoopsAnalyzing Recursive FunctionsAmortized AnalysisAdvance topicsP, NP, CoNP, NP hard and NP complete

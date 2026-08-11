@@ -398,9 +398,13 @@ function ArticleReader() {
       </nav>
 
       <article className="prose prose-invert prose-orange max-w-none prose-img:rounded-xl prose-img:border prose-img:border-white/10 prose-pre:bg-black/50 prose-pre:border prose-pre:border-white/10">
-        <h1>{article.title}</h1>
-        {/* Render HTML securely using dangerouslySetInnerHTML, relying on scraper sanitization */}
-        <div dangerouslySetInnerHTML={{ __html: article.content }} />
+        <h1>{article.title.replace(/\s*-\s*GeeksforGeeks$/i, '')}</h1>
+        {/* Render HTML cleanly, stripping target="_blank" from internal hash links */}
+        <div dangerouslySetInnerHTML={{ 
+          __html: article.content.replace(/<a\s+([^>]*href="#\/article\/[^"]*"[^>]*)>/gi, (match) => {
+            return match.replace(/\s*target="_blank"/gi, '').replace(/\s*rel="noopener"/gi, '');
+          })
+        }} />
       </article>
 
       <div className="pt-8 mt-12 border-t border-white/10 flex flex-col sm:flex-row gap-4 justify-between">

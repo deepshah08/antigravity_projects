@@ -168,6 +168,8 @@ async function run() {
                                     
                                     // Set relative HashRouter link: #/article/topicId/articleId (No leading slash!)
                                     a.setAttribute('href', `#/article/${targetArticle.topicId}/${targetArticle.articleId}`);
+                                    a.removeAttribute('target');
+                                    a.removeAttribute('rel');
                                 } else if (href.startsWith('http://') || href.startsWith('https://')) {
                                     a.setAttribute('target', '_blank');
                                     a.setAttribute('rel', 'noopener noreferrer');
