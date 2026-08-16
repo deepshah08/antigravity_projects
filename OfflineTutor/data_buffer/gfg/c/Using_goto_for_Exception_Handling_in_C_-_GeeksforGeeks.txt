@@ -1,0 +1,94 @@
+# Using goto for Exception Handling in C - GeeksforGeeks
+
+Exceptions are runtime anomalies or abnormal conditions that a program encounters during its execution. C doesn’t provide any specialized functionality for this purpose like other programming languages such as C++ or Java. However, In C, goto keyword is often used for the same purpose. The goto statement can be used to jump from anywhere to anywhere within a function. Syntax:
+            C
+
+    goto label;
+
+// Any line of code not execute
+// in between label and goto statment
+label:
+    // These statements executed after
+    // goto statement encounter
+
+Why Use goto for Exception Handling?The goto statement in C provides a way to jump to a labeled part of the code. While generally discouraged in modern programming due to readability and maintainability concerns, goto can be a clean solution for error handling in specific scenarios like:Cleaning up allocated resources.Breaking out of nested loops or blocks.Handling errors in a single exit path.The following examples demonstrate the use of goto for exception handling in C:Simulate try-catch Statements
+            C
+
+    //Driver Code Starts
+#include <stdio.h>
+
+int main() {
+//Driver Code Ends
+
+    int numerator = 10;
+    int denominator = 0;
+    int result;
+
+    // Check for division by 
+    // zero using goto
+    if (denominator == 0) {
+        
+        // Jump to the exception handling 
+        // section if denominator is 0
+        goto excep;
+    }
+    result = numerator / denominator;
+    printf("%d", result);
+    
+    // Label
+    excep:  
+    printf("Exception: Division by "
+            "zero is not allowed!");
+
+//Driver Code Starts
+    return 0;
+}
+//Driver Code Ends
+
+OutputException: Division by zero is not allowed!
+Handling Exception in File Processing
+            C
+
+    //Driver Code Starts
+#include <stdio.h>
+
+int main() {
+//Driver Code Ends
+
+    FILE *file = NULL;
+    int result = 0;
+
+    file = fopen("example.txt", "r");
+    if (file == NULL) {
+        printf("Error opening file");
+      
+        // Jump to the error label
+        // if file cannot be opened
+        goto error;  
+    }
+
+    // Read data
+    result = fread(NULL, 1, 100, file);
+    if (result == 0) {
+        printf("Error reading file");
+      
+        // Jump to error if reading fails
+        goto error;  
+    }
+
+    // Process data 
+    printf("Successfull");
+
+error:
+  
+    // Error handling section
+    if (file != NULL) {
+        fclose(file);
+    }
+
+//Driver Code Starts
+    return 0;
+}
+//Driver Code Ends
+
+OutputError opening fileLimitations of goto in Exception HandlingThough it works fine, goto have some limitations as compared to the specialized exception handling structures.Overuse can make the code harder to follow especially in larger codebases.Misuse of goto may lead to bugs or spaghetti code.Techniques like returning error codes or using modern C libraries (e.g., setjmp and longjmp) can sometimes be better.

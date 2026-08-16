@@ -1,0 +1,102 @@
+# Difference Between  == Operator and equals() Method in Java - GeeksforGeeks
+
+In Java, the equals() method and the == operator are used to compare objects. The main difference is that string equals() method compares the content equality of two strings while the == operator compares the reference or memory location of objects in a heap, whether they point to the same location or not.equals() can be overridden to define custom equality.For String objects, equals() is generally preferred for content comparison.
+            Java
+
+    public class Geeks {
+    public static void main(String[] args) {
+      
+        String s1 = "HELLO";
+        String s2 = "HELLO";
+        String s3 =  new String("HELLO");
+
+        System.out.println(s1 == s2);
+        System.out.println(s1 == s3); 
+        System.out.println(s1.equals(s2));
+        System.out.println(s1.equals(s3)); 
+    }
+}
+
+Outputtrue
+false
+true
+true
+Explanation: When we use the == operator for s1 and s2 comparison, the result is true as both have the same addresses in the String constant pool.Equality Operator(==)The == operator is used to compare primitive values and object references. For primitive data types, it checks whether the values are equal. For objects, it checks whether both references point to the same object in memory.Compares memory references for objects. Returns a boolean value (true or false).
+            Java
+
+    class Geeks {
+    public static void main(String[] args) {
+        
+      	// integer-type
+        System.out.println(10 == 20);
+
+        // char-type
+        System.out.println('a' == 'b');
+
+        // char and double type
+        System.out.println('a' == 97.0);
+
+        // boolean type
+        System.out.println(true == true);
+    }
+}
+
+Outputfalse
+false
+true
+true
+Example 2: If we apply == for object types then, there should be compatibility between argument types (either child to parent or parent to child or same type). Otherwise, we will get a compile-time error. 
+            Java
+
+    class Geeks {
+    public static void main(String[] args) {
+      
+        Thread t = new Thread();
+        Object o = new Object();
+        String s = new String("GEEKS");
+
+        System.out.println(t == o);
+        System.out.println(o == s);
+      
+        // uncomment the below print 
+        // statement to see the error.
+       // System.out.println(t==s);  
+    }
+}
+
+Outputfalse
+false
+equals() MethodThe equals() method is defined in the Object class and is used to compare the logical equality of two objects. Many Java classes such as String, Integer, and ArrayList override this method to compare object contents instead of memory references.Widely used for comparing String and wrapper objects. Provides logical equality instead of reference equality.
+            Java
+
+    public class Geeks {
+    public static void main(String[] args) {
+        
+      	// Create two new Thread objects
+        Thread t1 = new Thread();
+        Thread t2 = new Thread();
+        
+      	// Assign t3 to reference same
+      	// Thread object as t1
+        Thread t3 = t1;
+
+        // Create two String Objects with
+      	// Same content
+        String s1 = new String("GEEKS");
+        String s2 = new String("GEEKS");
+
+        System.out.println(t1 == t3);
+        System.out.println(t1 == t2);
+        System.out.println(s1 == s2);
+
+        System.out.println(t1.equals(t2));
+        System.out.println(s1.equals(s2));
+    }
+}
+
+Outputtrue
+false
+false
+false
+true
+== Operator Vs equals() MethodFeature== Operatorequals() MethodPurposeCompares primitive values or object referencesCompares the contents (logical equality) of objectsUsed WithPrimitive types and objectsObjects onlyObject ComparisonChecks whether references point to the same objectChecks whether object contents are equalPrimitive ComparisonCompares actual valuesNot applicableReturn TypebooleanbooleanCan be OverriddenNoYesDefault BehaviorCompares memory referencesObject.equals() compares references unless overriddenString ComparisonCompares referencesCompares character sequencesMemory CheckYes (for objects)NoBest Use CaseChecking reference equalityChecking logical/content equality

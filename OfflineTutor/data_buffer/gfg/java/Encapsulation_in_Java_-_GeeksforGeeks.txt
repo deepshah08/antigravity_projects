@@ -1,0 +1,31 @@
+# Encapsulation in Java - GeeksforGeeks
+
+Encapsulation in Java is an object-oriented principle that binds data and methods into a single unit, typically a class. It restricts direct access to data by hiding implementation details. This ensures controlled interaction with the data through defined methods.Achieved using access modifiers like private, protected, and public.Improves data security by allowing validation through getters and setters.Enhances code maintainability by isolating changes within the class.EncapsulationHow Encapsulation is Achieved in JavaEncapsulation in Java is achieved using:Private data membersPublic getter and setter methodsKey Rules:Declare data as private: Hide the class data so it cannot be accessed directly from outside the class. Use getters and setters: Keep variables private and provide public getter and setter methods for controlled access and safe modification, often with validation.Apply proper access modifiers: Use private for data hiding and public for methods that provide access.               
+            Java
+
+    class Programmer {
+
+    private String name;
+
+    // Getter method used to get the data
+    public String getName() { return name; }
+
+    // Setter method is used to set or modify the data
+    public void setName(String name) {
+        
+        this.name = name;
+    }
+}
+
+public class Geeks {
+
+    public static void main(String[] args){
+        
+        Programmer p = new Programmer();
+        p.setName("Geek");
+        System.out.println("Name=> " + p.getName());
+    }
+}
+
+OutputName=> Geek
+Explanation: In the above example, we use the encapsulation and use getter (getName) and setter (setName) method which are used to show and modify the private data. This encapsulation mechanism protects the internal state of the Programmer object and allows for better control and flexibility in how the name attribute is accessed and modified.Advantages of EncapsulationThe advantages of encapsulation are listed below:Data Hiding: Encapsulation restricts direct access to class variables, protecting sensitive data from unauthorized access.Improved Maintainability: Changes to internal implementation can be made without affecting external code that uses the class.Enhanced Security: Encapsulation allows validation and control over data, preventing invalid or harmful values from being set.Code Reusability: Encapsulated classes can be reused in different programs without exposing internal logic.Better Modularity: Encapsulation promotes organized, modular code by keeping data and methods together within a class.Disadvantages of EncapsulationThe disadvantages of encapsulation are listed below:Increased Code Complexity:  Writing getter and setter methods for every variable can make the code longer and slightly more complex.Performance Overhead: Accessing data through methods instead of directly can introduce a minor performance cost, especially in performance-critical applications.Less Flexibility in Some Cases: Over-restricting access to class members may limit the ability of other classes to extend or use the class efficiently.Data Hiding vs EncapsulationAspectData HidingEncapsulationDefinitionRestricting direct access to data to protect it from unauthorized useWrapping data and methods into a single unit (class)FocusSecurity of dataStructure and designPurposePrevents misuse and accidental modification of dataImproves modularity and maintainabilityHow it is achievedUsing access modifiers (private, protected)Using classes, methods, and access modifiersInvolves methodsNo (mainly focuses on data)Yes (includes both data and methods)ScopeNarrow conceptBroader conceptDependencyIndependent conceptEncapsulation may use data hiding for better security but it is not mandatory.Exampleprivate int balance;class Account { private int balance; public getBalance(); }

@@ -1,0 +1,173 @@
+# Quiz about Python Tuples Quiz
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython Tuples QuizLast Updated : DiscussCommentsQuestion 1What is the output of the following program? 
+        Python
+        
+        tup = (1, 2, 3, 4) 
+tup.append( (5, 6, 7) ) 
+print(len(tup)) 
+
+        
+    125ErrorQuestion 2What is the output of the following program? 
+        Python
+        
+        tup = {} 
+tup[(1,2,4)] = 8
+tup[(4,2,1)] = 10
+tup[(1,2)] = 12
+sum1 = 0
+for k in tup: 
+	sum1 += tup[k] 
+print(len(tup) + sum1) 
+
+        
+    30313233Question 3What is the output of the following program? 
+        Python
+        
+        tup1 = (1, 2, 4, 3) 
+tup2 = (1, 2, 3, 4) 
+print(tup1 < tup2) 
+
+        
+    ErrorTrueFalseUnexpectedQuestion 4What is the output of the following program? 
+        Python
+        
+        tup = (1, 2, 3) 
+print(2 * tup) 
+
+        
+    (1, 2, 3, 1, 2, 3)(1, 2, 3, 4, 5, 6)(3, 6, 9) ErrorQuestion 5What is the output of the following program? 
+        Python
+        
+        tup=("Check")*3
+print(tup) 
+
+        
+    Unexpected3CheckCheckCheckCheckSyntax ErrorQuestion 6What is the output of the following program? 
+        Python
+        
+        s = 'geeks' 
+a, b, c, d, e = s 
+b = c = '*'
+s = (a, b, c, d, e) 
+print(s) 
+
+        
+    (‘g’, ‘*’, ‘*’, ‘k’, ‘s’)(‘g’, ‘e’, ‘e’, ‘k’, ‘s’)(‘geeks’, ‘*’, ‘*’)KeyErrorQuestion 7What is the output of the following program? 
+        Python
+        
+        tup = (2e-04, True, False, 8, 1.001, True)
+val = 0
+for x in tup:
+    val += int(x)
+print(val)
+
+        
+    121111.001199999999999TypeErrorQuestion 8What is the output of the following program? 
+        Python
+        
+        li = [3, 1, 2, 4] 
+tup = ('A', 'b', 'c', 'd') 
+li.sort() 
+counter = 0
+for x in tup: 
+	li[counter] += int(x) 
+	counter += 1
+	break
+print(li) 
+
+        
+    [66, 97, 99, 101][66, 68, 70, 72][66, 67, 68, 69]ValueErrorQuestion 9What is the output of the following program? 
+        Python
+        
+        li = [2e-04, 'a', False, 87] 
+tup = (6.22, 'boy', True, 554) 
+for i in range(len(li)): 
+	if li[i]: 
+		li[i] = li[i] + tup[i] 
+	else: 
+		tup[i] = li[i] + li[i] 
+		break
+
+        
+    [6.222e-04, ‘aboy’, True, 641][6.2202, ‘aboy’, 1, 641]TypeError[6.2202, ‘aboy’, False, 87]Question 10What is the output of the following program? 
+        Python
+        
+        import sys 
+tup = tuple() 
+print(sys.getsizeof(tup), end = " ") 
+tup = (1, 2) 
+print(sys.getsizeof(tup), end = " ") 
+tup = (1, 3, (4, 5)) 
+print(sys.getsizeof(tup), end = " ") 
+tup = (1, 2, 3, 4, 5, [3, 4], 'p', '8', 9.777, (1, 3)) 
+print(sys.getsizeof(tup)) 
+
+        
+    0 2 3 1032 34 35 4248 64 72 12848 144 192 480Tags:Python-QuizzesThere are 11 questions to complete.Take a part in the ongoing discussionView All Discussion

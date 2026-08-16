@@ -1,0 +1,58 @@
+# C Recursion - GeeksforGeeks
+
+Recursion is a programming technique where a function calls itself repeatedly until a specific base condition is met. A function that performs such self-calling behavior is known as a recursive function, and each instance of the function calling itself is called a recursive call.
+            C
+
+    #include <stdio.h>
+
+void rec(int n) {
+    
+    // Base Case
+    if (n == 6) return;
+
+    printf("Recursion Level %d\n", n);
+    rec(n + 1);
+}
+
+int main() {
+    rec(1);
+    return 0;
+}
+
+OutputRecursion Level 1
+Recursion Level 2
+Recursion Level 3
+Recursion Level 4
+Recursion Level 5
+This code demonstrates a simple recursive function that prints the current recursion level from 1 to 5. The function rec(n) calls itself with an incremented value of n until it reaches the base case n == 6, at which point the recursion stops.How Recursion works?To understand how recursion works internally, it’s important to see how the call stack behaves during recursive calls. Each time a function calls itself, the current state is saved on the stack, and the new call begins. Once the base case is reached, the function starts returning back, one call at a time.The following example demonstrates both the descending phase (going deeper into recursion) and the ascending phase (returning back from recursion):
+            C
+
+    #include <stdio.h>
+
+void f(int n)
+{
+    printf("F(%d)'s Stack Frame Pushed\n", n);
+
+    if (n > 1)
+    {
+        f(n - 1);
+        f(n - 1);
+    }
+
+    printf("F(%d)'s Stack Frame Removed\n", n);
+}
+
+int main()
+{
+    f(3);
+    return 0;
+}
+
+OutputF(3)'s Stack Frame Pushed
+F(2)'s Stack Frame Pushed
+F(1)'s Stack Frame Pushed
+F(1)'s Stack Frame Removed
+F(1)'s Stack Frame Pushed
+F(1)'s Stack Frame Removed
+F(2)'s Stack Frame Removed
+F(2)'s Stack Fr...The function f begins by printing a message indicating that the current call's stack frame has been pushed. It then recursively calls itself twice with n - 1, provided n > 1. This continues until the base case is implicitly reached at n == 1, where no further recursive calls are made.The above is an example of tree recursion, where a function makes multiple recursive calls (in this case, f(n - 1) is called twice). This leads to a branching structure resembling a tree, with each call generating two more until the base case is reached.Recursion comes in various forms based on how recursive calls are structured—like tail recursion, head recursion, linear recursion, and more.To learn about all types of recursion with clear examples, check out this article: Types of RecursionMemory Management in RecursionLike other functions, the data of a recursive function is stored in stack memory as a stack frame. This stack frame is removed once the function returns a value. In recursion,The function call occurs before returning a value, so the stack frames for each recursive call are placed on top of the existing stack frames in memory.Once the topmost function returns a value, its stack frame is removed, and control is passed back to the function just before it, resuming execution after the point where the recursive call was made.The compiler uses an instruction pointer to keep track of the location to return to after the function execution is complete.Unlike iteration, recursion relies on the call stack, making memory management a key differentiator between the two.Refer these article to know more about Function Call Stack, Difference between recursion and iterationStack OverflowA program’s call stack has a fixed memory allocation, sufficient for normal execution.Stack overflow occurs when the call stack runs out of memory, often due to excessively deep or infinite recursion.When stack overflow happens, the program cannot store more data and terminates abnormally.Applications of RecursionRecursion is widely used to solve different kinds of problems from simple ones like printing linked lists to being extensively used in AI. Some of the common uses of recursion are:Tree-Graph AlgorithmsMathematical ProblemsDivide and ConquerDynamic ProgrammingIn Postfix to Infix ConversionSearching and Sorting AlgorithmsAdvantages of RecursionRecursion can effectively reduce the length of the code.Some problems are easily solved by using recursion like the tower of Hanoi and tree traversals.Data structures like linked lists, trees, etc. are recursive by nature so recursive methods are easier to implement for these data structures.Disadvantages of RecursionRecursive functions make our program a bit slower due to function call overhead.Recursion functions always take extra space in the function call stack due to separate stack frames.Recursion methods are difficult to understand and implement.

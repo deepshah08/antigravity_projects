@@ -1,0 +1,90 @@
+# Heap queue or heapq in Python - GeeksforGeeks
+
+A heap queue (also called a priority queue) is a data structure that allows quick access to the smallest (min-heap) or largest (max-heap) element. By default, heaps are implemented as min-heaps.Smallest element is always at the root and largest element is located among the leaf nodes of the heap.Python provides a built-in module called heapq that allows to create and work with heap queuesExample: Converting a normal list into a heap using heapify(). 
+            Python
+
+    import heapq
+li = [25, 20, 15, 30, 40]
+heapq.heapify(li)
+print("Heap queue:", li)
+
+OutputHeap queue: [15, 20, 25, 30, 40]
+Explanation: heapq.heapify(li) rearranges the list into a heap where the smallest element is at the root. It does not fully sort the list.Why do we need Heap queue?Provides an efficient way to implement priority queues and maintain elements in heap order with minimal code and high performance.Useful in algorithms like Dijkstra's, Huffman encoding or any task requiring quick access to smallest element.Ideal for managing sorted data dynamically without full sorting after each operation.Key Operations of a HeapHeaps support several essential operations that help manage data efficiently while maintaining heap property. OperationFunctionDescriptionCreateheapq.heapify()Converts a regular list into a valid min-heapPushheapq.heappush()Adds a new element to the heap while maintaining the heap propertyPopheapq.heappop()Removes and returns the smallest element from the heapPeekheap[0]Accesses the smallest element without removing itPush and Popheapq.heappushpop()Pushes a new element and removes the smallest element in one stepReplaceheapq.heapreplace()Removes the smallest element and inserts a new element in one operationUsing Heap as a Max-HeapBy default, Python's heapq implements a min-heap. To create a max-heap simply invert the values (store negative numbers).Example: Below example, convert a list into a max-heap by storing negative numbers and then retrieve the largest element:
+            Python
+
+    import heapq  
+nums = [10, 20, 15, 30, 40]  
+
+# Convert into a max-heap by inverting values  
+max_heap = [-n for n in nums]  
+heapq.heapify(max_heap)  
+
+# Access largest element (invert sign again)  
+print("Largest element:", -max_heap[0])  
+
+OutputLargest element: 40
+Explanation: We store negative values so that the smallest (negative largest) is treated as root. When retrieving values, we multiply by -1 again to restore the original numbers.Appending and Popping ElementsElements can be inserted and removed while maintaining the heap property:heapq.heappush(heap, item) adds a new element to the heap.heapq.heappop(heap) removes and returns the smallest element.Example: This code demonstrates how to create a heap, append an element and remove the smallest element.
+            Python
+
+    import heapq
+h = [10, 20, 15, 30, 40]
+heapq.heapify(h)
+
+# Appending an element
+heapq.heappush(h, 5)
+print(h)
+
+# Pop the smallest element from the heap
+min = heapq.heappop(h)
+print("Smallest:", min)
+print(h)
+
+Output[5, 20, 10, 30, 40, 15]
+Smallest: 5
+[10, 20, 15, 30, 40]
+Explanation:heapq.heapify(h) converts the list into a valid min-heap.heappush(h, 5) inserts 5 into the heap and reorders it so the smallest element (5) becomes the root.heappop(h) removes the smallest element (5) and returns it.After popping, next smallest element (10) takes the root position.Appending and Popping Simultaneouslyheapq.heappushpop() pushes a new element onto the heap and removes the smallest element in a single operation.Example: Pushes 5 onto the heap and pops the smallest element in a single step using heappushpop().
+            Python
+
+    import heapq
+h = [10, 20, 15, 30, 40]
+heapq.heapify(h)
+min = heapq.heappushpop(h, 5)
+print(min)
+print(h)
+
+Output5
+[10, 20, 15, 30, 40]
+Explanation: heappushpop(h, 5) first pushes 5 into the heap and immediately pops the smallest element (which is also 5). Finding Largest and Smallest Elementsheapq.nlargest() and heapq.nsmallest() return the required number of largest or smallest elements from an iterable.Example: Finding the 3 largest and 3 smallest elements using nlargest() and nsmallest()
+            Python
+
+    import heapq
+h = [10, 20, 15, 30, 40]
+heapq.heapify(h)
+
+maxi = heapq.nlargest(3, h)
+print("3 largest elements:", maxi)
+
+min = heapq.nsmallest(3, h)
+print("3 smallest elements:", min)
+
+Output3 largest elements: [40, 30, 20]
+3 smallest elements: [10, 15, 20]
+Note: The heapq module allows in-place heap operations on lists, making it an efficient and simple way to implement priority queues and similar structures.Replace and Merge Operationsheapq.heapreplace() removes the smallest element and inserts a new one in a single step, returning the removed value. While, heapq.merge() combines multiple sorted iterables into a single sorted sequence.Example: This example replaces the smallest element in a heap and then merges it with another sorted list.
+            Python
+
+    import heapq
+h1 = [10, 20, 15, 30, 40]
+heapq.heapify(h1)
+
+min = heapq.heapreplace(h1, 5)
+print(min)
+print(h1)
+
+h2 = [2, 4, 6, 8]
+h3 = list(heapq.merge(sorted(h1), sorted(h2)))
+print("Merged heap:", h3)
+
+Output10
+[5, 20, 15, 30, 40]
+Merged heap: [2, 4, 5, 6, 8, 15, 20, 30, 40]
+Explanation:heapreplace() replaces the smallest element (10) with 5 and smallest element is popped and 5 is inserted into the heap.heapq.merge() merges sorted iterables into a single sorted sequence, maintaining the heap property. Inputs must be sorted.Difference between heapreplace() and heappushpop()heapreplace() always pops smallest element and then pushes a new one whereas, heappushpop() pushes new element first, then pops smallest.Use heapreplace() when you want the new element to be in the heap and heappushpop() when new element may or may not stay (depending on comparison).Advantages vs DisadvantagesAdvantagesDisadvantagesFast for insertion and removal with priority.Not suitable for complex data manipulationsUses less memory than some other data types.No direct access to middle items.Simple to use with the heapq module.Can’t fully sort the items automatically.Works in many cases like heaps and priority queues.Not safe with multiple threads at the same time.

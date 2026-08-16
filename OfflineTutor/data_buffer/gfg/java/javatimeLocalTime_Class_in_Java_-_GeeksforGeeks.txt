@@ -1,0 +1,76 @@
+# java.time.LocalTime Class in Java - GeeksforGeeks
+
+The LocalTime class, available in the java.time package, represents a time without date and timezone. Introduced in Java 8, it is part of the modern Date-Time API and is used to store and manipulate time values such as meeting schedules, alarms, business hours, and event timings. Represents only hour, minute, second, and nanosecond. Provides methods for formatting, parsing, and comparing time values.Immutable and thread-safe.Declarationpublic final class LocalTime   extends Object    implements Temporal, TemporalAdjuster,       Comparable<LocalTime>, SerializableCommonly Used Methods of LocalTimeMethodDescriptionadjustInto(Temporal temporal)All MethodsStatic MethodsInstance MethodsConcrete MethodsatDate(LocalDate date)Combines this time with a date to create a LocalDateTime.atOffset(ZoneOffset offset)Combines this time with an offset to create an OffsetTime.compareTo(LocalTime other)Compares this time to another time.equals(Object obj)Checks if this time is equal to another time.format(DateTimeFormatter formatter)Formats this time using the specified formatter.get(TemporalField field)Gets the value of the specified field from this time as an int.getHour()Gets the hour-of-day field.getMinute()Gets the minute-of-hour field.getNano()Gets the nano-of-second field.getSecond()Gets the second-of-minute field.hashCode()A hash code for this time.isAfter(LocalTime other)Checks if this time is after the specified time.isBefore(LocalTime other)Checks if this time is before the specified time.isSupported(TemporalField field)Checks if the specified field is supported.minus(long amountToSubtract, TemporalUnit unit)Returns a copy of this time with the specified amount subtracted.minusHours(long hoursToSubtract)Returns a copy of this LocalTime with the specified number of hours subtracted.minusMinutes(long minutesToSubtract)Returns a copy of this LocalTime with the specified number of minutes subtracted.minusNanos(long nanosToSubtract)Returns a copy of this LocalTime with the specified number of nanoseconds subtracted.minusSeconds(long secondsToSubtract)Returns a copy of this LocalTime with the specified number of seconds subtracted. now()Obtains the current time from the system clock in the default time-zone.of(int hour, int minute)Obtains an instance of LocalTime from an hour and minute.ofNanoOfDay(long nanoOfDay)Obtains an instance of LocalTime from a nanos-of-day value.ofSecondOfDay(long secondOfDay)Obtains an instance of LocalTime from a second-of-day value.parse(CharSequence text)Obtains an instance of LocalTime from a text string such as 10:15.plus(TemporalAmount amountToAdd)Returns a copy of this time with the specified amount added.plusHours(long hoursToAdd)Returns a copy of this LocalTime with the specified number of hours added.plusMinutes(long minutesToAdd)Returns a copy of this LocalTime with the specified number of minutes added.plusNanos(long nanosToAdd)Returns a copy of this LocalTime with the specified number of nanoseconds added.plusSeconds(long secondstoAdd)Returns a copy of this LocalTime with the specified number of seconds added.query(TemporalQuery<R> query)Queries this time using the specified query.range(TemporalField field)Gets the range of valid values for the specified field.toNanoOfDay()Extracts the time as nanos of day, from 0 to 24 * 60 * 60 * 1,000,000,000 - 1.truncatedTo(TemporalUnit unit)Returns a copy of this LocalTime with the time truncated.with(TemporalAdjuster adjuster)Returns an adjusted copy of this time.withHour(int hour)Returns a copy of this LocalTime with the hour-of-day altered.withMinute(int minute)Returns a copy of this LocalTime with the minute-of-hour altered.withNano(int nanoOfSecond)Returns a copy of this LocalTime with the nano-of-second altered.withSecond(int second)Returns a copy of this LocalTime with the second-of-minute altered.ApproachImport the java.time.LocalTime class. Create a LocalTime object using methods such as now(), of(), or parse(). Perform operations like formatting, comparison, addition, or subtraction. Display the result using System.out.println().Example: Program to illustrate LocalTime Class
+            Java
+
+    // Importing LocalDateTime class from 
+// java.time package 
+import java.time.LocalTime;
+
+// Main Class
+public class  GFG {
+  
+    // Main driver method 
+    public static void main(String args[]) {
+      
+      // Creating an object of LocalTime class by
+      // declaring a variable to store LocalTime 
+        LocalTime ltime = LocalTime.now();
+      
+      // Print and display the LocalTime value
+        System.out.println("Local time value : "+ltime);        
+    }
+}
+
+OutputLocal time value : 06:20:52.986897Explanation: The LocalTime.now() method returns the current system time. The program creates a LocalTime object and prints the current time, including hours, minutes, seconds, and nanoseconds.Example: Program to illustrate LocalTime where plusMethod() is illustrated
+            Java
+
+    // Importing LocalTime class from
+// java.time package 
+import java.time.LocalTime;
+
+// Main Class 
+public class GFG {
+  
+    // main driver method 
+    public static void main(String args[])
+    {
+        // Creating an object of LocalTime Class by 
+        // declaring a variable to store LocalTime
+        LocalTime ltime = LocalTime.now();
+        
+      // Now plusMinute() will add up minutes to the LocalTime
+        LocalTime time3 = ltime.plusMinutes(120);
+        
+        // Display the time using object of class
+        System.out.println("Time : "+time3);
+    }
+}
+
+OutputTime : 08:34:59.135137Explanation: The plusMinutes(120) method adds 120 minutes (2 hours) to the current time and returns a new LocalTime object. The original time remains unchanged because LocalTime is immutable.Example: Program to illustrate LocalTime where plusMethod() is illustrated
+            Java
+
+    // Importing LocalTime class from
+// java.time package 
+import java.time.LocalTime;
+
+// Main Class
+public class GFG {
+  
+   // Main class
+    public static void main(String args[])
+    {
+        // Creating an object of LocalTime class by
+        // declare a variable to store LocalTime
+        LocalTime ltime = LocalTime.now();
+      
+        // plusHours() method will add up Hours to
+        // the LocalTime
+        LocalTime time3 = ltime.plusHours(05);
+        
+        // Display the time
+        System.out.println(time3);
+    }
+}
+
+Output17:48:53.003478Explanation: The plusHours(5) method adds 5 hours to the current time and returns a new LocalTime object. Since LocalTime is immutable, the original time is not modified.Advantages of LocalTimeRepresents time without date and timezone. Immutable and thread-safe. Easy to create and manipulate time values. Supports formatting and parsing. Provides built-in methods for time calculations. Makes code more readable and maintainable. Suitable for schedules, alarms, and business hours.

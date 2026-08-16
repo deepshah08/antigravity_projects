@@ -1,0 +1,27 @@
+# Ricart–Agrawala Algorithm in Mutual Exclusion in Distributed System - GeeksforGeeks
+
+Prerequisite: Mutual exclusion in distributed systems 
+
+Ricart–Agrawala algorithm is an algorithm for mutual exclusion in a distributed system proposed by Glenn Ricart and Ashok Agrawala. This algorithm is an extension and optimization of Lamport's Distributed Mutual Exclusion Algorithm. Like Lamport's Algorithm, it also follows permission-based approach to ensure mutual exclusion. In this algorithm:
+
+Two type of messages ( REQUEST and REPLY) are used and communication channels are assumed to follow FIFO order.A site send a REQUEST message to all other site to get their permission to enter the critical section.A site send a REPLY message to another site to give its permission to enter the critical section.A timestamp is given to each critical section request using Lamport's logical clock.Timestamp is used to determine priority of critical section requests. Smaller timestamp gets high priority over larger timestamp. The execution of critical section request is always in the order of their timestamp.
+
+Algorithm:
+
+To enter Critical section:When a site Si wants to enter the critical section, it send a timestamped REQUEST message to all other sites.When a site Sj receives a REQUEST message from site Si, It sends a REPLY message to site Si if and only ifSite Sj is neither requesting nor currently executing the critical section.In case Site Sj is requesting, the timestamp of Site Si's request is smaller than its own request.To execute the critical section:Site Si enters the critical section if it has received the REPLY message from all other sites.To release the critical section:Upon exiting site Si sends REPLY message to all the deferred requests.
+
+Message Complexity: Ricart–Agrawala algorithm requires invocation of 2(N - 1) messages per critical section execution. These 2(N - 1) messages involves
+
+(N - 1) request messages(N - 1) reply messages
+
+Advantages of the Ricart-Agrawala Algorithm:
+
+Low message complexity: The algorithm has a low message complexity as it requires only (N-1) messages to enter the critical section, where N is the total number of nodes in the system.Scalability: The algorithm is scalable and can be used in systems with a large number of nodes.Non-blocking: The algorithm is non-blocking, which means that a node can continue executing its normal operations while waiting to enter the critical section.
+
+Drawbacks of Ricart–Agrawala algorithm:
+
+Unreliable approach: failure of any one of node in the system can halt the progress of the system. In this situation, the process will starve forever. The problem of failure of node can be solved by detecting failure after some timeout.
+
+Performance:
+
+Synchronization delay is equal to maximum message transmission timeIt requires 2(N - 1) messages per Critical section execution

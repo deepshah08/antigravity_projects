@@ -1,0 +1,150 @@
+# HTML SVG Basics - GeeksforGeeks
+
+SVG  stands for  Scalable Vector Graphics. It defines vector-based graphics in XML format. SVG graphics do not lose any quality when zoomed or resized, and every element and attribute in SVG files can be animated. Advantages of SVG:  The advantages of using SVG over other image formats (like JPEG and GIF) are:  SVG images scale without losing quality, making them perfect for responsive designs.  SVG files are often smaller than bitmap images, reducing load times.  SVG images can be edited easily with text editors, allowing for quick changes.  SVG content is accessible to screen readers, enhancing web accessibility.  SVG supports CSS and JavaScript animations, allowing for interactive and dynamic graphics.  Differences between SVG and Canvas  SVG  Canvas  SVG is a language for describing 2D graphics in XML  Canvas  draws 2D graphics, on the fly with  JavaScript  If attributes of an SVG object are changed, the browser can automatically re-render the shape  Canvas is rendered pixel by pixel. In Canvas, once the graphic is drawn, it is forgotten by the browser.  SVG is resolution-independent  CANVAS is resolution-dependent.  SVG supports event handlers  CANVAS doesn't have support for event handlers.  Example 1: Drawing a Line  In this example we displays an SVG line on a webpage. It includes an <h2> header and a blue line drawn diagonally within an SVG element. 
+            HTML
+
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML SVG</title>
+</head>
+
+<body>
+    <h2>Welcome To GeeksforGeeks</h2>
+    <svg height="250" width="600">
+        <line x1="10" 
+              y1="10" 
+              x2="400" 
+              y2="400" 
+              style="stroke:rgb(0,0,255);stroke-width:3" />
+    </svg>
+</body>
+
+</html>
+
+ Output: SVG line Drawing  Example 2: Drawing a Circle  In this example we uses the <svg> tag to draw a grey circle with a black border. The circle has a center at (80, 80) and a radius of 50. 
+            HTML
+
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML SVG</title>
+</head>
+
+<body>
+    <!-- html svg tag is used here -->
+    <svg width="200" height="200">
+        <circle cx="80" cy="80" 
+                r="50" 
+                stroke="black" 
+                stroke-width="2" 
+                fill="grey" />
+    </svg>
+</body>
+
+</html>
+
+ Output: SVG Circle Drawing  Example 3: Drawing a Rectangle  In this example we ses the <svg> tag to draw a blue rectangle with a black border. The rectangle has a width of 400 and a height of 100. 
+            HTML
+
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <title> HTML SVG</title>
+</head>
+
+<body>
+    <!-- html svg tag is used here -->
+    <svg width="400" height="100">
+        <rect width="400" height="100" 
+              style="fill: rgb(0, 0, 255);
+                    stroke-width: 10;
+                    stroke: rgb(0, 0, 0)" />
+    </svg>
+</body>
+
+</html>
+
+ Output: SVG Rectangle Drawing  Example 4: Drawing a Rounded Rectangle  In this example we uses the <svg> tag to draw an orange rectangle with rounded corners, a black border, and 50% opacity, positioned at coordinates (80, 20). 
+            HTML
+
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+       HTML SVG
+    </title>
+</head>
+
+<body>
+    <!-- html svg tag is used here -->
+    <svg width="400" height="380">
+        <rect x="80" y="20" rx="20" 
+              ry="20" width="150" 
+              height="150" 
+              style="fill: orange;
+                      stroke: black;
+                      stroke-width: 2; 
+                      opacity: 0.5" />
+    </svg>
+</body>
+
+</html>
+
+ Output: SVG Rounded Rectangle Drawing  Example 5: Drawing a Star  In this example we uses the <svg> tag to draw a grey polygon with an orange border. The polygon is defined by a series of points and has a 5-pixel stroke width. 
+            HTML
+
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML SVG</title>
+</head>
+
+<body>
+    <!-- html svg tag is used here -->
+    <svg width="300" height="200">
+        <polygon points="100,10 40,198 190,78 10,78 160,198" 
+                 style="fill: grey; stroke: orange; 
+                        stroke-width: 5; fill-rule: evenodd" />
+    </svg>
+</body>
+
+</html>
+
+ Output: SVG Star Drawing  Example 6: Drawing a Logo  In this example we creates an ellipse filled with a linear gradient from white to green. It also includes text overlaid in white with the content "GeeksforGeeks" using the ARIAL font family. 
+            HTML
+
+    <!DOCTYPE html>
+<html>
+
+<body>
+    <!-- html svg tag is used here -->
+    <svg height="300" width="700">
+        <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" 
+                            x2="100%" y2="0%">
+                <stop offset="0%" 
+                      style="stop-color:white; 
+                             stop-opacity: 1" />
+                <stop offset="100%" 
+                      style="stop-color: green; 
+                             stop-opacity: 1" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="200" cy="100" rx="120" 
+                 ry="80" fill="url(#grad1)" />
+        <text fill="#ffffff" font-size="22" 
+              font-family="ARIAL" x="120" y="110">
+            GeeksforGeeks
+        </text>
+    </svg>
+</body>
+  
+</html>
+
+ Output: GFG Logo using SVG

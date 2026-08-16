@@ -1,0 +1,117 @@
+# std::thread::join() in C++ - GeeksforGeeks
+
+std::thread::join() is a member function of the std::thread class that waits for a thread to complete its execution before the calling thread continues. It is defined in the <thread> header and is commonly used to synchronize threads. Blocks the calling thread until the target thread finishes execution.  Ensures a thread completes before the program proceeds or exits. 
+            C++
+
+    #include <iostream>
+#include <thread>
+using namespace std;
+
+void task()
+{
+    cout << "Thread is executing\n";
+}
+
+int main()
+{
+    thread t(task);
+
+    t.join();
+
+    cout << "Main thread resumes\n";
+
+    return 0;
+}
+
+OutputThread is executing
+Main thread resumes
+Explanation: The main thread waits at join() until the worker thread finishes execution. Only after the worker thread completes does the main thread continue.Syntax void join();Parameters: This function does not accept any parameters.Return Value: It does not return any value.Working of std::thread::join()std::thread::join() synchronizes thread execution by making the calling thread wait until the associated thread finishes. Once the target thread completes, the waiting thread resumes execution.The execution flow is as follows:Create a thread to execute a task independently. The new thread begins running concurrently with the calling thread. Invoke join() on the thread object. The calling thread waits until the associated thread completes execution. After the thread finishes, join() returns and the calling thread continues.Example of std::thread::join()
+            C++
+
+    #include <iostream>
+#include <thread>
+using namespace std;
+
+void threadFunction()
+{
+    for (int i = 0; i < 2; i++)
+        cout << "Thread Function Executing\n";
+}
+
+int main()
+{
+    thread threadObj(threadFunction);
+
+    for (int i = 0; i < 5; i++)
+        cout << "Main Thread Executing\n";
+
+    threadObj.join();
+
+    cout << "Exit of Main Function\n";
+
+    return 0;
+}
+
+
+            C
+
+    #include <iostream>
+#include <thread>
+using namespace std;
+
+void threadFunction()
+{
+    for (int i = 0; i < 2; i++)
+        cout << "Thread Function Executing\n";
+}
+
+int main()
+{
+    thread threadObj(threadFunction);
+
+    for (int i = 0; i < 5; i++)
+        cout << "Main Thread Executing\n";
+
+    threadObj.join();
+
+    cout << "Exit of Main Function\n";
+
+    return 0;
+}
+
+OutputMain Thread Executing
+Main Thread Executing
+Main Thread Executing
+Main Thread Executing
+Main Thread Executing
+Thread Function Executing
+Thread Function Executing
+Exit of Main Function
+ExplanationThe main thread and worker thread execute concurrently. join() blocks the main thread until the worker thread finishes. The final statement executes only after the joined thread completes. Rules for Using std::thread::join()While using join(), keep the following rules in mind:A thread can be joined only once. After calling join(), the thread becomes non-joinable. Destroying a joinable thread object without calling join() or detach() terminates the program. Use detach() instead of join() if the thread should execute independently. std::thread::joinable()Before calling join(), it is good practice to check whether a thread is joinable using the joinable() member function.Syntaxbool joinable() const;Return ValueReturns true if the thread can be joined. Returns false otherwise. 
+            C++
+
+    #include <iostream>
+#include <thread>
+using namespace std;
+
+void task()
+{
+    cout << "Thread running\n";
+}
+
+int main()
+{
+    thread t(task);
+
+    if (t.joinable())
+    {
+        t.join();
+        cout << "Thread joined\n";
+    }
+
+    return 0;
+}
+
+OutputThread running
+Thread joined
+Explanationjoinable() checks whether the thread is eligible for joining. Since the thread has not been joined or detached, it returns true. The thread is then safely joined.Situations Where a Thread Becomes Non-JoinableA thread becomes non-joinable in the following situations:After it has been joined using join(). After it has been detached using detach(). When it is default-constructed without an associated thread. Advantages of join()Ensures the thread completes before the program proceeds. Prevents premature program termination while threads are still running. Simplifies thread synchronization. Helps avoid resource management issues caused by unfinished threads. Limitations of join()Despite its advantages, join() has a few limitations:Blocks the calling thread until the associated thread finishes execution.A thread object can be joined only once during its lifetime.Calling join() on a non-joinable thread results in program termination.Excessive use of join() may reduce concurrency by making threads wait unnecessarily.

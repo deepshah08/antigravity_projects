@@ -1,0 +1,63 @@
+# First Class functions in Python - GeeksforGeeks
+
+In Python, functions are treated as first-class objects. This means they can be used just like numbers, strings, or any other variable. You can:Assign functions to variables.Pass them as arguments to other functions.Return them from functions.Store them in data structures such as lists or dictionaries.This ability allows you to write reusable, modular and powerful code.Characteristics of First-Class FunctionsFunctions in Python have the following important characteristics. Let’s see them one by one with examples:1. Assigning Functions to VariablesWe can assign a function to a variable and use the variable to call the function. Example:
+            Python
+
+    def msg(name):
+    return f"Hello, {name}!"
+
+# Assigning the function to a variable
+f = msg
+
+# Calling the function using the variable
+print(f("Emma"))  
+
+OutputHello, Emma!
+Explanation:The function msg is assigned to the variable f.Now f can be used to call msg, showing that functions behave like variables.2. Passing Functions as ArgumentsFunctions can be passed as arguments to other functions, enabling higher-order functions. 
+            Python
+
+    def msg(name):
+    return f"Hello, {name}!"
+
+def fun1(fun2, name):
+    return fun2(name)
+
+# Passing the msg function as an argument
+print(fun1(msg, "Alex"))  
+
+OutputHello, Alex!
+Explanation:The function fun1 takes another function (fun2) as input.msg is passed to fun1, which then calls it with "Alex".3. Returning Functions from Other FunctionsA function can return another function, allowing for the creation of function factories.
+            Python
+
+    def fun1(msg):
+    def fun2():
+        return f"Message: {msg}"
+    return fun2
+
+# Getting the inner function
+func = fun1("Hello, World!")
+print(func()) 
+
+OutputMessage: Hello, World!
+Explanation:The function fun1 defines another function fun2 and returns it.func stores the returned function fun2, which can be executed later.4. Storing Functions in Data StructuresFunctions can be stored in data structures like lists or dictionaries.
+            Python
+
+    def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+# Storing functions in a dictionary
+d = {
+    "add": add,
+    "subtract": subtract
+}
+
+# Calling functions from the dictionary
+print(d["add"](5, 3))       
+print(d["subtract"](5, 3)) 
+
+Output8
+2
+Explanation:Functions add and subtract are stored in a dictionary.They are accessed using their keys and executed directly.

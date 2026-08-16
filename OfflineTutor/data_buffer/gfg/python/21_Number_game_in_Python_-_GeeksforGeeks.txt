@@ -1,0 +1,137 @@
+# 21 Number game in Python - GeeksforGeeks
+
+21 Number Game (also known as Bagram or Twenty Plus One) is a counting game in which players take turns to count numbers from 1 to 21. The player who calls "21" loses the game. It can be played between multiple players, but here we demonstrate a player vs computer version using Python.For Example:Player says: 1 2Computer says: 3 4 5Player says: 6 7Computer says: 8 9...Player says: 21Since the Player says 21, the player loses the game.Game Rules The game is played between two players who take turns one after another.On each turn, a player can call 1 to 3 numbers.The numbers must be consecutive (for example, 5 6 7) skipping numbers leads to disqualification.The counting always starts from 1 and continues upward.The one who calls 21, loses the game.ImplementationBelow is the Python program that implements the 21 Number Game with a player vs computer strategy.Step 1: Define the Required FunctionsFirst, we create the helper functions that are used throughout the game to validate inputs, determine the computer's moves, and manage the game flow.
+            Python
+
+    def nearestMultiple(num):
+    if num >= 4:
+        near = num + (4 - (num % 4))
+    else:
+        near = 4
+    return near
+
+def lose1():
+    print("\n\nYOU LOSE!")
+    print("Better luck next time!")
+    exit(0)
+
+def check(xyz):
+    i = 1
+    while i < len(xyz):
+        if (xyz[i] - xyz[i-1]) != 1:
+            return False
+        i += 1
+    return True
+
+Explanation:nearestMultiple(num) calculates the next multiple of 4, allowing the computer to follow its winning strategy.lose1() prints a losing message and terminates the program using exit(0) when the player loses or enters invalid input.check(xyz) verifies that the entered numbers are consecutive by checking whether the difference between adjacent numbers is 1.Step 2: Initialize the GameIn this step, we initialize the game by creating the main function, setting up the required variables, and allowing the player to choose whether to play first or second.
+            Python
+
+    def start1():
+    xyz = []
+    last = 0
+
+    while True:
+        print("Enter 'F' to take the first chance.")
+        print("Enter 'S' to take the second chance.")
+        chance = input('> ')
+
+Explanation:start1() function controls the gameplay.list xyz stores all numbers spoken during the game.variable last keeps track of the latest number entered.player is asked to choose whether to play first (F) or second (S). Step 3: Execute the Game LogicNext, we implement the main game logic, where the player and computer take turns, validate inputs, and continue the game until a winner is determined.
+            Python
+
+            if chance.upper() == "F":
+            while True:
+                if last == 20:
+                    lose1()
+
+                print("\nYour Turn.")
+                inp = int(input("How many numbers do you wish to enter? (1-3)\n> "))
+
+                if 1 <= inp <= 3:
+                    comp = 4 - inp
+                else:
+                    print("Wrong input. You are disqualified from the game.")
+                    lose1()
+
+                print("Enter your numbers:")
+                for _ in range(inp):
+                    xyz.append(int(input('> ')))
+
+                last = xyz[-1]
+
+                if not check(xyz):
+                    print("\nYou did not enter consecutive integers.")
+                    lose1()
+
+                if last == 21:
+                    lose1()
+
+                print("\nComputer's Turn:")
+                for j in range(1, comp + 1):
+                    xyz.append(last + j)
+
+                print("Numbers after computer's turn:", xyz)
+                last = xyz[-1]
+
+        elif chance.upper() == "S":
+            comp = 1
+            last = 0
+
+            while last < 20:
+                print("\nComputer's Turn:")
+                for j in range(1, comp + 1):
+                    xyz.append(last + j)
+
+                print("Numbers after computer's turn:", xyz)
+
+                if xyz[-1] == 20:
+                    lose1()
+
+                print("\nYour Turn.")
+                inp = int(input("How many numbers do you wish to enter? (1-3)\n> "))
+
+                print("Enter your numbers:")
+                for _ in range(inp):
+                    xyz.append(int(input('> ')))
+
+                last = xyz[-1]
+
+                if not check(xyz):
+                    print("\nYou did not enter consecutive integers.")
+                    lose1()
+
+                near = nearestMultiple(last)
+                comp = near - last
+
+                if comp == 4:
+                    comp = 3
+
+            print("\n\nCONGRATULATIONS!!!")
+            print("YOU WON!")
+            exit(0)
+
+        else:
+            print("Wrong choice. Please enter F or S.")
+
+Explanation:If the player chooses F, the player starts the game by entering 1–3 consecutive numbers, after which the computer makes its move.If the player chooses S, the computer starts first and uses nearestMultiple() to reach 4, 8, 12, 16, or 20 whenever possible.The check() function validates that the player's numbers are consecutive.If the player enters invalid numbers or says 21, the lose1() function is called to end the game.Step 4: Start and Repeat the GameFinally, we start the game by asking the player whether to play and repeat the process until the player chooses to quit.
+            Python
+
+    game = True
+
+while game:
+    print("\nPlayer 2 is Computer.")
+    ans = input("Do you want to play the 21 number game? (Yes / No)\n> ")
+
+    if ans.lower() == 'yes':
+        start1()
+    else:
+        nex = input("Do you want to quit the game? (Yes / No)\n> ")
+
+        if nex.lower() == "yes":
+            print("You are quitting the game...")
+            exit(0)
+        elif nex.lower() == "no":
+            print("Continuing...")
+        else:
+            print("Wrong choice")
+
+Explanation:The variable game keeps the program running.The while loop repeatedly asks the player whether they want to start a new game.If the player enters Yes, the start1() function is called.If the player enters No, the program asks whether to quit or continue playing.OutputPlayer 2 is Computer.Do you want to play the 21 number game? (Yes / No)> yesEnter 'F' to take the first chance.Enter 'S' to take the second chance.> SComputer's Turn:Numbers after computer's turn: [1]Your Turn.How many numbers do you wish to enter? (1-3)> 3Enter your numbers:> 2> 3> 4Computer's Turn:Numbers after computer's turn: [1, 2, 3, 4, 5, 6, 7]Your Turn.How many numbers do you wish to enter? (1-3)> 1Enter your numbers:> 8Computer's Turn:Numbers after computer's turn: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]Your Turn.How many numbers do you wish to enter? (1-3)> 1Enter your numbers:> 12Computer's Turn:Numbers after computer's turn: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]Your Turn.How many numbers do you wish to enter? (1-3)> 1Enter your numbers:> 16Computer's Turn:Numbers after computer's turn: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]Your Turn.How many numbers do you wish to enter? (1-3)> 1Enter your numbers:> 20CONGRATULATIONS!!!YOU WON!Note: A winning strategy is to make the total count a multiple of 4 (4, 8, 12, 16, 20) before the opponent’s turn.

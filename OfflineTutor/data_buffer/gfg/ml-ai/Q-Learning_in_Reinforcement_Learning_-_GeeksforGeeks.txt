@@ -1,0 +1,88 @@
+# Q-Learning in Reinforcement Learning - GeeksforGeeks
+
+Q-Learning is a popular model-free reinforcement learning algorithm that helps an agent learn how to make the best decisions by interacting with its environment. Instead of needing a model of the environment the agent learns purely from experience by trying different actions and seeing their resultsImagine a system that sees an apple but incorrectly says, “It’s a mango.” The system is told, “Wrong! It’s an apple.” It learns from this mistake. Next time, when shown the apple, it correctly says “It’s an apple.” This trial-and-error process, guided by feedback is like how Q-Learning works.Q-LearningThe core idea is that the agent builds a Q-table which stores Q-values. Each Q-value estimates how good it is to take a specific action in a given state in terms of the expected future rewards. Over time the agent updates this table using the feedback it receivesKey Components1. Q-Values or Action-Values Q-values represent the expected rewards for taking an action in a specific state. These values are updated over time using the Temporal Difference (TD) update rule.2. Rewards and EpisodesThe agent moves through different states by taking actions and receiving rewards. The process continues until the agent reaches a terminal state which ends the episode.3. Temporal Difference or TD-UpdateThe agent updates Q-values using the formula:Q(S,A)\leftarrow Q(S,A) + \alpha (R + \gamma Q({S}',{A}') - Q(S,A))Where, S is the current state.A is the action taken by the agent.S' is the next state the agent moves to.A' is the best next action in state S'.R is the reward received for taking action A in state S.γ (Gamma) is the discount factor which balances immediate rewards with future rewards.α (Alpha) is the learning rate determining how much new information affects the old Q-values.4. ϵ-greedy Policy (Exploration vs. Exploitation)The ϵ-greedy policy helps the agent decide which action to take based on the current Q-value estimates:Exploitation: The agent picks the action with the highest Q-value with probability 1 - ϵ. This means the agent uses its current knowledge to maximize rewards.Exploration: With probability ϵ, the agent picks a random action, exploring new possibilities to learn if there are better ways to get rewards. This allows the agent to discover new strategies and improve its decision-making over time.How does Q-Learning Works?Q-learning models follow an iterative process where different components work together to train the agent. Here's how it works step-by-step:Q learning algorithm1. Start at a State (S)The environment provides the agent with a starting state which describes the current situation or condition.2. Agent Selects an Action (A)Based on the current state and the agent chooses an action using its policy. This decision is guided by a Q-table which estimates the potential rewards for different state-action pairs. The agent typically uses an ε-greedy strategy:It sometimes explores new actions (random choice).It mostly exploits known good actions (based on current Q-values).3. Action is Executed and Environment RespondsThe agent performs the selected action. The environment then provides:A new state (S′) — the result of the action.A reward (R) — feedback on the action's effectiveness.4. Learning Algorithm Updates the Q-TableThe agent updates the Q-table using the new experience:It adjusts the value for the state-action pair based on the received reward and the new state.This helps the agent better estimate which actions are more beneficial over time.5. Policy is Refined and the Cycle RepeatsWith updated Q-values the agent:Improves its policy to make better future decisions.Continues this loop — observing states, taking actions, receiving rewards and updating Q-values across many episodes.Over time the agent learns the optimal policy that consistently yields the highest possible reward in the environment.Methods for Determining Q-values1. Temporal Difference (TD):Temporal Difference is calculated by comparing the current state and action values with the previous ones. It provides a way to learn directly from experience, without needing a model of the environment.2. Bellman’s Equation:Bellman’s Equation is a recursive formula used to calculate the value of a given state and determine the optimal action. It is fundamental in the context of Q-learning and is expressed as: Q(s, a) = R(s, a) + \gamma \max_a Q(s', a)Where:Q(s, a) is the Q-value for a given state-action pair.R(s, a) is the immediate reward for taking action a in state s.γ is the discount factor, representing the importance of future rewards.max_a Q(s', a) is the maximum Q-value for the next state s' and all possible actions.What is a Q-table?The Q-table is essentially a memory structure where the agent stores information about which actions yield the best rewards in each state. It is a table of Q-values representing the agent's understanding of the environment. As the agent explores and learns from its interactions with the environment, it updates the Q-table. The Q-table helps the agent make informed decisions by showing which actions are likely to lead to better rewards.Structure of a Q-table:Rows represent the states.Columns represent the possible actions.Each entry in the table corresponds to the Q-value for a state-action pair.Over time, as the agent learns and refines its Q-values through exploration and exploitation, the Q-table evolves to reflect the best actions for each state, leading to optimal decision-making.ImplementationHere, we implement basic Q-learning algorithm where agent learns the optimal action-selection strategy to reach a goal state in a grid-like environment. Step 1: Define the EnvironmentWe first define the environment including the number of states, actions, goal state and the Q-table. Each state represents a position in a 4×4 grid and actions represent movements in four directions.
+            Python
+
+    import numpy as np
+import matplotlib.pyplot as plt
+
+n_states = 16         
+n_actions = 4          
+goal_state = 15        
+
+Q_table = np.zeros((n_states, n_actions))
+
+Step 2: Set HyperparametersThese parameters control the learning process:learning_rate (α): How much new info overrides old info.discount_factor (γ): How much future rewards are valued.exploration_prob (ε): Probability of taking a random action.epochs: Number of training episodes.
+            Python
+
+    learning_rate = 0.8
+discount_factor = 0.95
+exploration_prob = 0.2
+epochs = 1000
+
+Step 3: Define the State Transition FunctionThis function calculates the next state based on the current state and chosen action. We assume:0 → Left1 → Right2 → Up3 → Down
+            Python
+
+    def get_next_state(state, action):
+    row, col = divmod(state, 4)  
+
+    if action == 0 and col > 0:        
+        col -= 1
+    elif action == 1 and col < 3:      
+        col += 1
+    elif action == 2 and row > 0:     
+        row -= 1
+    elif action == 3 and row < 3:     
+        row += 1
+
+    return row * 4 + col
+
+Step 4: Implement the Q-Learning AlgorithmNow we train the agent to learn the optimal policy. At each step:Choose an action using epsilon-greedy policy.Move to the next state based on that action.Update the Q-value using the Bellman equation.End the episode if the goal is reached.
+            Python
+
+    for epoch in range(epochs):
+    current_state = np.random.randint(0, n_states)  
+
+    while True:
+        if np.random.rand() < exploration_prob:
+            action = np.random.randint(0, n_actions)
+        else:
+            action = np.argmax(Q_table[current_state])
+
+        next_state = get_next_state(current_state, action)
+
+        reward = 1 if next_state == goal_state else 0
+
+        Q_table[current_state, action] += learning_rate * (
+            reward + discount_factor * np.max(Q_table[next_state]) - Q_table[current_state, action]
+        )
+
+        if next_state == goal_state:
+            break
+
+        current_state = next_state
+
+Step 5: Output the Learned Q-TableAfter training, we visualize the maximum Q-value of each state on a grid and print the learned Q-table. States closer to the goal should have higher Q-values, showing the agent’s learned path.
+            Python
+
+    q_values_grid = np.max(Q_table, axis=1).reshape((4, 4))
+
+plt.figure(figsize=(6, 6))
+plt.imshow(q_values_grid, cmap='coolwarm', interpolation='nearest')
+plt.colorbar(label='Q-value')
+plt.title('Learned Q-values for Each State')
+plt.xticks(np.arange(4), ['0', '1', '2', '3'])
+plt.yticks(np.arange(4), ['0', '1', '2', '3'])
+plt.gca().invert_yaxis()
+plt.grid(True)
+
+for i in range(4):
+    for j in range(4):
+        plt.text(j, i, f'{q_values_grid[i, j]:.2f}', ha='center', va='center', color='black')
+
+plt.show()
+
+print("Learned Q-table:")
+print(Q_table)
+
+Output: Q values on gridLearned Q tableEach row index (0–15) represents a state in the 4×4 grid.Each column value shows the Q-value for the actions [Left, Right, Up, Down].Higher Q-values indicate better actions that move the agent closer to the goal.For instance:In the last few rows (states 12–15), the Q-values are noticeably higher (around 15–17). This means the agent has learned that these states are near the goal state (15) and should move toward it.The top rows (states 0–3) have lower Q-values (around 8–13), showing that those positions are far from the goal and require more steps to reach it.The agent’s policy i.e best action from each state would be the action corresponding to the maximum Q-value in that row.You can download source code from here.AdvantagesTrial and Error Learning: Q-learning improves over time by trying different actions and learning from experience.Self-Improvement: Mistakes lead to learning, helping the agent avoid repeating them.Better Decision-Making: Stores successful actions to avoid bad choices in future situations.Autonomous Learning: It learns without external supervision, purely through exploration.DisadvantagesSlow Learning: Requires many examples, making it time-consuming for complex problems.Expensive in Some Environments: In robotics, testing actions can be costly due to physical limitations.Curse of Dimensionality: Large state and action spaces make the Q-table too large to handle efficiently.Limited to Discrete Actions: It struggles with continuous actions like adjusting speed, making it less suitable for real-world applications involving continuous decisions.

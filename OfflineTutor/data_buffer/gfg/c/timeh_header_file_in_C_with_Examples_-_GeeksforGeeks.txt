@@ -1,0 +1,181 @@
+# time.h header file in C with Examples - GeeksforGeeks
+
+The time.h header file contains definitions of functions to get and manipulate date and time information. It also includes functions, types and macros, which are used by programs to measure time, manipulate dates and format time information. It describes three time-related data types. clock_t represents the processor time and is used to measure the CPU clock cycles.time_t represents the clock time as an integer which shows the number of seconds since the beginning of the Unix Epoch ( 1st January 1970, UTC), which is a part of the calendar time. struct tm holds the components of date and time such as hours, minutes, seconds, day, month, year. The struct tm contains:
+            C
+
+    struct tm {
+    // seconds,  range 0 to 59
+    int tm_sec;
+
+    // minutes, range 0 to 59
+    int tm_min;
+
+    // hours, range 0 to 23
+    int tm_hour;
+
+    // day of the month, range 1 to 31
+    int tm_mday;
+
+    // month, range 0 to 11
+    int tm_mon;
+
+    // The number of years since 1900
+    int tm_year;
+
+    // day of the week, range 0 to 6
+    int tm_wday;
+
+    // day in the year, range 0 to 365
+    int tm_yday;
+
+    // daylight saving time
+    int tm_isdst;
+}
+
+Explanation:The time.h header file provides functions for handling date and time operations in C.It is used to get the current time.It provides functions to convert between different time formats.It contains the CLOCKS_PER_SEC macro, which specifies the number of clock ticks per second.Get Current Date and TimeTo get the current date and time we use the combination of time() , localtime(), and asctime() functions as shown:time(): Gets the current time since January 1, 1970 and stores it as a time_t value.localtime(): Converts time_t into local time components such as hour, minute, day, month, and year.asctime(): Converts the time components into a human-readable string format.
+            C
+
+    #include <stdio.h>
+#include <time.h>
+
+int main() {
+    
+    // Structure to store local time
+    struct tm* ptr;
+    
+    // Variable to store current time
+    time_t t;
+    
+    // Get current time
+    t = time(NULL);
+    
+    // Convert it to local time
+    ptr = localtime(&t);
+    
+    // Get the string of local time
+    printf("%s", asctime(ptr));
+    return 0;
+}
+
+OutputTue Apr 15 07:22:42 2025
+Print Time in UTC (Coordinated Universal Time)The gmtime() function converts the time obtained using time() into Coordinated Universal Time (UTC).It is used to display the current time in UTC format. UTC is also commonly referred to as Greenwich Mean Time (GMT).
+            C
+
+    #include <stdio.h>
+#include <time.h>
+
+int main() {
+    
+    // Structure to store local time
+    struct tm* ptr;
+    
+    // Variable to store current time
+    time_t t;
+    
+    // Get current time
+    t = time(NULL);
+    
+    // Convert it to UTC time
+    ptr = gmtime(&t);
+    
+    // Get the string of local time
+    printf("%s", asctime(ptr));
+    return 0;
+}
+
+OutputTue Apr 15 12:44:17 2025
+Find Time DifferenceThe difference between two time_t values recorded at different time intervals can be used to measure the execution time of a part of the code.Subtract the earlier time_t value from the later value to find the time difference. It helps determine how much time a specific part of the code takes to execute.
+            C
+
+    #include <stdio.h>
+#include <time.h>
+
+int main() {
+    time_t start, end;
+    
+    // Record start time
+    start = time(NULL);
+    int a, b;
+    scanf("%d %d", &a, &b);
+    printf("Sum of %d and %d is %d\n",
+           a, b, a + b);
+           
+    // Record endtime
+    end = time(NULL);
+    
+    // Print time difference
+    printf("Time taken to print sum is %.2f seconds",
+           difftime(end, start));
+}
+
+OutputSum of 0 and 0 is 0
+Time taken to print sum is 0.00 secondsNote: If user gives input slowly that time also add up for total execution time.Time using CPU ClockThe clock() function from time.h is used to measure the CPU time taken by a program during execution.It calculates the number of clock ticks used during execution. The elapsed CPU time can be calculated using CLOCKS_PER_SEC.
+            C
+
+    #include <math.h>
+#include <stdio.h>
+#include <time.h>
+
+int frequency_of_primes(int n)
+{
+    // This function checks the number of
+    // primes less than the given parameter
+    int i, j;
+    int freq = n - 1;
+    for (i = 2; i <= n; ++i)
+        for (j = sqrt(i); j > 1; --j)
+            if (i % j == 0) {
+                --freq;
+                break;
+            }
+    return freq;
+}
+
+int main()
+{
+    clock_t t;
+    int f;
+    t = clock();
+    f = frequency_of_primes(9999);
+    printf("The number of primes lower"
+           " than 10, 000 is: %d\n",
+           f);
+    t = clock() - t;
+    printf("No. of clicks %ld clicks (%f seconds).\n",
+           t, ((float)t) / CLOCKS_PER_SEC);
+    return 0;
+}
+
+OutputThe number of primes lower than 10, 000 is: 1229
+No. of clicks 2837 clicks (0.002837 seconds).Print Time in hour::minute FormatThe strftime() function formats date and time into a string according to the specified format.%I represents the hour in 12-hour format. %M represents minutes, and %p represents AM or PM.
+            C
+
+    #include <stdio.h>
+#include <time.h>
+int main()
+{
+    time_t rawtime;
+    struct tm* timeinfo;
+
+    // Used to store the time
+    // returned by localtime() function
+    char buffer[80];
+
+    time(&rawtime);
+    timeinfo = localtime(&rawtime);
+    strftime(buffer, 80,
+             "Time is %I:%M %p.",
+             timeinfo);
+
+    // strftime() function stores the
+    // current time as Hours : Minutes
+    //%I %M and %p-> format specifier
+    // of Hours minutes and am/pm respectively*/
+
+    // prints the formatted time
+    puts(buffer);
+
+    return 0;
+}
+
+OutputTime is 09:00AM.Functions in Time LibraryFunction NameExplanationasctime()This function returns the date and time in the format day month date hours:minutes:seconds year.Eg: Sat Jul 27 11:26:03 2019.asctime() function returns a string by taking struct tm variable as a parameter.clock()This function returns the processor time consumed by a programctime()This function returns the date and time in the formatday month date hours:minutes:seconds yearEg: Sat Jul 27 11:26:03 2019time is printed based on the pointer returned by Calendar Timedifftime()This function returns the difference between the times provided.gmtime()This function prints the UTC (Coordinated Universal Time) Time and date.Format for both gmtime() and asctime() is samemktime()This function returns the calendar-time equivalent using struct tm.time()This function returns the calendar-time equivalent using data-type time_t.strftime()This function helps to format the string returned by other time functions using different format specifiers

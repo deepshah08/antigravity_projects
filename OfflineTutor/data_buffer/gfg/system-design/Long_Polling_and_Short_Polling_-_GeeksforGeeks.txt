@@ -1,0 +1,114 @@
+# Long Polling and Short Polling - GeeksforGeeks
+
+Polling is a technique where a client repeatedly sends requests to a server at fixed intervals to check for new data. It is widely used to simulate real-time updates when instant communication is not strictly required. Although it is not truly real-time, polling is simple to implement and works reliably in many applications.Easy to implement and widely supported across systems, as it does not require persistent connections like WebSockets.However, frequent client requests can increase server load and impact performance.Example: A news app refreshing every 10 seconds to fetch the latest headlines from the server.Short PollingShort polling is a technique where the client continuously sends requests to the server at fixed intervals. The server immediately responds—either with data if available or an empty response if not. This cycle keeps repeating, allowing the client to check for updates regularly.Simple to implement using standard HTTP/AJAX requests without complex setup.Can cause unnecessary requests and increase server load due to frequent polling even when no new data is available.Example:  A chat application that sends a request to the server every 5 seconds to check for new messages, even if no new messages have arrived. Implementation ExampleIn this example, we took the server file as data.json which contains some data.
+            HTML
+
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+          content="width=device-width, 
+                         initial-scale=1.0">
+    <title>Short Polling using AJAX</title>
+    <style>
+        h1, h3 {
+            text-align: center;
+            color: green;
+        }
+
+        button {
+            margin-left: 34.5rem;
+        }
+    </style>
+
+    <script>
+        function loadInformation() {
+            setInterval(function () {
+
+                // Request
+                var request = new XMLHttpRequest();
+                request.open("GET", "./data.json");
+                request.send();
+
+                // Response
+                request.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+
+                        // Also checked status==200 to 
+                        // verify its status is OK or not
+                        console.log(this.responseText);
+                    }
+                }
+            }, 1000);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Geeks for Geeks</h1>
+    <h3>Short Polling using AJAX</h3>
+    <button onClick="loadInformation()">
+        Click to Load
+    </button>
+</body>
+
+</html>
+
+data.json:{    "name":"Manish",    "age":"22",    "city":"Kolkata"}Output:Use casesShort polling works best in scenarios where updates are not critical and can tolerate some delay. Common use cases:News feeds and blogs that refresh periodically (e.g., every few seconds or minutes)Weather updates and stock market tickers with fixed refresh intervalsSocial media feeds or dashboards that do not require immediate updatesAdvantagesThese highlight why short polling is easy to use but may not be efficient.Simple to implement and widely supportedWorks well for systems with less frequent updatesEasy to debug and maintainDisadvantagesThese show the limitations mainly related to performance and resource usage.Sends many unnecessary requests when no data is availableIncreases server load and network trafficNot truly real-time (depends on interval delay)Long PollingLong polling is a technique where the client sends a request and the server holds it until new data is available instead of responding immediately. Once data is sent, the client quickly makes another request, enabling near real-time communication.Reduces unnecessary empty responses and provides near real-time updates without constant repeated requests.Keeps the connection open for updates, which can increase server resource usage.Example: A messaging application where the client sends a request and waits until a new message arrives; once received, it instantly sends another request to keep listening for further messages. Implementation ExampleIn this example, we will understand long polling, where we will use AJAX for understanding long polling, although, we can use normal HTTP requests as well. The steps are described below:The basic creation of XMLHttpRequest to send requests is the same as in the case of short polling.But here since the response is returned by the server only when it is available. So, the request can't be made at fixed intervals.That's why we will send the next request only after getting the response to the previous request.
+            HTML
+
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+          content="width=device-width, 
+                         initial-scale=1.0">
+    <title>Long Polling using AJAX</title>
+    <style>
+        h1, h3 {
+            text-align: center;
+            color: green;
+        }
+
+        button {
+            margin-left: 34.5rem;
+        }
+    </style>
+
+    <script>
+        function loadInformation() {
+
+            // Request
+            var request = new XMLHttpRequest();
+            request.open("GET", "./data.json");
+            request.send();
+            
+            // Response
+            request.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+
+                    // Also checked status==200 to 
+                    // verify its status is OK or not
+                    console.log(this.responseText);
+                    loadInformation();
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Geeks for Geeks</h1>
+    <h3>Long Polling using AJAX</h3>
+    <button onClick="loadInformation()">
+        Click to Load
+    </button>
+</body>
+
+</html>
+
+data.json:{    "name":"Mridul",    "age":"24",    "city":"Banglore"}Output: Use CaseLong polling is ideal for applications that require near real-time updates without empty responses. Common use cases:Chat applications where messages should appear immediately after being sentNotification systems (e.g., alerts, reminders, activity updates)Collaborative editing tools or live dashboards where changes must be reflected instantlyAdvantagesThese make long polling more efficient for real-time-like applications.Reduces unnecessary requests by waiting for dataProvides near real-time updatesMore efficient than short polling in many casesDisadvantagesThese drawbacks are mostly related to complexity and server resource handling.Keeps connections open, increasing server resource usageMore complex to implement than short pollingCan face timeout or connection drop issuesDifference between Short Polling and Long PollingBoth techniques are used to fetch updated data from the server, but they differ in how frequently requests are made and how the server responds.Short PollingLong PollingIt is based on Timer. So, it is used for those applications that need to update data at a fixed interval of timeIt is based on getting the response. So, It is used for those applications that don't want empty responses.Here, an empty response can be sent if a response is not available.Here, empty response is typically avoided but can still be sent in case of timeoutIt is less preferred.Preferred for near real-time use cases compared to short polling, depending on system requirements. It creates lots of traffic.It also creates traffic but less than short polling.

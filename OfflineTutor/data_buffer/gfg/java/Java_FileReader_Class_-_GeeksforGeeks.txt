@@ -1,0 +1,42 @@
+# Java FileReader Class - GeeksforGeeks
+
+The FileReader class in Java is used to read data from a file in the form of characters. It is a character-oriented stream that makes it ideal for reading text files. If you want to read binary data (like images or videos), use FileInputStream instead.Character-Oriented Stream: Reads data as 16-bit Unicode characters.Convenient for Text Files: Automatically handles character encoding.Platform Independent: Works across all operating systems.DeclarationThe class declaration of FileReader is as follows:public class FileReader extends InputStreamReaderFileReader is a subclass of InputStreamReader, which in turn extends Reader. Example: Reading Data from a File Using FileReader
+            Java
+
+    import java.io.*;
+
+class GFG{
+    
+    public static void main(String[] args){
+        
+        try{
+            
+            // FileReader Class used
+            FileReader fileReader = new FileReader("example.txt");
+
+            System.out.println("Reading char by char : \n");
+            int i;
+
+            // Using read method
+            while ((i = fileReader.read()) != -1) {
+                System.out.print((char)i);
+            }
+
+            System.out.println("Reading using array : \n");
+            char[] charArray = new char[10];
+
+            // Using read method for to get character array
+            fileReader.read(charArray);
+            System.out.print(charArray);
+
+            // Close method called
+            fileReader.close();
+            System.out.println("FileReader closed!");
+        }
+        catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+
+Output:output Hierarchy of the FileReader class.It inherits from InputStreamReader, which in turn extends Reader and ultimately Object.FileReader ClassConstructors of Java FileReader ClassThe Constructors inside FileReader are shown in the table below.1. FileReader(String fileName)Creates a new FileReader object to read data from a file with the given name.FileReader fr = new FileReader("example.txt");2. FileReader(File file)Creates a new FileReader object to read from the specified File object.File file = new File("example.txt");FileReader fr = new FileReader(file);3. FileReader(FileDescriptor fdObj)Creates a FileReader using the specified file descriptor. It is often used when working with low-level file handling.FileDescriptor fd = FileDescriptor.in;FileReader fr = new FileReader(fd);Methods of Java FileReader ClassThe methods under FileReader are shown in the table below.MethodDescriptionread()Reads a single character and returns it, or -1 if the end of the stream is reached.read(char[] charBuffer, int offset, int length)Reads characters into the given buffer starting at offset up to length characters. Returns the number of characters read or -1 if the stream ends.ready()Checks if the stream is ready to be read (i.e., input buffer is not empty).getEncoding()Returns the name of the character encoding used by the stream.close()Closes the stream and releases system resources.

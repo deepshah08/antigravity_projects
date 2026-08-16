@@ -1,0 +1,141 @@
+# Quiz about OS Process Management
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsOS Process ManagementLast Updated : DiscussCommentsQuestion 1A process executes the code fork();fork();fork();  The total number of child processes created is3478Question 2Fetch_And_Add(X,i) is an atomic Read-Modify-Write instruction that reads the value of memory location X, increments it by the value i, and returns the old value of X. It is used in the pseudocode shown below to implement a busy-wait lock. L is an unsigned integer shared variable initialized to 0. The value of 0 corresponds to lock being available, while any non-zero value corresponds to the lock being not available.    AcquireLock(L){         while (Fetch_And_Add(L,1))               L = 1;   }  ReleaseLock(L){         L = 0;   } This implementationfails as L can overflow fails as L can take on a non-zero value when the lock is actually availableworks correctly but may starve some processesworks correctly without starvationQuestion 3Consider the following code fragment:
+
+        C
+        
+          if (fork() == 0)
+  { a = a + 5; printf("%d,%d\\n", a, &a); }
+  else { a = a –5; printf("%d, %d\\n", a, &a); } 
+
+        
+    
+Let u, v be the values printed by the parent process, and x, y be the values printed by the child process. Which one of the following is TRUE?
+ u = x + 10 and v = y u = x + 10 and v != y u + 10 = x and v = yu + 10 = x and v != yQuestion 4The atomic fetch-and-set x, y instruction unconditionally sets the memory location x to 1 and fetches the old value of x in y without allowing any intervening access to the memory location x. consider the following implementation of P and V functions on a binary semaphore .
+void P (binary_semaphore *s) {
+  unsigned y;
+  unsigned *x = &(s->value);
+  do {
+     fetch-and-set x, y;
+  } while (y);
+}
+
+void V (binary_semaphore *s) {
+  S->value = 0;
+}
+
+Which one of the following is true?The implementation may not work if context switching is disabled in P.Instead of using fetch-and-set, a pair of normal load/store can be usedThe implementation of V is wrongThe code does not implement a binary semaphoreQuestion 5A shared variable x, initialized to zero, is operated on by four concurrent processes W, X, Y, Z as follows. Each of the processes W and X reads x from memory, increments by one, stores it to memory, and then terminates. Each of the processes Y and Z reads x from memory, decrements by two, stores it to memory, and then terminates. Each process before reading x invokes the P operation (i.e., wait) on a counting semaphore S and invokes the V operation (i.e., signal) on the semaphore S after storing x to memory. Semaphore S is initialized to two. What is the maximum possible value of x after all processes complete execution? (GATE CS 2013)-2-112Question 6A shared variable x, initialized to zero, is operated on by four concurrent processes W, X, Y, Z as follows. Each of the processes W and X reads x from memory, increments by one, stores it to memory, and then terminates. Each of the processes Y and Z reads x from memory, decrements by two, stores it to memory, and then terminates. Each process before reading x invokes the P operation (i.e., wait) on a counting semaphore S and invokes the V operation (i.e., signal) on the semaphore S after storing x to memory. Semaphore S is initialized to two. What is the maximum possible value of x after all processes complete execution? (GATE CS 2013)
+-2-112Question 7A certain computation generates two arrays a and b such that a[i]=f(i) for 0 ≤ i < n and b[i]=g(a[i]) for 0 ≤ i < n. Suppose this computation is decomposed into two concurrent processes X and Y such that X computes the array a and Y computes the array b. The processes employ two binary semaphores R and S, both initialized to zero. The array a is shared by the two processes. The structures of the processes are shown below.
+Process X:                         Process Y:
+private i;                         private i;
+for (i=0; i < n; i++) {            for (i=0; i < n; i++) {
+   a[i] = f(i);                       EntryY(R, S);
+   ExitX(R, S);                       b[i]=g(a[i]);
+}                                 }
+Which one of the following represents the CORRECT implementations of ExitX and EntryY?
+
+(A)
+ExitX(R, S) {
+  P(R);
+  V(S);
+}
+
+EntryY (R, S) {
+  P(S);
+  V(R);
+}
+(B)
+ExitX(R, S) {
+  V(R);
+  V(S);
+}
+
+EntryY(R, S) {
+  P(R);
+  P(S);
+}
+(C)
+ExitX(R, S) {
+  P(S);
+  V(R);
+}
+EntryY(R, S) {
+  V(S);
+  P(R);
+}
+
+(D) 
+ExitX(R, S) {
+  V(R);
+  P(S);
+}
+EntryY(R, S) {
+  V(S);
+  P(R);
+}ABCDQuestion 8Three concurrent processes X, Y, and Z execute three different code segments that access and update certain shared variables. Process X executes the P operation (i.e., wait) on semaphores a, b and c; process Y executes the P operation on semaphores b, c and d; process Z executes the P operation on semaphores c, d, and a before entering the respective code segments. After completing the execution of its code segment, each process invokes the V operation (i.e., signal) on its three semaphores. All semaphores are binary semaphores initialized to one. Which one of the following represents a deadlock-free order of invoking the P operations by the processes? X: P(a)P(b)P(c) Y: P(b)P(c)P(d) Z: P(c)P(d)P(a) X: P(b)P(a)P(c) Y: P(b)P(c)P(d) Z: P(a)P(c)P(d) X: P(b)P(a)P(c) Y: P(c)P(b)P(d) Z: P(a)P(c)P(d)X: P(a)P(b)P(c) Y: P(c)P(b)P(d) Z: P(c)P(d)P(a)Question 9A shared variable x, initialized to zero, is operated on by four concurrent processes W, X, Y, Z as follows. Each of the processes W and X reads x from memory, increments by one, stores it to memory, and then terminates. Each of the processes Y and Z reads x from memory, decrements by two, stores it to memory, and then terminates. Each process before reading x invokes the P operation (i.e., wait) on a counting semaphore S and invokes the V operation (i.e., signal) on the semaphore S after storing x to memory. Semaphore S is initialized to two. What is the maximum possible value of x after all processes complete execution?-2-112Question 10A certain computation generates two arrays a and b such that a[i]=f(i) for 0 ≤ i < n and b[i]=g(a[i]) for 0 ≤ i < n. Suppose this computation is decomposed into two concurrent processes X and Y such that X computes the array a and Y computes the array b. The processes employ two binary semaphores R and S, both initialized to zero. The array a is shared by the two processes. The structures of the processes are shown below. Process X:                         Process Y:private i;                         private i;for (i=0; i < n; i++) {            for (i=0; i < n; i++) {   a[i] = f(i);                       EntryY(R, S);   ExitX(R, S);                       b[i]=g(a[i]);}                                 } Which one of the following represents the CORRECT implementations of ExitX and EntryY?  (A)ExitX(R, S) {  P(R);  V(S);}EntryY (R, S) {  P(S);  V(R);}(B)ExitX(R, S) {  V(R);  V(S);}EntryY(R, S) {  P(R);  P(S);}(C)ExitX(R, S) {  P(S);  V(R);}EntryY(R, S) {  V(S);  P(R);}(D)ExitX(R, S) {  V(R);  P(S);}EntryY(R, S) {  V(S);  P(R);}ABCDTags:Operating SystemsThere are 115 questions to complete.Take a part in the ongoing discussionView All Discussion

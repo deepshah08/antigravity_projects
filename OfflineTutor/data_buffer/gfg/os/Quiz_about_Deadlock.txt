@@ -1,0 +1,69 @@
+# Quiz about Deadlock
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsDeadlockLast Updated : DiscussCommentsQuestion 1Three concurrent processes X, Y, and Z execute three different code segments that access and update certain shared variables. Process X executes the P operation (i.e., wait) on semaphores a, b and c; process Y executes the P operation on semaphores b, c and d; process Z executes the P operation on semaphores c, d, and a before entering the respective code segments. After completing the execution of its code segment, each process invokes the V operation (i.e., signal) on its three semaphores. All semaphores are binary semaphores initialized to one. Which one of the following represents a deadlockfree order of invoking the P operations by the processes? (GATE CS 2013)X: P(a)P(b)P(c) Y:P(b)P(c)P(d) Z:P(c)P(d)P(a)X: P(b)P(a)P(c) Y:P(b)P(c)P(d) Z:P(a)P(c)P(d)X: P(b)P(a)P(c) Y:P(c)P(b)P(d) Z:P(a)P(c)P(d)X: P(a)P(b)P(c) Y:P(c)P(b)P(d) Z:P(c)P(d)P(a)Question 2Processes P1 and P2 use critical_flag in the following routine to achieve mutual exclusion. Assume that critical_flag is initialized to FALSE in the main program.  get_exclusive_access ( ) {     if (critical _flag == FALSE) {         critical_flag = TRUE ;         critical_region () ;         critical_flag = FALSE;     } } Consider the following statements. i. It is possible for both P1 and P2 to access critical_region concurrently. ii. This may lead to a deadlock. Which of the following holds?(i) is false and (ii) is trueBoth (i) and (ii) are false(i) is true and (ii) is falseBoth (i) and (ii) are trueQuestion 3A system has n resources R0,...,Rn-1,and k processes P0,....Pk-1 .The implementation of the resource request logic of each process Pi is as follows:   if (i % 2 == 0) {      if (i < n) request Ri      if (i+2 < n) request Ri+2}else {      if (i < n) request Rn-i      if (i+2 < n) request Rn-i-2}  In which one of the following situations is a deadlock possible?n=40, k=26n=21, k=12n=20, k=10n=41, k=19Question 4Consider a system with 4 types of resources R1 (3 units), R2 (2 units), R3 (3 units), R4 (2 units). A non-preemptive resource allocation policy is used. At any given instance, a request is not entertained if it cannot be completely satisfied. Three processes P1, P2, P3 request the sources as follows if executed independently. Process P1: t=0: requests 2 units of R2 t=1: requests 1 unit of R3 t=3: requests 2 units of R1 t=5: releases 1 unit of R2            and 1 unit of R1. t=7: releases 1 unit of R3 t=8: requests 2 units of R4 t=10: FinishesProcess P2: t=0: requests 2 units of R3 t=2: requests 1 unit of R4 t=4: requests 1 unit of R1 t=6: releases 1 unit of R3 t=8: FinishesProcess P3: t=0: requests 1 unit of R4 t=2: requests 2 units of R1 t=5: releases 2 units of R1 t=7: requests 1 unit of R2 t=8: requests 1 unit of R3 t=9: Finishes Which one of the following statements is TRUE if all three processes run concurrently starting at time t=0? All processes will finish without any deadlockOnly P1 and P2 will be in deadlock. Only P1 and P3 will be in a deadlock.All three processes will be in deadlockQuestion 5Which of the following is NOT true of deadlock prevention and deadlock avoidance schemes?In deadlock prevention, the request for resources is always granted if the resulting state is safeIn deadlock avoidance, the request for resources is always granted if the result state is safeDeadlock avoidance is less restrictive than deadlock preventionDeadlock avoidance requires knowledge of resource requirements a priori Question 6Consider the following snapshot of a system running n processes. Process i is holding  Xi instances of a resource R, 1 <= i <= n. currently, all instances of R are occupied. Further, for all i, process i has placed a request for an additional Yi instances while holding the Xi instances it already has. There are exactly two processes p and q such that Yp = Yq = 0. Which one of the following can serve as a necessary condition to guarantee that the system is not approaching a deadlock? min (Xp, Xq) < max (Yk) where k != p and k != qXp + Xq >= min (Yk) where k != p and k != q max (Xp, Xq) > 1min (Xp, Xq) > 1Question 7An operating system uses the Banker’s algorithm for deadlock avoidance when managing the allocation of three resource types X, Y, and Z to three processes P0, P1, and P2. The table given below presents the current system state. Here, the Allocation matrix shows the current number of resources of each type allocated to each process and the Max matrix shows the maximum number of resources of each type required by each process during its execution.    There are 3 units of type X, 2 units of type Y and 2 units of type Z still available. The system is currently in a safe state. Consider the following independent requests for additional resources in the current state: REQ1: P0 requests 0 units of X,        0 units of Y and 2 units of ZREQ2: P1 requests 2 units of X,       0 units of Y and 0 units of Z Which one of the following is TRUE?Only REQ1 can be permitted. Only REQ2 can be permitted.Both REQ1 and REQ2 can be permitted.Neither REQ1 nor REQ2 can be permittedQuestion 8A system contains three programs and each requires three tape units for its operation. The minimum number of tape units which the system must have such that deadlocks never arise is _________.6789Question 9Suppose n processes, P1, …. Pn share m identical resource units, which can be reserved and released one at a time. The maximum resource requirement of process Pi is Si, where Si > 0. Which one of the following is a sufficient condition for ensuring that deadlock does not occur?ABCDQuestion 10Which of the following is NOT a valid deadlock prevention scheme?Release all resources before requesting a new resourceNumber the resources uniquely and never request a lower numbered resource than the last one requested.Never request a resource after releasing any resourceRequest and all required resources be allocated before execution.Tags:Operating Systems QuestionsThere are 42 questions to complete.Take a part in the ongoing discussionView All Discussion

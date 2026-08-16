@@ -1,0 +1,78 @@
+# Random Forest Classifier using Scikit-learn - GeeksforGeeks
+
+Random Forest is an ensemble machine learning algorithm that builds multiple decision trees and combines their predictions to improve accuracy and reduce overfitting. In Scikit‑learn, the Random Forest Classifier is widely used for classification tasks because it handles large datasets and handles nonlinear relationships well.Random Forest ClassifierWorking of Random Forest ClassifierBootstrap Sampling: Random rows are picked (with replacement) to train each tree.Random Feature Selection: Each tree uses a random set of features (not all features).Build Decision Trees: Trees split the data using the best feature from their random set. Splitting continues until a stopping rule is met (like max depth).Make Predictions: Each tree gives its own prediction.Majority Voting: The final prediction is the one most tree agree on.Benefits of Random Forest Classification:Random Forest can handle large datasets and high-dimensional data.By combining predictions from many decision trees, it reduces the risk of overfitting compared to a single decision tree.It is robust to noisy data and works well with categorical data.Implementing Random Forest Classification in PythonBefore implementing random forest classifier in Python let's first understand it's parameters.n_estimators: Number of trees in the forest.max_depth: Maximum depth of each tree.max_features: Number of features considered for splitting at each node.criterion: Function used to measure split quality ('gini' or 'entropy').min_samples_split: Minimum samples required to split a node.min_samples_leaf: Minimum samples required to be at a leaf node.bootstrap: Whether to use bootstrap sampling when building trees (True or False).Now that we know it's parameters we can start building it in python.1. Import Required LibrariesWe will be importing Pandas, matplotlib, seaborn and sklearn to build the model.
+            python
+
+    import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import sklearn
+
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.datasets import load_iris
+
+2. Import DatasetFor this we'll use the Iris Dataset which is available within scikit learn. This dataset contains information about three types of Iris flowers and their respective features (sepal length, sepal width, petal length and petal width).
+            python
+
+    iris = load_iris()
+df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
+df['target'] = iris.target
+
+df
+
+Output:Iris Dataset3. Data PreparationHere we will separate the features (X) and the target variable (y).
+            python
+
+    X = df.iloc[:, :-1].values
+y = df.iloc[:, -1].values
+
+4. Splitting the DatasetWe'll split the dataset into training and testing sets so we can train the model on one part and evaluate it on another.X_train, y_train: 80% of the data used to train the model.X_test, y_test: 20% of the data used to test the model.test_size=0.2: means 20% of data goes to testing.random_state=42: ensures you get the same split every time
+            python
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+5. Feature ScalingFeature scaling ensures that all the features are on a similar scale which is important for some machine learning models. However Random Forest is not highly sensitive to feature scaling. But it is a good practice to scale when combining models.
+            python
+
+    scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+
+6. Building Random Forest ClassifierWe will create the Random Forest Classifier model, train it on the training data and make predictions on the test data.RandomForestClassifier(n_estimators=100, random_state=42) creates 100 trees (100 trees balance accuracy and training time).classifier.fit(X_train, y_train) trains on training data.classifier.predict(X_test) predicts on test data.random_state=42 ensures reproducible results.
+            python
+
+    classifier = RandomForestClassifier(n_estimators=100, random_state=42)
+classifier.fit(X_train, y_train)
+y_pred = classifier.predict(X_test)
+
+7. Evaluation of the ModelWe will evaluate the model using the accuracy score and confusion matrix.
+            python
+
+    accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy * 100:.2f}%')
+
+conf_matrix = confusion_matrix(y_test, y_pred)
+
+plt.figure(figsize=(8, 6))
+sns.heatmap(conf_matrix, annot=True, fmt='g', cmap='Blues', cbar=False, 
+            xticklabels=iris.target_names, yticklabels=iris.target_names)
+
+plt.title('Confusion Matrix Heatmap')
+plt.xlabel('Predicted Labels')
+plt.ylabel('True Labels')
+plt.show()
+
+Output: Accuracy: 100.00%Confusion Matrix8. Feature ImportanceRandom Forest Classifiers also provide insight into which features were the most important in making predictions. We can plot the feature importance.
+            Python
+
+    feature_importances = classifier.feature_importances_
+
+plt.barh(iris.feature_names, feature_importances)
+plt.xlabel('Feature Importance')
+plt.title('Feature Importance in Random Forest Classifier')
+plt.show()
+
+Output: Feature Importance in Random ClassifierFrom the graph we can see that petal width (cm) is the most important feature followed closely by petal length (cm). The sepal width (cm) and sepal length (cm) have lower importance in determining the model’s predictions. This indicates that the classifier relies more on the petal measurements to make predictions about the flower species.Related Articles:Random Forest Regression in Python

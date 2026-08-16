@@ -1,0 +1,63 @@
+# Generic Class in Java - GeeksforGeeks
+
+In Java, Generics provide type-safe, reusable code by allowing parameterized types. They enable classes, interfaces and methods to work with any data type (e.g., Integer, String or custom types) while ensuring compile-time type checking and reducing runtime errors. Using type parameters like <T>, generics promote cleaner, more flexible and stable code.1. Generic Class with Single Type ParameterA generic class can be reused with any data type by replacing T with specific types like Integer, String or custom classes. It is declared like a regular class but includes a type parameter (e.g., <T>) after the class name.
+            Java
+
+    class Solution<T> {
+    T data;
+
+    // Generic method inside a generic class (corrected)
+    public T getData() {
+        return data;
+    }
+}
+
+2. Generic Class with Multiple Type ParametersYou can define multiple type parameters in a generic class using commas (e.g., <K, V>).
+            Java
+
+    public class Pair<K, V> {
+
+    private K key;
+    private V value;
+
+    public Pair(K key, V value) {
+    this.key = key;
+    this.value = value;
+    }
+
+    public K getKey()    { return key; }
+    public V getValue() { return value; }
+}
+
+Key Points About Generic ClassesA generic class can be reused with any data type.Declared with a type parameter (e.g., <T>) after the class name.Multiple type parameters can be used (e.g., <T, U>).Type parameters must be reference types (not primitives like int, float, etc.). Generic Methods in JavaA generic method is a method that declares its own type parameters. It can be called with arguments of different types and the compiler infers the correct type during the method call.Rules for Generic MethodsDeclare type parameters in angle brackets < > before the return type.Multiple type parameters can be separated by commas.Type parameters can only be reference types (not primitives).They can be used in return types and method parameters.Method body is defined like a regular method.Advantages of Java Generics1.  Type-Safety: One can hold only a single type of objects in generics.2.  Type Casting Is Not Required: There is no need to typecast.Example:3. Compile -Time Checking: It checks all the errors of datatype related to generics at the time of compile-time so the issue will not occurat the time of runtime.List<String> list = new ArrayList<String>();     list.add("hello");   list.add(32);   //Compile Time Error  For an example of Generic classBaseType <Type> object = new BaseType <Type>();Note: In parameter Type, we cannot use primitives like int, char, float, etc.Example:
+            Java
+
+    public class Area<T> {
+
+    private T t;
+
+    public void add(T t)
+    {
+        this.t = t;
+    }
+
+    public T get() { return t; }
+
+    public void getArea() {}
+
+    public static void main(String[] args)
+    {
+        // Object of generic class Area with parameter Type as Integer
+        Area<Integer> rectangle = new Area<Integer>();
+        
+        // Object of generic class Area with parameter Type as Double
+        Area<Double> circle = new Area<Double>();
+        rectangle.add(10);
+        circle.add(2.5);
+        System.out.println(rectangle.get());
+        System.out.println(circle.get());
+    }
+}
+
+Try It YourselfOutput10
+2.5

@@ -1,0 +1,161 @@
+# Thread Synchronization in C++ - GeeksforGeeks
+
+Thread synchronization is the process of coordinating multiple threads so they can safely access shared resources without causing incorrect results or unpredictable behavior. It ensures that only the intended thread performs an operation when required.Prevents multiple threads from modifying shared resources simultaneously. Helps avoid concurrency issues such as race conditions and deadlocks.
+            C++
+
+    #include <iostream>
+#include <thread>
+using namespace std;
+
+int counter = 0;
+
+void increment() {
+    for (int i = 0; i < 100000; i++)
+        counter++;
+}
+
+int main() {
+    thread t1(increment);
+    thread t2(increment);
+
+    t1.join();
+    t2.join();
+
+    cout << counter << endl;
+}
+
+Output138533
+Explanation: Both threads update the shared variable simultaneously without synchronization, causing lost updates and unpredictable output. This is known as a race condition.Need for Thread SynchronizationWhen multiple threads access shared resources simultaneously without proper coordination, the execution order becomes unpredictable and may lead to incorrect results.Prevents simultaneous modification of shared data.Ensures operations execute in a controlled order.Avoids inconsistent or incorrect results.Maintains data integrity in multithreaded programs.ExampleInitial balance = ₹300One thread deposits ₹400.Another thread withdraws ₹500.If the withdrawal executes first, it may fail even though the deposit would have made the balance sufficient.Common Problems Without SynchronizationImproper synchronization can lead to several concurrency issues:Race Condition - Multiple threads modify shared data simultaneously, producing unpredictable results. Deadlock - Threads wait indefinitely for resources held by each other. Starvation - A thread waits indefinitely because other threads continuously receive priority. Data Corruption - Shared data becomes inconsistent due to concurrent modifications.Thread Synchronization Techniques C++ provides several synchronization mechanisms for safely coordinating multiple threads.MutexA mutex (mutual exclusion) ensures that only one thread can access a critical section at a time. Other threads attempting to acquire the same mutex must wait until it is released.Prevents simultaneous access to shared resources. Commonly used to eliminate race conditions. Implemented using std::mutex. Example: The following program demonstrates thread synchronization using a mutex.
+            C++
+
+    #include <iostream>
+#include <mutex>
+#include <thread>
+using namespace std;
+
+// shared lock
+double val = 0;
+
+// mutex lock
+mutex m;
+
+int cnt = 0;
+
+void add(double num)
+{
+    m.lock();
+    val += num;
+    cnt++;
+    cout << "Thread " << cnt << ": " << val << endl;
+    m.unlock();
+}
+
+// driver code
+int main()
+{
+    thread t1(add, 300);
+    thread t2(add, 600);
+    t1.join();
+    t2.join();
+    cout << "After addition : " << val << endl;
+    return 0;
+}
+
+OutputThread 1: 300
+Thread 2: 900
+After addition : 900
+Explanation: The mutex allows only one thread to execute the critical section at a time, preventing concurrent updates to the shared variable.Condition VariableA condition variable allows one thread to wait until another thread notifies that a particular condition has become true. It is usually used together with a mutex.Enables threads to wait efficiently. Supports thread notification using notify_one() and notify_all(). Implemented using std::condition_variable. Example: The following program demonstrates synchronization using a condition variable.
+            C++
+
+    #include <condition_variable>
+#include <iostream>
+#include <mutex>
+#include <thread>
+
+using namespace std;
+
+// condition variable and mutex lock
+condition_variable cv;
+mutex m;
+
+// shared resource
+int val = 0;
+
+void add(int num)
+{
+    lock_guard<mutex> lock(m);
+    val += num;
+    cout << "After addition: " << val << endl;
+    cv.notify_one();
+}
+
+void sub(int num)
+{
+    unique_lock<mutex> ulock(m);
+    cv.wait(ulock,
+            [] { return (val != 0) ? true : false; });
+    if (val >= num) {
+        val -= num;
+        cout << "After subtraction: " << val << endl;
+    }
+    else {
+        cout << "Cannot Subtract now!" << endl;
+    }
+    cout << "Total number Now: " << val << endl;
+}
+
+// driver code
+int main()
+{
+    thread t2(sub, 600);
+    thread t1(add, 900);
+    t1.join();
+    t2.join();
+    return 0;
+}
+
+OutputAfter addition: 900
+After subtraction: 300
+Total number Now: 300
+Explanation: The waiting thread remains blocked until the required condition becomes true, after which it resumes execution.Promise and Futurestd::promise and std::future provide a mechanism for safely passing data between threads. A promise stores a value, while the corresponding future retrieves it.Used for one-time communication between threads. Avoids explicit synchronization in many scenarios. Implemented using <future>. Example: The following program demonstrates synchronization using promises and futures.
+            C++
+
+    #include <future>
+#include <iostream>
+#include <thread>
+using namespace std;
+
+// callable
+void EvenNosFind(promise<int>&& EvenPromise, int begin,
+                 int end)
+{
+    int evenNo = 0;
+    for (int i = begin; i <= end; i++) {
+        if (i % 2 == 0) {
+            evenNo += 1;
+        }
+    }
+    EvenPromise.set_value(evenNo);
+}
+
+// driver code
+int main()
+{
+    int begin = 0, end = 1000;
+    promise<int> evenNo;
+    future<int> evenFuture = evenNo.get_future();
+    cout << "My thread is created !!!" << endl;
+    thread t1(EvenNosFind, move(evenNo), begin, end);
+    cout << "Waiting..........." << endl;
+
+    // detting the data
+    cout << "The no. of even numbers are : "
+         << evenFuture.get() << endl;
+    t1.join();
+    return 0;
+}
+
+OutputMy thread is created !!!
+Waiting...........
+The no. of even numbers are : 501
+Explanation: The worker thread stores the computed value in the promise, and the main thread retrieves it through the future using get().Advantages of Thread SynchronizationThread synchronization offers several benefits:Prevents race conditions and data corruption. Improves reliability of multithreaded programs. Enables safe communication between threads. Limitations of Thread SynchronizationDespite its benefits, synchronization also has some drawbacks:May reduce parallelism due to thread waiting. Incorrect synchronization can cause deadlocks. Makes multithreaded programs more complex to design and debug.Related article: Producer Consumer Solution using Semaphores

@@ -1,0 +1,170 @@
+# JDBC Result Set - GeeksforGeeks
+
+The JDBC ResultSet is an object that stores the result of a SQL query executed on a database. It maintains a cursor to navigate through rows and allows retrieval of data from each row.Used to store and process query results Supports navigation using methods like next(), previous(), first(), and last()Provides getter methods like getInt(), getString(), and getDouble() to retrieve data
+            Java
+
+    try {
+    Connection conn = DriverManager.getConnection(url, username, password);
+    Statement stmt = conn.createStatement();
+    ResultSet rs = stmt.executeQuery("SELECT * FROM your_table");
+
+    while (rs.next()) {
+        // Process the result set
+    }
+
+    rs.close();
+    stmt.close();
+    conn.close();
+} catch (SQLException e) {
+    e.printStackTrace(); // Handle the exception
+}
+
+Explanation: DriverManager.getConnection() establishes a connection with the database, and executeQuery() runs the SQL query to return a ResultSet. The rs.next() method is used to iterate through each row of the result. Finally, all resources are closed to prevent memory leaks.Common Operations with ResultSetFetching data from database: We can fetch data from the database based on the requirements by using conditional statements.Navigating the ResultSet: We can navigate the ResultSet by using methods like next(), previous(), first() and last().Getting column values: We can fetch column values with specific conditions or without conditions.Closing the result: Once database operations are completed we need close the connections related to database here we close the ResultSet connection. By using close method.Types of ResultSetThere are three different characteristics by which ResultSet types are differentiated1. ScrollabilityDetermines whether you can move back and forth in the ResultSetTYPE_FORWARD_ONLY: Can only move forward through the rowsTYPE_SCROLL_INSENSITIVE: Can move forward and backward but changes in the database are not reflected in the ResultSetTYPE_SCROLL_SENSITIVE: Can move forward and backward but changes are affect the ResultSet2. ConcurrencyDetermines whether you can update the ResultSetCONCUR_READ_ONLY: Can only read dataCONCUR_UPDATABLE: Allows updates to the ResultSet 3. HoldabilityDetermines what happens to the ResultSet when a Transaction is committed.HOLD_CURSORS_OVER_COMMIT: The ResultSet remains open after a commitCLOSE_CURSORS_AT_COMMIT: The ResultSet closes after a commitCategories of Methods in ResultSetWe have different types of Methods are available based on their functionality below we listed them for you reference.1. Navigating a ResultSetBasically these methods are allow is to navigating through the ResultSet and we can navigate in different ways, Below We provide those methods to navigate in the ResultSet.next(): Used to move to the next row in the ResultSet.previous(): Used for move to previous row in the ResultSet first(): Used for move to first row in the ResultSetlast(): Used for move to last row in the ResultSetabsolute(int row): Used to move to specific rowrelative(int rows): Used for Moves forward or backward by the specified number of rowsbeforeFirst(): Used for Positions the cursor before the first rowafterLast(): Used for Positions the cursor after the last row2. Retrieving Data from a ResultSetThese methods retrieve data from the current row in the ResultSet. And also You can retrieve data by column index or column name.getInt(int columnIndex): Used for Retrieves an integer from the specified columngetString(int columnIndex): Used for Retrieves a string from the specified columngetDouble(int columnIndex): Used for Retrieves a double from the specified columngetBoolean(int columnIndex): Used for Retrieves true or false from the specified columngetDate(int columnIndex): Used for Retrieves a java.sql.DategetObject(int columnIndex): Used for Retrieves any type of objectgetArray(int columnIndex): Used for Retrieves a SQL array 3. Updating Data in a ResultSetThese methods allow you to update data in the Result.updateInt(int columnIndex, int x): Used for Updates an integer value in the specified columnupdateString(int columnIndex, String x): used for Updates a string valueupdateBoolean(int columnIndex, boolean x): used for Updates a boolean valueupdateRow(): used for Updates a rowdeleteRow(): used for delete a rowExample: Employees TableWe create a employees table in work database. Below we provide table structure Employees TableProgram Implementing the JDBC Result SetIn this example we perform CRUD operations by using ResultSet. After running this program as java application It show four options to you. Need to select 1 to 4 based on your requirement below I provide the example with related images.
+            Java
+
+    package geeksforgeeks;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class JDBCOperations {
+
+  // Establish database connection
+  private static Connection getConnection()
+  throws Exception {
+    
+    String jdbcUrl = "jdbc:mysql://localhost:3306/data";
+    String jdbcUser = "root";
+    String jdbcPassword = "password";
+    
+    return DriverManager.getConnection(jdbcUrl, jdbcUser, jdbcPassword);
+  }
+
+  // Insert record into the database
+  private static void insertRecord(Connection connection,
+    String name, double salary)
+  throws Exception {
+    String query = "INSERT INTO employees (name, salary) VALUES (?, ?)";
+    
+    PreparedStatement preparedStatement
+      = connection.prepareStatement(query);
+    preparedStatement.setString(1, name);
+    preparedStatement.setDouble(2, salary);
+    preparedStatement.executeUpdate();
+    
+    System.out.println("Record inserted successfully.");
+  }
+
+  // Update record in the database
+  private static void updateRecord(Connection connection,
+    int id, String name,double salary)
+  throws Exception {
+    
+    String query
+      = "UPDATE employees SET name = ?, salary = ? WHERE id = ?";
+    
+    PreparedStatement preparedStatement
+      = connection.prepareStatement(query);
+    preparedStatement.setString(1, name);
+    preparedStatement.setDouble(2, salary);
+    preparedStatement.setInt(3, id);
+    preparedStatement.executeUpdate();
+    
+    System.out.println("Record updated successfully.");
+  }
+
+  // Retrieve records from the database
+  private static void
+  retrieveRecords(Connection connection) throws Exception {
+    Statement statement = connection.createStatement();
+    ResultSet resultSet = statement.executeQuery("SELECT * FROM employees");
+    
+    System.out.println("Records in the database:");
+    while (resultSet.next()) {
+      int id = resultSet.getInt("id");
+      String name = resultSet.getString("name");
+      double salary = resultSet.getDouble("salary");
+      System.out.println("ID: " + id + ", Name: " + name +
+        ", Salary: " + salary);
+    
+    }
+  }
+
+  // Delete record from the database
+  private static void deleteRecord(Connection connection,
+    int id)
+  throws Exception {
+    String query = "DELETE FROM employees WHERE id = ?";
+    PreparedStatement preparedStatement
+      = connection.prepareStatement(query);
+    preparedStatement.setInt(1, id);
+    preparedStatement.executeUpdate();
+    System.out.println("Record deleted successfully.");
+  }
+
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    try {
+      Connection connection = getConnection();
+
+      System.out.println("Select an operation:");
+      System.out.println("1. Insert");
+      System.out.println("2. Update");
+      System.out.println("3. Retrieve");
+      System.out.println("4. Delete");
+
+      int choice = scanner.nextInt();
+
+      switch (choice) {
+      case 1:
+        System.out.println("Enter name:");
+        
+        String nameToInsert = scanner.next();
+        System.out.println("Enter salary:");
+        double salaryToInsert = scanner.nextDouble();
+        insertRecord(connection, nameToInsert,
+          salaryToInsert);
+        break;
+
+      case 2:
+        System.out.println("Enter ID to update:");
+        int idToUpdate = scanner.nextInt();
+        System.out.println("Enter new name:");
+        String nameToUpdate = scanner.next();
+        System.out.println("Enter new salary:");
+        double salaryToUpdate
+          = scanner.nextDouble();
+        updateRecord(connection, idToUpdate,
+          nameToUpdate, salaryToUpdate);
+        break;
+
+      case 3:
+        retrieveRecords(connection);
+        break;
+
+      case 4:
+        System.out.println("Enter ID to delete:");
+        int idToDelete = scanner.nextInt();
+        deleteRecord(connection, idToDelete);
+        break;
+
+      default:
+        System.out.println("Invalid choice.");
+        break;
+      }
+
+      // Close the connection at the end
+      connection.close();
+    } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
+      scanner.close();
+    }
+  }
+}
+
+Explanation of the above Program:Database Connection: Establishes connection using DriverManager with database URL, username and password.Insert Record: Uses PreparedStatement with placeholders to insert new employee data safely (avoiding SQL injection).Update Record: Updates existing employee details by matching employee ID.Fetch All Records: Executes SELECT query, stores results in ResultSet and iterates through rows to display data.Delete Record: Removes employee record based on employee ID.Main Function: Provides a console-based menu (via switch) to select and perform CRUD operations.Output:Showing available database operations Now enter option 1, That means you can ready to insert data into database. Now enter option 2, That means you can ready to update employee data by employee ID Now enter option 3, That means you can fetch all data from table. Now enter option 4, That means you can delete an employee details by using employee ID.

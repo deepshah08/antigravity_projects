@@ -1,0 +1,151 @@
+# Function Pointer in C - GeeksforGeeks
+
+A function pointer is a pointer that stores the address of a function, allowing the function to be called indirectly through the pointer. It provides flexibility in invoking functions dynamically.Function pointers are commonly used to implement callback functions, event handling, and dynamic function selection. They are also useful in applications such as function tables, menu-driven programs, and achieving polymorphic behavior in C.
+            C
+
+    #include <stdio.h>
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+  
+    // Declare a function pointer that matches
+  	// the signature of add() function
+    int (*fptr)(int, int);
+
+    // Assign to add()
+    fptr = &add;
+
+    // Call the function via ptr
+    printf("%d", fptr(10, 5));
+    return 0;
+}
+
+Output15ExplanationThe program defines a function add() and stores its address in the function pointer fptr.The function is then invoked through fptr, which calculates and prints the sum of the two integers.Function Pointer DeclarationFunction pointers are declared according to the signature of the function they will be pointing to. Syntaxreturn_type (*pointer_name)(parameter_types);return_type: The type of the value that the function returns.parameter_types: The types of the parameters the function takes.pointer_name: The name of the function pointer.The parenthesis around the pointer_name is necessary, otherwise, it will be treated as a function declaration with the return type of return_type* and name pointer_name.A function pointer must have the same return type and parameter types as the function it points to.Declaring the function pointer with the correct function signature ensures that the function can be called safely through the pointer.int (*fptr)(int, int);which matches the signature of the add() function that it later points to.InitializationA function pointer is then initialized by assigning the address of the function.pointer_name = &function_nameWe can also skip the address of operator as function name itself behaves like a constant function pointer.pointer_name = function_name;It is compulsory to assign the function with similar signature as specified in the pointer declaration. Otherwise, the compiler may show type mismatch error.Properties Function pointer points to the code instead of the data so there are some restrictions on the function pointers as compared to other pointers. Following are some important properties of function pointer:Points to the memory address of a function in the code segment.Requires the exact function signature (return type and parameter list).Can point to different functions with matching signatures.Cannot perform arithmetic operations like increment or decrement.Supports array-like functionality for tables of function pointers.Applications with ExamplesThe following programs lists some common applications of function pointers along with code examples:Function Pointer as Arguments (Callbacks)One of the most useful applications of function pointers is passing functions as arguments to other functions. This allows you to specify which function to call at runtime.
+            C
+
+    #include <stdio.h>
+
+// A simple addition function
+int add(int a, int b) {
+    return a + b;
+}
+
+// A simple subtraction function
+int subtract(int a, int b) {
+    return a - b;
+}
+
+void calc(int a, int b, int (*op)(int, int)) {
+    printf("%d\n", op(a, b));
+}
+
+int main() {
+  
+    // Passing different 
+    // functions to 'calc'
+    calc(10, 5, add);
+  	calc(10, 5, subtract);
+    return 0;
+}
+
+Output15
+5
+ExplanationThe calc() function accepts a function pointer as a parameter, allowing different operations to be performed on the same input values.Passing add() or subtract() to calc() enables dynamic execution of the required function through the function pointer.Emulate Member Functions in StructureWe can create a data member inside structure, but we cannot define a function inside it. But we can define function pointers which in turn can be used to call the assigned functions.
+            C
+
+    #include <stdio.h>
+
+// Define the Rectangle struct that contains pointers
+// to functions as member functions
+typedef struct Rect {
+    int w, h;
+    void (*set)(struct Rect*, int, int);
+    int (*area)(struct Rect*);
+    void (*show)(struct Rect*);
+} Rect;
+
+// Function to find the area
+int area(Rect* r) {
+    return r->w * r->h;
+}
+
+// Function to print the dimensions
+void show(Rect* r) {
+    printf("Rectangle's Width: %d, " 
+          "Height: %d\n", r->w, r->h);
+}
+
+// Function to set width 
+// and height (setter)
+void set(Rect* r, int w, int h) {
+    r->w = w;
+    r->h = h;
+}
+
+// Initializer/constructor 
+// for Rectangle
+void constructRect(Rect* r) {
+    r->w = 0;
+    r->h = 0;
+    r->set = set;
+    r->area = area;
+    r->show = show;
+}
+
+int main() {
+    // Create a Rectangle object
+    Rect r;
+    constructRect(&r);
+
+    // Use r as a Rectangle
+    r.set(&r, 10, 5);
+    r.show(&r);
+    printf("Rectangle Area: %d", r.area(&r));
+    return 0;
+}
+
+OutputRectangle's Width: 10, Height: 5
+Rectangle Area: 50ExplanationThe program stores function pointers (set, area, and show) inside the Rect structure, allowing the structure to behave like an object with member functions.After initializing the structure with constructRect(), these functions are called through the structure to set the dimensions, display them, and calculate the rectangle's area.Array of Function PointersWe can also use function pointers in arrays to implement a set of functions dynamically.
+            C
+
+    #include <stdio.h>
+
+// Function declarations
+int add(int a, int b) {
+    return a + b;
+}
+int sub(int a, int b) {
+    return a - b;
+}
+int mul(int a, int b) {
+    return a * b;
+}
+int divd(int a, int b) {
+    if(b!=0)
+    return a / b;
+    else
+    return -1;
+}
+
+int main() {
+    
+    // Declare an array of function pointers
+    int (*farr[])(int, int) = {add, sub, mul, divd};
+    int x = 10, y = 5;
+
+    // Dynamically call functions using the array
+    printf("Sum: %d\n", farr[0](x, y)); 
+    printf("Difference: %d\n", farr[1](x, y));
+    printf("Product: %d\n", farr[2](x, y));
+    printf("Divide: %d", farr[3](x, y));
+
+    return 0;
+}
+
+OutputSum: 15
+Difference: 5
+Product: 50
+Divide: 2ExplanationThe program stores the addresses of the add(), sub(), mul(), and divd() functions in an array of function pointers.Each function is called dynamically using the array index (farr[i]) to perform the required arithmetic operation on x and y, and the result is printed.

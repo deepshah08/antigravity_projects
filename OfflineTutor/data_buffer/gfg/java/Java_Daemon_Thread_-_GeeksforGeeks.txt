@@ -1,0 +1,77 @@
+# Java Daemon Thread - GeeksforGeeks
+
+A daemon thread is a background thread in Java that supports user threads and does not prevent the JVM from exiting when all user threads finish. It is ideal for background tasks like monitoring, logging, and cleanup.Runs in the background to support user (non-daemon) threads.JVM exits automatically when all user threads finish.Created using the Thread class and marked as daemon with setDaemon(true).setDaemon(true) must be called before starting the thread, or it throws IllegalThreadStateException.Common examples: Garbage Collector (GC) and Finalizer Thread.
+            Java
+
+    class MyDaemonThread extends Thread {
+    public void run() {
+        System.out.println(getName() + " is running as a daemon thread.");
+    }
+}
+
+public class GFG {
+    public static void main(String[] args) throws InterruptedException {
+        MyDaemonThread t1 = new MyDaemonThread();
+        t1.setDaemon(true);  // mark as daemon
+        t1.setName("Daemon-1");
+        t1.start();
+
+        // Give JVM a moment to run daemon thread
+        Thread.sleep(100);
+
+        System.out.println("Main thread ends.");
+    }
+}
+
+OutputDaemon-1 is running as a daemon thread.
+Main thread ends.
+Explanation:t1 is marked as a daemon thread using setDaemon(true).Thread.sleep(100) ensures the JVM gives the daemon thread a chance to execute before the main thread finishes.Once the main thread ends, the JVM terminates all daemon threads automatically.SyntaxThread t = new Thread();t.setDaemon(true); // Mark thread as daemont.start();Methods Usedvoid setDaemon(boolean on): Marks a thread as daemon or user thread. Must be called before start().boolean isDaemon(): Checks whether a thread is daemon.Creating a Daemon Thread
+            Java
+
+    public class DaemonExample extends Thread {
+    public void run() {
+        if (Thread.currentThread().isDaemon()) {
+            System.out.println("Daemon thread running...");
+        } else {
+            System.out.println("User thread running...");
+        }
+    }
+
+    public static void main(String[] args) {
+        DaemonExample t1 = new DaemonExample();
+        DaemonExample t2 = new DaemonExample();
+
+        t1.setDaemon(true);  // must be set before start()
+
+        t1.start();
+        t2.start();
+    }
+}
+
+OutputDaemon thread running...
+User thread running...
+Behavior of Daemon Thread
+            Java
+
+    public class DaemonBehavior extends Thread {
+    public void run() {
+        while (true) {
+            System.out.println("Daemon thread running...");
+        }
+    }
+
+    public static void main(String[] args) {
+        DaemonBehavior t = new DaemonBehavior();
+        t.setDaemon(true);
+        t.start();
+
+        System.out.println("Main (user) thread ends...");
+    }
+}
+
+OutputMain (user) thread ends...
+Daemon thread running...
+Daemon thread running...
+Daemon thread running...
+Daemon thread running...
+The JVM ends immediately after the main thread finishes, even though the daemon thread is still running.Notes:A thread inherits the daemon status of the thread that creates it.Daemon threads should not be used for tasks requiring completion, such as writing to a file or updating a database.JVM terminates all daemon threads abruptly without performing cleanup operations.Use CasesGarbage Collection: The Garbage Collector (GC) in Java runs as a daemon thread.Background Monitoring: Daemon threads can monitor the state of application components, resources, or connections.Logging and Auditing Services: Daemon threads can be used to log background activities continuously.Cleanup Operations: Daemon threads may periodically clear temporary files, release unused resources, or perform cache cleanup.Scheduler or Timer Tasks: Background schedulers often use daemon threads to trigger tasks at fixed intervals.

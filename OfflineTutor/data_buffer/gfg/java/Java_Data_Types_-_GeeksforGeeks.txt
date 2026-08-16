@@ -1,0 +1,211 @@
+# Java Data Types - GeeksforGeeks
+
+Java data types define the type of data a variable can store in a program. They help the compiler allocate memory efficiently and ensure type safety. Java provides two main categories: primitive and non-primitive data types.Memory allocation determines how much memory is required for each variable Operations support defines what operations can be performed on data Each data type has a default value when not initializedSyntax:dataType variableName = value;Types of Data Types Data types in Java define the kind of data a variable can hold and the memory required to store it. They are broadly divided into two categories:Primitive Data Types: Store simple values directly in memory.Non-Primitive (Reference) Data Types: Store memory references to objects.Data Types in Java1. Primitive Data TypesPrimitive data types store simple values directly in memory. Java provides eight primitive data types, each with a fixed size and range, which are summarized below:TypeDescriptionDefaultSizeExampleRangebooleanLogical valuesfalseNot JVM-definedtrue, falsetrue or falsebyte8-bit signed integer01 byte10-128 to 127char16-bit Unicode character\u00002 bytes'A', '\u0041'0 to 65,535short16-bit signed integer02 bytes2000-32,768 to 32,767int32-bit signed integer04 bytes1000, -500-2,147,483,648 to 2,147,483,647long64-bit signed integer0L8 bytes123456789L±9.22e18float32-bit floating point0.0f4 bytes3.14f~6–7 digits precisiondouble64-bit floating point0.0d8 bytes3.14159d~15–16 digits precision1. boolean Data Type Represents one of two logical values: true or false. It is commonly used in conditions and control statements.Syntax: boolean booleanVar;
+            Java
+
+    public class Geeks {
+    public static void main(String[] args) {
+        boolean isJavaFun = true;
+        boolean isFishTasty = false;
+        System.out.println("Is Java fun? " + isJavaFun);
+        System.out.println("Is fish tasty? " + isFishTasty);
+    }
+}
+
+OutputIs Java fun? true
+Is fish tasty? false
+2. byte Data Type An 8-bit signed integer used to save memory in large numeric arrays.Syntax: byte byteVar;
+            Java
+
+    public class Geeks {
+    public static void main(String[] args) {
+        byte age = 25;
+        byte temperature = -10;
+        System.out.println("Age: " + age);
+        System.out.println("Temperature: " + temperature);
+    }
+}
+
+OutputAge: 25
+Temperature: -10
+3. short Data Type A 16-bit signed integer often used when memory is limited and values are moderate in size.Syntax: short shortVar;
+            Java
+
+    public class Geeks {
+    public static void main(String[] args) {
+        short students = 1000;
+        short temp = -200;
+        System.out.println("Number's of Students: " + students);
+        System.out.println("Temperature: " + temp);
+    }
+}
+
+OutputNumber's of Students: 1000
+Temperature: -200
+4. int Data Type A 32-bit signed integer and the most commonly used numeric data type.Syntax: int intVar;Size : 4 bytes ( 32 bits ) 
+            Java
+
+    public class Geeks {
+    public static void main(String[] args) {
+        int population = 2000000;
+        int distance = 150000000;
+        System.out.println("Population: " + population);
+        System.out.println("Distance: " + distance);
+    }
+}
+
+OutputPopulation: 2000000
+Distance: 150000000
+5. long Data Type A 64-bit signed integer used when int is not sufficient for large values.Syntax: long longVar;Size : 8 bytes (64 bits)
+            Java
+
+    public class Geeks {
+    public static void main(String[] args) {
+        long worldPopulation = 7800000000L;
+        long lightYears = 9460730472580800L;
+        System.out.println("World Population: " + worldPopulation);
+        System.out.println("Light Years: " + lightYears);
+    }
+}
+
+OutputWorld Population: 7800000000
+Light Year Distance: 9460730472580800
+6. float Data Type A 32-bit single-precision floating-point type used for fractional values.Syntax: float floatVar;Size : 4 bytes (32 bits) 
+            Java
+
+    public class Geeks {
+    public static void main(String[] args) {
+        float pi = 3.14f;
+        float gravity = 9.81f;
+        System.out.println("Pi: " + pi);
+        System.out.println("Gravity: " + gravity);
+    }
+}
+
+OutputValue of Pi: 3.14
+Gravity: 9.81
+7. double Data Type A 64-bit double-precision floating-point type and the default for decimal numbers.Syntax: double doubleVar;Size : 8 bytes (64 bits). It is recommended to go through rounding off errors in java. 
+            Java
+
+    public class Geeks {
+    public static void main(String[] args) {
+        double pi = 3.141592653589793;
+        double avogadro = 6.02214076e23;
+        System.out.println("Pi: " + pi);
+        System.out.println("Avogadro's Number: " + avogadro);
+    }
+}
+
+OutputValue of Pi: 3.141592653589793
+Avogadro's Number: 6.02214076E23
+8. char Data Type A 16-bit Unicode character used to store single symbols or letters.Syntax: char charVar;Size : 2 bytes (16 bits)Example: This example, demonstrates how to use char data type to store individual characters.
+            Java
+
+    public class Geeks {
+    public static void main(String[] args) {
+        char grade = 'A';
+        char symbol = '$';
+        System.out.println("Grade: " + grade);
+        System.out.println("Symbol: " + symbol);
+    }
+}
+
+OutputGrade: A
+Symbol: $
+2.Non-Primitive (Reference) Data Types Non-primitive data types store references (memory addresses) rather than actual values. They are created by users and include types like String, Class, Object, Interface, and Array.1. StringString represents a sequence of characters enclosed in double quotes. Unlike C/C++, Java strings are objects and are immutable.Syntax:String str = "Hello";
+            Java
+
+    public class Geeks {
+    public static void main(String[] args) {
+        String name = "Geek1";
+        String message = "Welcome to Java";
+        System.out.println("Name: " + name);
+        System.out.println("Message: " + message);
+    }
+}
+
+OutputName: Geek1
+Message: Welcome to Java
+Note: String cannot be modified after creation. Use StringBuilder for heavy string manipulation.2. Class A class is a user-defined blueprint that defines variables and methods. It represents a type of object and forms the foundation of Object-Oriented Programming.
+            Java
+
+    class Car {
+    String model;
+    int year;
+
+    Car(String model, int year) {
+        this.model = model;
+        this.year = year;
+    }
+
+    void display() {
+        System.out.println(model + " " + year);
+    }
+}
+
+public class Geeks {
+    public static void main(String[] args) {
+        Car myCar = new Car("Toyota", 2020);
+        myCar.display(); 
+    }
+}
+
+OutputToyota 2020
+3. Object An Object is an instance of a class representing real-world entities. It has state (data), behavior (methods), and identity (unique reference).
+            Java
+
+    class Car {
+    String model;
+    int year;
+
+    Car(String model, int year) {
+        this.model = model;
+        this.year = year;
+    }
+}
+
+public class Geeks {
+    public static void main(String[] args) {
+        Car myCar = new Car("Honda", 2021);
+        System.out.println("Model: " + myCar.model);
+        System.out.println("Year: " + myCar.year);
+    }
+}
+
+OutputCar Model: Honda
+Car Year: 2021
+4. Interface An interface defines a contract of abstract methods that implementing classes must define. It provides a way to achieve abstraction and multiple inheritance in Java.
+            Java
+
+    interface Animal {
+    void sound();
+}
+
+class Dog implements Animal {
+    public void sound() {
+        System.out.println("Woof");
+    }
+}
+
+public class Geeks {
+    public static void main(String[] args) {
+        Animal dog = new Dog();
+        dog.sound();
+    }
+}
+
+OutputWoof
+5. Array An array stores multiple elements of the same type in a single structure. Java arrays are objects, dynamically allocated, and indexed from 0.
+            Java
+
+    public class Geeks {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5};
+        String[] names = {"Geek1", "Geek2", "Geek3"};
+        System.out.println("First number: " + numbers[0]);
+        System.out.println("Second name: " + names[1]);
+    }
+}
+
+OutputFirst number: 1
+Second name: Geek2

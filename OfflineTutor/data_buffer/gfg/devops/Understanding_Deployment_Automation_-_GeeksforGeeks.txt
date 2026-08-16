@@ -1,0 +1,40 @@
+# Understanding Deployment Automation - GeeksforGeeks
+
+In this article we will discuss deployment automation, categories in Automated Deployment, how automation can be implemented in deployment, how it is assisting DevOps and finally the benefits and drawbacks of Deployment Automation. So, let's start exploring the topic in detail.
+
+
+
+Deployment Automation :Deployment Automation refers to a set of automation processes which are used to move a software application/product into several stages of testing and production environments using automated tools and techniques as a result repeatable and reliable deployment occurs across software delivery cycle. It also let us release new applications and features more frequently, without any human interventions. Means it completely aims to bring automation within testing and production phase.
+
+
+
+Categories in Automated Deployment :Automated Deployment can be classified into different categories on the basis of level of automation coverage across environments
+
+Continuous Deployment -It is the method where the entire process of deployment pipeline is fully automated. Every process present in the source code is automatically deployed to production.Continuous Integration -It is the method to regularly integrate the code changes in application that is automatically bug tested. Everything deployed is integrated and then verified and tested to detect possible errors.Continuous Delivery -It is the practice of keeping the code ready to be deployed at any time. It is a extension from continuous integration which ensures product-ready version at any time.
+
+Implementing Automated Deployment :A deployment pipeline mainly follows three steps: build, test, deploy where the pipelines ensure that it helps to automate the deployment process.
+
+Build -First a server is taken i.e Jenkins or GoCD then it is linked to the source code and a command to build the application.Test - Separate build for each suit is created and linked with dominos so that each suit is triggered by one before it. In this way if problem occur it can be solved initially. Once a build is completed it is ready to be released.Deploy - In this stage the applications are deployed to test testing environment ensuring that it has passed all the tests.
+
+The below figure represents typical release process
+
+
+
+
+Benefits in Deployment Automation :
+
+Can be implemented by anyone -Any member of the team can manually or partially do automated deployments as it is not a rocket science to understand it.Rapid and Effective -Automated software deployments can enhance productivity as they are in performed seconds, and we don't need to check for validations.High Frequency Releases - Deployment automation can be performed on single software very frequently. When the team produces frequently it promotes agile software developments.Instant Feedback - As deployment automation contains less error and is frequently released, we get feedback sooner. The company can collect these feedbacks and can improve their performance and productivity.Least Errors -Manual deployments may contain multiple errors likeCrucial steps may be missed while releasingIssue may arise while releasingIncorrect versions of software may go live
+
+Meanwhile, deployments which are automated contain fewer errors compared to manual one.
+
+
+
+Assisting DevOps with automation :
+
+Continuous integration and development are supported by development and operations teams run together in an agile way with DevOps which leads to faster release cycles, less downtime and chance to rectify mistakes.Deployment automation doesn't perform when deployment team and operation deploys application or configure environments in two different directions that results in errors and inconsistency.The environment that is to be automated must be consistent i.e. every environment should contain same deployment process.That's why it is very important the deployment and operation team should work together with DevOps. The process of deployment automation has to be created by DevOps teams to make process consistent and repeatable.
+
+Pitfalls in Automated Deployment :
+
+Higher reliance on Automated Deployment -It is always advisable to have alternative strategy to continue the work whenever Automated Development fails or broken.Time Consuming - Automated Deployment can sometimes be time-consuming, it is to be ensured that more time must not be spent on implementing it than actually developing the product.Rapid pipeline design - This stops the team from improving their own processes. Pipelines should be flexible and cope with sudden changes.
+
+Finally, if our business requires for software deployment systems, deployment automation provides many benefits to it. It is a key step for organizations which are working to get efficiency benefits from DevOps. Increased frequency of product delivery improves the environment types. Frequent deploying applications may meet the needs of business at crucial time.

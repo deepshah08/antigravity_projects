@@ -1,0 +1,96 @@
+# Java File Class - GeeksforGeeks
+
+The File class in Java is used to represent the path of a file or folder. It helps in creating, deleting, and checking details of files or directories, but not in reading or writing data. It acts as an abstract representation of file and directory names in the system.Can retrieve parent directories using the getParent() method.A File object is created by passing a file or directory name to its constructor.File systems may impose access permissions (read, write, execute).File objects are immutable. Once created, their pathname cannot change.How to Create a File Object A File object is created by passing in a string that represents the name of a file, a String or another File object.SyntaxFile file = new File("path_to_file");Example 1: Program to check if a file or directory physically exists or not.
+            Java
+
+    import java.io.File;
+
+// Displaying file property
+class CheckFileExist {
+
+    public static void main(String[] args){
+
+        // Accept file name or directory name through
+        // command line args
+        String fname = args[0];
+
+        // pass the filename or directory name to File
+        // object
+        File f = new File(fname);
+
+        // apply File class methods on File object
+        System.out.println("File name :" + f.getName());
+        System.out.println("Path: " + f.getPath());
+        System.out.println("Absolute path:"
+                           + f.getAbsolutePath());
+        System.out.println("Parent:" + f.getParent());
+        System.out.println("Exists :" + f.exists());
+
+        if (f.exists()) {
+            System.out.println("Is writable:"
+                               + f.canWrite());
+            System.out.println("Is readable" + f.canRead());
+            System.out.println("Is a directory:"
+                               + f.isDirectory());
+            System.out.println("File Size in bytes "
+                               + f.length());
+        }
+    }
+}
+
+Output:OutputDisplay All Contents of a DirectoryThis program displays all files and subdirectories inside a given directory using the list() method.
+            Java
+
+    import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+class AllDir 
+{
+    public static void main(String[] args)
+        throws IOException
+    {
+        // Enter the path and dirname
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.print("Enter directory path : ");
+        String dirpath = br.readLine();
+      
+        System.out.print("Enter the directory name : ");
+        String dname = br.readLine();
+
+        // Create File object with dirpath and dname
+        File f = new File(dirpath, dname);
+
+        // If directory exists,then
+        if (f.exists()) {
+            
+          	// Get the contents into arr[], now arr[i] represent either a File or Directory
+            String arr[] = f.list();
+
+            // Find no. of entries in the directory
+            int n = arr.length;
+
+            // Displaying the entries
+            for (int i = 0; i < n; i++) {
+
+                System.out.print(arr[i] + " ");
+
+                // Create File object with the entry and test if it is a file or directory
+                File f1 = new File(f,arr[i]);
+
+                if (f1.isFile())
+                    System.out.println(": is a file");
+                if (f1.isDirectory())
+                    System.out.println(": is a directory");
+            }
+
+            System.out.println("\nNo of entries in this directory : " + n);
+        }
+        else
+            System.out.println("Directory not found");
+    }
+}
+
+Output:OutputConstructors of Java File ClassFile(File parent, String child): Creates a new File instance from a parent abstract pathname and a child pathname string.File(String pathname): Creates a new File instance by converting the given pathname string into an abstract pathname.File(String parent, String child): Creates a new File instance from a parent pathname string and a child pathname string.File(URI uri): Creates a new File instance by converting the given file: URI into an abstract pathname.Fields in File ClassFieldTypeDescriptionpathSeparatorStringthe character or string used to separate individual paths in a list of file system paths.pathSeparatorCharCharthe character used to separate individual paths in a list of file system paths.separatorStringdefault name separator character represented as a string.separatorCharChardefault name separator character.Methodsof File Class in JavaMethodDescriptionReturn TypecanExecute()Checks if the file is executablebooleancanRead()Checks if the file is readablebooleancanWrite()Checks if the file is writablebooleancompareTo(File other)Lexicographically compares pathnamesintcreateNewFile()Atomically creates a new empty filebooleancreateTempFile(String prefix, String suffix)Creates a temp file in default temp directoryFiledelete()Deletes this file or directorybooleanexists()Checks if the file/directory existsbooleanequals(Object obj)Compares pathnames for equalitybooleangetAbsolutePath()Returns absolute pathname as a stringStringgetCanonicalPath()Returns canonical (distinct) pathnameStringgetName()Returns name of file or directoryStringgetParent()Returns parent pathname stringStringgetParentFile()Returns parent as a File objectFilegetPath()Returns the original pathname stringStringgetFreeSpace()Returns unallocated bytes in partitionlonglength()Returns file size in byteslongisDirectory()Checks if it’s a directorybooleanisFile()Checks if it’s a normal filebooleanisHidden()Checks if file is hiddenbooleanlastModified()Returns last modification time (ms since epoch)longlist()Returns names of all entries in directoryString[]listFiles()Returns File objects for entries in directoryFile[]listFiles(FileFilter filter)Filters entries via FileFilterFile[] listFiles(FilenameFilter filter)Filters entries via FilenameFilterFile[]mkdir()Creates a directorybooleanmkdirs()Creates directory including parent dirsbooleanrenameTo(File dest)Renames or moves file/directorybooleansetReadOnly()Marks file/directory as read-onlybooleansetExecutable(boolean exec)Sets owner's execute permissionbooleansetReadable(boolean read)Sets owner's read permissionbooleansetReadable(boolean read, boolean ownerOnly)Sets read permission for owner or allbooleansetWritable(boolean write)Sets owner's write permissionbooleantoURI()Converts pathname to a URI objectURItoString()Returns pathname stringString

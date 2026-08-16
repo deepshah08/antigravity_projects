@@ -1,0 +1,64 @@
+# Java Strings - GeeksforGeeks
+
+A String in Java is an object used to store a sequence of characters enclosed in double quotes. It uses UTF-16 encoding and provides methods for handling text data.Each character in a string is stored using 16-bit Unicode (UTF-16) encoding. Strings are immutable, meaning their value cannot be changed after creation. Java provides a rich API for manipulation, comparison, and concatenation of strings.Example:String name = "Geeks";String num = "1234";StringNote: Above diagram is a conceptual illustration showing the sequence of characters in a string. It does not represent the actual memory layout used by the JVM. Since Java 9, String is internally implemented using Compact Strings (byte[] with a coder field), and the JVM does not expose actual object memory addresses.
+            Java
+
+    public class Geeks {
+
+    // Main Function
+    public static void main(String args[])
+    {
+
+        // creating Java string using a new keyword
+        String str = new String("Geeks");
+
+        System.out.println(str);
+    }
+}
+
+OutputGeeks
+Ways of Creating a Java StringThere are two ways to create a string in Java: 1. String literal (Static Memory)To make Java more memory efficient (because no new objects are created if it exists already in the string constant pool). Example:String str = “GeeksforGeeks”; 2. Using new keyword (Heap Memory)Using the new keyword creates a new object in heap memory, even if the same string already exists in the pool.One object is created in the heap memoryThe string literal is stored in the string pool (if not already present) The reference variable points to the heap object, not the poolExample:String str = new String (“GeeksforGeeks”);Interfaces and Classes in Strings in JavaCharSequence InterfaceThe CharSequence interface represents a sequence of characters in Java. It provides common methods such as length(), charAt(), subSequence(), and toString() for working with character data.Classes that implement CharSequence include:String:  An immutable class whose contents cannot be modified after creation; any change results in a new String object.StringBuffer: A mutable and thread-safe class used for string manipulation in multithreaded environments.StringBuilder: A mutable and non-thread-safe class that provides faster string manipulation in single-threaded applications.StringTokenizer: A utility class used to break a string into smaller tokens based on specified delimiters.Immutable String in JavaIn Java, string objects are immutable. Immutable simply means unmodifiable or unchangeable. Once a string object is created its data or state can't be changed but a new string object is created.
+            Java
+
+    public class GFG{
+    
+    public static void main(String[] args) {
+
+        String str = "Hello";
+
+        str.concat(" World");
+
+        System.out.println(str);
+    }
+}
+
+OutputHello
+Explanation: In the above example, the String.concat() does not modify the original String object. When str.concat(" World") is executed:A new String object "Hello World" is created.The original String "Hello" remains unchanged.Since the new object is not assigned to any variable, it is discarded.        Immutable StringHow Strings are Stored in Java MemoryString literalWhenever a String Object is created as a literal, the object will be created in the String constant pool. This allows JVM to optimize the initialization of String literal. The string constant pool is present in the heap.Example 1: Using String literals to assigning char sequence value.String str1 = "Hello";string constant poolExample 2: When we initialize the same char sequence using string literals.String str1 = "Hello";String str2 = "Hello";string constant poolUsing new KeywordStrings can also be created using the new keyword, which allocates a new object in heap memory. However, the string literal inside it is still stored in the String Constant Pool (if not already present).Example 1: Using new keyword to assign a char sequence to a String object.String str1 = new String("John"); String str2 = new String("Deo");string constant poolThe intern() method returns a reference from the string constant pool. If the string is not already present in the pool, it is added. Otherwise, the existing reference from the pool is returned.Example 2: Using .intern() to add a string object in string constant pool.  // this will add the string to string constant pool.String internedString = demoString.intern(); It is preferred to use String literals as it allows JVM to optimize memory allocation.If we notice if we use new keyword or string literals both store the values in the string but the difference is if we use the string literals or intern() the string object it will store the values in the string constant pool which is present inside the heap as shown in the image.String Pool Migration from PermGen to the Normal HeapBefore Java 7, the String Constant Pool was stored in PermGen (Permanent Generation) memory, which had limited space. From Java 7 onward, the String Pool was moved to the Heap Memory to improve memory management and scalability.PermGen had limited memory, which could lead to OutOfMemoryError. Heap memory is larger and managed more efficiently by the Garbage Collector. Provides better flexibility for applications that create a large number of strings.For example:String demoString = new String("Bhubaneswar");Let us have a look at the concept with a Java program and visualize the actual JVM memory structure: Below is the implementation of the above approach:
+            Java
+
+    class Geeks
+ {
+    public static void main(String args[])
+    {
+        
+      	// Declaring Strings using String literals
+        String s1 = "TAT";
+        String s2 = "TAT";
+
+        // Declaring Strings using new keyword
+        String s3 = new String("TAT");
+        String s4 = new String("TAT");
+
+        // Printing all the Strings
+        System.out.println(s1);
+        System.out.println(s2);
+        System.out.println(s3);
+        System.out.println(s4);
+    }
+ }
+
+OutputTAT
+TAT
+TAT
+TAT
+JVM Memory AreaNote: All objects in Java are stored in a heap. The reference variable is to the object stored in the stack area or they can be contained in other objects which puts them in the heap area also.

@@ -1,0 +1,173 @@
+# NumPy Introduction - GeeksforGeeks
+
+NumPy(Numerical Python) is a library for Python numerical computing. It provides efficient multi-dimensional array objects and various mathematical functions for handling large datasets making it a critical tool for professionals in fields that require heavy computation.NumPy has various features that make it popular over lists:N-Dimensional Arrays: NumPy's core feature is ndarray, a N-dimensional array object that supports homogeneous data types.Arrays with High Performance: Arrays are stored in contiguous memory locations, enabling faster computations than Python lists.Broadcasting:  Allows element-wise operations between arrays of different shapes by automatically aligning their dimensions.Vectorization: Improves performance by applying operations directly to entire arrays instead of using explicit Python loops.Linear algebra: NumPy contains routines for linear algebra operations, such as matrix multiplication, decompositions and determinants.InstallationTo begin using NumPy, you need to install it first. This can be done using the following pip command:pip install numpyOnce installed, import the library with the alias npimport numpy as npCreating NumPy Arrays1. Using np.array: Use np.array() when you want to convert Python lists into NumPy arrays.
+            Python
+
+    import numpy as np
+
+a1 = np.array([1, 2, 3])    # 1D array
+a2 = np.array([[1, 2], [3, 4]]) # 2D array
+a3 = np.array([[[1, 2], [3, 4]],    # 3D array
+               [[5, 6], [7, 8]]])
+
+print(a1)
+print(a2)
+print(a3)
+
+Output[1 2 3]
+[[1 2]
+ [3 4]]
+[[[1 2]
+  [3 4]]
+
+ [[5 6]
+  [7 8]]]
+2. Using Numpy Functions: NumPy provides quick utility functions for creating arrays filled with zeros, ones, or ranges:
+            Python
+
+    import numpy as np
+
+a0 = np.zeros((3, 3))
+a1  = np.ones((2, 2))
+ar  = np.arange(0, 10, 2)
+
+print(a0)
+print(a1)
+print(ar)
+
+Output[[0. 0. 0.]
+ [0. 0. 0.]
+ [0. 0. 0.]]
+[[1. 1.]
+ [1. 1.]]
+[0 2 4 6 8]
+NumPy Array IndexingNumPy arrays support indexing to access individual elements using their positions. Multi-dimensional arrays can be indexed using row and column indices.
+            Python
+
+    import numpy as np
+
+a1 = np.array([10, 20, 30, 40, 50])
+print(a1[2])      # single element
+print(a1[-1])     # last element
+
+a2 = np.array([[1, 2, 3],
+               [4, 5, 6],
+               [7, 8, 9]])
+print(a2[1, 0])   # row 1, column 0
+
+Output30
+50
+4
+SlicingSlicing follows the same indexing rules as lists, but extends them to multiple dimensions, allowing to select rows, columns, or sub-arrays efficiently.
+            Python
+
+    import numpy as np
+
+a = np.array([[1, 2, 3],
+              [4, 5, 6]])
+
+print(a[1:2])      # row slice
+print(a[:, 1])     # all rows, column 1
+
+Output[[4 5 6]]
+[2 5]
+Advanced IndexingAdvanced Indexing in NumPy provides more flexible ways to access and manipulate array elements. 
+            Python
+
+    import numpy as np
+
+a = np.array([10, 20, 30, 40, 50, 60])
+idx = np.array([1, 3, 5])
+
+print(a[idx])       # integer indexing
+
+cond = a > 30
+print(a[cond])      # boolean indexing
+
+Output[20 40 60]
+[40 50 60]
+Basic Arithmetic OperationsElement-wise operations in NumPy allow to perform mathematical operations on each element of an array individually, without the need for explicit loops. We can perform arithmetic operations like addition, subtraction, multiplication and division directly on NumPy arrays.
+            Python
+
+    import numpy as np
+
+x = np.array([1, 2, 3])
+y = np.array([4, 5, 6])
+
+
+print(x + y)    # add
+print(x - y)    # subtract
+print(x * y)    # multiply
+print(x / y)    # divide
+
+Output[5 7 9]
+[-3 -3 -3]
+[ 4 10 18]
+[0.25 0.4  0.5 ]
+Unary OperationUnary operations in NumPy apply a single-operand transformation, such as negation, absolute value or trigonometric evaluation, across an entire array.
+            Python
+
+    import numpy as np
+
+a = np.array([-3, -1, 0, 1, 3]) # array with both positive and negative values
+
+# Applying a unary operation: absolute value
+print(np.absolute(a))
+
+Output[3 1 0 1 3]
+Binary OperatorsBinary operations apply element-wise to arrays and return a new array containing the results.. We can use all basic arithmetic operators like +, -, /,  etc. Operators like +=, -=, *= modify the existing array in-place and = operator simply assigns a new reference to a variable, it does not modify the original array.
+            Python
+
+    import numpy as np
+
+# Two example arrays
+a1 = np.array([1, 2, 3])
+a2 = np.array([4, 5, 6])
+
+# Applying a binary operation: addition
+res = np.add(a1, a2)
+print(res)
+
+Output[5 7 9]
+Mathematical FunctionsNumPy provides familiar mathematical functions such as sin, cos, exp, etc. These functions operate element-wise on arrays and return a new array containing the computed values.
+            Python
+
+    import numpy as np
+
+# create an array of sine values
+a = np.array([0, np.pi/2, np.pi])
+print(np.sin(a))
+
+# exponential values
+b = np.array([0, 1, 2, 3])
+print(np.exp(b))
+print(np.sqrt(b))
+
+# square root of array values
+print (np.sqrt(a))
+
+Output[0.0000000e+00 1.0000000e+00 1.2246468e-16]
+[ 1.          2.71828183  7.3890561  20.08553692]
+[0.         1.         1.41421356 1.73205081]
+[0.         1.25331414 1.77245385]
+Sorting ArraysThe np.sort() function sorts NumPy arrays in ascending order and can also sort structured arrays based on specific fields.Note: Strings with prefix b'' indicate byte strings (fixed-length string in NumPy). S10 means each string can store up to 10 bytes.
+            Python
+
+    import numpy as np
+
+dtype = [('name', 'S10'), ('year', int), ('cgpa', float)]
+vals  = [('Hrithik', 2009, 8.5),
+         ('Ajay',    2008, 8.7),
+         ('Pankaj',  2008, 7.9),
+         ('Aakash',  2009, 9.0)]
+
+a = np.array(vals, dtype=dtype)
+
+print(np.sort(a, order='name'))
+print(np.sort(a, order=['year', 'cgpa']))
+
+Output[(b'Aakash', 2009, 9. ) (b'Ajay', 2008, 8.7) (b'Hrithik', 2009, 8.5)
+ (b'Pankaj', 2008, 7.9)]
+[(b'Pankaj', 2008, 7.9) (b'Ajay', 2008, 8.7) (b'Hrithik', 2009, 8.5)
+ (b'Aakash', 2009, 9. )]
+Related ArticleWays to create numpy arrays Numpy FunctionsPython LibrariesNumPy TutorialBroadcasting

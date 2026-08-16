@@ -1,0 +1,21 @@
+# Suzuki–Kasami Algorithm for Mutual Exclusion in Distributed System - GeeksforGeeks
+
+Prerequisite: Mutual exclusion in distributed systems Suzuki–Kasami algorithm is a token-based algorithm for achieving mutual exclusion in distributed systems.This is modification of Ricart–Agrawala algorithm, a permission based (Non-token based) algorithm which uses REQUEST and REPLY messages to ensure mutual exclusion. In token-based algorithms, A site is allowed to enter its critical section if it possesses the unique token. Non-token based algorithms uses timestamp to order requests for the critical section where as sequence number is used in token based algorithms. Each requests for critical section contains a sequence number. This sequence number is used to distinguish old and current requests. Data structure and Notations:  
+
+An array of integers RN[1...N] A site Si keeps RNi[1...N], where RNi[j] is the largest sequence number received so far through REQUEST message from site Si.An array of integer LN[1...N] This array is used by the token.LN[J] is the sequence number of the request that is recently executed by site Sj.A queue Q This data structure is used by the token to keep record of ID of sites waiting for the token
+
+Algorithm:  
+
+To enter Critical section: When a site Si wants to enter the critical section and it does not have the token then it increments its sequence number RNi[i] and sends a request message REQUEST(i, sn) to all other sites in order to request the token. Here sn is update value of RNi[i]When a site Sj receives the request message REQUEST(i, sn) from site Si, it sets RNj[i] to maximum of RNj[i] and sn i.e RNj[i] = max(RNj[i], sn).After updating RNj[i], Site Sj sends the token to site Si if it has token and RNj[i] = LN[i] + 1To execute the critical section: Site Si executes the critical section if it has acquired the token.To release the critical section: After finishing the execution Site Si exits the critical section and does following: sets LN[i] = RNi[i] to indicate that its critical section request RNi[i] has been executedFor every site Sj, whose ID is not present in the token queue Q, it appends its ID to Q if RNi[j] = LN[j] + 1 to indicate that site Sj has an outstanding request.After above updation, if the Queue Q is non-empty, it pops a site ID from the Q and sends the token to site indicated by popped ID.If the queue Q is empty, it keeps the token
+
+Message Complexity: The algorithm requires 0 message invocation if the site already holds the idle token at the time of critical section request or maximum of N message per critical section execution. This N messages involves  
+
+(N - 1) request messages1 reply message
+
+Drawbacks of Suzuki–Kasami Algorithm:  
+
+Non-symmetric Algorithm: A site retains the token even if it does not have requested for critical section. According to definition of symmetric algorithm "No site possesses the right to access its critical section when it has not been requested."
+
+Performance:  
+
+Synchronization delay is 0 and no message is needed if the site holds the idle token at the time of its request.In case site does not holds the idle token, the maximum synchronization delay is equal to maximum message transmission time and a maximum of N message is required per critical section invocation.

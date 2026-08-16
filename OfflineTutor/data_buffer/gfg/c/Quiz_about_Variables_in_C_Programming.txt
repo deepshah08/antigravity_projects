@@ -1,0 +1,77 @@
+# Quiz about Variables in C Programming
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsVariables in C ProgrammingLast Updated : DiscussCommentsQuestion 1What is a variable in C?A fixed valueA memory location to store dataA keywordA preprocessor directiveQuestion 2Which of the following is the correct way to declare an integer variable in C?x int;int x;integer x;x = int;Question 3What is the default value of a local variable in C?0Garbage ValueNULLUndefinedQuestion 4What is the scope of a variable declared inside a function?GlobalBlockFunctionFileQuestion 5Which data type would you use to store a single character in C?intcharstringfloatQuestion 6Which of the following statements is true about global variables?They are only accessible inside one functionTheir lifetime ends after the function endsThey are declared inside main()They are accessible throughout the programQuestion 7What happens if you use an undeclared variable in C?It gets initialized to 0Program runs with a warningThe compiler assigns memory automaticallyCompilation errorQuestion 8What will be the value of a in the end?
+        C
+        
+        int a = 5;
+int b = a;
+b = 10;
+
+        
+    5100Garbage ValueQuestion 9Which variable will have the highest scope?Variable declared inside a loopVariable declared inside a functionStatic variableGlobal variableQuestion 10Which keyword tells the compiler to look for a variable’s definition elsewhere?externstaticregisterconstTags:C LanguageThere are 13 questions to complete.Take a part in the ongoing discussionView All Discussion

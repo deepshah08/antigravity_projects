@@ -1,0 +1,46 @@
+# System.out.println in Java - GeeksforGeeks
+
+System.out.println() in Java is one of the most commonly used statements to display output on the console. It prints the given data and then moves the cursor to the next line, making it ideal for readable output.Used to display text, variables, and expressions on the console.Automatically adds a newline after printing the output.Commonly used for debugging, testing, and displaying program results.
+            Java
+
+    public class GFG{
+    public static void main(String[] args) {
+
+        System.out.println("Hello, World!");
+        System.out.println("Welcome to Java programming.");
+        System.out.println("System.out.println prints text on a new line.");
+    }
+}
+
+OutputHello, World!
+Welcome to Java programming.
+System.out.println prints text on a new line.
+Explanation:System.out.println() prints the given message to the console and automatically moves the cursor to a new line.Each println() statement displays text on a separate line in the output.SyntaxSystem.out.println(parameter)Parameter: The parameter can be a value of any data type such as int, double, char, String, or even no parameter at all.Understanding System.out.println()The statement System.out.println() can be understood by breaking it into three parts:System: System is a final class present in the java.lang package. It provides access to system-related resources such as input, output, and error streams.out: out is a public static object of type PrintStream defined inside the System class. It represents the standard output stream, usually the console.println(): println() is a method of the PrintStream class. It prints the specified value and then adds a new line at the end of the output. It is an enhanced version of print().Example 1: Below is the implementation of System.out.println :
+            Java
+
+    class GFG {
+    public static void main(String[] args) {
+        System.out.println("Welcome");
+        System.out.println("To");
+        System.out.println("GeeksforGeeks");
+    }
+}
+
+OutputWelcome
+To
+GeeksforGeeks
+Each call to println() prints the text on a new line.Example 2: Printing Variables and Expressions
+            Java
+
+    class GFG {
+    public static void main(String[] args) {
+        int num1 = 10, num2 = 20;
+
+        System.out.print("The addition of ");
+        System.out.print(num1 + " and " + num2 + " is: ");
+        System.out.println(num1 + num2);
+    }
+}
+
+OutputThe addition of 10 and 20 is: 30
+Explanation: print() keeps the cursor on the same lineprintln() prints the result and moves to the next lineDifference between System.out.print() and System.out.println()FeatureSystem.out.print()System.out.println()New line after outputDoes not move cursor to next lineMoves cursor to the next lineCursor positionRemains at the end of the printed textMoves to the beginning of the next lineParameter requirementAt least one parameter requiredParameter is optionalBlank line printingCannot print a blank line directlyCan print a blank line using println()Common usagePrinting text on the same linePrinting output on separate linesRelated Articles:Difference between print() and println() Input-Output in JavaPrintStream println() method in Java with ExamplesRedirecting System.out.println() output to a file in Java

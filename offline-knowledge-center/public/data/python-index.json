@@ -988,215 +988,215 @@
     },
     {
       "id": "python-247",
-      "title": "Python Set Exercise - GeeksforGeeks"
-    },
-    {
-      "id": "python-248",
-      "title": "Python Set Methods - GeeksforGeeks"
-    },
-    {
-      "id": "python-249",
-      "title": "Python Set Operations (Union, Intersection, Difference and Symmetric Difference) - GeeksforGeeks"
-    },
-    {
-      "id": "python-250",
       "title": "Basics of NumPy Arrays - GeeksforGeeks"
     },
     {
-      "id": "python-251",
+      "id": "python-248",
       "title": "Python NumPy - GeeksforGeeks"
     },
     {
-      "id": "python-252",
+      "id": "python-249",
       "title": "Python List insert() Method - GeeksforGeeks"
     },
     {
-      "id": "python-253",
+      "id": "python-250",
       "title": "Python List append() Method - GeeksforGeeks"
     },
     {
-      "id": "python-254",
+      "id": "python-251",
       "title": "Python Unpack Array - GeeksforGeeks"
     },
     {
-      "id": "python-255",
+      "id": "python-252",
       "title": "Python List remove() Method - GeeksforGeeks"
     },
     {
-      "id": "python-256",
+      "id": "python-253",
       "title": "Python List pop() Method - GeeksforGeeks"
     },
     {
-      "id": "python-257",
+      "id": "python-254",
       "title": "Python List Slicing - GeeksforGeeks"
     },
     {
-      "id": "python-258",
+      "id": "python-255",
       "title": "Python List index() - Find Index of Item - GeeksforGeeks"
     },
     {
-      "id": "python-259",
+      "id": "python-256",
       "title": "Python List count() method - GeeksforGeeks"
     },
     {
-      "id": "python-260",
+      "id": "python-257",
       "title": "Difference between List and Array in Python - GeeksforGeeks"
     },
     {
-      "id": "python-261",
+      "id": "python-258",
       "title": "Find Common Elements in Two Arrays in Python - GeeksforGeeks"
     },
     {
-      "id": "python-262",
+      "id": "python-259",
       "title": "How to Pass an Array to a Function in Python - GeeksforGeeks"
     },
     {
-      "id": "python-263",
+      "id": "python-260",
       "title": "How to Create String Array in Python - GeeksforGeeks"
     },
     {
-      "id": "python-264",
+      "id": "python-261",
       "title": "Map vs List comprehension - Python - GeeksforGeeks"
     },
     {
-      "id": "python-265",
+      "id": "python-262",
       "title": "Python List Comprehension Using If-Else - GeeksforGeeks"
     },
     {
-      "id": "python-266",
+      "id": "python-263",
       "title": "Python Collections Module - GeeksforGeeks"
     },
     {
-      "id": "python-267",
+      "id": "python-264",
       "title": "Python heapq.heappush() Method - GeeksforGeeks"
     },
     {
-      "id": "python-268",
+      "id": "python-265",
       "title": "Python heapq.heappop() Method - GeeksforGeeks"
     },
     {
-      "id": "python-269",
+      "id": "python-266",
       "title": "Python heapq.heappushpop() Method - GeeksforGeeks"
     },
     {
-      "id": "python-270",
+      "id": "python-267",
       "title": "Python heapq.nlargest() Method - GeeksforGeeks"
     },
     {
-      "id": "python-271",
+      "id": "python-268",
       "title": "Python heapq.nsmallest() Method - GeeksforGeeks"
     },
     {
-      "id": "python-272",
+      "id": "python-269",
       "title": "Python heapq.heapreplace() Method - GeeksforGeeks"
     },
     {
-      "id": "python-273",
+      "id": "python-270",
       "title": "Python heapq.merge() Method - GeeksforGeeks"
     },
     {
-      "id": "python-274",
+      "id": "python-271",
       "title": "Python reversed() Method - GeeksforGeeks"
     },
     {
-      "id": "python-275",
+      "id": "python-272",
       "title": "Python Dictionary popitem() method - GeeksforGeeks"
     },
     {
-      "id": "python-276",
+      "id": "python-273",
       "title": "Python Linked List - GeeksforGeeks"
     },
     {
-      "id": "python-277",
+      "id": "python-274",
       "title": "Trees in Python - GeeksforGeeks"
     },
     {
-      "id": "python-278",
+      "id": "python-275",
       "title": "Graphs in Python - GeeksforGeeks"
     },
     {
-      "id": "python-279",
+      "id": "python-276",
       "title": "Dynamic Programming in Python - GeeksforGeeks"
     },
     {
-      "id": "python-280",
+      "id": "python-277",
       "title": "__init__ in Python - GeeksforGeeks"
     },
     {
-      "id": "python-281",
+      "id": "python-278",
       "title": "self in Python - GeeksforGeeks"
     },
     {
-      "id": "python-282",
+      "id": "python-279",
       "title": "Python object - GeeksforGeeks"
     },
     {
-      "id": "python-283",
+      "id": "python-280",
       "title": "Python @staticmethod - GeeksforGeeks"
     },
     {
-      "id": "python-284",
+      "id": "python-281",
       "title": "Operator Overloading in Python - GeeksforGeeks"
     },
     {
-      "id": "python-285",
+      "id": "python-282",
       "title": "Class (Static) and Instance Variables in Python - GeeksforGeeks"
     },
     {
-      "id": "python-286",
+      "id": "python-283",
       "title": "__new__ in Python - GeeksforGeeks"
     },
     {
-      "id": "python-287",
+      "id": "python-284",
       "title": "Introduction of Object Oriented Programming - GeeksforGeeks"
     },
     {
-      "id": "python-288",
+      "id": "python-285",
       "title": "Duck Typing in Python - GeeksforGeeks"
     },
     {
-      "id": "python-289",
+      "id": "python-286",
       "title": "Method Overriding in Python - GeeksforGeeks"
     },
     {
-      "id": "python-290",
+      "id": "python-287",
       "title": "Types of Inheritance in Python - GeeksforGeeks"
     },
     {
-      "id": "python-291",
+      "id": "python-288",
       "title": "Multiple Inheritance in Python - GeeksforGeeks"
     },
     {
-      "id": "python-292",
+      "id": "python-289",
       "title": "Python super() - GeeksforGeeks"
     },
     {
-      "id": "python-293",
+      "id": "python-290",
       "title": "Method Resolution Order in Python Inheritance - GeeksforGeeks"
     },
     {
-      "id": "python-294",
+      "id": "python-291",
       "title": "Name mangling in Python - GeeksforGeeks"
     },
     {
-      "id": "python-295",
+      "id": "python-292",
       "title": "ZeroDivisionError: float division by zero in Python - GeeksforGeeks"
     },
     {
-      "id": "python-296",
+      "id": "python-293",
       "title": "Define Custom Exceptions in Python - GeeksforGeeks"
     },
     {
-      "id": "python-297",
+      "id": "python-294",
       "title": "Errors and Exceptions in Python - GeeksforGeeks"
     },
     {
-      "id": "python-298",
+      "id": "python-295",
       "title": "ArithmeticError - Python - GeeksforGeeks"
     },
     {
-      "id": "python-299",
+      "id": "python-296",
       "title": "Python Overflowerror: Math Range Error - GeeksforGeeks"
+    },
+    {
+      "id": "python-297",
+      "title": "Floating point error in Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-298",
+      "title": "Assertion Error - Python - GeeksforGeeks"
+    },
+    {
+      "id": "python-299",
+      "title": "Python: AttributeError - GeeksforGeeks"
     }
   ]
 }

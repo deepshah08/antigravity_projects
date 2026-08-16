@@ -1,0 +1,193 @@
+# Memory Layout of C Programs - GeeksforGeeks
+
+The memory layout of a program shows how its data is stored in memory during execution. It helps developers understand and manage memory efficiently.Memory is divided into sections such as code, data, heap, and stack.Knowing the memory layout is useful for optimizing performance, debugging and prevent errors like segmentation fault and memory leak. 1. Text SegmentThe text segment (or code segment) stores the executable code of the program like program’s functions and instructions.The segment is usually read-only to prevent accidental modification during execution.It is typically stored in the lower part of memory.The size of the text segment depends on the number of instructions and the program’s complexity.2. Data SegmentThe data segment stores global and static variables of the program.Variables in this segment retain their values throughout program execution.The size of the data segment depends on the number and type of global/static variables.It is divided into initialized and uninitialized (BSS) sections.A. Initialized Data SegmentAs the name suggests, it is the part of the data segment that contains global and static variables that have been initialized by the programmer.
+            C
+
+    #include <stdio.h>
+
+// Global variables (stored in initialized data segment)
+int globalVar = 10;
+char message[] = "Hello";
+
+int main()
+{
+    // Static variable (also stored in initialized data segment)
+    static int staticVar = 20;
+
+    printf("Global variable: %d\n", globalVar);
+    printf("Static variable: %d\n", staticVar);
+    printf("Message: %s\n", message);
+
+    return 0;
+}
+
+OutputGlobal variable: 10
+Static variable: 20
+Message: Hello
+The above variables a and b will be stored in the Initialized Data Segment.B. Uninitialized Data Segment (BSS)The uninitialized data segment is often called the BSS segment.It stores global and static variables that are not initialized by the programmer.These variables are automatically initialized to zero by the system at runtime.
+            C
+
+    #include <stdio.h>
+
+// Global uninitialized variables (stored in BSS segment)
+int globalVar;
+char message[50];
+
+int main()
+{
+    // Static uninitialized variable (also stored in BSS)
+    static int staticVar;
+
+    // Assigning values at runtime
+    globalVar = 10;
+    staticVar = 20;
+    snprintf(message, sizeof(message), "Hello BSS");
+
+    printf("Global variable: %d\n", globalVar);
+    printf("Static variable: %d\n", staticVar);
+    printf("Message: %s\n", message);
+
+    return 0;
+}
+
+OutputGlobal variable: 10
+Static variable: 20
+Message: Hello BSS
+3. Heap SegmentThe heap segment is used for dynamic memory allocation.It starts at the end of the BSS segment and grows towards higher memory addresses.Memory in the heap is managed using functions like malloc(), realloc(), and free().The heap is shared by all shared libraries and dynamically loaded modules in a process.
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    
+    // Create an integer pointer
+    int *ptr = (int*) malloc(sizeof(int) * 10); 
+    return 0;
+}
+
+4. Stack SegmentThe stack stores local variables, function parameters, and return addresses for each function call.Each function call creates a stack frame in this segment.The stack is usually at higher memory addresses and grows opposite to the heap.When the stack and heap meet, the program’s free memory is exhausted.
+            C
+
+    #include <stdio.h>
+
+void func() {
+    
+    // Stored in the stack
+    int local_var = 10;  
+}
+
+int main() {
+    func();
+    return 0;
+}
+
+Practical ExamplesThe size(1) command in MinGW reports the sizes (in bytes) of the text, data, and bss segments of a binary file.1. Check the following simple C program 
+            C
+
+    #include <stdio.h>
+
+int main() {
+    return 0;
+}
+
+Memory Layoutgcc memory-layout.c -o memory-layoutsize memory-layouttext       data        bss        dec        hex    filename960        248          8       1216        4c0    memory-layout2. Let us add one global variable in the program, now check the size of bss
+            C
+
+    #include <stdio.h>
+
+// Uninitialized variable stored in bss
+int global;
+int main() {
+    return 0;
+}
+
+Memory Layoutgcc memory-layout.c -o memory-layoutsize memory-layouttext       data        bss        dec        hex    filename 960        248         12       1220        4c4    memory-layout3. Let us add one static variable which is also stored in bss.
+            C
+
+    #include <stdio.h>
+
+// Uninitialized variable stored in bss
+int global;
+int main() {
+  
+  	// Uninitialized static variable stored in bss
+    static int i;
+    return 0;
+}
+
+Memory Layoutgcc memory-layout.c -o memory-layoutsize memory-layouttext       data        bss        dec        hex    filename 960        248         16       1224        4c8    memory-layout4. Let us initialize the static variable which will then be stored in the Data Segment (DS)
+            C
+
+    #include <stdio.h>
+
+// Uninitialized variable stored in bss
+int global;
+int main(void) {
+  	
+  	// Initialized static variable stored in DS
+    static int i = 100;
+    return 0;
+}
+
+Memory Layoutgcc memory-layout.c -o memory-layoutsize memory-layouttext       data        bss        dec        hex    filename960         252 12       1224        4c8    memory-layout5. Let us initialize the global variable which will then be stored in the Data Segment (DS)
+            C
+
+    #include <stdio.h>
+
+// initialized global variable stored in DS
+int global = 10;
+int main() {
+  
+  	// Initialized static variable stored in DS
+    static int i = 100;
+    return 0;
+}
+
+Memory Layoutgcc memory-layout.c -o memory-layoutsize memory-layouttext       data        bss        dec        hex    filename960         256 8       1224        4c8    memory-layoutExample to Verify the Memory Layout
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+// Global variable
+int gvar = 66;
+
+// Constant global variable
+const int cgvar = 1010;
+
+// uninitialized global variable
+int ugvar;
+
+void foo() {
+    
+    // Local variable
+    int lvar = 1;
+    printf("Address of lvar:\t%p", (void*)&lvar);
+}
+
+int main() {
+    
+    // Heap variable
+    int *hvar = (int*)malloc(sizeof(int));
+    
+    
+    // Checking and comparing address of different
+    // elements of program that should be stored in
+    // different segements of the memory
+    printf("Address of foo:\t\t%p\n", (void*)&foo);
+    printf("Address of cgvar:\t%p\n", (void*)&cgvar);
+    printf("Address of gvar:\t%p\n", (void*)&gvar);
+    printf("Address of ugvar:\t%p\n", (void*)&ugvar);
+    printf("Address of hvar:\t%p\n", (void*)hvar);
+    foo();
+    
+	return 0;
+}
+
+OutputAddress of foo:		0x4011d0
+Address of cgvar:	0x402084
+Address of gvar:	0x404020
+Address of ugvar:	0x404028
+Address of hvar:	0x119592a0
+Address of lvar:	0x7ffe8289c66cComparing above addresses, we can see than it roughly matches the memory layout discussed above.

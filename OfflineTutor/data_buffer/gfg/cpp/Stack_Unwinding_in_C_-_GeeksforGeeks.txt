@@ -1,0 +1,75 @@
+# Stack Unwinding in C++ - GeeksforGeeks
+
+Stack unwinding is the process of removing function call frames from the call stack at runtime. During this process, local objects are destroyed in the reverse order of their creation.Stack unwinding happens:Normally, when a function returns.During exception handling, when an exception is thrown and control transfers to a matching catch block.When an exception is not handled in the current function, the runtime:Exits the function.Destroys all local objects.Moves up the call stack searching for a matching catch block.Terminates the program if no handler is found.Example: Stack Unwinding with Exception Handling
+            CPP
+
+    #include <iostream>
+using namespace std;
+
+// Function f1() that throws an exception
+void f1() {
+    cout << "f1() Start\n";
+    throw 100;
+    cout << "f1() End\n";   // Not executed
+}
+
+// Function f2() that calls f1()
+void f2() {
+    cout << "f2() Start\n";
+    f1();
+    cout << "f2() End\n";   // Not executed
+}
+
+// Function f3() that handles the exception
+void f3() {
+    cout << "f3() Start\n";
+    try {
+        f2();
+    }
+    catch (int i) {
+        cout << "Caught Exception: " << i << "\n";
+    }
+    cout << "f3() End\n";
+}
+
+int main() {
+    f3();
+    return 0;
+}
+
+Outputf3() Start
+f2() Start
+f1() Start
+Caught Exception: 100
+f3() End
+Explanation:f1() throws an exception and exits immediately.Since f1() has no catch, its stack frame is removed.Control moves to f2(), which also has no handler, so it is removed.The exception is finally caught in f3().Statements after throw in f1() and f2() are never executed.Any local objects in f1() and f2() would have their destructors called during unwinding.Destructors and Stack UnwindingAll local (automatic) objects are destroyed during stack unwinding.Destructors are called in reverse order of construction.This guarantees cleanup of stack-based resources.Note that the following lines inside f1() and f2() are not executed at all.cout<<"f1() End \n";  // inside f1()cout<<"f2() End \n";  // inside f2()If there were some local class objects inside f1() and f2(), destructors for those local objects would have been called in the Stack Unwinding process.Dynamic Resources and Stack UnwindingStack unwinding does not automatically free heap memory allocated using new unless it is managed by an object whose destructor handles cleanup.Example:
+            C++
+
+    #include <bits/stdc++.h>
+using namespace std;
+
+void func() {
+    
+    // Create a unique_ptr that manages dynamic memory
+    unique_ptr<int> data(new int(10));
+    
+    cout << "Resource allocated: " << *data << endl;
+
+    // Throw the exception 
+    throw runtime_error("An error occurred");
+}
+
+int main() {
+    try {
+        
+        // Call the function that may throw an exception
+        func();
+    }
+    catch (const exception& e) {
+        cout << e.what();
+    }
+    return 0;
+}
+
+OutputResource allocated: 10
+An error occurredExplanation:unique_ptr manages heap memory.When the exception is thrown, stack unwinding destroys unique_ptr.The destructor of unique_ptr automatically frees the allocated memory.This prevents memory leaks.How to Safely Handle Resources During Stack UnwindingRecommended Best PracticesUse RAII (Resource Acquisition Is Initialization).Prefer smart pointers (unique_ptr, shared_ptr) over raw pointers.Use standard containers (vector, map, set) instead of manual memory management.Avoid new and delete in exception-prone code.Let destructors handle cleanup automatically.Key TakeawaysStack unwinding removes stack frames when exceptions propagate.Local objects are always cleaned up safely.Heap memory must be managed using RAII techniques.Smart pointers make exception-safe code easier and more reliable.

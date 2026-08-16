@@ -1,0 +1,167 @@
+# Computer Network - Cheat Sheet - GeeksforGeeks
+
+A computer network is an interconnected computing device that can exchange data and share resources. These connected devices use a set of rules called communication protocols to transfer information over physical or wireless technology. Modern networks offer more than just connectivity. Enterprises start with digital transformation. Networks are essential to this transformation and its success.
+
+ 
+
+Here is a cheat sheet of computer networks that is given below:
+
+Network Topologies:Name DescriptionBus TopologyA bus topology, also called a line topology, is a type of network topology in which all network devices are connected through a central RJ-45 network cable or coaxial cable.
+
+Ring TopologyA ring topology is a type of network topology in which each device is connected to two other devices on either side using RJ-45  or coaxial cables.
+
+Star TopologyA star topology is a network topology in which each element of the network is physically connected to a central node such as a router, hub, or switch. In a star topology, hubs act as servers, and connecting nodes act as clients.
+
+Mesh TopologyIn a mesh topology, each node is connected to at least one other node and often to multiple nodes. Each node can send and receive messages from other nodes.
+
+Tree TopologyA tree topology is a hybrid network topology in which star networks are interconnected by bus networks. Tree networks are hierarchical and each node can have any number of child nodes.
+
+Hybrid TopologyA hybrid topology is a type of network topology that uses two or more different network topologies. These topologies can include mixed bus topologies, mesh topologies, ring topologies, star topologies, and tree topologies.
+
+Types of Network:Network TypeDescriptionPANPersonal  Network is a network consisting of only a small number of devices owned by an individual.
+
+LANA local area network is a network that covers a small area (for example, a company's network).
+
+WANA wide Area Network is a network that includes many devices and covers a large area. Usually collectively owned.
+
+MANMAN stands for Metropolitan Area Network. It is a computer network that connects a findnumber of LANs to form a larger network so that the computer resources can be shared.
+
+TCP/IP Model and OSI Model: TCP/IPOSI ModelProtocolsApplication LayerApplication LayerDNS, DHCP, FTP, HTTPS, IMAP, LDAP, NTP,POP3, RTP, RTSP, SSH, SIP, SMTP, SNMP, Telnet, TFTPPresentation LayerJPEG, MIDI, MPEG, PICT, TIFFSession LayerNetBIOS, NFS, PAP, SCP, SQL, ZIPTransport LayerTransport LayerTCP, UDPInternet LayerNetwork LayerICMP, IGMP, IPsec, IPv4, IPv6, IPX, RIPLink LayerData Link LayerARP, ATM, CDP, FDDI, Frame Relay, HDLC, MPLS, PPP, STP, Token RingPhysical LayerBluetooth, Ethernet, DSL, ISDN, 802.11 Wi-FiComputer Network Protocols:Network ProtocolDescriptionPort number of protocolEthernetA family of protocols that specify how devices on the same network segment format and transmit data.
+
+44818, 2222Wi-Fi or WLANA family of protocols that deal with wireless transm­ission.
+
+-
+
+TCPSplits data into packets (reassembles later). Error checking is also included, as the acknowledgment is expected to be sent within a specified timeframe.
+
+22UDPUser Datagram Protocol
+
+4096-65535IPEvery device has an IP address. Packets are "addressed" to ensure they reach the correct user.
+
+-HTTPUsed to access web pages from a web server.
+
+80HTTP'S uses encryption to protect data.
+
+443FTPFile Transfer Protocol: Handles file uploads and downloads, transferring data and programs.
+
+21SMTPSMTP server has a database of user email addresses. Internet Message Access Protocol: Handles incoming mail.
+
+587IMAPInternet Message Access Protocol: Process incoming mail.
+
+993ARPARP finds a host's hardware address (also known as MAC (Media Access Control) address) based on its known IP address.
+
+-DNSDNS is the host name for the IP address translation service. DNS is a distributed database implemented on a hierarchy of name servers. It is an application layer protocol for messaging between clients and servers.
+
+53FTPSFTPS is known as FTP SSL which refers to File Transfer Protocol (FTP) over Secure Sockets Layer (SSL) which is more secure from FTP. FTPS also called as File Transfer Protocol Secure.
+
+21POP3POP3 is a simple protocol that only allows downloading messages from your Inbox to your local computer.
+
+110SIPSession Initiation Protocol was designed by IETF and is described in RFC 3261. It’s the protocol of application layer that describes the way to found out Internet telephone calls, video conferences and other multimedia connections, manage them and terminate them.
+
+5060,5061SMBThe SMB protocol was developed by Microsoft for direct file sharing over local networks.
+
+139SNMPSNMP is an application layer protocol that uses UDP port numbers 161/162. SNMP is also used to monitor networks, detect network errors, and sometimes configure remote devices.
+
+161SSHSSH (Secure Shell) is the permissions used by the SSH protocol. That is, a cryptographic network protocol used to send encrypted data over a network.
+
+22VNCVNC stands for Virtual Network Communication.
+
+5900RPCRemote Procedure Call (RPC) is a powerful technique for building distributed client-server based applications. It is based on extending traditional calls to local procedures so that the called procedure does not have to be in the same address space as the calling procedure.
+
+1024 to 5000NFSNFS uses file handles to uniquely identify the file or directory on which the current operation is being performed. Internet Control Message Protocol (ICMP) to provide error control. Used for reporting errors and administrative queries.
+
+2049ICMPInternet Control Message Protocol(ICMP) to provide an error control. It is used for reporting errors and management queries.
+
+-BOOTPBootstrap Protocol (BOOTP) is a network protocol used by network management to assign IP addresses to each member of that network in order to join other network devices through a main server.
+
+67DHCPDynamic Host Configuration Protocol (DHCP) is an application layer protocol. DHCP is based on a client-server model, based on discoveries, offers, requests, and ACKs.
+
+68NATNetwork Address Translation (NAT) is the process of translating one or more local IP addresses into one or more global IP addresses, or vice versa, in order to provide Internet access to local hosts.
+
+5351PPPPoint-to-Point Protocol (PPP) is basically an asymmetric protocol suite for various connections or links without framing. H. Raw bit pipe. PPP also expects other protocols to establish connections, authenticate users, and carry network layer data as well.
+
+1994RIPRouting Information Protocol (RIP) is a dynamic routing protocol that uses hop count as a routing metric to find the best path between source and destination networks.
+
+520OSPFOpen Shortest Path First (OSPF) is a link-state routing protocol used to find the best path between a source and destination router using its own shortest path first).
+
+89EIGRPEnhanced Interior Gateway Routing Protocol (EIGRP) is a dynamic routing protocol used to find the best path and deliver packets between any two Layer 3 devices.
+
+88BGPBorder Gateway Protocol (BGP) is a protocol used to exchange Internet routing information and is used between ISPs in different ASes.
+
+179STPSpanning Tree Protocol (STP) is used to create a loop-free network by monitoring the network, tracking all connections, and shutting down the least redundant connections.
+
+0 to 255RARPRARP, stand for Reverse Address Resolution Protocol, is a computer network-based protocol used by client computers to request IP addresses from a gateway server's Address Resolution Protocol table or cache.
+
+-LAPDThe D-channel LAPD or Link Access Protocol is basically the Layer 2 protocol normally required for the ISDN D-channel. It is derived from the LAPB (Link Access Protocol Balanced) protocol.
+
+-IPsecIP Security (IPSec) is a standard suite of Internet Engineering Task Force (IETF) protocols between two communication points on IP networks to provide data authentication, integrity, and confidentiality. It also defines encrypted, decrypted, and authenticated packets.
+
+4500ASCIIASCII (American Standard Code for Information Interchange) is the standard character encoding used in telecommunications. The ASCII representation "ask-ee" is strictly a 7-bit code based on the English alphabet. ASCII codes are used to represent alphanumeric data.
+
+9500EBCDICEBCDIC (Extended Binary Encoded Decimal Interchange Code) (pronounced "ehb-suh-dik" or "ehb-kuh-dik") is an alphanumeric binary code developed by IBM to run large-scale computer systems .
+
+-X.25 PADX.25 is an International Telecommunication Union Telecommunication Standardization Sector (ITU-T) protocol standard simply for Wide Area Network (WAN) communications that basically describes how the connections among user devices and network devices are established and maintained. 
+
+-HDLCHigh-Level Data Link Control (HDLC) commonly uses the term "frame" to denote units or logs of units of data that are frequently transmitted or transmitted from one station to another, express. Each frame on the link must start and end with a flag sequence field (F).
+
+-SLIPSLIP stands for Serial Line Internet Protocol. It is a TCP/IP implementation which was described under RFC 1055 (Request for Comments).
+
+ LAPLink Access Procedure (LAP) is basically considered as an ITU family of Data Link Layer (DLL) protocols that are subsets of High-Level Data Link Control (HDLC). LAP is particularly derived from IBM’s System Development Life Cycle (SDLC).
+
+-NCPNetwork Control Protocol (NCP) is a set of protocols that are part of Point-to-Point Protocol (PPP).
+
+524Mobile IPMobile IP is a communication protocol (created by extending the Internet Protocol, IP) that allows a user to move from one network to another using the same her IP address.
+
+434VOIPVoice over Internet Protocol (VoIP), is a technology that allowing you to make voice calls over a broadband Internet connection instead of an analog (regular) phone line. Some VoIP services allow you to call people using the same service, but others may allow you to call anyone.
+
+5060LDAPLightweight Directory Access Protocol (LDAP) is an internet protocol works on TCP/IP, used to access information from directories. LDAP protocol is basically used to access an active directory.
+
+389GREGRE or Generic Routing Encapsulation is a tunneling protocol developed by Cisco. It encapsulates IP packets i.e. deliverable inner packets into outer packets.
+
+47AHThe HTTP headers Authorization header is a request type header that used to contains the credentials information to authenticate a user through a server. If the server responds with 401 Unauthorized and the WWW-Authenticate header not usually.
+
+51ESPEncapsulation security payload, also abbreviated as ESP plays a very important role in network security. ESP or Encapsulation security payload is an individual protocol in IPSec.
+
+500NNTPNetwork News Transfer Protocol (NNTP) is the underlying protocol of UseNet, which is a worldwide discussion system which contains posts or articles which are known as news.
+
+119RPC-DCOMDCOM- Distributed Component Object Model– helps remote object via running on a protocol known as the Object Remote Procedure Call (ORPC).
+
+-IRCInternet Relay Chat (IRC) is an Internet application that was developed by Jakko Oikarinen in Finland. Chat is the most convenient immediate way to communicate with others via Internet.
+
+6667IEEE Standards:StandardsDescriptionIEEE 802LAN/MAN IEEE 802.1LAN/MAN Bridging and managementIEEE 802.1sMultiple spanning treeIEEE 802.1 wRapid reconfiguration of spanning treeIEEE 802.1xPort-based network access controlIEEE 802.2Logical Link Control (LLC)IEEE 802.3CSMA/CD access method (Ethernet)IEEE 802.3ae10 Gigabit EthernetIEEE 802.4Token passing bus access method and Physical layer specificationsIEEE 802.5Token Ring access method and Physical layer specificationsIEEE 802.6Distributed Queue Dual Bus (DQDB) access method and Physical layer specifications (MAN)IEEE 802.7Broadband LANIEEE 802.8Fiber OpticIEEE 802.9Isochronous LANs (standard withdrawn)IEEE 802.10Interoperable LAN/MAN SecurityIEEE 802.11Wireless LAN MAC and Physical layer specificationsIEEE 802.11aWireless with speed upto 54 MbpsIEEE 802.11bWireless with speed upto 11 MbpsIEEE 802.11gWireless with speed upto 54 MbpsIEEE 802.11nWireless with speed upto 600 MbpsIEEE 802.12Demand-priority access method, physical layer and repeater specificationsIEEE 802.13Not usedIEEE 802.14Cable modems (proposed standard was withdrawn)IEEE 802.15Wireless Personal Area Network (WPAN)IEEE 802.16Wireless Metropolitan Area Network (Wireless MAN)IEEE 802.17Resilient Packet Ring (RPR) AccessNetworking Devices:DeviceDescriptionClientAny device, such as a workstation, laptop, tablet, or smartphone, that is used to access a network.
+
+ServerProvides resources to network users, including email, web pages, or files.
+
+HubA Layer 1 device that does not perform any inspection of traffic. A hub simply receives traffic in a port and repeats that traffic out of all the other ports.
+
+SwitchA Layer 2 device that makes its forwarding decisions based on the destination Media Access Control (MAC) address. A switch learns which devices reside off which ports by examining the source MAC address. The switch then forwards traffic only to the appropriate port, and not to all the other ports.
+
+RouterA Layer 3 device that makes forwarding decisions based on Internet Protocol (IP) addressing. Based on the routing table, the router intelligently forwards the traffic out of the appropriate interface.
+
+Multilayer switchCan operate at both Layer 2 and Layer 3. Also called a Layer 3 switch, a multilayer switch is a high-performance device that can switch traffic within the LAN and for- ward packets between subnets.
+
+MediaMedia can be copper cabling, fiber-optic cabling, or radio waves. Media varies in its cost, bandwidth capacity, and distance limitation.
+
+Analog modemModem is short for modulator/demodulator. An analog modem converts the digital signals generated by a computer into analog signals that can travel over conventional phone lines.
+
+Broadband modemA digital modem used with high-speed DSL or cable Internet service. Both operate in a similar manner to the analog modem, but use higher broadband frequencies and transmission speeds.
+
+Access point (AP)A network device with a built-in antenna, transmitter, and adapter that provides a connection point between WLANs and a wired Ethernet LAN. APs usually have several wired RJ-45 ports to support LAN clients. Most small office or home office (SOHO) routers integrate an AP.
+
+Cables in Networking Devices:Ethernet Standards (IEEE)Data RateCable Fiber TypeMaximum Distance (IEEE)Ethernet (10Base-FL)10 Mbps50m or 62.5um Multimode @ 850nm2kmFast Ethernet (100Base-FX)100 Mbps50m or 62.5um Multimode @ 1300nm2kmFast Ethernet (100Base-SX)100 Mbps50m or 62.5um Multimode @ 850nm300mGigabit Ethernet (1000Base-SX)1000 Mbps50m Multimode @ 850nm550mGigabit Ethernet (1000Base-SX)1000 Mbps62.5um Multimode @ 850nm220mGigabit Ethernet (1000Base-LX)1000 Mbps50m or 62.5um Multimode @ 1300nm550mGigabit Ethernet (1000Base-LX)1000 Mbps9um Singlemode @1310nm5kmGigabit Ethernet (1000Base-LH)1000 Mbps9um Singlemode @1550nm70kmTypes of Ethernet Networks:SpeedCommon NameInformal IEEE Standard NameFormal IEEE Standard NameCable Type, Maximum Length10 MbpsEthernet10BASE-T802.3Copper, 100 m100 MbpsFast Ethernet100BASE-T802.3uCopper, 100 m1000 MbpsGigabit Ethernet1000BASE-LX802.3zFiber, 5000 m1000 MbpsGigabit Ethernet1000BASE-T802.3abCopper, 100 m10 Gbps10 Gig Ethernet10GBASE-T802.3anCopper, 100 mTypes of Network Connections:TypeDescriptionInternetA network  of millions of interconnected and cooperatively connected computers is called the Internet. Internet includes people, resources and means of collaborationIntranetIt is an internal private network built within an organization using Internet and World Wide Web standards and products that provides access to corporate information for the organization's employees.ExtranetThis is a type of network that allows external users  to access  an organization's intranet.Transmission Meia:Guided Media: Type of mediaDescriptionTwisted Pair CableIt is a superimposed winding of two separately insulated conductors. As a rule, several such pairs are grouped together in a protective cover. They are the most widely used transmission media.Coaxial CableIt has a PVC or Teflon insulating layer and an outer plastic sheath containing two parallel conductors, each with a separate conformal protective cover.Optical Fiber CableIt uses the concept of light reflection  through a  glass or plastic core. The core is surrounded by a less dense glass or plastic shell called the cladding. Used to transfer large amounts of data.StriplineStripline is a transverse electromagnetic (TEM) transmission line medium invented by Robert M. Barrett at the Air Force Cambridge Research Center in the 1950s. Stripline is the earliest form of  planar transmission line.MicrostriplineConductive material is separated from the ground plane by a dielectric layer.Unguided Media: Type of mediaDescriptionRadio wavesThese are easy to generate and can penetrate  buildings. There is no need to align the transmit and receive antennas. Frequency Range: 3kHz - 1GHz AM radios, FM radios, and cordless phones use radio waves for transmission.MicrowavesMultiplexer types: line-of-sight transmission. H. Transmitting and receiving antennas should be placed properly. The distance a signal travels is directly proportional to the height of the antenna. Frequency Range: 1GHz - 300GHz They are mainly used for mobile telephony and television distribution.InfraredInfrared is used for  short distance communication. Obstacles cannot be penetrated. This prevents interference between systems. Frequency Range: 300GHz - 400THz It is used in TV remote controls, wireless mice, keyboards, printers, etc.Types of Multiplexers:TypeDescriptionFrequency Division Multiplexing (FDM)The frequency spectrum is divided into logical channels and each user has exclusive access to his channel. It transmits signals in several different frequency ranges and  multiple video channels over a single cable. Each signal is modulated onto a different carrier frequency and the carrier frequencies are separated by guard bands.
+
+Time Division Multiplexing (TDM)Each user  gets full bandwidth for a short period of time on a regular basis. The entire channel is dedicated to her one user, but only for a short  time.
+
+Wavelength Division MultiplexingThis is the same as FDM but applied to fiber, with the difference  that here the operating frequency is much higher, actually  in the optical range. Due to its extremely high bandwidth, fiber optic has great potential.
+
+Collision Detection:TypeDescriptionCarrier Sense Multiple Access with Collision Detection (CSMA/CD)In this method, after sending a frame, the station monitors the media to see if the transmission was successful. If successful, the transmission is terminated, otherwise the frame is retransmitted.
+
+Carrier Sense Multiple Access with Collision Avoidance (CSMA/CA)The basic idea behind CSMA/CA is that stations must be able to receive while transmitting in order to detect collisions from different stations. A collision in a wired network nearly doubles the energy of the received signal, allowing stations to detect a potential collision.
+
+ALOHAIt was developed for wifi, but can also be used for shared media. Multiple stations can transmit data at the same time, which can  lead to collisions and data corruption.
+
+Network Layer Services:TypeDescriptionPacketizingThe process of encapsulating  data (also called payload) received from upper layers of the network into network layer packets at the source and decapsulating the payload from the network layer packets at the destination is called packetization.Routing and ForwardingThese are two other services provided by the network layer. A network has many routes from a  source to a destination. The network layer sets some strategies for finding the best possible route. This process is called routing.Mode of Communication:TypesDescriptionSimplex ModeIn simplex mode,  communication is one-way, like one-way. Only one of the two devices on the link can transmit, the other can only receive. Simplex mode allows data to be sent in one direction using the full capacity of the channel.Half-Duplex Mode In half-duplex mode, each station can both transmit and receive, but not at the same time. When one device transmits, the other device can only receive and vice versa. Half-duplex mode is used when simultaneous communication in both directions is not required.Full-Duplex Mode
+
+In full-duplex mode, both stations can transmit and receive at the same time. In full-duplex mode, signals  in one direction share the capacity of the link with signals  in the other direction. This sharing can be done in two ways:
+
+Either the link must contain two physically separate transmission paths, one for sending and the other for receiving.Or the capacity is divided between signals traveling in both directions. Classes in Computer Networking:CLASSLEADING BITSNET ID BITSHOST ID BITSNO. OF NETWORKSADDRESSES PER NETWORKSTART ADDRESSEND ADDRESSCLASS A082427 ( 128)24 2 (16,777,216)0.0.0.0127.255.255.255CLASS B10161614 2 (16,384)16 2 (65,536)128.0.0.0191.255.255.255CLASS C11024821 2 (2,097,152)8 2 (256)192.0.0.0223.255.255.255CLASS D1110NOT DEFINEDNOT DEFINEDNOT DEFINEDNOT DEFINED224.0.0.0239.255.255.255CLASS E1111NOT DEFINEDNOT DEFINEDNOT DEFINEDNOT DEFINED240.0.0.0255.255.255.255Subnet Address or Subnet ID Using/16Prefix1st Usable IP AddressLast usable IP AddressBroadcast Address120.0.0.0/24120.0.0.1120.0.255.254120.0.255.255120.1.0.0/24120.1.0.1120.1.255.254120.1.255.255120.2.0.0/24120.2.0.1120.2.255.254120.2.255.255120.3.0.0/24120.3.0.1120.3.255.254120.3.255.255120.100.0.0/24120.100.0.1120.100.255.254120.100.255.255120.101.0.0/24120.101.0.1120.101.255.254120.101.255.255120.200.0.0/24120.200.0.1120.200.255.254120.200.255.255120.201.0.0/24120.201.0.1120.201.255.254120.201.255.255120.253.0.0/24120.253.0.1120.253.255.254120.253.255.255120.254.0.0/24120.254.0.1120.254.255.254120.254.255.255120.255.0.0/24120.255.0.1120.255.255.254120.255.255.255Subnetting:Private IP Address with Subnet MaskPrivate IP RangePrivate IP Range denoted in CIDR10.0.0.0 255.0.0.010.0.0.0 to 10.255.255.25510.0.0.0/8172.16.0.0 255.240.0.0172.16.0.0 to 172.31.255.255172.16.0.0/12192.168.0.0 255.255.0.0192.168.0.0 to 192.168.255.255192.168.0.0/16CIDRSUBNET MASKWILDCARD MASK# OF IP ADDRESSES# OF USABLE IP ADDRESSES/32255.255.255.2550.0.0.011/31255.255.255.2540.0.0.122*/30255.255.255.2520.0.0.342/29255.255.255.2480.0.0.786/28255.255.255.2400.0.0.151614/27255.255.255.2240.0.0.313230/26255.255.255.1920.0.0.636462/25255.255.255.1280.0.0.127128126/24255.255.255.00.0.0.255256254/23255.255.254.00.0.1.255512510/22255.255.252.00.0.3.2551,0241,022/21255.255.248.00.0.7.2552,0482,046/20255.255.240.00.0.15.2554,0964,094/19255.255.224.00.0.31.2558,1928,190/18255.255.192.00.0.63.25516,38416,382/17255.255.128.00.0.127.25532,76832,766/16255.255.0.00.0.255.25565,53665,534/15255.254.0.00.1.255.255131,072131,070/14255.252.0.00.3.255.255262,144262,142/13255.248.0.00.7.255.255524,288524,286/12255.240.0.00.15.255.2551,048,5761,048,574/11255.224.0.00.31.255.2552,097,1522,097,150/10255.192.0.00.63.255.2554,194,3044,194,302/9255.128.0.00.127.255.2558,388,6088,388,606/8255.0.0.00.255.255.25516,777,21616,777,214/7254.0.0.01.255.255.25533,554,43233,554,430/6252.0.0.03.255.255.25567,108,86467,108,862/5248.0.0.07.255.255.255134,217,728134,217,726/4240.0.0.015.255.255.255268,435,456268,435,454/3224.0.0.031.255.255.255536,870,912536,870,910/2192.0.0.063.255.255.2551,073,741,8241,073,741,822/1128.0.0.0127.255.255.2552,147,483,6482,147,483,646/00.0.0.0255.255.255.2554,294,967,2964,294,967,294Methods of Network Security:MethodDescriptionAuthen­tic­ationVerify a user's identity, usually by asking them to enter a password or biometric identifier.EncryptionEncrypt data with a key,  that is, the same key is required to decrypt the data. This is how HTTPS works.FirewallsProtect the network from unauthorized access.MAC Address FilteringAllow devices to access or be prevented from accessing the network based on their physical address embedded in the device's network adapter.

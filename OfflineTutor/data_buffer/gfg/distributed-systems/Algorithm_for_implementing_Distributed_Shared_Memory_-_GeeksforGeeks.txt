@@ -1,0 +1,47 @@
+# Algorithm for implementing Distributed Shared Memory - GeeksforGeeks
+
+Distributed shared memory(DSM) system is a resource management component of distributed operating system that implements shared memory model in distributed system which have no physically shared memory. The shared memory model provides a virtual address space which is shared by all nodes in a distributed system. 
+
+The central issues in implementing DSM are:
+
+    how to keep track of location of remote data.
+    how to overcome communication overheads and delays involved in execution of communication protocols in system for accessing remote data.
+    how to make shared data concurrently accessible at several nodes to improve performance.
+
+
+Algorithms to implement DSM
+
+1. Central Server Algorithm:
+
+    In this, a central server maintains all shared data. It services read requests from other nodes by returning the data items to them and write requests by updating the data and returning acknowledgement messages.
+    Time-out can be used in case of failed acknowledgement while sequence number can be used to avoid duplicate write requests.
+    It is simpler to implement but the central server can become bottleneck and to overcome this shared data can be distributed among several servers. This distribution can be by address or by using a mapping function to locate the appropriate server.
+
+
+  
+
+2. Migration Algorithm:
+
+    In contrast to central server algo where every data access request is forwarded to location of data while in this data is shipped to location of data access request which allows subsequent access to be performed locally.
+    It allows only one node to access a shared data at a time and the whole block containing data item migrates instead of individual item requested.
+    It is susceptible to thrashing where pages frequently migrate between nodes while servicing only a few requests.
+    This algo provides an opportunity to integrate DSM with virtual memory provided by operating system at individual nodes.
+
+
+
+3. Read Replication Algorithm:
+
+    This extends the migration algorithm by replicating data blocks and allowing multiple nodes to have read access or one node to have both read write access.
+    It improves system performance by allowing multiple nodes to access data concurrently.
+    The write operation in this is expensive as all copies of a shared block at various nodes will either have to invalidated or updated with the current value to maintain consistency of shared data block.
+    DSM must keep track of location of all copies of data blocks in this.
+
+
+
+
+
+4. Full Replication Algorithm:
+
+    It is an extension of read replication algorithm which allows multiple nodes to have both read and write access to shared data blocks.
+    Since many nodes can write shared data concurrently, the access to shared data must be controlled to maintain it's consistency.
+    To maintain consistency, it can use a gap free sequences in which all nodes wishing to modify shared data will send the modification to sequencer which will then assign a sequence number and multicast the modification with sequence number to all nodes that have a copy of shared data item.

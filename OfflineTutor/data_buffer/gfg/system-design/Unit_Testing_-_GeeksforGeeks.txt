@@ -1,0 +1,55 @@
+# Unit Testing - GeeksforGeeks
+
+Unit Testing is a software testing method in which individual units or components of a software application (such as functions, methods, or classes) are tested in isolation to verify that they work correctly as expected.It helps find and fix defects at the very beginning of the development cycle, reducing the cost and effort of debugging later.It promotes writing modular, clean, and maintainable code by ensuring each small part of the application behaves correctly on its own.Example: In banking applications, unit testing is used to verify interest calculations, loan eligibility rules, and transaction validation logic.Unit Testing ProcessThe unit testing workflow includes the following step by step process:Unit Testing ProcessIdentify the Unit to Test: Identify the function, method, class, or module that needs to be tested and understand its expected behavior.Create Unit Test Cases: Write unit test cases covering positive, negative, boundary, and exception scenarios for the selected unit.Execute Unit Tests: Run the unit tests using a testing framework to verify that the code behaves as expected.Analyze Test Results: Review the test results to identify failed test cases and determine the cause of defects.Fix Defects: Correct the issues found during testing and update the code to resolve identified defects.Re-execute Unit Tests: Run the unit tests again after fixes to ensure the defects have been resolved successfully.Measure Test Coverage: Evaluate code coverage to verify that critical paths, conditions, and branches have been adequately tested.Integrate with CI/CD Pipeline: Automate unit test execution within the build process to ensure continuous code quality and early defect detection.Types of Unit Testing Unit testing can be performed manually or automatically:Manual Unit TestingManual Unit Testing involves verifying individual units of code without relying on automated test frameworks. It is mainly used during debugging or initial code validation.Developers manually verify the behavior of small functions, methods, or modules. It is useful for quick validation during development or troubleshooting. It is not suitable for repetitive testing and becomes time-consuming as the application grows. Automated Unit TestingAutomated Unit Testing uses testing frameworks and tools to validate individual units of code automatically. It helps improve code quality and reduces the effort required for repeated testing.Tests are executed automatically and focus on isolated units of code. Mock objects or stubs are often used to eliminate dependencies on external systems. Automated unit tests are commonly integrated into CI/CD pipelines to support continuous testing and faster feedback.Architecture of Unit TestingUnit Testing Architecture defines the structure and approach used to test individual software components in isolation. It helps ensure that each unit functions correctly and supports maintainable, reliable, and high-quality code.Unit tests form the foundation of the Testing Pyramid (Unit → Integration → End-to-End) because they execute quickly, provide rapid feedback, and help detect defects early in development.Components of Unit Testing Architecture1. Test Isolation & Dependencies: Each unit is tested independently from external systems such as databases, APIs, and file systems. Mocks, stubs, and fakes are used to simulate dependencies, ensuring that only the unit's internal logic is validated.2. AAA Pattern (Arrange–Act–Assert): The AAA pattern provides a structured approach for writing clear and maintainable unit tests.Arrange: Prepare test data, objects, and required mocks. Act: Execute the function or method being tested. Assert: Verify that the actual result matches the expected outcome. This approach promotes modular testing, improves test readability, and enables developers to identify issues quickly. Since unit tests typically execute in milliseconds, they provide fast feedback during development and CI/CD execution.Common unit testing frameworks include JUnit (Java), pytest (Python), xUnit (.NET), and Jest (JavaScript).Unit Testing StrategiesTo create effective unit tests the following techniques are commonly used:Logic Checks: Verify that calculations are correct and all logical paths in the code are executed as expected.Boundary Checks: Test normal, edge, and invalid inputs to ensure the system handles limits correctly.Error Handling: Ensure the system responds properly to errors instead of crashing.Object-Oriented Checks: Confirm that object states are correctly updated after method execution.Unit Testing TechniquesThere are 3 types of Unit Testing Techniques. They are as follows:Black Box Testing: It is a technique where the system is tested based on inputs and expected outputs without any knowledge of internal code or logic. It focuses on validating functionality from a user’s perspective and ensures the system behaves correctly for given inputs.White Box Testing: It is a technique where the internal structure, logic, and code of the application are tested. It ensures that all code paths, conditions, and statements work correctly as expected.Gray Box Testing: It is a technique that combines both black box and white box testing approaches, where the tester has partial knowledge of the internal system. It helps in testing both functionality and some internal behaviors of the application.Characteristics of Unit TestingA good unit test ensures reliable and maintainable software by validating individual code units effectively. The key characteristics of a unit test are:Fast: Executes quickly so tests can be run frequently during development.Independent: Runs in isolation without relying on other tests or external systems.Repeatable: Produces the same result every time, regardless of environment.Self-Validating: Clearly indicates pass or fail without manual inspection.Focused: Tests a single function or behavior at a time.Readable and Maintainable: Easy to understand, update, and maintain.Benefits of Unit TestingUnit testing helps ensure reliable software by validating individual components of an application in isolation.Detects bugs early in the development cycle, reducing debugging cost. Improves code quality by ensuring each unit works correctly. Increases confidence when making code changes or adding new features. Speeds up development by allowing quick validation of code changes. Supports safe refactoring without breaking existing functionality. Acts as documentation for understanding code behavior.Implementation ExampleThe following example demonstrates Java code with appropriate unit test cases.Step 1. Create the Calculator class.
+            Java
+
+    public class Calculator {
+
+    // Method to add two numbers
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method to subtract two numbers
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+}
+
+Step 2. Create the TestNG test class.
+            Java
+
+    package com.example.tests;
+
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class CalculatorTest {
+
+    private Calculator calculator;
+
+    // This method runs before each test method
+    @BeforeMethod
+    public void setUp() {
+        calculator = new Calculator();
+    }
+
+    // Test for the 'add' method
+    @Test
+    public void testAdd() {
+        int result = calculator.add(5, 3);
+        // Assert that the result of 5 + 3 is 8
+        Assert.assertEquals(result, 8, "Addition result is incorrect");
+    }
+
+    // Test for the 'subtract' method
+    @Test
+    public void testSubtract() {
+        int result = calculator.subtract(5, 3);
+        // Assert that the result of 5 - 3 is 2
+        Assert.assertEquals(result, 2, "Subtraction result is incorrect");
+    }
+}
+
+Output:Unit Testing Example OutputBest Practices for Unit TestingFollowing best practices ensures that unit tests are effective, reliable, and easy to maintain over time.Create simple, clear, and independent test cases. Use meaningful test names that describe expected behavior. Follow the Arrange–Act–Assert (AAA) pattern. Avoid external dependencies by using mocks or stubs. Include boundary and edge case testing. Run and maintain tests regularly, ideally through CI/CD pipelines.Unit Testing ToolsFollowing are some of the unit testing tools:TestMu AI: A cloud-based AI-powered testing platform for cross-browser testing and automated testing support.JUnit: A widely-used Java testing framework for creating and running unit tests.NUnit: A .NET framework for unit testing C# applications.TestNG: An advanced Java testing framework with features like parallel testing.PHPUnit: A PHP testing framework for unit and integration tests.Mockito: A Java mocking framework for simulating dependencies.Limitations of Unit TestingUnit testing is an important part of software testing, but it has certain limitations that affect its scope and effectiveness.Focuses only on individual components and does not test overall system behavior. Cannot detect integration issues between different modules or services. Requires additional effort to write and maintain test cases for large projects. May not identify usability or UI-related issues that require end-user interaction. Effectiveness depends on the quality of test cases written by developers.

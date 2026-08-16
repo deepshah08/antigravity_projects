@@ -1,0 +1,138 @@
+# Garbage Collection in Java - GeeksforGeeks
+
+Garbage Collection (GC) in Java is an automatic memory management process performed by the JVM. It helps in removing unused and unreachable objects from heap memory, which improves memory utilization and application performance. Java developers do not need to manually free memory because the JVM automatically handles object cleanup.Helps prevent memory leaks and improves memory management. Managed internally by the Java Virtual Machine (JVM).Working of Garbage CollectionObject Creation : Objects are created in the heap memory when a program runs.Reference Checking: The garbage collector checks whether objects are still referenced by the program.Identify Unreachable Objects: Objects without any active reference become unreachable and eligible for garbage collection.Memory Cleanup: The JVM removes unreachable objects and frees heap memory automatically.Reuse of Memory: Freed memory can now be reused for creating new objects.Types of Garbage Collection in JavaJava Garbage Collection is mainly divided into two types based on the memory area cleaned by the JVM.1. Minor Garbage CollectionMinor Garbage Collection occurs in the Young Generation of heap memory. It removes short-lived and unreachable objects that are recently created.Works on Young Generation memory. Faster compared to Major GC. Removes temporary objects quickly. 2. Major or Full Garbage CollectionMajor Garbage Collection occurs in the Old Generation of heap memory. It removes long-lived objects that are no longer referenced.Works on Old Generation memory. Slower than Minor GC. Cleans long-lived unused objects.Key Concepts on Garbage CollectionUnreachable ObjectsAn object becomes unreachable if it does not contain any reference to it.Integer i = new Integer(4); // the new Integer object is reachable  via the reference in 'i'  i = null; // the Integer object is no longer reachable. Making Objects Eligible for GCAn object is said to be eligible for garbage collection if it is unreachable.  There are generally four ways to make an object eligible for garbage collection.Nullifying the reference variable (obj = null).Re-assigning the reference variable (obj = new Object()).An object created inside the method (eligible after method execution).Island of Isolation (Objects that are isolated and not referenced by any reachable objects).Requesting Garbage CollectionOnce an object is eligible for garbage collection, it may not be destroyed immediately. The garbage collector runs at the JVM's discretion and you cannot predict when it will occur.We can also request the JVM to run the garbage collector. There are two ways to do it: first, using System.gc(), and second, using Runtime.getRuntime().gc().Using System.gc(): This static method requests the JVM to perform garbage collection.Using Runtime.getRuntime().gc(): This method also requests garbage collection through the Runtime class.System.gc();  // OR  Runtime.getRuntime().gc();  The finalize() Method (Deprecated in Java 9+)Before destroying an object, the garbage collector calls the finalize() method to perform cleanup activities. The method is defined in the Object class as follows:@Override  protected void finalize() throws Throwable {  System.out.println("GC cleaning up...");  }  Note: finalize() method is deprecated since Java 9 because it is unpredictable and can cause performance issues.Alternatives like try-with-resources or explicit cleanup methods are preferred.The garbage collector calls finalize() at most once per object.Exceptions thrown in finalize() are ignored.Employee Management System Using Garbage Collection ConceptProblem Statement: To understand object eligibility for garbage collection, consider the following employee management example.This is the actual task you were given at the company: Write a program to create a class called Employee having the following data members. An ID for storing unique id allocated to every employee.  Name of employee. Age of an employee.Also, provide the following methods:A parameterized constructor to initialize name and age. The ID should be initialized in this constructor.A method show() to display ID, name and age.A method showNextId() to display the ID of the next employee.Common Beginner Approach (Without Garbage Collection)A common implementation assigns employee IDs using a static counter. However, this approach does not reclaim IDs when objects become unreachable.
+            Java
+
+    class Employee {
+   
+    private int ID;
+    private String name;
+    private int age;
+    private static int nextId = 1;
+    // it is made static because it is keep common among all and shared by all objects
+   
+    public Employee(String name, int age) {
+        this.name = name;
+        this.age = age;
+        this.ID = nextId++;
+    }
+  
+    public void show()
+    {
+        System.out.println("Id=" + ID + "\nName=" + name
+                           + "\nAge=" + age);
+    }
+  
+    public void showNextId()
+    {
+        System.out.println("Next employee id will be="
+                           + nextId);
+    }
+}
+ 
+class UseEmployee {
+    public static void main(String[] args) {
+      
+        Employee E = new Employee("GFG1", 56);
+        Employee F = new Employee("GFG2", 45);
+        Employee G = new Employee("GFG3", 25);
+        E.show();
+        F.show();
+        G.show();
+        E.showNextId();
+        F.showNextId();
+        G.showNextId();
+ 
+        { // It is sub block to keep all those interns.
+            Employee X = new Employee("GFG4", 23);
+            Employee Y = new Employee("GFG5", 21);
+            X.show();
+            Y.show();
+            X.showNextId();
+            Y.showNextId();
+        }
+          // Output of this line
+        E.showNextId(); 
+// nextId becomes 6 because IDs are assigned when objects are created.
+// Garbage Collection does not automatically reclaim or reuse IDs.
+    }
+}
+
+Output:Id=1Name=GFG1Age=56Id=2Name=GFG2Age=45Id=3Name=GFG3Age=25Next employee id will be=4Next employee id will be=4Next employee id will be=4Id=4Name=GFG4Age=23Id=5Name=GFG5Age=21Next employee id will be=6Next employee id will be=6Next employee id will be=6Note: This example demonstrates that when objects become unreachable, they are eligible for garbage collection. However, the JVM does not reclaim or reuse application-level identifiers such as employee IDs. Therefore, expecting nextId to decrease after garbage collection is incorrect.Modern Approach Using Cleaner API (Without finalize())Since finalize() and runFinalization() are deprecated, the proper way is to use the Cleaner API introduced in Java 9. Cleaner allows us to run a cleanup task automatically when the object becomes unreachable.
+            Java
+
+    import java.lang.ref.Cleaner;
+
+class Employee {
+
+    private int ID;
+    private String name;
+    private int age;
+
+    private static int nextId = 1;
+    private static final Cleaner cleaner = Cleaner.create();
+
+    private final Cleaner.Cleanable cleanable;
+
+    // Cleanup task to run when employee becomes unreachable
+    private static class State implements Runnable {
+        @Override public void run() { Employee.nextId--; }
+    }
+
+    public Employee(String name, int age)
+    {
+        this.name = name;
+        this.age = age;
+        this.ID = nextId++;
+
+        // Register cleaner to decrement ID on GC
+        cleanable = cleaner.register(this, new State());
+    }
+
+    public void show()
+    {
+        System.out.println("Id = " + ID + "\nName = " + name
+                           + "\nAge = " + age);
+    }
+
+    public void showNextId()
+    {
+        System.out.println("Next employee id will be = "
+                           + nextId);
+    }
+}
+
+public class UseEmployee {
+
+    public static void main(String[] args)
+    {
+
+        Employee E = new Employee("GFG1", 56);
+        Employee F = new Employee("GFG2", 45);
+        Employee G = new Employee("GFG3", 25);
+
+        E.showNextId(); // 4
+
+        { // Interns block
+            Employee X = new Employee("GFG4", 23);
+            Employee Y = new Employee("GFG5", 21);
+
+            X = null;
+            Y = null;
+            System.gc(); // Request GC
+        }
+
+        // Let cleaner run
+        try {
+            Thread.sleep(10);
+        }
+        catch (Exception e) {
+        }
+
+        E.showNextId(); // Correct: 4
+    }
+}
+
+OutputNext employee id will be = 4
+Next employee id will be = 4
+Advantages of Garbage CollectionAutomatically removes unused and unreachable objects from memory.Frees heap memory so it can be reused by new objects. Reduces the chances of memory leaks. Eliminates the need for manual memory management. Helps improve overall application performance and stability.

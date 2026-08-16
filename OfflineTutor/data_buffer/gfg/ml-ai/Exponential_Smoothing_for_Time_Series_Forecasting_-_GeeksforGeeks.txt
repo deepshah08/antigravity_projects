@@ -1,0 +1,108 @@
+# Exponential Smoothing for Time Series Forecasting - GeeksforGeeks
+
+Exponential Smoothing is a statistical technique used to forecast future observations by assigning exponentially decreasing weights to past data points. It is applied in scenarios where data shows randomness, trends or seasonality.Helps eliminate irregular spikes and dips caused by unpredictable events.Assigns higher importance to the most recent data without losing historical context.Works extremely well with continuously incoming observations.Smooth curves make it simpler to interpret upward or downward patterns.Requires minimal storage and performs fast calculations.Types of Exponential Smoothing1. Simple or Single Exponential SmoothingSimple Smoothing is a forecasting method used for time series data that does not exhibit a trend or seasonality. It relies on univariate data and uses a single parameter called alpha (\alpha) or the smoothing factor.\alpha determines how much weight is given to the current observation versus the past estimates.A smaller \alpha gives more importance to past predictions, while a larger \alpha emphasizes recent observations.The value of \alpha typically ranges from 0 to 1.The formula for simple smoothing is as follows:s_t = \alpha x_t + (1 - \alpha) s_{t-1} = s_{t-1} + \alpha (x_t - s_{t-1})Where:s_t: smoothed statistic (simple weighted average of current observation x_t)s_{t-1}: previous smoothed statistic\alpha: smoothing factor of data; 0 < \alpha < 1t: time period2. Double Exponential SmoothingDouble Exponential Smoothing is a method used to forecast the trend of a time series that does not have seasonality. It's also called Holt’s Trend Model, second-order smoothing or Holt’s Linear Smoothing.It accounts for trends in the data by introducing a trend component.It uses alpha \alpha to smooth the level of the series.It uses beta \beta  to smooth the trend or rate of change.It supports both additive and multiplicative trends.The formulas for Double exponential smoothing are as follows:s_t = \alpha x_t + (1 - \alpha)(s_{t-1} + b_{t-1})\beta_t = \beta (s_t - s_{t-1}) + (1 - \beta) b_{t-1}Where:b_t: best estimate of the trend at time t\beta: trend smoothing factor; 0 < \beta <13. Holt-Winters’ Exponential SmoothingTriple exponential smoothing also known as Holt-Winters smoothing is a smoothing method used to predict time series data with both a trend and seasonal component. Gamma (\gamma) is used to control the effect of seasonal component.The formulas for the triple exponential smoothing are as follows:s_{0} = x_{0}s_t = \alpha (x_t/c_{t - L}) +(1- \alpha)(s_{t-1} +b_{t-1})b_t = \beta (s_t - s_{t-1}) + (1 - \beta)b_{t-1}c_t = \gamma \frac{x_t}{s_t} + (1 - \gamma)c_{t-L}Where:s_t: smoothed statistics_{t-1}: previous smoothed statistic\alpha: smoothing factor of data (0 <\alpha < 1)t: time periodb_t: best estimate of a trend at time t\beta: trend smoothing factor (0 < \beta <1)c_t: seasonal component at time t\gamma: seasonal smoothing parameter (0 < \gamma < 1)ImplementationStepwise implementation of Exponential Smoothing:1. Import LibrariesImporting pandas and matplotlib library.
+            Python
+
+    import pandas as pd
+import matplotlib.pyplot as plt
+
+2. Load the DatasetLoading the dataset and inspect the first few rows.pd.read_csv(): Reads the CSV file into a pandas DataFrame.parse_dates=['Month']: Converts the 'Month' column to a datetime format while loading the data.index_col='Month': Sets the 'Month' column as the index of the DataFrame.data.head(): Displays the first five rows of the dataset.Download lthe dataset from here
+            Python
+
+    data = pd.read_csv('AirPassengers.csv', parse_dates=['Month'], index_col='Month')
+data.head()
+
+Output:AirPassengers  Dataset3. Visualizing the DataPlotting the dataset and visualizing the number of passengers over time.plt.plot(data): Plots the data.plt.xlabel('Year'): Labels the x-axis as "Year" to represent the time dimension of the dataset.plt.ylabel('Number of Passengers'): Labels the y-axis as "Number of Passengers" to indicate the metric being plotted.plt.show(): Displays the plot to visualize the data.
+            Python
+
+    plt.plot(data)
+plt.xlabel('Year')
+plt.ylabel('Number of Passengers')
+plt.show()
+
+Output:Visualizing the Data4. Apply Single Exponential smoothingApplying simple exponential smoothing to the dataset using statsmodels library.SimpleExpSmoothing(data): Initializes the Simple Exponential Smoothing model using the dataset data.model.fit(): Fits the model to the data, generating the smoothed values based on the provided dataset.
+            Python
+
+    from statsmodels.tsa.api import SimpleExpSmoothing
+model = SimpleExpSmoothing(data)
+model_single_fit = model.fit()
+
+Make PredictionsForecasting the next 6 time periods using the fitted model.model_single_fit.forecast(6): Generates a forecast for the next 6 periods based on the fitted Simple Exponential Smoothing model.
+            Python
+
+    forecast_single = model_single_fit.forecast(6)
+print(forecast_single)
+
+Output:Single Exponential smoothingVisualize Single Exponential SmoothingVisualizing the original data, fitted values and the forecasted values for the next 40 periods.model_single_fit.forecast(40): Forecasts the next 40 periods using the fitted model.plt.plot(data, label='Original Data'): Plots the original dataset (number of passengers) with the label "Original Data".plt.plot(model_single_fit.fittedvalues, label='Fitted Values'): Plots the fitted values (smoothed data) from the model with the label "Fitted Values".plt.plot(forecast_single, label='Forecast'): Plots the forecasted values for the next 40 periods with the label "Forecast".plt.legend(): Displays the legend to differentiate between the original data, fitted values and forecast.plt.show(): Displays the plot for visualization.
+            Python
+
+    forecast_single = model_single_fit.forecast(40)
+plt.plot(data, label='Original Data')
+plt.plot(model_single_fit.fittedvalues, label='Fitted Values')
+plt.plot(forecast_single, label='Forecast')
+plt.xlabel('Year')
+plt.ylabel('Number of Passengers')
+plt.title('Single Exponential Smoothing')
+plt.legend()
+plt.show()
+
+Output:Visualizing Single Exponential Smoothing5. Apply Double Exponential Smoothing (Holt's Linear Trend)Applying Holt's linear trend method to the dataset for double exponential smoothing using statsmodels library.Holt(data): Initializes the Holt's linear trend model using the dataset data. model_double.fit(): Fits the model to the data, capturing both level and trend in the series.
+            Python
+
+    from statsmodels.tsa.api import Holt
+
+model_double = Holt(data)
+model_double_fit = model_double.fit()
+
+Make PredictionsForecasting the next 6 time periods using Holt's linear trend model.
+            Python
+
+    forecast_double = model_double_fit.forecast(6)
+print(forecast_double)
+
+Output:Double Exponential SmoothingVisualizing Double Exponential SmoothingWe will now visualize the original data, fitted values and forecasted values for the next 40 periods using Holt's method.model_double_fit.forecast(40): Forecasts the next 40 periods using the fitted Holt's linear trend model.plt.plot(data, label='Original Data'): Plots the original dataset (number of passengers) with the label "Original Data".plt.plot(model_double_fit.fittedvalues, label='Fitted Values'): Plots the fitted values from the model with the label "Fitted Values".plt.plot(forecast_double, label='Forecast'): Plots the forecasted values for the next 40 periods with the label "Forecast".
+            Python
+
+    forecast_double = model_double_fit.forecast(40)
+plt.plot(data, label='Original Data')
+plt.plot(model_double_fit.fittedvalues, label='Fitted Values')
+plt.plot(forecast_double, label='Forecast')
+plt.xlabel('Year')
+plt.ylabel('Number of Passengers')
+plt.title('Double Exponential Smoothing')
+plt.legend()
+plt.show()
+
+Output:Visualizing Double Exponential Smoothing6. Apply Holt-Winter’s Seasonal SmoothingApplying triple exponential smoothing (Holt-Winters) to the dataset using statsmodels library.ExponentialSmoothing(): Initializes the Exponential Smoothing model.seasonal_periods=12: Specifies a seasonal cycle of 12 periods like monthly data with yearly seasonality.trend='add': Specifies an additive trend component.seasonal='add': Specifies an additive seasonal component.model_triple.fit(): Fits the model to the data, incorporating the level, trend and seasonality.
+            Python
+
+    from statsmodels.tsa.api import ExponentialSmoothing
+
+model_triple = ExponentialSmoothing(
+    data, 
+    seasonal_periods=12, 
+    trend='add', 
+    seasonal='add')
+
+model_triple_fit = model_triple.fit()
+
+Making PredictionsForecasting the next 6 time periods using the fitted triple exponential smoothing model.
+            Python
+
+    forecast_triple = model_triple_fit.forecast(6)
+print(forecast_triple)
+
+Output:Holt-Winter’s Seasonal SmoothingVisualize Triple Exponential SmoothingVisualize the original data, fitted values and forecasted values for the next 40 periods using triple exponential smoothing.forecast_triple = model_triple_fit.forecast(40): Forecasts the next 40 periods using the fitted triple exponential smoothing model.plt.plot(data, label='Original Data'): Plots the original dataset (number of passengers) with the label "Original Data".plt.plot(model_triple_fit.fittedvalues, label='Fitted Values'): Plots the fitted values from the model with the label "Fitted Values".plt.plot(forecast_triple, label='Forecast'): Plots the forecasted values for the next 40 periods with the label "Forecast".
+            Python
+
+    forecast_triple = model_triple_fit.forecast(40)
+plt.plot(data, label='Original Data')
+plt.plot(model_triple_fit.fittedvalues, label='Fitted Values')
+plt.plot(forecast_triple, label='Forecast')
+plt.xlabel('Year')
+plt.ylabel('Number of Passengers')
+plt.title('Triple Exponential Smoothing')
+plt.legend()
+plt.show()
+
+Output:Visualizing Triple Exponential SmoothingChoosing Exponential Smoothing TechniqueGuidelines for choosing an appropriate Exponential Smoothing technique are:MethodWhen to UseDescriptionExampleSimple Exponential Smoothing (SES)Time series with no trend or seasonality.Uses the most recent data point to forecast. Applied when data is stationary without clear trend or seasonality.Stock prices without a trend or season.Holt’s Linear SmoothingTime series with a trend but no seasonality.Extends SES to account for a linear trend. Forecasts data with consistent upward or downward movement.Sales data with steady growth.Holt-Winter’s Seasonal SmoothingTime series with both trend and seasonality.Adds a seasonal component to the trend, capturing both. Used for time series with repeating patterns and trends.Monthly temperature data or quarterly sales.AdvantagesEasy to configure and requires fewer historical values compared to complex forecasting algorithms.Recent observations are prioritized, improving responsiveness to changing trends.Lightweight calculations make it suitable for real-time prediction environments and low-resource systems.Irregular fluctuations are minimized, producing clearer and more interpretable forecast lines.Different variants like Simple, Holt, Holt-Winters allow modeling of level, trend and seasonality.DisadvantagesAbrupt spikes or drops in data can distort forecasts significantly.Incorrect selection of smoothing factors may lead to unstable or lagging predictions.Forecast quality decreases as the prediction horizon extends further into the future.Models may react excessively to random noise when smoothing values are high.

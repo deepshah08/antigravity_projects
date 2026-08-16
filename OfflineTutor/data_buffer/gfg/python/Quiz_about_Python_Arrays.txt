@@ -1,0 +1,105 @@
+# Quiz about Python Arrays
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython ArraysLast Updated : DiscussCommentsQuestion 1Which of the following is the correct way to create an array in Python using the array module?arr = [1, 2, 3]arr = array.array('i', [1, 2, 3])arr = array('i', [1, 2, 3])arr = {1, 2, 3}Question 2What is the output of the following code?
+        Python
+        
+        from array import array
+arr = array('i', [1, 2, 3, 4, 5])
+print(arr[0])
+
+        
+    015ErrorQuestion 3Which of the following methods is used to add an element to the end of an array?insert()append()extend()add()Question 4What will be the output of the following code?
+        Python
+        
+        from array import array
+arr = array('i', [1, 2, 3])
+arr.insert(1, 4)
+print(arr)
+
+        
+    array('i', [1, 4, 2, 3])array('i', [4, 1, 2, 3])array('i', [1, 2, 3, 4])ErrorQuestion 5What does the index method do in an array?Returns the last occurrence of a specified valueInserts a value at a specified positionReturns the index of the first occurrence of a specified valueRemoves an element at a specified positionQuestion 6How to create an empty array of integers in Python using the array module?arr = array.array('i')arr = array.array('i', [])Both a and bNone of the aboveQuestion 7What does the following code print?
+        Python
+        
+        from array import array
+arr = array('i', [1, 2, 3])
+arr[1] = 5
+print(arr)
+
+        
+    array('i', [1, 2, 3])array('i', [5, 2, 3])array('i', [1, 5, 3])ErrorQuestion 8What is the result of the following code?
+        Python
+        
+        from array import array
+arr1 = array('i', [1, 2, 3])
+arr2 = array('i', [4, 5])
+arr1 += arr2
+print(arr1)
+
+        
+    array('i', [1, 2, 3, 4, 5])array('i', [4, 5, 1, 2, 3])array('i', [1, 2, 3, 9, 10])ErrorQuestion 9What is the time complexity of accessing an element in an array by index?O(n)O(log n)O(1)O(n^2)Question 10Which of the following operations is not allowed on a Python array?Accessing an element by indexSlicingAdding elements of different typesIterating through elementsTags:PythonPython-QuizzesThere are 10 questions to complete.Take a part in the ongoing discussionView All Discussion

@@ -1,0 +1,20 @@
+# Express.js Tutorial - GeeksforGeeks
+
+Express.js is a minimal and flexible Node.js web framework used to build web applications and REST APIs. It simplifies server-side development with features like routing, middleware, and HTTP utilities.Built on Node.js for fast and scalable server-side development.Simplifies routing and middleware handling for web applications.Supports building REST APIs, real-time applications, and single-page applications.Provides a lightweight structure for flexible and efficient server-side development.Learn how to install Node.js on Windows, Linux, and macOS, and also how to Setup Express in a Node project.First Express.js ProgramHere’s how you can start with a basic Express.js application:
+            JavaScript
+
+    // Import Express
+const express = require('express');
+const app = express();
+
+// Define a route
+app.get('/', (req, res) => {
+    res.send('Welcome to the Express.js Tutorial');
+});
+
+// Start the server
+app.listen(3000, () => {
+    console.log('Server is running on http://localhost:3000');
+});
+
+It will start a server, and when you visit http://localhost:3000, it will displayWelcome to the Express.js TutorialExpress is imported using require('express'), and an app instance is created with express().A route is defined using the app.get() method, which responds with a message when the root URL (/) is accessed.The app.listen() method starts the server and listens on port 3000 for incoming requests.Express BasicStart by understanding what Express is and how to build a simple application.Introduction Node vs ExpressInstallation and First ApplicationStructure my Application Separate App and Server Unique features of ExpressFunctionsLearn the built-in functions before creating APIs.Express express.json() Functionexpress.Router() Functionexpress.static() Functionexpress.urlencoded() Functionexpress.raw() Functionexpress.text() Functionexpress() function Complete ReferenceHTTP Request and ResponseUnderstand how Express handles incoming requests and outgoing responses.HTTP request and response cyclereq.bodyreq.paramsreq.queryres.send()res.json()res.status()Request ObjectsLearn how to access client data.req.app Propertyreq.baseUrl Propertyreq.body Propertyreq.cookies Propertyreq.fresh Propertyreq.accepts() Functionreq.acceptsCharsets() Functionreq.acceptsEncodings() Functionreq.acceptsLanguages() FunctionRequest Complete ReferenceResponse ObjectsLearn different ways to send responses.res.app Propertyres.headersSent Propertyres.locals Propertyres.append() Functionres.attachment() Functionres.cookie() Functionres.clearCookie() Functionres.download() Functionres.end() FunctionResponse Complete ReferenceApplication ObjectsConfigure the Express application.app.locals Propertyapp.mountpath PropertyMount Eventapp.enable() Functionapp.disable() Functionapp.enabled() Functionapp.disabled() Functionapp.all() Functionapp.delete() FunctionApplication Complete ReferenceRouting & REST APIsLearn how routing works.Express HTTP methodsCreate routes using Express and Postmanrouter.METHOD() Functionrouter.route() Functionrouter.use() Functionrouter.all() Functionrouter.param() functionRouter Complete ReferenceMiddlewareMiddleware is one of the most important Express concepts.Middlewares in ExpressUse of next() function Create custom middleware express-session middlewareExpress Error HandlingAuthentication and AuthorizationREST API using the Express to perform CRUDImplement JWT authentication in Express app1-Minute Session Expiry in Express.js Advance ConceptsExpress GeneratorExpress in Enterprise DevelopmentDatabase IntegrationDatabase Integration in ExpressUpdate record in Cassandra using Express Express.js For InterviewExpress.js Interview Questions and Answers

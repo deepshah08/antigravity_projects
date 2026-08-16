@@ -1,0 +1,164 @@
+# Python String - GeeksforGeeks
+
+Strings are sequence of characters written inside quotes. It can include letters, numbers, symbols and spaces. Python does not have a separate character type.A single character is treated as a string of length one.Strings are commonly used for text handling and manipulation.Creating a StringStrings can be created using either single ('...') or double ("...") quotes. Both behave the same. 
+            Python
+
+    a = 'GFG'  
+b = "GeeksForGeeks"  
+print(a)
+print(b)
+
+OutputGFG
+GeeksForGeeks
+Multi-line StringsUse triple quotes ('''...''' ) or ( """...""") for strings that span multiple lines. Newlines are preserved.
+            Python
+
+    s = """I am Learning
+Python String on GeeksforGeeks"""
+print(s)
+
+s = '''I'm a 
+Geek'''
+print(s)
+
+OutputI am Learning
+Python String on GeeksforGeeks
+I'm a 
+Geek
+Accessing Characters in StringStrings are indexed sequences. Positive indices start at 0 from the left, negative indices start at -1 from the right as represented in below image:Positive and Negative IndexingExample 1: Access specific characters through positive indexing.
+            Python
+
+    s = "ABCDEF"
+print(s[0])   
+print(s[4])  
+
+OutputA
+E
+Note: Accessing an index out of range will cause an IndexError. Only integers are allowed as indices and using a float or other types will result in a TypeError.Example 2: Read characters from the end using negative indices.
+            Python
+
+    s = "ABCDEF"
+print(s[-3])  
+print(s[-5]) 
+
+OutputD
+B
+String SlicingSlicing is a way to extract a portion of a string by specifying the start and end indexes. The syntax for slicing is string[start:end], where start starting index and end is stopping index (excluded).
+            Python
+
+    s = "ABCDEF"
+print(s[1:4])    
+print(s[:3])     
+print(s[3:])    
+print(s[::-1])  
+
+OutputBCD
+ABC
+DEF
+FEDCBA
+Looping Through StringsStrings are iterable, which means we can access each character one by one using a loop.
+            Python
+
+    s = "ABCDEF"
+for char in s:
+    print(char)
+
+OutputA
+B
+C
+D
+E
+F
+Explanation: for loop goes through the string in order and each iteration prints the next character.String ImmutabilityStrings are immutable, meaning their values cannot be changed after creation. Any modification to a string creates a new string instead of altering the original one.
+            Python
+
+    s = "aBCDEF"
+s = "A" + s[1:]  
+print(s)
+
+OutputABCDEF
+Explanation: original string "aBCDEF" is not modified. A new string is created by combining "A" with s[1:] (rest of the string).Deleting a StringIndividual characters of a string cannot be deleted because strings are immutable. However, an entire string variable can be removed using del keyword. 
+            Python
+
+    s = "ABC"
+del s
+
+Note: After deleting a string, if we try to access it, Python raises a NameError because the variable no longer exists in memory.Updating a StringStrings cannot be changed directly after creation. So any modification results in a new string being created using slicing or methods like replace().
+            Python
+
+    s = "ABCD EF"
+s1 = "H" + s[1:]                  
+s2 = s.replace("ABC", "abc")  
+
+print(s1)
+print(s2)
+
+OutputHBCD EF
+abcD EF
+Explanation: s1: slice from index 1 onward and prepend "H".s2: replace("ABC", "abc") returns a new string.Common String MethodsPython provides various built-in methods to manipulate strings. Below are some of the most useful methods:1. len(): returns the total number of characters in a string (including spaces and punctuation).
+            Python
+
+    s = "GeeksforGeeks"
+print(len(s))
+
+Output13
+2. upper() and lower(): upper() method converts all characters to uppercase whereas, lower() method converts all characters to lowercase.
+            Python
+
+    s = "Hello World"
+print(s.upper())
+print(s.lower())
+
+OutputHELLO WORLD
+hello world
+3. strip() and replace(): strip() removes leading and trailing whitespace from the string and replace() replaces all occurrences of a specified substring with another.
+            Python
+
+    s = "   ABC   "
+print(s.strip())    
+
+s = "Python is fun"
+print(s.replace("fun", "awesome"))
+
+OutputABC
+Python is awesome
+To learn more about string methods, please refer to Python String Methods.Concatenating and Repeating Strings1. Concatenation: Strings can be combined by using + operator.
+            Python
+
+    s1 = "Hello"
+s2 = "World"
+print(s1 + " " + s2)
+
+OutputHello World
+2. Repetition: A string can be repeated multiple times using *.
+            Python
+
+    s = "Hello "
+print(s * 3)
+
+OutputHello Hello Hello 
+Formatting Strings1. Using f-strings: f-strings allows to directly insert variables and expressions inside a string using {} brackets.
+            Python
+
+    name = "Jake"
+age = 22
+print(f"Name: {name}, Age: {age}")
+
+OutputName: Jake, Age: 22
+2. Using format(): format() method allows inserting values into placeholders {} inside a string.
+            Python
+
+    s = "My name is {} and I am {} years old.".format( "Emily", 22)
+print(s) 
+
+OutputMy name is Emily and I am 22 years old.
+String Membership Testingin keyword is used to check whether a substring exists inside a string. It returns True if the substring is found, otherwise it returns False.
+            Python
+
+    s = "GeeksforGeeks"
+print("Geeks" in s)
+print("GfG" in s)
+
+OutputTrue
+False
+Related Articles:String ComparisonConvert integer to String Convert string to integer Convert a string to list

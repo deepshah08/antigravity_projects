@@ -1,0 +1,38 @@
+# Internal Linkage and External Linkage in C - GeeksforGeeks
+
+Linkage is the property that determines how identifiers (variables and functions) are connected and accessed across different parts of a program. It controls whether an identifier can be shared across files or remains restricted to a single translation unit.Scope controls the visibility of an identifier, while linkage controls whether it can be accessed across different files. A source file along with its included headers is processed as one unit. In multi-file programs, each source file is compiled separately, and the linker combines the object files. C has three types of linkage: Internal, External, and No linkage.Internal LinkageInternal linkage means an identifier can be accessed only within the translation unit (source file) where it is declared. It is commonly implemented using the static keyword.Any identifier within the same translation unit can access an internally linked identifier, but it cannot be accessed from other source files. Internally linked identifiers are stored in the initialized or uninitialized segment of RAM. For example, static variables and functions have internal linkage.
+            C
+
+    #include <stdio.h>
+
+static int count = 10;
+
+int main() {
+    printf("%d", count);
+    return 0;
+}
+
+Output10Syntaxstatic data_type identifier;External LinkageExternal linkage means an identifier can be accessed from different translation units (source files). It is the default linkage for globally scoped variables and functions.The extern keyword is used to declare an externally linked identifier and tells the linker to find its definition elsewhere.Externally linked variables and functions are shared between source files and are generally stored in the initialized/uninitialized or text segment.
+            C
+
+    #include <stdio.h>
+
+int count = 10;  // External linkage
+
+int main() {
+    printf("%d", count);
+    return 0;
+}
+
+Output10Syntaxextern data_type identifier;No LinkageNo linkage means an identifier is limited to the scope where it is declared and cannot be accessed through the same identifier from another scope or translation unit.Local variables and function parameters generally have no linkage because they are created within a specific block or function.No linkage is the default for most local variables, and the identifier is not shared between different source files.
+            C
+
+    #include <stdio.h>
+
+int main() {
+    int count = 10;  // No linkage
+    printf("%d", count);
+    return 0;
+}
+
+Output10Syntaxdata_type identifier;Internal Vs External LinkageInternal LinkageExternal LinkageAccessible only within the same translation unit.Accessible from multiple translation units.Commonly implemented using the static keyword.Commonly declared using the extern keyword.Used for file-specific variables and functions.Used for sharing variables and functions between files.Example: static int x;Example: extern int x;

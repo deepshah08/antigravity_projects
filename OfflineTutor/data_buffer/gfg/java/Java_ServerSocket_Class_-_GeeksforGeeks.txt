@@ -1,0 +1,82 @@
+# Java ServerSocket Class - GeeksforGeeks
+
+ServerSocket in Java is used to create server-side socket connections in a client–server model. It allows a server to listen for incoming client requests on a specific port and throws an exception if the port is unavailable.Provides a system-independent way to implement server-side networking.In java.nio.channels, it is associated with a ServerSocketChannel.In java.rmi.server, it creates server sockets for RMI communication.In javax.net, it supports creating unbound sockets or sockets bound to a port with optional backlog and local IP settings.Server-Side Programming Working of server-side programming using ServerSocket class.
+            Java
+
+    import java.io.*;
+import java.net.*;
+import java.io.*;
+import java.net.*;
+
+public class MyServer {
+    public static void main(String[] args) {
+        try {
+            System.out.println("Starting server...");
+
+            // Create a ServerSocket listening on port 6666
+            ServerSocket ss = new ServerSocket(6666);
+            System.out.println("Server started. Listening on port 6666...");
+
+            // Accept a connection from a client
+            Socket s = ss.accept();
+            System.out.println("Client connected!");
+
+            // Read the message from the client
+            DataInputStream d = new DataInputStream(s.getInputStream());
+            String str = d.readUTF();
+            System.out.println("Message: " + str);
+
+            // Close the socket
+            ss.close();
+        } catch (Exception e) {
+            System.out.println("Server Error: " + e);
+        }
+    }
+}
+
+Output: Explanation: In the above example, it demonstrates a basic server-side implementation using the ServerSocket class. It listens on port 6666, accepts a client connection, reads a message sent by the client, and then closes the connection.Client-Side ProgrammingWorking of client-side programming using ServerSocket class.
+            Java
+
+    import java.io.*;
+import java.net.*;
+
+public class MyClient {
+
+    // Main driver method
+    public static void main(String[] args) {
+
+        // Try block to check if exception occurs
+        try {
+
+            // Creating Socket class object and
+            // initializing Socket
+            Socket s = new Socket("localhost", 6666);
+
+            DataOutputStream d = new DataOutputStream(
+                s.getOutputStream());
+
+            // Message to be displayed
+            d.writeUTF("Hello GFG Readers!");
+
+            // Flushing out internal buffers,
+            // optimizing for better performance
+            d.flush();
+
+            // Closing the connections
+
+            // Closing DataOutputStream
+            d.close();
+            // Closing socket
+            s.close();
+        }
+
+        // Catch block to handle exceptions
+        catch (Exception e) {
+
+            // Print the exception on the console
+            System.out.println(e);
+        }
+    }
+}
+
+Output: Explanation: In the above example, it demonstrates a basic client-side implementation using the Socket class. It connects to a server at localhost on port 6666, sends a message "Hello GFG Readers!", and then closes the connection.Methods of Java ServerSocket MethodDescriptionaccept()Listens for a connection to be made to this socket and accepts it.bind(SocketAddress endpoint)Binds the ServerSocket to a specific address (IP address and port number).bind(SocketAddress endpoint, int backlog)Binds the ServerSocket to a specific address (IP address and port number) and requests queqe length. If a request arrives when the queue is full then the request will be rejected by the server.close()Closes this socketgetChannel()Returns the unique ServerSocketChannel object associated with this socket, if any.getInetAddress()Returns the local address of this server socket.getLocalPort()Returns the port number on which this socket is listening.getLocalSocketAddress()Returns the address of the endpoint this socket is bound to, or null if it is not bound yet.getReceiveBufferSize()Gets the value of the SO_RCVBUF option for this ServerSocket, that is the proposed buffer size that will be used for Sockets accepted from this ServerSocket.getReuseAddress()Tests if SO_REUSEADDR is enabled.getSoTimeout()Retrieve setting for SO_TIMEOUT.implAccept(Socket s)Subclasses of ServerSocket use this method to override accept() to return their own subclass of the socket.isBound()Returns the binding state of the ServerSocket.isClosed()Returns the closed state of the ServerSocket.setPerformancePreferences(int connectionTime, int latency, int bandwidth)Sets performance preferences for this ServerSocketSets performance preferences for this ServerSocketSets a default proposed value for the SO_RCVBUF option for sockets accepted from this ServerSocket.setReuseAddress(boolean on)Enable/disable the SO_REUSEADDR socket option.setSocketFactory(SocketImplFactory fac)Sets the server socket implementation factory for the application.setSoTimeout(int timeout)Enable/disable SO_TIMEOUT with the specified timeout, in milliseconds.toString()Returns the implementation address and implementation port of this socket as a String.

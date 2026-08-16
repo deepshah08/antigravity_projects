@@ -1,0 +1,15 @@
+# Features of Global Scheduling Algorithm in Distributed System - GeeksforGeeks
+
+In this article, we will learn about the features of a good scheduling algorithm in a distributed system.
+
+Fault Tolerance:A good global scheduling algorithm should not be stopped when system nodes are crashed or temporarily crashed. Algorithm configuration should also be even if the nodes are separated by multiple nodes.
+
+Scalability:A good global scheduling algorithm should be used for marketing, which means that the algorithm should work well even as the number of nodes increases. The scheduling algorithm will query the workload of all categories in the corrupted system and select a node with the least configuration load. The configuration procedure for distributed applications will disperse the load among the nodes; however, this does not guarantee that the nodes with higher efficiency when allocated will respond faster, and less loaded nodes may respond slower. Therefore, sharing the load—that is, allocating resources among the nodes among themselves until the tasks being performed are unaffected—should be the preferred approach rather than balancing.
+
+No apriori knowledge about the processes:Scheduling algorithms work based on the characteristics and resource requirement of the processes this information should be provided by the user. This will obviously put extra overhead on users, so a good global scheduling algorithm should require less amount prior knowledge. 
+
+Quick decision-making capability:Scheduling algorithms should be fast and should provide the best possible optimal decision in less amount of time. A good process-scheduling algorithm must make quick decisions about the assignment of processes to processors. This is an extremely important aspect of the algorithms and makes many potential solutions unsuitable. For example, an algorithm that models the system by a mathematical program and solves it online is unsuitable because it does not meet this requirement. Heuristic methods requiring less computational effort while providing near-optimal results are therefore normally preferable to exhaustive (optimal) solution methods.
+
+Stability:The useless migration of processes should be prevented ie if node n1 is idle and n2 and n3 have multiple processes, then node n2 and node n2 will send processes to node n1 causing node n1 to overload node n1 will move these processes to other nodes. which is a useless overhead to the system, so good scheduling algorithms should be stable and prevent useless migration.
+
+Dynamic in nature:Process allocations should be able to mean that allocations should be made based on the current load of the system but not based on specific planned conditions. The scheduler should also be able to move processes from one node to another duplicate so that the distribution is based on the current system load.

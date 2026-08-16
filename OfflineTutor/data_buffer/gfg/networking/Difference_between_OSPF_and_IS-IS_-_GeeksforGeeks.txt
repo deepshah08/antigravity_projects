@@ -1,0 +1,118 @@
+# Difference between OSPF and IS-IS - GeeksforGeeks
+
+1. OSPF :
+It was developed because of in demand in the internet society to launch a high functionality non-proprietary IGP for the TCP/IP protocol community.
+
+The OSPF is an intradomain routing protocol and is based on link state routing technology. It has introduced some new concepts that are authentication of routing updates, variable length Subnet masks (VLSM), root summarizations etc.
+
+2. IS-IS :
+Intermediate System to Intermediate System is a standardized link-state protocol that was developed to the definitive routing protocol for the OSI Model.
+
+IS-IS is a Link-state IGP. Link-state protocols are distinguished by the circulation of the information required to build a complete network connectivity map on each participating router. This map is then used to calculate the shortest path to destinations.
+
+Predominantly used in ISP environment.
+
+
+Difference between OSPF and IS-IS :
+
+
+
+
+    
+        
+            S.No.
+            Parameter
+            OSPF
+            IS-IS
+        
+        
+            1.
+            Administrative Distance
+            110
+            115
+        
+        
+            2.
+            Standard
+            RFC 2328 (OSPFv2).
+            ISO 10589, RFC 1195.
+        
+        
+            3.
+            Operating OSI Layer
+            OSPF operates on the top of IP layer.
+            IS-IS operates over L2.
+        
+        
+            4.
+            Virtual Links Supported
+            Yes
+            No
+        
+        
+            5.
+            DR/BDR Election
+            OSPF elects a BDR and DR on broadcast networks.
+            IS-IS elects a single DIS on broadcast networks.
+        
+        
+            6.
+            IP Connectivity
+            OSPF Requires the IP Connectivity between the routers to share the routing information.
+            IS-IS doesn't require IP connectivity between the routers as updates are sent via CLNS instead of IP.
+        
+        
+            7.
+            Support
+            OSPF supports NBMA and point to multipoint links.
+            IS-IS doesn't support.
+        
+        
+            8.
+            Router Area
+            OSPF router can belong to multiple areas.
+            IS-IS router can belong to only one area.
+        
+        
+            9.
+            Area/Level Types
+            
+                Backbone Area
+                Standard Area (Non Backbone Area)
+            
+            
+                Level 1
+                Level 2
+                Level 1/2 Areas
+            
+        
+        
+            10.
+            Security
+            Prone to attack and hence requires more security overheads for protection.
+            Since, IS-IS runs on level2, hence every unlikely possibility of attack.
+        
+        
+            11.
+            Identification
+            OSPF uses Router id to identify a router on network.
+            IS-IS uses System ID to identify a router on the network.
+        
+        
+            12.
+            Flexibility
+            Less Flexible than IS-IS.
+            More Flexible to use than OSPF especially in provider domain.
+        
+        
+            13.
+            Table Refresh
+            OSPF refreshes the entire routing table after 30 minutes.
+            IS-IS doesn't refresh the entire SPF Table Periodically like OSPF.
+        
+        
+            14.
+            Related Terms
+            Area, Non Backbone Area, Backbone Area, ABR, ASBR, Host.
+            
+            IS, Level 1, Level 2, L1/L2, Subdomain, ES.

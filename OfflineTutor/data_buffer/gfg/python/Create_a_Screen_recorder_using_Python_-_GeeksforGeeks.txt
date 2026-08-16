@@ -1,0 +1,43 @@
+# Create a Screen recorder using Python - GeeksforGeeks
+
+A screen recorder captures the activities performed on a computer screen and saves them as a video. Using Python, you can build a screen recorder with PyAutoGUI for taking screenshots, NumPy for processing image frames, and OpenCV for creating the video.PrerequisitesInstall the required libraries before running the programPyAutoGUI: Captures screenshots of the screen.NumPy: Converts screenshots into arrays for processing.OpenCV: Handles video creation and frame processing.pip install numpy pyautogui opencv-pythonWorking of Screen RecorderCapture the Screen: The program continuously takes screenshots using PyAutoGUI.Convert Screenshots to Frames: Each screenshot is converted into a NumPy array that can be processed by OpenCV.Write Frames to a Video: OpenCV stores the captured frames in a video file using a specified codec and frame rate.Display Live Preview (Optional): A preview window shows the recording while it is in progress.Stop Recording: Pressing the q key stops the recording and saves the video.ImplementationStep 1: Import the Required LibrariesImport the libraries required for screen capturing, image processing, and video creation.
+            Python
+
+    import pyautogui
+import cv2
+import numpy as np
+
+Explanation:pyautogui captures screenshots of the screen.cv2 provides functions for video creation and frame processing.numpy converts screenshots into arrays for OpenCV.Step 2: Configure the Video RecorderSet the screen resolution, output filename, video codec, frame rate, and create a VideoWriter object.
+            Python
+
+    resolution = (1920, 1080)
+codec = cv2.VideoWriter_fourcc(*"XVID")
+filename = "Recording.avi"
+fps = 60.0
+out = cv2.VideoWriter(filename, codec, fps, resolution)
+
+Explanation:resolution defines the dimensions of the recorded video.VideoWriter_fourcc() specifies the codec used for video compression.filename sets the name of the output video file.fps determines the number of frames recorded per second.VideoWriter() creates the object that writes frames to the video file.Note: Ensure that the resolution matches your screen size. Using an incorrect resolution may result in distorted or cropped recordings.Step 3: Create a Preview WindowOptional: To display the recording in real-time, we have to create an Empty window and resize it.
+            Python
+
+    cv2.namedWindow("Live", cv2.WINDOW_NORMAL)
+cv2.resizeWindow("Live", 480, 270)
+
+Explanation:namedWindow() creates a window for displaying the recording.WINDOW_NORMAL allows the window to be resized.resizeWindow() sets the preview window size.This step is optional and does not affect the recording process.Step 4: Capture and Save the Screen RecordingCapture screenshots continuously, convert them into frames, and save them to the output video.
+            Python
+
+    while True:
+    img = pyautogui.screenshot()
+    frame = np.array(img)
+    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    out.write(frame)
+    cv2.imshow('Live', frame)
+    if cv2.waitKey(1) == ord('q'):
+        break
+
+Explanation:screenshot() captures the current screen.np.array() converts the screenshot into an image array.cvtColor() converts the frame into a format supported by OpenCV.out.write() writes each frame to the output video.imshow() displays the live recording preview.waitKey(1) checks if the q key is pressed to stop recording.Step 5: Release ResourcesAfter everything is done, we will release the writer and destroy all windows opened by OpenCV.
+            Python
+
+    out.release()
+cv2.destroyAllWindows()
+
+Explanation:release() saves the recorded video and releases the VideoWriter object.destroyAllWindows() closes all windows opened by OpenCV.These statements ensure the program exits properly after recording is complete.Output:

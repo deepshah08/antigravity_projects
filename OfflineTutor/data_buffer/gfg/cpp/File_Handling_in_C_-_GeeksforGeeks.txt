@@ -1,0 +1,271 @@
+# File Handling in C++ - GeeksforGeeks
+
+File handling means reading from and writing to files (like .txt, .csv, etc.) using classes provided by the C++ standard library.Programs run in RAM, meaning data exists only while the program is running, when a program ends, all data in RAM is lost automatically.File handling allows storing data in secondary memory (like HDD or SSD), so it can be preserved permanently and can be saved and accessed even after the program terminates.For file operations, C++ provides file stream classes in the <fstream> header such as ofstream, ifstream, fstream.Opening a FileBefore reading from or writing to a file, we first need to open it. Opening a file loads that file in the RAM. In C++, we open a file by creating a stream to it using the fstream class that represent the file stream i.e. stream for input and output to the file.
+            C++
+
+    fstream str("filename.ext", mode);
+
+where,str: Name given to the streamfilename: Name of the filemode: Represents the way in which we are going to interact with the file.File Opening ModesFile opening mode indicate file is opened for reading, writing, or appending. Below is the list of all file modes in C++:ModeDescriptionios::inFile open for reading. If file does not exists, the open operation fails.ios::outFile open for writing: the internal stream buffer supports output operations.ios::binaryOperations are performed in binary mode rather than text.ios::ateThe output position starts at the end of the file.ios::appAll output operations happen at the end of the file, appending to its existing contents.ios::truncAny contents that existed in the file before it is open are discarded.For Example, if we want to open the file for reading, we use the following opening mode:
+            C++
+
+    fstream filein("file.txt", ios::in);
+
+Similarly, if we want to open the file for writing, we use the following:
+            C++
+
+    fstream fileout("file.txt", ios::out);
+
+These modes can also be combined using OR operator (|). For example, you can open the file stream in both read and write mode as shown:
+            C++
+
+    fstream str("file.txt", ios::in | ios::out);
+
+If the file opened in write mode does not exists, a new file is created. But if the file opened in read mode doesn't exists, then no new file is created, and an exception is thrownOther File Streamsfstream is not the only file stream provided by C++. There are two more specialized streams:ifstream: Stands for input file stream. It is equivalent to open fstream in ios::in mode.ofstream: Stands for output file stream. It is equivalent to opening fstream in ios::out mode.The above modes are default modes for these streams. These modes cannot be changed but can be clubbed together with other modes. Now for input, we can also use ifstream as shown:
+            C++
+
+    ifstream filein("file.txt");
+
+Similarly, for output:
+            C++
+
+    ofstream fileout("file.txt");
+
+Write Data to FileOnce the file is opened in the write mode using either fstream or ofstream, we can perform the write operation in similar way as with cout using << operator.
+            C++
+
+    #include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+
+    // Open a file
+    ofstream file("GFG.txt");
+    
+    // Write the string to the file
+    file << "Welcome to GeeksforGeeks.";
+
+    return 0;
+}
+
+GFG.textRead Data from FileOnce the file is opened in the read mode using either fstream or ifstream, we can perform the write operation in similar way as with cin using >> operator.
+            C++
+
+    #include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+
+    // Open a file in read mode
+    ifstream file("GFG.txt");
+    string s;
+
+    // Read string from the file
+    file >> s;
+
+    cout << "Read String: " << s;
+
+    return 0;
+}
+
+OutputRead String: WelcomeThis has same problem as cin. The input is only taken until the first whitespace character. To avoid this, we can use the getline() function as shown:
+            C++
+
+    #include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+
+    // Open a file in read mode
+    ifstream file("GFG.txt");
+    string s;
+
+    // Read string from the file
+    getline(file, s);
+
+    cout << "Read String: " << s;
+
+    return 0;
+}
+
+OutputRead String: Welcome to GeeksforGeeks.Closing the FileClosing the file means closing the associated stream and free the resources that we being used. It is important to close the file after you are done with it, especially in the long running programs to avoid memory leaks, data loss, etc.In C++, the files are closed using the close() member function that is present in all file streams.
+            C++
+
+    #include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+
+    // Open a file in read mode
+    ifstream file("GFG.txt");
+    string s;
+
+    // Read string from the file
+    getline(file, s);
+
+    cout << "Read String: " << s;
+
+    // Close the file
+    file.close();
+
+    return 0;
+}
+
+OutputRead String: Welcome to GeeksforGeeks.Errors in File HandlingMany different types of errors can occur in file handling such as file not found, disk full, etc. Our programs should expect common errors and should be able to handle them properly. Following are some common errors that can occur during file handling:File Open FailureThere can be cases in which the file is not opened due to various reasons such as it doesn't exists, or the program does not have permission to open it, etc. In this case, we can use the is_open() member function of the file stream classes to check whether the file is opened sucessfullly or not.
+            C++
+
+    #include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    fstream file("nonexistent_file.txt", ios::in);
+
+    // Check if the file is opened
+    if (!file.is_open()) {
+        cerr << "Error: Unable to open file!" << endl;
+        return 1;
+    }
+
+    file.close();
+    return 0;
+}
+
+OutputError: Unable to open file!Failure to Read/Write DataAnother common error is failure to read or write data for reasons such as incorrect mode, etc. In this case, we can validate operations after each read/write attempt. For example, reading using getline() can be validated as shows:
+            C++
+
+    #include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    fstream file("GFG.txt", ios::out);
+
+    if (!file.is_open()) {
+        cerr << "Error: Unable to open file!" << endl;
+        return 1;
+    }
+    string line;
+    
+    // Checking if getline() read successfully or not
+    if (!getline(file, line))
+        cerr << "Error: Failed to read data" << endl;
+
+    file.close();
+    return 0;
+}
+
+OutputError: Failed to read dataEnd-of-File (EOF) ErrorTrying to read beyond the end of the file can cause an EOF error. This can happen when you don't check for the end of the file before reading. We can check for EOF using eof() member function.
+            C++
+
+    #include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    ifstream file("GFG.txt");
+
+    if (!file.is_open())
+    {
+        cerr << "Error: Unable to open file!" << endl;
+        return 1;
+    }
+    string line;
+    while (getline(file, line))
+        cout << line << endl;
+
+    // Check for eof
+    if (file.eof())
+        cout << "Reached end of file." << endl;
+    else
+        cerr << "Error: File reading failed!" << endl;
+
+    file.close();
+    return 0;
+}
+
+OutputReached end of file.Notice that we have also validated the read operation before checking EOF as getline() will only return nullptr even if the read fails due to any reason.Handling Binary FilesIn C++, we can also handle binary files, which store data in raw format. To read and write binary data, must use the ios::binary flag when creating/opening a binary file.Write into Binary FileTo write data to a binary file, we first need to open or create the file in ios::binary mode.
+            C++
+
+    #include <cstring>
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string str = "Welcome to GeeksForGeeks";
+
+    // Open a binary file for writing
+    ofstream file("fileBin.bin", ios::binary);
+
+    // Check if the file is open
+    if (!file)
+    {
+        cerr << "Error opening the file for writing.";
+        return 1;
+    }
+
+    // Write the length of the string (size) to file first
+    size_t strLength = str.length();
+    file.write(reinterpret_cast<const char *>(&strLength), sizeof(strLength));
+
+    // Write the string to the binary file
+    file.write(str.c_str(), strLength);
+
+    // Close the file
+    file.close();
+
+    return 0;
+}
+
+OutputBinary FileReading from Binary FileJust as we open a file in binary mode to write data, to read data from a binary file, we must open the file in read mode using ios::in.Syntax:
+            C++
+
+    fstream fileInstance("fileName.bin", ios::in| ios::binary);
+
+
+            C++
+
+    #include <cstring>
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string str;
+
+    // Open the binary file for reading
+    fstream file("fileBin.bin", ios::in | ios::binary);
+
+    // Check if the file is open
+    if (!file)
+    {
+        cerr << "Error opening the file for reading.";
+        return 1;
+    }
+
+    // Read the length of the string (size) from the file
+    size_t strLength;
+    file.read(reinterpret_cast<char *>(&strLength), sizeof(strLength));
+
+    // Allocate memory for the string and read the data
+    char *buffer = new char[strLength + 1]; // +1 for the null-terminator
+    file.read(buffer, strLength);
+
+    // Null-terminate the string
+    buffer[strLength] = '\0';
+
+    // Convert the buffer to a string
+    str = buffer;
+
+    // Print file data
+    cout << "File Data: " << str;
+    delete[] buffer;
+    file.close();
+
+    return 0;
+}
+
+OutputFile Data: Welcome to GeeksForGeeksOther File OperationsWe can also do more operations to manipulate a file from our C++ program. some of the common file operations are:C++ Program to Delete a FileAppend a String in an Existing FileCopy One File into Another File

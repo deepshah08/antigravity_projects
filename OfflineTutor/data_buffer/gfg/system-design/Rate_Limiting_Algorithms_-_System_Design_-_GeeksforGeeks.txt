@@ -1,0 +1,131 @@
+# Rate Limiting Algorithms - System Design - GeeksforGeeks
+
+Rate Limiting Algorithms are mechanisms designed to control the rate at which requests are processed or served by a system. These algorithms are crucial in various domains such as web services, APIs, network traffic management, and distributed systems to ensure stability, fairness, and protection against abuse.Prevents excessive requests by limiting how frequently users can access the system, avoiding overload and performance issues. Ensures fair usage by balancing resource access among users and reducing chances of abuse.Example: An API allows only 100 requests per minute per user; if exceeded, further requests are temporarily blocked.Rate limiting is commonly used inAPIs: Limits the number of requests a user or application can make within a specific period.Web Servers: Controls incoming traffic and helps protect servers from excessive requests and DoS attacks.Content Delivery Networks (CDNs): Limits requests for cached resources to reduce congestion and maintain consistent content delivery.E-commerce Platforms: Controls traffic during high-demand events, limits bot activity, and ensures fair access to resources.Why Do We Need Rate Limiting?Without rate limiting, a small number of clients can generate enough traffic to consume resources that should be available to other users. Rate limiting helps:Prevent excessive requests from overwhelming application resources. Protect downstream services such as databases and third-party APIs. Enforce usage quotas for users, applications, or tenants. Improve fairness by preventing a single client from consuming a disproportionate share of resources. Reduce the impact of traffic spikes and abusive clientsTypes of Rate Limiting AlgorithmsThe commonly used rate limiting algorithms include:1. Token Bucket AlgorithmThe Token Bucket algorithm maintains a bucket that can hold a fixed number of tokens. Tokens are added to the bucket at a configured rate.Each incoming request requires one or more tokens:If enough tokens are available, the request is accepted and the required tokens are removed. If there are not enough tokens, the request is rejected or delayed. The bucket has a maximum capacity, which limits how many unused tokens can accumulate. Because tokens can accumulate when the system is idle, the algorithm can allow a controlled burst of requests while maintaining an average rate over time.Example: Suppose an API has:Token generation rate = 5 tokens/secondBucket capacity = 10 tokensEach request requires = 1 tokenIf the bucket contains 10 tokens, up to 10 requests can be processed immediately. After those tokens are consumed, new requests must wait for tokens to be generated or will be rejected, depending on the implementation.Token Bucket AlgorithmBenefitsSimple to understand and implement.Supports controlled bursts of traffic.Provides flexible rate limiting based on token capacity and refill rate.ChallengesRequires maintaining the token count and refill state.Choosing suitable token and refill rates can be difficult for highly variable workloads. A large bucket capacity can allow large short-term bursts.WorkingCreate a bucket with a maximum capacity.Add tokens at a configured rate. When a request arrives, check the number of available tokens. If sufficient tokens exist, remove the required tokens and accept the request. Otherwise, reject or delay the request. Never allow the number of tokens to exceed the bucket capacity.Implementation 
+            Python
+
+    import time
+
+
+class TokenBucket:
+    def __init__(self, rate, capacity):
+        self.rate = rate
+        self.capacity = capacity
+        self.tokens = capacity
+        self.last_refill = time.time()
+
+    def allow_request(self):
+        now = time.time()
+
+        # Add tokens based on elapsed time
+        elapsed = now - self.last_refill
+        self.tokens += elapsed * self.rate
+
+        # Do not exceed bucket capacity
+        self.tokens = min(self.tokens, self.capacity)
+
+        self.last_refill = now
+
+        # Allow request if a token is available
+        if self.tokens >= 1:
+            self.tokens -= 1
+            return True
+
+        return False
+
+2. Leaky Bucket AlgorithmThe Leaky Bucket algorithm treats incoming requests as items placed into a queue or bucket with a fixed capacity. Requests are processed at a configured rate.The key idea is to smooth the outgoing request rate:Requests may arrive at different rates. They are placed into the bucket. Requests are processed at a relatively constant rate. If the bucket becomes full, additional requests are rejected or discarded. This makes the algorithm useful when a system needs a predictable processing rate rather than allowing large instantaneous bursts.Example: Suppose a service can process 5 requests per second. If 20 requests arrive almost simultaneously, the system can place them into a queue and process them at the configured rate, provided the queue has enough capacity.Leaky Bucket AlgorithmBenefitsSmooths out bursty traffic by enforcing a steady output rate.Ensures fair distribution of resources among users or applications.Relatively easy to implement and understand.Helps mitigate certain types of Denial of Service (DoS) attacks.ChallengesRequires memory to store queued requests or track the bucket state.May reject requests when the bucket reaches its capacity. Does not allow bursts to pass through as quickly as Token Bucket. Queued requests may experience additional delay.WorkingCreate a bucket or queue with a fixed capacity.Add incoming requests to the bucket. Process requests at a configured rate. Remove processed requests from the bucket. If the bucket is full, reject or discard additional requests.Implementation 
+            Python
+
+    import time
+
+
+class LeakyBucket:
+    def __init__(self, capacity, leak_rate):
+        self.capacity = capacity
+        self.leak_rate = leak_rate
+        self.bucket_size = 0
+        self.last_updated = time.time()
+
+    def add_data(self, data_size):
+        current_time = time.time()
+
+        # Calculate elapsed time
+        elapsed_time = current_time - self.last_updated
+        self.last_updated = current_time
+
+        # Leak data over time
+        leaked = self.leak_rate * elapsed_time
+        self.bucket_size = max(
+            0,
+            self.bucket_size - leaked
+        )
+
+        # Check if the new data fits
+        if self.bucket_size + data_size <= self.capacity:
+            self.bucket_size += data_size
+            return True
+
+        return False
+
+
+# Example usage
+bucket = LeakyBucket(capacity=10, leak_rate=1)
+
+data_to_send = 5
+
+if bucket.add_data(data_to_send):
+    print(f"Data of size {data_to_send} accepted.")
+else:
+    print(
+        f"Bucket overflow. Unable to accept "
+        f"data of size {data_to_send}."
+    )
+
+3. Fixed Window AlgorithmThe Fixed Window algorithm divides time into fixed intervals and counts requests within each interval. For example, an API may allow 100 requests per minute. The system counts requests during each one-minute window and rejects requests after the configured limit is reached. Example: Suppose the limit is 5 requests per minute.During: 10:00:00 – 10:00:59 -> the user can make up to 5 requests. At: 10:01:00 -> the counter resets and another 5 requests are allowed.Fixed Window AlgorithmBenefitsSimple to understand and implement.Requires low memory and computational overhead. Works well for simple rate-limiting requirementsChallengesCan allow bursts at window boundaries.Provides less precise control for highly variable traffic. Requests may be rejected until the current window expires after the limit is reached.WorkingDefine a fixed time interval.Maintain a request counter for that interval. Increment the counter when a request arrives. Accept the request if the counter is within the limit. Reject the request if the limit has been reached. Reset the counter when the window expires.Implementation 
+            Python
+
+    import time
+
+
+class FixedWindow:
+    def __init__(self, window_size, max_requests):
+        self.window_size = window_size
+        self.max_requests = max_requests
+        self.requests = 0
+        self.window_start = time.time()
+
+    def allow_request(self):
+        now = time.time()
+
+        # Start a new window
+        if now - self.window_start >= self.window_size:
+            self.requests = 0
+            self.window_start = now
+
+        # Check request limit
+        if self.requests < self.max_requests:
+            self.requests += 1
+            return True
+
+        return False
+
+4. Sliding Window AlgorithmThe Sliding Window algorithm evaluates requests within a continuously moving time interval rather than using globally fixed boundaries. For example, suppose the limit is:20 requests in any 60-second period.When a new request arrives, the system considers the requests that occurred during the previous 60 seconds.Older requests eventually leave the window, allowing new requests to be accepted.A sliding-window log stores request timestamps and removes timestamps that fall outside the current window. This provides precise tracking but can require more memory as request volume increases.Example: Suppose an API allows 5 requests per second.At time 10:00:05, the system checks requests received since 10:00:04.If five requests already exist in that interval, another request is rejected.As older requests leave the one-second window, new requests can be accepted. BenefitsProvides more precise control over request rates than a traditional fixed-window counter.Avoids the sharp boundary behavior of fixed windows. Works well when accurate rate enforcement is important. Adapts continuously as time moves forward.ChallengesMore complex to implement than Fixed Window.Requires additional memory to store request timestamps.Can require more computation when processing a large number of requests.WorkingThe system maintains a log of request timestamps.When a new request arrives, timestamps outside the configured window are removed.The system counts the remaining requests.If the count is below the configured limit, the request is accepted and its timestamp is added.Otherwise, the request is rejected.Implementation
+            Python
+
+    class SlidingWindow:
+    def __init__(self, window_size, max_requests):
+        self.window_size = window_size
+        self.max_requests = max_requests
+        self.requests = deque()
+
+    def allow_request(self):
+        now = time.time()
+        while self.requests and self.requests[0] <= now - self.window_size:
+            self.requests.popleft()
+
+        if len(self.requests) < self.max_requests:
+            self.requests.append(now)
+            return True
+        else:
+            return False
+
+How to Choose a Rate Limiting Algorithm?There is no single algorithm that is best for every system. Consider the following factors when selecting an algorithm.Traffic PatternToken Bucket: Suitable when short bursts should be allowed.Leaky Bucket: Suitable when traffic must be processed at a steady rate.Fixed Window: Suitable for simple and predictable traffic.Sliding Window: Suitable for variable traffic requiring more accurate rate control.Implementation ComplexityFixed Window is the simplest to implement.Token Bucket requires token tracking and refill logic.Sliding Window requires maintaining and updating request timestamps.Performance RequirementsLow-overhead algorithms are preferred for high-throughput systems.The selected algorithm should meet the system's latency and processing requirements.ScalabilityThe algorithm should handle growth in traffic efficiently. It should remain effective as the system scales over time. FlexibilityChoose algorithms that can adjust based on traffic patterns. Helps balance strict rate limiting with occasional bursts.Handling Bursts and SpikesDifferent algorithms handle traffic bursts in different ways:Token Bucket: Allows controlled bursts when enough tokens have accumulated.Leaky Bucket: Smooths bursts by processing requests at a constant rate.Sliding Window: Controls bursts by considering requests within a continuously moving time interval.Hybrid Approaches: Combine multiple techniques to meet specific system requirements.

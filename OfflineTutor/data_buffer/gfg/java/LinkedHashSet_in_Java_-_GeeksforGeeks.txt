@@ -1,0 +1,117 @@
+# LinkedHashSet in Java - GeeksforGeeks
+
+LinkedHashSet is a class in Java that implements the Set interface and maintains insertion order while storing unique elements. It combines the features of a HashSet and a LinkedList.Maintains insertion order of elements Stores unique elements only (no duplicates) Provides fast performance for basic operations
+            Java
+
+    import java.util.LinkedHashSet;
+
+public class Geeks {
+    public static void main(String[] args) {
+      
+        // Create a LinkedHashSet of Strings
+        LinkedHashSet<String> set = new LinkedHashSet<>();
+        set.add("Apple");
+        set.add("Banana");
+        set.add("Cherry");
+        set.add("Apple");
+        System.out.println("" + set);
+    }
+}
+
+Output[Apple, Banana, Cherry]
+Note: If an element is removed and then added again, it is inserted at the end of the LinkedHashSet, because insertion order is maintained based on latest insertion.Hierarchy of LinkedHashSetIt implements the Set interface, which is a sub-interface of the Collection interface.LinkedHashSetConstructors of LinkedHashSet 1. LinkedHashSet()This constructor is used to create an empty LinkedHashSet with the default capacity i.e. 16 and load factor 0.75.LinkedHashSet<E> hs = new LinkedHashSet<E>();2. LinkedHashSet(Collection C) Used in initializing the LinkedHashSet with the elements of the collection C.LinkedHashSet<E> hs = new LinkedHashSet<E>(Collection<? extends E> c);3. LinkedHashSet(int initialCapacity)Used to initialize the size of the LinkedHashSet with the integer mentioned in the parameter.LinkedHashSet<E> hs = new LinkedHashSet<E>(int initialCapacity);4. LinkedHashSet(int capacity, float fillRatio)Creates an empty LinkedHashSet with specified capacity and load factor.LinkedHashSet<E> hs = new LinkedHashSet<E>(capacity, loadFactor);Performing Various Operations on LinkedHashSet Let’s see how to perform a few frequently used operations on the LinkedHashSet.1. Adding Elements in LinkedHashSetIn order to add an element to the LinkedHashSet, we can use the add() method. This is different from HashSet because in HashSet, the insertion order is not retained but is retained in the LinkedHashSet.
+            Java
+
+    import java.io.*;
+import java.util.*;
+
+class Geeks {
+
+    public static void main(String[] args) {
+
+        // Creating an empty LinkedHashSet
+        LinkedHashSet<String> lh = new LinkedHashSet<String>();
+
+        // Adding elements to above Set using add() method
+        lh.add("Geek");
+        lh.add("For");
+        lh.add("Geeks");
+
+        System.out.println("LinkedHashSet : " + lh);
+    }
+}
+
+OutputLinkedHashSet : [Geek, For, Geeks]
+2. Removing Elements in LinkedHashSetThe values can be removed from the LinkedHashSet using the remove() method.
+            Java
+
+    import java.io.*;
+import java.util.*;
+
+class Geeks {
+
+    public static void main(String[] args) {
+
+        // Creating an empty LinekdhashSet of string type
+        LinkedHashSet<String> lh
+            = new LinkedHashSet<String>();
+
+        // Adding elements to above Set using add() method
+        lh.add("Geek");
+        lh.add("For");
+        lh.add("Geeks");
+        lh.add("A");
+        lh.add("B");
+        lh.add("Z");
+
+        System.out.println("" + lh);
+
+        // Removing the element from above Set
+        lh.remove("B");
+
+        // Again removing the element
+        System.out.println("After removing element " + lh);
+
+        // Returning false if the element is not present
+        System.out.println(lh.remove("AC"));
+    }
+}
+
+Output[Geek, For, Geeks, A, B, Z]
+After removing element [Geek, For, Geeks, A, Z]
+false
+3. Iterating through the LinkedHashSetIterate through the elements of  LinkedHashSet usingthe iterator() method. The most famous one is to use the enhanced for loop.
+            Java
+
+    import java.io.*;
+import java.util.*;
+
+class Geeks {
+
+    public static void main(String[] args) {
+
+        Set<String> lh = new LinkedHashSet<String>();
+
+        lh.add("Geek");
+        lh.add("For");
+        lh.add("Geeks");
+        lh.add("A");
+        lh.add("B");
+        lh.add("Z");
+
+        Iterator itr = lh.iterator();
+
+        while (itr.hasNext())
+            System.out.print(itr.next() + ", ");
+
+        System.out.println();
+
+        for (String s : lh)
+            System.out.print(s + ", ");
+        System.out.println();
+    }
+}
+
+Try It YourselfOutputGeek, For, Geeks, A, B, Z, 
+Geek, For, Geeks, A, B, Z, 
+Methods of LinkedHashSetMethodDescriptionadd(E e)Adds an element if it’s not already present.addAll(Collection c)Adds all elements from the specified collection.clear()Removes all elements from the set.contains(Object o)Checks if the set contains the specified element.containsAll(Collection c)Checks if the set contains all elements from the given collection.remove(Object o)Removes the specified element from the set.removeAll(Collection c)Removes all matching elements from the set.retainAll(Collection c)Keeps only elements present in the given collection.isEmpty()Checks if the set is empty.size()Returns the number of elements in the set.iterator()Returns an iterator over the elements.toArray()Returns an array containing all elements.toArray(T[] a)Returns an array of the specified type containing all elements.hashCode()Returns hash code of the set.equals(Object o)Compares this set with another set.clone()Creates a shallow copy of the set.toString()Returns a string representation of the set.spliterator()Returns a Spliterator for this set.

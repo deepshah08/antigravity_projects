@@ -1,0 +1,66 @@
+# C Program to Handle Divide by Zero - GeeksforGeeks
+
+In C programming, there is no built-in exception handling like in other high-level languages such as C++, Java, or Python. However, you can still handle exceptions using error checking, function return values, or by using signal handlers.There are 2 methods to handle divide-by-zero exception mentioned below:Manually Checking before DivisionSignal handlingManually Checking before DivisionThe most used method is to check if the divisor (number that divides the dividend) in the division is zero or not using if else statement.
+            C
+
+    #include <stdio.h>
+#include <float.h>
+
+int main() {
+    float a = 10, b = 0;
+    float res;
+    
+    // Check division by zero
+    if(b == 0){
+        printf("Error: Division by zero");
+    }else{
+        res = a / b;
+        printf("%f", res);
+    }
+    return 0;
+}
+
+OutputError: Division by zero
+Explanation: The program checks for division by zero using if (b == 0) before performing the division. If b is 0, it prints an error message.Using Signal HandlingSignal handling allows a program to catch and handle runtime exceptions, such as divide-by-zero errors, instead of terminating unexpectedly. The SIGFPE (Floating Point Exception) signal is generated when a floating-point error occurs.Use the signal() function to register a handler for the SIGFPE signal.setjmp() and longjmp() can restore a previous program state, while feclearexcept() and fetestexcept() help manage floating-point exceptions.
+            C
+
+    #include <fenv.h> 
+#include <setjmp.h> 
+#include <signal.h> 
+#include <stdio.h> 
+#include <float.h> 
+
+jmp_buf recovery;
+
+void handle_divide_by_zero(int sig)  {
+
+	// Re-assign the signal handler 
+	signal(SIGFPE, handle_divide_by_zero);
+	printf("Error: Division by zero\n");
+	
+	// Jump to the recovery point 
+	longjmp(recovery, 1); 
+}
+int main() { 
+	double a = 10, b = 0, res; 
+	int recovery_status;
+
+	// Assign the signal handler 
+	signal(SIGFPE, handle_divide_by_zero); 
+
+	// Set a recovery point 
+	recovery_status = setjmp(recovery); 
+	if (recovery_status == 0) {
+	    res  = a / b;
+	    if(fetestexcept(FE_DIVBYZERO)) {
+	        feclearexcept(FE_DIVBYZERO);
+		    raise(SIGFPE);
+	    }
+		else {
+		    printf("%f", res);
+		}
+	}
+	return 0; 
+}
+
+OutputinfExplanation: Program executes step by step as follow:The program sets up a signal handler for SIGFPE to catch floating-point exceptions like division by zero.It attempts to divide a by b, where b is 0, which will cause a floating-point exception.If the division by zero exception occurs and raise(SIGFPE) will trigger the signal handler (handle_divide_by_zero()).The signal handler prints an error message and then uses longjmp() to return to the recovery point, avoiding the program crashing.The program can then proceed without further errors (or cleanup operations), as it has recovered from the division by zero.Best Practices for Handling Divide-by-Zero ExceptionsFollowing these practices helps prevent runtime errors and improves program reliability.Always check whether the divisor is 0 before performing division. Prefer manual validation over signal handling whenever possible. Use signal handling only for exceptional cases or low-level system programming. Display meaningful error messages to help identify the cause of the error. Avoid relying on undefined behavior caused by division by zero.

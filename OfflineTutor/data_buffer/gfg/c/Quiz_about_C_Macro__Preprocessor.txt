@@ -1,0 +1,165 @@
+# Quiz about C Macro & Preprocessor
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsC Macro & PreprocessorLast Updated : DiscussCommentsQuestion 1
+        C
+        
+        #include <stdio.h>
+#define get(s) #s
+
+int main()
+{
+    char str[] = get(GeeksQuiz);
+    printf("%s", str);
+    return 0;
+}
+
+        
+    Compiler Error#GeeksQuizGeeksQuizGGeeksQuizQuestion 2
+
+        C
+        
+        #include <stdio.h>
+#if X == 3
+    #define Y 3
+#else
+    #define Y 5
+#endif
+
+int main()
+{
+    printf("%d", Y);
+    return 0;
+}
+
+        
+    
+
+What is the output of the above program? 
+
+353 or 5 depending on value of XCompile time errorQuestion 3Typically, library header files in C (e.g. stdio.h) contain not only declaration of functions and macro definitions but they contain definition of user defined data types (e.g. struct, union etc), typedefs and definition of global variables as well. So if we include the same header file more than once in a C program, it would result in compile issue because re-definition of many of the constructs of the header file would happen. So it means the following program will give compile error.  
+        C
+        
+        #include “stdio.h”
+#include “stdio.h”
+#include “stdio.h”
+
+int main()
+{
+ printf(“Whether this statement would be printed?”)
+ return 0;
+}
+
+        
+    TRUEFALSEQuestion 4Which file is generated after pre-processing of a C program?.p.i.o.mQuestion 5What is the use of "#pragma once"?Used in a header file to avoid its inclusion more than once.Used to avoid multiple declarations of same variable.Used in a c file to include a header file at least once.Used to avoid assertionsQuestion 6The translator which performs macro calls expansion is called: Macro processorMicro pre - processorMacro pre - processorDynamic LinkerQuestion 7What is the output of the following C program?  
+        C
+        
+        #include <stdio.h>
+#define SQR(x) (x * x)
+int main()
+{
+    int a;
+    int b = 4;
+    a = SQR(b + 2);
+    printf("%d", a);
+    return 0;
+}
+
+        
+    14361820Question 8Consider the following macro definition:#define hypotenuse(a, b) (sqrt((a) * (a) + (b) * (b)))What does the following macro call compute?hypotenuse(a + 2, b + 3)Finds the hypotenuse of a right triangle with sides a + 2 and b + 3Finds the square root of (a + 2)² and (b + 3)² separately2 and (b+3)2Is invalid because expressions cannot be passed as macro argumentsComputes sqrt(3*a + 4*b + 5)Question 9The following program won’t compile because there’re space between macro name and open parenthesis.
+
+        C
+        
+        #include "stdio.h"
+
+#define MYINC   (  a  )  (  ( a )  +  1 )
+
+int main()
+{
+
+ printf("GeeksQuiz!");
+
+ return 0;
+}
+
+        
+    TRUEFALSEQuestion 10Suppose someone writes increment macro (i.e. which increments the value by one) in following ways:
+
+        C
+        
+        #define INC1(a) ((a)+1)
+
+#define INC2 (a) ((a)+1)
+
+#define INC3( a ) (( a ) + 1)
+
+#define INC4 ( a ) (( a ) + 1)
+
+        
+    
+Pick the correct statement for the above macros.Only INC1 is correct.All (i.e. INC1, INC2, INC3 and INC4) are correct.Only INC1 and INC3 are correct.Only INC1 and INC2 are correct.Tags:C QuizThere are 21 questions to complete.Take a part in the ongoing discussionView All Discussion

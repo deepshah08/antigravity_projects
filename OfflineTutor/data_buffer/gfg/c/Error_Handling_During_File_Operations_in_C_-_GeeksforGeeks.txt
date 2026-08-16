@@ -1,0 +1,148 @@
+# Error Handling During File Operations in C - GeeksforGeeks
+
+Error handling ensures that a program can detect and handle unexpected situations, such as missing files or permission issues, without crashing. It helps make file operations more reliable and easier to debug.Prevents program crashes by handling file-related errors gracefully. Helps identify and manage common file operation errors in C.Here are some common errors that can occur during file operations:ErrorCauseFile Not FoundTrying to open a file that doesn’t exist.Permission DeniedInsufficient permissions to access the file.Disk FullNo space left on the disk for writing data.File Already ExistsAttempting to create a file that already exists in w mode.Invalid File PointerUsing a null or invalid file pointer for file operations.End-of-File (EOF)Attempting to read past the end of the file.File Not OpenAttempting to perform operations on a file that wasn’t opened successfully.Failure to check for errors then the program may behave abnormally therefore an unchecked error may result in premature termination for the program or incorrect output.Error Handling TechniquesBelow are some standard error handling techniques:1. File Not Found ErrorA file not found error can occur when opening a file in read mode (r) or append mode (a). Use fopen() and check for NULL. If it is, the error message can be printed using perror() function.
+            C
+
+    #include <stdio.h>
+
+int main() {
+    
+    // Try to open file in 
+    // read mode
+    FILE *file = fopen("file.txt", "r");
+  
+  	// Check if the file 
+  	// is opened/found
+    if (file == NULL) {
+        perror("Error");
+        return 1;
+    }
+    fclose(file);
+    return 0;
+}
+
+OutputError: No such file or directoryIn the above program, fopen() returns a NULL pointer because the file is not present in the current directory, then the perror() function prints the error message.2. Handle Permission Denied ErrorIf the file exists but the program lacks the required permissions, fopen() will fail and return NULL pointer. We can change the perror() output to "permission denied" as shown in the below snippet.
+            C
+
+    FILE *file = fopen("/restricted/file.txt", "w");
+if (file == NULL) {
+    perror("Permission denied");
+}
+
+3. Handle Disk Full ErrorWhen writing to a file, ensure the disk has enough space. Errors during file operations can be detected using ferror(). In the below program, we assume that there is no space on the disk.
+            C
+
+    #include <stdio.h>
+
+int main() {
+    FILE *fptr = fopen("file.txt", "w");
+    if (fptr == NULL) {
+        perror("Error opening file");
+        return 1;
+    }
+    
+    fprintf(fptr, "Writing to file");
+    
+    // Check error after performing
+    // write operation
+    if (ferror(fptr)) {
+        perror("Error writing to file");
+    }
+    fclose(fptr);
+    return 0;
+}
+
+OutputError writing to file: No space left on device4. Handle File Already ExistsWhen creating a file using fopen() in "wx" mode, the file is created only if it does not already exist. If the file exists, fopen() returns NULL and sets errno to EEXIST, preventing accidental overwriting.
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+int main() {
+    FILE *fptr;
+
+    // Try to open the file in 
+    // write mode
+    fptr = fopen("test.txt", "wx");
+
+    if (fptr == NULL) {
+      
+        // Check if the error is 
+        // due to file already existing
+        if (errno == EEXIST)
+            printf("File already exist");
+    }
+
+    // If we reach here, the file 
+    // was created successfully
+    fprintf(fptr, "This is a new file.");
+    fclose(fptr);
+    return 0;
+}
+
+OutputFile already exist5. Handle Invalid File PointerAlways verify that the file pointer is not NULL before performing operations like reading or writing.
+            C
+
+    FILE *file = NULL;
+if (file == NULL) {
+    printf("Invalid file pointer. File operations cannot proceed.\n");
+}
+
+6. Handle End-of-File (EOF)When we are reading data from a file and the file pointer reaches the end of the file, we can use the feof() function to handle the end of the file.
+            C
+
+    #include <stdio.h>
+
+int main() {
+    FILE *file = fopen("test.txt", "r");
+
+  	// Check for eof while reading
+    char ch;
+    while ((ch = fgetc(file)) != EOF)
+        putchar(ch);
+
+  	// Use feof() to make sure 
+  	// EOF occurred or not
+    if (feof(file))
+        printf("End of file reached.");
+    else if (ferror(file))
+        printf("Error reading the file.");
+    fclose(file);
+    return 0;
+}
+
+OutputEnd of file reached.7. Handle File Not OpenWhenever we attempt to open a file and the file cannot be opened due to some error, the fopen() function returns NULL. We can handle this easily using an if-else statement.
+            C
+
+    #include <stdio.h>
+int main() {
+    FILE *file = fopen("example.txt", "r");
+    if (file == NULL) {
+        printf("File could not be opened.\n");
+    } else {
+        printf("File opened successfully.\n");
+        fclose(file);
+    }
+    
+    return 0;
+}
+
+OutputFile could not be opened.File Closing ErrorSometimes, when we are closing a file using the fclose() function and it fails to close the file due to an error, it returns -1.
+            C
+
+    #include <stdio.h>
+
+int main() {
+    FILE *fptr = fopen("test.txt", "w");
+    
+    fprintf(fptr, "Writing to file");
+    
+    // Check file close properly
+    if(fclose(fptr) == -1)
+        printf("File closing error");
+    else
+        printf("File closed");
+    return 0;
+}
+
+OutputFile closedBest Practices for File Error HandlingFollowing these best practices helps make file operations more reliable, secure, and easier to debug.Always check the return value of functions like fopen(), fread(), fwrite(), and fclose(). Use perror() or strerror(errno) to display meaningful error messages. Validate file pointers before performing read or write operations. Close files using fclose() to avoid resource leaks. Handle EOF and file errors separately using feof() and ferror(). Release allocated resources properly if an error occurs during file operations.

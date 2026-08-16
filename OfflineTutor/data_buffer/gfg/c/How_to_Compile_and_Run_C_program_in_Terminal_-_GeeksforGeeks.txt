@@ -1,0 +1,32 @@
+# How to Compile and Run C program in Terminal - GeeksforGeeks
+
+Compiling and running C programs on Windows requires a proper C compiler and access to the system terminal. With MinGW (a Windows-friendly version of the GCC compiler), users can easily convert their C source code into executable files using the Command Prompt. This article will guide you through installing MinGW, configuring the environment, and compiling C programs directly from the terminal.Key Highlights:Learn how to install and set up MinGW (GCC) on WindowsUnderstand how to configure environment variablesUse Command Prompt (CMD) to compile .c files into executablesRun C programs without needing any GUI-based IDEHow to Compile and Run C Program in TerminalTo compile and run C programs on Windows, you need a compiler and a terminal. MinGW (Minimalist GNU for Windows) provides an easy-to-install GCC compiler that works perfectly with Command Prompt (CMD). Once set up, you can compile any .c file into an executable using simple commands.Below is a step-by-step guide to install MinGW, configure system paths, and compile/run C programs effortlessly.Step 1: Install MinGW (GCC Compiler)Before running C programs, install a compiler that converts C source code into machine code. Visit the official MinGW download page.Download the installer and run it.. In MinGW Installation Manager, select the following packages:mingw32-basemingw-gcc-g++ Go to Installation → Apply Changes.Wait for MinGW to install all required components. Step 2: Add MinGW to the System PATHAdding MinGW to the PATH allows you to use gcc from any folder in CMD.Press Windows Key → search Environment Variables. Open Edit the system environment variables.Click Environment Variables.Under System variables, select Path → click Edit.Click New → add:Click OK three times to save and exit. Step 3: Open Command PromptPress Windows Key, search cmd.Right-click → Run as Administrator. Type:gcc --versionIf MinGW is installed correctly, the GCC version will appear. Step 4: Navigate to Your C Program DirectoryUse the cd command to go to the folder containing your .c fileType "cd C:\MyPrograms" , Click Enter button. Step 5: Compile the C Program Using GCCUse this syntax to compile your program:gcc filename.c -o filename.exeExplanation:filename.c → your C source file-o filename.exe → creates an executable output fileExample:gcc hello.c -o hello.exeStep 6: Run the C program and see the outputFinally, run your program with:filename.exeExample: hello.exeYour C program output will now appear in the terminal. 
+            C
+
+    #include <stdio.h>
+ 
+int main()
+{
+    int n = 153;
+    int temp = n;
+    int p = 0;
+ 
+    while (n > 0) {
+        int rem = n % 10;
+        p = (p) + (rem * rem * rem);
+        n = n / 10;
+    }
+ 
+    // Condition to check whether the
+    // value of P equals to user input
+    // or not.
+    if (temp == p) {
+        printf("It is Armstrong No.");
+    }
+    else {
+        printf("It is not an Armstrong No.");
+    }
+    return 0;
+}
+
+OutputIt is Armstrong No.Also ReadHow To Compile And Run a C/C++ Code In LinuxHow to Compile a C++ Program Using GCCHow to Compile and Run C/C++/Java Programs in Linux

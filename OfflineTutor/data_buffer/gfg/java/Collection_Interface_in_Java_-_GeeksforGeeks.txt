@@ -1,0 +1,167 @@
+# Collection Interface in Java - GeeksforGeeks
+
+The Collection interface is the root of the Java Collections Framework, defined in the java.util package. It represents a group of individual objects as a single unit and provides basic operations for working with them.Represents a group of objects as a single unit Dynamic in size (can grow or shrink) Provide simple methods like add(), remove(), and clear().Stores elements of a specific type using generics Declarationpublic interface Collection<E> extends Iterable<E>Here: E represents the type of elements stored in the collection.Object Creation of Collection InterfaceCollection<String> fruits = new ArrayList<>();
+            Java
+
+    import java.util.*;
+
+public class GFG {
+
+    public static void main(String[] args) {
+
+        // Creating a Collection of String type using ArrayList implementation
+        Collection<String> fruits = new ArrayList<>();
+
+        // Adding elements to the collection
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Mango");
+
+        // Removing an element from the collection
+        fruits.remove("Banana");
+
+        // Displaying the collection after removal
+        System.out.println("After Removal: " + fruits);
+    }
+}
+
+OutputAfter Removal: [Apple, Mango]
+In Java, we cannot create an object of an interface directly. Instead, we create an object of the ArrayList class that implements the interface and assign it to the interface reference.Hierarchy of Collection InterfaceThe Collection interface is part of a hierarchy that extends Iterable, which means collections can be traversed.Collection InterfaceSub-Interfaces of Collection InterfaceThe sub-interfaces of Collection, also called collection types, are:1. ListList represents an ordered collection that allows duplicates.Elements can be accessed by index.Implementing Classes: ArrayList, LinkedList, Vector, Stack.Declaration:public interface List<E> extends Collection<E>2. SetSet represents an unordered collection with no duplicate elements.Implementing Classes: HashSet, TreeSet, LinkedHashSet, EnumSet, CopyOnWriteArraySet.Declaration:public interface Set<E> extends Collection<E>3. SortedSetSortedSet extends Set and maintains elements in a sorted order.Provides methods to handle range-based operations.Implementing Class: TreeSet.Declaration:public interface SortedSet<E> extends Set<E>4. NavigableSetNavigableSet extends SortedSet and provides navigation methods like lower(), floor(), ceiling(), and higher().Implementing Class: TreeSet. Declaration:public interface NavigableSet<E> extends SortedSet<E>5. QueueQueue represents a collection following FIFO (First-In-First-Out) order.Implementing Classes: PriorityQueue, ArrayDeque, LinkedList.Declaration:public interface Queue<E> extends Collection<E>6. DequeDeque extends Queue and allows elements to be added/removed from both ends.Implementing Classes: ArrayDeque, LinkedList.Declaration:public interface Deque<E> extends Queue<E>Operations on Collection ObjectsThe Collection interface provides several operations to manipulate data efficiently. Let’s see the most common operations using the ArrayList implementation class.1. Adding ElementsWe can add elements using the add(E e) method for a single element or addAll(Collection c) to add multiple elements.
+            Java
+
+    import java.util.*;
+
+public class Geeks{
+    
+    public static void main(String[] args){
+        
+        // Creating a collection using ArrayList implementation
+        Collection<Integer> numbers = new ArrayList<>();
+
+        // Adding individual elements
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+
+        // Adding another collection
+        Collection<Integer> moreNumbers = new ArrayList<>();
+        moreNumbers.add(40);
+        moreNumbers.add(50);
+
+        numbers.addAll(moreNumbers);
+
+        System.out.println("After adding elements: " + numbers);
+    }
+}
+
+OutputAfter adding elements: [10, 20, 30, 40, 50]
+2. Removing ElementsElements can be removed using remove(E e) or removeAll(Collection c) methods. 
+            Java
+
+    import java.util.*;
+
+public class Geeks{
+    
+    public static void main(String[] args){
+        
+        Collection<String> fruits = new ArrayList<>();
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Mango");
+        fruits.add("Orange");
+
+        System.out.println("Initial Collection: " + fruits);
+
+        // Remove a specific element
+        fruits.remove("Mango");
+        System.out.println("After removing Mango: " + fruits);
+
+        // Remove all elements present in another collection
+        Collection<String> toRemove = new ArrayList<>();
+        toRemove.add("Apple");
+        toRemove.add("Banana");
+
+        fruits.removeAll(toRemove);
+        System.out.println("After removeAll(): " + fruits);
+    }
+}
+
+OutputInitial Collection: [Apple, Banana, Mango, Orange]
+After removing Mango: [Apple, Banana, Orange]
+After removeAll(): [Orange]
+3. Accessing ElementsAlthough the Collection interface doesn’t provide index-based access, its sub-interface List (implemented by ArrayList) allows retrieving elements using the get(int index) method.
+            Java
+
+    import java.util.*;
+
+public class Geeks{
+    
+    public static void main(String[] args){
+        
+        // Using List reference for index-based access
+        List<String> colors = new ArrayList<>();
+        colors.add("Red");
+        colors.add("Green");
+        colors.add("Blue");
+
+        System.out.println("Colors List: " + colors);
+
+        // Accessing elements by index
+        String firstColor = colors.get(0);
+        String lastColor = colors.get(colors.size() - 1);
+
+        System.out.println("First Color: " + firstColor);
+        System.out.println("Last Color: " + lastColor);
+    }
+}
+
+OutputColors List: [Red, Green, Blue]
+First Color: Red
+Last Color: Blue
+4. Iterating over a Collection To iterate over a collection we used Different types of cursor1. IteratorThe Iterator interface allows traversal in one direction (forward).You can safely remove elements during iteration using remove().
+            Java
+
+    import java.util.*;
+
+public class IteratorExample {
+    public static void main(String[] args) {
+        Collection<String> fruits = new ArrayList<>(Arrays.asList("Apple", "Banana", "Mango"));
+        
+        Iterator<String> it = fruits.iterator();
+        while (it.hasNext()) {
+            String fruit = it.next();
+            if (fruit.equals("Banana")) {
+                it.remove(); // safely removes "Banana" from collection
+            }
+        }
+        System.out.println(fruits); // Output: [Apple, Mango]
+    }
+}
+
+Output[Apple, Mango]
+2. ListIteratorListIterator extends Iterator and is available for List implementations (ArrayList, LinkedList, etc.).Supports bidirectional traversal (forward and backward).Allows adding, removing, and replacing elements during iteration.
+            Java
+
+    import java.util.*;
+
+public class ListIteratorExample {
+    public static void main(String[] args) {
+        List<String> colors = new ArrayList<>(Arrays.asList("Red", "Green", "Blue"));
+
+        ListIterator<String> listIt = colors.listIterator();
+
+        // Forward traversal
+        System.out.print("Forward: ");
+        while (listIt.hasNext()) {
+            System.out.print(listIt.next() + " ");
+        }
+
+        System.out.print("\nBackward: ");
+        while (listIt.hasPrevious()) {
+            System.out.print(listIt.previous() + " ");
+        }
+    }
+}
+
+OutputForward: Red Green Blue 
+Backward: Blue Green Red  Removing During IterationUsing Iterator.remove() or ListIterator.remove() is the correct way to remove elements while iterating.Directly using collection.remove(element) inside a loop will throw ConcurrentModificationException.Methods of Collection InterfaceMethodDescriptionadd(E e)Adds an element to the collection (optional).addAll(Collection<? extends E> c)Adds all elements from another collection.clear()Removes all elements.contains(Object o)Checks if the collection contains the specified element. Takes Object as a parameter because it uses the equals(Object obj) method to check equality.containsAll(Collection<?> c)Checks if all elements exist.remove(Object o)Removes the first occurrence of the specified element. Takes Object as a parameter because it uses equals(Object obj) to identify the element to remove.removeAll(Collection<?> c)Removes all elements present in another collection.retainAll(Collection<?> c)Retains only elements present in another collection.removeIf(Predicate<? super E> filter)Removes elements satisfying a predicate.size()Returns the number of elements.isEmpty()Checks if the collection is empty.iterator()Returns an iterator over the elements.stream()Returns a sequential stream.parallelStream()Returns a parallel stream.toArray()Converts the collection to an array.equals(Object o)Compares this collection with another object.hashCode()Returns hash code of the collection.spliterator()Returns a Spliterator for elements.Note:equals() determines if two elements are logically equal.hashCode() provides a hash value for efficient storage and lookup (especially in sets and hash-based collections).

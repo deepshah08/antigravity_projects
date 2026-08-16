@@ -1,0 +1,74 @@
+# Multinomial Naive Bayes - GeeksforGeeks
+
+Multinomial Naive Bayes is a variation of the Naive Bayes algorithm designed for discrete data. It is commonly used in text classification, where features represent word counts or frequencies. Works with word frequencies by modeling how often words appear in a document.Assumes a multinomial distribution for features like words.Commonly used in spam detection, document classification, and sentiment analysis.Working of Multinomial Naive BayesMultinomial Naive Bayes classifies text using word frequencies. Naive Bayes assumes words are independent, while Multinomial refers to counting how often words appear in a document. The model learns from training data by analyzing how often words occur in each class, such as spam or not spam.Example: If the word 'free' appears frequently in spam emails, the model uses this information to predict whether a new email is spam. The probability of a document belonging to a class is calculated using the class-conditional multinomial distribution:P(X \mid C) = \frac{n!}{n_1! n_2! \dots n_m!} \, p_1^{n_1} p_2^{n_2} \dots p_m^{n_m}Where: n is the total number of trialsn_i is the count of occurrences for outcome ip_i is the probability of outcome iTo estimate how likely each word is in a particular class like spam or not spam, we use a method called Maximum Likelihood Estimation (MLE). This helps find probabilities based on actual counts from our data. The formula is:\quad \theta_{c,i} = \frac{\text{count}(w_i, c) + 1}{N + v}Where:count(wi,c) is the number of times word w_i appears in documents of class c.\Nu is the total number of words in documents of class c.v is the vocabulary size.Multinomial Naive Bayes for Spam DetectionTo understand how Multinomial Naive Bayes works, consider a simple example where we classify a message as Spam or Not Spam.Message IDMessage TextClassM1"buy cheap now"Spam M2"limited offer buy"SpamM3"meet me now"Not SpamM4"let's catch up"Not Spam1. VocabularyFirst, extract all unique words from the dataset.Vocabulary size V = 10\text{Vocabulary} = \{\text{buy, cheap, now, limited, offer, meet, me, let's, catch, up}\}2. Word Frequencies by ClassSpam Class (M1, M2):buy: 2cheap: 1now: 1limited: 1offer: 1Total words: 6Not Spam Class (M3, M4):meet: 1me: 1now: 1let's: 1catch: 1up: 1Total words: 63. Test MessageTest Message: "buy now"4. Applying Multinomial Naive Bayes The probability formula:P(C|d) \propto P(C) \cdot \prod_i P(w_i|C)^{f_i}Prior Probabilities:P(\text{Spam}) = 0.5, \quad P(\text{Not Spam}) = 0.5Apply Laplace Smoothing:To avoid zero probability we apply Laplace smoothing:P(w \mid C) = \frac{\text{count}(w, C) + 1}{\text{total words in } C + V}Spam Class:P(\text{buy} \mid \text{Spam}) = \frac{2 + 1}{6 + 10} = \frac{3}{16}P(\text{now} \mid \text{Spam}) = \frac{1 + 1}{6 + 10} = \frac{2}{16}P(\text{Spam} \mid d) \propto 0.5 \cdot \frac{3}{16} \cdot \frac{2}{16} = \frac{3}{256}Not Spam Class:P(\text{buy} \mid \text{Not Spam}) = \frac{0 + 1}{6 + 10} = \frac{1}{16}P(\text{now} \mid \text{Not Spam}) = \frac{1 + 1}{6 + 10} = \frac{2}{16}P(\text{Not Spam} \mid d) \propto 0.5 \cdot \frac{1}{16} \cdot \frac{2}{16} = \frac{1}{256}5. Final ClassificationSince, P(\text{Spam}|d) = \frac{3}{256} > \frac{1}{256} = P(\text{Not Spam}|d)\boxed{\text{The message is classified as Spam}}ImplementationLet’s understand the implementation with an example of spam email detection, where emails are classified into spam or not spam.1. Importing Libraries:First, we import the required libraries used for data processing, model training and evaluation.pandas: Used to handle data in DataFrame format.CountVectorizer: Converts text documents into a matrix of word counts.train_test_split: Splits the dataset into training and testing sets.MultinomialNB: A Naive Bayes classifier used for discrete features such as word counts.accuracy_score: Measures how accurately the model predicts the correct class.
+            Python
+
+    import pandas as pd
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import accuracy_score
+
+2. Creating the DatasetNext, we create a simple dataset containing text messages labelled as spam or not spam. This dataset is stored in a pandas DataFrame for easier processing.
+            Python
+
+    data = {
+    'text': [
+        'Free money now',
+        'Call now to claim your prize',
+        'Meet me at the park',
+        'Let’s catch up later',
+        'Win a new car today!',
+        'Lunch plans?',
+        'Congratulations! You won a lottery',
+        'Can you send me the report?',
+        'Exclusive offer for you',
+        'Are you coming to the meeting?'
+    ],
+    'label': ['spam', 'spam', 'not spam', 'not spam', 'spam', 'not spam', 'spam', 'not spam', 'spam', 'not spam']
+}
+
+df = pd.DataFrame(data)
+
+3. Mapping Labels to Numerical ValuesNext, the labels spam and not spam are converted into numerical values. This step is required because machine learning models work with numerical data.spam: 1not spam: 0
+            Python
+
+    df['label'] = df['label'].map({'spam': 1, 'not spam': 0})
+
+4. Splitting the DataX contains the text messages (features) and y contains the labels (target).The dataset is split into training (70%) and testing (30%) sets using train_test_split.
+            Python
+
+    X = df['text']
+y = df['label']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+5. Vectorizing the Text DataNext, the text data is converted into numerical form using CountVectorizer. This method transforms text into vectors by counting the occurrences of each word.fit_transform(): Learns the vocabulary from the training data and converts it into a feature matrix.transform(): Converts the test data into the same feature space using the learned vocabulary.
+            Python
+
+    vectorizer = CountVectorizer()
+X_train_vectors = vectorizer.fit_transform(X_train)
+X_test_vectors = vectorizer.transform(X_test)
+
+6. Training the Naive Bayes ModelNext, a Multinomial Naive Bayes classifier is created and trained using the vectorized training data and the corresponding labels.
+            Python
+
+    model = MultinomialNB()
+model.fit(X_train_vectors, y_train)
+
+7. Making Predictions and Evaluating AccuracyAfter training the model, we use it to predict labels for the test data and then evaluate its performance using accuracy.model.predict(): Generates predicted labels for the test dataset.accuracy_score(): Compares predicted labels with the actual labels to measure model accuracy.
+            Python
+
+    y_pred = model.predict(X_test_vectors)
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy * 100:.2f}%\n")
+
+Output:Accuracy: 66.67%  8. Predicting for a Custom MessageFinally, we test the model with a custom message to see how it classifies new input data.vectorizer.transform(): Converts the custom message into a numerical vector using the learned vocabulary.model.predict(): Predicts whether the message is spam or not spam.Interpret result: 1 represents Spam and 0 represents Not Spam.
+            Python
+
+    custom_message = ["Congratulations, you've won a free vacation"]
+print(custom_message)
+custom_vector = vectorizer.transform(custom_message)
+prediction = model.predict(custom_vector)
+print("Prediction for custom message:", "Spam" if prediction[0] == 1 else "Not Spam")
+
+Output:Congratulations, you've won a free vacationPrediction for custom message: SpamDownload full code from hereMultinomial Naive vs Gaussian Naive BayesThe Multinomial naive bayes and Gaussian naive bayes both are the variants of same algorithm. However they have several number of differences which are discussed below:                         Multinomial Naive Bayes                             Gaussian Naive BayesIt is specially designed for discrete data particularly text data.It is suitable for continuous data where features follow a Gaussian distribution.It assumes features and represent its counts like word counts.It assumes a Gaussian distribution for the likelihood.It is commonly used in NLP for document classification tasks.It is commonly used in tasks involving continuous data such as medical diagnosis, fraud detection and weather prediction.The likelihood of each feature is calculated using the multinomial distribution.The likelihood of each feature is modelled using the Gaussian distribution.It is more efficient when the number of features is very high like in text datasets with thousands of words.It may not perform well on non-normal or sparse data.

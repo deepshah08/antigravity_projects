@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T22:38:32.652Z",
+  "generatedAt": "2026-08-16T00:59:51.186Z",
   "topics": [
     {
       "id": "dsa",
@@ -5338,721 +5338,701 @@
       "articles": [
         {
           "id": "sql-001",
-          "title": "Install MySQL in your system",
-          "url": "https://www.geeksforgeeks.org/mysql/how-to-install-mysql-in-windows/"
-        },
-        {
-          "id": "sql-002",
-          "title": "Start MySQL Server",
-          "url": "https://www.geeksforgeeks.org/sql/how-to-stop-mysql-server-on-windows-and-linux/"
-        },
-        {
-          "id": "sql-003",
-          "title": "Access MySQL Command Line",
-          "url": "https://www.geeksforgeeks.org/sql/connecting-to-mysql-using-command-options/"
-        },
-        {
-          "id": "sql-004",
           "title": "Introduction",
           "url": "https://www.geeksforgeeks.org/sql/what-is-sql/"
         },
         {
-          "id": "sql-005",
+          "id": "sql-002",
           "title": "Data Types",
           "url": "https://www.geeksforgeeks.org/sql/sql-data-types/"
         },
         {
-          "id": "sql-006",
+          "id": "sql-003",
           "title": "Operators",
           "url": "https://www.geeksforgeeks.org/sql/sql-operators/"
         },
         {
-          "id": "sql-007",
+          "id": "sql-004",
           "title": "Commands",
           "url": "https://www.geeksforgeeks.org/sql/sql-ddl-dql-dml-dcl-tcl-commands/"
         },
         {
-          "id": "sql-008",
+          "id": "sql-005",
           "title": "Comments",
           "url": "https://www.geeksforgeeks.org/sql/sql-comments/"
         },
         {
-          "id": "sql-009",
+          "id": "sql-006",
           "title": "Wildcards Operators",
           "url": "https://www.geeksforgeeks.org/sql/sql-wildcard-operators/"
         },
         {
-          "id": "sql-010",
+          "id": "sql-007",
           "title": "Applications",
           "url": "https://www.geeksforgeeks.org/sql/applications-of-sql/"
         },
         {
-          "id": "sql-011",
+          "id": "sql-008",
           "title": "Career Path",
           "url": "https://www.geeksforgeeks.org/sql/sql-career-path-roles-skills-salaries/"
         },
         {
-          "id": "sql-012",
+          "id": "sql-009",
           "title": "CREATE",
           "url": "https://www.geeksforgeeks.org/sql/sql-create-database/"
         },
         {
-          "id": "sql-013",
+          "id": "sql-010",
           "title": "SELECT",
           "url": "https://www.geeksforgeeks.org/sql/sql-select-database/"
         },
         {
-          "id": "sql-014",
+          "id": "sql-011",
           "title": "RENAME",
           "url": "https://www.geeksforgeeks.org/sql/sql-query-to-rename-database/"
         },
         {
-          "id": "sql-015",
+          "id": "sql-012",
           "title": "DROP",
           "url": "https://www.geeksforgeeks.org/sql/sql-drop-database/"
         },
         {
-          "id": "sql-016",
+          "id": "sql-013",
           "title": "CREATE",
           "url": "https://www.geeksforgeeks.org/sql/sql-create-table/"
         },
         {
-          "id": "sql-017",
+          "id": "sql-014",
           "title": "DROP",
           "url": "https://www.geeksforgeeks.org/sql/sql-drop-table-statement/"
         },
         {
-          "id": "sql-018",
+          "id": "sql-015",
           "title": "RENAME",
           "url": "https://www.geeksforgeeks.org/sql/sql-alter-rename/"
         },
         {
-          "id": "sql-019",
+          "id": "sql-016",
           "title": "TRUNCATE",
           "url": "https://www.geeksforgeeks.org/sql/sql-truncate/"
         },
         {
-          "id": "sql-020",
+          "id": "sql-017",
           "title": "COPY",
           "url": "https://www.geeksforgeeks.org/sql/sql-cloning-or-copying-a-table/"
         },
         {
-          "id": "sql-021",
+          "id": "sql-018",
           "title": "TEMP",
           "url": "https://www.geeksforgeeks.org/sql/what-is-temporary-table-in-sql/"
         },
         {
-          "id": "sql-022",
+          "id": "sql-019",
           "title": "ALTER",
           "url": "https://www.geeksforgeeks.org/sql/sql-alter-add-drop-modify/"
         },
         {
-          "id": "sql-023",
+          "id": "sql-020",
           "title": "Auto Increment",
           "url": "https://www.geeksforgeeks.org/sql/sql-auto-increment/"
         },
         {
-          "id": "sql-024",
+          "id": "sql-021",
           "title": "Sequences",
           "url": "https://www.geeksforgeeks.org/sql/sql-sequences/"
         },
         {
-          "id": "sql-025",
+          "id": "sql-022",
           "title": "SELECT",
           "url": "https://www.geeksforgeeks.org/sql/sql-select-query/"
         },
         {
-          "id": "sql-026",
+          "id": "sql-023",
           "title": "INSERT INTO",
           "url": "https://www.geeksforgeeks.org/sql/sql-insert-statement/"
         },
         {
-          "id": "sql-027",
+          "id": "sql-024",
           "title": "INSERT Multiple Rows",
           "url": "https://www.geeksforgeeks.org/sql/sql-query-to-insert-multiple-rows/"
         },
         {
-          "id": "sql-028",
+          "id": "sql-025",
           "title": "UPDATE",
           "url": "https://www.geeksforgeeks.org/sql/sql-update-statement/"
         },
         {
-          "id": "sql-029",
+          "id": "sql-026",
           "title": "DELETE Statement",
           "url": "https://www.geeksforgeeks.org/sql/sql-delete-statement/"
         },
         {
-          "id": "sql-030",
+          "id": "sql-027",
           "title": "DELETE Duplicate Rows",
           "url": "https://www.geeksforgeeks.org/sql/sql-query-to-delete-duplicate-rows/"
         },
         {
-          "id": "sql-031",
+          "id": "sql-028",
           "title": "Dynamic",
           "url": "https://www.geeksforgeeks.org/sql/dynamic-sql/"
         },
         {
-          "id": "sql-032",
+          "id": "sql-029",
           "title": "WHERE",
           "url": "https://www.geeksforgeeks.org/sql/sql-where-clause/"
         },
         {
-          "id": "sql-033",
+          "id": "sql-030",
           "title": "WITH",
           "url": "https://www.geeksforgeeks.org/sql/sql-with-clause/"
         },
         {
-          "id": "sql-034",
+          "id": "sql-031",
           "title": "HAVING",
           "url": "https://www.geeksforgeeks.org/sql/sql-having-clause-with-examples/"
         },
         {
-          "id": "sql-035",
+          "id": "sql-032",
           "title": "ORDER By",
           "url": "https://www.geeksforgeeks.org/sql/sql-order-by/"
         },
         {
-          "id": "sql-036",
+          "id": "sql-033",
           "title": "Group By",
           "url": "https://www.geeksforgeeks.org/sql/sql-group-by/"
         },
         {
-          "id": "sql-037",
+          "id": "sql-034",
           "title": "LIMIT",
           "url": "https://www.geeksforgeeks.org/sql/sql-limit-clause/"
         },
         {
-          "id": "sql-038",
+          "id": "sql-035",
           "title": "Distinct",
           "url": "https://www.geeksforgeeks.org/sql/sql-distinct-clause/"
         },
         {
-          "id": "sql-039",
+          "id": "sql-036",
           "title": "Row Limiting",
           "url": "https://www.geeksforgeeks.org/sql/sql-top-limit-fetch-first-clause/"
         },
         {
-          "id": "sql-040",
+          "id": "sql-037",
           "title": "Aliases",
           "url": "https://www.geeksforgeeks.org/sql/sql-aliases/"
         },
         {
-          "id": "sql-041",
+          "id": "sql-038",
           "title": "Logical",
           "url": "https://www.geeksforgeeks.org/sql/sql-logical-operators/"
         },
         {
-          "id": "sql-042",
+          "id": "sql-039",
           "title": "LIKE",
           "url": "https://www.geeksforgeeks.org/sql/sql-like/"
         },
         {
-          "id": "sql-043",
+          "id": "sql-040",
           "title": "IN",
           "url": "https://www.geeksforgeeks.org/sql/sql-in-operator/"
         },
         {
-          "id": "sql-044",
+          "id": "sql-041",
           "title": "NOT",
           "url": "https://www.geeksforgeeks.org/sql/sql-not-operator/"
         },
         {
-          "id": "sql-045",
+          "id": "sql-042",
           "title": "NOT EQUAL",
           "url": "https://www.geeksforgeeks.org/sql/sql-not-equal-operator/"
         },
         {
-          "id": "sql-046",
+          "id": "sql-043",
           "title": "IS NULL",
           "url": "https://www.geeksforgeeks.org/sql/sql-is-null-operator/"
         },
         {
-          "id": "sql-047",
+          "id": "sql-044",
           "title": "UNION",
           "url": "https://www.geeksforgeeks.org/sql/sql-union-operator/"
         },
         {
-          "id": "sql-048",
+          "id": "sql-045",
           "title": "UNION ALL",
           "url": "https://www.geeksforgeeks.org/sql/sql-union-all/"
         },
         {
-          "id": "sql-049",
+          "id": "sql-046",
           "title": "EXCEPT",
           "url": "https://www.geeksforgeeks.org/sql/sql-except-clause/"
         },
         {
-          "id": "sql-050",
+          "id": "sql-047",
           "title": "BETWEEN",
           "url": "https://www.geeksforgeeks.org/sql/sql-between/"
         },
         {
-          "id": "sql-051",
+          "id": "sql-048",
           "title": "ALL & ANY",
           "url": "https://www.geeksforgeeks.org/sql/sql-all-and-any/"
         },
         {
-          "id": "sql-052",
+          "id": "sql-049",
           "title": "INTERSECT",
           "url": "https://www.geeksforgeeks.org/sql/sql-intersect-clause/"
         },
         {
-          "id": "sql-053",
+          "id": "sql-050",
           "title": "EXISTS",
           "url": "https://www.geeksforgeeks.org/sql/sql-exists/"
         },
         {
-          "id": "sql-054",
+          "id": "sql-051",
           "title": "CASE",
           "url": "https://www.geeksforgeeks.org/sql/sql-case-statement/"
         },
         {
-          "id": "sql-055",
+          "id": "sql-052",
           "title": "Date",
           "url": "https://www.geeksforgeeks.org/sql/date-functions-in-sql/"
         },
         {
-          "id": "sql-056",
+          "id": "sql-053",
           "title": "String",
           "url": "https://www.geeksforgeeks.org/sql/sql-string-functions/"
         },
         {
-          "id": "sql-057",
+          "id": "sql-054",
           "title": "Numeric",
           "url": "https://www.geeksforgeeks.org/sql/sql-numeric-functions/"
         },
         {
-          "id": "sql-058",
+          "id": "sql-055",
           "title": "Statistical (Aggregate Functions)",
           "url": "https://www.geeksforgeeks.org/sql/statistical-functions-in-sql/"
         },
         {
-          "id": "sql-059",
+          "id": "sql-056",
           "title": "JSON",
           "url": "https://www.geeksforgeeks.org/sql/working-with-json-in-sql/"
         },
         {
-          "id": "sql-060",
+          "id": "sql-057",
           "title": "Conversion",
           "url": "https://www.geeksforgeeks.org/sql/sql-conversion-function/"
         },
         {
-          "id": "sql-061",
+          "id": "sql-058",
           "title": "LTRIM",
           "url": "https://www.geeksforgeeks.org/sql/ltrim-function-in-sql/"
         },
         {
-          "id": "sql-062",
+          "id": "sql-059",
           "title": "UPPER",
           "url": "https://www.geeksforgeeks.org/sql/upper-function-in-sql/"
         },
         {
-          "id": "sql-063",
+          "id": "sql-060",
           "title": "RTRIM",
           "url": "https://www.geeksforgeeks.org/sql/rtrim-function-in-sql/"
         },
         {
-          "id": "sql-064",
+          "id": "sql-061",
           "title": "Regular Expressions",
           "url": "https://www.geeksforgeeks.org/sql/regular-expressions-in-sql/"
         },
         {
-          "id": "sql-065",
+          "id": "sql-062",
           "title": "NOT NULL",
           "url": "https://www.geeksforgeeks.org/sql/sql-not-null-constraint/"
         },
         {
-          "id": "sql-066",
+          "id": "sql-063",
           "title": "Primary Key",
           "url": "https://www.geeksforgeeks.org/sql/primary-key-constraint-in-sql/"
         },
         {
-          "id": "sql-067",
+          "id": "sql-064",
           "title": "Foreign Key",
           "url": "https://www.geeksforgeeks.org/sql/foreign-key-constraint-in-sql/"
         },
         {
-          "id": "sql-068",
+          "id": "sql-065",
           "title": "Composite Key",
           "url": "https://www.geeksforgeeks.org/sql/composite-key-in-sql/"
         },
         {
-          "id": "sql-069",
+          "id": "sql-066",
           "title": "Unique",
           "url": "https://www.geeksforgeeks.org/sql/sql-unique-constraint/"
         },
         {
-          "id": "sql-070",
+          "id": "sql-067",
           "title": "Alternate Key",
           "url": "https://www.geeksforgeeks.org/sql/sql-alternate-key/"
         },
         {
-          "id": "sql-071",
+          "id": "sql-068",
           "title": "CHECK",
           "url": "https://www.geeksforgeeks.org/sql/sql-check-constraint/"
         },
         {
-          "id": "sql-072",
+          "id": "sql-069",
           "title": "DEFAULT",
           "url": "https://www.geeksforgeeks.org/sql/sql-default-constraint/"
         },
         {
-          "id": "sql-073",
+          "id": "sql-070",
           "title": "Introduction",
           "url": "https://www.geeksforgeeks.org/sql/sql-join-set-1-inner-left-right-and-full-joins/"
         },
         {
-          "id": "sql-074",
+          "id": "sql-071",
           "title": "Outer",
           "url": "https://www.geeksforgeeks.org/sql/sql-outer-join/"
         },
         {
-          "id": "sql-075",
+          "id": "sql-072",
           "title": "Left",
           "url": "https://www.geeksforgeeks.org/sql/sql-left-join/"
         },
         {
-          "id": "sql-076",
+          "id": "sql-073",
           "title": "Right",
           "url": "https://www.geeksforgeeks.org/sql/sql-right-join/"
         },
         {
-          "id": "sql-077",
+          "id": "sql-074",
           "title": "Full",
           "url": "https://www.geeksforgeeks.org/sql/sql-full-join/"
         },
         {
-          "id": "sql-078",
+          "id": "sql-075",
           "title": "Cross",
           "url": "https://www.geeksforgeeks.org/sql/sql-cross-join/"
         },
         {
-          "id": "sql-079",
+          "id": "sql-076",
           "title": "Self",
           "url": "https://www.geeksforgeeks.org/sql/sql-self-join/"
         },
         {
-          "id": "sql-080",
+          "id": "sql-077",
           "title": "UPDATE",
           "url": "https://www.geeksforgeeks.org/sql/sql-update-with-join/"
         },
         {
-          "id": "sql-081",
+          "id": "sql-078",
           "title": "DELETE",
           "url": "https://www.geeksforgeeks.org/sql/sql-delete-join/"
         },
         {
-          "id": "sql-082",
+          "id": "sql-079",
           "title": "Recursive",
           "url": "https://www.geeksforgeeks.org/sql/recursive-join-in-sql/"
         },
         {
-          "id": "sql-083",
+          "id": "sql-080",
           "title": "CREATE",
           "url": "https://www.geeksforgeeks.org/sql/sql-create-view-statement/"
         },
         {
-          "id": "sql-084",
+          "id": "sql-081",
           "title": "UPDATE",
           "url": "https://www.geeksforgeeks.org/sql/update-view-in-sql/"
         },
         {
-          "id": "sql-085",
+          "id": "sql-082",
           "title": "RENAME",
-          "url": "https://www.geeksforgeeks.org/sql/sql-rename-view/"
+          "url": "https://www.geeksforgeeks.org/sql/rename-view-in-sql/"
         },
         {
-          "id": "sql-086",
+          "id": "sql-083",
           "title": "DROP",
-          "url": "https://www.geeksforgeeks.org/sql/sql-delete-view/"
+          "url": "https://www.geeksforgeeks.org/sql/drop-view-sql/"
         },
         {
-          "id": "sql-087",
+          "id": "sql-084",
           "title": "Introduction",
           "url": "https://www.geeksforgeeks.org/sql/sql-indexes/"
         },
         {
-          "id": "sql-088",
+          "id": "sql-085",
           "title": "Create",
           "url": "https://www.geeksforgeeks.org/sql/sql-create-index/"
         },
         {
-          "id": "sql-089",
+          "id": "sql-086",
           "title": "Drop",
           "url": "https://www.geeksforgeeks.org/sql/sql-drop-index/"
         },
         {
-          "id": "sql-090",
+          "id": "sql-087",
           "title": "Show",
           "url": "https://www.geeksforgeeks.org/sql/sql-show-indexes/"
         },
         {
-          "id": "sql-091",
+          "id": "sql-088",
           "title": "Unique",
           "url": "https://www.geeksforgeeks.org/sql/sql-unique-index/"
         },
         {
-          "id": "sql-092",
+          "id": "sql-089",
           "title": "Clustered & Non-Clustered",
           "url": "https://www.geeksforgeeks.org/sql/clustered-and-non-clustered-indexing/"
         },
         {
-          "id": "sql-093",
+          "id": "sql-090",
           "title": "Introduction",
           "url": "https://www.geeksforgeeks.org/sql/sql-subquery/"
         },
         {
-          "id": "sql-094",
+          "id": "sql-091",
           "title": "Correlated Subqueries",
           "url": "https://www.geeksforgeeks.org/sql/sql-correlated-subqueries/"
         },
         {
-          "id": "sql-095",
+          "id": "sql-092",
           "title": "Nested Queries",
           "url": "https://www.geeksforgeeks.org/sql/nested-queries-in-sql/"
         },
         {
-          "id": "sql-096",
+          "id": "sql-093",
           "title": "Introduction",
           "url": "https://www.geeksforgeeks.org/dbms/introduction-of-er-model/"
         },
         {
-          "id": "sql-097",
+          "id": "sql-094",
           "title": "Entity Relationship Diagrams (ERDs)",
           "url": "https://www.geeksforgeeks.org/sql/how-to-draw-entity-relationship-diagrams/"
         },
         {
-          "id": "sql-098",
+          "id": "sql-095",
           "title": "Mapping from ER Model to Relational Model",
           "url": "https://www.geeksforgeeks.org/dbms/mapping-from-er-model-to-relational-model/"
         },
         {
-          "id": "sql-099",
+          "id": "sql-096",
           "title": "Introduction of Database Normalization",
           "url": "https://www.geeksforgeeks.org/dbms/introduction-of-database-normalization/"
         },
         {
-          "id": "sql-100",
+          "id": "sql-097",
           "title": "Functional Dependency & Attribute Closure",
           "url": "https://www.geeksforgeeks.org/dbms/functional-dependency-and-attribute-closure/"
         },
         {
-          "id": "sql-101",
+          "id": "sql-098",
           "title": "Types of Functional dependencies",
           "url": "https://www.geeksforgeeks.org/dbms/types-of-functional-dependencies-in-dbms/"
         },
         {
-          "id": "sql-102",
+          "id": "sql-099",
           "title": "Rules of Inference",
           "url": "https://www.geeksforgeeks.org/engineering-mathematics/rules-of-inference/"
         },
         {
-          "id": "sql-103",
+          "id": "sql-100",
           "title": "Normal Forms in DBMS",
           "url": "https://www.geeksforgeeks.org/dbms/normal-forms-in-dbms/"
         },
         {
-          "id": "sql-104",
+          "id": "sql-101",
           "title": "Denormalization in Databases",
           "url": "https://www.geeksforgeeks.org/dbms/denormalization-in-databases/"
         },
         {
-          "id": "sql-105",
+          "id": "sql-102",
           "title": "Database Design",
           "url": "https://www.geeksforgeeks.org/dbms/database-design-in-dbms/"
         },
         {
-          "id": "sql-106",
+          "id": "sql-103",
           "title": "Injection",
           "url": "https://www.geeksforgeeks.org/sql/sql-injection/"
         },
         {
-          "id": "sql-107",
+          "id": "sql-104",
           "title": "Types of SQL Injection",
           "url": "https://www.geeksforgeeks.org/ethical-hacking/types-of-sql-injection-sqli/"
         },
         {
-          "id": "sql-108",
+          "id": "sql-105",
           "title": "Data Encryption",
           "url": "https://www.geeksforgeeks.org/sql/sql-data-encryption/"
         },
         {
-          "id": "sql-109",
+          "id": "sql-106",
           "title": "Database Recovery Techniques",
           "url": "https://www.geeksforgeeks.org/dbms/database-recovery-techniques-in-dbms/"
         },
         {
-          "id": "sql-110",
+          "id": "sql-107",
           "title": "Backup",
           "url": "https://www.geeksforgeeks.org/sql/sql-backup/"
         },
         {
-          "id": "sql-111",
+          "id": "sql-108",
           "title": "Restore SQL Server Database From Backup",
           "url": "https://www.geeksforgeeks.org/sql/how-to-restore-sql-server-database-from-backup/"
         },
         {
-          "id": "sql-112",
+          "id": "sql-109",
           "title": "ORM (Object-Relational Mapping)",
           "url": "https://www.geeksforgeeks.org/dbms/what-is-object-relational-mapping-orm-in-dbms/"
         },
         {
-          "id": "sql-113",
+          "id": "sql-110",
           "title": "ODM (Object-Document Mapping)",
           "url": "https://www.geeksforgeeks.org/dbms/comparison-between-orm-and-odm/"
         },
         {
-          "id": "sql-114",
+          "id": "sql-111",
           "title": "ODBC (Open Database Connectivity)",
           "url": "https://www.geeksforgeeks.org/dbms/odbc-full-form/"
         },
         {
-          "id": "sql-115",
+          "id": "sql-112",
           "title": "Pivot and Unpivot",
           "url": "https://www.geeksforgeeks.org/sql/pivot-and-unpivot-in-sql/"
         },
         {
-          "id": "sql-116",
+          "id": "sql-113",
           "title": "Trigger",
           "url": "https://www.geeksforgeeks.org/sql/sql-trigger-student-database/"
         },
         {
-          "id": "sql-117",
+          "id": "sql-114",
           "title": "Hosting",
           "url": "https://www.geeksforgeeks.org/sql/sql-hosting/"
         },
         {
-          "id": "sql-118",
+          "id": "sql-115",
           "title": "Performance Tuning",
           "url": "https://www.geeksforgeeks.org/sql/sql-performance-tuning/"
         },
         {
-          "id": "sql-119",
+          "id": "sql-116",
           "title": "Stored Procedures",
           "url": "https://www.geeksforgeeks.org/sql/what-is-stored-procedures-in-sql/"
         },
         {
-          "id": "sql-120",
+          "id": "sql-117",
           "title": "Transactions",
           "url": "https://www.geeksforgeeks.org/sql/sql-transactions/"
         },
         {
-          "id": "sql-121",
+          "id": "sql-118",
           "title": "Window functions",
           "url": "https://www.geeksforgeeks.org/sql/window-functions-in-sql/"
         },
         {
-          "id": "sql-122",
+          "id": "sql-119",
           "title": "Cursors",
           "url": "https://www.geeksforgeeks.org/sql/what-is-cursor-in-sql/"
         },
         {
-          "id": "sql-123",
+          "id": "sql-120",
           "title": "Common Table Expressions",
           "url": "https://www.geeksforgeeks.org/sql/cte-in-sql/"
         },
         {
-          "id": "sql-124",
+          "id": "sql-121",
           "title": "Database Tuning",
           "url": "https://www.geeksforgeeks.org/sql/sql-database-tuning/"
         },
         {
-          "id": "sql-125",
+          "id": "sql-122",
           "title": "Exercises",
           "url": "https://www.geeksforgeeks.org/sql/sql-exercises/"
         },
         {
-          "id": "sql-126",
+          "id": "sql-123",
           "title": "Quiz",
           "url": "https://www.geeksforgeeks.org/sql/sql-quiz/"
         },
         {
-          "id": "sql-127",
+          "id": "sql-124",
           "title": "Interview Questions",
           "url": "https://www.geeksforgeeks.org/sql/sql-interview-questions/"
         },
         {
-          "id": "sql-128",
+          "id": "sql-125",
           "title": "SQL Query Interview Questions",
           "url": "https://www.geeksforgeeks.org/sql/sql-query-interview-questions/"
         },
         {
-          "id": "sql-129",
+          "id": "sql-126",
           "title": "Cheat Sheet",
           "url": "https://www.geeksforgeeks.org/sql/sql-cheat-sheet/"
         },
         {
-          "id": "sql-130",
+          "id": "sql-127",
           "title": "30 Days of SQL ( From Basic to Advanced)",
           "url": "https://www.geeksforgeeks.org/sql/30-days-of-sql-from-basic-to-advanced-level/"
         },
         {
-          "id": "sql-131",
+          "id": "sql-128",
           "title": "DBMS Interview Questions",
           "url": "https://www.geeksforgeeks.org/dbms/commonly-asked-dbms-interview-questions/"
         },
         {
-          "id": "sql-132",
+          "id": "sql-129",
           "title": "Multiple Choice Questions of SQLs",
           "url": "https://www.geeksforgeeks.org/quizzes/sql-gq/"
         },
         {
-          "id": "sql-133",
+          "id": "sql-130",
           "title": "Commonly asked DBMS interview questions",
           "url": "https://www.geeksforgeeks.org/dbms/commonly-asked-dbms-interview-questions-set-2/"
         },
         {
-          "id": "sql-134",
-          "title": "SQL Interview Questions For Business Analyst",
-          "url": "https://www.geeksforgeeks.org/sql/30-sql-interview-questions-for-business-analyst/"
-        },
-        {
-          "id": "sql-135",
+          "id": "sql-131",
           "title": "Database Operations3 min read",
           "url": "https://www.geeksforgeeks.org/sql/sql-database/"
         },
         {
-          "id": "sql-136",
+          "id": "sql-132",
           "title": "Date Functions2 min read",
           "url": "https://www.geeksforgeeks.org/sql/sql-date-functions-set-1/"
         },
         {
-          "id": "sql-137",
+          "id": "sql-133",
           "title": "Count()4 min read",
           "url": "https://www.geeksforgeeks.org/sql/sql-count-function/"
         },
         {
-          "id": "sql-138",
+          "id": "sql-134",
           "title": "SUM()2 min read",
           "url": "https://www.geeksforgeeks.org/sql/sql-sum-function/"
         },
         {
-          "id": "sql-139",
+          "id": "sql-135",
           "title": "MAX()3 min read",
           "url": "https://www.geeksforgeeks.org/sql/sql-max-function/"
         },
         {
-          "id": "sql-140",
+          "id": "sql-136",
           "title": "AVG()2 min read",
           "url": "https://www.geeksforgeeks.org/sql/avg-function-in-sql/"
         },
         {
-          "id": "sql-141",
+          "id": "sql-137",
           "title": "Keys in Relational Model7 min read",
           "url": "https://www.geeksforgeeks.org/dbms/types-of-keys-in-relational-model-candidate-super-primary-alternate-and-foreign/"
         },
         {
-          "id": "sql-142",
+          "id": "sql-138",
           "title": "Data Analytics Course2 min read",
           "url": "https://www.geeksforgeeks.org/courses/data-analytics-training-program-excel-sql-python-powerbi"
         },
         {
-          "id": "sql-143",
+          "id": "sql-139",
           "title": "Placement 360 Course2 min read",
           "url": "https://www.geeksforgeeks.org/courses/placement-360-cip-complete-tech-interview"
         },
         {
-          "id": "sql-144",
+          "id": "sql-140",
           "title": "DSA and System Design Course2 min read",
           "url": "https://www.geeksforgeeks.org/courses/interviewe-101-data-structures-algorithm-system-design"
         }
@@ -8041,7 +8021,7 @@
         },
         {
           "id": "web-dev-034",
-          "title": "Express.js4 min read",
+          "title": "Express.js2 min read",
           "url": "https://www.geeksforgeeks.org/node-js/express-js/"
         },
         {

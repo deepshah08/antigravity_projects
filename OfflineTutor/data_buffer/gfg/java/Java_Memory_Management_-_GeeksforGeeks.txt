@@ -1,0 +1,37 @@
+# Java Memory Management - GeeksforGeeks
+
+Java Memory Management is the process by which the Java Virtual Machine (JVM) allocates and manages memory during program execution. It automatically handles memory allocation and deallocation, reducing the need for manual memory management.Prevents memory leaks and reduces manual memory handling. Uses Garbage Collection to remove unused objects automatically. Divides memory into different runtime areas for efficient execution. JVM Memory StructureThe JVM divides memory into several runtime data areas. Some areas are common for the entire JVM, while others are created separately for each thread.JVM Language ClassesComponents of JVM Memory StructureClass LoaderLoads Java .class files into JVM memory. Converts bytecode into a format understandable by JVM. Dynamically loads classes when required during execution. JVM Memory AreaJVM memory is divided into different runtime areas: Method AreaStores class-level information such as metadata, methods, and static variables. Shared among all threads. Created when JVM starts. Heap MemoryStores objects and instance variables. Shared by all threads in the application. Garbage Collector removes unused objects from heap memory.  JVM StacksEach thread has its own stack memory. Stores local variables, method calls, and partial results. Memory is automatically released after method execution.  PC Registers (Program Counter Registers)Stores the address of the currently executing instruction. Each thread has a separate PC register.  Native Method StacksStores information for native methods written in languages like C or C++. Used when Java interacts with native libraries. Example: Java Program to demonstrate how java variables are stored in the different memory areas
+            Java
+
+    import java.io.*;
+
+class Geeks {
+  
+    // static variables are stored in the Method Area
+    static int v = 100;
+
+    // instance variables are stored in the Heap
+    int i = 10;
+
+    public void Display()
+    {
+        // local variables are stored in the Stack
+        int s = 20;
+
+        System.out.println(v);
+        System.out.println(s);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Geeks g = new Geeks();
+      
+        // Calling the Display method
+        g.Display();
+    }
+}
+
+Output100
+20
+Note: Static variables are stored in the Method Area.Instance variables are stored in the Heap.Local variables are stored in the stack.Execution EngineExecutes the bytecode loaded into memory. Converts bytecode into machine-level instructions. Includes components like Interpreter and JIT Compiler. Native Method Interface (JNI)Acts as a bridge between Java code and native applications. Allows Java programs to call C/C++ libraries. Native Method LibrariesContains native libraries (.dll or .so files). Used by JNI for executing native methods.Heap vs StackHeapStackStores objects and instance variables.Stores method calls and local variables.Larger but slower.Smaller but faster.Random access.LIFO (Last-In-First-Out).Allocation is manual (using 'new' keyword), but deallocation is automatic.Allocation and deallocation both are automatic.Long-lived.Short-lived (method duration).Shared among all threads (needs synchronization).Each thread has its own stack (thread safe).

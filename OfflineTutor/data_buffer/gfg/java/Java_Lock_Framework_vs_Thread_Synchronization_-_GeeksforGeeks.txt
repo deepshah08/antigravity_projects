@@ -1,0 +1,106 @@
+# Java Lock Framework vs Thread Synchronization - GeeksforGeeks
+
+In multithreaded Java programs, synchronization ensures that only one thread accesses shared resources at a time, preventing issues like race conditions and data inconsistency. It helps maintain data integrity and proper execution flow.Achieved using synchronized keyword or Lock framework Prevents race conditions and data corruption Ensures safe and consistent access to shared resourcesThread SynchronizationThread synchronization is the simplest mechanism to control access to shared resources. Using the synchronized keyword, a thread can acquire a lock on an object or method, ensuring that only one thread executes the critical section at a time.Ensures safe access to shared resources by multiple threads. Prevents race conditions and data inconsistency.
+            Java
+
+    class Counter{
+    
+    private int c = 0;
+
+    // Synchronized method ensures only one thread at a time
+    public synchronized void increment(){
+        c++;
+        }
+
+    public int getCount(){
+        return c; 
+        
+    }
+}
+
+public class GFG{
+    
+    public static void main(String[] args)
+        throws InterruptedException{
+            
+        Counter counter = new Counter();
+
+        Runnable task = () ->
+        {
+            for (int i = 0; i < 1000; i++) {
+                counter.increment();
+            }
+        };
+
+        Thread t1 = new Thread(task);
+        Thread t2 = new Thread(task);
+
+        t1.start();
+        t2.start();
+
+        t1.join();
+        t2.join();
+
+        System.out.println("Final Count (synchronized): "
+                           + counter.getCount());
+    }
+}
+
+OutputFinal Count (synchronized): 2000
+Explanation:increment() is synchronized, so only one thread can execute it at a time.t1.join() and t2.join() ensure the main thread waits for both threads to finish.Without synchronized, the final count might be less than 2000 due to race conditions.Lock FrameworkThe Lock framework, based on the Lock interface, provides explicit control over thread access. ReentrantLock is its most common implementation, offering features like manual locking/unlocking and non-blocking attempts with tryLock(), unlike synchronized blocks.Uses explicit locks (lock()/unlock()) for controlling access. Provides more flexibility than synchronized (e.g., tryLock, fairness).
+            Java
+
+    import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+class LockCounter{
+    
+    private int count = 0;
+    private final Lock lock = new ReentrantLock();
+
+    public void increment()
+    {
+        lock.lock();
+        try {
+            count++;
+        }
+        finally {
+            lock.unlock(); // Always release lock
+        }
+    }
+
+    public int getCount(){
+        return count;
+        }
+}
+
+public class Geeks{
+    
+    public static void main(String[] args)
+        throws InterruptedException{
+            
+        LockCounter counter = new LockCounter();
+
+        Runnable task = () ->
+        {
+            for (int i = 0; i < 1000; i++) {
+                counter.increment();
+            }
+        };
+
+        Thread t1 = new Thread(task);
+        Thread t2 = new Thread(task);
+
+        t1.start();
+        t2.start();
+
+        t1.join();
+        t2.join();
+
+        System.out.println("Final Count (ReentrantLock): "
+                           + counter.getCount());
+    }
+}
+
+OutputFinal Count (ReentrantLock): 2000
+Explanation:lock.lock() manually acquires the lock before modifying the counter.The try-finally block ensures the lock is always released, even if an error occurs.This allows more control, such as checking lock availability (tryLock) or waiting with timeout.The program safely increments the counter to 2000, similar to synchronized.Which One to Use?Use synchronized when:The critical section is small and simple.Low contention between threads is expected.We want simpler, less verbose code.Use Lock framework when:You need high concurrency or advanced control over threads.The program requires timed or interruptible locks.There are read-heavy operations that can benefit from ReentrantReadWriteLock.We want to implement fairness policies or need to avoid deadlocks explicitly.Rule of Thumb: For simple scenarios, synchronized is enough. For scalable, complex multi-threading, prefer Lock framework. Lock Framework vs Thread SynchronizationFeaturesLock FrameworkThread Synchronization (synchronized)FlexibilityMore flexible. Allows multiple locks for different methods.Limited flexibility. Only one lock can be applied per method or class.ConcurrencyAllows higher concurrency by using different locks for different tasks.Less concurrency due to locking the entire method or class.Control Over LockingProvides explicit control over when to lock and unlock.Implicit locking with no control over the exact limit.List of waiting threadsThe list of waiting threads can be seen using the Lock frameworkNot possible with synchronized.Deadlock PreventionOffers better strategies to avoid deadlocks using try-lock mechanisms.Less control over deadlock prevention.InterruptibleSupports interruptible lock acquisition (e.g., lock.tryLock())Synchronized blocks are non-interruptible.

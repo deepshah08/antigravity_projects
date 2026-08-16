@@ -1,0 +1,511 @@
+# Message Queues - System Design - GeeksforGeeks
+
+Message queues enable asynchronous communication between system components by acting as a buffer between producers and consumers. They decouple services, allowing each component to operate independently and reliably even during delays or failures.Improves scalability and load handling by distributing work across consumers.Enhances fault tolerance by storing messages until they are processed.Example: In an e-commerce system, when a user places an order, the order service sends a message to a queue, and separate services like payment and notification process it asynchronously without blocking the user request. Think about your favorite pizza place, where they make and deliver pizzas. Behind the scenes, there's a magical system that ensures everything runs smoothly. This magic is called a Message Queue. It's like a special to-do list that helps the chefs and delivery drivers know exactly what pizzas to make and where to deliver them.A typical message structure consists of two main parts:Headers: These contain metadata about the message, such as unique identifier, timestamp, message type, and routing information.Body: The body contains the actual message payload or content. It can be in any format, including text, binary data, or structured data like JSON.Components A message queue system consists of different components that work together to send, store, and process messages asynchronously.Message Producer: Messages are created and sent to the message queue by the message producer. Any program or part of a system that produces data for sharing can be considered this.Message Queue: Until the message consumers consume them, the messages are stored and managed by a data structure or service called the message queue. It serves as a mediator or buffer between consumers and producers.Message Consumer: Messages in the message queue must be retrieved and processed by the message consumer. Messages from the queue can be read concurrently by several users.Message Broker (Optional): In some message queue systems, a message broker acts as an intermediary between producers and consumers, providing additional functionality like message routing, filtering, and message transformation.Working Steps to understand how message queues work:Step 1: Sending Messages: The message producer creates a message and sends it to the message queue. The message typically contains data or instructions that need to be processed or communicated.Step 2: Queuing Messages: The message queue stores the message temporarily, making available for one or more consumers. Messages are typically stored in a first-in, first out (FIFO) order.Step 3: Consuming Messages: Message consumers retrieve messages from the queue when they are ready to process them. They can do this at their own pace, which enables asynchronous communication.Step 4: Acknowledgment (Optional): In some message queue systems, consumers can send acknowledgments back to the queue, indicating that they have successfully processed a message. This is essential for ensuring message delivery and preventing message loss.Example: A simple example of a message queue is an email inbox. When you send an email, it is placed in the recipient's inbox. The recipient can then read the email at their convenience. This email inbox acts as a buffer between the sender and the recipient, decoupling them from each other.ImportanceMessage Queues are needed to address a number of challenges in distributed systems, including:Asynchronous Communication: Applications can send and receive messages without waiting for a response due to message queues. Building scalable and dependable systems requires this.Decoupling: Message queues decouple applications from each other, allowing them to be developed independently. This makes systems more flexible and easier to maintain.Scalability: Message queues can be scaled to handle large volumes of messages by adding more servers. This makes them ideal for high-traffic applications.Reliability: Message queues can be designed to be highly reliable, with features such as message persistence, retries, and dead letter queues. This ensures that messages are not lost even in the event of failures.Workflow Management: Message queues can be used to implement complex workflows, such as order processing and payment processing. This can help improve the efficiency and accuracy of these processes.Types There are two main types of message queues in system design:1. Point-to-Point Message QueuesPoint-to-point message queues store messages sent by a producer until a consumer retrieves them. Once consumed, the message is removed from the queue and cannot be processed by others.Point-to-point Message QueuesPoint-to-point message queues can be used to implement a variety of patterns such as:Request-Response: A producer sends a request message to a queue, and a consumer retrieves the message and sends back a response message.Work Queue: Producers send work items to a queue, and consumers retrieve the work items and process them.Guaranteed Delivery: Producers send messages to a queue, and consumers can be configured retry retrieving messages until they are successfully processed.2. Publish-Subscribe Message QueuesPublish-subscribe message queues deliver messages from a producer to all subscribed consumers. Consumers can subscribe to multiple queues and unsubscribe anytime, allowing flexible message handling.Publish-Subscribe Message Queues are often used to implement real-time streaming applications, such as social media and stock market tickers. They can also be used to implement event-driven architecture, where components of a system communicate with each other by publishing and subscribing to events.Message RoutingMessage Routing involves determining how messages are directed to their intended recipients. The following methods can be employed:Topic-Based Routing: Messages are sent to topics or channels, and subscribers express interest in specific topics. Messages are delivered to all subscribers of a particular topic.Direct Routing: Messages are sent directly to specific queues or consumers based on their addresses or routing keys.Content-Based Routing: The routing decision is based on the content of the message. Filters or rules are defined to route messages that meet specific criteria.ScalabilityScalability is essential to ensure that a message queue system can handle increased loads efficiently. To achieve scalability:Distributed Queues: Implement the message queue as a distributed system with multiple nodes, enabling horizontal scaling.Partitioning: Split queues into partitions to distribute message processing across different nodes or clusters.Load Balancing: Use load balancers to evenly distribute incoming messages to queue consumers.Dead Letter Queues and Message PrioritizationThese concepts help manage failed messages and control the order in which messages are processed in a system.1. Dead Letter QueuesDead Letter Queues (DLQs) are a mechanism for handling messages that cannot be processed successfully. This includes:Messages with errors in their content or format.Messages that exceed their time-to-live (TTL) or delivery attempts.Messages that cannot be delivered to any consumer.DLQs provide way to investigate and potentially reprocess failed messages while preventing them from blocking the system.2. Message PrioritizationMessage Prioritization is the process of assigning priority levels to messages to control their processing order. Prioritization criteria can include:Urgency: Messages with higher priority may need to processed before lower-priority messages.Message Content: Messages containing critical information or commands may receive higher priority.Business Rules: Custom business rules or algorithms may be used to determine message priority.Message Queue ImplementationMessage Queues can be implemented in a variety of ways, but they typically follow a simple pattern:Producer: An application that sends messages to a queue.Message Broker: A server that stores and forwards messages between producers and consumers.Consumer: An application that receives messages from a queue.Problem Statement: In a real-world scenario, you might want to consider using a dedicated message queue service like RabbitMQ or Apace Kafka for distributed systems.Here's a step-by-step guide to implement a basic message queue in C++:Step 1: Define the Message Structure:Start by defining a structure for your messages. This structure should contain the necessary information for communication between different parts of your system.
+            C++
+
+    struct Message {
+    int messageType;
+    std::string payload;
+    // Add any other fields as needed
+};
+
+
+            Java
+
+    public class Message {
+    public int messageType;
+    public String payload;
+    // Add any other fields as needed
+}
+
+
+            Python
+
+    class Message:
+    def __init__(self, messageType, payload):
+        self.messageType = messageType
+        self.payload = payload
+    # Add any other fields as needed
+
+
+            JavaScript
+
+    class Message {
+    constructor(messageType, payload) {
+        this.messageType = messageType;
+        this.payload = payload;
+    }
+    // Add any other fields as needed
+}
+
+Step 2: Implement the Message Queue:Create a class for your message queue. This class should handle the operations like enqueue and dequeue.
+            C++
+
+    #include <queue>
+#include <mutex>
+#include <condition_variable>
+
+class MessageQueue {
+public:
+    // Enqueue a message
+    void enqueue(const Message& message) {
+        std::unique_lock<std::mutex> lock(mutex_);
+        queue_.push(message);
+        lock.unlock();
+        condition_.notify_one();
+    }
+
+    // Dequeue a message
+    Message dequeue() {
+        std::unique_lock<std::mutex> lock(mutex_);
+        // Wait until a message is available
+        condition_.wait(lock, [this] { return !queue_.empty(); });
+
+        Message message = queue_.front();
+        queue_.pop();
+        return message;
+    }
+
+private:
+    std::queue<Message> queue_;
+    std::mutex mutex_;
+    std::condition_variable condition_;
+};
+
+
+            Java
+
+    import java.util.LinkedList;
+import java.util.Queue;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+class MessageQueue {
+    private Queue<Message> queue = new LinkedList<>();
+    private Lock lock = new ReentrantLock();
+    private Condition condition = lock.newCondition();
+
+    // Enqueue a message
+    public void enqueue(Message message) {
+        lock.lock();
+        try {
+            queue.add(message);
+            condition.signal();
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    // Dequeue a message
+    public Message dequeue() throws InterruptedException {
+        lock.lock();
+        try {
+            while (queue.isEmpty()) {
+                condition.await();
+            }
+            return queue.poll();
+        } finally {
+            lock.unlock();
+        }
+    }
+}
+
+
+            Python
+
+    import queue
+import threading
+
+class MessageQueue:
+    def __init__(self):
+        self.queue = queue.Queue()
+        self.lock = threading.Lock()
+        self.condition = threading.Condition(self.lock)
+
+    # Enqueue a message
+    def enqueue(self, message):
+        with self.lock:
+            self.queue.put(message)
+            self.condition.notify_one()
+
+    # Dequeue a message
+    def dequeue(self):
+        with self.lock:
+            while self.queue.empty():
+                self.condition.wait()
+            return self.queue.get()
+
+
+            JavaScript
+
+    class MessageQueue {
+    constructor() {
+        this.queue = [];
+        this.mutex = new Promise(resolve => this.resolveMutex = resolve);
+    }
+
+    // Enqueue a message
+    async enqueue(message) {
+        await this.mutex;
+        try {
+            this.queue.push(message);
+        } finally {
+            this.resolveMutex();
+        }
+    }
+
+    // Dequeue a message
+    async dequeue() {
+        await this.mutex;
+        try {
+            while (this.queue.length === 0) {
+                await new Promise(resolve => this.resolveWait = resolve);
+            }
+            return this.queue.shift();
+        } finally {
+            this.resolveMutex();
+        }
+    }
+}
+
+Step 3: Create Producers and ConsumersImplement functions or classes that act as producers and consumers. Producers enqueue messages, and consumers dequeue messages.
+            C++
+
+    // Producer function
+void producer(MessageQueue& messageQueue, int messageType, const std::string& payload) {
+    Message message;
+    message.messageType = messageType;
+    message.payload = payload;
+
+    messageQueue.enqueue(message);
+}
+
+// Consumer function
+void consumer(MessageQueue& messageQueue) {
+    while (true) {
+        Message message = messageQueue.dequeue();
+        // Process the message
+        // ...
+    }
+}
+
+
+            Java
+
+    // Producer function
+public void producer(MessageQueue messageQueue, int messageType, String payload) {
+    Message message = new Message();
+    message.setMessageType(messageType);
+    message.setPayload(payload);
+
+    messageQueue.enqueue(message);
+}
+
+// Consumer function
+public void consumer(MessageQueue messageQueue) {
+    while (true) {
+        Message message = messageQueue.dequeue();
+        // Process the message
+        // ...
+    }
+}
+
+
+            Python
+
+    # Producer function
+def producer(message_queue, message_type, payload):
+    message = Message()
+    message.message_type = message_type
+    message.payload = payload
+
+    message_queue.enqueue(message)
+
+# Consumer function
+def consumer(message_queue):
+    while True:
+        message = message_queue.dequeue()
+        # Process the message
+        # ...
+
+
+            JavaScript
+
+    // Producer function
+function producer(messageQueue, messageType, payload) {
+    let message = { messageType: messageType, payload: payload };
+
+    messageQueue.enqueue(message);
+}
+
+// Consumer function
+function consumer(messageQueue) {
+    while (true) {
+        let message = messageQueue.dequeue();
+        // Process the message
+        // ...
+    }
+}
+
+Step 4: Use the Message QueueCreate instances of the message queue, producers, and consumers, and use them in your program.
+            C++
+
+    #include <iostream>
+#include <thread>
+#include <queue>
+#include <mutex>
+#include <condition_variable>
+#include <string>
+
+// Thread-safe message queue
+class MessageQueue {
+private:
+    std::queue<std::string> queue;
+    std::mutex mtx;
+    std::condition_variable cv;
+
+public:
+    void send(const std::string& message) {
+        std::lock_guard<std::mutex> lock(mtx);
+        queue.push(message);
+        cv.notify_one();
+    }
+
+    std::string receive() {
+        std::unique_lock<std::mutex> lock(mtx);
+        // Fixed typo here: 'queue' instead of 'queu'
+        cv.wait(lock, [this]() { return !queue.empty(); });
+        std::string message = queue.front();
+        queue.pop();
+        return message;
+    }
+};
+
+// Producer function
+void producer(MessageQueue& mq, int id, const std::string& message) {
+    std::cout << "Producer " << id << " sending: " << message << std::endl;
+    mq.send(message);
+}
+
+// Consumer function
+void consumer(MessageQueue& mq) {
+    std::string msg = mq.receive();
+    std::cout << "Consumer received: " << msg << std::endl;
+}
+
+int main() {
+    MessageQueue messageQueue;
+
+    std::thread producerThread(producer, std::ref(messageQueue), 1, "Hello, World!");
+    std::thread consumerThread(consumer, std::ref(messageQueue));
+
+    producerThread.join();
+    consumerThread.join();
+
+    return 0;
+}
+
+
+            Java
+
+    import java.util.LinkedList;
+import java.util.Queue;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+// Thread-safe message queue
+class MessageQueue {
+    private Queue<String> queue = new LinkedList<>();
+    private Lock lock = new ReentrantLock();
+    private Condition notEmpty = lock.newCondition();
+
+    public void send(String message) {
+        lock.lock();
+        try {
+            queue.add(message);
+            notEmpty.signal();
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    public String receive() {
+        lock.lock();
+        try {
+            while (queue.isEmpty()) {
+                try {
+                    notEmpty.await();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            return queue.poll();
+        } finally {
+            lock.unlock();
+        }
+    }
+}
+
+// Producer function
+class Producer implements Runnable {
+    private MessageQueue mq;
+    private int id;
+    private String message;
+
+    public Producer(MessageQueue mq, int id, String message) {
+        this.mq = mq;
+        this.id = id;
+        this.message = message;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Producer " + id + " sending: " + message);
+        mq.send(message);
+    }
+}
+
+// Consumer function
+class Consumer implements Runnable {
+    private MessageQueue mq;
+
+    public Consumer(MessageQueue mq) {
+        this.mq = mq;
+    }
+
+    @Override
+    public void run() {
+        String msg = mq.receive();
+        System.out.println("Consumer received: " + msg);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MessageQueue messageQueue = new MessageQueue();
+
+        Thread producerThread = new Thread(new Producer(messageQueue, 1, "Hello, World!"));
+        Thread consumerThread = new Thread(new Consumer(messageQueue));
+
+        producerThread.start();
+        consumerThread.start();
+
+        try {
+            producerThread.join();
+            consumerThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+            Python
+
+    import queue
+import threading
+
+# Thread-safe message queue
+class MessageQueue:
+    def __init__(self):
+        self.queue = queue.Queue()
+        self.lock = threading.Lock()
+        self.not_empty = threading.Condition(self.lock)
+
+    def send(self, message):
+        with self.not_empty:
+            self.queue.put(message)
+            self.not_empty.notify()
+
+    def receive(self):
+        with self.not_empty:
+            while self.queue.empty():
+                self.not_empty.wait()
+            return self.queue.get()
+
+# Producer function
+def producer(mq, id, message):
+    print(f'Producer {id} sending: {message}')
+    mq.send(message)
+
+# Consumer function
+def consumer(mq):
+    msg = mq.receive()
+    print(f'Consumer received: {msg}')
+
+if __name__ == '__main__':
+    message_queue = MessageQueue()
+
+    producer_thread = threading.Thread(target=producer, args=(message_queue, 1, 'Hello, World!'))
+    consumer_thread = threading.Thread(target=consumer, args=(message_queue,))
+
+    producer_thread.start()
+    consumer_thread.start()
+
+    producer_thread.join()
+    consumer_thread.join()
+
+
+            JavaScript
+
+    class MessageQueue {
+    constructor() {
+        this.queue = [];
+        this.waiting = [];
+    }
+
+    // Producer sends a message
+    async send(message) {
+        if (this.waiting.length > 0) {
+            // If a consumer is waiting, resolve it immediately
+            const resolve = this.waiting.shift();
+            resolve(message);
+        } else {
+            // Otherwise, push message to queue
+            this.queue.push(message);
+        }
+    }
+
+    // Consumer receives a message
+    receive() {
+        return new Promise((resolve) => {
+            if (this.queue.length > 0) {
+                // If a message is available, resolve immediately
+                resolve(this.queue.shift());
+            } else {
+                // Otherwise, wait until a message is available
+                this.waiting.push(resolve);
+            }
+        });
+    }
+}
+
+// Producer function
+async function producer(mq, id, message) {
+    console.log(`Producer ${id} sending: ${message}`);
+    await mq.send(message);
+}
+
+// Consumer function
+async function consumer(mq) {
+    const msg = await mq.receive();
+    console.log(`Consumer received: ${msg}`);
+}
+
+// Main thread logic
+(async () => {
+    const messageQueue = new MessageQueue();
+
+    // Start consumer first (to simulate waiting)
+    consumer(messageQueue);
+
+    // Simulate delay before sending
+    setTimeout(() => {
+        producer(messageQueue, 1, 'Hello, World!');
+    }, 1000);
+})();
+
+OutputProducer 1 sending: Hello, World!
+Consumer received: Hello, World!

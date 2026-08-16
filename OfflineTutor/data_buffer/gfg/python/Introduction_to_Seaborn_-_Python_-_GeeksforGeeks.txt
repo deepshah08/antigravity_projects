@@ -1,0 +1,79 @@
+# Introduction to Seaborn - Python - GeeksforGeeks
+
+Seaborn is a Python library for creating statistical visualizations. It provides clean default styles and color palettes, making plots more attractive and easier to read. Built on top of Matplotlib and integrated with pandas data structures, Seaborn makes data visualization easier and more consistent.Seaborn emphasizes visualization as an essential part of data analysis.Its dataset-oriented APIs allow switching between different plot types for the same variables.Helps in understanding patterns, trends and relationships within the data.Categories of Plots in SeabornPlots are basically used for visualizing the relationship between variables. Those variables can be either completely numerical or a category like a group, class, or division. Seaborn divides the plot into the below categories:Relational plots: used to understand the relation between two variables (e.g., lineplot, scatterplot)Categorical plots: deals with categorical variables and how they can be visualized (e.g., boxplot, violinplot, barplot)Distribution plots: show data distribution (e.g., histplot, kdeplot)Regression plots: show relationships with regression line (e.g., lmplot, regplot)Matrix plots: visualize matrices (e.g., heatmap)Multi-plot grids: plot multiple graphs together (e.g., FacetGrid)InstallationFor Python environment: pip install seabornFor conda environment: conda install seabornDependencies for Seaborn Library There are some libraries that must be installed before using Seaborn. Here we will list out some basics that are a must for using Seaborn. Python 3.6+numpy (>= 1.13.3) scipy (>= 1.0.1)pandas (>= 0.22.0)matplotlib (>= 2.1.2) Note: Most of these dependencies are automatically installed when you install Seaborn, but it is important to have compatible versions to avoid errors.Basic Plots in Seaborn1. LineplotLineplot is used to show the relationship between two continuous variables. It is commonly used for time-series or ordered data.Example: Visualizing trend over time
+            Python
+
+    import seaborn as sns
+import matplotlib.pyplot as plt
+
+fmri = sns.load_dataset("fmri")
+sns.lineplot(x="timepoint", y="signal", hue="region", data=fmri)
+plt.show()
+
+OutputLine graph showing signal changes across timepoints for different regions.Explanation: x="timepoint" sets time on x-axis, y="signal" values plotted on y-axis and hue="region" separates lines by region2. ScatterplotScatterplot is used to show the relationship between two numerical variables. It helps in identifying patterns or correlations.Example: Relationship between total bill and tip
+            Python
+
+    import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+
+sns.scatterplot(x="total_bill", y="tip", hue="day", data=tips)
+plt.show()
+
+OutputScatter plot showing how tips vary with total bill across different days.Explanation: x, y numerical variables and hue="day" adds color grouping3. BarplotBarplot is used to compare numerical values across categories. It shows the average value with confidence intervals.Example: Average total bill per day
+            Python
+
+    import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+
+sns.barplot(x="day", y="total_bill", data=tips)
+plt.show()
+
+Output Bar chart showing average total bill for each day.Explanation: x="day" categories and y="total_bill" aggregated values (mean by default)4. BoxplotBoxplot is used to show the distribution of data based on quartiles. It helps identify spread and outliers.Example: Distribution of total bill by day
+            Python
+
+    import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+
+sns.boxplot(x="day", y="total_bill", data=tips)
+plt.show()
+
+Output Box plot showing median, quartiles, and outliers for each day.5. HistplotHistplot is used to visualize the distribution of a single numerical variable.Example: Distribution of total bill
+            Python
+
+    import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+
+sns.histplot(tips["total_bill"], kde=True)
+plt.show()
+
+OutputHistogram with a smooth density curve.Explanation: kde=True adds density curve6. HeatmapHeatmap is used to visualize matrix-like data using colors. It is commonly used for correlation matrices.Example: Correlation heatmap
+            Python
+
+    import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+corr = tips.corr(numeric_only=True)
+
+sns.heatmap(corr, annot=True, cmap="coolwarm")
+plt.show()
+
+OutputColor-coded matrix showing correlations between variables.Explanation: annot=True displays values and cmap controls color scheme7. PairplotPairplot is used to plot pairwise relationships between multiple numerical variables.Example: Pairwise relationships in dataset
+            Python
+
+    import seaborn as sns
+import matplotlib.pyplot as plt
+
+iris = sns.load_dataset("iris")
+sns.pairplot(iris, hue="species")
+plt.show()
+
+OutputGrid of scatterplots and histograms for all variable pairs.Explanation: hue adds category distinctionRelated Articles:Maplotlib Library Pandas

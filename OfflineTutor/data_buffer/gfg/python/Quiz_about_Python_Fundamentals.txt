@@ -1,0 +1,109 @@
+# Quiz about Python Fundamentals
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython FundamentalsLast Updated : DiscussCommentsQuestion 1Which of the following is a valid way to comment in Python?// This is a comment # This is a comment<!-- This is a comment --> /* This is a comment */Question 2What is the result of the following expression in Python: 5 + 2 * 32117111Question 3What will be the output of the following code snippet?
+        Python
+        
+        a = 5
+b = 2
+print(a // b)
+
+        
+    2.5 22.02.00Question 4What is the output of the following code?
+        Python
+        
+        num1 = "5"
+num2 = 3
+result = num1 * num2
+print(result)
+
+        
+    15"555"8"333"Question 5What is the output of the following code?
+        Python
+        
+        value = 2 + 3 * 4 / 2
+print(value)
+
+        
+    4.510.08.012.0Question 6What is the output of the following code?
+        Python
+        
+        x = "5"
+y = "2"
+print(x + y)
+
+        
+    7 52103Question 7Which of the following statements is true about Python variables?Variables must be declared before they are used.Variables can contain only letters.Python variables are case-sensitive.Python variables cannot be reassigned.Question 8Which of the following is the correct way to take user input in Python?input()get_input()user_input()read_input() Question 9Which of the following is the correct type conversion for converting a floating-point number to an integer in Python?int(float_num)integer(float_num)float_to_int(float_num)convert_int(float_num)Question 10What is the value of result in the following code?
+        Python
+        
+        num = "8"
+result = int(num) + 5
+print(result)
+
+        
+    13 "85"58"13"Tags:Python-QuizzesThere are 15 questions to complete.Take a part in the ongoing discussionView All Discussion

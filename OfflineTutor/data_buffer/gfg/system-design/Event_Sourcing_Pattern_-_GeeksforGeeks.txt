@@ -1,0 +1,314 @@
+# Event Sourcing Pattern - GeeksforGeeks
+
+Event Sourcing records every change as an event instead of just storing the current state, creating a complete history of data changes. The current state can be rebuilt anytime by replaying these events, helping track how data evolved over time.Events are stored sequentially in a log or journal, allowing the program’s state to be restored by replaying those events.Commonly used in domains like finance and e-commerce where accurate historical data tracking is essential.Example: In a banking system, instead of storing only the final account balance, every transaction like “Money Deposited”, “Money Withdrawn”, and “Transfer Completed” is stored as an event. The current balance is calculated by replaying all these events in order.Event SourcingReal World ApplicationsEvent Sourcing finds applications in diverse domains and use cases where tracking and analyzing historical data is crucial. Below are some notable examples:Financial Systems: To keep an unchangeable record of transactions, account activity, and compliance events, banking and financial institutions use event sourcing.   Healthcare Records: Electronic health record (EHR) systems use event sourcing to document patient contacts, treatment histories, and medical procedures.   Supply Chain Management: Event sourcing is used in supply chain and logistics management to track inventory movements, shipping updates, and supply chain interruptions.E-commerce Platforms: Event sourcing is a useful tool for e-commerce applications to record customer interactions, order fulfillment processes, and inventory changes. This makes it feasible to track orders, offer customized recommendations, and examine customer behavior in order to boost sales and customer satisfaction.  Gaming and Virtual Environments: Event Sourcing is used in virtual worlds and multiplayer online games to record player movements, game state changes, and in-game purchases.  Components Event Sourcing in system design revolves around several core concepts and components:Events: Permanent records of system state changes that contain all information required to rebuild the system’s state at a specific point in time.Event Store: Durable storage that maintains the complete stream of events in order and acts as the source of truth for the system. Messaging systems like Apache Kafka or RabbitMQ may also distribute events.Aggregate: A logical group of related domain objects that processes commands, applies business logic, and generates events. Each aggregate is associated with its own event stream.Command: Requests issued by clients or system components to perform actions, which are validated and processed by aggregates.Projection: Read models created from event streams to represent the current system state for efficient querying and reporting.Event Bus: Messaging infrastructure that enables asynchronous communication by allowing components to publish and subscribe to events.Working The steps to understand how event sourcing pattern works are:Capture Events Instead of State: Every system change is stored as an event, such as “order created” or “item added,” instead of only saving the final state.Store Events in Sequence: Events are stored in the exact order they occur, forming a chronological event stream that acts as the system’s source of truth.Reconstruct State by Replaying Events: The current system state is rebuilt by replaying and processing all stored events from the beginning.Handle New Events: New changes generate additional events that are appended to the sequence without modifying previous events.Replay Events for Debugging: Events can be replayed to trace system behavior, understand state changes over time, and investigate issues or errors.Implementation Example Understand event sourcing pattern with the help of an example of registration system:1. Registration System Before Event Sourcing In a traditional event registration system, updates are made directly to the database, changing the current state immediately. This makes it hard to track history, maintain past data, and manage notifications for registration changes.traditional registration class in which there are several issues:When users register or cancel their registrations, the system updates the database immediately without maintaining a history of actions.The system does not record the reasons for registration changes, making it hard to audit past actions.Notifications to users must be handled separately, leading to potential delays and errors in communication.
+            C++
+
+    #include <string>
+#include <vector>
+
+enum class RegistrationState {
+    REGISTERED,
+    CANCELLED
+};
+
+class Database {
+public:
+    static void update(Registration* registration) {
+        // Update the database directly
+    }
+};
+
+class Registration {
+private:
+    RegistrationState state;
+    std::string userId;
+    std::string eventId;
+
+public:
+    void registerUser(const std::string& userId, const std::string& eventId) {
+        this->state = RegistrationState::REGISTERED;
+        this->userId = userId;
+        this->eventId = eventId;
+        // Update the database directly
+        Database::update(this);
+    }
+
+    void cancel() {
+        this->state = RegistrationState::CANCELLED;
+        // Update the database directly
+        Database::update(this);
+    }
+};
+
+
+            Java
+
+    public class Registration {
+    private RegistrationState state;
+    private String userId;
+    private String eventId;
+
+    public void register(String userId, String eventId) {
+        this.state = RegistrationState.REGISTERED;
+        this.userId = userId;
+        this.eventId = eventId;
+        // Update the database directly
+        Database.update(this);
+    }
+
+    public void cancel() {
+        this.state = RegistrationState.CANCELLED;
+        // Update the database directly
+        Database.update(this);
+    }
+}
+
+
+            Python
+
+    class RegistrationState:
+    REGISTERED = 'REGISTERED'
+    CANCELLED = 'CANCELLED'
+
+class Database:
+    @staticmethod
+    def update(registration):
+        # Update the database directly
+        pass
+
+class Registration:
+    def __init__(self):
+        self.state = None
+        self.userId = None
+        self.eventId = None
+
+    def register(self, userId, eventId):
+        self.state = RegistrationState.REGISTERED
+        self.userId = userId
+        self.eventId = eventId
+        # Update the database directly
+        Database.update(self)
+
+    def cancel(self):
+        self.state = RegistrationState.CANCELLED
+        # Update the database directly
+        Database.update(self)
+
+
+            JavaScript
+
+    class Database {
+    static update(registration) {
+        // Update the database directly
+    }
+}
+
+class Registration {
+    constructor() {
+        this.state = null;
+        this.userId = null;
+        this.eventId = null;
+    }
+
+    register(userId, eventId) {
+        this.state = RegistrationState.REGISTERED;
+        this.userId = userId;
+        this.eventId = eventId;
+        // Update the database directly
+        Database.update(this);
+    }
+
+    cancel() {
+        this.state = RegistrationState.CANCELLED;
+        // Update the database directly
+        Database.update(this);
+    }
+}
+
+const RegistrationState = {
+    REGISTERED: 'REGISTERED',
+    CANCELLED: 'CANCELLED'
+};
+
+Direct database updates during registration or cancellation can lead to data inconsistencies if failures occur.Notifications are not integrated with the registration process, which may cause missed or delayed user alerts.2. Registration System Using Event SourcingWith the move to an event-sourced architecture, the system now records each significant change as an event, allowing better tracking and historical analysis.Instead of directly updating the database, the system processes commands to create and cancel registrations and generates events for each action.Each state change is represented by an event, providing a clear audit trail of user actions.Notifications are handled through event subscribers, ensuring users are promptly informed about their registration status changes.event sourced registration class:
+            C++
+
+    #include <vector>
+#include <string>
+
+class Event {};
+class EventRegisteredEvent : public Event { public: std::string userId; std::string eventId; EventRegisteredEvent(std::string userId, std::string eventId) : userId(userId), eventId(eventId) {} };
+class RegistrationCancelledEvent : public Event {};
+
+enum class RegistrationState { REGISTERED, CANCELLED };
+
+class RegisterForEventCommand { public: std::string getUserId() { return userId; } std::string getEventId() { return eventId; } private: std::string userId; std::string eventId; };
+class CancelRegistrationCommand {};
+
+class Registration {
+private:
+    RegistrationState state;
+    std::string userId;
+    std::string eventId;
+
+public:
+    RegistrationState getState() { return state; }
+
+    std::vector<Event> process(RegisterForEventCommand cmd) {
+        return { EventRegisteredEvent(cmd.getUserId(), cmd.getEventId()) };
+    }
+
+    std::vector<Event> process(CancelRegistrationCommand cmd) {
+        return { RegistrationCancelledEvent() };
+    }
+
+    void apply(EventRegisteredEvent event) {
+        this->state = RegistrationState::REGISTERED;
+        this->userId = event.userId;
+        this->eventId = event.eventId;
+    }
+
+    void apply(RegistrationCancelledEvent event) {
+        this->state = RegistrationState::CANCELLED;
+    }
+};
+
+
+            Java
+
+    public class Registration extends ReflectiveMutableCommandProcessingAggregate<Registration, RegistrationCommand> {
+    private RegistrationState state;
+    private String userId;
+    private String eventId;
+
+    public RegistrationState getState() {
+        return state;
+    }
+
+    public List<Event> process(RegisterForEventCommand cmd) {
+        return EventUtil.events(new EventRegisteredEvent(cmd.getUserId(), cmd.getEventId()));
+    }
+
+    public List<Event> process(CancelRegistrationCommand cmd) {
+        return EventUtil.events(new RegistrationCancelledEvent(userId, eventId));
+    }
+
+    public void apply(EventRegisteredEvent event) {
+        this.state = RegistrationState.REGISTERED;
+        this.userId = event.getUserId();
+        this.eventId = event.getEventId();
+    }
+
+    public void apply(RegistrationCancelledEvent event) {
+        this.state = RegistrationState.CANCELLED;
+    }
+}
+
+
+            Python
+
+    from typing import List
+
+class Event: pass
+class EventRegisteredEvent(Event):
+    def __init__(self, user_id, event_id):
+        self.user_id = user_id
+        self.event_id = event_id
+class RegistrationCancelledEvent(Event): pass
+
+class RegistrationState:
+    REGISTERED = 'REGISTERED'
+    CANCELLED = 'CANCELLED'
+
+class RegisterForEventCommand:
+    def __init__(self, user_id, event_id):
+        self.user_id = user_id
+        self.event_id = event_id
+    def get_user_id(self):
+        return self.user_id
+    def get_event_id(self):
+        return self.event_id
+class CancelRegistrationCommand: pass
+
+class Registration:
+    def __init__(self):
+        self.state = None
+        self.user_id = None
+        self.event_id = None
+
+    def get_state(self):
+        return self.state
+
+    def process(self, cmd):
+        if isinstance(cmd, RegisterForEventCommand):
+            return [EventRegisteredEvent(cmd.get_user_id(), cmd.get_event_id())]\n        elif isinstance(cmd, CancelRegistrationCommand):
+            return [RegistrationCancelledEvent()]
+
+    def apply(self, event):
+        if isinstance(event, EventRegisteredEvent):
+            self.state = RegistrationState.REGISTERED
+            self.user_id = event.user_id
+            self.event_id = event.event_id
+        elif isinstance(event, RegistrationCancelledEvent):
+            self.state = RegistrationState.CANCELLED
+
+
+            JavaScript
+
+    class Event {}
+class EventRegisteredEvent extends Event {
+    constructor(userId, eventId) {
+        super();
+        this.userId = userId;
+        this.eventId = eventId;
+    }
+}
+class RegistrationCancelledEvent extends Event {}
+
+class RegistrationState {
+    static REGISTERED = 'REGISTERED';
+    static CANCELLED = 'CANCELLED';
+}
+
+class RegisterForEventCommand {
+    constructor(userId, eventId) {
+        this.userId = userId;
+        this.eventId = eventId;
+    }
+    getUserId() {
+        return this.userId;
+    }
+    getEventId() {
+        return this.eventId;
+    }
+}
+class CancelRegistrationCommand {}
+
+class Registration {
+    constructor() {
+        this.state = null;
+        this.userId = null;
+        this.eventId = null;
+    }
+    getState() {
+        return this.state;
+    }
+    process(cmd) {
+        if (cmd instanceof RegisterForEventCommand) {
+            return [new EventRegisteredEvent(cmd.getUserId(), cmd.getEventId())];
+        } else if (cmd instanceof CancelRegistrationCommand) {
+            return [new RegistrationCancelledEvent()];
+        }
+    }
+    apply(event) {
+        if (event instanceof EventRegisteredEvent) {
+            this.state = RegistrationState.REGISTERED;
+            this.userId = event.userId;
+            this.eventId = event.eventId;
+        } else if (event instanceof RegistrationCancelledEvent) {
+            this.state = RegistrationState.CANCELLED;
+        }
+    }
+}
+
+By transitioning to an event-sourced architecture, the event registration system gains a clear advantage in tracking registration states, maintaining a complete history of actions, and ensuring timely notifications to users.Challenges While Event Sourcing offers various benefits, it also presents several challenges:Event Versioning & Compatibility: As the system evolves, event structures may change, making it important to manage versioning and backward compatibility without losing historical data.Efficient Event Storage & Retrieval: Storing and querying large volumes of events in high-throughput systems or long event histories requires efficient event storage and querying mechanisms.Handling Eventual Consistency: Different system components may observe state changes at different times, requiring careful handling of stale data, synchronization, and conflict resolution.When to Use Event Sourcing Pattern Use Event Sourcing Pattern when:It's good for apps with complicated rules that need to keep track of how things change over time.It helps when you need a complete history of changes for legal reasons or audits.Helps your app bounce back quickly from problems by replaying past events. Works well in systems with separate parts (like microservices) that need to communicate without being tightly linked.When Not to Use Event Sourcing PatternEvent Sourcing may not be the best choice in these situations:If the system only needs to maintain the latest state and does not require a full history or audit trail, Event Sourcing adds unnecessary complexity.Since every change is stored as a separate event, frequent updates can significantly increase storage requirements over time.Ensuring consistency across multiple events—especially in distributed systems—can be difficult and requires careful coordination.Rebuilding state by replaying events can impact performance in applications where fast data retrieval and low latency are essential.

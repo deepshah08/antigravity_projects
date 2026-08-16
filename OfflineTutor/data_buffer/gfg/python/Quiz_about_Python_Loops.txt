@@ -1,0 +1,119 @@
+# Quiz about Python Loops
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython LoopsLast Updated : DiscussCommentsQuestion 1The best command to repeat a control statement a fixed number of times? While loopFor loopIfElseQuestion 2What will be the output of the following Python code?
+        Python
+        
+        for i in range(int(2.0)):
+   print(i)
+
+        
+    0.0 1.00 1Error01Question 3What will be the output of the following Python code?
+        Python
+        
+        x = 'abcd'
+for i in range(len(x)):  
+    print(i, end= " ")
+
+        
+    1 2 3 4 0 1 2 3ErrorNo outputQuestion 4What will be the output of the following code? 
+        Python
+        
+        x = "GFG"
+for i in range(x):
+    print(i)
+
+        
+    G F G0 1 2ErrorNo outputQuestion 5What is the output of the following code?
+        Python
+        
+        while True:
+  
+	print(“Geeks!”)
+
+        
+    Geeks!“Geeks!”‘Geeks!’Geeks!Geeks!Geeks!(Repeated infinite times)Question 6Which type of loop continues to iterate until explicitly instructed to stop?For loopWhile loopFor-each loopNone of the aboveQuestion 7Which two statements are used to implement iteration?IF and WHILEIF and FORFOR and WHILEIF and ELSEQuestion 8The character that must be at the end of the line for if, while, for etc.:;,.Question 9What is the output of the following code?
+        Python
+        
+        i = 1
+while True:
+   if i%7 == 0:
+   	 break    
+   print(i, end=" ")
+   i += 1
+
+        
+    1 2 3 4 5 6 1 2 3 4 5 6 7No outputErrorQuestion 10What is the output of the following code?
+        Python
+        
+        while True:
+    print("Geeks!")
+    break
+
+        
+    Geeks!“Geeks!”‘Geeks!’Geeks!Geeks!Geeks!(Repeated infinite times)Tags:PythonPython-QuizzesThere are 19 questions to complete.Take a part in the ongoing discussionView All Discussion

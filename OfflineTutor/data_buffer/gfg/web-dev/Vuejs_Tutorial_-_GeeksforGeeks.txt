@@ -1,0 +1,31 @@
+# Vue.js Tutorial - GeeksforGeeks
+
+Vue.js is a progressive JavaScript framework for building user interfaces. It stands out for its simplicity, seamless integration with other libraries, and reactive data binding.Built on JavaScript for flexible and component-based development.Supports declarative rendering, reactivity, and two-way data binding.Provides a lightweight framework with powerful features for single-page applications (SPAs).Easy integration into existing projects or libraries.To start with Vue.js, you need to install or set it up on your machine. Follow these articles to install depending on your system:Vue.js Introduction & InstallationGetting Started with VueJSLet us now take a look at our first code example.
+            JavaScript
+
+    // App.vue
+
+<template>
+    <div>
+        <h1>{{ message }}</h1>
+    </div>
+</template>
+
+<script>
+    export default {
+        data() {
+            return {
+                message: 'Welcome to the Vue.js Tutorial'
+            };
+        }
+    };
+</script>
+
+<style>
+    h1 {
+        color: #42b983;
+        text-align: center;
+    }
+</style>
+
+It will start a server, and when you visit http://localhost:8080, it will displayWelcome to the Vue.js TutorialIn this example:The App.vue file defines the structure, logic, and styling of the application in a single file component.message is a reactive property defined in the data() function and rendered in the template using {{ }}.The application is mounted to the #app div in index.html (automatically generated in the Vue project setup).Why Learn Vue.js?Lightweight and easy to integrate with existing projects.Offers excellent performance for small- to medium-sized applications.Supports two-way data binding and reactivity.Backed by a robust community and extensive documentation.Vue.js TutorialVue.js Tutorial Prerequisites: HTML, CSS and JavaScriptVue.js BasicsIntroduction & InstallationInstancesEvent ModifiersDOM treeHow to write and use for loop in Vue js ?Two Way Binding ModelReusing ComponentsRenderingList Rendering Mutation Methodsv-cloak DirectivePassing Data to Child Components with PropsForm Input Binding with Select optionDynamic ComponentsForm Input Value BindingForm Input Binding number ModifierList Rendering v-for with v-ifList Rendering v-for with a RangeForm Input Binding with Checkbox optionForm Input Binding with Multiline textForm Input Binding trim ModifierForm Input Binding with Radio OptionList Rendering v-for with an ObjectRender Function with h() ArgumentsForm Input Binding with Radio OptionList Rendering v-for with an ObjectComposition API with TemplatesEvent HandlingEvent ModifiersDeclarative RenderingCreate a Hover effect in Vue.jsTypes of data binding with template in Vue.jsClick EventDynamic ComponentsPass data between components using Vue.js Event BusPassing Data to Child Components with PropsRender Functions Component VNodes creationList Entering & Leaving TransitionsComposition API using ProvideWatchersMethodsVue.js Directivesv-on:keyup Directivev-bind Directive in Vue.jsv-for Directive in Vue.jsList Rendering v-for with a Rangev-else-if Directive in Vue.jsCustom Directives with ComponentsForm Input Binding number ModifierConditional RenderingList Rendering v-for with a ComponentList Rendering v-for on a <template>v-if directivev-text directivev-show directivev-html directivev-on:click directivev-once Directivev-on:click.ctrl Directivev-on:click.right Directivev-on:click.shift Directivev-on:click.left Directivev-on:click.middle Directive in Vue.jsv-pre DirectiveVue.js TransitionList Move TransitionsTransitioning between the ComponentsREST API Call to Get Location DetailsVue.js RoutingRoutingHow to use routing in Vue.js ?Advanced VueConsuming a Rest API with Axios in Vue.jsDifferencesNode.js vs Vue.jsWhat is the difference between ShadowDOM and VirtualDOM ?What is the difference between created and mounted event in VueJS?Comparative study of Svelte vs React vs Angular vs VueWhat is the difference between one-way data flow and two-way data binding in vue.js?MiscellaneousHow to replace all occurrences of a string using Vue.js filters ?How to set a click event once a page or view is loaded in vue.js?How to check an image is loaded or not in VueJS ?How to loop through a list of elements and display it in VueJS ?How to Make localStorage Reactive in Vue.js ?How to implement DateTime localization in vue.js ?Select different values on two select tags in Vue.jsHow to convert a normal string to a uppercase string using filter in VueJS ?How to dynamically add or remove items from a list in Vue.js ?How to binding inline styles in Vue.js ?How to change text into lower case string using filters in Vue.js ?How to Add Custom Fonts in VueJS ?How to Trigger Watchers on Initialization in Vue.js ?How to replace jQuery with Vue.js ?How to catch props data on component change in Vue.js ?How to create a reporting app with Vue 3 and Composition API ?How to delete all occurrences of a particular string using Vue.js ?How to Toggle a Class in Vue.js ?How to Check Response Data Length in VueJS ?Why the component data must be a function in vue.js ?Vue.js for InterviewVueJS Interview Questions and AnswersApplications of Vue.jsSingle-Page Applications (SPAs): Vue.js is an excellent choice for building dynamic and interactive SPAs.User Interfaces (UIs): Vue.js is widely used for creating engaging and responsive UIs.Real-Time Updates: Vue.js provides real-time data updates, making it suitable for applications that require live data synchronization.Prototyping: Due to its simplicity and flexibility, Vue.js is perfect for rapid prototyping of web applications.Cross-Platform Development: Whether you’re building web, mobile, or desktop applications, Vue.js can adapt to different platforms seamlessly.Vue.js vs Other FrameworksFeatureVue.jsReactAngularSyntaxSimple and declarativeJSX-basedTypeScript-basedLearning CurveEasyModerateSteepPerformanceHighHighModerateEcosystemVuex, Vue RouterRedux, React RouterBuilt-in toolsUse CaseSPAs, PrototypesLarge-scale appsEnterprise-grade apps

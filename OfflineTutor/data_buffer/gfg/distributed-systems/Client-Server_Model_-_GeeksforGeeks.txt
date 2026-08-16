@@ -1,0 +1,83 @@
+# Client-Server Model - GeeksforGeeks
+
+The Client-Server Model is a network architecture in which clients send requests for resources or services, and servers process these requests, returning the required responses.Client: A device or program that requests data or services (e.g., web browser).Server: A system that stores resources, manages data, and responds to client requests.Request–response mechanism: Communication follows a structured cycle — client requests, server responds.Centralized management: Data and services are controlled from servers, improving security and consistency.WorkingThe client-server model works on a request–response flow where a client requests a service/data and the server processes that request and returns a response. Client-Server Model Client is a device/app that requests services from a server, like a web browser or email app.Server is a system that listens for requests and responds by sending data or performing operations.Servers can handle many clients at the same time using concurrent request handling.Example client apps include Chrome/Firefox and Gmail/Outlook.Example servers include web servers (Apache/Nginx), email servers, and database servers.How Client-Server Communication Works in C++In C++, sockets are used for communication between the client and the server over a network.Example:Server Code (server.cpp)
+            C++
+
+    #include <iostream>
+#include <cstring>
+#include <unistd.h>
+#include <netinet/in.h>
+
+int main() {
+    int server_fd, new_socket;
+    struct sockaddr_in address;
+    int addrlen = sizeof(address);
+    char buffer[1024] = {0};
+
+    // Create socket
+    server_fd = socket(AF_INET, SOCK_STREAM, 0);
+
+    // Setup address
+    address.sin_family = AF_INET;
+    address.sin_addr.s_addr = INADDR_ANY;
+    address.sin_port = htons(8080);
+
+    // Bind socket
+    bind(server_fd, (struct sockaddr*)&address, sizeof(address));
+
+    // Start listening
+    listen(server_fd, 3);
+    std::cout << "Server waiting for connection...\n";
+
+    // Accept a client connection
+    new_socket = accept(server_fd, (struct sockaddr*)&address, (socklen_t*)&addrlen);
+
+    // Read message from client
+    read(new_socket, buffer, 1024);
+    std::cout << "Client says: " << buffer << std::endl;
+
+    // Send reply
+    const char* reply = "Hello from server!";
+    send(new_socket, reply, strlen(reply), 0);
+
+    close(new_socket);
+    close(server_fd);
+    return 0;
+}
+
+Client Code (client.cpp)
+            C++
+
+    #include <iostream>
+#include <cstring>
+#include <unistd.h>
+#include <arpa/inet.h>
+
+int main() {
+    int sock = 0;
+    struct sockaddr_in serv_addr;
+    char buffer[1024] = {0};
+
+    // Create socket
+    sock = socket(AF_INET, SOCK_STREAM, 0);
+
+    serv_addr.sin_family = AF_INET;
+    serv_addr.sin_port = htons(8080);
+    inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr);
+
+    // Connect to server
+    connect(sock, (struct sockaddr*)&serv_addr, sizeof(serv_addr));
+
+    // Send message
+    const char* hello = "Hello from client!";
+    send(sock, hello, strlen(hello), 0);
+
+    // Receive reply
+    read(sock, buffer, 1024);
+    std::cout << "Server says: " << buffer << std::endl;
+
+    close(sock);
+    return 0;
+}
+
+How a Browser Interacts With a ServerClient-Server Request and ResponseUser enters a URL in the browser (example: www.example.com).Browser performs a DNS lookup to convert the domain name into an IP address.Browser establishes a connection and sends an HTTP/HTTPS request to the server using that IP.Server responds with website resources like HTML, CSS, JavaScript, and images.Browser renders the webpage by processing these files and displaying the content.Types of Client-Server ArchitectureClient-server architecture is commonly classified by how many layers handle presentation, logic, and data.1. 2-Tier Architecture In a 2-tier architecture, the client communicates directly with the server, which is typically responsible for both processing and data storage.It consists of two layers: the client layer and the server layer.The client handles the user interface and may perform some processing before sending requests.The server processes client requests and manages the database.This architecture is suitable for small applications and environments with limited users.However, it becomes difficult to scale and manage when many clients connect to the server simultaneously.2. 3-Tier Architecture  In a 3-tier architecture, the system is divided into three layers to improve performance, security, and scalability.It consists of the presentation layer (client), application layer (business logic), and data layer (database server).The client interacts with the application server instead of communicating directly with the database.The application server processes requests, applies business logic, and retrieves or stores data in the database.This structure enhances security because the database is not directly exposed to clients.It is widely used in web applications and enterprise systems due to its flexibility and easier maintenance.Advantages It centralizes data and services, which makes management and updates easier.It improves security because access control and authentication can be enforced on the server.It supports multiple clients at the same time, so many users can use the same service concurrently.It makes data sharing consistent because clients get information from a single trusted source.It becomes easier to maintain because most changes can be done on the server without updating every client.Limitations It creates a dependency on the server, so services may stop if the server fails.It can become a bottleneck when many clients send requests at the same time.It requires higher server cost because servers need strong hardware, storage, and continuous availability.It needs network connectivity, so poor networks can reduce performance or block access.It can be complex to scale properly because load balancing, replication, and backups may be required.Applications Web browsing uses browsers as clients and web servers to deliver webpages and APIs.Email systems use email clients and mail servers to send, store, and retrieve messages.Online banking systems use mobile/web apps to access secure banking servers.Social media platforms use client apps to request feeds, posts, and media from backend servers.Cloud storage services use client apps to upload, download, and sync files from storage servers.Database-driven applications use clients to query and update data stored on database servers.

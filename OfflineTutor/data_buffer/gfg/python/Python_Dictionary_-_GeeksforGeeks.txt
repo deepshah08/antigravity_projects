@@ -1,0 +1,115 @@
+# Python Dictionary - GeeksforGeeks
+
+Dictionary is a data structure that stores information in key-value pairs. While keys must be unique and immutable (like strings or numbers), values can be of any data type, whether mutable or immutable. This makes dictionaries ideal for accessing data by a specific name rather than a numeric position like in list.Example: This example shows how a dictionary stores data using keys and values.
+            Python
+
+    data = { "name": "Jake", "age": 22 }
+print(data)
+
+Output{'name': 'Jake', 'age': 22}
+Explanation: "name" and "age" are keys, "Jake" and 22 are their values and dictionary stores data in key:value formatCreating a DictionaryA dictionary is created by writing key-value pairs inside { }, where each key is connected to a value using colon (:). A dictionary can also be created using dict() function.
+            Python
+
+    a = {"x": 1, "y": 2}
+print(a)
+
+b = dict(name="Sam", age=20)
+print(b)
+
+Output{'x': 1, 'y': 2}
+{'name': 'Sam', 'age': 20}
+Accessing Dictionary ItemsA value in a dictionary is accessed by using its key. This can be done either with square brackets [ ] or with the get() method. Both return the value linked to the given key.
+            Python
+
+    d = {"name": "Kat", "age": 21}
+
+print(d["name"])     # Access using key
+print(d.get("age"))  # Access using get()
+
+OutputKat
+21
+Note: Accessing a missing key with [ ] raises a KeyError, while get() is safer because it returns None (or a default value) instead of an error.Adding and Updating Dictionary ItemsNew items are added to a dictionary using the assignment operator (=) by giving a new key a value. If an existing key is used with the assignment operator, its value is updated with the new one.
+            Python
+
+    d = {"name": "Sam"}
+
+d["age"] = 21        # Adding a new key-value pair
+d["name"] = "Alex"   # Updating an existing value
+print(d)
+
+Output{'name': 'Alex', 'age': 21}
+Removing Dictionary ItemsDictionary items can be removed using built-in deletion methods that work on keys:1. del: removes an item using its key
+            Python
+
+    d = {"a": 1, "b": 2}
+del d["a"]
+print(d)
+
+Output{'b': 2}
+2. pop(): removes the item with the given key and returns its value
+            Python
+
+    d = {"a": 1, "b": 2}
+
+val = d.pop("a")
+print(val)
+print(d)
+
+Output1
+{'b': 2}
+3. popitem(): removes and returns the last inserted key-value pair
+            Python
+
+    d = {"a": 1, "b": 2}
+print(d.popitem())
+
+Output('b', 2)
+4. clear(): removes all items from the dictionary
+            Python
+
+    d = {"a": 1, "b": 2}
+d.clear()
+print(d)
+
+Output{}
+Iterating Through a DictionaryA dictionary can be traversed using a for loop to access its keys, values or both key-value pairs by using the built-in methods keys(), values() and items().1. Iterate keys: Returns all keys from the dictionary.
+            Python
+
+    d = {"a": 1, "b": 2}
+for key in d:
+    print(key)
+
+Outputa
+b
+2. Iterate values: Returns all values from the dictionary.
+            Python
+
+    d = {"a": 1, "b": 2}
+for value in d.values():
+    print(value)
+
+Output1
+2
+3. Iterate key-value pairs: Returns all key-value pairs as tuples.
+            Python
+
+    d = {"a": 1, "b": 2}
+for key, value in d.items():
+    print(key, value)
+
+Outputa 1
+b 2
+Read in detail: Ways to Iterate Over a DictionaryNested DictionariesA nested dictionary is a dictionary that contains another dictionary as one of its values. Below diagram shows how a nested dictionary works, where key 3 points to another dictionary inside the main dictionary.Representation of Nested DictionaryThe arrows show how each key is connected to its corresponding value.
+            Python
+
+    d = {
+    "student": {
+        "name": "Sam",
+        "age": 20
+    }
+}
+
+print(d["student"]["name"])
+
+OutputSam
+Related Articles:Dictionary ComprehensionDictionary MethodsDictionary Copy Vs Deep Copy

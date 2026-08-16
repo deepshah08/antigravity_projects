@@ -1,0 +1,162 @@
+# Null Pointer Exception in Java - GeeksforGeeks
+
+A NullPointerException in Java is a RuntimeException. It occurs when a program attempts to use an object reference that has the null value. In Java, "null" is a special value that can be assigned to object references to indicate the absence of a value.Reasons for Null Pointer ExceptionA NullPointerException occurs due to the following reasons: Invoking a method from a null object.Accessing or modifying a null object’s field.Taking the length of null, as if it were an array.Accessing or modifying the slots of null objects, as if it were an array.Throwing null, as if it were a Throwable value.When you try to synchronize over a null object.Example:
+            Java
+
+    public class Geeks {
+  
+    public static void main(String[] args) {
+      
+        // Reference set to null
+        String s = null; 
+        
+        System.out.println(s.length()); 
+    }
+}
+
+Output: Hangup (SIGHUP)
+Exception in thread "main" java.lang.NullPointerException
+	at Geeks.main(Geeks.java:10)Explanation: In this example, the string reference "s" is null. When the program tries to call the length() method, it throws a NullPointerException because there is no actual object.Use case of NullThe null value serves as a placeholder and it indicates that no value is assigned to a reference variable. Common applications include:Linked Data Structures: It represents the end of a list or tree branch.Design Patterns: This is used in patterns like the Null Object Pattern or Singleton Pattern.How to Avoid NullPointerExceptionTo avoid the NullPointerException, we must ensure that all the objects are initialized properly, before we use them. When we declare a reference variable, we must verify that object is not null, before we request a method or a field from the objects.1. Using String Literals in equals()A very common case problem involves the comparison between a String variable and a literal. The literal may be a String or an element of an Enum. Instead of invoking the method from the null object, consider invoking it from the literal. Example:
+            Java
+
+    import java.io.*;
+
+class Geeks {
+    public static void main (String[] args) {
+      
+        // Initializing String variable with null value
+        String s = null;
+
+        // Checking if s.equals null
+        try
+        {
+            // This line of code throws NullPointerException because s is null
+            if (s.equals("gfg"))
+                System.out.print("Same");
+            else 
+                System.out.print("Not Same");
+        }
+        catch(NullPointerException e)
+        {
+            System.out.print("NullPointerException Caught");
+        }
+    }
+}
+
+OutputNullPointerException CaughtWe can avoid NullPointerException by calling equals on literal rather than object.
+            Java
+
+    import java.io.*;
+
+class Geeks {
+    public static void main (String[] args) {
+      
+        // Initializing String variable with null value
+        String s = null;
+
+        // Checking if s is null using try catch
+        try
+        {
+            if ("gfg".equals(s))
+                System.out.print("Same");
+            else 
+                System.out.print("Not Same");            
+        }
+        catch(NullPointerException e)
+        {
+            System.out.print("Caught NullPointerException");
+        }
+    }
+}
+
+OutputNot SameNote: Always invoke equals on the literal to avoid calling a method on a null reference.2. Checking Method ArgumentsBefore executing a method, its arguments should be validated, such as checking for null values. The method should proceed only when inputs are valid and properly checked. If not, it should throw an IllegalArgumentException to notify the caller of invalid arguments. Example:
+            Java
+
+    import java.io.*;
+
+class Geeks {
+    public static void main(String[] args) {
+      
+        // String s set an empty string and calling getLength()
+        String s = "";
+      
+        try {
+            System.out.println(getLength(s));
+        }
+        catch (IllegalArgumentException e) {
+            System.out.println(
+                "IllegalArgumentException caught");
+        }
+
+        // String s set to a value and calling getLength()
+        s = "GeeksforGeeks";
+      
+        try {
+            System.out.println(getLength(s));
+        }
+        catch (IllegalArgumentException e) {
+            System.out.println(
+                "IllegalArgumentException caught");
+        }
+
+        // Setting s as null and calling getLength()
+        s = null;
+      
+        try {
+            System.out.println(getLength(s));
+        }
+        catch (IllegalArgumentException e) {
+            System.out.println(
+                "IllegalArgumentException caught");
+        }
+    }
+
+    public static int getLength(String s)
+    {
+        if (s == null)
+            throw new IllegalArgumentException(
+                "The argument cannot be null");
+      
+        return s.length();
+    }
+}
+
+Output0
+13
+IllegalArgumentException caught
+3. Use Ternary OperatorThe ternary operator can be used to avoid NullPointerException. First, the Boolean expression is evaluated. If the expression is true then, the value1 is returned, otherwise, the value2 is returned. We can use the ternary operator for handling null pointers.Example:
+            Java
+
+    import java.io.*;
+
+class Geeks {
+    public static void main(String[] args)
+    {
+        String s = null;
+        String m = (s == null) ? "" : s.substring(0, 5);
+
+        System.out.println(m);
+
+        s = "Geeksforgeeks";
+        m = (s == null) ? "" : s.substring(0, 5);
+        System.out.println(m);
+    }
+}
+
+OutputGeeks
+Explanation: The ternary operator helps check for null and avoid operations on null references.4. Using Optional Class (Java 8+)In Java 8, Optional class was introduced as a container object which may or may not contain a non-null value. It helps avoid NullPointerException by forcing to explicitly handle the case when a value is absent.Example: 
+            Java
+
+    import java.util.Optional;
+
+public class OptionalExample {
+    public static void main(String[] args) {
+        Optional<String> name = Optional.ofNullable(null);
+
+        // Safe way to access
+        System.out.println(name.orElse("Default Name")); // prints: Default Name
+    }
+}
+
+OutputDefault Name
+Explaination: Optional.ofNullable(value) wraps the value which might be null. orElse() provides a fallback if the value is not present.

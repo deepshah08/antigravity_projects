@@ -1,0 +1,100 @@
+# Enumeration (or enum) in C - GeeksforGeeks
+
+An enumeration (enum) is a user-defined data type that assigns meaningful names to a set of integer constants.By default, the first enum constant has the value 0, and each subsequent constant is incremented by 1.Enums improve code readability and maintainability by replacing numeric values with descriptive names.enum calculate {     SUM, DIFFERENCE, PRODUCT, QUOTIENT};Here, the name SUM is automatically assigned 0, DIFFERENCE is assigned 1 and so on. Enum names should follow the standard C variable naming rules. Uppercase is preferred for easy identification.Enum constants must also be unique within the same scope. For example, the following code results in an error because both enums define the same constant PRODUCT in the global scope
+            C
+
+    enum calculate { 
+    SUM, DIFFERENCE, PRODUCT, QUOTIENT
+};
+
+enum item{
+    PRODUCT, SERVICE
+};
+
+Syntaxenum enum_name {     n1, n2, n3, ...};where, n1, n2, n3, ... are identifiers mapped to integer values. By default, n1 is assigned 0, n2 is assigned 1, and each subsequent name is assigned a value incremented by 1.Create enum VariablesAfter enum is defined, we can create variables of that enum by using its specified name.enum_name v;InitializationAn enum variable can be initialized either with a name defined in the enum definition or directly with its integer value.
+            C
+
+    #include <stdio.h>
+
+// Defining enum
+enum direction {
+    EAST, NORTH, WEST, SOUTH
+};
+
+int main() {
+
+    // Creating enum variable
+    enum direction dir = NORTH;
+    printf("%d\n", dir);
+    
+    // This is valid too
+    dir = 3;
+    printf("%d", dir);
+    return 0;
+}
+
+Output1
+3Though it is recommended to avoid using integers as enums loses their purpose when integer values are preferred in the use.Assign Values ManuallyWe can also manually assign desired values to the enum names as shown:
+            C
+
+    enum enum_name { 
+    n1 = val1, n2 = val2, n3, ... 
+};
+
+It is not mandatory to assign all constants. The next name will be automatically assigned a value by incrementing the previous name's value by 1. For example, n3 here will be (val2 + 1). Also, we can assign values in any order, but they must be integer only. 
+            C++
+
+    #include <stdio.h>
+
+// Defining enum
+enum enm {
+    a = 3, b = 2, c
+};
+
+int main() {
+
+    // Creating enum variable
+    enum enm v1 = a;
+    enum enm v2 = b;
+    enum enm v3 = c;
+    printf("%d %d %d", v1, v2, v3);
+    return 0;
+}
+
+Output3 2 3In the above program, a is assigned the value 3, b is assigned 2, and c will automatically be assigned the value 3, as the enum values increment from the last assigned value.Size of EnumsEnum definition is not allocated any memory, it is only allocated for enum variables. Usually, enums are implemented as integers, so their size is same as that of int. But some compilers may use short int (or even smaller type) to represent enums. We can use the sizeof operator to check the size of enum variable.
+            C
+
+    #include <stdio.h>
+
+// Defining enum
+enum direction {
+    EAST, NORTH, WEST, SOUTH
+};
+
+int main() {
+    enum direction dir = NORTH;
+    
+    // Checking the size of enum
+    printf("%ld bytes", sizeof(dir));
+    return 0;
+}
+
+Output4 bytesEnum and TypedefThe typedef keyword can be used to define an alias for an enum so that we can avoid using the keyword enum again and again.
+            C++
+
+    #include <stdio.h>
+
+// Defining enum
+typedef enum direction {
+    EAST, NORTH, WEST, SOUTH
+}Dirctn;
+
+int main() {
+    Dirctn dir = NORTH;
+    
+    // Checking the size of enum
+    printf("%d", dir);
+    return 0;
+}
+
+Output1In the above program, we have used typedef to create a nickname Dirctn for the direction enum so that we can directly refer to it by using the nickname. It enhances the code readability.ApplicationsEnums are extensively used in various real-world applications in programming, such as:State Representation: Enums are commonly used to represent different states or modes in state machines, like in game development or process control systems.Error Codes: Enums are useful for defining a set of related error codes with meaningful names, making the code easier to debug and maintain.Menu Choices or User Inputs: Enums are useful for handling menu options or user input and can represent variety of user input such as days of the week.File Permissions: Enums are useful for handling file permissions in an operating system or file management system, with different permission levels such as READ, WRITE, and EXECUTE.

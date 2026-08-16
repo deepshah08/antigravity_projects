@@ -1,0 +1,77 @@
+# Functions in programming - GeeksforGeeks
+
+A function is a block of code that performs a specific task and can be reused whenever needed.Avoids writing the same code again and again.Makes programs simple and easy to understand by breaking into smaller parts.Accepts input (parameters) and gives output.Finding and fixing errors become easier. Built-in functionsThese predefined functions provided by programming languages or libraries to perform common tasks such as mathematical calculations, input/output, or string operations.For example, the sqrt() function from the C++ <cmath> library calculates the square root of a number.
+            C++
+
+    #include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    
+    // built-in function
+    double result = sqrt(25.0);  
+    cout << "Square Root: " << result << endl;
+    return 0;
+}
+
+OutputSquare Root: 5
+User-definedThese functions are functions written by programmers to perform specific tasks required in a program. They help organize code and allow reuse of logic whenever needed.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+void greet() {
+    cout << "Hello, World!" << endl;
+}
+
+int main() {
+    greet();  // calling user-defined function
+    return 0;
+}
+
+OutputHello, World!
+Function Visualizer
+h2, h3, p {
+margin-bottom: 6px !important;
+}
+
+/* Iframe */
+#iframe-container1 {
+width: 100%;
+max-width: 600px;
+border: none;
+display: block;
+overflow: hidden;
+height: 580px; /* default */
+}
+
+/* Small screens (mobile) */
+@media (max-width: 480px) {
+#iframe-container1 {
+height: 680px;
+}
+}
+
+/* Medium screens (tablet) */
+@media (min-width: 481px) and (max-width: 900px) {
+#iframe-container1 {
+height: 420px;
+}
+}
+
+/* Large screens */
+@media (min-width: 901px) and (max-width: 1400px) {
+#iframe-container1 {
+height: 400px;
+}
+}
+
+/* Extra large screens */
+@media (min-width: 1401px) {
+#iframe-container1 {
+height: 420px;
+}
+}
+Where are Functions Used in DSA?In DSA, functions are used to implement algorithms and solve problems in a structured and reusable way.Implement algorithms like searching and sorting.Handle recursion (like factorial, tree traversal).Break problems into smaller subproblems.Operate on data structures like arrays, linked lists, trees, and graphs.Make code clean and easy to understand.

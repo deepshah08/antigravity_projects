@@ -1,0 +1,40 @@
+# Default Arguments in C++ - GeeksforGeeks
+
+A default argument is a value provided for a parameter in a function declaration that is automatically assigned by the compiler if no value is provided for those parameters in the function call.Default arguments must be present on the right side only. Once a default argument is provided, all the arguments to its right must also be defaults.It is recommended to specify them in function declaration (usually in the header).
+            C++
+
+    #include <iostream>
+using namespace std;
+
+void f(int a = 10){
+    cout << a << endl;
+}
+
+int main(){
+
+    f();
+    f(221);
+    return 0;
+}
+
+Output10
+221
+Explanation: In this program, the function f has a default argument a = 10, so when no argument is provided, a defaults to 10, which is printed. When 221 is passed, a becomes 221 which is then printed.SyntaxA default argument is defined by assigning a value to a function parameter in its declaration.return_type name (p1= v1, p2= v2, ...);where v1, v2, ... are the default values for the parameters p1, p2, ... respectively.Rules to FollowThere are some important rules and best practices to keep in mind when using default arguments in C++:1. Default Values Should be Specified in Function DeclarationsThe default values for parameters should be specified in the function declaration (or prototype). If a function is declared and defined separately, the default values must be in the declaration, not in definition.// Declaration with default argumentvoid func(int x = 10);// Definition without default argumentvoid func(int x){cout << "Value: " << x << endl;}2. Default Arguments Cannot Be ModifiedOnce default arguments are defined in the declaration, they cannot be modified in the function definition. If you try to change the default value in the definition, it will result in a compilation error.void f(int a = 10);// This definition will throw an errorvoid f(int a = 222){    // statements}3. Default Arguments Must Be Provided from Right to LeftIn a function with multiple parameters, default values must be provided from the rightmost parameter to the left. It means that if a parameter has a default argument, all parameters to its right must also have default values.// Validvoid func(int x, int y = 20);// Invalid, as `y` does not have a default valuevoid func(int x = 10, int y);4. Ambiguity in Function OverloadingIf a function containing default arguments is overloaded, then we need to make sure it is not ambiguous to the compiler, otherwise it will throw an error. // Validvoid f(int a = 10, int b = 20);// Will throw error as the signature is samevoid f(int a = 22, int b = 2);// Will also throw errorvoid f(int a);// Will also throw an errorvoid f(int a, int b)The following example demonstrate the use of default arguments in different cases: Example: Find Area of Rectangle with Optional LengthWe wish to keep the rectangle height optional in case it is not provided to the area calculator function. One approach could be to create two overloaded functions, one that takes two parameters and one that takes one. However, this can be simplified by using default arguments instead of function overloading by specifying optional values.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+// Function with default height 'h' argument
+double calcArea(double l, double h = 10.0){
+    return l * h;
+}
+
+int main(){
+    cout << "Area 1:  " << calcArea(5) << endl;
+    cout << "Area 2: " << calcArea(5, 9);
+    return 0;
+}
+
+OutputArea 1:  50
+Area 2: 45

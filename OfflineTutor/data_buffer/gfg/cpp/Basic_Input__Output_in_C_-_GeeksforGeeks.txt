@@ -1,0 +1,56 @@
+# Basic Input / Output in C++ - GeeksforGeeks
+
+In C++, data is read and written using streams, which are sequences of bytes.Input stream: Data flows from a device (like the keyboard) to the computer’s memory.Output stream: Data flows from memory to an output device (like the screen).These streams are defined in the <iostream> header file.The most common stream objects are - "cin": for taking input and "cout": for displaying output. Standard Output Stream - coutcout is an instance of the ostream class used to display output on the screen.Data is sent to cout using the insertion operator <<.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+int main()
+{
+    cout << "GeeksforGeeks";
+    return 0;
+}
+
+OutputGeeksforGeeksStandard Input Stream - cincin is an instance of the istream class used to read input from the keyboard.The extraction operator >> is used with cin to get data from the input stream and store it in a variable.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+int main()
+{
+    int age;
+    // Taking input from user and store it in variable
+    cin >> age;
+    
+    // Output the entered age
+    cout << "Age entered: " << age;
+    return 0;
+}
+
+Output18 (Enter by user)Age entered: 18Un-buffered Standard Error Stream - cerrcerr is the standard error stream used to display error messages. It is an instance of the ostream class.It is an unbuffered output stream used to display error or warning messages immediately, ensuring they appear instantly without any buffering delays like coutNote: cerr is unbuffered, so its output appears immediately, while cout is buffered and may be delayed. Both can be redirected to files unbuffered does not prevent file output.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+int main()
+{
+    cerr << "An error occurred";
+    return 0;
+}
+
+ErrorAn error occurredBuffered Standard Error Stream - clogclog is the standard logging stream used to display error or log messages. It is an instance of the ostream class, like cerr.Messages are first stored in a buffer and displayed only when the buffer is full or explicitly flushed using flush() (Buffered output)Useful for logging messages that don’t need to appear immediately on the screen.Unlike cerr, output from clog may be delayed due to buffering.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+int main()
+{
+    clog << "An error occurred";
+    return 0;
+}
+
+ErrorAn error occurredRelated ArticlesDifference between cerr and clog

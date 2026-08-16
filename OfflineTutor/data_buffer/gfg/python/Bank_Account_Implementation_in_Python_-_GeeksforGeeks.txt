@@ -1,0 +1,36 @@
+# Bank Account Implementation in Python - GeeksforGeeks
+
+A bank account system is a common example of applying Object-Oriented Programming (OOP) concepts in Python. It allows users to perform basic banking operations such as depositing money, withdrawing funds, and viewing the current account balance.The bank account implementation supports the following operations:Deposit money into the account.Withdraw money if sufficient balance is available.Display the current account balance.ImplementationFollow the steps below to implement the BankAccount class with deposit and withdraw functions.Step 1: Define the BankAccount ClassCreate the class and initialize the account balance using the __init__() method.
+            Python
+
+    class BankAccount:
+    def __init__(self):
+        self.balance = 0  # Initialize balance to 0
+        print("Welcome to the Machine")
+
+Explanation:__init__() is executed automatically when a new object is created.self.balance = 0 sets the initial account balance to zero.self refers to the current object and allows access to its attributes.The print() statement displays a welcome message after object creation.Step 2: Create the deposit() MethodDefine the deposit() method to add money to the account balance.
+            Python
+
+        def deposit(self):
+        amount = float(input("Enter amount to be Deposited: "))
+        self.balance += amount
+        print("\nAmount Deposited:", amount)
+
+Explanation:input() accepts the deposit amount from the user.float() converts the entered value into a numeric data type.self.balance += amount adds the deposited amount to the current balance.The print() statement confirms that the amount has been successfully deposited.Step 3: Create the withdraw() MethodDefine the withdraw() method to deduct money from the account if sufficient balance is available.
+            Python
+
+        def withdraw(self):
+        amount = float(input("Enter amount to be Withdrawn: "))
+        if self.balance >= amount:
+            self.balance -= amount
+            print("\nYou Withdrew:", amount)
+        else:
+            print("\nInsufficient balance")
+
+Explanation:input() accepts the withdrawal amount from the user.float() converts the entered value into a numeric data type.The if condition checks whether the account has sufficient balance.If the balance is sufficient, the amount is deducted from self.balance.Otherwise, an "Insufficient balance" message is displayed.Step 4: Create the display() MethodDefine the display() method to show the current account balance
+            Python
+
+        def display(self):
+        print("\nNet Available Balance =", self.balance)
+
+Explanation:self.balance stores the current balance of the account.The print() statement displays the available account balance to the user.This method does not modify the balance; it only shows its current value.OutputOutput  of Bank Account Class

@@ -1,0 +1,1153 @@
+# Control flow statements in Programming - GeeksforGeeks
+
+Control flow refers to the order in which statements within a program execute. While programs typically follow a sequential flow from top to bottom, there are scenarios where we need more flexibility. This article provides a clear understanding about everything you need to know about Control Flow Statements.
+
+Table of Content
+
+What are Control Flow Statements in Programming?Types of Control Flow statements in ProgrammingConditional Statements in ProgrammingLooping Statements in ProgrammingJump Statements in ProgrammingWhat are Control Flow Statements in Programming?Control flow statements are fundamental components of programming languages that allow developers to control the order in which instructions are executed in a program. They enable execution of a block of code multiple times, execute a block of code based on conditions, terminate or skip the execution of certain lines of code, etc.
+
+Types of Control Flow statements in Programming:Control Flow Statements TypeControl Flow StatementDescriptionConditional Statementsif-elseExecutes a block of code if a specified condition is true, and another block if the condition is false.switch-caseEvaluates a variable or expression and executes code based on matching cases.Looping StatementsforExecutes a block of code a specified number of times, typically iterating over a range of values.whileExecutes a block of code as long as a specified condition is true.do-whileExecutes a block of code once and then repeats the execution as long as a specified condition is true.Jump StatementsbreakTerminates the loop or switch statement and transfers control to the statement immediately following the loop or switch.continueSkips the current iteration of a loop and continues with the next iteration.returnExits a function and returns a value to the caller.gotoTransfers control to a labeled statement within the same function. (Note: goto is generally discouraged due to its potential for creating unreadable and error-prone code.)Conditional Statements in Programming:Conditional statements in programming are used to execute certain blocks of code based on specified conditions. They are fundamental to decision-making in programs. Here are some common types of conditional statements:
+
+1. If Statement in Programming: The if statement is used to execute a block of code if a specified condition is true.
+
+
+
+            C++
+
+    #include <iostream>
+using namespace std;
+int main()
+{
+    int a = 5;
+    if (a == 5) {
+        cout << "a is equal to 5";
+    }
+    return 0;
+}
+
+
+            C
+
+    #include <stdio.h>
+
+int main()
+{
+    int a = 5;
+    if (a == 5) {
+        printf("a is equal to 5");
+    }
+    return 0;
+}
+
+
+            Java
+
+    import java.io.*;
+
+class GFG {
+    public static void main(String[] args)
+    {
+        int a = 5;
+        if (a == 5) {
+            System.out.println("a is equal to 5");
+        }
+    }
+}
+
+
+            C#
+
+    using System;
+
+public class GFG {
+
+    static public void Main()
+    {
+        int a = 5;
+        if (a == 5) {
+            Console.WriteLine("a is equal to 5");
+        }
+    }
+}
+
+
+            JavaScript
+
+    let a = 5;
+if (a === 5) {
+    console.log("a is equal to 5");
+}
+
+
+            Python3
+
+    a = 5
+if a == 5:
+    print("a is equal to 5")
+
+
+Outputa is equal to 52. if-else Statement in Programming: The if-else statement is used to execute one block of code if a specified condition is true, and another block of code if the condition is false.
+
+
+
+            C++
+
+    #include <iostream>
+using namespace std;
+int main()
+{
+    int a = 10;
+    if (a == 5) {
+        cout << "a is equal to 5";
+    }
+    else {
+        cout << "a is not equal to 5";
+    }
+    return 0;
+}
+
+
+            C
+
+    #include <stdio.h>
+
+int main()
+{
+    int a = 10;
+    if (a == 5) {
+        printf("a is equal to 5");
+    }
+    else {
+        printf("a is not equal to 5");
+    }
+    return 0;
+}
+
+
+            Java
+
+    import java.io.*;
+
+class GFG {
+    public static void main(String[] args)
+    {
+        int a = 10;
+        if (a == 5) {
+            System.out.println("a is equal to 5");
+        }
+        else {
+            System.out.println("a is not equal to 5");
+        }
+    }
+}
+
+
+            C#
+
+    using System;
+
+public class GFG {
+
+    static public void Main()
+    {
+        int a = 10;
+        if (a == 5) {
+            Console.WriteLine("a is equal to 5");
+        }
+        else {
+            Console.WriteLine("a is not equal to 5");
+        }
+    }
+}
+
+
+            JavaScript
+
+    let a = 10;
+if (a === 5) {
+    console.log("a is equal to 5");
+} else {
+    console.log("a is not equal to 5");
+}
+
+
+            Python3
+
+    a = 10
+if a == 5:
+    print("a is equal to 5")
+else:
+    print("a is not equal to 5")
+
+
+Outputa is not equal to 53. if-else-if Statement in Programming: The if-else-if statement is used to execute one block of code if a specified condition is true, another block of code if another condition is true, and a default block of code if none of the conditions are true.
+
+
+
+            C++
+
+    #include <iostream>
+using namespace std;
+int main()
+{
+    int a = 15;
+    if (a == 5) {
+        cout << "a is equal to 5";
+    }
+    else if (a == 10) {
+        cout << "a is equal to 10";
+    }
+    else {
+        cout << "a is not equal to 5 or 10";
+    }
+    return 0;
+}
+
+
+            C
+
+    #include <stdio.h>
+
+int main()
+{
+    int a = 15;
+    if (a == 5) {
+        printf("a is equal to 5");
+    }
+    else if (a == 10) {
+        printf("a is equal to 10");
+    }
+    else {
+        printf("a is not equal to 5 or 10");
+    }
+    return 0;
+}
+
+
+            Java
+
+    /*package whatever //do not write package name here */
+
+import java.io.*;
+
+class GFG {
+    public static void main(String[] args)
+    {
+        int a = 15;
+        if (a == 5) {
+            System.out.println("a is equal to 5");
+        }
+        else if (a == 10) {
+            System.out.println("a is equal to 10");
+        }
+        else {
+            System.out.println("a is not equal to 5 or 10");
+        }
+    }
+}
+
+
+            C#
+
+    using System;
+public class GFG {
+    static public void Main()
+    {
+        int a = 15;
+        if (a == 5) {
+            Console.WriteLine("a is equal to 5");
+        }
+        else if (a == 10) {
+            Console.WriteLine("a is equal to 10");
+        }
+        else {
+            Console.WriteLine("a is not equal to 5 or 10");
+        }
+    }
+}
+
+
+            JavaScript
+
+    let a = 15;
+if (a === 5) {
+    console.log("a is equal to 5");
+} else if (a === 10) {
+    console.log("a is equal to 10");
+} else {
+    console.log("a is not equal to 5 or 10");
+}
+
+
+            Python3
+
+    a = 15
+if a == 5:
+    print("a is equal to 5")
+elif a == 10:
+    print("a is equal to 10")
+else:
+    print("a is not equal to 5 or 10")
+
+
+Outputa is not equal to 5 or 104. Ternary Operator or Conditional Operator in Programming: In some programming languages, a ternary operator is used to assign a value to a variable based on a condition.
+
+
+
+            C++
+
+    #include <iostream>
+using namespace std;
+
+int main()
+{
+    int a = 10;
+    cout << (a == 5 ? "a is equal to 5"
+                    : "a is not equal to 5");
+    return 0;
+}
+
+
+            C
+
+    #include <stdio.h>
+
+int main()
+{
+    int a = 10;
+    printf("%s", (a == 5 ? "a is equal to 5"
+                         : "a is not equal to 5"));
+    return 0;
+}
+
+
+            Java
+
+    /*package whatever //do not write package name here */
+
+import java.io.*;
+
+class GFG {
+    public static void main(String[] args)
+    {
+        int a = 10;
+        System.out.println(a == 5 ? "a is equal to 5"
+                                  : "a is not equal to 5");
+    }
+}
+
+
+            C#
+
+    using System;
+
+public class GFG {
+
+    static public void Main()
+    {
+        int a = 10;
+        Console.WriteLine(a == 5 ? "a is equal to 5"
+                                 : "a is not equal to 5");
+    }
+    // Code
+}
+
+
+            JavaScript
+
+    let a = 10;
+console.log(a === 5 ? "a is equal to 5" : "a is not equal to 5");
+
+
+            Python3
+
+    a = 10
+print("a is equal to 5" if a == 5 else "a is not equal to 5")
+
+
+Outputa is not equal to 55. Switch Statement in Programming: In languages like C, C++, and Java, a switch statement is used to execute one block of code from multiple options based on the value of an expression.
+
+
+
+            C++
+
+    #include <iostream>
+using namespace std;
+int main()
+{
+    int a = 15;
+    switch (a) {
+    case 5:
+        cout << "a is equal to 5";
+        break;
+    case 10:
+        cout << "a is equal to 10";
+        break;
+    default:
+        cout << "a is not equal to 5 or 10";
+    }
+    return 0;
+}
+
+
+            C
+
+    #include <stdio.h>
+
+int main()
+{
+    int a = 15;
+    switch (a) {
+    case 5:
+        printf("a is equal to 5");
+        break;
+    case 10:
+        printf("a is equal to 10");
+        break;
+    default:
+        printf("a is not equal to 5 or 10");
+    }
+    return 0;
+}
+
+
+            Java
+
+    /*package whatever //do not write package name here */
+
+import java.io.*;
+
+class GFG {
+    public static void main(String[] args)
+    {
+        int a = 15;
+        switch (a) {
+        case 5:
+            System.out.println("a is equal to 5");
+            break;
+        case 10:
+            System.out.println("a is equal to 10");
+            break;
+        default:
+            System.out.println("a is not equal to 5 or 10");
+        }
+    }
+}
+
+
+            C#
+
+    using System;
+
+public class GFG {
+
+    static public void Main()
+    {
+        int a = 15;
+        switch (a) {
+        case 5:
+            Console.WriteLine("a is equal to 5");
+            break;
+        case 10:
+            Console.WriteLine("a is equal to 10");
+            break;
+        default:
+            Console.WriteLine("a is not equal to 5 or 10");
+            break;
+        }
+    }
+}
+
+
+            JavaScript
+
+    let a = 15;
+switch (a) {
+    case 5:
+        console.log("a is equal to 5");
+        break;
+    case 10:
+        console.log("a is equal to 10");
+        break;
+    default:
+        console.log("a is not equal to 5 or 10");
+}
+
+
+Outputa is not equal to 5 or 10Each programming language may have its own syntax and specific variations of these conditional statements.
+
+Looping Statements in Programming:Looping statements, also known as iteration or repetition statements, are used in programming to repeatedly execute a block of code. They are essential for performing tasks such as iterating over elements in a list, reading data from a file, or executing a set of instructions a specific number of times. Here are some common types of looping statements:
+
+1. For Loop in Programming: The for loop is used to iterate over a sequence (e.g., a list, tuple, string, or range) and execute a block of code for each item in the sequence.
+
+
+
+            C++
+
+    #include <iostream>
+using namespace std;
+int main()
+{
+    for (int i = 0; i < 5; i++) {
+        cout << i << endl;
+    }
+    return 0;
+}
+
+
+            C
+
+    #include <stdio.h>
+
+int main()
+{
+    for (int i = 0; i < 5; i++) {
+        printf("%d\n", i);
+    }
+    return 0;
+}
+
+
+            Java
+
+    public class Main {
+    public static void main(String[] args)
+    {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(i);
+        }
+    }
+}
+
+
+            C#
+
+    using System;
+
+class Program {
+    static void Main(string[] args) {
+        for (int i = 0; i < 5; i++) {
+            Console.WriteLine(i);
+        }
+    }
+}
+
+
+            JavaScript
+
+    for (var i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+
+            Python3
+
+    for i in range(5):
+    print(i)
+
+
+Output0
+1
+2
+3
+4
+2. While Loop in Programming:The while loop is used to repeatedly execute a block of code as long as a specified condition is true.
+
+
+
+            C++
+
+    #include <iostream>
+using namespace std;
+int main()
+{
+    int count = 0;
+    while (count < 5) {
+        cout << count << endl;
+        count++;
+    }
+    return 0;
+}
+
+
+            C
+
+    #include <stdio.h>
+
+int main()
+{
+    int count = 0;
+    while (count < 5) {
+        printf("%d\n", count);
+        count++;
+    }
+    return 0;
+}
+
+
+            Java
+
+    /*package whatever //do not write package name here */
+
+import java.io.*;
+
+class GFG {
+    public static void main(String[] args)
+    {
+        int count = 0;
+        while (count < 5) {
+            System.out.println(count);
+            count++;
+        }
+    }
+}
+
+
+            C#
+
+    using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int count = 0;
+        while (count < 5)
+        {
+            Console.WriteLine(count);
+            count++;
+        }
+    }
+}
+
+
+            JavaScript
+
+    let count = 0;
+while (count < 5) {
+    console.log(count);
+    count++;
+}
+
+
+            Python3
+
+    count = 0
+while count < 5:
+    print(count)
+    count += 1
+
+
+Output0
+1
+2
+3
+4
+3. Do-while Loop in Programming: In some programming languages, such as C and Java, a do-while loop is used to execute a block of code at least once, and then repeatedly execute the block as long as a specified condition is true.
+
+
+
+            C++
+
+    #include <iostream>
+using namespace std;
+int main()
+{
+    int count = 0;
+    do {
+        cout << count << endl;
+        count++; 
+    } while (count < 5);
+    return 0;
+}
+
+
+            C
+
+    #include <stdio.h>
+
+int main()
+{
+    int count = 0;
+    do {
+        printf("%d\n", count); 
+        count++; 
+    } while (count < 5); 
+    return 0;
+}
+
+
+            Java
+
+    /*package whatever //do not write package name here */
+
+import java.io.*;
+
+class GFG {
+    public static void main(String[] args)
+    {
+        int count = 0;
+        do {
+            System.out.println(count);
+            count++;
+        } while (count < 5);
+    }
+}
+
+
+            C#
+
+    using System;
+
+public class GFG {
+
+    static public void Main()
+    {
+        int count = 0;
+        do {
+            Console.WriteLine(count);
+            count++;
+        } while (count < 5);
+    }
+}
+
+
+            JavaScript
+
+    let count = 0;
+do {
+    console.log(count); // Print the current value of count
+    count++;         // Increment count by 1
+} while (count < 5);     // Continue looping as long as count is less than 5
+
+
+Output0
+1
+2
+3
+4
+4. Nested Loops in Programming:Loops can be nested within one another to perform more complex iterations. For example, a for loop can be nested inside another for loop to create a two-dimensional iteration.
+
+
+
+            C++
+
+    #include <iostream>
+using namespace std;
+int main()
+{
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            cout << "i=" << i << " j=" << j << "\n";
+        }
+    }
+}
+
+
+            C
+
+    #include <stdio.h>
+
+int main()
+{
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("i=%d j=%d\n", i, j);
+        }
+    }
+    return 0;
+}
+
+
+            Java
+
+    /*package whatever //do not write package name here */
+
+import java.io.*;
+
+class GFG {
+    public static void main (String[] args) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.println("i=" + i + " j=" + j);
+            }
+        }
+    }
+}
+
+
+            C#
+
+    using System;
+
+public class GFG {
+
+    static public void Main()
+    {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                Console.WriteLine($"i={i} j={j}");
+            }
+        }
+    }
+}
+
+
+            JavaScript
+
+    for (let i = 0; i < 2; i++) {
+    for (let j = 0; j < 2; j++) {
+        console.log(`i=${i} j=${j}`);
+    }
+}
+
+
+            Python3
+
+    for i in range(2):
+    for j in range(2):
+        print(f"i={i} j={j}")
+
+
+Outputi=0 j=0
+i=0 j=1
+i=1 j=0
+i=1 j=1
+Each programming language may have its own syntax and specific variations of these looping statements.
+
+Jump Statements in Programming:Jump statements in programming are used to change the flow of control within a program. They allow the programmer to transfer program control to different parts of the code based on certain conditions or requirements. Here are common types of jump statements:
+
+1. Break Statement in Programming: The break statement is primarily used to exit from loops prematurely. When encountered inside a loop, it terminates the loop's execution and transfers control to the statement immediately following the loop.
+
+
+
+            C++
+
+    #include <iostream>
+using namespace std;
+int main()
+{
+    for (int i = 0; i < 10; i++) {
+        if (i == 5)
+            break;
+        cout << i << " ";
+    }
+    return 0;
+}
+
+
+            C
+
+    #include <stdio.h>
+
+int main()
+{
+    for (int i = 0; i < 10; i++) {
+        if (i == 5)
+            break;
+        printf("%d ", i);
+    }
+    return 0;
+}
+
+
+            Java
+
+    /*package whatever //do not write package name here */
+
+import java.io.*;
+
+class GFG {
+    public static void main(String[] args)
+    {
+        for (int i = 0; i < 10; i++) {
+            if (i == 5)
+                break;
+            System.out.print(i + " ");
+        }
+    }
+}
+
+
+            C#
+
+    using System;
+
+public class GFG {
+
+    static public void Main()
+    {
+        for (int i = 0; i < 10; i++) {
+            if (i == 5)
+                break;
+            Console.Write($"{i} ");
+        }
+    }
+}
+
+
+            JavaScript
+
+    for (let i = 0; i < 10; i++) {
+    if (i === 5)
+        break;
+    console.log(i + " ");
+}
+
+
+            Python3
+
+    for i in range(10):
+    if i == 5:
+        break
+    print(f"{i} ", end="")
+
+
+Output0 1 2 3 4 2. Continue Statement in Programming: The continue statement is used to skip the current iteration of a loop and proceed to the next iteration.
+
+
+
+            C++
+
+    #include <iostream>
+using namespace std;
+int main()
+{
+    for (int i = 0; i < 10; i++) {
+        if (i % 2 == 1)
+            continue;
+        cout << i << " ";
+    }
+    return 0;
+}
+
+
+            C
+
+    #include <stdio.h>
+
+int main()
+{
+    for (int i = 0; i < 10; i++) {
+        if (i % 2 == 1)
+            continue;
+        printf("%d ", i);
+    }
+    return 0;
+}
+
+
+            Java
+
+    import java.io.*;
+
+class GFG {
+    public static void main(String[] args)
+    {
+        for (int i = 0; i < 10; i++) {
+            if (i % 2 == 1)
+                continue;
+            System.out.print(i + " ");
+        }
+    }
+}
+
+
+            C#
+
+    using System;
+
+public class GFG {
+
+    static public void Main()
+    {
+        for (int i = 0; i < 10; i++) {
+            if (i % 2 == 1)
+                continue;
+            Console.Write($"{i} ");
+        }
+    }
+}
+
+
+            JavaScript
+
+    for (let i = 0; i < 10; i++) {
+    if (i % 2 === 1)
+        continue;
+    console.log(i + " ");
+}
+
+
+            Python3
+
+    for i in range(10):
+    if i % 2 == 1:
+        continue
+    print(f"{i} ", end="")
+
+
+Output0 2 4 6 8 3. Return Statement in Programming: The return statement is used to exit a function and optionally return a value to the caller.
+
+
+
+            C++
+
+    #include <iostream>
+using namespace std;
+bool isEven(int N) { return N % 2 == 0; }
+int main()
+{
+    int N = 5;
+    if (isEven(N)) {
+        cout << "N is even";
+    }
+    else {
+        cout << "N is odd";
+    }
+    return 0;
+}
+
+
+            C
+
+    #include <stdio.h>
+
+int isEven(int N) { return N % 2 == 0; }
+
+int main()
+{
+    int N = 5;
+    if (isEven(N)) {
+        printf("N is even");
+    }
+    else {
+        printf("N is odd");
+    }
+    return 0;
+}
+
+
+            Java
+
+    /*package whatever //do not write package name here */
+
+import java.io.*;
+
+class GFG {
+    static boolean isEven(int N) { return N % 2 == 0; }
+    public static void main(String[] args)
+    {
+        int N = 5;
+        if (isEven(N)) {
+            System.out.println("N is even");
+        }
+        else {
+            System.out.println("N is odd");
+        }
+    }
+}
+
+
+            C#
+
+    using System;
+
+public class GFG {
+    static bool IsEven(int N) { return N % 2 == 0; }
+    static public void Main()
+    {
+        int N = 5;
+        if (IsEven(N)) {
+            Console.WriteLine("N is even");
+        }
+        else {
+            Console.WriteLine("N is odd");
+        }
+    }
+}
+
+
+            JavaScript
+
+    function isEven(N) {
+    return N % 2 === 0;
+}
+
+let N = 5;
+if (isEven(N)) {
+    console.log("N is even");
+} else {
+    console.log("N is odd");
+}
+
+
+            Python3
+
+    def isEven(N):
+    return N % 2 == 0
+
+N = 5
+if isEven(N):
+    print("N is even")
+else:
+    print("N is odd")
+
+
+OutputN is odd4. Goto Statement in Programming: Some programming languages support the goto statement, which allows transferring control to a labeled statement within the same function or block of code. However, the use of goto is generally discouraged due to its potential for creating unreadable and unmaintainable code.
+
+
+
+            C++
+
+    #include <iostream>
+using namespace std;
+int main()
+{
+    int i = 0;
+loopStart:
+    if (i < 5) {
+        cout << i << " ";
+        i++;
+        goto loopStart;
+    }
+    return 0;
+}
+
+
+            C
+
+    #include <stdio.h>
+
+int main() {
+    int i = 0;
+loopStart:
+    if (i < 5) {
+        printf("%d ", i);
+        i++;
+        goto loopStart;
+    }
+    return 0;
+}
+
+
+            C#
+
+    using System;
+
+public class GFG {
+
+    static public void Main()
+    {
+        int i = 0;
+    loopStart:
+        if (i < 5) {
+            Console.Write(i + " ");
+            i++;
+            goto loopStart;
+        }
+    }
+}
+
+
+Output0 1 2 3 4

@@ -1,0 +1,126 @@
+# PriorityQueue in Java - GeeksforGeeks
+
+A PriorityQueue in Java is a queue where elements are ordered based on their priority, rather than the order of insertion. By default, it uses natural ordering (min-heap), but a custom comparator can be used to define different priorities.Elements are processed based on priority rather than insertion order.Supports standard queue operations like add(), poll(), and peek().Automatically grows as elements are added and null insertion is not possible .Uses a heap data structure internally to ensure efficient insertion and removal of the highest-priority element.Declaration of PriorityQueuepublic class PriorityQueue<E> extends AbstractQueue<E> implements Serializable, Iterable<E>where, E is the type of elements held in this queue.
+            Java
+
+    import java.util.PriorityQueue;
+
+public class Geeks 
+{
+    public static void main(String[] args) 
+    {
+      	// Priority Queue Min Type
+        PriorityQueue<Integer> p = new PriorityQueue<>();
+
+        // Add elements to the queue
+        p.add(3);
+        p.add(10);
+        p.add(7);
+        p.add(2);
+
+        // Print the head of the queue
+        System.out.println("Head of Queue: " + p.peek());
+    }
+}
+
+OutputHead of Queue: 2
+Hierarchy of PriorityQueue PriorityQueue extends AbstractQueue and implements the Queue interface, which is part of the Collection hierarchy. It also supports iteration through IterablePriorityQueue HierarchyConstructors of PriorityQueue1. PriorityQueue()This method creates a PriorityQueue with the default initial capacity (11) that orders its elements according to their natural ordering.PriorityQueue<E> pq = new PriorityQueue<E>();2. PriorityQueue(int initialCapacity)This creates a PriorityQueue with the specified initial capacity that orders its elements according to their natural ordering.PriorityQueue<E> pq = new PriorityQueue<E>(initialCapacity);3. PriorityQueue(Comparator<E> comparator) This creates a PriorityQueue with the default initial capacity and whose elements are ordered according to the specified comparator.Comparator<Integer> c = (a, b) -> b - a; // max-heapPriorityQueue<Integer> pq = new PriorityQueue<>(c);4. PriorityQueue(int initialCapacity, Comparator<E> comparator)This creates a PriorityQueue with the specified initial capacity that orders its elements according to the specified comparator.PriorityQueue<E> pq = new PriorityQueue<E>(int initialCapacity, Comparator<E> comparator);Different Operations on PriorityQueueLet’s see how to perform a few frequently used operations on the Priority Queue class.1. Adding ElementsTo add an element in a priority queue, we can use the add() method. 
+            Java
+
+    import java.util.*;
+  
+public class Geeks
+{  
+    public static void main(String args[])
+    {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        
+      	for(int i=0;i<3;i++){
+            pq.add(i);
+            pq.add(1);
+        }
+      
+        System.out.println(pq);
+    }
+}
+
+Output[0, 1, 1, 1, 2, 1]
+2. Removing Elements To remove an element from a priority queue, we can use the remove() method. 
+            Java
+
+    import java.util.*;
+import java.io.*;
+
+public class Geeks {
+
+    public static void main(String args[])
+    {
+        PriorityQueue<String> pq = new PriorityQueue<>();
+
+        pq.add("Geeks");
+        pq.add("For");
+        pq.add("Geeks");
+
+        System.out.println("Initial PriorityQueue " + pq);
+
+        // using the method
+        pq.remove("Geeks");
+
+        System.out.println("After Remove: " + pq);
+
+        System.out.println("Poll Method: " + pq.poll());
+
+        System.out.println("Final PriorityQueue: " + pq);
+    }
+}
+
+OutputInitial PriorityQueue [For, Geeks, Geeks]
+After Remove: [For, Geeks]
+Poll Method: For
+Final PriorityQueue: [Geeks]
+3. Accessing the Elements To access elements from a priority queue, we can use the peek() method.
+            Java
+
+    import java.util.*;
+
+class Geeks {
+    public static void main(String[] args)
+    {
+
+        PriorityQueue<String> pq = new PriorityQueue<>();
+        pq.add("Geeks");
+        pq.add("For");
+        pq.add("Geeks");
+        System.out.println("PriorityQueue: " + pq);
+
+        // Using the peek() method
+        String element = pq.peek();
+        System.out.println("Accessed Element: " + element);
+    }
+}
+
+OutputPriorityQueue: [For, Geeks, Geeks]
+Accessed Element: For
+4. Iterating the PriorityQueue There are multiple ways to iterate through the PriorityQueue. The most famous way is converting the queue to the array and traversing using an iterator. Iterator does not traverse in priority order.
+            Java
+
+    import java.util.*;
+
+public class Geeks {
+    public static void main(String args[])
+    {
+        PriorityQueue<String> pq = new PriorityQueue<>();
+
+        pq.add("Geeks");
+        pq.add("For");
+        pq.add("Geeks");
+
+        Iterator<String> iterator = pq.iterator();
+
+        while (iterator.hasNext()) {
+            System.out.print(iterator.next() + " ");
+        }
+    }
+}
+
+OutputFor Geeks Geeks Methods of PriorityQueue MethodDescriptionadd(E e)Inserts the specified element into this priority queue.clear()Removes all of the elements from this priority queue.comparator()Returns the comparator used to order the elements in this queue or null if this queue is sorted according to the natural ordering of its elements.contains(Object o)Returns true if this queue contains the specified element.forEach(Consumer<? super E> action)Performs the given action for each element of the Iterable until all elements have been processed or the action throws an exception.iterator()Returns an iterator over the elements in this queue. offer(E e)Inserts the specified element into this priority queue.remove(Object o)Removes a single instance of the specified element from this queue, if it is present.removeAll(Collection<?> c)Removes all of this collection's elements that are also contained in the specified collection (optional operation).removeIf(Predicate<? super E> filter)Removes all of the elements of this collection that satisfy the given predicate.retainAll(Collection<?> c)Retains only the elements in this collection that are contained in the specified collection (optional operation).spliterator()Creates a late-binding and fail-fast Spliterator over the elements in this queue. toArray()Returns an array containing all of the elements in this queue. toArray(T[] a)Returns an array containing all of the elements in this queue; the runtime type of the returned array is that of the specified array.Methods Declared in Interface java.util.QueueMethodDescriptionpeek()Retrieves, but does not remove, the head of this queue or returns null if this queue is empty.poll()Retrieves and removes the head of this queue or returns null if this queue is empty.Methods Declared in Class java.util.AbstractQueueMethodDescriptionaddAll(Collection<? extends E> c)Adds all of the elements in the specified collection to this queue.element()Retrieves, but does not remove, the head of this queue.remove()Retrieves and removes the head of this queue.Methods Declared in Class java.util.AbstractCollectionMethodDescriptioncontainsAll(Collection<?> c)Returns true if this collection contains all of the elements in the specified collection.isEmpty()Returns true if this collection contains no elements.toString()Returns a string representation of this collection.Methods Declared in Interface java.util.CollectionMethodDescriptioncontainsAll(Collection<?> c)Returns true if this collection contains all of the elements in the specified collection.equals(Object o)Compares the specified object with this collection for equality.hashCode()Returns the hash code value for this collection.isEmpty()Returns true if this collection contains no elements.size()Returns the number of elements in this collection.

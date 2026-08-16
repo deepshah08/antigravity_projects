@@ -1,0 +1,85 @@
+# Quiz about Quiz on C++ Memory Management
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsQuiz on C++ Memory ManagementLast Updated : DiscussCommentsQuestion 1What is dynamic memory allocation in C++?Management of memory automatically Allocation of memory at compile timeAllocation and de-allocation of memory during runtimeChanging code sizeQuestion 2What is a memory leak in C++?When the program uses too much memoryWhen memory is not allocated properlyWhen the program tries to access restricted memoryWhen dynamically allocated memory is not freedQuestion 3Which of the following is not a valid way to allocate memory dynamically for an integer in C++?int* ptr = new int;int* ptr = new;int* ptr = new int(10);int* ptr = new int[1];Question 4What is a dangling pointer in C++ ?A pointer that has not been initializedA pointer that points to a static variableA pointer that points to an invalid memory locationA pointer that points to multiple locationsQuestion 5What is the output of the following C++ code?
+        C++
+        
+        #include <iostream>
+using namespace std;
+
+int main()
+{
+
+    int* ptr = new int;
+    *ptr = 10;
+    delete ptr;
+    cout << *ptr;
+}
+
+        
+    0Runtime error10Garbage valueQuestion 6What of the following is the correct way to use 'new' and 'delete' for dynamic memory allocation of an object in C++ ?MyClass* obj = new MyClass(); delete obj;MyClass obj = new MyClass(); delete obj;MyClass* obj = new MyClass(); delete[] obj;MyClass* obj = new MyClass[1]; delete obj;Question 7How do you check if memory allocation by 'new' was successful in C++? Checking if the pointer is nullUsing the isAllocated() functionCatching an exceptionBoth A and CQuestion 8What is the initial value of dynamically allocated memory in C++?01NullIndeterminateQuestion 9What happens when 'new' fails to allocate memory in C++?Program continues executionIt returns a null pointerIt throws a bad_alloc exceptionProgram terminates immediatelyQuestion 10Which of the following is true about move constructors?They are used when an object is copiedThey avoid deep copying by transferring ownershipThey always throw exceptionsThey only work with pointersTags:C++C++ QuizThere are 20 questions to complete.Take a part in the ongoing discussionView All Discussion

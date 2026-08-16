@@ -1,0 +1,114 @@
+# Deque Interface in Java - GeeksforGeeks
+
+The Deque interface is part of the java.util package and extends the Queue interface. It stands for Double-Ended Queue and represents a linear collection that allows insertion, removal, and retrieval of elements from both ends.Allows insertion and deletion from both front and rear Can be used as both stack (LIFO) and queue (FIFO) Common implementations are ArrayDeque and LinkedListDeclarationpublic interface Deque<E> extends Queue<E>Here, E is the type of elements stored in the deque.
+            Java
+
+    import java.util.ArrayDeque;
+import java.util.Deque;
+
+public class Geeks 
+{
+    public static void main(String[] args)
+    {
+
+        // Create a Deque of Strings
+        Deque<String> d = new ArrayDeque<>();
+
+        d.addFirst("1");
+        d.addLast("2");
+
+        String f = d.removeFirst();
+        String l = d.removeLast();
+
+        // Displaying the Deque
+        System.out.println("First: " + f + ", Last: " + l);
+    }
+}
+
+OutputFirst: 1, Last: 2
+Hierarchy of Deque interfaceIt extends the Queue interface which extends the Collection Interface. It has implementation classes like ArrayDeque and LinkedList.DequeCommon Implementations classesArrayDeque: Resizable array implementation; fast for insertion/removal at both ends; not thread-safe.LinkedList: Doubly-linked list; supports all deque operations; allows nulls.ConcurrentLinkedDeque: Thread-safe deque based on linked nodes; suitable for concurrent use.Deque Operations using ArrayDequeLet’s see how to perform a few frequently used operations on the Deque using the ArrayDeque class. 1. Adding ElementsTo add elements in a Deque, you can use add() ,  addFirst(), or addLast(), allowing insertion at either end, unlike a standard Queue which only adds at the tail.
+            Java
+
+    import java.util.*;
+public class ArrayDequeDemo {
+    public static void main(String[] args)
+    {
+        // Initializing an deque
+        Deque<String> dq = new ArrayDeque<String>();
+
+        // add() method to insert
+        dq.add("For");
+        dq.addFirst("Geeks");
+        dq.addLast("Geeks");
+
+        System.out.println(dq);
+    }
+}
+
+Output[Geeks, For, Geeks]
+2. Removing ElementsElements can be removed from both ends using removeFirst(), removeLast(), pop(), or poll() variants; pop() throws an exception if empty, while poll() is safe. 
+            Java
+
+    import java.util.*;
+
+public class ArrayDequeDemo {
+  
+    public static void main(String[] args)
+    {
+        // Initializing an deque
+        Deque<String> dq = new ArrayDeque<String>();
+
+        // add() method to insert
+        dq.add("For");
+        dq.addFirst("Geeks");
+        dq.addLast("Geeks");
+
+        System.out.println(dq);
+      
+        System.out.println(dq.pop());
+      
+        System.out.println(dq.poll());
+      
+        System.out.println(dq.pollFirst());
+      
+        System.out.println(dq.pollLast());
+    }
+}
+
+Output[Geeks, For, Geeks]
+Geeks
+For
+Geeks
+null
+3. Iterating through the DequeSince a Deque can be iterated from both directions, the iterator method of the Deque interface provides us two ways to iterate. One from the first and the other from the back. 
+            Java
+
+    import java.util.*;
+
+public class ArrayDequeDemo {
+    public static void main(String[] args)
+    {
+        // Initialize Deque
+        Deque<String> dq = new ArrayDeque<>();
+        dq.add("For");
+        dq.addFirst("Geeks");
+        dq.addLast("Geeks");
+        dq.add("is so good");
+
+        // Type-safe forward iteration
+        for (Iterator<String> itr = dq.iterator();
+             itr.hasNext();) {
+            System.out.print(itr.next() + " ");
+        }
+        System.out.println();
+
+        // Type-safe reverse iteration
+        for (Iterator<String> itr = dq.descendingIterator();
+             itr.hasNext();) {
+            System.out.print(itr.next() + " ");
+        }
+    }
+}
+
+OutputGeeks For Geeks is so good 
+is so good Geeks For Geeks Methods of Deque InterfaceBelow are some common list of methods of Deque InterfaceMethodDescriptionaddFirst(E e)Inserts element at the front (head).addLast(E e)Inserts element at the end (tail).offerFirst(E e)Adds element at head; returns false if unable.offerLast(E e)Adds element at tail; returns false if unable.add(E e) Adds element at the tail.offer(E e)Adds element at the tail.removeFirst()Removes and returns first element; throws exception if empty.removeLast()Removes and returns last element; throws exception if empty.pollFirst()Removes and returns first element; returns null if empty.pollLast()Removes and returns last element; returns null if empty.poll()Removes and returns head safely; returns null if empty.getFirst()Retrieves first element without removing; throws exception if empty.getLast()Retrieves last element without removing; throws exception if empty.peekFirst()Retrieves first element safely; returns null if empty.peekLast()Retrieves last element safely; returns null if empty.peek()Retrieves head element safely; returns null if empty.push(E e)Inserts element at the head (top of stack).

@@ -1,0 +1,72 @@
+# Java BufferedOutputStream Class - GeeksforGeeks
+
+In Java, the BufferedOutputStream class is used to write data to an output stream more efficiently. It adds a buffer to another output stream, reducing the number of I/O operations by temporarily storing data in memory before writing it to the destination (like a file).It belongs to the java.io package and extends the FilterOutputStream class.Class Declarationpublic class BufferedOutputStream extends FilterOutputStreamImproves I/O performance by using a buffer to reduce direct disk access.Data is written to the buffer, and only when the buffer is full (or flushed), it is sent to the underlying output stream.Typically used with FileOutputStream.Helps in writing byte data, such as images, text files, and binary data.ConstructorsBufferedOutputStream(OutputStream out): Creates a buffered output stream with a default buffer size of 8192 bytes.BufferedOutputStream(OutputStream out, int size): Creates a buffered output stream with the specified buffer size.Important MethodsMethodDescriptionvoid write(int b)Writes a single byte to the output stream.void write(byte[] b, int off, int len)Writes a portion of the byte array to the output stream.void flush()Flushes the buffer and forces any buffered output bytes to be written.void close()Closes the stream, flushing it first.Example 1: Writing Data to File using BufferedOutputStream
+            Java
+
+    import java.io.*;
+
+public class BufferedOutputStreamExample {
+    public static void main(String[] args) {
+        String data = "BufferedOutputStream in Java Example";
+
+        try {
+            FileOutputStream fileOut = new FileOutputStream("output.txt");
+            BufferedOutputStream bufferOut = new BufferedOutputStream(fileOut);
+
+            byte[] bytes = data.getBytes();
+            bufferOut.write(bytes);
+
+            bufferOut.close();
+            System.out.println("Data written successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+Output (content of output.txt):BufferedOutputStream in Java ExampleExample 2: Using flush() Method
+            Java
+
+    import java.io.*;
+
+public class FlushExample {
+    public static void main(String[] args) {
+        try {
+            FileOutputStream fileOut = new FileOutputStream("flush.txt");
+            BufferedOutputStream bufferOut = new BufferedOutputStream(fileOut);
+
+            bufferOut.write("Hello".getBytes());
+            bufferOut.flush();  // ensures data is written immediately
+
+            bufferOut.close();
+            System.out.println("Flush example completed.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+Output (content of flush.txt):HelloExample 3: Writing Large Data Efficiently
+            Java
+
+    import java.io.*;
+
+public class LargeDataExample {
+    public static void main(String[] args) {
+        try {
+            FileOutputStream fileOut = new FileOutputStream("large.txt");
+            BufferedOutputStream bufferOut = new BufferedOutputStream(fileOut, 8192); // custom buffer size
+
+            for (int i = 0; i < 1000; i++) {
+                bufferOut.write(("Line " + i + "\n").getBytes());
+            }
+
+            bufferOut.close();
+            System.out.println("Large data written successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+Output (content of large.txt, first few lines):Line 0Line 1Line 2...AdvantagesFaster writing performance compared to unbuffered streams.Reduces the number of physical write operations.Allows writing large data efficiently.

@@ -1,0 +1,154 @@
+# Java 8 Predicate with Examples - GeeksforGeeks
+
+The Predicate<T> interface is a functional interface introduced in Java 8 and available in the java.util.function package. It represents a boolean-valued function that accepts a single input argument and returns either true or false based on a specified condition.Functional interface with a single abstract method test(). Supports lambda expressions and method references. Provides methods for combining predicates.
+            Java
+
+    import java.util.function.Predicate;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Predicate<Integer> isEven =
+            num -> num % 2 == 0;
+
+        System.out.println(isEven.test(20));
+    }
+}
+
+Outputtrue
+Explanation: In this example, the predicate checks whether a number is even. Since 20 is divisible by 2, the test() method returns true.Syntax@FunctionalInterfacepublic interface Predicate<T>Methods of Predicate Interface1. test() MethodThe test() method evaluates the given condition on an input value and returns a boolean result.Core method of the interface. Used for validation and filtering.Syntax:boolean test(T t)Parameters: t – Input argument. Return Value: Returns true if the condition is satisfied; otherwise false.
+            Java
+
+    import java.util.function.Predicate;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Predicate<String> isEmpty =
+            str -> str.isEmpty();
+
+        System.out.println(isEmpty.test(""));
+    }
+}
+
+Outputtrue
+Explanation: The predicate checks whether the string is empty. Since the input string is empty, the result is true.2. and() MethodThe and() method combines two predicates using the logical AND (&&) operation.Supports predicate chaining. Both conditions must be true.Syntax: default Predicate<T> and(Predicate<? super T> other)
+            Java
+
+    import java.util.function.Predicate;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Predicate<Integer> greaterThan10 =
+            n -> n > 10;
+
+        Predicate<Integer> lessThan50 =
+            n -> n < 50;
+
+        System.out.println(
+            greaterThan10.and(lessThan50)
+                         .test(25)
+        );
+    }
+}
+
+Outputtrue
+Explanation: Returns true because 25 is greater than 10 and less than 50.3. or() MethodThe or() method combines two predicates using the logical OR (||) operation. Returns a new predicate. Uses short-circuit evaluation. At least one condition must be true.Syntax:default Predicate<T> or(Predicate<? super T> other)
+            Java
+
+    import java.util.function.Predicate;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Predicate<Integer> lessThan0 =
+            n -> n < 0;
+
+        Predicate<Integer> greaterThan100 =
+            n -> n > 100;
+
+        System.out.println(
+            lessThan0.or(greaterThan100)
+                     .test(150)
+        );
+    }
+}
+
+Outputtrue
+Explanation: Returns true because 150 satisfies the second condition.4. negate() MethodThe negate() method returns a predicate that represents the logical opposite of the current predicate.Reverses the predicate result. Useful for opposite conditions.Syntax:default Predicate<T> negate()
+            Java
+
+    import java.util.function.Predicate;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Predicate<Integer> isPositive =
+            n -> n > 0;
+
+        System.out.println(
+            isPositive.negate().test(-10)
+        );
+    }
+}
+
+Outputtrue
+Explanation: The original predicate checks for positive numbers. After applying negate(), it returns true for negative numbers.5. isEqual() MethodThe isEqual() method returns a predicate that tests whether two objects are equal using Objects.equals().Performs null-safe comparison. Useful for equality checksSyntax:static <T> Predicate<T>isEqual(Object targetRef)
+            Java
+
+    import java.util.function.Predicate;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Predicate<String> check =
+            Predicate.isEqual("Java");
+
+        System.out.println(
+            check.test("Java")
+        );
+    }
+}
+
+Outputtrue
+Explanation: The predicate compares the input string with "Java" and returns true because both values are equal.Example: Java program to demonstrate working of predicates on collection. The program finds all admins in an arrayList of users.
+            Java
+
+    import java.util.function.Predicate;
+import java.util.*;
+class User
+{
+    String name, role;
+    User(String a, String b) {
+        name = a;
+        role = b;
+    }
+    String getRole() { return role; }
+    String getName() { return name; }    
+    public String toString() {
+       return "User Name : " + name + ", Role :" + role;
+    }
+
+    public static void main(String args[])
+    {      
+        List<User> users = new ArrayList<User>();
+        users.add(new User("John", "admin"));
+        users.add(new User("Peter", "member"));
+        List admins = process(users, (User u) -> u.getRole().equals("admin"));
+        System.out.println(admins);
+    }
+
+    public static List<User> process(List<User> users, 
+                            Predicate<User> predicate)
+    {
+        List<User> result = new ArrayList<User>();
+        for (User user: users)        
+            if (predicate.test(user))            
+                result.add(user);
+        return result;
+    }
+}
+
+Output[User Name : John, Role :admin]
+Explanation: In this example, a Predicate<User> is used to filter users based on their role. The process() method iterates through the list of users and applies the predicate using the test() method. Only users whose role is "admin" satisfy the condition and are added to the result list. Therefore, the output contains only the user John, whose role is admin.
