@@ -1,0 +1,49 @@
+# Design a DS for Remove and Print - GeeksforGeeks
+
+Design a data structure that supports adding elements and removing all occurrences of a given element, while printing the remaining elements in their original insertion order.add(int x): Inserts the element x into the data structure.removeAndPrint(int x): Removes all occurrences of x and prints the remaining elements in insertion order.Example:Input:add(10), add(20), add(10), add(30), removeAndPrint(10)add(30), add(40), add(60), removeAndPrint(30)Output:20 3020 40 60Using ArrayList vs LinkedListWe can use ArrayList or LinkedList to implement this data structure. Below is a comparison:ArrayList Approach:Add Operation: O(1) (Amortized Time Complexity)RemoveAndPrint Operation: O(n) (Since shifting is required after removal)LinkedList Approach (Preferred Solution):Add Operation: O(1) (Worst case as well)RemoveAndPrint Operation: O(n) (Efficient with iterators)Since LinkedList allows fast insertions and removals using iterators, it is an optimal choice.Approach(using LinkedList)Follow the below steps:Store all elements in a LinkedList to preserve insertion order.Insert elements into the list using the add(int x) method.Traverse the list using an Iterator to safely remove all occurrences of the given element.Print the remaining elements in the same order as they were inserted.
+            Java
+
+    import java.util.*;
+
+class MyDS {
+    LinkedList<Integer> list = new LinkedList<>();
+    
+    void add(int x) {
+        list.add(x);
+    }
+    
+    void removeAndPrint(int x) {
+        Iterator<Integer> it = list.iterator();
+        
+        while (it.hasNext()) {
+            Integer n = it.next();
+            if (n.equals(x)) {
+                it.remove();
+            } else {
+                System.out.print(n + " ");
+            }
+        }
+        System.out.println();
+    }
+}
+
+public class GFG {
+    public static void main(String[] args) {
+        MyDS ds = new MyDS();
+        
+        ds.add(10);
+        ds.add(20);
+        ds.add(10);
+        ds.add(30);
+        ds.removeAndPrint(10); 
+        
+        ds.add(30);
+        ds.add(40);
+        ds.add(60);
+        ds.removeAndPrint(30); 
+    }
+}
+
+Output20 30 
+20 40 60 
+Time Complexityadd(int x): O(1) -> inserting at the end of a LinkedList.removeAndPrint(int x): O(n) -> traverses the list once to remove and print elements.Space Complexity: O(n) -> extra space used to store n elements in the LinkedList.

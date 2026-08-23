@@ -1,0 +1,55 @@
+# Keeping indexes after sorting in Java - GeeksforGeeks
+
+Given an integer array, sort its elements in ascending order while retaining and displaying their original indexes, ensuring the initial positions of elements are preserved after sorting.Examples:Input: arr[] = {20, 40, 30, 10}Output:Element | Original index    10      |   3   20      |  0  30      |  2 40      |  1ApproachFollow these steps to sort the array while keeping track of original indexes:Define a class ArrItem to store each element and its original index.Create an ArrayList of ArrItem objects from the array elements.Sort the list using Collections.sort() with a custom comparator based on the element value.Traverse the sorted list and print each element along with its original index.Implementation
+            Java
+
+    import java.util.*;
+
+class ArrItem {
+    int item;
+    int index;
+
+    ArrItem(int im, int ix) {
+        item = im;
+        index = ix;
+    }
+}
+
+class MyCmp implements Comparator<ArrItem> {
+    public int compare(ArrItem i1, ArrItem i2) {
+        
+        // Sort by element value
+        return i1.item - i2.item; 
+    }
+}
+
+class GfG {
+
+    static void printSortedWithIndexes(int arr[]) {
+        int n = arr.length;
+        ArrayList<ArrItem> list = new ArrayList<>(n);
+
+        // Store elements with their original indexes
+        for (int i = 0; i < n; i++) {
+            list.add(new ArrItem(arr[i], i));
+        }
+
+        // Sort the list based on element values
+        Collections.sort(list, new MyCmp());
+
+        // Print elements along with their original indexes
+        for (ArrItem x : list) {
+            System.out.println(x.item + " " + x.index);
+        }
+    }
+
+    public static void main(String args[]) {
+        int arr[] = { 20, 10, 5, 4 };
+        printSortedWithIndexes(arr);
+    }
+}
+
+Output4 3
+5 2
+10 1
+20 0

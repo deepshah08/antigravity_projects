@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsC++ BasicsLast Updated : DiscussCommentsQuestion 1Which type of memory is used for dynamic memory allocation in C++?StackHeapCacheROMQuestion 2___________________ translates the entire source code in a single run. It consumes less time i.e., it is faster than ________________.Compiler, LinkerInterpreter, CompilerLinker, CompilerCompiler, InterpreterQuestion 3Multi-line comments in C++ are defined as////* *///* */Both (A) and (B)Question 4
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsC++ BasicsLast Updated : DiscussCommentsQuestion 1Which type of memory is used for dynamic memory allocation in C++?StackHeapCacheROMQuestion 2___________________ translates the entire source code in a single run. It consumes less time i.e., it is faster than ________________.Compiler, LinkerInterpreter, CompilerLinker, CompilerCompiler, InterpreterQuestion 3Multi-line comments in C++ are defined as////* *///* */Both (A) and (B)Question 4
 Why is C++ faster than Java?
 
 Because C++ takes fewer lines of code as compared to Java.

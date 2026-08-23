@@ -650,7 +650,7 @@ int main() {
             Java
 
     import java.util.ArrayList;
-import java.util.ArrayList;
+import java.util.Collections;
 
 class Node {
     int data;

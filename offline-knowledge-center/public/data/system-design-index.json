@@ -544,7 +544,7 @@
     },
     {
       "id": "system-design-136",
-      "title": "Designing Facebook Messenger | System Design Interview - GeeksforGeeks"
+      "title": "Designing Facebook | System Design Interview - GeeksforGeeks"
     },
     {
       "id": "system-design-137",
@@ -556,15 +556,15 @@
     },
     {
       "id": "system-design-139",
-      "title": "System Design Training Program"
+      "title": "System Design Course - HLD, Scalability & Distributed Systems"
     },
     {
       "id": "system-design-140",
-      "title": "DSA & System Design Course: The Complete SDE Interview Program"
+      "title": "DSA & System Design Course - SDE Interview Prep"
     },
     {
       "id": "system-design-141",
-      "title": "Java Backend Development Course with Spring Boot, Microservices & AI Tools"
+      "title": "Java Backend Course - Spring Boot, Microservices with AI"
     },
     {
       "id": "system-design-142",
@@ -760,443 +760,443 @@
     },
     {
       "id": "system-design-190",
-      "title": "GeeksforGeeks | Your All-in-One Learning Portal"
-    },
-    {
-      "id": "system-design-191",
       "title": "DNS Look-Up - GeeksforGeeks"
     },
     {
-      "id": "system-design-192",
+      "id": "system-design-191",
       "title": "Working of Domain Name System (DNS) Server - GeeksforGeeks"
     },
     {
-      "id": "system-design-193",
+      "id": "system-design-192",
       "title": "How to Configure DNS on Linux - GeeksforGeeks"
     },
     {
-      "id": "system-design-194",
+      "id": "system-design-193",
       "title": "How To Clear DNS Cache on Android Device? - GeeksforGeeks"
     },
     {
-      "id": "system-design-195",
+      "id": "system-design-194",
       "title": "How to Fix \"DNS Server Not Responding\" Error? - GeeksforGeeks"
     },
     {
-      "id": "system-design-196",
+      "id": "system-design-195",
       "title": "How to Use Tracert/Traceroute Command in Windows - GeeksforGeeks"
     },
     {
-      "id": "system-design-197",
+      "id": "system-design-196",
       "title": "SAGA Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-198",
+      "id": "system-design-197",
       "title": "Retry Pattern in Microservices - GeeksforGeeks"
     },
     {
-      "id": "system-design-199",
+      "id": "system-design-198",
       "title": "Dead Letter Queue - System Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-200",
+      "id": "system-design-199",
       "title": "Black Box Testing - Software Engineering - GeeksforGeeks"
     },
     {
-      "id": "system-design-201",
+      "id": "system-design-200",
       "title": "White box Testing - Software Engineering - GeeksforGeeks"
     },
     {
-      "id": "system-design-202",
+      "id": "system-design-201",
       "title": "Gray Box Testing - Software Testing - GeeksforGeeks"
     },
     {
-      "id": "system-design-203",
+      "id": "system-design-202",
       "title": "Software Testing Techniques - GeeksforGeeks"
     },
     {
-      "id": "system-design-204",
+      "id": "system-design-203",
       "title": "Application Software - GeeksforGeeks"
     },
     {
-      "id": "system-design-205",
+      "id": "system-design-204",
       "title": "Big Bang Integration Testing - GeeksforGeeks"
     },
     {
-      "id": "system-design-206",
+      "id": "system-design-205",
       "title": "Steps in Bottom Up Integration Testing - GeeksforGeeks"
     },
     {
-      "id": "system-design-207",
+      "id": "system-design-206",
       "title": "Steps in Top Down Integration Testing - GeeksforGeeks"
     },
     {
-      "id": "system-design-208",
+      "id": "system-design-207",
       "title": "Performance Testing - Software Testing - GeeksforGeeks"
     },
     {
-      "id": "system-design-209",
+      "id": "system-design-208",
       "title": "Baseline Testing - GeeksforGeeks"
     },
     {
-      "id": "system-design-210",
-      "title": "Authentication Vs Authorization - GeeksforGeeks"
-    },
-    {
-      "id": "system-design-211",
+      "id": "system-design-209",
       "title": "What is Data Encryption? - GeeksforGeeks"
     },
     {
-      "id": "system-design-212",
+      "id": "system-design-210",
       "title": "Secure Shell and TLS - GeeksforGeeks"
     },
     {
-      "id": "system-design-213",
+      "id": "system-design-211",
       "title": "IP Security (IPSec) - GeeksforGeeks"
     },
     {
-      "id": "system-design-214",
+      "id": "system-design-212",
       "title": "PGP - Authentication and Confidentiality - GeeksforGeeks"
     },
     {
-      "id": "system-design-215",
+      "id": "system-design-213",
       "title": "Transport Layer Security (TLS) - GeeksforGeeks"
     },
     {
-      "id": "system-design-216",
+      "id": "system-design-214",
       "title": "Software Development | Introduction, SDLC, Roadmap, Courses - GeeksforGeeks"
     },
     {
-      "id": "system-design-217",
+      "id": "system-design-215",
       "title": "Centralized vs Distributed System - GeeksforGeeks"
     },
     {
-      "id": "system-design-218",
+      "id": "system-design-216",
       "title": "Architecture Styles in Distributed Systems - GeeksforGeeks"
     },
     {
-      "id": "system-design-219",
+      "id": "system-design-217",
       "title": "Leader Election in System Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-220",
+      "id": "system-design-218",
       "title": "Key Management in Cryptography - GeeksforGeeks"
     },
     {
-      "id": "system-design-221",
+      "id": "system-design-219",
       "title": "COCOMO Model - Software Engineering - GeeksforGeeks"
     },
     {
-      "id": "system-design-222",
+      "id": "system-design-220",
       "title": "Edge Computing - GeeksforGeeks"
     },
     {
-      "id": "system-design-223",
+      "id": "system-design-221",
       "title": "UML Class Diagram - GeeksforGeeks"
     },
     {
-      "id": "system-design-224",
+      "id": "system-design-222",
       "title": "Sequence Diagrams - Unified Modeling Language (UML) - GeeksforGeeks"
     },
     {
-      "id": "system-design-225",
+      "id": "system-design-223",
       "title": "State Machine Diagrams | Unified Modeling Language (UML) - GeeksforGeeks"
     },
     {
-      "id": "system-design-226",
+      "id": "system-design-224",
       "title": "Use Case Diagram - Unified Modeling Language (UML) - GeeksforGeeks"
     },
     {
-      "id": "system-design-227",
+      "id": "system-design-225",
       "title": "Object Diagrams | Unified Modeling Language (UML) - GeeksforGeeks"
     },
     {
-      "id": "system-design-228",
+      "id": "system-design-226",
       "title": "Performance Vs Scalability in System Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-229",
+      "id": "system-design-227",
       "title": "Speed Vs Quality in System Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-230",
+      "id": "system-design-228",
       "title": "Coding Standards and Best Practices for System Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-231",
+      "id": "system-design-229",
       "title": "Elevator System Low-Level Design (LLD) - GeeksforGeeks"
     },
     {
-      "id": "system-design-232",
+      "id": "system-design-230",
       "title": "Tic Tac Toe: Low Level Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-233",
+      "id": "system-design-231",
       "title": "Amazon Low Level Design(LLD) - GeeksforGeeks"
     },
     {
-      "id": "system-design-234",
+      "id": "system-design-232",
       "title": "Vending Machine - Low Level Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-235",
+      "id": "system-design-233",
       "title": "System Design Interview Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "system-design-236",
+      "id": "system-design-234",
       "title": "Best Books for Learning Low-Level Design(LLD) - GeeksforGeeks"
     },
     {
-      "id": "system-design-237",
+      "id": "system-design-235",
       "title": "Modern Principles Of Software Development - GeeksforGeeks"
     },
     {
-      "id": "system-design-238",
+      "id": "system-design-236",
       "title": "Senior Software Engineer Job Description - GeeksforGeeks"
     },
     {
-      "id": "system-design-239",
+      "id": "system-design-237",
       "title": "Structural Diagrams | Unified Modeling Language(UML) - GeeksforGeeks"
     },
     {
-      "id": "system-design-240",
+      "id": "system-design-238",
       "title": "Component Based Diagram - Unified Modeling Language (UML) - GeeksforGeeks"
     },
     {
-      "id": "system-design-241",
+      "id": "system-design-239",
       "title": "Deployment Diagram in Unified Modeling Language(UML) - GeeksforGeeks"
     },
     {
-      "id": "system-design-242",
+      "id": "system-design-240",
       "title": "Package Diagram – Unified Modeling Language (UML) - GeeksforGeeks"
     },
     {
-      "id": "system-design-243",
+      "id": "system-design-241",
       "title": "Behavioral Diagrams | Unified Modeling Language(UML) - GeeksforGeeks"
     },
     {
-      "id": "system-design-244",
+      "id": "system-design-242",
       "title": "Communication Diagram - Unified Modeling Language(UML) - GeeksforGeeks"
     },
     {
-      "id": "system-design-245",
+      "id": "system-design-243",
       "title": "Interaction Overview Diagrams | Unified Modeling Language (UML) - GeeksforGeeks"
     },
     {
-      "id": "system-design-246",
+      "id": "system-design-244",
       "title": "Introduction to Design Patterns - GeeksforGeeks"
     },
     {
-      "id": "system-design-247",
+      "id": "system-design-245",
       "title": "Types of Software Design Patterns - GeeksforGeeks"
     },
     {
-      "id": "system-design-248",
+      "id": "system-design-246",
       "title": "Gang of Four (GOF)  Design Patterns - GeeksforGeeks"
     },
     {
-      "id": "system-design-249",
+      "id": "system-design-247",
       "title": "Factory method Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-250",
+      "id": "system-design-248",
       "title": "Abstract Factory Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-251",
+      "id": "system-design-249",
       "title": "Builder Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-252",
+      "id": "system-design-250",
       "title": "Prototype Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-253",
+      "id": "system-design-251",
       "title": "Object Pool Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-254",
+      "id": "system-design-252",
       "title": "Lazy Loading Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-255",
+      "id": "system-design-253",
       "title": "Adapter Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-256",
+      "id": "system-design-254",
       "title": "Decorator Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-257",
+      "id": "system-design-255",
       "title": "Facade Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-258",
+      "id": "system-design-256",
       "title": "Composite Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-259",
+      "id": "system-design-257",
       "title": "Proxy Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-260",
+      "id": "system-design-258",
       "title": "Bridge Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-261",
+      "id": "system-design-259",
       "title": "Flyweight Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-262",
+      "id": "system-design-260",
       "title": "Observer Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-263",
+      "id": "system-design-261",
       "title": "Strategy Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-264",
+      "id": "system-design-262",
       "title": "Command Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-265",
+      "id": "system-design-263",
       "title": "Chain of Responsibility Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-266",
+      "id": "system-design-264",
       "title": "Template Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-267",
+      "id": "system-design-265",
       "title": "Iterator Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-268",
+      "id": "system-design-266",
       "title": "State Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-269",
+      "id": "system-design-267",
       "title": "Mediator Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-270",
+      "id": "system-design-268",
       "title": "Memento Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-271",
+      "id": "system-design-269",
       "title": "Visitor design pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-272",
+      "id": "system-design-270",
       "title": "Dependency Injection(DI) Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-273",
+      "id": "system-design-271",
       "title": "Difference between Inheritance and Composition in Java - GeeksforGeeks"
     },
     {
-      "id": "system-design-274",
+      "id": "system-design-272",
       "title": "Difference Between CQRS and Event Sourcing - GeeksforGeeks"
     },
     {
-      "id": "system-design-275",
+      "id": "system-design-273",
       "title": "Repository Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-276",
+      "id": "system-design-274",
       "title": "MVC Design Pattern - GeeksforGeeks"
     },
     {
-      "id": "system-design-277",
+      "id": "system-design-275",
       "title": "Designing a Parking Lot using Object-Oriented Principles - GeeksforGeeks"
     },
     {
-      "id": "system-design-278",
+      "id": "system-design-276",
       "title": "Design data structures and algorithms for in-memory file system - GeeksforGeeks"
     },
     {
-      "id": "system-design-279",
+      "id": "system-design-277",
       "title": "System Design of Youtube - A Complete Architecture - GeeksforGeeks"
     },
     {
-      "id": "system-design-280",
+      "id": "system-design-278",
       "title": "Design Spotify Premium | System Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-281",
+      "id": "system-design-279",
       "title": "Designing TikTok - GeeksforGeeks"
     },
     {
-      "id": "system-design-282",
+      "id": "system-design-280",
       "title": "Designing Zoom | System Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-283",
+      "id": "system-design-281",
       "title": "Designing Instagram | System Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-284",
+      "id": "system-design-282",
       "title": "Design Reddit | System Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-285",
+      "id": "system-design-283",
       "title": "Designing Whatsapp Messenger | System Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-286",
+      "id": "system-design-284",
       "title": "Design Notification Services | System Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-287",
+      "id": "system-design-285",
       "title": "Google's Search Autocomplete High-Level Design(HLD) - GeeksforGeeks"
     },
     {
-      "id": "system-design-288",
+      "id": "system-design-286",
       "title": "Designing Google Maps | System Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-289",
+      "id": "system-design-287",
       "title": "Design City Guide System like Foursquare - GeeksforGeeks"
     },
     {
-      "id": "system-design-290",
+      "id": "system-design-288",
       "title": "Designing Amazon.com's Database - System Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-291",
+      "id": "system-design-289",
       "title": "Designing UPI - System Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-292",
+      "id": "system-design-290",
       "title": "System Design of Airline Management System - GeeksforGeeks"
     },
     {
-      "id": "system-design-293",
+      "id": "system-design-291",
       "title": "HLD or High Level System Design of Apache Kafka Startup - GeeksforGeeks"
     },
     {
-      "id": "system-design-294",
+      "id": "system-design-292",
       "title": "Design Distributed Job Scheduler | System Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-295",
+      "id": "system-design-293",
       "title": "How to Design a Rate Limiter API | Learn System Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-296",
+      "id": "system-design-294",
       "title": "Designing Authentication System | System Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-297",
+      "id": "system-design-295",
       "title": "URL Shortner System Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-298",
+      "id": "system-design-296",
       "title": "Designing Parking Lot (Garage) System | System Design - GeeksforGeeks"
     },
     {
-      "id": "system-design-299",
+      "id": "system-design-297",
       "title": "Designing Online Code Editor | System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-298",
+      "title": "Vending Machine: System Design - GeeksforGeeks"
+    },
+    {
+      "id": "system-design-299",
+      "title": "Proxy Server - GeeksforGeeks"
     }
   ]
 }

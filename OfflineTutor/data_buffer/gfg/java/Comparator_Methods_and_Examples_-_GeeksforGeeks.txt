@@ -1,0 +1,146 @@
+# Comparator Methods and Examples - GeeksforGeeks
+
+The Comparator interface in Java is used to define custom sorting logic for objects. It allows sorting collections based on different attributes without modifying the original class. It is used:When a class needs to be sorted in multiple waysWhen sorting, logic should be external to the classWhen the class does not implement Comparable
+            Java
+
+    import java.util.*;
+
+class ComparatorDemo {
+    public static void main(String[] args) {
+
+        List<Integer> list = Arrays.asList(5, 2, 8, 1);
+
+        // Sorting using Comparator
+        Collections.sort(list, (a, b) -> a - b);
+
+        System.out.println(list);
+    }
+}
+
+Output[1, 2, 5, 8]
+Explanation:A Comparator is implemented using a lambda expression to define custom sorting logic for integers.Collections.sort() applies this comparator to sort the list in ascending order.Syntaxpublic interface Comparator<T> {    int compare(T o1, T o2);}Commonly used Comparator Methods1. compare(T o1, T o2)Compares two objects to determine their sorting order. It returns a negative, zero, or positive value based on the comparison result.
+            Java
+
+    import java.util.*;
+
+public class CompareDemo {
+    public static void main(String[] args) {
+
+        Comparator<Integer> comp = new Comparator<Integer>() {
+            public int compare(Integer o1, Integer o2) {
+                return o1 - o2;
+            }
+        };
+
+        System.out.println(comp.compare(10, 5));  // positive value
+    }
+}
+
+Output5
+Syntax:int compare(T o1, T o2)Description:Returns a negative value if o1 < o2Returns zero if o1 == o2Returns a positive value if o1 > o22. comparing()Creates a comparator using a key extractor function, allowing objects to be sorted based on a specific field.
+            Java
+
+    import java.util.*;
+
+class Student {
+    int age;
+    Student(int age) { this.age = age; }
+}
+
+public class ComparingDemo {
+    public static void main(String[] args) {
+
+        List<Student> list = Arrays.asList(
+            new Student(21),
+            new Student(18),
+            new Student(23)
+        );
+
+        list.sort(Comparator.comparing(s -> s.age));
+
+        list.forEach(s -> System.out.println(s.age));
+    }
+}
+
+Output18
+21
+23
+Syntax:static <T, U extends Comparable<? super U>>Comparator<T> comparing(Function<? super T, ? extends U> keyExtractor)Description:Creates a comparator using a key extractor functionSorts objects based on a specific fieldCommonly used with method references or lambdas3. comparingInt(), comparingLong(), comparingDouble()Primitive-specific comparator methods that improve performance by avoiding unnecessary boxing.
+            Java
+
+    import java.util.*;
+
+class Item {
+    int qty; long price; double rating;
+    Item(int q, long p, double r) { qty=q; price=p; rating=r; }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        List<Item> list = Arrays.asList(
+            new Item(2, 200L, 4.5),
+            new Item(1, 100L, 4.9)
+        );
+
+        list.sort(Comparator
+            .<Item>comparingInt(i -> i.qty)
+            .thenComparingLong(i -> i.price)
+            .thenComparingDouble(i -> i.rating)
+        );
+
+        list.forEach(i ->
+            System.out.println(i.qty+" "+i.price+" "+i.rating));
+    }
+}
+
+Output1 100 4.9
+2 200 4.5
+Syntax:static <T> Comparator<T> comparingInt( ToIntFunction<? super T> keyExtractor)static <T> Comparator<T> comparingLong(    ToLongFunction<? super T> keyExtractor)static <T> Comparator<T> comparingDouble(     ToDoubleFunction<? super T> keyExtractor)Description:Used for sorting based on primitive fieldsAvoids auto-boxing overheadImproves performance compared to comparing()4. reversed()Returns a comparator that sorts elements in the reverse order of the original comparator.
+            Java
+
+    import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        List<Integer> list = Arrays.asList(10, 5, 20);
+
+        list.sort(Comparator.<Integer>naturalOrder().reversed());
+
+        System.out.println(list);
+    }
+}
+
+Output[20, 10, 5]
+Syntax:default Comparator<T> reversed()Description:Reverses the sorting order of an existing comparatorUseful for descending order sortingDoes not modify the original comparator5. thenComparing()Used for multi-level sorting by applying a secondary comparison when the primary comparison results in equality.
+            Java
+
+    import java.util.*;
+
+class Emp {
+    int age;
+    String name;
+    Emp(int a, String n) { age = a; name = n; }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        List<Emp> list = Arrays.asList(
+            new Emp(25, "Bob"),
+            new Emp(25, "Adam"),
+            new Emp(30, "Carl")
+        );
+
+        list.sort(Comparator
+            .comparing((Emp e) -> e.age)
+            .thenComparing(e -> e.name));
+
+        list.forEach(e -> System.out.println(e.age + " " + e.name));
+    }
+}
+
+Output25 Adam
+25 Bob
+30 Carl
+Syntax:default Comparator<T> thenComparing(Comparator<? super T> other)Description:Applies a secondary comparison when values are equalEnables multi-level sortingUsed after a primary comparatorOther Comparator MethodsMethodDescriptionExample Use CaseComparator.naturalOrder()Returns a comparator that sorts elements in their natural order.Sort integers or strings in ascending orderComparator.reverseOrder()Returns a comparator that reverses natural ordering.Reverse sorting of Comparable objectsComparator.nullsFirst(Comparator)Treats null values as smaller than non-null values.Sorting lists containing null safelyComparator.nullsLast(Comparator)Treats null values as greater than non-null values.Place null values at the end

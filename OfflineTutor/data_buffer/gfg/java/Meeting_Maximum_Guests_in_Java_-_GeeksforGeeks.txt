@@ -1,0 +1,73 @@
+# Meeting Maximum Guests in Java - GeeksforGeeks
+
+Given two arrays, arr[] and dep[] representing the arrival and departure times of guests at a party, where each arrival corresponds to a departure at the same index, the goal is to find the maximum number of guests present at any moment.Example:Input:arr[] = {900, 940}dep[] = {1000, 1030}Output: 2Explanation: The maximum number of guests present at the same time is 2, between 9:40 and 10:00.Naive Solution (Brute Force)Checks all possible overlapping guest time intervals to find the maximum number of guests present at the same time.Iterate through each guest and treat their arrival–departure time as a reference interval.For the selected guest, compare their interval with every other guest’s interval.Check if the two time intervals overlap.If an overlap exists, increment the count of guests present at that time.Track and return the maximum count obtained across all guests.
+            Java
+
+    public class GfG {
+    
+    public static int maxGuests(int arr[], int dep[]) {
+        int maxGuests = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            int currentCount = 1; // Start with 1 as the current guest
+            for (int j = i + 1; j < arr.length; j++) {
+                if ((arr[i] <= arr[j] && dep[i] >= dep[j]) || (arr[i] <= dep[j] && dep[i] >= arr[j])) {
+                    currentCount++;
+                }
+            }
+            maxGuests = Math.max(maxGuests, currentCount);
+        }
+
+        return maxGuests;
+    }
+    
+    public static void main(String args[]) {
+        int arr[] = {900, 600, 700};
+        int dep[] = {1000, 800, 730};
+        
+        int result = maxGuests(arr, dep);
+        System.out.println(result);
+    }
+}
+
+Output2
+Time Complexity:  O(N²) - due to nested loops checking all pairs of guests.Space Complexity: O(1) - no extra space is used apart from variables.Efficient Solution (Using Sorting) Sorts arrival and departure times and processes events in order to efficiently determine the maximum number of guests present simultaneously.Sort the arrival and departure time arrays independently.Initialize two pointers to track arrivals and departures.Traverse both arrays in chronological order using the two pointers.Increment the guest count when an arrival occurs before a departure; decrement it on departure.Maintain and return the maximum guest count observed during traversal.
+            Java
+
+    import java.util.*;
+
+public class GfG {
+    
+    public static int maxCount(int arr[], int dep[]) {
+        Arrays.sort(arr);
+        Arrays.sort(dep);
+        
+        int i = 1, j = 0, count = 1, maxGuests = 1;
+        int n = arr.length;
+        
+        // Two pointer approach
+        while (i < n && j < n) {
+            if (arr[i] <= dep[j]) {
+                count++; // New guest arrives
+                i++;
+            } else {
+                count--; // A guest departs
+                j++;
+            }
+            maxGuests = Math.max(maxGuests, count);
+        }
+        
+        return maxGuests;
+    }
+    
+    public static void main(String args[]) {
+        int arr[] = {900, 940, 950, 1100, 1500, 1800};
+        int dep[] = {910, 1200, 1120, 1130, 1900, 2000};
+        
+        int result = maxCount(arr, dep);
+        System.out.println(result); 
+    }
+}
+
+Output3
+Time Complexity: O(N log N) - due to sorting of arrival and departure arrays.Space Complexity: O(1) - only constant extra space is used (excluding sorting space).

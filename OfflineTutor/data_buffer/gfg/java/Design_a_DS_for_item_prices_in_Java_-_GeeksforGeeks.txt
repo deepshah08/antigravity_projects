@@ -1,0 +1,146 @@
+# Design a DS for item prices in Java - GeeksforGeeks
+
+Given a collection of items with their corresponding prices, design a data structure that efficiently supports the following operations:add(price, item): Adds a new item along with its price.find(price): Fetches the item associated with the given price.printSorted(): Prints all items in increasing order of price.printGreaterSorted(price): Prints all items in increasing order of price, but only those with a price greater than the given price.printSmallerSorted(price): Prints all items in increasing order of price, but only those with a price smaller than the given price.Note: We assume that all prices are distinct.Naive SolutionIn this approach, items are stored in a sorted array based on price, ensuring that all elements remain ordered at all times.Maintain an array of (price, item) pairs sorted by price.Insert a new item at the correct position to keep the array sorted.Use binary search to find an item by its price.Traverse the array directly to print all items in sorted order.Use binary search to locate the boundary index for printing greater or smaller prices.
+            Java
+
+    import java.util.*;
+
+class Item {
+    int price;
+    String name;
+
+    Item(int price, String name) {
+        this.price = price;
+        this.name = name;
+    }
+}
+
+public class GfG {
+
+    static ArrayList<Item> list = new ArrayList<>();
+
+    static void add(int price, String name) {
+        int i = 0;
+        while (i < list.size() && list.get(i).price < price) {
+            i++;
+        }
+        list.add(i, new Item(price, name));
+    }
+
+    static String find(int price) {
+        int l = 0, r = list.size() - 1;
+        while (l <= r) {
+            int mid = (l + r) / 2;
+            if (list.get(mid).price == price)
+                return list.get(mid).name;
+            else if (list.get(mid).price < price)
+                l = mid + 1;
+            else
+                r = mid - 1;
+        }
+        return "";
+    }
+
+    static void printSorted() {
+        for (Item i : list)
+            System.out.println(i.name + " " + i.price);
+    }
+
+    static void printGreaterSorted(int price) {
+        for (Item i : list) {
+            if (i.price > price)
+                System.out.println(i.name + " " + i.price);
+        }
+    }
+
+    static void printSmallerSorted(int price) {
+        for (Item i : list) {
+            if (i.price < price)
+                System.out.println(i.name + " " + i.price);
+        }
+    }
+
+    public static void main(String[] args) {
+
+        add(75, "Notebook");
+        add(30, "Eraser");
+        add(180, "Backpack");
+        add(120, "WaterBottle");
+
+        printSorted();
+        System.out.println(find(75));
+        printGreaterSorted(75);
+        printSmallerSorted(120);
+    }
+}
+
+OutputEraser 30
+Notebook 75
+WaterBottle 120
+Backpack 180
+Notebook
+WaterBottle 120
+Backpack 180
+Eraser 30
+Notebook 75
+Time Complexityadd: O(N) - elements may need to be shifted to maintain order.find: O(log N) - binary search on sorted array.Space Complexity: O(N) - array storage for items.Efficient SolutionTo overcome the limitations of array-based approaches, a more efficient approach uses TreeMap, which stores items automatically sorted by price and supports fast searching and range-based queries.Store item prices as keys and item names as values in a TreeMap.Insert items directly using the put() method.Retrieve an item using direct key lookup.Traverse the map to print all items in sorted order.Use headMap() and tailMap() for range-based printing.
+            Java
+
+    import java.util.*;
+
+class MyDS {
+
+    TreeMap<Integer, String> map = new TreeMap<>();
+
+    void add(int price, String item) {
+        map.put(price, item);
+    }
+
+    String find(int price) {
+        return map.getOrDefault(price, "");
+    }
+
+    void printSorted() {
+        for (Map.Entry<Integer, String> e : map.entrySet())
+            System.out.println(e.getValue() + " " + e.getKey());
+    }
+
+    void printGreaterSorted(int price) {
+        for (Map.Entry<Integer, String> e : map.tailMap(price).entrySet())
+            System.out.println(e.getValue() + " " + e.getKey());
+    }
+
+    void printSmallerSorted(int price) {
+        for (Map.Entry<Integer, String> e : map.headMap(price).entrySet())
+            System.out.println(e.getValue() + " " + e.getKey());
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        MyDS ds = new MyDS();
+
+        ds.add(75, "Notebook");
+        ds.add(30, "Eraser");
+        ds.add(180, "Backpack");
+        ds.add(120, "WaterBottle");
+
+        ds.printSorted();
+        System.out.println(ds.find(75));
+        ds.printGreaterSorted(75);
+        ds.printSmallerSorted(120);
+    }
+}
+
+OutputEraser 30
+Notebook 75
+WaterBottle 120
+Backpack 180
+Notebook
+Notebook 75
+WaterBottle 120
+Backpack 180
+Eraser 30
+Notebook 75
+Time Complexity:add / find: O(log N) - TreeMap operations are logarithmic.sorted traversal: O(N) - single traversal of the map.Space Complexity: O(N) - TreeMap stores all items internally.

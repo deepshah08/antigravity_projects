@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsQuiz on C++ StringsLast Updated : DiscussCommentsQuestion 1What is a C++ string?A data type used to store integers. A data type used to store floats.A sequence of characters.A pointer to an integer.Question 2Which of the following header file is required to use C++ strings?#include <iostream>#include <string>#include <vector>#include <cstdlib>Question 3Which of the following is a correct way to initialize a string in C++?string str = "Hello";string str("Hello");string str{"Hello"};All of the aboveQuestion 4What will be the output of the following code?
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsQuiz on C++ StringsLast Updated : DiscussCommentsQuestion 1What is a C++ string?A data type used to store integers. A data type used to store floats.A sequence of characters.A pointer to an integer.Question 2Which of the following header file is required to use C++ strings?#include <iostream>#include <string>#include <vector>#include <cstdlib>Question 3Which of the following is a correct way to initialize a string in C++?string str = "Hello";string str("Hello");string str{"Hello"};All of the aboveQuestion 4What will be the output of the following code?
         C++
         
         #include <iostream>

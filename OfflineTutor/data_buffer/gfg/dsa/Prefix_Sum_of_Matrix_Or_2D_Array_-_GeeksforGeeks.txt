@@ -1,65 +1,58 @@
 # Prefix Sum of Matrix (Or 2D Array) - GeeksforGeeks
 
-The prefix sum of a matrix (or 2D array) is a powerful technique used to efficiently compute the sum of elements in a submatrix. Instead of recalculating the sum from scratch every time, we precompute a new matrix where each element contains the sum of a specific submatrix from the top-left corner to that cell.This concept is an extension of 1D prefix sums and is commonly used in competitive programming and coding interviews.What is a Prefix Sum Matrix?A prefix sum matrix is a new matrix sum[][] where:    => sum[i][j] represents the sum of all elements in the rectangle from (0,0) to (i-1,j-1) in the original matrix.This allows for quick calculations of any submatrix sum using the inclusion-exclusion principle.How to Construct the Prefix Sum MatrixGiven a matrix arr[][] of dimensions n × m, the prefix sum matrix sum[][] can be constructed as:prefix[i][j] = arr[i][j] + prefix[i-1][j]  + prefix[i][j-1] - prefix[i-1][j-1]Try It YourselfMake sure to handle edge cases when i == 0 or j == 0. 
+A 2D prefix sum is a technique used to calculate the sum of elements in any submatrix efficiently. It precomputes the sum of elements from the top-left corner to every cell, allowing each submatrix sum query to be answered in O(1) time.It extends the concept of prefix sums from 1D arrays to 2D matrices.It uses the inclusion-exclusion principle to avoid repeated calculations.ExampleInput:1   2   3   45   6   7   89  10  11  1213 14  15  16Try It YourselfPrefix sum matrix is:1    3    6    106   14   24    3615  33   54    7828  60   96   136Each element of the prefix sum matrix represents the sum of all elements in the rectangle from the top-left corner (0, 0) to that position.prefix[0][0] = 1prefix[0][1] = 1 + 2 = 3prefix[0][2] = 1 + 2 + 3 = 6prefix[0][3] = 1 + 2 + 3 + 4 = 10prefix[1][0] = 1 + 5 = 6prefix[1][1] = 1 + 2 + 5 + 6 = 14prefix[1][2] = 1 + 2 + 3 + 5 + 6 + 7 = 24prefix[1][3] = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 = 36prefix[2][0] = 1 + 5 + 9 = 15prefix[2][1] = 1 + 2 + 5 + 6 + 9 + 10 = 33prefix[2][2] = 1 + 2 + 3 + 5 + 6 + 7 + 9 + 10 + 11 = 54prefix[2][3] = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 = 78prefix[3][0] = 1 + 5 + 9 + 13 = 28prefix[3][1] = 1 + 2 + 5 + 6 + 9 + 10 + 13 + 14 = 60prefix[3][2] = 1 + 2 + 3 + 5 + 6 + 7 + 9 + 10 + 11 + 13 + 14 + 15 = 96prefix[3][3] = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 = 136 Approaches to Calculate Prefix Sum of a MatrixThe prefix sum matrix can be constructed using the following approach.1. Constructing the Prefix Sum MatrixFor every cell (i, j), add the current element, the prefix sum from the top, and the prefix sum from the left. The overlapping top-left region is subtracted once.The prefix sum for any cell can be calculated using:prefix[i][j] = arr[i][j]                 + prefix[i-1][j]                + prefix[i][j-1]                - prefix[i-1][j-1]The top and left prefix sums are added, while the top-left prefix sum is subtracted because it is counted twice.For example, for prefix[1][1]:prefix[1][1]= arr[1][1] + prefix[0][1] + prefix[1][0] - prefix[0][0]= 5 + 3 + 5 - 1= 12This preprocessing allows us to calculate the sum of any rectangular region of the matrix without traversing all its elements.
             C++
 
     #include <iostream>
 #include <vector>
 using namespace std;
 
-vector<vector<int>> prefixSum2D(vector<vector<int>> &arr) {
-    
-    // number of rows
+vector<vector<int>> prefixSum2D(
+    const vector<vector<int>>& arr)
+{
     int n = arr.size();
-    
-    // number of columns
     int m = arr[0].size();
-    
+
     vector<vector<int>> prefix(n, vector<int>(m, 0));
 
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
-            
-            // Start with original value
+
             prefix[i][j] = arr[i][j];
-            
-            // Add value from top cell if it exists
-            if (i > 0) {
+
+            if (i > 0)
                 prefix[i][j] += prefix[i - 1][j];
-            }
-            
-            // Add value from left cell if it exists
-            if (j > 0) {
+
+            if (j > 0)
                 prefix[i][j] += prefix[i][j - 1];
-            }
-            
-            // Subtract overlap from top-left diagonal if it exists
-            if (i > 0 && j > 0) {
+
+            if (i > 0 && j > 0)
                 prefix[i][j] -= prefix[i - 1][j - 1];
-            }
         }
     }
 
     return prefix;
 }
 
-int main() {
-    vector<vector<int>> arr = {{1, 2, 3, 4},
-                               {5, 6, 7, 8},
-                               {9, 10, 11, 12},
-                               {13, 14, 15, 16}};
+int main()
+{
+    vector<vector<int>> arr = {
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12},
+        {13, 14, 15, 16}
+    };
 
     vector<vector<int>> prefix = prefixSum2D(arr);
 
-    for (int i = 0; i < prefix.size(); i++) {
-        for (int j = 0; j < prefix[0].size(); j++) {
-            cout << prefix[i][j] << " ";
-        }
-        cout << endl;
+    for (const auto& row : prefix) {
+        for (int value : row)
+            cout << value << " ";
+        cout << '\n';
     }
 
     return 0;
-}
+} 
 
 
             Java
@@ -306,60 +299,60 @@ Output1 3 6 10
 6 14 24 36 
 15 33 54 78 
 28 60 96 136 
-How to Query Submatrix Sums Using Prefix Sum MatrixSuppose we want the sum of all elements inside a submatrix from (r1, c1) to (r2, c2), then the result is:prefix[r2][c2] - prefix[r1-1][c2] - prefix[r2][c1-1] + prefix[r1-1][c1-1]
+Explanationprefix[i][j] initially stores arr[i][j].The prefix sums from the top and left are added.The top-left region is included twice, so it is subtracted once.This process is repeated for every cell to build the complete prefix sum matrix.2. Using Prefix Sum to Answer Submatrix Sum QueriesOnce the prefix sum matrix is constructed, the sum of any submatrix from (r1, c1) to (r2, c2) can be calculated using inclusion-exclusion.The formula is:sum = prefix[r2][c2]       - prefix[r1-1][c2]      - prefix[r2][c1-1]      + prefix[r1-1][c1-1]When r1 = 0 or c1 = 0, the corresponding prefix value is treated as 0.
             C++
 
     #include <iostream>
 #include <vector>
 using namespace std;
 
-vector<int> prefixSum2D(vector<vector<int>> &arr, vector<vector<int>> &queries) {
+vector<vector<int>> buildPrefix(
+    const vector<vector<int>>& arr)
+{
     int n = arr.size();
     int m = arr[0].size();
 
-    // Construct prefix sum matrix using 0-based indexing
-    vector<vector<int>> prefix(n, vector<int>(m, 0));
+    vector<vector<int>> prefix(n, vector<int>(m));
 
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < m; ++j) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
 
-            // Start with original value
             prefix[i][j] = arr[i][j];
 
-            // Add value from top cell if it exists
             if (i > 0)
                 prefix[i][j] += prefix[i - 1][j];
 
-            // Add value from left cell if it exists
             if (j > 0)
                 prefix[i][j] += prefix[i][j - 1];
 
-            // Subtract overlap from top-left diagonal if it exists
             if (i > 0 && j > 0)
                 prefix[i][j] -= prefix[i - 1][j - 1];
         }
     }
 
-    vector<int> result;
-
-    // Process each query using inclusion-exclusion
-    for (auto &q : queries) {
-        int r1 = q[0], c1 = q[1];
-        int r2 = q[2], c2 = q[3];
-
-        int total = prefix[r2][c2];
-        int top = (r1 > 0) ? prefix[r1 - 1][c2] : 0;
-        int left = (c1 > 0) ? prefix[r2][c1 - 1] : 0;
-        int overlap = (r1 > 0 && c1 > 0) ? prefix[r1 - 1][c1 - 1] : 0;
-
-        int sum = total - top - left + overlap;
-        result.push_back(sum);
-    }
-
-    return result;
+    return prefix;
 }
 
-int main() {
+int submatrixSum(
+    const vector<vector<int>>& prefix,
+    int r1, int c1, int r2, int c2)
+{
+    int sum = prefix[r2][c2];
+
+    if (r1 > 0)
+        sum -= prefix[r1 - 1][c2];
+
+    if (c1 > 0)
+        sum -= prefix[r2][c1 - 1];
+
+    if (r1 > 0 && c1 > 0)
+        sum += prefix[r1 - 1][c1 - 1];
+
+    return sum;
+}
+
+int main()
+{
     vector<vector<int>> arr = {
         {1, 2, 3, 4},
         {5, 6, 7, 8},
@@ -367,18 +360,13 @@ int main() {
         {13, 14, 15, 16}
     };
 
-    vector<vector<int>> queries = {
-        {1, 1, 2, 2},  
-    };
+    vector<vector<int>> prefix = buildPrefix(arr);
 
-    vector<int> result = prefixSum2D(arr, queries);
+    // Query: rows 1 to 2, columns 1 to 2
+    cout << submatrixSum(prefix, 1, 1, 2, 2);
 
-    for (int sum : result) {
-        cout << sum << " ";
-    }
-
-    cout << endl;
-}
+    return 0;
+} 
 
 
             Java
@@ -663,5 +651,4 @@ const queries = [
 const result = prefixSum2D(mat, queries);
 console.log(result.join(' '));
 
-Output34 
-Time Complexity: O(n × m + q), where n is the number of rows, m is the number of columns, and q is the number of queries. Each query is handled in O(1) time.Auxiliary Space:  O(n × m + q), where n is the number of rows, m is the number of columns (for storing the prefix sum matrix), and q is the number of queries (for storing the results).
+Output34ExplanationFor the query (1,1) to (2,2), the required submatrix is:6  710 11Its sum is:6 + 7 + 10 + 11 = 34The prefix sum formula calculates this directly by adding and subtracting the required regions.

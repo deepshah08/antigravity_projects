@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsC++ Input OutputLast Updated : DiscussCommentsQuestion 1Which of the following is the scope resolution operator?.*::~Question 2Which of the following symbol is used to declare the preprocessor directives in C++?$^*#Question 3How many base manipulators are available in c++?4321Question 4How many commonly used output stream classes are available in modern C++?1234Question 5What will be the output of the following C++ code?
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsC++ Input OutputLast Updated : DiscussCommentsQuestion 1Which of the following is the scope resolution operator?.*::~Question 2Which of the following symbol is used to declare the preprocessor directives in C++?$^*#Question 3How many base manipulators are available in c++?4321Question 4How many commonly used output stream classes are available in modern C++?1234Question 5What will be the output of the following C++ code?
         C++
         
         #include <iostream>

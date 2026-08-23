@@ -1,0 +1,69 @@
+# Nation SkillUp
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesTutorialsPracticeJobsSummer SkillUp 2026 is Now Live. Start Exploring!Explore Our Free Tutorials LibraryLearn DSA, System Design, DevOps, Web Development, Data Science & more - completely free!Join Three90 Challenge in0d⋮0h⋮0m⋮0sTutorialsJobsPartner Courses & Workshops01STEPPick a TutorialChoose from our wide range of free tutorials02STEPLearn at Your PeaceFollow structured lessons with examples03STEPBuild ProjectsApply your knowledge with hands-on projectsMost RecommendedData StructuresSystem DesignWeb DevelopmentPythonData ScienceMachine LearningDevOpsAll TutorialsHTMLCSSJavaScriptAngularReact Express.jsNode.jsReact NativeData Analytics NumPy Pandas Deep Learning LinuxGitKubernetesDocker Google Cloud PlatformMicrosoft AzureJava C  C++ C# SQL R Android KotlinSwiftFlutter Software Engineering Computer Fundamentals Operating SystemsComputer NetworksDBMS Theory of Computation (TOC)Digital Electronics and Logic Design Compiler DesignComputer Organization and ArchitectureWord ExcelSoftwareTestingProduct Management Get Hired by GfGPartnerCourses& WorkshopsSnowflakeExplore NowMongoDB (7 Free Courses)Explore NowMacKeeperExplore NowZoho ManageEngineExplore NowTestMu AI (Formerly LambdaTest)Explore NowLyzr AIExplore NowAWSWorkshop01:30 PM, 30th August 2025Watch NowSalesforceWorkshop5 PM, 27th August 2025Watch NowSkill Up. Get Certified. Stand Out.Testimonial“GeeksforGeeks has truly transformed my learning journey! As someone passionate about improving in coding and computer science, GeeksforGeeks has been an incredible resource. Huge thanks to the GFG team for making quality tech education so accessible!AAurobinda Chainy“I am incredibly grateful to the GeeksForGeeks platform for being such an important part of my learning journey. The platform’s easy-to-understand content, regular weekly classes, contests, and quizzes kept me motivated and on track throughout my preparation.AAnjum Kureshi“GeeksforGeeks has truly been a game-changer in my learning journey! I’m grateful for the support and opportunities GfG provides - especially the motivation that comes with rewards! A big thank you to the entire GfG team—you're helping so many of us move one step closer to our dream tech careers!MMD Ashraf Khan“GeeksforGeeks has been an incredible part of my learning journey. Their well-structured tutorials, coding challenges, and detailed explanations made complex topics easy to understand. Thanks to their resources, I strengthened my programming skills, prepared effectively for interviews, and eventually landed a great job in tech.SSakshi Shandilya“GFG has been a constant support in my learning journey. The platform covers concepts from basics to advanced in a very clear and structured way, which makes even tough topics easier to understand. Highly recommended for anyone serious about learning and growing in tech!VVinayak Jaybhaye“I’ve been using GeeksforGeeks for a while now, and it’s honestly one of the best resources out there for learning coding and computer science topics. The articles are easy to follow, and the coding problems really help reinforce the concepts. It’s helped me a lot in preparing for interviews too.PPriyanshu Rawat“GeeksforGeeks has truly transformed my learning journey! As someone passionate about improving in coding and computer science, GeeksforGeeks has been an incredible resource. Huge thanks to the GFG team for making quality tech education so accessible!AAurobinda Chainy“I am incredibly grateful to the GeeksForGeeks platform for being such an important part of my learning journey. The platform’s easy-to-understand content, regular weekly classes, contests, and quizzes kept me motivated and on track throughout my preparation.AAnjum Kureshi“GeeksforGeeks has truly been a game-changer in my learning journey! I’m grateful for the support and opportunities GfG provides - especially the motivation that comes with rewards! A big thank you to the entire GfG team—you're helping so many of us move one step closer to our dream tech careers!MMD Ashraf Khan“GeeksforGeeks has been an incredible part of my learning journey. Their well-structured tutorials, coding challenges, and detailed explanations made complex topics easy to understand. Thanks to their resources, I strengthened my programming skills, prepared effectively for interviews, and eventually landed a great job in tech.SSakshi Shandilya“GFG has been a constant support in my learning journey. The platform covers concepts from basics to advanced in a very clear and structured way, which makes even tough topics easier to understand. Highly recommended for anyone serious about learning and growing in tech!VVinayak Jaybhaye“I’ve been using GeeksforGeeks for a while now, and it’s honestly one of the best resources out there for learning coding and computer science topics. The articles are easy to follow, and the coding problems really help reinforce the concepts. It’s helped me a lot in preparing for interviews too.PPriyanshu Rawat

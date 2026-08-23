@@ -1,6 +1,6 @@
 # Segmented Sieve - GeeksforGeeks
 
-Given a number n, print all primes smaller than n. Input: N = 10Output: 2, 3, 5, 7Explanation : The output “2, 3, 5, 7” for input N = 10 represents the list of the prime numbers less than or equal to 10. Input: N = 5Output: 2, 3, 5 Explanation : The output “2, 3, 5” for input N = 5 represents the list of the prime numbers less than or equal to 5.Try It YourselfA Naive approach is to run a loop from 0 to n-1 and check each number for primeness. A Better Approach is to use Simple Sieve of Eratosthenes.
+Given a number n, print all primes smaller than n. Input: N = 10Output: 2, 3, 5, 7Explanation : The output “2, 3, 5, 7” for input N = 10 represents the list of the prime numbers less than or equal to 10. Input: N = 5Output: 2, 3, 5 Explanation : The output “2, 3, 5” for input N = 5 represents the list of the prime numbers less than or equal to 5.A Naive approach is to run a loop from 0 to n-1 and check each number for primeness. A Better Approach is to use Simple Sieve of Eratosthenes.
             C++
 
     #include <iostream>

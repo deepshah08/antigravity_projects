@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T00:59:51.186Z",
+  "generatedAt": "2026-08-23T01:01:34.426Z",
   "topics": [
     {
       "id": "dsa",
@@ -3572,868 +3572,253 @@
       "articles": [
         {
           "id": "java-001",
-          "title": "Introduction",
-          "url": "https://www.geeksforgeeks.org/java/introduction-to-java/"
+          "title": "Untitled",
+          "url": "https://www.geeksforgeeks.org/"
         },
         {
           "id": "java-002",
-          "title": "Download and Install Java",
-          "url": "https://www.geeksforgeeks.org/linux-unix/download-install-java-windows-linux-macos/"
+          "title": "DSA",
+          "url": "https://www.geeksforgeeks.org/dsa/dsa-tutorial-learn-data-structures-and-algorithms/"
         },
         {
           "id": "java-003",
-          "title": "IntelliJ IDEA",
-          "url": "https://www.geeksforgeeks.org/installation-guide/how-to-install-intellij-idea-on-windows/"
+          "title": "Practice Problems",
+          "url": "https://www.geeksforgeeks.org/explore"
         },
         {
           "id": "java-004",
-          "title": "Eclipse",
-          "url": "https://www.geeksforgeeks.org/techtips/how-to-download-and-install-eclipse-on-windows/"
+          "title": "C",
+          "url": "https://www.geeksforgeeks.org/c/c-programming-language/"
         },
         {
           "id": "java-005",
-          "title": "Creating First Java Application in IntelliJ IDEA",
-          "url": "https://www.geeksforgeeks.org/java/creating-first-java-application-in-intellij-idea/"
+          "title": "C++",
+          "url": "https://www.geeksforgeeks.org/cpp/c-plus-plus/"
         },
         {
           "id": "java-006",
-          "title": "JDK vs JRE vs JVM",
-          "url": "https://www.geeksforgeeks.org/java/differences-jdk-jre-jvm/"
+          "title": "Java",
+          "url": "https://www.geeksforgeeks.org/java/java/"
         },
         {
           "id": "java-007",
-          "title": "Print output",
-          "url": "https://www.geeksforgeeks.org/java/system-out-println-in-java/"
+          "title": "Python",
+          "url": "https://www.geeksforgeeks.org/python/python-programming-language-tutorial/"
         },
         {
           "id": "java-008",
-          "title": "Taking Input",
-          "url": "https://www.geeksforgeeks.org/java/java-user-input-scanner-class/"
+          "title": "JavaScript",
+          "url": "https://www.geeksforgeeks.org/javascript/javascript-tutorial/"
         },
         {
           "id": "java-009",
-          "title": "Identifiers",
-          "url": "https://www.geeksforgeeks.org/java/java-identifiers/"
+          "title": "Data Science",
+          "url": "https://www.geeksforgeeks.org/data-science/data-science-for-beginners/"
         },
         {
           "id": "java-010",
-          "title": "Keywords",
-          "url": "https://www.geeksforgeeks.org/java/java-keywords/"
+          "title": "Machine Learning",
+          "url": "https://www.geeksforgeeks.org/machine-learning/machine-learning/"
         },
         {
           "id": "java-011",
-          "title": "Variables",
-          "url": "https://www.geeksforgeeks.org/java/variables-in-java/"
+          "title": "Courses",
+          "url": "https://www.geeksforgeeks.org/courses"
         },
         {
           "id": "java-012",
-          "title": "Data Types",
-          "url": "https://www.geeksforgeeks.org/java/java-data-types/"
+          "title": "Linux",
+          "url": "https://www.geeksforgeeks.org/linux-unix/linux-tutorial/"
         },
         {
           "id": "java-013",
-          "title": "Literals",
-          "url": "https://www.geeksforgeeks.org/java/literals-in-java/"
+          "title": "DevOps",
+          "url": "https://www.geeksforgeeks.org/devops/devops-tutorial/"
         },
         {
           "id": "java-014",
-          "title": "Wrapper Classes",
-          "url": "https://www.geeksforgeeks.org/java/wrapper-classes-java/"
+          "title": "Route Predicate Factory in Spring Cloud Gateway",
+          "url": "https://www.geeksforgeeks.org/java/fcdsvd/"
         },
         {
           "id": "java-015",
-          "title": "Operators",
-          "url": "https://www.geeksforgeeks.org/java/operators-in-java/"
+          "title": "How to create simple java project in eclipse",
+          "url": "https://www.geeksforgeeks.org/java/how-to-create-java-project-in-eclipse/"
         },
         {
           "id": "java-016",
-          "title": "Decision Making",
-          "url": "https://www.geeksforgeeks.org/java/decision-making-javaif-else-switch-break-continue-jump/"
+          "title": "Conditional Statements and Loops Practice Problems",
+          "url": "https://www.geeksforgeeks.org/java/conditional-statements-and-loops-practice-problems/"
         },
         {
           "id": "java-017",
-          "title": "Loops",
-          "url": "https://www.geeksforgeeks.org/java/loops-in-java/"
+          "title": "Connection Interface in Java JDBC",
+          "url": "https://www.geeksforgeeks.org/java/connection-interface-in-java-jdbc/"
         },
         {
           "id": "java-018",
-          "title": "Jump Statements",
-          "url": "https://www.geeksforgeeks.org/java/jump-statements-in-java/"
+          "title": "Driver Interface in JDBC",
+          "url": "https://www.geeksforgeeks.org/java/driver-interface-in-jdbc/"
         },
         {
           "id": "java-019",
-          "title": "Number Guessing Game",
-          "url": "https://www.geeksforgeeks.org/dsa/number-guessing-game-in-java/"
+          "title": "Design a DS for Remove and Print",
+          "url": "https://www.geeksforgeeks.org/java/design-a-ds-for-remove-and-print/"
         },
         {
           "id": "java-020",
-          "title": "Introduction",
-          "url": "https://www.geeksforgeeks.org/java/methods-in-java/"
+          "title": "StringBuffer and StringBuilder Methods",
+          "url": "https://www.geeksforgeeks.org/java/stringbuffer-and-stringbuilder-methods/"
         },
         {
           "id": "java-021",
-          "title": "Static Methods vs Instance Methods",
-          "url": "https://www.geeksforgeeks.org/java/static-methods-vs-instance-methods-in-java/"
+          "title": "Sort students by marks in Java",
+          "url": "https://www.geeksforgeeks.org/java/sort-students-by-marks-in-java/"
         },
         {
           "id": "java-022",
-          "title": "Access Modifiers",
-          "url": "https://www.geeksforgeeks.org/java/access-modifiers-java/"
+          "title": "Meeting Maximum Guests in Java",
+          "url": "https://www.geeksforgeeks.org/java/meeting-maximum-guests-in-java/"
         },
         {
           "id": "java-023",
-          "title": "Command Line Arguments",
-          "url": "https://www.geeksforgeeks.org/java/command-line-arguments-in-java/"
+          "title": "Sort an Array According to Another Array in Java",
+          "url": "https://www.geeksforgeeks.org/java/sort-an-array-according-to-other-in-java/"
         },
         {
           "id": "java-024",
-          "title": "Variable Arguments (Varargs)",
-          "url": "https://www.geeksforgeeks.org/java/variable-arguments-varargs-in-java/"
+          "title": "The thief problem in Java",
+          "url": "https://www.geeksforgeeks.org/java/the-thief-problem-in-java/"
         },
         {
           "id": "java-025",
-          "title": "Introduction",
-          "url": "https://www.geeksforgeeks.org/java/arrays-in-java/"
+          "title": "Keeping indexes after sorting in Java",
+          "url": "https://www.geeksforgeeks.org/java/keeping-indexes-after-sorting-in-java/"
         },
         {
           "id": "java-026",
-          "title": "Multi-Dimensional Arrays",
-          "url": "https://www.geeksforgeeks.org/java/multidimensional-arrays-in-java/"
+          "title": "Comparator Methods and Examples",
+          "url": "https://www.geeksforgeeks.org/java/comparator-methods-and-examples/"
         },
         {
           "id": "java-027",
-          "title": "Jagged Arrays",
-          "url": "https://www.geeksforgeeks.org/java/jagged-array-in-java/"
+          "title": "Design a DS for prices - duplicates allowed",
+          "url": "https://www.geeksforgeeks.org/java/design-a-ds-for-prices-duplicates-allowed/"
         },
         {
           "id": "java-028",
-          "title": "Arrays Class",
-          "url": "https://www.geeksforgeeks.org/java/array-class-in-java/"
+          "title": "Design a DS for item prices in Java",
+          "url": "https://www.geeksforgeeks.org/java/design-a-ds-for-item-prices-in-java/"
         },
         {
           "id": "java-029",
-          "title": "Final Arrays",
-          "url": "https://www.geeksforgeeks.org/java/final-arrays-in-java/"
+          "title": "About Us",
+          "url": "https://www.geeksforgeeks.org/about/"
         },
         {
           "id": "java-030",
-          "title": "Tic-Tac-Toe Game",
-          "url": "https://www.geeksforgeeks.org/java/tic-tac-toe-game-in-java/"
+          "title": "Legal",
+          "url": "https://www.geeksforgeeks.org/legal/"
         },
         {
           "id": "java-031",
-          "title": "Introduction",
-          "url": "https://www.geeksforgeeks.org/java/strings-in-java/"
+          "title": "Privacy Policy",
+          "url": "https://www.geeksforgeeks.org/legal/privacy-policy/"
         },
         {
           "id": "java-032",
-          "title": "Why Strings are Immutable",
-          "url": "https://www.geeksforgeeks.org/java/java-string-is-immutable-what-exactly-is-the-meaning/"
+          "title": "Contact Us",
+          "url": "https://www.geeksforgeeks.org/about/contact-us/"
         },
         {
           "id": "java-033",
-          "title": ".equals() vs ==",
-          "url": "https://www.geeksforgeeks.org/java/difference-between-and-equals-method-in-java/"
+          "title": "Advertise with us",
+          "url": "https://www.geeksforgeeks.org/advertise-with-us/"
         },
         {
           "id": "java-034",
-          "title": "String Concatenation",
-          "url": "https://www.geeksforgeeks.org/java/java-string-concat-examples/"
+          "title": "GFG Corporate Solution",
+          "url": "https://www.geeksforgeeks.org/gfg-corporate-solution/"
         },
         {
           "id": "java-035",
-          "title": "String Methods",
-          "url": "https://www.geeksforgeeks.org/java/java-string-methods/"
+          "title": "Campus Training Program",
+          "url": "https://www.geeksforgeeks.org/campus-training-program/"
         },
         {
           "id": "java-036",
-          "title": "String Class",
-          "url": "https://www.geeksforgeeks.org/java/string-class-in-java/"
+          "title": "POTD",
+          "url": "https://www.geeksforgeeks.org/problem-of-the-day"
         },
         {
           "id": "java-037",
-          "title": "StringBuffer Class",
-          "url": "https://www.geeksforgeeks.org/java/stringbuffer-class-in-java/"
+          "title": "Job-A-Thon",
+          "url": "https://practice.geeksforgeeks.org/events/rec/job-a-thon/"
         },
         {
           "id": "java-038",
-          "title": "StringBuilder Class",
-          "url": "https://www.geeksforgeeks.org/java/stringbuilder-class-in-java-with-examples/"
+          "title": "Nation Skill Up",
+          "url": "https://www.geeksforgeeks.org/nation-skill-up/"
         },
         {
           "id": "java-039",
-          "title": "Strings vs StringBuffer vs StringBuilder",
-          "url": "https://www.geeksforgeeks.org/java/string-vs-stringbuilder-vs-stringbuffer-in-java/"
+          "title": "Programming Languages",
+          "url": "https://www.geeksforgeeks.org/computer-science-fundamentals/programming-language-tutorials/"
         },
         {
           "id": "java-040",
-          "title": "Introduction",
-          "url": "https://www.geeksforgeeks.org/java/object-oriented-programming-oops-concept-in-java/"
+          "title": "Web Technology",
+          "url": "https://www.geeksforgeeks.org/web-tech/web-technology/"
         },
         {
           "id": "java-041",
-          "title": "Classes and Objects",
-          "url": "https://www.geeksforgeeks.org/java/classes-objects-java/"
+          "title": "AI, ML & Data Science",
+          "url": "https://www.geeksforgeeks.org/machine-learning/ai-ml-and-data-science-tutorial-learn-ai-ml-and-data-science/"
         },
         {
           "id": "java-042",
-          "title": "Constructors",
-          "url": "https://www.geeksforgeeks.org/java/constructors-in-java/"
+          "title": "CS Core Subjects",
+          "url": "https://www.geeksforgeeks.org/gate/gate-exam-tutorial/"
         },
         {
           "id": "java-043",
-          "title": "this Keyword",
-          "url": "https://www.geeksforgeeks.org/java/java-this-keyword/"
+          "title": "Interview Preparation",
+          "url": "https://www.geeksforgeeks.org/aptitude/interview-corner/"
         },
         {
           "id": "java-044",
-          "title": "super Keyword",
-          "url": "https://www.geeksforgeeks.org/java/super-keyword/"
+          "title": "Software and Tools",
+          "url": "https://www.geeksforgeeks.org/websites-apps/software-and-tools-a-to-z-list/"
         },
         {
           "id": "java-045",
-          "title": "Encapsulation",
-          "url": "https://www.geeksforgeeks.org/java/encapsulation-in-java/"
+          "title": "Interview Corner",
+          "url": "https://www.geeksforgeeks.org/interview-prep/interview-corner/"
         },
         {
           "id": "java-046",
-          "title": "Inheritance",
-          "url": "https://www.geeksforgeeks.org/java/inheritance-in-java/"
+          "title": "Aptitude",
+          "url": "https://www.geeksforgeeks.org/aptitude/aptitude-questions-and-answers/"
         },
         {
           "id": "java-047",
-          "title": "Polymorphism",
-          "url": "https://www.geeksforgeeks.org/java/polymorphism-in-java/"
+          "title": "Puzzles",
+          "url": "https://www.geeksforgeeks.org/aptitude/puzzles/"
         },
         {
           "id": "java-048",
-          "title": "Abstraction",
-          "url": "https://www.geeksforgeeks.org/java/abstraction-in-java-2/"
+          "title": "GfG 160",
+          "url": "https://www.geeksforgeeks.org/courses/gfg-160-series"
         },
         {
           "id": "java-049",
-          "title": "Object Class",
-          "url": "https://www.geeksforgeeks.org/java/object-class-in-java/"
+          "title": "System Design",
+          "url": "https://www.geeksforgeeks.org/system-design/system-design-tutorial/"
         },
         {
           "id": "java-050",
-          "title": "Packages",
-          "url": "https://www.geeksforgeeks.org/java/packages-in-java/"
-        },
-        {
-          "id": "java-051",
-          "title": "Simple Banking Application",
-          "url": "https://www.geeksforgeeks.org/java/mini-banking-application-in-java/"
-        },
-        {
-          "id": "java-052",
-          "title": "Interfaces",
-          "url": "https://www.geeksforgeeks.org/java/interfaces-in-java/"
-        },
-        {
-          "id": "java-053",
-          "title": "Class vs Interface",
-          "url": "https://www.geeksforgeeks.org/java/differences-between-interface-and-class-in-java/"
-        },
-        {
-          "id": "java-054",
-          "title": "Functional Interface",
-          "url": "https://www.geeksforgeeks.org/java/java-functional-interfaces/"
-        },
-        {
-          "id": "java-055",
-          "title": "Nested Interface",
-          "url": "https://www.geeksforgeeks.org/java/nested-interface-in-java/"
-        },
-        {
-          "id": "java-056",
-          "title": "Marker Interface",
-          "url": "https://www.geeksforgeeks.org/java/marker-interface-in-java/"
-        },
-        {
-          "id": "java-057",
-          "title": "Employee Management System",
-          "url": "https://www.geeksforgeeks.org/projects/program-for-employee-management-system/"
-        },
-        {
-          "id": "java-058",
-          "title": "Introduction",
-          "url": "https://www.geeksforgeeks.org/java/exceptions-in-java/"
-        },
-        {
-          "id": "java-059",
-          "title": "Try-Catch Block",
-          "url": "https://www.geeksforgeeks.org/java/java-try-catch-block/"
-        },
-        {
-          "id": "java-060",
-          "title": "Final, Finally and Finalize",
-          "url": "https://www.geeksforgeeks.org/java/java-final-finally-and-finalize/"
-        },
-        {
-          "id": "java-061",
-          "title": "Throw and Throws",
-          "url": "https://www.geeksforgeeks.org/java/throw-throws-java/"
-        },
-        {
-          "id": "java-062",
-          "title": "Customized Exception Handling",
-          "url": "https://www.geeksforgeeks.org/java/user-defined-custom-exception-in-java/"
-        },
-        {
-          "id": "java-063",
-          "title": "Chained Exceptions",
-          "url": "https://www.geeksforgeeks.org/java/chained-exceptions-in-java/"
-        },
-        {
-          "id": "java-064",
-          "title": "Null Pointer Exceptions",
-          "url": "https://www.geeksforgeeks.org/java/null-pointer-exception-in-java/"
-        },
-        {
-          "id": "java-065",
-          "title": "Exception Handling with Method Overriding",
-          "url": "https://www.geeksforgeeks.org/java/exception-handling-with-method-overriding-in-java/"
-        },
-        {
-          "id": "java-066",
-          "title": "Introduction",
-          "url": "https://www.geeksforgeeks.org/java/regular-expressions-in-java/"
-        },
-        {
-          "id": "java-067",
-          "title": "Matcher Class",
-          "url": "https://www.geeksforgeeks.org/java/matcher-class-in-java/"
-        },
-        {
-          "id": "java-068",
-          "title": "Character Class",
-          "url": "https://www.geeksforgeeks.org/java/regex-character-cases-in-java/"
-        },
-        {
-          "id": "java-069",
-          "title": "Quantifiers",
-          "url": "https://www.geeksforgeeks.org/java/quantifiers-in-java/"
-        },
-        {
-          "id": "java-070",
-          "title": "Java Memory Management",
-          "url": "https://www.geeksforgeeks.org/java/java-memory-management/"
-        },
-        {
-          "id": "java-071",
-          "title": "How Java Objects Stored in Memory?",
-          "url": "https://www.geeksforgeeks.org/java/how-are-java-objects-stored-in-memory/"
-        },
-        {
-          "id": "java-072",
-          "title": "Types of Memory Areas Allocated by JVM",
-          "url": "https://www.geeksforgeeks.org/java/how-many-types-of-memory-areas-are-allocated-by-jvm/"
-        },
-        {
-          "id": "java-073",
-          "title": "Stack vs Heap Memory Allocation",
-          "url": "https://www.geeksforgeeks.org/java/java-stack-vs-heap-memory-allocation/"
-        },
-        {
-          "id": "java-074",
-          "title": "Garbage Collection",
-          "url": "https://www.geeksforgeeks.org/java/garbage-collection-in-java/"
-        },
-        {
-          "id": "java-075",
-          "title": "Types of JVM Garbage Collectors",
-          "url": "https://www.geeksforgeeks.org/java/types-of-jvm-garbage-collectors-in-java-with-implementation-details/"
-        },
-        {
-          "id": "java-076",
-          "title": "Memory Leaks",
-          "url": "https://www.geeksforgeeks.org/java/memory-leaks-in-java/"
-        },
-        {
-          "id": "java-077",
-          "title": "Generic Classes",
-          "url": "https://www.geeksforgeeks.org/java/generic-class-in-java/"
-        },
-        {
-          "id": "java-078",
-          "title": "Wildcards",
-          "url": "https://www.geeksforgeeks.org/java/wildcards-in-java/"
-        },
-        {
-          "id": "java-079",
-          "title": "Bounded Types",
-          "url": "https://www.geeksforgeeks.org/java/bounded-types-generics-java/"
-        },
-        {
-          "id": "java-080",
-          "title": "Type Erasure",
-          "url": "https://www.geeksforgeeks.org/java/type-erasure-java/"
-        },
-        {
-          "id": "java-081",
-          "title": "Collections Class",
-          "url": "https://www.geeksforgeeks.org/java/collections-class-in-java/"
-        },
-        {
-          "id": "java-082",
-          "title": "Collection Interface",
-          "url": "https://www.geeksforgeeks.org/java/collection-interface-in-java-with-examples/"
-        },
-        {
-          "id": "java-083",
-          "title": "List Interface",
-          "url": "https://www.geeksforgeeks.org/java/list-interface-java-examples/"
-        },
-        {
-          "id": "java-084",
-          "title": "ArrayList",
-          "url": "https://www.geeksforgeeks.org/java/arraylist-in-java/"
-        },
-        {
-          "id": "java-085",
-          "title": "LinkedList",
-          "url": "https://www.geeksforgeeks.org/java/linked-list-in-java/"
-        },
-        {
-          "id": "java-086",
-          "title": "Set Interface",
-          "url": "https://www.geeksforgeeks.org/java/set-in-java/"
-        },
-        {
-          "id": "java-087",
-          "title": "HashSet",
-          "url": "https://www.geeksforgeeks.org/java/hashset-in-java/"
-        },
-        {
-          "id": "java-088",
-          "title": "Linked HashSet",
-          "url": "https://www.geeksforgeeks.org/java/linkedhashset-in-java-with-examples/"
-        },
-        {
-          "id": "java-089",
-          "title": "TreeSet",
-          "url": "https://www.geeksforgeeks.org/java/treeset-in-java-with-examples/"
-        },
-        {
-          "id": "java-090",
-          "title": "Queue Interface",
-          "url": "https://www.geeksforgeeks.org/java/queue-interface-java/"
-        },
-        {
-          "id": "java-091",
-          "title": "Priority Queue",
-          "url": "https://www.geeksforgeeks.org/java/priority-queue-in-java/"
-        },
-        {
-          "id": "java-092",
-          "title": "Deque Interface",
-          "url": "https://www.geeksforgeeks.org/java/deque-interface-java-example/"
-        },
-        {
-          "id": "java-093",
-          "title": "Map Interface",
-          "url": "https://www.geeksforgeeks.org/java/map-interface-in-java/"
-        },
-        {
-          "id": "java-094",
-          "title": "HashMap",
-          "url": "https://www.geeksforgeeks.org/java/java-util-hashmap-in-java-with-examples/"
-        },
-        {
-          "id": "java-095",
-          "title": "Iterator",
-          "url": "https://www.geeksforgeeks.org/java/iterators-in-java/"
-        },
-        {
-          "id": "java-096",
-          "title": "Comparator Interface",
-          "url": "https://www.geeksforgeeks.org/java/java-comparator-interface/"
-        },
-        {
-          "id": "java-097",
-          "title": "Comparable Interface",
-          "url": "https://www.geeksforgeeks.org/java/comparable-interface-in-java-with-examples/"
-        },
-        {
-          "id": "java-098",
-          "title": "Collection Framework Complete Tutorial",
-          "url": "https://www.geeksforgeeks.org/java/java-collection-tutorial/"
-        },
-        {
-          "id": "java-099",
-          "title": "Face Detection System",
-          "url": "https://www.geeksforgeeks.org/java/image-processing-in-java-face-detection/"
-        },
-        {
-          "id": "java-100",
-          "title": "Lambda Expressions",
-          "url": "https://www.geeksforgeeks.org/java/lambda-expressions-java-8/"
-        },
-        {
-          "id": "java-101",
-          "title": "Predicate",
-          "url": "https://www.geeksforgeeks.org/java/java-8-predicate-with-examples/"
-        },
-        {
-          "id": "java-102",
-          "title": "Consumer",
-          "url": "https://www.geeksforgeeks.org/java/java-8-consumer-interface-in-java-with-examples/"
-        },
-        {
-          "id": "java-103",
-          "title": "Supplier",
-          "url": "https://www.geeksforgeeks.org/java/supplier-interface-in-java-with-examples/"
-        },
-        {
-          "id": "java-104",
-          "title": "Method References",
-          "url": "https://www.geeksforgeeks.org/java/java-method-references/"
-        },
-        {
-          "id": "java-105",
-          "title": "Streams",
-          "url": "https://www.geeksforgeeks.org/java/java-8-stream-tutorial/"
-        },
-        {
-          "id": "java-106",
-          "title": "Optional",
-          "url": "https://www.geeksforgeeks.org/java/java-8-optional-class/"
-        },
-        {
-          "id": "java-107",
-          "title": "Collectors",
-          "url": "https://www.geeksforgeeks.org/java/java-collectors/"
-        },
-        {
-          "id": "java-108",
-          "title": "Introduction",
-          "url": "https://www.geeksforgeeks.org/java/new-date-time-api-java8/"
-        },
-        {
-          "id": "java-109",
-          "title": "LocalDate",
-          "url": "https://www.geeksforgeeks.org/java/java-time-localdate-class-in-java/"
-        },
-        {
-          "id": "java-110",
-          "title": "LocalTime",
-          "url": "https://www.geeksforgeeks.org/java/java-time-localtime-class-in-java/"
-        },
-        {
-          "id": "java-111",
-          "title": "LocalDateTime",
-          "url": "https://www.geeksforgeeks.org/java/java-time-localdatetime-class-in-java/"
-        },
-        {
-          "id": "java-112",
-          "title": "Duration",
-          "url": "https://www.geeksforgeeks.org/java/duration-ofminuteslong-method-in-java-with-examples/"
-        },
-        {
-          "id": "java-113",
-          "title": "Period",
-          "url": "https://www.geeksforgeeks.org/java/java-time-period-class-in-java/"
-        },
-        {
-          "id": "java-114",
-          "title": "DateTimeFormatter",
-          "url": "https://www.geeksforgeeks.org/java/java-time-format-datetimeformatterbuilder-class-in-java/"
-        },
-        {
-          "id": "java-115",
-          "title": "Introduction",
-          "url": "https://www.geeksforgeeks.org/java/multithreading-in-java/"
-        },
-        {
-          "id": "java-116",
-          "title": "Threads",
-          "url": "https://www.geeksforgeeks.org/java/java-threads/"
-        },
-        {
-          "id": "java-117",
-          "title": "Thread.start() vs Thread.run() Method",
-          "url": "https://www.geeksforgeeks.org/java/difference-between-thread-start-and-thread-run-in-java/"
-        },
-        {
-          "id": "java-118",
-          "title": "Thread.sleep() Method",
-          "url": "https://www.geeksforgeeks.org/java/thread-sleep-method-in-java-with-examples/"
-        },
-        {
-          "id": "java-119",
-          "title": "Runnable Interface",
-          "url": "https://www.geeksforgeeks.org/java/runnable-interface-in-java/"
-        },
-        {
-          "id": "java-120",
-          "title": "Main Thread",
-          "url": "https://www.geeksforgeeks.org/java/main-thread-java/"
-        },
-        {
-          "id": "java-121",
-          "title": "Thread Priority in Multithreading",
-          "url": "https://www.geeksforgeeks.org/java/java-thread-priority-multithreading/"
-        },
-        {
-          "id": "java-122",
-          "title": "Daemon Thread",
-          "url": "https://www.geeksforgeeks.org/java/daemon-thread-java/"
-        },
-        {
-          "id": "java-123",
-          "title": "Java Synchronization",
-          "url": "https://www.geeksforgeeks.org/java/synchronization-in-java/"
-        },
-        {
-          "id": "java-124",
-          "title": "Thread Safety",
-          "url": "https://www.geeksforgeeks.org/java/thread-safety-and-how-to-achieve-it-in-java/"
-        },
-        {
-          "id": "java-125",
-          "title": "Locks in Java",
-          "url": "https://www.geeksforgeeks.org/java/how-to-use-locks-in-multi-threaded-java-program/"
-        },
-        {
-          "id": "java-126",
-          "title": "Lock vs Monitor in Concurrency",
-          "url": "https://www.geeksforgeeks.org/java/difference-between-lock-and-monitor-in-java-concurrency/"
-        },
-        {
-          "id": "java-127",
-          "title": "Lock Framework vs Thread Synchronization",
-          "url": "https://www.geeksforgeeks.org/java/lock-framework-vs-thread-synchronization-in-java/"
-        },
-        {
-          "id": "java-128",
-          "title": "Reentrant Lock",
-          "url": "https://www.geeksforgeeks.org/java/reentrant-lock-in-java/"
-        },
-        {
-          "id": "java-129",
-          "title": "Deadlock in Multithreading",
-          "url": "https://www.geeksforgeeks.org/java/deadlock-in-java-multithreading/"
-        },
-        {
-          "id": "java-130",
-          "title": "Thread Pools",
-          "url": "https://www.geeksforgeeks.org/java/thread-pools-java/"
-        },
-        {
-          "id": "java-131",
-          "title": "Executor Framework",
-          "url": "https://www.geeksforgeeks.org/java/what-is-java-executor-framework/"
-        },
-        {
-          "id": "java-132",
-          "title": "Multithreading Complete Tutorial",
-          "url": "https://www.geeksforgeeks.org/java/java-multithreading-tutorial/"
-        },
-        {
-          "id": "java-133",
-          "title": "Snake Game",
-          "url": "https://www.geeksforgeeks.org/advance-java/design-snake-game/"
-        },
-        {
-          "id": "java-134",
-          "title": "Introduction to Java IO",
-          "url": "https://www.geeksforgeeks.org/java/java-io-input-output-in-java-with-examples/"
-        },
-        {
-          "id": "java-135",
-          "title": "Reader Class",
-          "url": "https://www.geeksforgeeks.org/java/java-io-reader-class-java/"
-        },
-        {
-          "id": "java-136",
-          "title": "Writer Class",
-          "url": "https://www.geeksforgeeks.org/java/java-io-writer-class-java/"
-        },
-        {
-          "id": "java-137",
-          "title": "File Handling",
-          "url": "https://www.geeksforgeeks.org/java/file-handling-in-java/"
-        },
-        {
-          "id": "java-138",
-          "title": "File Class",
-          "url": "https://www.geeksforgeeks.org/java/file-class-in-java/"
-        },
-        {
-          "id": "java-139",
-          "title": "FileInputStream",
-          "url": "https://www.geeksforgeeks.org/java/java-io-fileinputstream-class-java/"
-        },
-        {
-          "id": "java-140",
-          "title": "FileOutputStream",
-          "url": "https://www.geeksforgeeks.org/java/fileoutputstream-in-java/"
-        },
-        {
-          "id": "java-141",
-          "title": "FileReader Class",
-          "url": "https://www.geeksforgeeks.org/java/java-io-filereader-class/"
-        },
-        {
-          "id": "java-142",
-          "title": "FileWriter Class",
-          "url": "https://www.geeksforgeeks.org/java/filewriter-class-in-java/"
-        },
-        {
-          "id": "java-143",
-          "title": "BufferedReader Input Stream",
-          "url": "https://www.geeksforgeeks.org/java/java-io-bufferedreader-class-java/"
-        },
-        {
-          "id": "java-144",
-          "title": "BufferedReader Output stream",
-          "url": "https://www.geeksforgeeks.org/java/java-io-bufferedoutputstream-class-java/"
-        },
-        {
-          "id": "java-145",
-          "title": "FilePermission Class",
-          "url": "https://www.geeksforgeeks.org/java/java-io-filepermission-class-java/"
-        },
-        {
-          "id": "java-146",
-          "title": "FileDescriptor Class",
-          "url": "https://www.geeksforgeeks.org/java/java-io-filedescriptor-java/"
-        },
-        {
-          "id": "java-147",
-          "title": "Text Editor",
-          "url": "https://www.geeksforgeeks.org/java/java-swing-create-a-simple-text-editor/"
-        },
-        {
-          "id": "java-148",
-          "title": "Introduction",
-          "url": "https://www.geeksforgeeks.org/java/java-networking/"
-        },
-        {
-          "id": "java-149",
-          "title": "Socket Programming",
-          "url": "https://www.geeksforgeeks.org/java/socket-programming-in-java/"
-        },
-        {
-          "id": "java-150",
-          "title": "Server Socket Class",
-          "url": "https://www.geeksforgeeks.org/java/java-net-serversocket-class-in-java/"
-        },
-        {
-          "id": "java-151",
-          "title": "URL Class and Methods",
-          "url": "https://www.geeksforgeeks.org/java/url-class-java-examples/"
-        },
-        {
-          "id": "java-152",
-          "title": "Chat Application",
-          "url": "https://www.geeksforgeeks.org/java/simple-chat-application-using-sockets-in-java/"
-        },
-        {
-          "id": "java-153",
-          "title": "Introduction",
-          "url": "https://www.geeksforgeeks.org/java/introduction-to-jdbc/"
-        },
-        {
-          "id": "java-154",
-          "title": "JDBC Driver",
-          "url": "https://www.geeksforgeeks.org/java/jdbc-drivers/"
-        },
-        {
-          "id": "java-155",
-          "title": "JDBC Connection",
-          "url": "https://www.geeksforgeeks.org/java/establishing-jdbc-connection-in-java/"
-        },
-        {
-          "id": "java-156",
-          "title": "Types of Statements in JDBC",
-          "url": "https://www.geeksforgeeks.org/java/types-of-statements-in-jdbc/"
-        },
-        {
-          "id": "java-157",
-          "title": "Transactions",
-          "url": "https://www.geeksforgeeks.org/java/transactions-in-jdbc/"
-        },
-        {
-          "id": "java-158",
-          "title": "ResultSet",
-          "url": "https://www.geeksforgeeks.org/java/jdbc-result-set/"
-        },
-        {
-          "id": "java-159",
-          "title": "Metadata",
-          "url": "https://www.geeksforgeeks.org/java/how-to-extract-database-metadata-using-jdbc/"
-        },
-        {
-          "id": "java-160",
-          "title": "Connection Pooling",
-          "url": "https://www.geeksforgeeks.org/java/how-to-handle-connection-pooling-in-jdbc-in-java/"
-        },
-        {
-          "id": "java-161",
-          "title": "Java Topic-wise Quiz",
-          "url": "https://www.geeksforgeeks.org/java/java-quiz/"
-        },
-        {
-          "id": "java-162",
-          "title": "Coding Practice Problems",
-          "url": "https://www.geeksforgeeks.org/java/java-coding-practice-problems-1/"
-        },
-        {
-          "id": "java-163",
-          "title": "Core Java Interview Questions and Answers",
-          "url": "https://www.geeksforgeeks.org/java/java-interview-questions/"
-        },
-        {
-          "id": "java-164",
-          "title": "Advanced Java Interview Questions and Answers",
-          "url": "https://www.geeksforgeeks.org/advance-java/advanced-java-interview-questions/"
-        },
-        {
-          "id": "java-165",
-          "title": "Comparison of various programming languages",
-          "url": "https://www.geeksforgeeks.org/java/c-vs-java-vs-python/"
-        },
-        {
-          "id": "java-166",
-          "title": "Companies That Use Java",
-          "url": "https://www.geeksforgeeks.org/java/companies-that-use-java/"
-        },
-        {
-          "id": "java-167",
-          "title": "Careers and Jobs in Java",
-          "url": "https://www.geeksforgeeks.org/java/careers-jobs-in-java/"
-        },
-        {
-          "id": "java-168",
-          "title": "JDBC5 min read",
-          "url": "https://www.geeksforgeeks.org/java/jdbc-tutorial/"
-        },
-        {
-          "id": "java-169",
-          "title": "Programs7 min read",
-          "url": "https://www.geeksforgeeks.org/java/java-programming-examples/"
-        },
-        {
-          "id": "java-170",
-          "title": "Practice Problems5 min read",
-          "url": "https://www.geeksforgeeks.org/java/java-exercises/"
-        },
-        {
-          "id": "java-171",
-          "title": "Project Ideas15+ min read",
-          "url": "https://www.geeksforgeeks.org/blogs/java-projects/"
-        },
-        {
-          "id": "java-172",
-          "title": "Java Backend Development Course2 min read",
-          "url": "https://www.geeksforgeeks.org/courses/Java-backend-live"
-        },
-        {
-          "id": "java-173",
-          "title": "Placement 360 Course2 min read",
-          "url": "https://www.geeksforgeeks.org/courses/placement-360-cip-complete-tech-interview"
+          "title": "All rights reserved",
+          "url": "https://www.geeksforgeeks.org/copyright-information/"
         }
       ]
     },
@@ -6705,7 +6090,7 @@
         },
         {
           "id": "system-design-133",
-          "title": "Designing Netflix15+ min read",
+          "title": "Designing Netflix12 min read",
           "url": "https://www.geeksforgeeks.org/system-design/system-design-netflix-a-complete-architecture/"
         },
         {
@@ -6720,7 +6105,7 @@
         },
         {
           "id": "system-design-136",
-          "title": "Designing Facebook Messenger8 min read",
+          "title": "Designing Facebook Messenger13 min read",
           "url": "https://www.geeksforgeeks.org/system-design/desiging-facebook-messenger-system-design-interview/"
         },
         {
@@ -6757,448 +6142,253 @@
       "articles": [
         {
           "id": "os-001",
-          "title": "Introduction",
-          "url": "https://www.geeksforgeeks.org/operating-systems/introduction-of-operating-system-set-1/"
+          "title": "Untitled",
+          "url": "https://www.geeksforgeeks.org/"
         },
         {
           "id": "os-002",
-          "title": "Types of OS",
-          "url": "https://www.geeksforgeeks.org/operating-systems/types-of-operating-systems/"
+          "title": "DSA",
+          "url": "https://www.geeksforgeeks.org/dsa/dsa-tutorial-learn-data-structures-and-algorithms/"
         },
         {
           "id": "os-003",
-          "title": "Kernel in OS",
-          "url": "https://www.geeksforgeeks.org/operating-systems/kernel-in-operating-system/"
+          "title": "Practice Problems",
+          "url": "https://www.geeksforgeeks.org/explore"
         },
         {
           "id": "os-004",
-          "title": "System Call",
-          "url": "https://www.geeksforgeeks.org/operating-systems/introduction-of-system-call/"
+          "title": "C",
+          "url": "https://www.geeksforgeeks.org/c/c-programming-language/"
         },
         {
           "id": "os-005",
-          "title": "System Initialization",
-          "url": "https://www.geeksforgeeks.org/operating-systems/what-happens-when-we-turn-on-computer/"
+          "title": "C++",
+          "url": "https://www.geeksforgeeks.org/cpp/c-plus-plus/"
         },
         {
           "id": "os-006",
-          "title": "Process Introduction",
-          "url": "https://www.geeksforgeeks.org/operating-systems/process-in-operating-system/"
+          "title": "Java",
+          "url": "https://www.geeksforgeeks.org/java/java/"
         },
         {
           "id": "os-007",
-          "title": "Process Control Block",
-          "url": "https://www.geeksforgeeks.org/operating-systems/process-control-block-in-os/"
+          "title": "Python",
+          "url": "https://www.geeksforgeeks.org/python/python-programming-language-tutorial/"
         },
         {
           "id": "os-008",
-          "title": "Process Table",
-          "url": "https://www.geeksforgeeks.org/operating-systems/process-table-and-process-control-block-pcb/"
+          "title": "JavaScript",
+          "url": "https://www.geeksforgeeks.org/javascript/javascript-tutorial/"
         },
         {
           "id": "os-009",
-          "title": "Process Management Introduction",
-          "url": "https://www.geeksforgeeks.org/operating-systems/introduction-of-process-management/"
+          "title": "Data Science",
+          "url": "https://www.geeksforgeeks.org/data-science/data-science-for-beginners/"
         },
         {
           "id": "os-010",
-          "title": "Process States",
-          "url": "https://www.geeksforgeeks.org/operating-systems/states-of-a-process-in-operating-systems/"
+          "title": "Machine Learning",
+          "url": "https://www.geeksforgeeks.org/machine-learning/machine-learning/"
         },
         {
           "id": "os-011",
-          "title": "Process Scheduler",
-          "url": "https://www.geeksforgeeks.org/operating-systems/process-schedulers-in-operating-system/"
+          "title": "Courses",
+          "url": "https://www.geeksforgeeks.org/courses"
         },
         {
           "id": "os-012",
-          "title": "CPU Scheduling Algorithms",
-          "url": "https://www.geeksforgeeks.org/operating-systems/cpu-scheduling-in-operating-systems/"
+          "title": "Linux",
+          "url": "https://www.geeksforgeeks.org/linux-unix/linux-tutorial/"
         },
         {
           "id": "os-013",
-          "title": "Preemptive vs Non-Preemptive",
-          "url": "https://www.geeksforgeeks.org/operating-systems/preemptive-and-non-preemptive-scheduling/"
+          "title": "DevOps",
+          "url": "https://www.geeksforgeeks.org/devops/devops-tutorial/"
         },
         {
           "id": "os-014",
-          "title": "Dispatcher vs scheduler",
-          "url": "https://www.geeksforgeeks.org/operating-systems/difference-between-dispatcher-and-scheduler/"
+          "title": "What is a Tensor Processing Unit(TPU)?",
+          "url": "https://www.geeksforgeeks.org/operating-systems/what-is-tpu-tensor-processing-unit/"
         },
         {
           "id": "os-015",
-          "title": "Starvation and Aging",
-          "url": "https://www.geeksforgeeks.org/operating-systems/starvation-and-aging-in-operating-systems/"
-        },
-        {
-          "id": "os-016",
-          "title": "CPU Scheduling",
-          "url": "https://www.geeksforgeeks.org/quizzes/cpu-scheduling-gq/"
-        },
-        {
-          "id": "os-017",
-          "title": "Inter Process Communication",
-          "url": "https://www.geeksforgeeks.org/operating-systems/inter-process-communication-ipc/"
-        },
-        {
-          "id": "os-018",
-          "title": "Process Synchronization",
-          "url": "https://www.geeksforgeeks.org/operating-systems/introduction-of-process-synchronization/"
-        },
-        {
-          "id": "os-019",
-          "title": "Race Condition",
-          "url": "https://www.geeksforgeeks.org/operating-systems/race-condition-in-operating-systems/"
-        },
-        {
-          "id": "os-020",
-          "title": "Critical Section",
-          "url": "https://www.geeksforgeeks.org/operating-systems/critical-section-in-synchronization/"
-        },
-        {
-          "id": "os-021",
-          "title": "Solutions to Process Synchronization Problems",
-          "url": "https://www.geeksforgeeks.org/operating-systems/solutions-to-critical-section-problem/"
-        },
-        {
-          "id": "os-022",
-          "title": "Peterson’s Algorithm",
-          "url": "https://www.geeksforgeeks.org/dsa/petersons-algorithm-in-process-synchronization/"
-        },
-        {
-          "id": "os-023",
-          "title": "Dekker’s algorithm",
-          "url": "https://www.geeksforgeeks.org/dsa/dekkers-algorithm-in-process-synchronization/"
-        },
-        {
-          "id": "os-024",
-          "title": "Bakery Algorithm",
-          "url": "https://www.geeksforgeeks.org/dsa/bakery-algorithm-in-process-synchronization/"
-        },
-        {
-          "id": "os-025",
-          "title": "Hardware Based Solutions",
-          "url": "https://www.geeksforgeeks.org/operating-systems/hardware-based-solutions/"
-        },
-        {
-          "id": "os-026",
-          "title": "Semaphores",
-          "url": "https://www.geeksforgeeks.org/operating-systems/semaphores-in-process-synchronization/"
-        },
-        {
-          "id": "os-027",
-          "title": "Mutex vs. Semaphore",
-          "url": "https://www.geeksforgeeks.org/operating-systems/mutex-vs-semaphore/"
-        },
-        {
-          "id": "os-028",
-          "title": "Monitors",
-          "url": "https://www.geeksforgeeks.org/operating-systems/monitors-in-process-synchronization/"
-        },
-        {
-          "id": "os-029",
-          "title": "Priority Inversion",
-          "url": "https://www.geeksforgeeks.org/operating-systems/priority-inversion/"
-        },
-        {
-          "id": "os-030",
-          "title": "Classical IPC Problems",
-          "url": "https://www.geeksforgeeks.org/operating-systems/classical-ipc-problems/"
-        },
-        {
-          "id": "os-031",
-          "title": "Process Synchronization in OS",
-          "url": "https://www.geeksforgeeks.org/quizzes/process-synchronization-gq/"
-        },
-        {
-          "id": "os-032",
-          "title": "Introduction",
-          "url": "https://www.geeksforgeeks.org/operating-systems/introduction-of-deadlock-in-operating-system/"
-        },
-        {
-          "id": "os-033",
-          "title": "Deadlock Handling",
-          "url": "https://www.geeksforgeeks.org/operating-systems/handling-deadlocks/"
-        },
-        {
-          "id": "os-034",
-          "title": "Deadlock Prevention",
-          "url": "https://www.geeksforgeeks.org/operating-systems/deadlock-prevention/"
-        },
-        {
-          "id": "os-035",
-          "title": "Banker’s Algorithm for Deadlock Avoidance",
-          "url": "https://www.geeksforgeeks.org/operating-systems/bankers-algorithm-in-operating-system-2/"
-        },
-        {
-          "id": "os-036",
-          "title": "Detection And Recovery",
-          "url": "https://www.geeksforgeeks.org/operating-systems/deadlock-detection-recovery/"
-        },
-        {
-          "id": "os-037",
-          "title": "Starvation, and Livelock",
-          "url": "https://www.geeksforgeeks.org/operating-systems/deadlock-starvation-and-livelock/"
-        },
-        {
-          "id": "os-038",
-          "title": "Resource Allocation Graph (RAG)",
-          "url": "https://www.geeksforgeeks.org/operating-systems/resource-allocation-graph-rag-in-operating-system/"
-        },
-        {
-          "id": "os-039",
-          "title": "Methods of resource allocation",
-          "url": "https://www.geeksforgeeks.org/operating-systems/resource-allocation-techniques-for-processes/"
-        },
-        {
-          "id": "os-040",
-          "title": "Program for Deadlock free condition",
-          "url": "https://www.geeksforgeeks.org/operating-systems/program-for-deadlock-free-condition-in-operating-system/"
-        },
-        {
-          "id": "os-041",
-          "title": "Deadlock",
-          "url": "https://www.geeksforgeeks.org/quizzes/deadlock-gq/"
-        },
-        {
-          "id": "os-042",
-          "title": "Operating System | Thread",
-          "url": "https://www.geeksforgeeks.org/operating-systems/thread-in-operating-system/"
-        },
-        {
-          "id": "os-043",
-          "title": "User Level Vs Kernel Level threads",
-          "url": "https://www.geeksforgeeks.org/operating-systems/difference-between-user-level-thread-and-kernel-level-thread/"
-        },
-        {
-          "id": "os-044",
-          "title": "Process-based and Thread-based Multitasking",
-          "url": "https://www.geeksforgeeks.org/operating-systems/process-based-and-thread-based-multitasking/"
-        },
-        {
-          "id": "os-045",
-          "title": "Multi threading models",
-          "url": "https://www.geeksforgeeks.org/operating-systems/multi-threading-models-in-process-management/"
-        },
-        {
-          "id": "os-046",
-          "title": "Benefits of Multithreading",
-          "url": "https://www.geeksforgeeks.org/operating-systems/benefits-of-multithreading-in-operating-system/"
-        },
-        {
-          "id": "os-047",
-          "title": "Multithreading",
-          "url": "https://www.geeksforgeeks.org/quizzes/threads-in-operating-systems/"
-        },
-        {
-          "id": "os-048",
-          "title": "Introduction to memory and memory units",
-          "url": "https://www.geeksforgeeks.org/computer-organization-architecture/introduction-to-memory-and-memory-units/"
-        },
-        {
-          "id": "os-049",
-          "title": "Memory Management in Operating System",
-          "url": "https://www.geeksforgeeks.org/operating-systems/memory-management-in-operating-system/"
-        },
-        {
-          "id": "os-050",
-          "title": "Logical and Physical Address in Operating System",
-          "url": "https://www.geeksforgeeks.org/operating-systems/logical-and-physical-address-in-operating-system/"
-        },
-        {
-          "id": "os-051",
-          "title": "Implementation of Contiguous Memory Management",
-          "url": "https://www.geeksforgeeks.org/operating-systems/implementation-of-contiguous-memory-management-techniques/"
-        },
-        {
-          "id": "os-052",
-          "title": "Internal Fragmentation",
-          "url": "https://www.geeksforgeeks.org/operating-systems/internal-fragmentation-in-os/"
-        },
-        {
-          "id": "os-053",
-          "title": "External Fragmentation",
-          "url": "https://www.geeksforgeeks.org/operating-systems/external-fragmentation-in-os/"
-        },
-        {
-          "id": "os-054",
-          "title": "Program for Next Fit algorithm in Memory Management",
-          "url": "https://www.geeksforgeeks.org/dsa/program-for-next-fit-algorithm-in-memory-management/"
-        },
-        {
-          "id": "os-055",
-          "title": "Buddy System: Memory allocation technique",
-          "url": "https://www.geeksforgeeks.org/operating-systems/buddy-system-memory-allocation-technique/"
-        },
-        {
-          "id": "os-056",
-          "title": "Non-Contiguous Allocation in Operating System",
-          "url": "https://www.geeksforgeeks.org/operating-systems/non-contiguous-allocation-in-operating-system/"
-        },
-        {
-          "id": "os-057",
-          "title": "Paging",
-          "url": "https://www.geeksforgeeks.org/operating-systems/paging-in-operating-system/"
-        },
-        {
-          "id": "os-058",
-          "title": "Segmentation",
-          "url": "https://www.geeksforgeeks.org/operating-systems/segmentation-in-operating-system/"
-        },
-        {
-          "id": "os-059",
           "title": "Segmentation with Paging",
           "url": "https://www.geeksforgeeks.org/operating-systems/segmentation-with-paging/"
         },
         {
-          "id": "os-060",
-          "title": "Overlays in Memory Management",
-          "url": "https://www.geeksforgeeks.org/operating-systems/overlays-in-memory-management/"
+          "id": "os-016",
+          "title": "Race condition",
+          "url": "https://www.geeksforgeeks.org/operating-systems/race-condition-in-operating-systems/"
         },
         {
-          "id": "os-061",
-          "title": "Virtual Memory",
-          "url": "https://www.geeksforgeeks.org/operating-systems/virtual-memory-in-operating-system/"
+          "id": "os-017",
+          "title": "Hardware Based Solutions in Process Synchronization",
+          "url": "https://www.geeksforgeeks.org/operating-systems/hardware-based-solutions/"
         },
         {
-          "id": "os-062",
-          "title": "Demand Paging",
-          "url": "https://www.geeksforgeeks.org/operating-systems/what-is-demand-paging-in-operating-system/"
+          "id": "os-018",
+          "title": "Synchronization & Concurrency Interview Questions - Operating System",
+          "url": "https://www.geeksforgeeks.org/operating-systems/synchronization-concurrency-interview-questions/"
         },
         {
-          "id": "os-063",
-          "title": "Swap Space",
-          "url": "https://www.geeksforgeeks.org/operating-systems/swap-space-in-operating-system/"
+          "id": "os-019",
+          "title": "File & I/O Management Interview Questions - Operating System",
+          "url": "https://www.geeksforgeeks.org/operating-systems/file-i-o-management-interview-questions/"
         },
         {
-          "id": "os-064",
-          "title": "Techniques to handle Thrashing",
-          "url": "https://www.geeksforgeeks.org/operating-systems/techniques-to-handle-thrashing/"
+          "id": "os-020",
+          "title": "Memory Management Interview Questions - Operating System",
+          "url": "https://www.geeksforgeeks.org/operating-systems/memory-management-interview-questions/"
         },
         {
-          "id": "os-065",
-          "title": "Working Set in Paging",
-          "url": "https://www.geeksforgeeks.org/operating-systems/working-set-in-paging/"
+          "id": "os-021",
+          "title": "Process Management Interview Questions - Operating System",
+          "url": "https://www.geeksforgeeks.org/operating-systems/process-management-interview-questions/"
         },
         {
-          "id": "os-066",
-          "title": "Allocating kernel memory (buddy system and slab system)",
-          "url": "https://www.geeksforgeeks.org/operating-systems/operating-system-allocating-kernel-memory-buddy-system-slab-system/"
+          "id": "os-022",
+          "title": "Shell in Operating System",
+          "url": "https://www.geeksforgeeks.org/operating-systems/shell-in-operating-system/"
         },
         {
-          "id": "os-067",
-          "title": "Memory Interleaving",
-          "url": "https://www.geeksforgeeks.org/computer-organization-architecture/memory-interleaving/"
+          "id": "os-023",
+          "title": "Different types of Processes in Process Table",
+          "url": "https://www.geeksforgeeks.org/operating-systems/different-types-of-processes-in-process-table/"
         },
         {
-          "id": "os-068",
-          "title": "Operating system based Virtualization",
-          "url": "https://www.geeksforgeeks.org/computer-networks/operating-system-based-virtualization/"
+          "id": "os-024",
+          "title": "Daemon Processes",
+          "url": "https://www.geeksforgeeks.org/operating-systems/daemon-processes/"
         },
         {
-          "id": "os-069",
-          "title": "Memory Management",
-          "url": "https://www.geeksforgeeks.org/quizzes/memory-management-gq/"
+          "id": "os-025",
+          "title": "What is an Orphan Processes?",
+          "url": "https://www.geeksforgeeks.org/operating-systems/orphan-processes/"
         },
         {
-          "id": "os-070",
-          "title": "File Systems",
-          "url": "https://www.geeksforgeeks.org/operating-systems/file-systems-in-operating-system/"
+          "id": "os-026",
+          "title": "Priority Scheduling in Operating System",
+          "url": "https://www.geeksforgeeks.org/operating-systems/priority-scheduling-in-operating-system/"
         },
         {
-          "id": "os-071",
-          "title": "Unix File System",
-          "url": "https://www.geeksforgeeks.org/operating-systems/unix-file-system/"
+          "id": "os-027",
+          "title": "Classical IPC Problems",
+          "url": "https://www.geeksforgeeks.org/operating-systems/classical-ipc-problems/"
         },
         {
-          "id": "os-072",
-          "title": "File Directory | Path Name",
-          "url": "https://www.geeksforgeeks.org/operating-systems/path-name-in-file-directory/"
+          "id": "os-028",
+          "title": "Windows 10 Tutorial",
+          "url": "https://www.geeksforgeeks.org/operating-systems/windows-10-tutorial/"
         },
         {
-          "id": "os-073",
-          "title": "Structures of Directory",
-          "url": "https://www.geeksforgeeks.org/operating-systems/structures-of-directory-in-operating-system/"
+          "id": "os-029",
+          "title": "About Us",
+          "url": "https://www.geeksforgeeks.org/about/"
         },
         {
-          "id": "os-074",
-          "title": "File Allocation Methods",
-          "url": "https://www.geeksforgeeks.org/operating-systems/file-allocation-methods/"
+          "id": "os-030",
+          "title": "Legal",
+          "url": "https://www.geeksforgeeks.org/legal/"
         },
         {
-          "id": "os-075",
-          "title": "File Access Methods",
-          "url": "https://www.geeksforgeeks.org/operating-systems/file-access-methods-in-operating-system/"
+          "id": "os-031",
+          "title": "Privacy Policy",
+          "url": "https://www.geeksforgeeks.org/legal/privacy-policy/"
         },
         {
-          "id": "os-076",
-          "title": "Secondary memory",
-          "url": "https://www.geeksforgeeks.org/computer-science-fundamentals/secondary-memory/"
+          "id": "os-032",
+          "title": "Contact Us",
+          "url": "https://www.geeksforgeeks.org/about/contact-us/"
         },
         {
-          "id": "os-077",
-          "title": "Secondary memory – Hard disk drive",
-          "url": "https://www.geeksforgeeks.org/computer-organization-architecture/hard-disk-drive-hdd-secondary-memory/"
+          "id": "os-033",
+          "title": "Advertise with us",
+          "url": "https://www.geeksforgeeks.org/advertise-with-us/"
         },
         {
-          "id": "os-078",
-          "title": "Disk Scheduling Algorithms",
-          "url": "https://www.geeksforgeeks.org/operating-systems/disk-scheduling-algorithms/"
+          "id": "os-034",
+          "title": "GFG Corporate Solution",
+          "url": "https://www.geeksforgeeks.org/gfg-corporate-solution/"
         },
         {
-          "id": "os-079",
-          "title": "Program for SSTF disk scheduling algorithm",
-          "url": "https://www.geeksforgeeks.org/operating-systems/program-for-sstf-disk-scheduling-algorithm/"
+          "id": "os-035",
+          "title": "Campus Training Program",
+          "url": "https://www.geeksforgeeks.org/campus-training-program/"
         },
         {
-          "id": "os-080",
-          "title": "What exactly Spooling is all about?",
-          "url": "https://www.geeksforgeeks.org/operating-systems/what-exactly-spooling-is-all-about/"
+          "id": "os-036",
+          "title": "POTD",
+          "url": "https://www.geeksforgeeks.org/problem-of-the-day"
         },
         {
-          "id": "os-081",
-          "title": "Spooling vs Buffering",
-          "url": "https://www.geeksforgeeks.org/operating-systems/difference-between-spooling-and-buffering/"
+          "id": "os-037",
+          "title": "Job-A-Thon",
+          "url": "https://practice.geeksforgeeks.org/events/rec/job-a-thon/"
         },
         {
-          "id": "os-082",
-          "title": "Free space management",
-          "url": "https://www.geeksforgeeks.org/operating-systems/free-space-management-in-operating-system/"
+          "id": "os-038",
+          "title": "Nation Skill Up",
+          "url": "https://www.geeksforgeeks.org/nation-skill-up/"
         },
         {
-          "id": "os-083",
-          "title": "Input Output Systems",
-          "url": "https://www.geeksforgeeks.org/quizzes/iinput-output-systems-gq/"
+          "id": "os-039",
+          "title": "Programming Languages",
+          "url": "https://www.geeksforgeeks.org/computer-science-fundamentals/programming-language-tutorials/"
         },
         {
-          "id": "os-084",
-          "title": "Last Minute Notes (LMNs) | Operating Systems",
-          "url": "https://www.geeksforgeeks.org/operating-systems/last-minute-notes-operating-systems/"
+          "id": "os-040",
+          "title": "Web Technology",
+          "url": "https://www.geeksforgeeks.org/web-tech/web-technology/"
         },
         {
-          "id": "os-085",
-          "title": "Commonly Asked Operating Systems Interview Questions",
-          "url": "https://www.geeksforgeeks.org/operating-systems/operating-systems-interview-questions/"
+          "id": "os-041",
+          "title": "AI, ML & Data Science",
+          "url": "https://www.geeksforgeeks.org/machine-learning/ai-ml-and-data-science-tutorial-learn-ai-ml-and-data-science/"
         },
         {
-          "id": "os-086",
-          "title": "GATE CSE Previous Year Questions",
-          "url": "https://www.geeksforgeeks.org/operating-systems/operating-systems-gate-questions/"
+          "id": "os-042",
+          "title": "CS Core Subjects",
+          "url": "https://www.geeksforgeeks.org/gate/gate-exam-tutorial/"
         },
         {
-          "id": "os-087",
-          "title": "Multithreading4 min read",
-          "url": "https://www.geeksforgeeks.org/operating-systems/multithreading-in-operating-system/"
+          "id": "os-043",
+          "title": "Interview Preparation",
+          "url": "https://www.geeksforgeeks.org/aptitude/interview-corner/"
         },
         {
-          "id": "os-088",
-          "title": "Directory Management3 min read",
-          "url": "https://www.geeksforgeeks.org/linux-unix/implementing-directory-management-using-shell-script/"
+          "id": "os-044",
+          "title": "Software and Tools",
+          "url": "https://www.geeksforgeeks.org/websites-apps/software-and-tools-a-to-z-list/"
         },
         {
-          "id": "os-089",
-          "title": "DSA and System Design Course2 min read",
-          "url": "https://www.geeksforgeeks.org/courses/interviewe-101-data-structures-algorithm-system-design"
+          "id": "os-045",
+          "title": "Interview Corner",
+          "url": "https://www.geeksforgeeks.org/interview-prep/interview-corner/"
+        },
+        {
+          "id": "os-046",
+          "title": "Aptitude",
+          "url": "https://www.geeksforgeeks.org/aptitude/aptitude-questions-and-answers/"
+        },
+        {
+          "id": "os-047",
+          "title": "Puzzles",
+          "url": "https://www.geeksforgeeks.org/aptitude/puzzles/"
+        },
+        {
+          "id": "os-048",
+          "title": "GfG 160",
+          "url": "https://www.geeksforgeeks.org/courses/gfg-160-series"
+        },
+        {
+          "id": "os-049",
+          "title": "System Design",
+          "url": "https://www.geeksforgeeks.org/system-design/system-design-tutorial/"
+        },
+        {
+          "id": "os-050",
+          "title": "All rights reserved",
+          "url": "https://www.geeksforgeeks.org/copyright-information/"
         }
       ]
     },

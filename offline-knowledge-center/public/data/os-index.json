@@ -4,1199 +4,1199 @@
   "articles": [
     {
       "id": "os-001",
-      "title": "Introduction to Operating System - GeeksforGeeks"
+      "title": "GeeksforGeeks | Your All-in-One Learning Portal"
     },
     {
       "id": "os-002",
-      "title": "Types of Operating Systems - GeeksforGeeks"
+      "title": "DSA Tutorial - GeeksforGeeks"
     },
     {
       "id": "os-003",
-      "title": "Kernel in Operating System - GeeksforGeeks"
+      "title": "Practice | GeeksforGeeks | A computer science portal for geeks"
     },
     {
       "id": "os-004",
-      "title": "System Call - GeeksforGeeks"
+      "title": "C Programming Tutorial - GeeksforGeeks"
     },
     {
       "id": "os-005",
-      "title": "What Happens When We Turn on Computer? - GeeksforGeeks"
+      "title": "C++ Programming Language - GeeksforGeeks"
     },
     {
       "id": "os-006",
-      "title": "Process in Operating System - GeeksforGeeks"
+      "title": "Java Tutorial - GeeksforGeeks"
     },
     {
       "id": "os-007",
-      "title": "Process Control Block  in OS - GeeksforGeeks"
+      "title": "Python Tutorial - GeeksforGeeks"
     },
     {
       "id": "os-008",
-      "title": "Process Table in OS - GeeksforGeeks"
+      "title": "JavaScript Tutorial - GeeksforGeeks"
     },
     {
       "id": "os-009",
-      "title": "Introduction of Process Management - GeeksforGeeks"
+      "title": "Data Science Tutorial - GeeksforGeeks"
     },
     {
       "id": "os-010",
-      "title": "States of a Process in Operating Systems - GeeksforGeeks"
+      "title": "Machine Learning Tutorial - GeeksforGeeks"
     },
     {
       "id": "os-011",
-      "title": "Process Schedulers in Operating System - GeeksforGeeks"
+      "title": "Courses GeeksforGeeks | Interactive LIVE and Self-Paced Courses"
     },
     {
       "id": "os-012",
-      "title": "CPU Scheduling in Operating Systems - GeeksforGeeks"
+      "title": "Linux Tutorial - GeeksforGeeks"
     },
     {
       "id": "os-013",
-      "title": "Preemptive and Non-Preemptive Scheduling - GeeksforGeeks"
+      "title": "DevOps Tutorial - GeeksforGeeks"
     },
     {
       "id": "os-014",
-      "title": "Dispatcher vs Scheduler in OS - GeeksforGeeks"
+      "title": "What is a Tensor Processing Unit(TPU)? - GeeksforGeeks"
     },
     {
       "id": "os-015",
-      "title": "Starvation and Aging  in Operating Systems - GeeksforGeeks"
-    },
-    {
-      "id": "os-016",
-      "title": "Quiz about Process Scheduling"
-    },
-    {
-      "id": "os-017",
-      "title": "Inter Process Communication (IPC) - GeeksforGeeks"
-    },
-    {
-      "id": "os-018",
-      "title": "Introduction to Process Synchronization - GeeksforGeeks"
-    },
-    {
-      "id": "os-019",
-      "title": "Race condition - GeeksforGeeks"
-    },
-    {
-      "id": "os-020",
-      "title": "Critical Section in Synchronization - GeeksforGeeks"
-    },
-    {
-      "id": "os-021",
-      "title": "Solutions to Process Synchronization Problems - GeeksforGeeks"
-    },
-    {
-      "id": "os-022",
-      "title": "Peterson's Algorithm in Process Synchronization - GeeksforGeeks"
-    },
-    {
-      "id": "os-023",
-      "title": "Dekker's algorithm in Process Synchronization - GeeksforGeeks"
-    },
-    {
-      "id": "os-024",
-      "title": "Bakery Algorithm in Process Synchronization - GeeksforGeeks"
-    },
-    {
-      "id": "os-025",
-      "title": "Hardware Based Solutions in Process Synchronization - GeeksforGeeks"
-    },
-    {
-      "id": "os-026",
-      "title": "Semaphores in Process Synchronization - GeeksforGeeks"
-    },
-    {
-      "id": "os-027",
-      "title": "Mutex vs Semaphore - GeeksforGeeks"
-    },
-    {
-      "id": "os-028",
-      "title": "Monitors in Process Synchronization - GeeksforGeeks"
-    },
-    {
-      "id": "os-029",
-      "title": "Priority Inversion in Operating Systems - GeeksforGeeks"
-    },
-    {
-      "id": "os-030",
-      "title": "Classical IPC Problems - GeeksforGeeks"
-    },
-    {
-      "id": "os-031",
-      "title": "Quiz about OS Process Management"
-    },
-    {
-      "id": "os-032",
-      "title": "Introduction of Deadlock in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-033",
-      "title": "Handling Deadlocks - GeeksforGeeks"
-    },
-    {
-      "id": "os-034",
-      "title": "Deadlock Prevention - GeeksforGeeks"
-    },
-    {
-      "id": "os-035",
-      "title": "Banker's Algorithm - GeeksforGeeks"
-    },
-    {
-      "id": "os-036",
-      "title": "Deadlock Detection And Recovery - GeeksforGeeks"
-    },
-    {
-      "id": "os-037",
-      "title": "Starvation and Livelock - GeeksforGeeks"
-    },
-    {
-      "id": "os-038",
-      "title": "Resource Allocation Graph (RAG) - GeeksforGeeks"
-    },
-    {
-      "id": "os-039",
-      "title": "Resource Allocation Techniques for Processes - GeeksforGeeks"
-    },
-    {
-      "id": "os-040",
-      "title": "Program for Deadlock Free Condition in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-041",
-      "title": "Quiz about Deadlock"
-    },
-    {
-      "id": "os-042",
-      "title": "Thread in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-043",
-      "title": "User Level  vs Kernel Level Threads - GeeksforGeeks"
-    },
-    {
-      "id": "os-044",
-      "title": "Process-Based and Thread-Based Multitasking - GeeksforGeeks"
-    },
-    {
-      "id": "os-045",
-      "title": "Multi Threading Models in Process Management - GeeksforGeeks"
-    },
-    {
-      "id": "os-046",
-      "title": "Benefits of Multithreading in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-047",
-      "title": "Quiz about Threads in Operating Systems"
-    },
-    {
-      "id": "os-048",
-      "title": "Introduction to Memory and Memory Units - GeeksforGeeks"
-    },
-    {
-      "id": "os-049",
-      "title": "Memory Management in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-050",
-      "title": "Logical and Physical Address in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-051",
-      "title": "Implementation of Contiguous Memory Management Techniques - GeeksforGeeks"
-    },
-    {
-      "id": "os-052",
-      "title": "Internal Fragmentation in OS - GeeksforGeeks"
-    },
-    {
-      "id": "os-053",
-      "title": "External Fragmentation in OS - GeeksforGeeks"
-    },
-    {
-      "id": "os-054",
-      "title": "Program for Next Fit algorithm in Memory Management - GeeksforGeeks"
-    },
-    {
-      "id": "os-055",
-      "title": "Buddy System - Memory Allocation Technique - GeeksforGeeks"
-    },
-    {
-      "id": "os-056",
-      "title": "Non-Contiguous Allocation in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-057",
-      "title": "Paging - GeeksforGeeks"
-    },
-    {
-      "id": "os-058",
-      "title": "Segmentation in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-059",
       "title": "Segmentation with Paging - GeeksforGeeks"
     },
     {
-      "id": "os-060",
-      "title": "Overlays in Memory Management - GeeksforGeeks"
+      "id": "os-016",
+      "title": "Race condition - GeeksforGeeks"
     },
     {
-      "id": "os-061",
-      "title": "Virtual Memory in Operating System - GeeksforGeeks"
+      "id": "os-017",
+      "title": "Hardware Based Solutions in Process Synchronization - GeeksforGeeks"
     },
     {
-      "id": "os-062",
-      "title": "Demand Paging in Operating System - GeeksforGeeks"
+      "id": "os-018",
+      "title": "Synchronization & Concurrency Interview Questions - Operating System - GeeksforGeeks"
     },
     {
-      "id": "os-063",
-      "title": "Swap Space in Operating System - GeeksforGeeks"
+      "id": "os-019",
+      "title": "File & I/O Management Interview Questions - Operating System - GeeksforGeeks"
     },
     {
-      "id": "os-064",
-      "title": "Thrashing - GeeksforGeeks"
+      "id": "os-020",
+      "title": "Memory Management Interview Questions - Operating System - GeeksforGeeks"
     },
     {
-      "id": "os-065",
-      "title": "Working Set in Paging - GeeksforGeeks"
+      "id": "os-021",
+      "title": "Process Management Interview Questions - Operating System - GeeksforGeeks"
     },
     {
-      "id": "os-066",
-      "title": "Allocating kernel memory (buddy system and slab system) - GeeksforGeeks"
-    },
-    {
-      "id": "os-067",
-      "title": "Memory Interleaving - GeeksforGeeks"
-    },
-    {
-      "id": "os-068",
-      "title": "Operating system  based Virtualization - GeeksforGeeks"
-    },
-    {
-      "id": "os-069",
-      "title": "Quiz about OS Memory Management"
-    },
-    {
-      "id": "os-070",
-      "title": "File Systems in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-071",
-      "title": "Unix File System - GeeksforGeeks"
-    },
-    {
-      "id": "os-072",
-      "title": "Path Name in File Directory - GeeksforGeeks"
-    },
-    {
-      "id": "os-073",
-      "title": "Structures of Directory in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-074",
-      "title": "File Allocation Methods - GeeksforGeeks"
-    },
-    {
-      "id": "os-075",
-      "title": "File Access Methods in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-076",
-      "title": "Secondary Memory - GeeksforGeeks"
-    },
-    {
-      "id": "os-077",
-      "title": "Hard Disk Drive (HDD) Secondary Memory - GeeksforGeeks"
-    },
-    {
-      "id": "os-078",
-      "title": "Disk Scheduling Algorithms - GeeksforGeeks"
-    },
-    {
-      "id": "os-079",
-      "title": "Program for SSTF Disk Scheduling Algorithm - GeeksforGeeks"
-    },
-    {
-      "id": "os-080",
-      "title": "Spooling in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-081",
-      "title": "Spooling vs Buffering - GeeksforGeeks"
-    },
-    {
-      "id": "os-082",
-      "title": "Free Space Management in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-083",
-      "title": "Quiz about OS Input Output Systems"
-    },
-    {
-      "id": "os-084",
-      "title": "Last Minute Notes – Operating Systems - GeeksforGeeks"
-    },
-    {
-      "id": "os-085",
-      "title": "Operating System Interview Questions - GeeksforGeeks"
-    },
-    {
-      "id": "os-086",
-      "title": "Operating Systems - GATE CSE Previous Year Questions - GeeksforGeeks"
-    },
-    {
-      "id": "os-087",
-      "title": "Multithreading in OS - Different Models - GeeksforGeeks"
-    },
-    {
-      "id": "os-088",
-      "title": "Implementing Directory Management using Shell Script - GeeksforGeeks"
-    },
-    {
-      "id": "os-089",
-      "title": "DSA & System Design Course: The Complete SDE Interview Program"
-    },
-    {
-      "id": "os-090",
+      "id": "os-022",
       "title": "Shell in Operating System - GeeksforGeeks"
     },
     {
-      "id": "os-091",
-      "title": "Need and Functions of Operating Systems - GeeksforGeeks"
+      "id": "os-023",
+      "title": "Different types of Processes in Process Table - GeeksforGeeks"
     },
     {
-      "id": "os-092",
-      "title": "Difference Between 32-bit and 64-bit Operating Systems - GeeksforGeeks"
+      "id": "os-024",
+      "title": "Daemon Processes - GeeksforGeeks"
     },
     {
-      "id": "os-093",
-      "title": "Functions of Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-094",
-      "title": "History of Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-095",
-      "title": "Batch Processing Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-096",
-      "title": "Multiprogramming in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-097",
-      "title": "Multi Processing Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-098",
-      "title": "What is a Distributed Operating System? - GeeksforGeeks"
-    },
-    {
-      "id": "os-099",
-      "title": "Difference Between Hard Real Time and Soft Real Time System - GeeksforGeeks"
-    },
-    {
-      "id": "os-100",
-      "title": "Different Types of System Calls in OS - GeeksforGeeks"
-    },
-    {
-      "id": "os-101",
-      "title": "What is Dynamic Memory Allocation? - GeeksforGeeks"
-    },
-    {
-      "id": "os-102",
-      "title": "What is Program Counter? - GeeksforGeeks"
-    },
-    {
-      "id": "os-103",
-      "title": "Different Classes of CPU Registers - GeeksforGeeks"
-    },
-    {
-      "id": "os-104",
-      "title": "Process Creation and Deletions in Operating Systems - GeeksforGeeks"
-    },
-    {
-      "id": "os-105",
-      "title": "5 State Process Model in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-106",
-      "title": "Short Term Scheduler in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-107",
-      "title": "Medium Term Scheduler in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-108",
-      "title": "Types of Scheduling Queues - GeeksforGeeks"
-    },
-    {
-      "id": "os-109",
-      "title": "FCFS - First Come First Serve CPU Scheduling - GeeksforGeeks"
-    },
-    {
-      "id": "os-110",
-      "title": "Shortest Job First or SJF CPU Scheduling - GeeksforGeeks"
-    },
-    {
-      "id": "os-111",
-      "title": "Shortest Remaining Time First (Preemptive SJF) Scheduling Algorithm - GeeksforGeeks"
-    },
-    {
-      "id": "os-112",
-      "title": "Round Robin Scheduling in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-113",
-      "title": "Priority Scheduling in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-114",
-      "title": "Highest Response Ratio Next (HRRN) CPU Scheduling - GeeksforGeeks"
-    },
-    {
-      "id": "os-115",
-      "title": "Multilevel Queue (MLQ) CPU Scheduling - GeeksforGeeks"
-    },
-    {
-      "id": "os-116",
-      "title": "Multilevel Feedback Queue Scheduling (MLFQ) CPU Scheduling - GeeksforGeeks"
-    },
-    {
-      "id": "os-117",
-      "title": "Deadlock vs Starvation in OS - GeeksforGeeks"
-    },
-    {
-      "id": "os-118",
-      "title": "Methods in Inter Process Communication - GeeksforGeeks"
-    },
-    {
-      "id": "os-119",
-      "title": "Dining Philosopher Solution using Semaphores - GeeksforGeeks"
-    },
-    {
-      "id": "os-120",
-      "title": "Readers-Writers Problem - GeeksforGeeks"
-    },
-    {
-      "id": "os-121",
-      "title": "Sleeping Barber problem in Process Synchronization - GeeksforGeeks"
-    },
-    {
-      "id": "os-122",
-      "title": "Deadlock in DBMS - GeeksforGeeks"
-    },
-    {
-      "id": "os-123",
-      "title": "Software Based Solutions in Process Synchronization - GeeksforGeeks"
-    },
-    {
-      "id": "os-124",
-      "title": "OS Based Solutions in Process Synchronization - GeeksforGeeks"
-    },
-    {
-      "id": "os-125",
-      "title": "Peterson's Algorithm for Mutual Exclusion | Set 1 (Basic C implementation) - GeeksforGeeks"
-    },
-    {
-      "id": "os-126",
-      "title": "Peterson's Algorithm for Mutual Exclusion | Set 2 (CPU Cycles and Memory Fence) - GeeksforGeeks"
-    },
-    {
-      "id": "os-127",
-      "title": "Producer Consumer Problem in C - GeeksforGeeks"
-    },
-    {
-      "id": "os-128",
-      "title": "Microkernel in Operating Systems - GeeksforGeeks"
-    },
-    {
-      "id": "os-129",
-      "title": "Readers-Writers Problem | Writers Preference Solution - GeeksforGeeks"
-    },
-    {
-      "id": "os-130",
-      "title": "Dining-Philosophers Solution Using Monitors - GeeksforGeeks"
-    },
-    {
-      "id": "os-131",
-      "title": "Deadlock Ignorance - GeeksforGeeks"
-    },
-    {
-      "id": "os-132",
-      "title": "What is Data Structure? - GeeksforGeeks"
-    },
-    {
-      "id": "os-133",
-      "title": "Wait For Graph Deadlock Detection - GeeksforGeeks"
-    },
-    {
-      "id": "os-134",
-      "title": "Real Time Operating System (RTOS) - GeeksforGeeks"
-    },
-    {
-      "id": "os-135",
-      "title": "Deadlock Detection Algorithm in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-136",
-      "title": "What are the Functions of a CPU? - GeeksforGeeks"
-    },
-    {
-      "id": "os-137",
-      "title": "Random Access Memory (RAM) - GeeksforGeeks"
-    },
-    {
-      "id": "os-138",
-      "title": "Read Only Memory (ROM) - GeeksforGeeks"
-    },
-    {
-      "id": "os-139",
-      "title": "Understanding file sizes  | Bytes, KB, MB, GB, TB, PB, EB, ZB, YB - GeeksforGeeks"
-    },
-    {
-      "id": "os-140",
-      "title": "Swapping in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-141",
-      "title": "Page Replacement Algorithms in Operating Systems - GeeksforGeeks"
-    },
-    {
-      "id": "os-142",
-      "title": "First-Fit Allocation in Operating Systems - GeeksforGeeks"
-    },
-    {
-      "id": "os-143",
-      "title": "Best-Fit Allocation in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-144",
-      "title": "Worst-Fit Allocation in Operating Systems - GeeksforGeeks"
-    },
-    {
-      "id": "os-145",
-      "title": "Fixed (or static) Partitioning in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-146",
-      "title": "Difference between Internal and External fragmentation - GeeksforGeeks"
-    },
-    {
-      "id": "os-147",
-      "title": "Variable (or Dynamic) Partitioning in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-148",
-      "title": "Compaction in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-149",
-      "title": "Translation Lookaside Buffer (TLB) in Paging - GeeksforGeeks"
-    },
-    {
-      "id": "os-150",
-      "title": "Page Table Entries in Page Table - GeeksforGeeks"
-    },
-    {
-      "id": "os-151",
-      "title": "Virtual Memory | Questions - GeeksforGeeks"
-    },
-    {
-      "id": "os-152",
-      "title": "FIFO (First-In-First-Out) approach in Programming - GeeksforGeeks"
-    },
-    {
-      "id": "os-153",
-      "title": "Types of Server Virtualization in Computer Network - GeeksforGeeks"
-    },
-    {
-      "id": "os-154",
-      "title": "Hardware Based Virtualization - GeeksforGeeks"
-    },
-    {
-      "id": "os-155",
-      "title": "Beginner's Guide to Linux System Administration - GeeksforGeeks"
-    },
-    {
-      "id": "os-156",
-      "title": "Universal Serial Bus (USB) - GeeksforGeeks"
-    },
-    {
-      "id": "os-157",
-      "title": "SATA Full Form - GeeksforGeeks"
-    },
-    {
-      "id": "os-158",
-      "title": "HDD Full Form - GeeksforGeeks"
-    },
-    {
-      "id": "os-159",
-      "title": "Difference between Desktop and Laptop - GeeksforGeeks"
-    },
-    {
-      "id": "os-160",
-      "title": "GATE | IT | 2007 | COA | Secondary Memory | Question 44"
-    },
-    {
-      "id": "os-161",
-      "title": "FCFS Disk Scheduling Algorithms - GeeksforGeeks"
-    },
-    {
-      "id": "os-162",
-      "title": "SCAN (Elevator) Disk Scheduling Algorithms - GeeksforGeeks"
-    },
-    {
-      "id": "os-163",
-      "title": "LOOK Disk Scheduling Algorithm - GeeksforGeeks"
-    },
-    {
-      "id": "os-164",
-      "title": "C-LOOK Disk Scheduling Algorithm - GeeksforGeeks"
-    },
-    {
-      "id": "os-165",
-      "title": "N-Step-SCAN disk scheduling - GeeksforGeeks"
-    },
-    {
-      "id": "os-166",
-      "title": "FScan disk scheduling algorithm - GeeksforGeeks"
-    },
-    {
-      "id": "os-167",
-      "title": "Buffering in OS - GeeksforGeeks"
-    },
-    {
-      "id": "os-168",
-      "title": "Page Fault Handling in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-169",
-      "title": "Shortest Job Next (SJN) in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-170",
-      "title": "Round Robin Scheduling Algorithm with Different Arrival Time - GeeksforGeeks"
-    },
-    {
-      "id": "os-171",
-      "title": "Time Sharing Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-172",
-      "title": "Spooling in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-173",
-      "title": "Interrupt In Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-174",
-      "title": "Zombie Processes and their Prevention - GeeksforGeeks"
-    },
-    {
-      "id": "os-175",
+      "id": "os-025",
       "title": "What is an Orphan Processes? - GeeksforGeeks"
     },
     {
-      "id": "os-176",
-      "title": "Monolithic Kernel and Key Differences From Microkernel - GeeksforGeeks"
+      "id": "os-026",
+      "title": "Priority Scheduling in Operating System - GeeksforGeeks"
     },
     {
-      "id": "os-177",
-      "title": "Modes of DMA Transfer - GeeksforGeeks"
+      "id": "os-027",
+      "title": "Classical IPC Problems - GeeksforGeeks"
     },
     {
-      "id": "os-178",
-      "title": "Concurrency in Operating System - GeeksforGeeks"
+      "id": "os-028",
+      "title": "Windows 10 Tutorial - GeeksforGeeks"
     },
     {
-      "id": "os-179",
-      "title": "Address Binding and its Types - GeeksforGeeks"
+      "id": "os-029",
+      "title": "About us - GeeksforGeeks"
     },
     {
-      "id": "os-180",
-      "title": "Hashed Page Tables in Operating System - GeeksforGeeks"
+      "id": "os-030",
+      "title": "Legal - GeeksforGeeks"
     },
     {
-      "id": "os-181",
-      "title": "Locality of Reference - GeeksforGeeks"
+      "id": "os-031",
+      "title": "Privacy Policy - GeeksforGeeks"
     },
     {
-      "id": "os-182",
-      "title": "FAT Full Form - GeeksforGeeks"
+      "id": "os-032",
+      "title": "Contact Us - GeeksforGeeks"
     },
     {
-      "id": "os-183",
-      "title": "Rotational Latency - GeeksforGeeks"
+      "id": "os-033",
+      "title": "Advertise with us"
     },
     {
-      "id": "os-184",
-      "title": "Seek Time in OS - GeeksforGeeks"
+      "id": "os-034",
+      "title": "GeeksforGeeks Corporate Solution - GeeksforGeeks"
     },
     {
-      "id": "os-185",
-      "title": "Belady's Anomaly in Page Replacement Algorithms - GeeksforGeeks"
+      "id": "os-035",
+      "title": "Campus Training Program - GeeksforGeeks"
     },
     {
-      "id": "os-186",
-      "title": "Introduction of Multiprocessor and Multicomputer - GeeksforGeeks"
+      "id": "os-036",
+      "title": "Problem of the Day | GeeksforGeeks | A computer science portal for geeks"
     },
     {
-      "id": "os-187",
-      "title": "Real Time Systems - GeeksforGeeks"
+      "id": "os-037",
+      "title": "Job-a-Thon"
     },
     {
-      "id": "os-188",
-      "title": "Operating Systems | Set 3 - GeeksforGeeks"
+      "id": "os-038",
+      "title": "Nation SkillUp"
     },
     {
-      "id": "os-189",
-      "title": "Operating Systems | Set 4 - GeeksforGeeks"
+      "id": "os-039",
+      "title": "Programming Languages Tutorials - GeeksforGeeks"
     },
     {
-      "id": "os-190",
-      "title": "Operating Systems | Set 5 - GeeksforGeeks"
+      "id": "os-040",
+      "title": "Web Development Technologies - GeeksforGeeks"
     },
     {
-      "id": "os-191",
-      "title": "Operating Systems | Set 6 - GeeksforGeeks"
+      "id": "os-041",
+      "title": "AI, ML and Data Science Tutorial - GeeksforGeeks"
     },
     {
-      "id": "os-192",
-      "title": "Operating Systems | Set 7 - GeeksforGeeks"
+      "id": "os-042",
+      "title": "GATE Exam Tutorial - GeeksforGeeks"
     },
     {
-      "id": "os-193",
-      "title": "Operating Systems | Set 8 - GeeksforGeeks"
+      "id": "os-043",
+      "title": "Software Developer Interview Preparation - GeeksforGeeks"
     },
     {
-      "id": "os-194",
-      "title": "Operating Systems | Set 9 - GeeksforGeeks"
+      "id": "os-044",
+      "title": "Software and Tools Directory - GeeksforGeeks"
     },
     {
-      "id": "os-195",
-      "title": "Operating Systems | Set 10 - GeeksforGeeks"
+      "id": "os-045",
+      "title": "Software Developer Interview Preparation - GeeksforGeeks"
     },
     {
-      "id": "os-196",
-      "title": "Operating Systems | Set 11 - GeeksforGeeks"
+      "id": "os-046",
+      "title": "Aptitude Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "os-197",
-      "title": "Operating Systems | Set 12 - GeeksforGeeks"
+      "id": "os-047",
+      "title": "Puzzles - GeeksforGeeks"
     },
     {
-      "id": "os-198",
-      "title": "Operating Systems | Set 13 - GeeksforGeeks"
+      "id": "os-048",
+      "title": "GfG 160 - 160 Days of Problem Solving"
     },
     {
-      "id": "os-199",
-      "title": "Operating Systems | Set 14 - GeeksforGeeks"
+      "id": "os-049",
+      "title": "System Design Tutorial - GeeksforGeeks"
     },
     {
-      "id": "os-200",
-      "title": "Operating Systems | Set 15 - GeeksforGeeks"
+      "id": "os-050",
+      "title": "Copyright Information - GeeksforGeeks"
     },
     {
-      "id": "os-201",
-      "title": "Operating Systems | Set 16 - GeeksforGeeks"
-    },
-    {
-      "id": "os-202",
-      "title": "GATE CSE and DA Previous Years Papers PDF Download Link - GeeksforGeeks"
-    },
-    {
-      "id": "os-203",
+      "id": "os-051",
       "title": "Command Line Interface - GeeksforGeeks"
     },
     {
-      "id": "os-204",
-      "title": "Shortest Job First CPU Scheduling with Predicted Burst Time - GeeksforGeeks"
+      "id": "os-052",
+      "title": "Graphical User Interface - GeeksforGeeks"
     },
     {
-      "id": "os-205",
-      "title": "Program for Round Robin Scheduling for the Same Arrival Time - GeeksforGeeks"
+      "id": "os-053",
+      "title": "Process Table in OS - GeeksforGeeks"
     },
     {
-      "id": "os-206",
-      "title": "Priority CPU Scheduling with different arrival time - Set 2 - GeeksforGeeks"
+      "id": "os-054",
+      "title": "States of a Process in Operating Systems - GeeksforGeeks"
     },
     {
-      "id": "os-207",
-      "title": "Dual Core vs Quad Core Processor - GeeksforGeeks"
+      "id": "os-055",
+      "title": "Zombie Processes and their Prevention - GeeksforGeeks"
     },
     {
-      "id": "os-208",
-      "title": "CAD Full Form - GeeksforGeeks"
+      "id": "os-056",
+      "title": "Fork System Call in Operating System - GeeksforGeeks"
     },
     {
-      "id": "os-209",
-      "title": "Difference Between x64 and x86 Architecture - GeeksforGeeks"
-    },
-    {
-      "id": "os-210",
-      "title": "List of “Difference Between” Operating System (OS) Topics - GeeksforGeeks"
-    },
-    {
-      "id": "os-211",
-      "title": "Difference Between 32-bit and 64-bit JVM in Java - GeeksforGeeks"
-    },
-    {
-      "id": "os-212",
-      "title": "Primary Memory - GeeksforGeeks"
-    },
-    {
-      "id": "os-213",
-      "title": "Device Management in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-214",
-      "title": "Operating System Security - GeeksforGeeks"
-    },
-    {
-      "id": "os-215",
-      "title": "Difference between Multi-tasking and Multi-threading - GeeksforGeeks"
-    },
-    {
-      "id": "os-216",
-      "title": "Difference Between IoT Devices and Computers - GeeksforGeeks"
-    },
-    {
-      "id": "os-217",
-      "title": "Addressing Modes in 8086 - GeeksforGeeks"
-    },
-    {
-      "id": "os-218",
-      "title": "Flag register in 8085 microprocessor - GeeksforGeeks"
-    },
-    {
-      "id": "os-219",
-      "title": "CPU vs GPU - GeeksforGeeks"
-    },
-    {
-      "id": "os-220",
-      "title": "fork() in C - GeeksforGeeks"
-    },
-    {
-      "id": "os-221",
-      "title": "Difference between Short-Term, Medium Term, and Long-Term Scheduler - GeeksforGeeks"
-    },
-    {
-      "id": "os-222",
-      "title": "Difference between Short-Term and Medium-Term Scheduler - GeeksforGeeks"
-    },
-    {
-      "id": "os-223",
-      "title": "Long Term Scheduler in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-224",
-      "title": "Program for FCFS CPU Scheduling | Set 1 - GeeksforGeeks"
-    },
-    {
-      "id": "os-225",
-      "title": "Program for FCFS CPU Scheduling | Set 2 (Processes with different arrival times) - GeeksforGeeks"
-    },
-    {
-      "id": "os-226",
-      "title": "Convoy Effect in Operating Systems - GeeksforGeeks"
-    },
-    {
-      "id": "os-227",
-      "title": "Difference Between Turn Around Time (TAT) and Waiting Time (WT) in CPU Scheduling - GeeksforGeeks"
-    },
-    {
-      "id": "os-228",
-      "title": "Introduction of Shortest Remaining Time First (SRTF) algorithm - GeeksforGeeks"
-    },
-    {
-      "id": "os-229",
-      "title": "Shortest Job First (or SJF) CPU Scheduling Non-preemptive algorithm using Segment Tree - GeeksforGeeks"
-    },
-    {
-      "id": "os-230",
+      "id": "os-057",
       "title": "Program for Priority CPU Scheduling | Set 1 - GeeksforGeeks"
     },
     {
+      "id": "os-058",
+      "title": "Priority CPU Scheduling with different arrival time - Set 2 - GeeksforGeeks"
+    },
+    {
+      "id": "os-059",
+      "title": "Difference Between Turn Around Time (TAT) and Waiting Time (WT) in CPU Scheduling - GeeksforGeeks"
+    },
+    {
+      "id": "os-060",
+      "title": "Readers-Writers Problem - GeeksforGeeks"
+    },
+    {
+      "id": "os-061",
+      "title": "Readers-Writers Problem | Writers Preference Solution - GeeksforGeeks"
+    },
+    {
+      "id": "os-062",
+      "title": "Dining Philosopher Solution using Semaphores - GeeksforGeeks"
+    },
+    {
+      "id": "os-063",
+      "title": "Dining-Philosophers Solution Using Monitors - GeeksforGeeks"
+    },
+    {
+      "id": "os-064",
+      "title": "Sleeping Barber problem in Process Synchronization - GeeksforGeeks"
+    },
+    {
+      "id": "os-065",
+      "title": "Operating System Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "os-066",
+      "title": "How to Upgrade From Windows 10 to Windows 11 For Free - GeeksforGeeks"
+    },
+    {
+      "id": "os-067",
+      "title": "Windows 10 - GeeksforGeeks"
+    },
+    {
+      "id": "os-068",
+      "title": "Everything You Need to Know About Windows 10 - GeeksforGeeks"
+    },
+    {
+      "id": "os-069",
+      "title": "How to Create a Microsoft Account in Windows 11? - GeeksforGeeks"
+    },
+    {
+      "id": "os-070",
+      "title": "How to Create a New User in Windows 10 - GeeksforGeeks"
+    },
+    {
+      "id": "os-071",
+      "title": "How to Manage User Accounts in Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-072",
+      "title": "How to Activate Windows 10 with Key? - GeeksforGeeks"
+    },
+    {
+      "id": "os-073",
+      "title": "How to Factory Reset Windows: A Step by Step Guide - GeeksforGeeks"
+    },
+    {
+      "id": "os-074",
+      "title": "How to Create a Bootable USB Flash Drive in Windows Using CMD - GeeksforGeeks"
+    },
+    {
+      "id": "os-075",
+      "title": "How to Create a Multi-ISO Bootable USB Drive? - GeeksforGeeks"
+    },
+    {
+      "id": "os-076",
+      "title": "How to Run Windows From a USB Drive? - GeeksforGeeks"
+    },
+    {
+      "id": "os-077",
+      "title": "How to Format a Hard Drive Using the Command Prompt - GeeksforGeeks"
+    },
+    {
+      "id": "os-078",
+      "title": "How to Reinstall Windows 10 without CD/USB Easily? - GeeksforGeeks"
+    },
+    {
+      "id": "os-079",
+      "title": "How to Reinstall Windows 10 without CD - GeeksforGeeks"
+    },
+    {
+      "id": "os-080",
+      "title": "How to Reinstall Windows 10 without Losing Data - 3 Easy Methods - GeeksforGeeks"
+    },
+    {
+      "id": "os-081",
+      "title": "How to Reinstall Wireless Drivers in Windows? - GeeksforGeeks"
+    },
+    {
+      "id": "os-082",
+      "title": "How to Change Your Computer's Boot Order? - GeeksforGeeks"
+    },
+    {
+      "id": "os-083",
+      "title": "How to Create Partitions on Windows 10 - GeeksforGeeks"
+    },
+    {
+      "id": "os-084",
+      "title": "How to Create Primary Partitions in Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-085",
+      "title": "How to Install a Graphics Card in Your Laptop/PC? - GeeksforGeeks"
+    },
+    {
+      "id": "os-086",
+      "title": "How to Check Your Graphics Card (GPU) on Windows 10 and Windows 11 - GeeksforGeeks"
+    },
+    {
+      "id": "os-087",
+      "title": "How to Disable Hardware Acceleration on Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-088",
+      "title": "How to Install RAM in Your PC or Laptop? - GeeksforGeeks"
+    },
+    {
+      "id": "os-089",
+      "title": "What is Control Panel - GeeksforGeeks"
+    },
+    {
+      "id": "os-090",
+      "title": "How to Split Screen in Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-091",
+      "title": "How to Enable Dark Mode on Windows 11? - GeeksforGeeks"
+    },
+    {
+      "id": "os-092",
+      "title": "How to Hide a Folder in Windows? - GeeksforGeeks"
+    },
+    {
+      "id": "os-093",
+      "title": "How to Change Taskbar Color in Windows? - GeeksforGeeks"
+    },
+    {
+      "id": "os-094",
+      "title": "How to Hide Taskbar in Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-095",
+      "title": "How to Make the Taskbar Transparent in Windows 11/10 - GeeksforGeeks"
+    },
+    {
+      "id": "os-096",
+      "title": "How to Use the Windows 10 Night Light Feature? - GeeksforGeeks"
+    },
+    {
+      "id": "os-097",
+      "title": "How to Create Custom Keyboard Shortcuts in Windows 10 - GeeksforGeeks"
+    },
+    {
+      "id": "os-098",
+      "title": "How to Snip & Sketch Tool in Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-099",
+      "title": "How to Set Alarm on Your Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-100",
+      "title": "How to Open Camera in Windows? - GeeksforGeeks"
+    },
+    {
+      "id": "os-101",
+      "title": "How to Lock your Windows 10 PC  (5 Easy Methods) - GeeksforGeeks"
+    },
+    {
+      "id": "os-102",
+      "title": "How to Change Computer Password? - GeeksforGeeks"
+    },
+    {
+      "id": "os-103",
+      "title": "How to Remove Malware From Windows [8 Steps] - GeeksforGeeks"
+    },
+    {
+      "id": "os-104",
+      "title": "How to Remove Rootkit Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-105",
+      "title": "How to Turn Windows Defender On or Off - GeeksforGeeks"
+    },
+    {
+      "id": "os-106",
+      "title": "How to Remove Windows 10 Password? - GeeksforGeeks"
+    },
+    {
+      "id": "os-107",
+      "title": "How to Enter BIOS (Windows 10 & 11) - GeeksforGeeks"
+    },
+    {
+      "id": "os-108",
+      "title": "How to Update Your Computer BIOS? - GeeksforGeeks"
+    },
+    {
+      "id": "os-109",
+      "title": "How To Reset a BIOS Password? - GeeksforGeeks"
+    },
+    {
+      "id": "os-110",
+      "title": "How to Overclock Your CPU from BIOS? - GeeksforGeeks"
+    },
+    {
+      "id": "os-111",
+      "title": "How to Enable virtualization (VT-x) in Windows 10 BIOS? - GeeksforGeeks"
+    },
+    {
+      "id": "os-112",
+      "title": "How to Enable Vt-x in BIOS Security Settings in Intel Processors For Android Studio? - GeeksforGeeks"
+    },
+    {
+      "id": "os-113",
+      "title": "Different Ways to Connect One Computer to Another Computer - GeeksforGeeks"
+    },
+    {
+      "id": "os-114",
+      "title": "How to Setup a Wi-Fi Network - GeeksforGeeks"
+    },
+    {
+      "id": "os-115",
+      "title": "How to Find a WiFi Password of a Past Connection? - GeeksforGeeks"
+    },
+    {
+      "id": "os-116",
+      "title": "How to Check Wi-Fi Password in Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-117",
+      "title": "How to Show all the previously connected WiFi Networks using CMD in Windows? - GeeksforGeeks"
+    },
+    {
+      "id": "os-118",
+      "title": "How to Increase Bluetooth Range on Windows? - GeeksforGeeks"
+    },
+    {
+      "id": "os-119",
+      "title": "How to Install a Bluetooth Module in a Computer? - GeeksforGeeks"
+    },
+    {
+      "id": "os-120",
+      "title": "How to Install and Fix Bluetooth Drivers in Windows 10 - GeeksforGeeks"
+    },
+    {
+      "id": "os-121",
+      "title": "How to Connect and Manage Bluetooth Devices in Windows 10 - GeeksforGeeks"
+    },
+    {
+      "id": "os-122",
+      "title": "How To Modify MAC address in Windows 10 (Both Wired and Wireless Adapter)? - GeeksforGeeks"
+    },
+    {
+      "id": "os-123",
+      "title": "How to View Wired and Wireless NIC Information? - GeeksforGeeks"
+    },
+    {
+      "id": "os-124",
+      "title": "8 Ways to Fix \"Default Gateway Is Not Available\" Error in Windows - GeeksforGeeks"
+    },
+    {
+      "id": "os-125",
+      "title": "How to Open Command Prompt in Windows 11, 10, 8, 7 - GeeksforGeeks"
+    },
+    {
+      "id": "os-126",
+      "title": "How to Open Command Prompt with Keyboard Shortcuts - GeeksforGeeks"
+    },
+    {
+      "id": "os-127",
+      "title": "How to Change Directories in Command Prompt (CMD) - GeeksforGeeks"
+    },
+    {
+      "id": "os-128",
+      "title": "How to Abort a Command Execution in Command Prompt - GeeksforGeeks"
+    },
+    {
+      "id": "os-129",
+      "title": "How to Clear the Windows Command Prompt Screen - GeeksforGeeks"
+    },
+    {
+      "id": "os-130",
+      "title": "How to Find the Wi-Fi Password Using CMD in Windows - GeeksforGeeks"
+    },
+    {
+      "id": "os-131",
+      "title": "How to Copy Files from One Directory to Another Using CMD - GeeksforGeeks"
+    },
+    {
+      "id": "os-132",
+      "title": "How to Compress or Extract files and folders using CMD? - GeeksforGeeks"
+    },
+    {
+      "id": "os-133",
+      "title": "How to List all Files in a Directory using CMD in Windows - GeeksforGeeks"
+    },
+    {
+      "id": "os-134",
+      "title": "How to Disable BitLocker in CMD - GeeksforGeeks"
+    },
+    {
+      "id": "os-135",
+      "title": "How to Search Files using CMD in Windows - GeeksforGeeks"
+    },
+    {
+      "id": "os-136",
+      "title": "How to Rename Files and Folders Using CMD? - GeeksforGeeks"
+    },
+    {
+      "id": "os-137",
+      "title": "How to Delete a File or Folder Using CMD - GeeksforGeeks"
+    },
+    {
+      "id": "os-138",
+      "title": "How to Run an EXE through CMD in Windows - GeeksforGeeks"
+    },
+    {
+      "id": "os-139",
+      "title": "What is PowerShell? Getting Started with PowerShell - GeeksforGeeks"
+    },
+    {
+      "id": "os-140",
+      "title": "How to Install and Upgrade PowerShell in Windows - GeeksforGeeks"
+    },
+    {
+      "id": "os-141",
+      "title": "How to Run Remote Command Execution on Powershell? - GeeksforGeeks"
+    },
+    {
+      "id": "os-142",
+      "title": "How to Run PowerShell Script From CMD - GeeksforGeeks"
+    },
+    {
+      "id": "os-143",
+      "title": "Managing Windows User Accounts and Profiles with PowerShell - GeeksforGeeks"
+    },
+    {
+      "id": "os-144",
+      "title": "Creating Slide to Shut Down Shortcut in Windows 10 - GeeksforGeeks"
+    },
+    {
+      "id": "os-145",
+      "title": "How to Set Up Multiple Desktops in Windows 7, 8 and 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-146",
+      "title": "How to Enable and Use Clipboard History in Windows? - GeeksforGeeks"
+    },
+    {
+      "id": "os-147",
+      "title": "7 Different Ways to Take a Screenshot in Windows 10 - GeeksforGeeks"
+    },
+    {
+      "id": "os-148",
+      "title": "Windows Snipping Tool Shortcut Key - GeeksforGeeks"
+    },
+    {
+      "id": "os-149",
+      "title": "How to Record the Screen on Your Windows PC - GeeksforGeeks"
+    },
+    {
+      "id": "os-150",
+      "title": "11 Ways To Open Task Manager in Windows 10/11 - GeeksforGeeks"
+    },
+    {
+      "id": "os-151",
+      "title": "How to Enable and Disable Keyboard Shortcuts in Windows - GeeksforGeeks"
+    },
+    {
+      "id": "os-152",
+      "title": "What is the Difference between Ctrl Y and Ctrl Shift Z ? - GeeksforGeeks"
+    },
+    {
+      "id": "os-153",
+      "title": "What is Ctrl (Control) Key on Keyboard & How to Use Ctrl Key? - GeeksforGeeks"
+    },
+    {
+      "id": "os-154",
+      "title": "Keyboard Shortcuts that Works on Both Windows 11 & Windows 10 - GeeksforGeeks"
+    },
+    {
+      "id": "os-155",
+      "title": "Windows Keyboard Shortcuts A to Z with PDF (All Windows Versions) - GeeksforGeeks"
+    },
+    {
+      "id": "os-156",
+      "title": "How to Boost Performance in Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-157",
+      "title": "How to Disable Windows 10 Update and Restart Notification? - GeeksforGeeks"
+    },
+    {
+      "id": "os-158",
+      "title": "How To Turn Off Update In Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-159",
+      "title": "How to Check your Laptop's Battery Health in Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-160",
+      "title": "How to Access Boot Options Menu in Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-161",
+      "title": "How to Boot Windows 10 in Safe Mode - GeeksforGeeks"
+    },
+    {
+      "id": "os-162",
+      "title": "How to Disable \"Activate Windows\" Notification on Your PC or Laptop? - GeeksforGeeks"
+    },
+    {
+      "id": "os-163",
+      "title": "How to Delete Temporary Files in Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-164",
+      "title": "How To Free up Drive Space in Windows - GeeksforGeeks"
+    },
+    {
+      "id": "os-165",
+      "title": "5 Methods to Fix: This Device Can Perform Faster on Windows - GeeksforGeeks"
+    },
+    {
+      "id": "os-166",
+      "title": "What to Do if Your Laptop Is Plugged In But Not Charging? - GeeksforGeeks"
+    },
+    {
+      "id": "os-167",
+      "title": "Brightness Button Not Working? 4 Easy Fixes - GeeksforGeeks"
+    },
+    {
+      "id": "os-168",
+      "title": "How to Fix Windows 0xc00000ba Boot Error? - GeeksforGeeks"
+    },
+    {
+      "id": "os-169",
+      "title": "How to Fix Windows Error 0xc00000e9? - GeeksforGeeks"
+    },
+    {
+      "id": "os-170",
+      "title": "How to Fix Boot Error \"No Bootable Device\" in Windows? - GeeksforGeeks"
+    },
+    {
+      "id": "os-171",
+      "title": "How to Handle Inaccessible Boot Device Error in Windows? - GeeksforGeeks"
+    },
+    {
+      "id": "os-172",
+      "title": "How to Fix Boot Error 0xc0000225 in Windows?  (5 Easy Methods) - GeeksforGeeks"
+    },
+    {
+      "id": "os-173",
+      "title": "How to Fix an Unmountable Boot Volume in Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-174",
+      "title": "How to Resolve Windows 10 Automatic Repair Loop - GeeksforGeeks"
+    },
+    {
+      "id": "os-175",
+      "title": "How to Fix the DPC Watchdog Violation Error Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-176",
+      "title": "6 Fix: Watchdog Timeout BSOD in Valorant Error - GeeksforGeeks"
+    },
+    {
+      "id": "os-177",
+      "title": "7 Methods to  Fix the WHEA Uncorrectable Error on Windows 10/11 - GeeksforGeeks"
+    },
+    {
+      "id": "os-178",
+      "title": "How To Fix Memory Management BSOD Error on Windows 10 and 11 - GeeksforGeeks"
+    },
+    {
+      "id": "os-179",
+      "title": "How to Fix the \"SYSTEM THREAD EXCEPTION NOT HANDLED\" in Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-180",
+      "title": "How To Fix the “Kernel Security Check Failure” Error in Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-181",
+      "title": "How to Fix the System Service Exception Stop Code in Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-182",
+      "title": "How To Troubleshoot and Fix Windows 10 Blue Screen Errors? - GeeksforGeeks"
+    },
+    {
+      "id": "os-183",
+      "title": "Fix ‘Page Fault in Non-Paged Area’ BSOD in Windows 10 - GeeksforGeeks"
+    },
+    {
+      "id": "os-184",
+      "title": "What is Utweb.exe and How to Fix its System Errors - GeeksforGeeks"
+    },
+    {
+      "id": "os-185",
+      "title": "What is Msosync.exe and How to Fix It? - GeeksforGeeks"
+    },
+    {
+      "id": "os-186",
+      "title": "How to Fix the High CPU Usage of Mysqld.exe? - GeeksforGeeks"
+    },
+    {
+      "id": "os-187",
+      "title": "How to Fix the \"Bad System Config Info\" in Windows 10 - GeeksforGeeks"
+    },
+    {
+      "id": "os-188",
+      "title": "How to Fix When the Cursor Disappears in Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-189",
+      "title": "Laptop Touchpad Not Working (Windows) - 14 Easy Ways to Fix - GeeksforGeeks"
+    },
+    {
+      "id": "os-190",
+      "title": "How to Fix Keyboard Typing Wrong Characters in Windows? - GeeksforGeeks"
+    },
+    {
+      "id": "os-191",
+      "title": "How to Fix Common issues with Windows Keyboard Shortcuts? - GeeksforGeeks"
+    },
+    {
+      "id": "os-192",
+      "title": "How to Fix Ctrl+C and Ctrl+V Not Working in Windows - GeeksforGeeks"
+    },
+    {
+      "id": "os-193",
+      "title": "What is Event ID 158 & How to Fix it Quickly? - GeeksforGeeks"
+    },
+    {
+      "id": "os-194",
+      "title": "How to Fix Common Audio Problems in Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-195",
+      "title": "Fix Camera Error Code 0xa00f4244 in Windows 10 - GeeksforGeeks"
+    },
+    {
+      "id": "os-196",
+      "title": "How to Fix the Calculator App Not Working in Windows? - GeeksforGeeks"
+    },
+    {
+      "id": "os-197",
+      "title": "How to Fix Copy and Paste Not Working in Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-198",
+      "title": "[FIXED] USB Device Over Current Status Detected at Boot on Windows - GeeksforGeeks"
+    },
+    {
+      "id": "os-199",
+      "title": "How to Fix System Errors That Prevent Windows Shutdown? - GeeksforGeeks"
+    },
+    {
+      "id": "os-200",
+      "title": "How to Fix \"Windows Cannot Access the Specified Device\" Error in Windows - GeeksforGeeks"
+    },
+    {
+      "id": "os-201",
+      "title": "How to Fix Missing Operating System Issue on Windows?  (5 Solutions) - GeeksforGeeks"
+    },
+    {
+      "id": "os-202",
+      "title": "How to Fix Broken Registry issues on Windows? - GeeksforGeeks"
+    },
+    {
+      "id": "os-203",
+      "title": "Enable and Disable Windows Administrator Account - GeeksforGeeks"
+    },
+    {
+      "id": "os-204",
+      "title": "How to Shut Down a Computer using Command Prompt - GeeksforGeeks"
+    },
+    {
+      "id": "os-205",
+      "title": "How To Create Custom Theme for Windows Terminal? - GeeksforGeeks"
+    },
+    {
+      "id": "os-206",
+      "title": "How to Use Storage Spaces in Windows 11/10 - GeeksforGeeks"
+    },
+    {
+      "id": "os-207",
+      "title": "How to Set Up and Use Remote Desktop in Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-208",
+      "title": "What is Windows Subsystem for Linux (WSL) - GeeksforGeeks"
+    },
+    {
+      "id": "os-209",
+      "title": "How to Set Up Speech Recognition on Windows? - GeeksforGeeks"
+    },
+    {
+      "id": "os-210",
+      "title": "Backup & Restore Files using Windows File History - GeeksforGeeks"
+    },
+    {
+      "id": "os-211",
+      "title": "How to Use File History in Windows? - GeeksforGeeks"
+    },
+    {
+      "id": "os-212",
+      "title": "How to Delete a System Restore Point on Windows 10? - GeeksforGeeks"
+    },
+    {
+      "id": "os-213",
+      "title": "How to Update Drivers on PC - GeeksforGeeks"
+    },
+    {
+      "id": "os-214",
+      "title": "How to update Sound Drivers in Windows PC? - GeeksforGeeks"
+    },
+    {
+      "id": "os-215",
+      "title": "How to Access Windows 10’s Hidden Power User Menu? - GeeksforGeeks"
+    },
+    {
+      "id": "os-216",
+      "title": "How to disable Windows Startup services? - GeeksforGeeks"
+    },
+    {
+      "id": "os-217",
+      "title": "How to disable superfetch in windows 10 or windows 11? - GeeksforGeeks"
+    },
+    {
+      "id": "os-218",
+      "title": "How to Open Local Group Policy Editor in Windows Home? - GeeksforGeeks"
+    },
+    {
+      "id": "os-219",
+      "title": "How to Upgrade from Windows 7 to Windows 10 for Free - GeeksforGeeks"
+    },
+    {
+      "id": "os-220",
+      "title": "Process Control Block  in OS - GeeksforGeeks"
+    },
+    {
+      "id": "os-221",
+      "title": "Dispatcher vs Scheduler in OS - GeeksforGeeks"
+    },
+    {
+      "id": "os-222",
+      "title": "5 State Process Model in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-223",
+      "title": "Multiprogramming in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-224",
+      "title": "Short Term Scheduler in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-225",
+      "title": "Medium Term Scheduler in Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-226",
+      "title": "Multitasking Operating System - GeeksforGeeks"
+    },
+    {
+      "id": "os-227",
+      "title": "Zombie and Orphan Processes in C - GeeksforGeeks"
+    },
+    {
+      "id": "os-228",
+      "title": "fork() in C - GeeksforGeeks"
+    },
+    {
+      "id": "os-229",
+      "title": "Difference Between Process,  Parent Process, and Child Process - GeeksforGeeks"
+    },
+    {
+      "id": "os-230",
+      "title": "Logical and Physical Address in Operating System - GeeksforGeeks"
+    },
+    {
       "id": "os-231",
-      "title": "Program for HRRN CPU Scheduling Algorithm - GeeksforGeeks"
+      "title": "Node.js process.pid Property - GeeksforGeeks"
     },
     {
       "id": "os-232",
-      "title": "IPC through shared memory - GeeksforGeeks"
+      "title": "Project Idea | Assist Bot - GeeksforGeeks"
     },
     {
       "id": "os-233",
-      "title": "IPC using Message Queues - GeeksforGeeks"
+      "title": "Concurrency in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-234",
-      "title": "Lock Variable Synchronization Mechanism - GeeksforGeeks"
+      "title": "Node Child Process - GeeksforGeeks"
     },
     {
       "id": "os-235",
-      "title": "OpenMP | Introduction with Installation Guide - GeeksforGeeks"
+      "title": "Automatic Resource Management in Java ( try with resource statements ) - GeeksforGeeks"
     },
     {
       "id": "os-236",
-      "title": "What is a General Purpose Computer? - GeeksforGeeks"
+      "title": "Program for FCFS CPU Scheduling | Set 1 - GeeksforGeeks"
     },
     {
       "id": "os-237",
-      "title": "RADAR - GeeksforGeeks"
+      "title": "Round Robin Scheduling Algorithm with Different Arrival Time - GeeksforGeeks"
     },
     {
       "id": "os-238",
-      "title": "What is Bandwidth? Definition, Working, Importance, Uses - GeeksforGeeks"
+      "title": "CPU Scheduling in Operating Systems - GeeksforGeeks"
     },
     {
       "id": "os-239",
-      "title": "Introduction to Control Unit and its Design - GeeksforGeeks"
+      "title": "Semaphores in Process Synchronization - GeeksforGeeks"
     },
     {
       "id": "os-240",
-      "title": "Cache Memory in Computer Organization - GeeksforGeeks"
+      "title": "Monitors in Process Synchronization - GeeksforGeeks"
     },
     {
       "id": "os-241",
-      "title": "Special Purpose Computer Systems - GeeksforGeeks"
+      "title": "Types of Operating Systems - GeeksforGeeks"
     },
     {
       "id": "os-242",
-      "title": "ALU Functions and Bus Organization - GeeksforGeeks"
+      "title": "Kernel in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-243",
-      "title": "Keyboard module in Python - GeeksforGeeks"
+      "title": "System Call - GeeksforGeeks"
     },
     {
       "id": "os-244",
-      "title": "Multilevel Cache Organisation - GeeksforGeeks"
+      "title": "What Happens When We Turn on Computer? - GeeksforGeeks"
     },
     {
       "id": "os-245",
-      "title": "Input and Output Devices - GeeksforGeeks"
+      "title": "Process in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-246",
-      "title": "Peripherals Devices in Computer Organization - GeeksforGeeks"
+      "title": "Process Schedulers in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-247",
-      "title": "Why ROM is Called Non Volatile Memory? - GeeksforGeeks"
+      "title": "Preemptive and Non-Preemptive Scheduling - GeeksforGeeks"
     },
     {
       "id": "os-248",
-      "title": "Encoders and Decoders in Digital Logic - GeeksforGeeks"
+      "title": "Solutions to Process Synchronization Problems - GeeksforGeeks"
     },
     {
       "id": "os-249",
-      "title": "Binary Coded Decimal - GeeksforGeeks"
+      "title": "Peterson's Algorithm in Process Synchronization - GeeksforGeeks"
     },
     {
       "id": "os-250",
-      "title": "What is Firmware? - GeeksforGeeks"
+      "title": "Dekker's algorithm in Process Synchronization - GeeksforGeeks"
     },
     {
       "id": "os-251",
-      "title": "RAM vs ROM - GeeksforGeeks"
+      "title": "Bakery Algorithm in Process Synchronization - GeeksforGeeks"
     },
     {
       "id": "os-252",
-      "title": "Program for Least Recently Used (LRU) Page Replacement algorithm - GeeksforGeeks"
+      "title": "Priority Inversion in Operating Systems - GeeksforGeeks"
     },
     {
       "id": "os-253",
-      "title": "Second Chance (or Clock) Page Replacement Policy - GeeksforGeeks"
+      "title": "Handling Deadlocks - GeeksforGeeks"
     },
     {
       "id": "os-254",
-      "title": "Partition Allocation Methods in Memory Management - GeeksforGeeks"
+      "title": "Deadlock Detection And Recovery - GeeksforGeeks"
     },
     {
       "id": "os-255",
-      "title": "Virtualization in Cloud Computing and Types - GeeksforGeeks"
+      "title": "Starvation and Livelock - GeeksforGeeks"
     },
     {
       "id": "os-256",
-      "title": "Hypervisor - GeeksforGeeks"
+      "title": "Resource Allocation Graph (RAG) - GeeksforGeeks"
     },
     {
       "id": "os-257",
-      "title": "Introduction to Linux System Administration - GeeksforGeeks"
+      "title": "Resource Allocation Techniques for Processes - GeeksforGeeks"
     },
     {
       "id": "os-258",
-      "title": "Understanding File System - GeeksforGeeks"
+      "title": "Program for Deadlock Free Condition in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-259",
-      "title": "Compare file system in Windows and Linux - GeeksforGeeks"
+      "title": "User Level  vs Kernel Level Threads - GeeksforGeeks"
     },
     {
       "id": "os-260",
-      "title": "Changing the Directory in Linux | cd Command - GeeksforGeeks"
+      "title": "Process-Based and Thread-Based Multitasking - GeeksforGeeks"
     },
     {
       "id": "os-261",
-      "title": "Listing Files and Directories in Linux - GeeksforGeeks"
+      "title": "Multi Threading Models in Process Management - GeeksforGeeks"
     },
     {
       "id": "os-262",
-      "title": "vi Editor in Linux - GeeksforGeeks"
+      "title": "Benefits of Multithreading in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-263",
-      "title": "Creating an Empty File in Linux | Touch Command - GeeksforGeeks"
+      "title": "Introduction to Memory and Memory Units - GeeksforGeeks"
     },
     {
       "id": "os-264",
-      "title": "Nano Text Editor in Linux - GeeksforGeeks"
+      "title": "Implementation of Contiguous Memory Management Techniques - GeeksforGeeks"
     },
     {
       "id": "os-265",
-      "title": "mv Command in Linux - GeeksforGeeks"
+      "title": "Internal Fragmentation in OS - GeeksforGeeks"
     },
     {
       "id": "os-266",
-      "title": "rm command in Linux - GeeksforGeeks"
+      "title": "External Fragmentation in OS - GeeksforGeeks"
     },
     {
       "id": "os-267",
-      "title": "fdisk command in Linux with examples - GeeksforGeeks"
+      "title": "Program for Next Fit algorithm in Memory Management - GeeksforGeeks"
     },
     {
       "id": "os-268",
-      "title": "How to Mount File System in Linux | mount Command - GeeksforGeeks"
+      "title": "Buddy System - Memory Allocation Technique - GeeksforGeeks"
     },
     {
       "id": "os-269",
-      "title": "Nslookup Command in Linux with Examples - GeeksforGeeks"
+      "title": "Non-Contiguous Allocation in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-270",
-      "title": "tracepath command in Linux with Examples - GeeksforGeeks"
+      "title": "Paging - GeeksforGeeks"
     },
     {
       "id": "os-271",
-      "title": "Difference between SSH and Telnet - GeeksforGeeks"
+      "title": "Page Table Entries in Page Table - GeeksforGeeks"
     },
     {
       "id": "os-272",
-      "title": "curl Command in Linux with Examples - GeeksforGeeks"
+      "title": "Segmentation in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-273",
-      "title": "w command in Linux with Examples - GeeksforGeeks"
+      "title": "Overlays in Memory Management - GeeksforGeeks"
     },
     {
       "id": "os-274",
-      "title": "Practical Uses of nc(netcat) command in Linux - GeeksforGeeks"
+      "title": "Virtual Memory in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-275",
-      "title": "How to start nmap and run a simple scan ? - GeeksforGeeks"
+      "title": "Demand Paging in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-276",
-      "title": "Users in Linux System Administration - GeeksforGeeks"
+      "title": "Page Fault Handling in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-277",
-      "title": "chage command in Linux with examples - GeeksforGeeks"
+      "title": "Swap Space in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-278",
-      "title": "gpasswd Command in Linux with examples - GeeksforGeeks"
+      "title": "Page Replacement Algorithms in Operating Systems - GeeksforGeeks"
     },
     {
       "id": "os-279",
-      "title": "groupmod command in Linux with examples - GeeksforGeeks"
+      "title": "Belady's Anomaly in Page Replacement Algorithms - GeeksforGeeks"
     },
     {
       "id": "os-280",
-      "title": "vmstat command in Linux with Examples - GeeksforGeeks"
+      "title": "Second Chance (or Clock) Page Replacement Policy - GeeksforGeeks"
     },
     {
       "id": "os-281",
-      "title": "iostat Command in Linux - GeeksforGeeks"
+      "title": "Thrashing - GeeksforGeeks"
     },
     {
       "id": "os-282",
-      "title": "Linux | Nmon - GeeksforGeeks"
+      "title": "Working Set in Paging - GeeksforGeeks"
     },
     {
       "id": "os-283",
-      "title": "dmesg command in Linux for driver messages - GeeksforGeeks"
+      "title": "Allocating kernel memory (buddy system and slab system) - GeeksforGeeks"
     },
     {
       "id": "os-284",
-      "title": "Tail command in Linux with examples - GeeksforGeeks"
+      "title": "Memory Interleaving - GeeksforGeeks"
     },
     {
       "id": "os-285",
-      "title": "Types of Computer Cables and Ports - GeeksforGeeks"
+      "title": "Operating system  based Virtualization - GeeksforGeeks"
     },
     {
       "id": "os-286",
-      "title": "What is Coaxial Cable ? - GeeksforGeeks"
+      "title": "File Systems in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-287",
-      "title": "Various Smartphone Sensors - GeeksforGeeks"
+      "title": "Unix File System - GeeksforGeeks"
     },
     {
       "id": "os-288",
-      "title": "Advantages and disadvantages of GPS - GeeksforGeeks"
+      "title": "Path Name in File Directory - GeeksforGeeks"
     },
     {
       "id": "os-289",
-      "title": "What is a Printer? - GeeksforGeeks"
+      "title": "Structures of Directory in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-290",
-      "title": "Type-C Port in Computer Network - GeeksforGeeks"
+      "title": "File Allocation Methods - GeeksforGeeks"
     },
     {
       "id": "os-291",
-      "title": "USB Full Form | About USB - GeeksforGeeks"
+      "title": "File Access Methods in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-292",
-      "title": "Advantages and Disadvantages of Tree Topology - GeeksforGeeks"
+      "title": "Secondary Memory - GeeksforGeeks"
     },
     {
       "id": "os-293",
-      "title": "DVD-RAM Full Form - GeeksforGeeks"
+      "title": "Hard Disk Drive (HDD) Secondary Memory - GeeksforGeeks"
     },
     {
       "id": "os-294",
-      "title": "Optical Storage Systems - GeeksforGeeks"
+      "title": "Disk Scheduling Algorithms - GeeksforGeeks"
     },
     {
       "id": "os-295",
-      "title": "Types and Applications of LED - GeeksforGeeks"
+      "title": "Program for SSTF Disk Scheduling Algorithm - GeeksforGeeks"
     },
     {
       "id": "os-296",
-      "title": "LCD Full Form - GeeksforGeeks"
+      "title": "Spooling in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-297",
-      "title": "Computer System Level Hierarchy - GeeksforGeeks"
+      "title": "Spooling vs Buffering - GeeksforGeeks"
     },
     {
       "id": "os-298",
-      "title": "Advantages and Disadvantages of Laptops - GeeksforGeeks"
+      "title": "Free Space Management in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-299",
-      "title": "SSTF Full Form - Shortest Seek Time First - GeeksforGeeks"
+      "title": "Operating System Interview Questions - GeeksforGeeks"
     }
   ]
 }

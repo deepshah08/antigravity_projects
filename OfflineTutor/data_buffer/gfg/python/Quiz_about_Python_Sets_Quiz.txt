@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython Sets QuizLast Updated : DiscussCommentsQuestion 1What is the output of the following program? 
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython Sets QuizLast Updated : DiscussCommentsQuestion 1What is the output of the following program? 
         Python
         
         set1 = {1, 2, 3, 4, 4} 

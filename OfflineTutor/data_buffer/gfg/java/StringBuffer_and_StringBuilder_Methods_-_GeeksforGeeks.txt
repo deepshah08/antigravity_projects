@@ -1,0 +1,37 @@
+# StringBuffer and StringBuilder Methods - GeeksforGeeks
+
+In Java, strings are immutable, meaning their values cannot be changed once they are created. To support efficient string manipulation, Java provides mutable classes like StringBuilder and StringBuffer, which allow modifying strings without creating new objects.StringBuilderStringBuilder is a mutable sequence of characters introduced in Java 1.5. It is not thread-safe, which makes it faster and suitable for single-threaded environments.
+            Java
+
+    class StringBuilderExample {
+    public static void main(String[] args) {
+
+        // Creating a StringBuilder object
+        StringBuilder sb = new StringBuilder("Hello");
+
+        // Using append() method
+        sb.append(" World");
+
+        System.out.println(sb);
+    }
+}
+
+OutputHello World
+StringBufferStringBuffer is also a mutable sequence of characters, introduced in Java 1.0. Unlike StringBuilder, it is thread-safe because its methods are synchronized, making it suitable for multi-threaded environments.
+            Java
+
+    class StringBufferExample {
+    public static void main(String[] args) {
+
+        // Creating a StringBuffer object
+        StringBuffer sb = new StringBuffer("Java");
+
+        // Using append() method
+        sb.append(" Programming");
+
+        System.out.println(sb);
+    }
+}
+
+OutputJava Programming
+Common Methods of StringBuilder and StringBufferMethodOne-Line Descriptionappend(String s)Appends the given string to the end of the current object.insert(int offset, String s)Inserts a string at the specified position.delete(int start, int end)Removes characters from the given range.deleteCharAt(int index)Deletes the character at the specified index.replace(int start, int end, String s)Replaces characters in the given range with a new string.reverse()Reverses the sequence of characters.length()Returns the number of characters in the string.capacity()Returns the current allocated storage capacity.charAt(int index)Returns the character at the specified index.setCharAt(int index, char ch)Updates the character at the given index.substring(int start)Extracts a substring starting from the given index.substring(int start, int end)Extracts a substring within the specified range.ensureCapacity(int minCapacity)Ensures that the buffer has at least the given capacity.Note: StringBuilder and StringBuffer share the same methods, but they differ in performance and thread safety. StringBuilder is faster because it is not synchronized, while StringBuffer is slower as it is synchronized and thread-safe.

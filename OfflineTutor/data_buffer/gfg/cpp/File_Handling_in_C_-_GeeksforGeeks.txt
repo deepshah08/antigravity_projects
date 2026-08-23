@@ -1,36 +1,6 @@
 # File Handling in C++ - GeeksforGeeks
 
-File handling means reading from and writing to files (like .txt, .csv, etc.) using classes provided by the C++ standard library.Programs run in RAM, meaning data exists only while the program is running, when a program ends, all data in RAM is lost automatically.File handling allows storing data in secondary memory (like HDD or SSD), so it can be preserved permanently and can be saved and accessed even after the program terminates.For file operations, C++ provides file stream classes in the <fstream> header such as ofstream, ifstream, fstream.Opening a FileBefore reading from or writing to a file, we first need to open it. Opening a file loads that file in the RAM. In C++, we open a file by creating a stream to it using the fstream class that represent the file stream i.e. stream for input and output to the file.
-            C++
-
-    fstream str("filename.ext", mode);
-
-where,str: Name given to the streamfilename: Name of the filemode: Represents the way in which we are going to interact with the file.File Opening ModesFile opening mode indicate file is opened for reading, writing, or appending. Below is the list of all file modes in C++:ModeDescriptionios::inFile open for reading. If file does not exists, the open operation fails.ios::outFile open for writing: the internal stream buffer supports output operations.ios::binaryOperations are performed in binary mode rather than text.ios::ateThe output position starts at the end of the file.ios::appAll output operations happen at the end of the file, appending to its existing contents.ios::truncAny contents that existed in the file before it is open are discarded.For Example, if we want to open the file for reading, we use the following opening mode:
-            C++
-
-    fstream filein("file.txt", ios::in);
-
-Similarly, if we want to open the file for writing, we use the following:
-            C++
-
-    fstream fileout("file.txt", ios::out);
-
-These modes can also be combined using OR operator (|). For example, you can open the file stream in both read and write mode as shown:
-            C++
-
-    fstream str("file.txt", ios::in | ios::out);
-
-If the file opened in write mode does not exists, a new file is created. But if the file opened in read mode doesn't exists, then no new file is created, and an exception is thrownOther File Streamsfstream is not the only file stream provided by C++. There are two more specialized streams:ifstream: Stands for input file stream. It is equivalent to open fstream in ios::in mode.ofstream: Stands for output file stream. It is equivalent to opening fstream in ios::out mode.The above modes are default modes for these streams. These modes cannot be changed but can be clubbed together with other modes. Now for input, we can also use ifstream as shown:
-            C++
-
-    ifstream filein("file.txt");
-
-Similarly, for output:
-            C++
-
-    ofstream fileout("file.txt");
-
-Write Data to FileOnce the file is opened in the write mode using either fstream or ofstream, we can perform the write operation in similar way as with cout using << operator.
+File handling in C++ refers to reading data from and writing data to files such as .txt, .csv, and binary files. It allows programs to store and retrieve data from secondary storage even after the program terminates.Data stored only in a program's memory is lost when the program ends, while data written to a file can persist on secondary storage such as an HDD or SSD.C++ provides file stream classes such as ifstream, ofstream, and fstream for performing file operations.These classes are provided by the <fstream> header.Opening a FileBefore reading from or writing to a file, we need to open it. Opening a file creates a connection between the program and the file; it does not load the entire file into memory. Data is transferred when read or write operations are performed.In C++, a file can be opened by creating a file stream object using ifstream, ofstream, or fstream.fstream file("filename.ext", mode);where,file is the name of the file stream object.filename.ext specifies the file to be opened.mode specifies how the file will be accessed.File Opening ModesFile opening modes specify how a file is opened and how the program can interact with it.ModeDescriptionios::inFile open for reading. If file does not exists, the open operation fails.ios::outFile open for writing: the internal stream buffer supports output operations.ios::binaryOperations are performed in binary mode rather than text.ios::ateThe output position starts at the end of the file.ios::appAll output operations happen at the end of the file, appending to its existing contents.ios::truncAny contents that existed in the file before it is open are discarded.For Example, if we want to open the file for reading, we use the following opening mode:fstream filein("file.txt", ios::in);Similarly, if we want to open the file for writing, we use the following:fstream fileout("file.txt", ios::out);These modes can also be combined using OR operator (|). For example, you can open the file stream in both read and write mode as shown:fstream str("file.txt", ios::in | ios::out);If the file opened in write mode does not exists, a new file is created. But if the file opened in read mode doesn't exists, then no new file is created, and an exception is thrownOther File StreamsC++ provides three commonly used file stream classes:ifstream: Used for input operations, such as reading data from a file.ofstream: Used for output operations, such as writing data to a file.fstream: Used for both input and output operations.For example, an input file can be opened using ifstream:ifstream filein("file.txt");Similarly, for output:ofstream fileout("file.txt");Write Data to FileOnce the file is opened in the write mode using either fstream or ofstream, we can perform the write operation in similar way as with cout using << operator.
             C++
 
     #include <bits/stdc++.h>
@@ -47,7 +17,7 @@ int main() {
     return 0;
 }
 
-GFG.textRead Data from FileOnce the file is opened in the read mode using either fstream or ifstream, we can perform the write operation in similar way as with cin using >> operator.
+GFG.textRead Data from FileOnce the file is opened in read mode using either fstream or ifstream, we can perform the read operation in a similar way as with cin using the >> operator.
             C++
 
     #include <bits/stdc++.h>
@@ -219,12 +189,7 @@ int main()
     return 0;
 }
 
-OutputBinary FileReading from Binary FileJust as we open a file in binary mode to write data, to read data from a binary file, we must open the file in read mode using ios::in.Syntax:
-            C++
-
-    fstream fileInstance("fileName.bin", ios::in| ios::binary);
-
-
+OutputBinary FileReading from Binary FileJust as we open a file in binary mode to write data, to read data from a binary file, we must open the file in read mode using ios::in.Syntax:fstream fileInstance("fileName.bin", ios::in| ios::binary);
             C++
 
     #include <cstring>
@@ -268,4 +233,64 @@ int main()
     return 0;
 }
 
-OutputFile Data: Welcome to GeeksForGeeksOther File OperationsWe can also do more operations to manipulate a file from our C++ program. some of the common file operations are:C++ Program to Delete a FileAppend a String in an Existing FileCopy One File into Another File
+OutputFile Data: Welcome to GeeksForGeeksHandling Large Files and Measuring PerformanceWhen working with large files, loading the entire file into memory can consume significant memory. C++ allows files to be processed in smaller chunks using a buffer. Functions can organize the file-processing operations, while arrays and pointers can be used to access and process the buffered data. The <chrono> library can be used to measure the elapsed time required to read and process the file.Functions can separate file opening, reading, processing, and closing operations.Arrays can be used as fixed-size buffers to read large files in chunks.Pointers can be used to access data stored in the buffer.Counters can track the number of bytes and lines processed.std::chrono can measure the elapsed time for file reading and processing.
+            C++
+
+    #include <iostream>
+#include <fstream>
+#include <chrono>
+
+using namespace std;
+
+void processFile(const string& filename)
+{
+    ifstream file(filename, ios::binary);
+
+    if (!file) {
+        cerr << "Error: Unable to open file." << endl;
+        return;
+    }
+
+    const size_t BUFFER_SIZE = 8192;
+    char buffer[BUFFER_SIZE];
+
+    size_t totalBytes = 0;
+    size_t totalLines = 0;
+
+    auto start = chrono::steady_clock::now();
+
+    while (file.read(buffer, BUFFER_SIZE) || file.gcount() > 0) {
+        size_t bytesRead = static_cast<size_t>(file.gcount());
+
+        totalBytes += bytesRead;
+
+        // Pointer points to the beginning of the buffer
+        char* ptr = buffer;
+
+        // Process the buffer using the pointer
+        for (size_t i = 0; i < bytesRead; i++) {
+            if (*(ptr + i) == '\n') {
+                totalLines++;
+            }
+        }
+    }
+
+    auto end = chrono::steady_clock::now();
+
+    chrono::duration<double> elapsed = end - start;
+
+    file.close();
+
+    cout << "Total Bytes: " << totalBytes << endl;
+    cout << "Total Lines: " << totalLines << endl;
+    cout << "Time Taken: " << elapsed.count() << " seconds" << endl;
+}
+
+int main()
+{
+    processFile("large_file.txt");
+
+    return 0;
+}
+
+ExplanationThe processFile() function handles the file-reading and processing operation. The file is read in 8 KB chunks using the buffer array, so the entire file does not need to be loaded into memory at once.The ptr pointer points to the beginning of the buffer. The expression *(ptr + i) accesses each byte through pointer arithmetic and is used to check for newline characters.The program maintains totalBytes and totalLines to count the amount of data processed. chrono::steady_clock records the start and end times, and their difference gives the elapsed time for reading and processing the file.

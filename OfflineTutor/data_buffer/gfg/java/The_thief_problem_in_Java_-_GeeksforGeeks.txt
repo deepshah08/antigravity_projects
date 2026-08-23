@@ -1,0 +1,75 @@
+# The thief problem in Java - GeeksforGeeks
+
+Given an array arr[] and an integer K, find the maximum possible sum of any K elements.Examples:Input: arr[] = {3, 7, 2, 5, 12, 30}, K = 3 Output: 49Explanation: Pick 30, 12, and 7. Sum = 30 + 12 + 7 = 49Naive ApproachFollow these steps to find the maximum sum of K items using the naive approach:Initialize a variable sum to 0.Traverse the array to find the largest element.Add the largest element to the sum.Repeat the process K times to select the K largest elements.Return the total sum.
+            Java
+
+    class GFG {
+
+    // Function to get maximum sum of K items 
+    static int getMaxVal(int[] arr, int K) {
+        int res = 0;
+        int n = arr.length;
+
+        for (int i = 0; i < K; i++) {
+            int maxIdx = 0;
+
+            // Find the largest remaining element
+            for (int j = 1; j < n; j++) {
+                if (arr[j] > arr[maxIdx]) {
+                    maxIdx = j;
+                }
+            }
+
+            // Add largest element to result
+            res += arr[maxIdx];
+
+            // Mark element as used
+            arr[maxIdx] = Integer.MIN_VALUE;
+        }
+
+        return res;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {3, 7, 2, 5, 12, 30};
+        int K = 3;
+
+        int maxSum = getMaxVal(arr, K);
+        System.out.println("Maximum sum of " + K + " items: " + maxSum);
+    }
+}
+
+OutputMaximum sum of 3 items: 49
+Time Complexity: O(N × K) where N is the number of elements in the array and K is the number of items to be selected.Space Complexity: O(1) since no extra space is used.Note: The naive approach is inefficient for large inputs.Optimized ApproachFollow these steps to maximize the sum of K items:Sort the array in descending order so the largest values come first.Pick the first K elements from the sorted array.Compute and return the sum of these K elements.
+            Java
+
+    import java.util.Arrays;
+import java.util.Collections;
+
+class GFG{
+
+    // Function to get maximum sum of K items
+    static int getMaxVal(Integer[] arr, int K) {
+        
+        // Sort array in descending order
+        Arrays.sort(arr, Collections.reverseOrder());
+
+        int sum = 0;
+        // Sum first K elements
+        for (int i = 0; i < K; i++) {
+            sum += arr[i];
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        Integer[] arr = {3, 7, 2, 5, 12, 30};
+        int K = 3;
+
+        int maxSum = getMaxVal(arr, K);
+        System.out.println("Maximum sum of " + K + " items: " + maxSum);
+    }
+}
+
+OutputMaximum sum of 3 items: 49
+Time Complexity: O(N log N) where N is the number of elements in the array.Space Complexity: O(1) since no extra space is used (ignoring the internal space used by sorting).

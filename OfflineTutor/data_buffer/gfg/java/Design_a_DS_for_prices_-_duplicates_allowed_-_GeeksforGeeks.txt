@@ -1,0 +1,229 @@
+# Design a DS for prices - duplicates allowed - GeeksforGeeks
+
+Design a data structure that stores items with associated prices (duplicates allowed) while supporting fast insertion, lookup by price, and sorted as well as range-based retrieval of items.Naive Approach (ArrayList)Follow these steps to implement using a simple list:Create an Item class with fields name and price.Maintain an ArrayList of all items.add(price, item) : Append the item to the list.find(price): Traverse the list and collect items with the given price.printSorted(): Sort the list by price and print all items.printGreaterSorted(price): Filter items with price ≥ given price, sort, and print.printSmallerSorted(price): Filter items with price < given price, sort, and print.Implementation
+            Java
+
+    import java.util.*;
+
+// Class to store item name and price
+class Item {
+    String name;
+    int price;
+
+    Item(String name, int price) {
+        this.name = name;
+        this.price = price;
+    }
+}
+
+// Naive data structure using ArrayList
+class NaiveDS {
+
+    ArrayList<Item> list;
+
+    NaiveDS() {
+        list = new ArrayList<>();
+    }
+
+    // Add item with price
+    void add(int price, String name) {
+        list.add(new Item(name, price));
+    }
+
+    // Find items by exact price
+    List<String> find(int price) {
+        List<String> res = new ArrayList<>();
+        for (Item i : list) {
+            if (i.price == price) {
+                res.add(i.name);
+            }
+        }
+        return res;
+    }
+
+    // Print all items sorted by price
+    void printSorted() {
+        list.sort(Comparator.comparingInt(i -> i.price));
+        for (Item i : list) {
+            System.out.println(i.name + " " + i.price);
+        }
+    }
+
+    // Print items with price >= given price
+    void printGreaterSorted(int price) {
+        List<Item> res = new ArrayList<>();
+        for (Item i : list) {
+            if (i.price >= price) {
+                res.add(i);
+            }
+        }
+        res.sort(Comparator.comparingInt(i -> i.price));
+        for (Item i : res) {
+            System.out.println(i.name + " " + i.price);
+        }
+    }
+
+    // Print items with price < given price
+    void printSmallerSorted(int price) {
+        List<Item> res = new ArrayList<>();
+        for (Item i : list) {
+            if (i.price < price) {
+                res.add(i);
+            }
+        }
+        res.sort(Comparator.comparingInt(i -> i.price));
+        for (Item i : res) {
+            System.out.println(i.name + " " + i.price);
+        }
+    }
+}
+
+// Driver code
+public class Main {
+    public static void main(String[] args) {
+
+        NaiveDS ds = new NaiveDS();
+
+        ds.add(100, "Pen");
+        ds.add(50, "Book");
+        ds.add(200, "Laptop");
+        ds.add(100, "Pencil");
+        ds.add(150, "Phone");
+        ds.add(50, "Notebook");
+
+        System.out.println("Sorted Data:");
+        ds.printSorted();
+
+        System.out.println("\nItems at price 100:");
+        System.out.println(ds.find(100));
+
+        System.out.println("\nItems with price >= 100:");
+        ds.printGreaterSorted(100);
+
+    }
+}
+
+OutputSorted Data:
+Book 50
+Notebook 50
+Pen 100
+Pencil 100
+Phone 150
+Laptop 200
+
+Items at price 100:
+[Pen, Pencil]
+
+Items with price >= 100:
+Pen 100
+Pencil 100
+Phone 150
+Laptop 200
+Efficient Approach (TreeMap)Follow these steps to implement the efficient solution:Use a TreeMap where the key is the price and the value is a list of items.Add items to the list corresponding to their price.Retrieve items for a given price directly from the map.Iterate over the TreeMap to print items in sorted order.Use tailMap() for prices greater than or equal to a value.Use headMap() for prices smaller than a value.Implementation
+            Java
+
+    import java.util.*;
+
+class MyDS {
+
+    TreeMap<Integer, List<String>> map;
+    MyDS() {
+        map = new TreeMap<Integer, List<String>>();
+    }
+
+    // Add item with price
+    void add(int price, String item) {
+
+        // If price key not present, create new list
+        if (map.get(price) == null) {
+            map.put(price, new ArrayList<>());
+        }
+
+        // Add item to list
+        map.get(price).add(item);
+    }
+
+    // Find items by price
+    List<String> find(int price) {
+        return map.get(price);
+    }
+
+    // Print all items sorted by price
+    void printSorted() {
+        for (Map.Entry<Integer, List<String>> e : map.entrySet()) {
+            int price = e.getKey();
+
+            for (String item : e.getValue()) {
+                System.out.println(item + " " + price);
+            }
+        }
+    }
+
+    // Print items with price >= given price
+    void printGreaterSorted(int price) {
+        SortedMap<Integer, List<String>> sMap = map.tailMap(price);
+
+        for (Map.Entry<Integer, List<String>> e : sMap.entrySet()) {
+            int p = e.getKey();
+
+            for (String item : e.getValue()) {
+                System.out.println(item + " " + p);
+            }
+        }
+    }
+
+    // Print items with price < given price
+    void printSmallerSorted(int price) {
+        SortedMap<Integer, List<String>> sMap = map.headMap(price);
+
+        for (Map.Entry<Integer, List<String>> e : sMap.entrySet()) {
+            int p = e.getKey();
+
+            for (String item : e.getValue()) {
+                System.out.println(item + " " + p);
+            }
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        MyDS ds = new MyDS();
+
+        // Adding items
+        ds.add(100, "Pen");
+        ds.add(50, "Book");
+        ds.add(200, "Laptop");
+        ds.add(100, "Pencil");
+        ds.add(150, "Phone");
+        ds.add(50, "Notebook");
+
+        System.out.println("Sorted Data:");
+        ds.printSorted();
+
+        System.out.println("\nItems at price 100:");
+        System.out.println(ds.find(100));
+
+        System.out.println("\nItems with price >= 100:");
+        ds.printGreaterSorted(100);
+
+    }
+}
+
+OutputSorted Data:
+Book 50
+Notebook 50
+Pen 100
+Pencil 100
+Phone 150
+Laptop 200
+
+Items at price 100:
+[Pen, Pencil]
+
+Items with price >= 100:
+Pen 100
+Pencil 100
+Phone 150
+Laptop 200

@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsC Structure & UnionLast Updated : DiscussCommentsQuestion 1Pick the best statement for the below program: 
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsC Structure & UnionLast Updated : DiscussCommentsQuestion 1Pick the best statement for the below program: 
         C
         
         #include "stdio.h"

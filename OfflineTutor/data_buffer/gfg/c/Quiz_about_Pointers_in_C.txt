@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPointers in CLast Updated : DiscussCommentsQuestion 1What is a pointer in C?A variable that stores the address of another variableA variable that stores data directlyA keyword to create arraysNone of the aboveQuestion 2Which symbol is used to declare a pointer?&*#%Question 3What is the output of the & operator?Value at addressValue of variableAddress of variableNoneQuestion 4What is the default value of an uninitialized local pointer?0NULLGarbage Value-1Question 5Which format specifier is used to print an address in C?%c%d%p%sQuestion 6What does the following pointer declaration mean? 
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPointers in CLast Updated : DiscussCommentsQuestion 1What is a pointer in C?A variable that stores the address of another variableA variable that stores data directlyA keyword to create arraysNone of the aboveQuestion 2Which symbol is used to declare a pointer?&*#%Question 3What is the output of the & operator?Value at addressValue of variableAddress of variableNoneQuestion 4What is the default value of an uninitialized local pointer?0NULLGarbage Value-1Question 5Which format specifier is used to print an address in C?%c%d%p%sQuestion 6What does the following pointer declaration mean? 
         C
         
         int *p;

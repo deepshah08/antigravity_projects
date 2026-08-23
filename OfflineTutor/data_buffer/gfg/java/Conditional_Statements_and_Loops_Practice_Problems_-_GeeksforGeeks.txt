@@ -1,0 +1,3 @@
+# Conditional Statements and Loops Practice Problems - GeeksforGeeks
+
+Conditional statements and loops are essential building blocks in Java programming. Conditional statements help programs make decisions based on different conditions, while loops allow repeated execution of code efficiently.Practicing these problems will strengthen your logical thinking, improve problem-solving skills, and help you understand program flow control in Java.Conditional Statements and Loops ProblemsThe If StatementThe Else StatementThe Else If StatementSwitch StatementEven Odd GameThe FizzBuzz ProgramGreatest of ThreeLeap YearCalculatorFor Loop While Loop Day before N daysAP TermGeometric Progression Term

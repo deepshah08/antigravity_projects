@@ -1,6 +1,6 @@
 # Intersection point of two Linked Lists - GeeksforGeeks
 
-Given the head of two singly linked lists that merge at some point to form a Y-shaped structure. The two lists may have different lengths and contain distinct nodes initially, but from the intersection point onward, they share the same sequence of nodes. Find the node at which the two linked lists first intersect.Example:Input:  Output: 8Explanation: 8 is the first common node where both linked lists start sharing the same sequence of nodes.Try It YourselfTable of Content[Naive Approach] Using two nested loops - O(m × n) Time and O(1) Space[Better Approach] Using Hashing - O(m + n) Time and O(m) Space[Expected Approach - 1] Using difference in node counts - O(m + n) Time and O(1) Space[Expected Approach - 2] Using Two Pointer Technique - O(m + n) Time and O(1) Space[Expected Approach - 3] Intersection Detection using List Reversal and Floyd’s Cycle-Finding Algorithm[Naive Approach] Using two nested loops - O(m × n) Time and O(1) SpaceThe idea is to take each node of the first linked list and compare it with every node of the second list. The first common node that appears in both lists will be the intersection point.
+Given the head of two singly linked lists that merge at some point to form a Y-shaped structure. The two lists may have different lengths and contain distinct nodes initially, but from the intersection point onward, they share the same sequence of nodes. Find the node at which the two linked lists first intersect.Example:Input:  Output: 8Explanation: 8 is the first common node where both linked lists start sharing the same sequence of nodes.Try It YourselfTable of Content[Naive Approach] Two Nested Loops - O(m × n) Time and O(1) Space[Better Approach] Hashing - O(m + n) Time and O(m) Space[Expected Approach - 1] Difference in Node Counts - O(m + n) Time and O(1) Space[Expected Approach - 2] Two Pointer Technique - O(m + n) Time and O(1) Space[Expected Approach - 3] Floyd’s Cycle-Finding - O(m + n) Time and O(1) Space[Naive Approach] Two Nested Loops - O(m × n) Time and O(1) SpaceThe idea is to take each node of the first linked list and compare it with every node of the second list. The first common node that appears in both lists will be the intersection point.
             C++
 
     #include <iostream>
@@ -343,7 +343,7 @@ else
 	console.log(intersectionPoint.data);
 
 Output15
-[Better Approach] Using Hashing - O(m + n) Time and O(m) SpaceThe idea is to use hashing to store all the nodes of the first list in a hash set and then iterate over second list checking if the node is present in the set. If we find a node which is present in the hash set, we return the node.
+[Better Approach] Hashing - O(m + n) Time and O(m) SpaceThe idea is to use hashing to store all the nodes of the first list in a hash set and then iterate over second list checking if the node is present in the set. If we find a node which is present in the hash set, we return the node.
             C++
 
     #include <iostream>
@@ -654,7 +654,7 @@ else
 	console.log(interPt.data);
 
 Output15
-[Expected Approach - 1] Using difference in node counts - O(m + n) Time and O(1) SpaceThe two lists share the same tail after the intersection; only their starting parts differ in length. To align them, we should skip the extra nodes in the longer list so both pointers stand at the same distance from the intersection.Count the nodes in both lists and find the difference (d). Advance the pointer of the longer list by d steps, then move both pointers together until they meet. The meeting point is the intersection.
+[Expected Approach - 1] Difference in Node Counts - O(m + n) Time and O(1) SpaceThe two lists share the same tail after the intersection; only their starting parts differ in length. To align them, we should skip the extra nodes in the longer list so both pointers stand at the same distance from the intersection.Count the nodes in both lists and find the difference (d). Advance the pointer of the longer list by d steps, then move both pointers together until they meet. The meeting point is the intersection.
             C++
 
     #include <iostream>
@@ -1199,7 +1199,7 @@ else
     console.log(interPt.data);
 
 Output15
-[Expected Approach - 2] Using Two Pointer Technique - O(m + n) Time and O(1) SpaceThe idea is to traverse the two given linked lists simultaneously, using two pointers. When one pointer reaches the end of its list, it is reassigned to the head of the other list. This process continues until the two pointers meet, which indicates that they have reached the intersection point.Why this works:Suppose the lengths of the two lists are m and n, and they share a common tail of length c.The unique parts before the intersection are m - c and n - c.By switching lists, each pointer travels (m - c) + c + (n - c) = m + n - c steps before reaching the intersection.Since both pointers cover exactly m + n - c steps, they must arrive at the intersection at the same time.Step by Step Approach:Initialize two pointers ptr1 and ptr2 at head1 and head2 respectively.Traverse through the lists, one node at a time.=> When ptr1 reaches the end of a list, then redirect it to head2.=> Similarly, when ptr2 reaches the end of a list, redirect it to the head1.=> Once both of them go through reassigning, they will be at equal distance from the collision point.=> If at any node ptr1 meets ptr2, then it is the intersection node.After the second iteration if there is no intersection node, returns NULL.
+[Expected Approach - 2] Two Pointer Technique - O(m + n) Time and O(1) SpaceThe idea is to traverse the two given linked lists simultaneously, using two pointers. When one pointer reaches the end of its list, it is reassigned to the head of the other list. This process continues until the two pointers meet, which indicates that they have reached the intersection point.Why this works:Suppose the lengths of the two lists are m and n, and they share a common tail of length c.The unique parts before the intersection are m - c and n - c.By switching lists, each pointer travels (m - c) + c + (n - c) = m + n - c steps before reaching the intersection.Since both pointers cover exactly m + n - c steps, they must arrive at the intersection at the same time.Step by Step Approach:Initialize two pointers ptr1 and ptr2 at head1 and head2 respectively.Traverse through the lists, one node at a time.When ptr1 reaches the end of a list, then redirect it to head2.Similarly, when ptr2 reaches the end of a list, redirect it to the head1.Once both of them go through reassigning, they will be at equal distance from the collision point.If at any node ptr1 meets ptr2, then it is the intersection node.After the second iteration if there is no intersection node, returns NULL.
             C++
 
     #include <iostream>
@@ -1539,7 +1539,7 @@ if (!interPt) console.log("-1");
 else console.log(interPt.data);
 
 Output15
-[Expected Approach - 3] Intersection Detection using Floyd’s Cycle-Finding AlgorithmIf two linked lists intersect, the intersection point is the place where their paths merge into one. One way to detect this is to convert the problem into a cycle detection problem. If we somehow make the shared portion of the two lists form a loop, then standard cycle detection techniques can be applied to locate the intersection.To achieve this, we connect the second list to the end of the first list. If the lists intersect, this connection will create a cycle and first node of cycle will be our intersection point.Now, the problem become finding the first node of a loop in a linked list.
+[Expected Approach - 3] Floyd’s Cycle-Finding - O(m + n) Time and O(1) SpaceIf two linked lists intersect, the intersection point is the place where their paths merge into one. One way to detect this is to convert the problem into a cycle detection problem. If we somehow make the shared portion of the two lists form a loop, then standard cycle detection techniques can be applied to locate the intersection.To achieve this, we connect the second list to the end of the first list. If the lists intersect, this connection will create a cycle and first node of cycle will be our intersection point.Now, the problem become finding the first node of a loop in a linked list.
             C++
 
     #include <iostream>
@@ -1695,7 +1695,7 @@ public class Main {
 
 # finds the intersection point of two
 # linked lists
-def intersect_point(head1, head2):
+def intersectPoint(head1, head2):
   if not head1 or not head2:
     return None
 
@@ -1738,7 +1738,7 @@ if __name__ == '__main__':
   # intersection at node with value 15
   head2.next.next.next = head1.next
 
-  inter_pt = intersect_point(head1, head2)
+  inter_pt = intersectPoint(head1, head2)
 
   if inter_pt is None:
     print("-1")
@@ -1760,9 +1760,10 @@ public class Node {
 }
 
 public class Program {
+    
   // finds the intersection point of two
   // linked lists
-  public static Node IntersectPoint(Node head1, Node head2) {
+  public static Node intersectPoint(Node head1, Node head2) {
     if (head1 == null || head2 == null) return null;
 
     // attach second list to the
@@ -1808,7 +1809,7 @@ public class Program {
     // intersection at node with value 15
     head2.next.next.next = head1.next;
 
-    Node interPt = IntersectPoint(head1, head2);
+    Node interPt = intersectPoint(head1, head2);
 
     if (interPt == null)
       Console.Write("-1");

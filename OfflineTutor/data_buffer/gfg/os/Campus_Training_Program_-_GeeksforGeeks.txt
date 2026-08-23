@@ -1,0 +1,3949 @@
+# Campus Training Program - GeeksforGeeks
+
+Skip to content
+
+        
+            
+            
+                
+                    
+                        
+                    
+                
+                
+                        
+                    
+                        
+                             
+                            
+                            
+                                
+                            
+                        
+                        
+                    
+                
+                 
+            
+
+        
+        CoursesDSA / PlacementsDA / Data Science & AIDevelopmentDevOps CourseGATE PrepAll CoursesTutorialsPythonJavaDSAML & Data ScienceInterview CornerProgramming LanguagesWeb DevelopmentGATECS SubjectsDevOpsSchool LearningSoftware and ToolsPracticeSummer SkillupPractice Coding ProblemsProblem of the DayConnect 1:1 with ExpertsJobsApply Now!Post JobsJobs Updates
+        
+            
+                                            
+
+                
+                    
+                    
+                
+                
+
+                
+                    
+                        
+                            
+                            
+                        
+                        
+                    
+                
+
+                
+                
+                    .hidden{
+                        display:none !important; 
+                      }
+                    
+                    .notification-bell-icon::after {
+                        background-position: -7px -3186px;
+                        transform: scale(0.8);
+                    }
+                        
+                    #toggleButton{
+                        display:block !important;
+                    }
+                
+                    
+
+    
+        
+            
+            
+        
+        
+        
+            
+                Notifications
+                
+                    Mark all as read
+                
+            
+            
+                
+                    
+                        All
+                    
+    
+                
+            
+            
+                
+                 
+                    
+                        View All
+                    
+                
+            
+            
+                
+                    
+                
+                
+                    
+                        Notifications
+                        
+                            
+                                
+                                Mark all as read
+                            
+                        
+                    
+                
+                    
+                        
+                            All
+                        
+                        
+                            Unread
+                        
+                        
+                            Read
+                        
+                    
+                
+                
+                    
+                        You're all caught up!!
+                    
+                
+                
+                
+                    
+                    
+                
+            
+        
+    
+    
+                
+
+                
+                    
+                
+                            
+        
+
+        
+        
+        
+               
+       
+    
+    
+        
+            
+                
+            
+            
+            
+            DSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsSQLWeb DevelopmentSystem DesignAptitude            
+            
+                
+            
+            
+        
+         
+    
+        
+            
+        
+        
+        
+        
+            
+        
+    
+    
+
+
+        
+            Sign In
+        
+    
+    
+    ▲
+    
+    
+
+
+
+
+
+        
+        body {
+            margin: 0;
+        }
+        body.page .wrapper{
+            background-color: initial !important;
+        }
+        .b2b_page_root section{
+            text-align: left;
+        }
+        .gfg-icon::after {
+            font-feature-settings: 'liga';
+        }
+        main.b2b_page_root {
+            max-width: 100%;
+        }
+        .b2b_contact_modal_mail_text:hover{
+            color: var(--primary-grren-600, #357960);
+        }
+        .b2b_fixed_topbar {
+            height: 61px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background: #265645;
+            box-shadow: 0px 12px 24px 0px rgba(20, 20, 43, 0.04), 0px -2px 4px 0px rgba(20, 20, 43, 0.02);
+            z-index: 2;
+            position: sticky;
+            top:40px;
+            display: none;
+        }
+        .download-icon{
+            margin-left: 5px;
+            display: flex;
+            width: 24px;
+            height: 25px;
+            background-image: url('https://media.geeksforgeeks.org/auth-dashboard-uploads/B2BIcons.svg');
+            background-position: 55px -79px;
+        }
+        .b2b_fixed_topbar .download-icon img{
+            width: 18px;
+            height: 18px;
+        }
+        .b2b_fixed_topbar .download-icon{
+            margin-left: 0px;
+        }
+        .b2b_fixed_topbar > button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: var(--font-primary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 18px; 
+            color: #FFF;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            background: none;
+        }
+        .b2b_fixed_topbar .b2b_connect_now {
+            border-radius: 6px;
+            background: #41886C;
+            font-feature-settings: 'clig' off, 'liga' off;
+            padding: 10px 28px;
+            margin-right: 27px;
+            margin-bottom: 0px;
+        }
+        .b2b_fixed_topbar .b2b_download_btn {
+            height: 29px;
+            border-radius: 11px;
+            margin-right: 79px;
+        }
+        .b2b_fixed_topbar .b2b_download_btn span {
+            margin-right: 11.5px;
+        }
+
+        .b2b_top_section {
+            display: flex;
+            padding: 6.5% 4.5% 6.5% 9%;
+            justify-content: space-between;
+        }
+        .b2b_top_section .b2b_text_container {
+            width: 58%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .b2b_top_section .b2b_image_container {
+            max-width: 498px;
+            width: 37%;
+        }
+        .b2b_top_section .b2b_image_container video {
+            width: 100%;
+            height: 100%;
+            border-radius: 17px;
+        }
+        .b2b_top_section .b2b_heading {
+            color: var(--light-mode-light-h-1, #0E0E12);
+            font-family: var(--font-primary);
+            font-size: 46px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 62px; 
+            margin-bottom: 8px;
+        }
+        .b2b_top_section .b2b_subheading {
+            color: rgba(0, 0, 0, 0.50);
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 160%; /* 25.6px */
+            letter-spacing: 0.32px;
+            margin-bottom: 36px;
+            max-width: 593px;
+        }
+        .b2b_button_container {
+            display: flex;
+        }
+        .b2b_button_container > button {
+            display: flex;
+            justify-content: center;
+            align-items: center;            
+            height: 51px;
+            border-radius: 9px;
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%; /* 35.2px */
+            letter-spacing: 0.44px;
+            cursor: pointer;
+            outline: none;
+            border: none;
+        }
+        .b2b_button_container .b2b_download_btn {
+            width: 282px;
+            background: var(--primary-grren-500, #41886C);
+            color: #FFF;
+            margin-right: 22px;
+        }
+        .b2b_button_container .b2b_apply_btn {
+            width: 161px;
+            border: 1px solid var(--light-mode-light-m-1, #6E6E73);
+            color: #6E6E73;
+            background: none;
+        }
+        .b2b_apply_btn a {
+            color: currentColor;
+            text-decoration: none;
+        }
+
+        .b2b_second_section {
+            background: var(--primary-grren-100, #DDEEE4);
+            padding: 56px 140px 56px 117px;
+            display: flex;
+        }
+        .b2b_second_section>div {
+            width: 50%;
+        } 
+        .b2b_second_section>div:first-child {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .b2b_second_section>div:last-child {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 10px;
+        }
+        .b2b_second_section>div:last-child>div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .b2b_second_section_left_title {
+            color: #000 !important;
+            font-family: var(--font-primary);
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 62px; /* 206.667% */
+        } 
+        .b2b_second_section_left_description {
+            width: 80%;
+            margin-top: 12px;
+            color: rgba(0, 0, 0, 0.50) !important;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 160%; /* 28.8px */
+            letter-spacing: 0.36px;
+        }
+        .b2b_second_section_image_container {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: #62A588;
+        }
+        .b2b_second_section_image_container img {
+            width: 24px;
+        }
+        .b2b_interview_img img {
+            width: 22.8px;
+        }
+        .b2b_second_section>div:last-child>div span {
+            color: #000;
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            margin-top: 26px;
+            text-align: center;
+        }
+
+        .b2b_third_section {
+            display: flex;
+            flex-direction: column;
+            background: #F9FBFC;
+            padding: 100px 77px 63px 126px;
+        }
+        .b2b_third_header {
+            display: flex;
+            flex-direction: column;
+        }
+        .b2b_third_header>h2 {
+            color: #000 !important;
+            font-family: var(--font-primary);
+            font-size: 34px;
+            font-style: normal;
+            font-weight: 600;
+            margin-bottom: 22px;
+        }
+        .b2b_third_header>div {
+            color: rgba(0, 0, 0, 0.50) !important;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 160%; /* 28.8px */
+            letter-spacing: 0.36px;
+            max-width: 658px;
+            width: 100%;
+        }
+        .b2b_third_body {
+            display: flex;
+            margin-top: 55px;
+            flex-wrap: wrap;
+            gap: 38px;
+        }
+        .b2b_third_card_container {
+            background: #FFF;
+            filter: drop-shadow(0px 0px 8px rgba(0, 0, 51, 0.08));
+            padding: 44px 34px;
+            width: 30%;
+            min-width: 225px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            margin-bottom: 37px;
+        }
+        .b2b_third_image_container {
+            height: 37px;
+            margin-bottom: 40px;
+        }
+        .b2b_third_image_container img {
+            height: 100%;
+        }
+        .b2b_third_card_heading {
+            color: #101041;
+            font-family: var(--font-primary);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-bottom: 14px;
+        }
+        .b2b_third_card_subheading {
+            color: rgba(0, 0, 51, 0.95);
+            font-family: var(--font-secondary);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 26px; /* 162.5% */
+        }
+  
+        .b2b_forth_section {
+            padding: 70px 96px 89px;
+            display: flex;
+            flex-direction: column;
+        }
+        .b2b_forth_section_header {
+            margin-bottom: 63px;
+        }
+        .b2b_forth_heading {
+            color: #000 !important;
+            font-family: var(--font-primary);
+            font-size: 34px;
+            font-style: normal;
+            font-weight: 600;
+            margin-bottom: 26px;
+        }
+        .b2b_forth_subheading {
+            color: rgba(0, 0, 0, 0.50) !important;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 160%;
+            letter-spacing: 0.36px;
+            max-width: 736px;
+        }
+        .b2b_forth_btn_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 41px;
+        }
+        .b2b_forth_btn_container button {
+            border-radius: 9px;
+            background: var(--primary-grren-500, #41886C);
+            color: #FFF;
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%;
+            letter-spacing: 0.44px;
+            border: none;
+            outline: none;
+            padding: 8px 29px;
+        }
+        .b2b_forth_btn_container button a {
+            color: currentColor;
+            text-decoration: none;
+        }
+        .b2b_forth_cards_collection {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .b2b_forth_card_container {
+            min-width: 250px;
+            width: 23%;
+            margin-top: 20px;
+        }
+        .b2b_forth_image_container {
+            width: 51px;
+            height: 51px;
+            border-radius: 5px;
+            background: #D8D8FC;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+        .b2b_forth_image_container img {
+            width: 26px;
+        }
+        .b2b_forth_card_text_container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .b2b_forth_card_text_container>div:first-child {
+            color: #000;
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 160%; /* 35.2px */
+            letter-spacing: 0.44px;
+            margin-bottom: 12px;
+        }
+        .b2b_forth_card_text_container>div:last-child {
+            color: rgba(0, 0, 0, 0.50);
+            text-align: center;
+            font-family: var(--font-secondary);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%; /* 25.6px */
+            letter-spacing: 0.32px;
+        }
+        .b2b_forth_section_line {
+            max-width: 186px;
+            width: 75%;
+            border-top: 1px solid #B4B4B4;
+            margin: 23px auto 9px;
+        }
+
+        .b2b_faq_section {
+            padding: 100px 20px 135px 20px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: auto;
+            max-width: 820px;
+        }
+        .b2b_faq_header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        .b2b_faq_heading {
+            color: #000;
+            font-family: var(--font-primary);
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 140%;
+            margin-bottom: 12px;
+        }
+        .b2b_faq_subheading {
+            width: 90%;
+            text-align: center;
+            color: var(--neutral-700, #514F6E);
+            text-align: center;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px;
+        }
+        .b2b_faq_accordion_container {
+            border-bottom: 1px solid #D5D5D6;
+            margin-bottom: 45px;
+            cursor: pointer;
+        }
+        .b2b_faq_accordion_label { 
+            display: flex;
+            justify-content: space-between;
+            font-family: var(--font-secondary);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 30px;
+            color: #003;
+        }
+        .b2b_faq_expanded_text {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+            color: var(--neutral-700, #514F6E);
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px;
+            margin-top: 20px;
+        }
+        .b2b_expand_accordion .b2b_faq_expanded_text {
+            max-height: 100vh;
+        }
+        .b2b_expand_accordion .b2b_faq_accordion_label {
+            margin-bottom: 8px;
+        }
+        i.gfg-down-icon::after {
+            transform: rotate(0deg);
+            background-position: -120 0px;
+            transition: all 0.4s ease-in-out;
+        }
+        .b2b_expand_accordion  {
+            border-bottom-color: transparent;
+        }
+        .b2b_expand_accordion i::after {
+            transform: rotate(180deg);
+        }
+        .b2b_faq_accordion_container:last-child {
+            border-bottom: none;
+        }
+
+        .testimonial_section {
+            padding: 150px 100px 100px 117px;
+            background: #F9FBFC;
+        }
+        .testimonial_section_title {
+            color: var(--primary-grren-600, #357960);
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: var(--font-secondary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 20px;
+            letter-spacing: 2.2px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            margin-bottom: 36px;
+        }
+        .testimonial_section_title>span:first-child {
+            width: 22px;
+            display: inline-block;
+            height: 2px;
+            background: #357960;
+            margin-right: 10px;
+        }
+        .testimonial_section_heading {
+            color: var(--neutral-800, #170F49) !important;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: var(--font-primary);
+            font-size: 34px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 46px; /* 135.294% */
+            margin-bottom: 26px;
+        }
+        .testimonial_section_subheading {
+            color: var(--neutral-700, #514F6E);
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px; /* 166.667% */
+            max-width: 644px;
+            margin-bottom: 21px;
+        }
+        .testimonial_card_collection, .b2b_case_collection {
+            display: flex;
+            overflow-x: hidden;
+            flex-wrap: nowrap;
+            width: 100%;
+            scroll-behavior: smooth;
+        }
+        .single_card {
+            border-radius: 20px;
+            border: 1px solid var(--neutral-300, #EFF0F6);
+            background: var(--neutral-100, #FFF);
+            box-shadow: 0px 5px 14px 0px rgba(8, 15, 52, 0.04);
+            padding: 25px;
+            margin-right: 5%;
+            min-width: 30%;
+            box-sizing: border-box;
+        }
+        @media screen and (max-width: 835px) {
+            .single_card {
+                min-width: 45%;
+            }
+        }
+        @media screen and (max-width: 565px) {
+            .single_card {
+                min-width: 90%;
+                margin-left: 5%;
+            }
+        }
+        .single_card:last-child {
+            margin-right: 0;
+        }
+        .single_testimonial_header {
+            display: flex;
+            align-items: center;
+        }
+        .testimonial_image_container {
+            width: 38px;
+            margin-right: 14px;
+            height: 38px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .testimonial_image_container img {
+            width: 100%;
+        }
+        .testimonial_name_designation_container {
+            color: var(--neutral-800, #170F49);
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: var(--font-primary);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 20px;
+        }
+        .single_testimonial_words {
+            margin-top: 22px;
+            color: var(--neutral-700, #514F6E);
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: var(--font-secondary);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px;
+        }
+        .placement-company {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+            color: var(--light-mode-light-m-1, #6E6E73);
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px; /* 166.667% */
+        }
+        .placement-company img {
+            height: 37px;
+        }
+        .testimonial_card_transition_buttons,.b2b_case_transition_buttons,.faculty_card_transition_buttons {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .testimonial_card_transition_buttons .single_dot, .b2b_case_transition_buttons .single_dot, .faculty_card_transition_buttons .single_dot {
+            width: 13px;
+            height: 13px;
+            background: #d9d9d9;
+            border-radius: 50%;
+            margin: 32px 7px 0;
+        }
+        .testimonial_card_transition_buttons span.active_testimonial_button, .b2b_case_transition_buttons span.active_case_study_button, .faculty_card_transition_buttons span.active_faculty_button{
+            background: #367e6e;
+        }
+        @media screen and (max-width: 565px) {
+            .testimonial_card_transition_buttons .single_dot, .b2b_case_transition_buttons .single_dot, .faculty_card_transition_buttons .single_dot {
+                height: 11px;
+                width: 11px;
+            }
+        }
+
+        .b2b_journey_section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 70px 100px;
+            background: #F9FBFC;
+        }
+        .b2b_journey_header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 90px;
+        }
+        .b2b_journey_heading {
+            color: #1B1D21 !important;
+            text-align: center;
+            font-family: var(--font-primary);
+            font-size: 34px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            margin-bottom: 26px;
+            text-transform: capitalize;
+        }
+        .b2b_journey_subheading {
+            color: var(--neutral-700, #514F6E) !important;
+            text-align: center;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px;
+            max-width: 658px;
+        }
+        .b2b_journey_info {
+            display: flex;
+            justify-content: center;
+        }
+        .b2b_journey_info>div {
+            color: #357960;
+            text-align: center;
+            font-family: var(--font-secondary);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            margin-right: 80px;
+        }
+        .b2b_journey_info>div:last-child {
+            margin-right: 0;
+        }
+        .b2b_journey_info img {
+            margin-right: 10px;
+            width: 20px;
+        }
+        .b2b_journey_body {
+            margin-top: 120px;
+            display: flex;
+        }
+        .b2b_jorney_start, .b2b_crack_interview {
+            width: 115px;
+            color: #757575;
+            text-align: center;
+            font-family: var(--font-primary);
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: capitalize;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .b2b_jorney_start img {
+            width: 80px;
+        }
+        .b2b_crack_interview img{
+            width: 70px;
+        }
+        .b2b_journey_steps {
+            width: calc(100% - 230px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .b2b_jouney_line {
+            width: 100%;
+            border-radius: 22px;
+            background: #E9E9E9;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 60px auto;
+        }   
+        .b2b_jouney_line img {
+            width: 95%;
+        }
+        .b2b_jouney_part_1, .b2b_jouney_part_2 {
+            display: flex;
+        }
+        .b2b_jouney_part_1 {
+            justify-content: space-between;
+            width: 95%;
+        }
+        .b2b_jouney_part_2 {
+            justify-content: space-around;
+            width: 85%;
+        }
+        .b2b_journey_step_circle {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            border: 4px solid #41886C;
+            left: auto;
+            right: auto;
+            background: #F9FBFC;
+        }
+        .b2b_jouney_part_1 .b2b_journey_step_circle {
+            bottom: -86px;
+        }
+        .b2b_jouney_part_2 .b2b_journey_step_circle {
+            top: -86px;
+        }
+        .b2b_journey_single_step {
+            width: 135px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        .b2b_jouney_part_2 .b2b_journey_single_step {
+            width: 155px;
+        }
+        .b2b_journey_single_step_info{ 
+            display: flex;
+            padding-right: 20px;
+        }
+        .b2b_journey_single_step_info>span {
+            height: 30px;
+            position: relative;
+            top: 81px;
+            color: #546C62;
+            text-align: center;
+            font-family: var(--font-primary);
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: capitalize;
+            margin-right: 10px;
+        }
+        .b2b_journey_single_step_info>div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #757575;
+            text-align: center;
+            font-family: var(--font-primary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: capitalize;
+        }
+        .b2b_journey_single_step_info>div>span {
+            text-align: center;
+        }
+        .b2b_journey_single_step_info img {
+            height: 60px;
+            margin-bottom: 25px;
+        }
+
+        .b2b_case_section {
+            padding: 80px 90px 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #F9FBFC;
+        }
+        .b2b_case_heading {
+            color: #000;
+            font-family: var(--font-primary);
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 140%;
+            margin-bottom: 12px;
+        }
+        .b2b_case_subheading {
+            width: 100%;
+            max-width: 658px;
+            color: var(--neutral-700, #514F6E);
+            text-align: center;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px;
+            margin-bottom: 83px;
+        }
+        .b2b_case_card{ 
+            min-width: 30%;
+            margin-right: 3.33%;
+            cursor: pointer;
+        }
+        .b2b_case_image_container img {
+            width: 100%;
+        }
+        .b2b_case_title {
+            color: #000;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: var(--font-primary);
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 38px; /* 135.714% */
+            margin-top: 20px;
+            width: 96%;
+            margin: 20px auto 0;
+        }
+
+        .b2b_modal {
+            position: fixed;
+            background: rgba(0, 0, 0, 0.45);
+            height: calc(100vh - 64px);
+            width: 100%;
+            z-index: 1;
+            top: 61px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            overflow: auto;
+            display: none;
+        }
+        .b2b_case_modal {
+            border-radius: 13px;
+            background: #FFF;
+            padding: 60px;
+            width: 1079px;
+            max-width: 95%;
+            margin-top: 10px;
+            box-sizing: border-box;
+            display: none;
+        }
+        .b2b_case_modal .b2b_modal_title {
+            color: #000;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: var(--font-primary);
+            font-size: 26px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 38px; /* 146.154% */
+        }
+        .b2b_case_modal .b2b_modal_image {
+            height: 307px;
+            margin: 29px auto 46px;
+        }
+        .b2b_case_modal .b2b_modal_image img{
+            width: 100%;  
+            height: 100%;
+            object-fit: cover;  
+            border-radius: 20px;
+        }
+        .b2b_case_modal .b2b_modal_description{
+            color: var(--light-mode-light-b-1, #1D1D1F);
+            font-family: var(--font-secondary);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 32px; /* 200% */
+        }
+        .b2b_case_modal .b2b_case_read_more {
+            color: #000;
+            font-family: var(--font-primary);
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 26px; /* 108.333% */
+            margin-top: 40px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .b2b_case_collection{
+            overflow-y: hidden;
+        }
+        .b2b_placement_section {
+            padding: 100px 50px 100px 130px;
+            background: #F9FBFC;
+        }
+        .b2b_placement_program {
+            display: flex;
+            flex-direction: column;
+        }
+        .b2b_placement_heading {
+            color: #000 !important;
+            font-family: var(--font-primary);
+            font-size: 34px;
+            font-style: normal;
+            font-weight: 600;
+            margin-bottom: 26px;
+        }
+        .b2b_placement_subheading {
+            color: rgba(0, 0, 0, 0.50) !important;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 160%; /* 28.8px */
+            letter-spacing: 0.36px;
+            width: calc(100% - 400px);
+        }
+        .b2b_placement_program_body {
+            margin-top: 45px;
+            display: flex;
+        }
+        .b2b_placement_program_info { 
+            display: flex;
+            width: calc(100% - 400px);
+            flex-wrap: wrap;
+            position: relative;
+            top: 60px;
+        }
+        .b2b_placement_program_card {
+            width: 45%;
+            margin-right: 5%;
+            margin-bottom: 100px;
+        }
+        .b2b_placement_program_card>div:first-child {
+            color: #000;
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 160%; /* 35.2px */
+            letter-spacing: 0.44px;
+        }
+        .b2b_placement_program_card>div:last-child {
+            color: rgba(0, 0, 0, 0.50);
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%; /* 28.8px */
+            letter-spacing: 0.36px;
+            margin-top: 10px;
+        }
+        .b2b_placement_program_img {
+            width: 400px;
+        }
+        .b2b_placement_program_img img {
+            width: 100%;
+        }
+
+        .b2b_placement_seperator {
+            width: 95%;
+            height: 1px;
+            background: #C3C3C3;
+            margin: 60px 0 80px 0;
+        }
+
+        .b2b_placement_partner {
+            overflow: hidden;
+        }
+        .b2b_partner_scroll {    
+            margin-top: 60px;
+            overflow: hidden;
+            display: flex;
+            width: fit-content;
+            animation: infiniteScroll 14s infinite linear;
+            white-space: nowrap;
+         }
+        .b2b_partner_scroll span {
+            height: 60px;
+            margin-right: 55px;
+        }
+        .b2b_partner_scroll span:last-child {
+            margin-right: 0;
+        }
+        .b2b_partner_scroll img {
+            height: 100%;
+        }
+
+        @keyframes infiniteScroll {
+            from {
+                transform: translate(0%,0);
+            }
+            to {
+                transform: translate(-50%,0);
+            }
+        }
+
+
+        .b2b_contact_section {
+            background: #265645;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 100px 100px;
+        }
+        .b2b_contact_heading {
+            margin: 82px auto 60px;
+            color: #FFF;
+            font-family: var(--font-primary);
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+        .b2b_contact_section form {
+            max-width: 700px;
+            width: 95%;
+            margin-bottom: 0;
+        }
+        .b2b_contact_field_container {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .b2b_contact_field {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            margin-bottom: 36px;
+        }
+        .b2b_contact_field label span, .b2b_form_info_text span{
+            color: red;
+        }
+        .b2b_contact_field label, .b2b_form_info_text{
+            color: #B1B1B1;
+            font-family: var(--font-primary);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-bottom: 10px;
+        }
+        .b2b_contact_field input {
+            border-radius: 10px;
+            border: 1px solid #B1B1B1;
+            height: 46px;
+            outline: none;
+            background: transparent;
+            color: #FFF;
+            font-family: var(--font-primary);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .b2b_contact_submit_button_container {
+            height: 51px;
+            width: 128px;
+            margin: auto;
+            margin-top: 30px;
+        }
+        .b2b_contact_submit_button_container button {
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-grren-500, #41886C);
+            border-radius: 10px;
+            border: none;
+            color: #FFF;
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 400;
+            letter-spacing: 0.44px;
+            position: relative;
+        }
+
+        .b2b_contact_section input::-webkit-outer-spin-button,
+        .b2b_contact_section input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        .b2b_contact_section input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        .b2b_form_info_text{
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 400;
+            color: #FFF;
+            padding: 0 30px;
+        }
+
+        @media only screen and (max-width:460px){
+            .b2b_form_info_text{
+                padding: 0 10px;
+            }
+        }
+
+        .b2b_certificate_section {
+            padding: 80px 120px 65px 130px;
+            background: #DDEEE4;
+            position: relative;
+        }
+        .b2b_certificate_heading {
+            color: #000 !important;
+            font-family: var(--font-primary);
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 600;
+            margin-bottom: 28px;
+            max-width: 40%;
+        }
+        .b2b_certificate_subheading {
+            color: rgba(0, 0, 0, 0.50);
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 160%; /* 28.8px */
+            letter-spacing: 0.36px;
+            max-width: 40%;
+            margin-bottom: 28px;
+        }
+        .b2b_certificate_btn_container {
+            width: 157px;
+            height: 51px;
+        }
+        .b2b_certificate_btn_container button {
+            border-radius: 9px;
+            background: #41886C;
+            border: none;
+            width: 100%;
+            height: 100%;
+            color: #FFF;
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 100%; /* 35.2px */
+            letter-spacing: 0.44px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .b2b_certificate_btn_container a {
+            color: #FFF;
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%; /* 35.2px */
+            letter-spacing: 0.44px;
+            text-decoration: none;
+        }
+        .b2b_certificate_image_container {
+            position: absolute;
+            width: 35%;
+            bottom: -60px;
+            right: 3%;
+        }
+        .b2b_certificate_image_container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: scale-down;
+            border-radius: 6px;
+            border: 2px solid #EFFFF9;
+            background: #FFF;
+            box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        .b2b_assistance_section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 70px 30px;
+            position: relative;
+        }
+        .b2b_assistance_section>img {
+            position: absolute;
+        }
+        .b2b_assistance_section>img:first-of-type {
+            top: 10px;
+            right: 10px;
+        }
+        .b2b_assistance_section>img:last-of-type {
+            bottom: 10px;
+            left: 10px;
+        }
+        .b2b_assistance_heading {
+            color: #000 !important;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: var(--font-primary);
+            font-size: 34px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 30px; /* 88.235% */
+            margin-bottom: 26px;
+        }
+        .b2b_assistance_subheading {
+            color: var(--neutral-700, #514F6E) !important;
+            text-align: center;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px; /* 166.667% */
+            max-width: 658px;
+        }
+        .b2b_assistance_body {
+            margin-top: 26px;
+            display: flex;
+            width: 90%;
+            max-width: 720px;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .b2b_assistance_item {
+            width: 46%;
+            display: flex;
+            margin-top: 60px;
+            justify-content: space-between;
+        }
+        .b2b_assistance_item_icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background-image: url('https://media.geeksforgeeks.org/auth-dashboard-uploads/B2BIcons.svg');
+            background-position: -50px 0px;
+            background-size: 130px;
+        }
+        .b2b_assistance_item_text div:first-child {
+            color: #003;
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 30px; /* 136.364% */
+            margin-bottom: 5px;
+        }
+        .b2b_assistance_item_text div:last-child {
+            color:  #6E6E73;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 30px; /* 166.667% */
+        }
+        .b2b_assistance_item_text {
+            width: calc((100% - 48px));
+        }
+
+        #b2b_contact_modal {
+            display: none;
+            padding: 47px 56px 47px 40px;
+            border-radius: 24px;
+            background: #FFF;
+            max-width: 508px;
+            margin: auto;
+        }
+        .mail-us{
+            margin-bottom: 5px !important;
+        }
+        .b2b_contact_modal_item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 36px;
+        }
+        .b2b_contact_modal_item:last-of-type {
+            margin-bottom: 0;
+        }
+        .b2b_contact_modal_item>div {
+            display: flex;
+            flex-direction: column;
+        }
+        .b2b_contact_modal_item>img {
+            margin-right: 40px;
+            position: relative;
+        }
+        .b2b_whatsapp_image {
+            width: 26px;
+            margin-left: 4px;
+            margin-top: 4px;
+        }
+        .b2b_call_image {
+            width: 28px;
+        }
+        .b2b_mail_image {
+            width: 35px;
+            top: -4px;
+        }
+        .b2b_contact_modal_mail_text{
+            color: var(--primary-grren-600, #357960);
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 400;
+            text-decoration-line: underline;
+        }
+        .b2b_mail_mobile{
+            display: none !important;
+        }
+        .b2b_contact_modal_item>div>span {
+            font-family: var(--font-primary);
+            font-style: normal;
+        }
+        .b2b_contact_modal_item>div>span:last-child {
+            color: #357960;
+            font-size: 22px;
+            line-height: 22px;
+            font-weight: 400;
+            text-decoration-line: underline;
+        }
+        .b2b_contact_modal_item>div>span:first-child {
+            margin-bottom: 18px;
+            color: #000;
+            font-size: 26px;
+            font-weight: 600;
+            line-height: 26px;
+        }
+        .b2b_contact_modal_item>div>div {
+            display: flex;
+            align-items: center;
+        }   
+        .b2b_contact_modal_item>div>div img {
+            width: 40px;
+            margin-left: 49px;
+        }
+        .url-copy-img{
+            position: relative;
+            cursor: pointer;
+        }
+         .url-copy-img .tooltiptext {
+            visibility: hidden;
+            width: 140px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            bottom: 150%;
+            left:-2%;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+
+        .url-copy-img:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        #b2b_thank_modal {
+            display: none;
+            padding: 53px 58px 54px 59px;
+            border-radius: 24px;
+            background: #FFF;
+            max-width: 450px;
+            margin: auto;
+            width: 80%;
+        }
+        #b2b_thank_modal .b2b_thank_icon {     
+            width: 29px;
+            height: 29px;
+            background: url(https://media.geeksforgeeks.org/auth-dashboard-uploads/is3_20210803.svg.svg);
+            background-position: 3px -1155px;
+            scale: 1.5;
+        }
+        .b2b_thank_container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .b2b_thank_heading{
+            color: #000;
+            font-family: var(--font-primary);
+            font-size: 26px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 62px; /* 238.462% */
+            margin-top: 24px;
+        }
+        .b2b_thank_desc{
+            color: var(--light-mode-light-m-1, #6E6E73);
+            text-align: center;
+            font-family: var(--font-primary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 23px; /* 127.778% */
+            margin-top: 22px;
+        }
+        
+    /*
+        faculty section
+    */
+    .b2b_faculty_section{
+        display: flex;
+        flex-direction: column;
+        padding: 50px 158px 0px 128px;
+        background: #F9FBFC;
+    }
+    .b2b_faculty_heading{
+        color: #000 !important;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-family: var(--font-primary);
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 30px; /* 88.235% */
+    }
+    .b2b_faculty_subheading{
+        margin-top: 20px;
+        width:55%;
+        color: var(--neutral-700, #514F6E) !important;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-family: var(--font-secondary);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px; /* 166.667% */
+    }
+    .b2b_faculty_card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 71px;
+        border-radius: 20px;
+        border: 1px solid var(--neutral-300, #EFF0F6);
+        background: var(--neutral-100, #FFF);
+        box-shadow: 0px 5px 14px 0px rgba(8, 15, 52, 0.04);
+        padding-bottom: 42px;
+    }
+    .b2b_faculty_image_container{
+        margin-top: 41px;
+        max-width:356px;
+    }
+    .faculty_name{
+        margin-top: 30px;
+        color: var(--neutral-800, #170F49);
+        text-align: center;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-family: var(--font-primary);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px; /* 111.111% */
+    }
+    .faculty_designation{
+        margin-top: 6px;
+        color: var(--neutral-600, #6F6C90);
+        text-align: center;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-family: var(--font-secondary);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 111.111% */
+    }
+    .faculty_bio{
+        width: 80%;
+        margin-top:21px;
+        color: var(--neutral-700, #514F6E);
+        text-align: center;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-family: var(--font-secondary);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px; /* 166.667% */
+    }
+    .b2b_faculty_card_collections {
+            display: flex;
+            overflow-x: hidden;
+            flex-wrap: nowrap;
+            width: 100%;
+            scroll-behavior: smooth;
+        }
+
+    .b2b_faculty_card_collections .b2b_faculty_card{
+        min-width: 100%;
+        margin-right: 3.33%;
+    }
+
+
+    /* Mobile view */
+    .b2b_image_container_mobile{
+        display: none;
+    }
+    .b2b_fixed_topbar .b2b_download_btn{
+        margin-bottom: 0px;
+    }
+    @media screen and (max-width: 800px) {
+        .url-copy-img .tooltiptext {
+            left:-164%;
+        }
+        .b2b_third_header>h2{
+            font-size: 22px;
+        }
+        .b2b_contact_modal_item_mail{
+            margin-bottom: 0px;
+        }
+        .download-icon{
+            background-position: 55px -37px;
+        }
+        .b2b_fixed_topbar .b2b_connect_now {
+            margin-left: 6px;
+            padding: 10px;
+        }
+        .b2b_mail_mobile{
+            display: flex !important;
+            align-items: center;
+        }
+        .b2b_mail{
+            display: none !important;
+        }
+        #b2b_contact_modal{
+            max-width: 90%;
+            padding: 6%;
+        }
+        .url-copy-img .tooltiptex{
+            left: -193px;
+        }
+        .b2b_fixed_topbar .b2b_download_btn{
+            margin-right: 6px;
+            margin-bottom: 0px;
+        }
+        .b2b_fixed_topbar > button{
+            font-size: 17px;
+        }
+        .b2b_image_container_mobile{
+            display: block;
+            padding: 0px 35px;
+        }
+        .b2b_image_container_mobile video{
+            width: 100%;
+        }
+        .b2b_image_container{
+            display: none;
+        }
+        .b2b_top_section{
+            padding: 15px;
+            margin-top: 61px;
+        }
+        .b2b_top_section .b2b_text_container{
+            width: 100%;
+        }
+        .b2b_top_section .b2b_heading{
+            color: var(--light-mode-light-h-1, #0E0E12);
+            text-align: center;
+            font-family: var(--font-primary);
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 38px; /* 135.714% */
+            margin-bottom: 12px;
+        }   
+        .b2b_subheading{
+            padding: 0px 9px;
+            text-align: center;
+            margin-bottom: 3px;
+            max-width: 100% !important;
+        }
+        .b2b_button_container{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 35px;
+        }
+        .b2b_button_container .b2b_download_btn{
+            width: 100%;
+            margin-right: 0px;
+            margin-top: 23px;
+            background-color: #FFF;
+            border-radius: 9px;
+            border: 1px solid #41886C;
+            color: #41886C;
+        }
+        .b2b_button_container .b2b_apply_btn{
+            width: 100%;
+            margin-top: 12px;
+            background: var(--primary-grren-500, #41886C);
+            color: #FFF;
+            border: none;
+        }
+        .b2b_second_section{
+            margin-top: 30px;
+            flex-direction: column;
+            padding:56px 6% 56px 6%;
+        }
+        .b2b_second_section>div:first-child {
+            align-items: center;
+        }
+        .b2b_second_section>div {
+            width: 100%;
+        }
+        .b2b_second_section_left_title{
+            color: #000 !important;
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 62px; /* 281.818% */
+        }
+        .b2b_second_section_left_description{
+            color: rgba(0, 0, 0, 0.50) !important;
+            text-align: center;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 160%; /* 28.8px */
+            letter-spacing: 0.36px;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .b2b_second_section>div:last-child{
+            flex-direction: column;
+            margin-top: 30px;
+        }
+        .b2b_second_section_image_container{
+            width: 37px;
+            height: 37px;
+        }
+        .b2b_second_section>div:last-child>div span {
+            color: #000;
+            font-family: var(--font-primary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 62px; /* 344.444% */
+            margin-top: 10px;
+        }
+        .b2b_third_section{
+            padding: 45px 21px 45px 21px;
+        }
+        .b2b_third_header>div:first-child{
+            color: #000;
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 62px; /* 281.818% */
+        }
+        .b2b_third_section{
+            align-items: center;
+        }
+        .b2b_third_header{
+            align-items: center;
+        }
+        .b2b_third_header>div:last-child {
+            color: rgba(0, 0, 0, 0.50);
+            text-align: center;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 150.5%; /* 27.09px */
+            letter-spacing: 0.36px;
+            margin-top: 20px;
+        }
+        .b2b_third_body{
+            margin-top: 45px;
+        }
+        .b2b_third_card_container{
+            width: 100%;
+            padding: 34px 15px 28px 34px;
+            margin-bottom: 12px;
+        }
+        .b2b_third_image_container{
+            margin-bottom: 24px;
+        }
+        .b2b_third_card_heading{
+            color: #101041;
+            font-family: var(--font-primary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-bottom: 9px;
+        }
+        .b2b_third_card_subheading{
+            color: rgba(0, 0, 51, 0.95);
+            font-family: var(--font-secondary);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 26px; /* 162.5% */
+        }
+        .b2b_forth_section{
+            padding: 45px 31px 44px;
+        }
+        .b2b_forth_section_header{
+            margin-bottom: 43px;
+        }
+        .b2b_forth_heading{
+            color: #000 !important;
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 62px; /* 281.818% */
+            margin-bottom: 20px;
+        }
+        .b2b_forth_section_header{
+            text-align: center;
+        }
+        .b2b_forth_subheading{
+            color: rgba(0, 0, 0, 0.50);
+            text-align: center;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 160%; /* 28.8px */
+            letter-spacing: 0.36px;
+        }
+        .b2b_forth_cards_collection{
+            align-items: center;
+        }
+        .b2b_forth_card_container{
+            width: 100%;
+            margin-bottom: 60px;
+        }
+        .b2b_forth_image_container{
+            width: 50px;
+            height: 50px;
+            margin-bottom: 16px;
+        }
+        .b2b_forth_section_line{
+            border-top: 1px solid #DEDEDE;
+            margin-bottom: 16px;
+        }
+        .b2b_forth_card_text_container>h2 {
+            color: #000;
+            font-family: var(--font-primary);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 160%; /* 32px */
+            letter-spacing: 0.4px;
+            margin-bottom: 16px;
+        }
+        .b2b_forth_card_text_container>div {
+            text-align: center;
+            font-family: var(--font-secondary);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%; /* 25.6px */
+            letter-spacing: 0.32px;
+        }
+        .b2b_forth_cards_collection>div:last-child{
+            margin-bottom: 49px;
+        }
+        .b2b_forth_btn_container{
+            margin-top: 0px;
+            padding: 0px 39px;
+        }
+        .b2b_forth_btn_container button{
+            width: 100%;
+        }
+        .b2b_placement_section{
+            padding: 45px 24px 45px 25px;
+        }
+        .b2b_placement_heading{
+            color: #000 !important;
+            text-align: center;
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 25px; /* 113.636% */
+            margin-bottom: 23px;
+            padding: 0px 75px;
+            padding: 0px 7px 0px 6px !important;
+        } 
+        .b2b_placement_subheading{
+            color: rgba(0, 0, 0, 0.50) !important;
+            text-align: center;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 160%; /* 28.8px */
+            letter-spacing: 0.36px;
+            padding: 0px 7px 0px 6px;
+            width: 100%;
+        }
+        .b2b_placement_program_info{
+            top:65px;
+            width:100%;
+        }
+        .b2b_placement_program_body{
+            flex-direction: column-reverse;
+            margin-top:16px;
+        }
+        .b2b_placement_program_card{
+            width: 100%;
+            margin-bottom: 44px;
+            margin-right: 0px;
+        }
+        .b2b_placement_program_img{
+            width: 177.777px;
+            height: 166.394px;
+            margin: auto;
+        }
+        .b2b_placement_program_card>div:first-child{
+            color: #000;
+            font-family: var(--font-primary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 160%; /* 28.8px */
+            letter-spacing: 0.36px;
+        }
+        .b2b_placement_program_card>div:last-child{
+            color: rgba(0, 0, 0, 0.50);
+            font-family: var(--font-secondary);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%; /* 25.6px */
+            letter-spacing: 0.32px;
+        }
+        .b2b_placement_program_info>div:last-child{
+            margin-bottom: 45px;
+        }
+        .b2b_placement_seperator{
+            margin-bottom: 45px;
+        }
+        .b2b_placement_partner .b2b_placement_heading{
+            padding: 0px 67px;
+        }
+        .b2b_certificate_image_container{
+            width: 100% !important;
+            height: 218px;
+            position: relative;
+            left:0;
+            bottom: 0;
+            margin-bottom: 27px;
+            text-align: center;
+        }
+        .b2b_certificate_section{
+            padding: 45px 32px 40px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .b2b_certificate_heading{
+            color: #000 !important;
+            font-family: var(--font-primary);
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 62px; /* 258.333% */
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        .b2b_certificate_subheading{
+            color: rgba(0, 0, 0, 0.50);
+            text-align: center;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 160%; /* 28.8px */
+            letter-spacing: 0.36px;
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        .b2b_certificate_btn_container{
+            width: 100%;
+            height: 42px;
+        }
+        .testimonial_section{
+            padding: 43px 23px 43px 23px;
+        }
+        .testimonial_section_title{
+            color: var(--primary-grren-600, #357960);
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: var(--font-secondary);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 20px; /* 142.857% */
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            justify-content: center;
+            margin-bottom: 9px;
+        }
+        .testimonial_section_title>span:first-child{
+            display: none !important;
+        }
+        .testimonial_section_heading{
+            color: #000 !important;
+            text-align: center;
+            font-family: var(--font-primary);
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal; 
+            margin-bottom: 20px;
+        }
+        .testimonial_section_subheading{
+            color: rgba(0, 0, 0, 0.50);
+            text-align: center;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 160%; /* 28.8px */
+            letter-spacing: 0.36px;
+            padding: 0px 8px;
+            margin-bottom: 25px;
+            max-width: 100%;
+        }
+        .testimonial_card_collection .single_card{
+            padding: 27px 23px 23px 18px;
+        }
+        .testimonial_name_designation_container{
+            color: var(--neutral-800, #170F49);
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: var(--font-primary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 20px; /* 111.111% */
+        }
+        .single_testimonial_words{
+            color: var(--neutral-700, #514F6E);
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px; /* 166.667% */
+        }
+        .placement-company{
+            color: var(--light-mode-light-m-1, #6E6E73);
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px; /* 166.667% */
+        }
+        .testimonial_card_transition_buttons .single_dot, .b2b_case_transition_buttons .single_dot, .faculty_card_transition_buttons .single_dot{
+            height: 7px;
+            width: 7px;
+        }
+
+        .b2b_assistance_section{
+            padding:30px;
+            padding-bottom: 63px;
+        }
+        .b2b_assistance_section>img {
+            width: 28px;
+            height: 42.886px;
+        }
+        .b2b_assistance_section>img:first-of-type {
+            top: 2px;
+            right: 3px;
+        }
+        .b2b_assistance_heading{
+            color: #000 !important;
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 62px; /* 281.818% */
+            margin-bottom: 21px;
+        }
+        .b2b_assistance_subheading{
+            color: rgba(0, 0, 0, 0.50) !important;
+            text-align: center;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 160%; /* 28.8px */
+            letter-spacing: 0.36px;
+        }
+        .b2b_assistance_body{
+            flex-direction: column;
+            margin-top: 45px;
+        }
+        .b2b_assistance_item{
+            width: 100%;
+            margin-top: 36px;
+        }
+        .b2b_assistance_item_icon{
+            width: 23px;
+            height: 23px;
+            background-position: -43px 0px;
+            background-size: 109px;
+        }
+        .b2b_assistance_item_text div:first-child{
+            color: #003;
+            font-family: var(--font-primary);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 30px; /* 150% */
+        }
+        .b2b_assistance_item_text div:last-child{
+            color: var(--light-mode-light-m-1, #6E6E73);
+            font-family: var(--font-secondary);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 30px; /* 187.5% */
+        }
+        .b2b_assistance_body>div:first-child{
+            margin-top: 0px;
+        }
+        .b2b_assistance_section>img:last-of-type{
+            left:0;
+            bottom: 0;
+        }
+        .b2b_journey_section{
+            padding: 70px 47px 0px 47px;
+        }
+        .b2b_journey_header{
+            margin-bottom: 32px;
+        }
+        .b2b_journey_header .b2b_journey_subheading{
+            display: none;
+        }
+        .b2b_journey_header .b2b_journey_heading{
+            color: #000 !important;
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            margin-bottom: 0px;
+        }
+        .b2b_journey_info{
+            flex-direction: column;
+        }
+        .b2b_journey_info>div{
+            margin-right: 0px;
+            margin-bottom: 29px;
+
+            color: var(--primary-grren-500, #41886C);
+            text-align: center;
+            font-family: var(--font-secondary);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+        }
+        .b2b_journey_info>div>img{
+            margin-right: 16px;
+            width: 15px;
+        }
+        .b2b_journey_info>div:last-of-type{
+            margin-bottom: 0px;
+        }
+        .b2b_journey_body{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 43px;
+        }
+        .b2b_jorney_start img{
+            width: 40px;
+        }
+       .b2b_jorney_start{
+        color: #757575;
+        text-align: center;
+        font-family: var(--font-primary);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: capitalize;
+        gap: 10px;
+       }
+       .b2b_journey_steps{
+        flex-direction: row-reverse;
+        width: 100% !important;
+       }
+       .b2b_jouney_part_1{
+        flex-direction: column;
+        gap:160px;
+        width: 45%;
+        height: 969px;
+       }
+       .b2b_journey_single_step{
+        flex-direction: row;
+        margin-left: 15px;
+       }
+       .b2b_jouney_part_1 .b2b_journey_step_circle {
+        bottom: auto;
+        top:0px;
+        z-index: 1;
+        left: -36px;
+       }
+       .b2b_journey_single_step_info{
+        flex-direction: column;
+       }
+       .b2b_journey_single_step_info>span{
+        top:auto;
+        color: #546C62;
+        text-align: center;
+        font-family: var(--font-primary);
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: capitalize;
+        margin-right: 0px;
+       }
+       .b2b_journey_single_step_info>div{
+        color: #757575;
+        text-align: center;
+        font-family: var(--font-primary);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: capitalize;
+       }
+       .b2b_jouney_part_2{
+        flex-direction: column;
+        gap:160px;
+        width: 45%;
+       }
+       .b2b_jouney_part_2 .b2b_journey_step_circle {
+            top: 0px;
+            right: -36px;
+        }
+        .b2b_jouney_part_2 .b2b_journey_single_step{
+            flex-direction: row-reverse;   
+            margin-right: 15px;
+            margin-left: 0px;
+            width: 135px;
+        }
+        .b2b_jouney_line{
+            height: 1053px;
+            width: 32px;
+            margin: 20px auto;
+        }
+        .b2b_jouney_line img{
+            transform: rotate(90deg);
+            width: auto;
+        }
+        .b2b_journey_single_step_info img{
+            height: 37px;
+            margin-bottom: 0px;
+        }
+        .b2b_journey_single_step_info>span {
+            height: auto;
+        }
+        .b2b_crack_interview{
+            color: #757575;
+            text-align: center;
+            font-family: var(--font-primary);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: capitalize;
+            gap:10px;
+        }
+
+        .b2b_crack_interview img {
+            width: 47px;
+        }
+        .b2b_journey_break_line{
+            display: block;
+            height: 1px;
+            width: 90%;
+            background: #C3C3C3;
+            margin-top: 45px;
+        }
+        .b2b_faculty_section{
+            padding: 45px 15px 43px 15px;
+        }
+        .b2b_faculty_heading{
+            text-align: center;
+            color: #000 !important;
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 62px; /* 281.818% */
+        }
+        .b2b_faculty_subheading{
+            color: rgba(0, 0, 0, 0.50) !important;
+            text-align: center;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 160%; /* 28.8px */
+            letter-spacing: 0.36px;
+            margin-top: 20px;
+            width: auto;
+            padding: 0px 16px;
+        }
+        .b2b_faculty_card_collections{
+            margin-top: 22px;
+        }
+        .b2b_faculty_card_collections .b2b_faculty_card{
+            margin-top: 0px;
+            min-width: 100%;
+            margin-right: 3.33%;
+        }
+        
+        .b2b_faculty_image_container{
+            width: 80%;
+        }
+        .b2b_faculty_image_container img{
+            width: 100%;
+            height: 79px;
+        }
+        .b2b_faculty_card{
+            padding-bottom: 37px;
+        }
+        .faculty_name{
+            margin-top: 15px;
+            color: var(--neutral-800, #170F49);
+            text-align: center;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: var(--font-primary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 20px; /* 111.111% */
+        }
+        .faculty_designation{
+            color: var(--neutral-600, #6F6C90);
+            text-align: center;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px; /* 111.111% */
+        }
+        .faculty_bio{
+            color: rgba(0, 0, 0, 0.50);
+            text-align: center;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 160%; /* 28.8px */
+            letter-spacing: 0.36px;
+            margin-top: 29.5px;
+        }
+        .b2b_case_section{
+            padding:0px 31px 43px 31px;
+        }
+        .b2b_case_heading{
+            color: #000;
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 62px; /* 281.818% */
+            margin-bottom: 20px;
+        }
+        .b2b_case_subheading{
+            margin-bottom: 36px;
+            color: rgba(0, 0, 0, 0.50);
+            text-align: center;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 160%; /* 28.8px */
+            letter-spacing: 0.36px;
+        }
+    
+
+        .b2b_case_card{
+            min-width: 100%;
+        }
+        .b2b_case_image_container{
+            display: flex;
+            justify-content: center;
+        }
+        .b2b_case_image_container>img{
+            width: 80%;
+        }
+        .b2b_case_title{
+            color: #000;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 25px; /* 125% */
+            width: 80%;
+        }
+        .b2b_contact_section{
+            padding: 47px 39px 57px 39px;
+        }
+        .b2b_contact_heading{
+            color: #FFF;
+            font-family: var(--font-primary);
+            font-size: 26px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-align: center;
+            margin: 0px;
+            margin-bottom: 55px;
+        }
+        .b2b_contact_field_container{
+            flex-direction: column;
+        }
+        .b2b_contact_field{
+            width: 100%;
+            margin-bottom: 18px;
+        }
+        .b2b_contact_field label{
+            color: #B1B1B1;
+            font-family: var(--font-primary);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+        .b2b_contact_submit_button_container{
+            width: 100%;
+            height: 51px;
+            display: flex;
+            margin-top: 26px;
+        }
+        .b2b_faq_section{
+            padding: 56px 31px 154px 31px;
+            width: auto;
+        }
+        .b2b_faq_heading{
+            text-align: center;
+            color: #000;
+            font-family: var(--font-primary);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 62px; /* 281.818% */
+        }
+        .b2b_faq_header{
+            margin-bottom: 57px;
+        }
+        .b2b_faq_subheading{
+            color: rgba(0, 0, 0, 0.50);
+            text-align: center;
+            font-family: var(--font-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 160%; /* 28.8px */
+            letter-spacing: 0.36px;
+        }
+        .b2b_faq_accordion_container{
+            margin-bottom: 26px;
+        }
+        .b2b_faq_accordion_label{
+            cursor: pointer;
+            color: #003;
+            font-family: var(--font-secondary);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 30px; /* 150% */
+        }
+        .b2b_faq_expanded_text{
+            color: rgba(0, 0, 0, 0.50);
+            font-family: var(--font-secondary);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 160%; /* 25.6px */
+            letter-spacing: 0.32px;
+        }
+        .b2b_fixed_topbar{
+            display: none;
+        }
+        .b2b_partner_scroll{
+            display: flex;
+            animation: none;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: space-around;
+        }
+        .b2b_partner_scroll span{
+            width: 30%;
+            height: 28px;
+            margin-right: 0px;
+            margin-top: 15px;
+        }
+        .b2b_partner_scroll span img{
+            height: 100%;
+            width: 100%;
+        } 
+}
+@media only screen and (min-width:1000px){
+    .b2b_journey_step_data_structure{
+        min-width: 139px;
+    }
+    
+}
+@media only screen and (max-width:360px){
+    .b2b_fixed_topbar .b2b_connect_now{
+        padding: 6px;
+    }
+}
+@media only screen and (max-width:343px){
+    .b2b_subheading, .b2b_image_container_mobile,.b2b_button_container,.b2b_forth_btn_container{
+        padding: 0;
+    }
+    .b2b_second_section_left_title,.b2b_forth_heading,.b2b_assistance_heading,.b2b_faq_heading{
+        line-height: 37px;
+    }
+    .b2b_forth_card_text_container>div:last-child{
+        max-width: 100%;
+    }
+    .b2b_forth_card_container{
+        min-width: 100%;
+    }
+    .b2b_journey_single_step{
+        width: 109px !important;
+    }
+    .b2b_journey_single_step_info{
+        padding-right: 8px;
+    }
+    .b2b_jouney_part_2 .b2b_journey_single_step_info{
+        padding-right: 0px;
+        padding-left: 8px;
+    }
+    .b2b_journey_section{
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    .b2b_jouney_part_1 .b2b_journey_step_circle{
+        left: -35px;
+    }
+    .b2b_jouney_part_2 .b2b_journey_step_circle{
+        right: -35px;
+    }
+    .b2b_top_section{
+        margin-top: 0px;
+    }
+    .b2b_fixed_topbar .b2b_connect_now,.b2b_fixed_topbar .b2b_download_btn span{
+        margin-right: 4px;
+        padding: 6px;
+    }
+    .b2b_download_btn,.b2b_apply_btn{
+        width: 80% !important;
+        font-size: 17px !important;
+    }
+}
+
+
+    
+  
+
+  
+        
+         
+            
+                                
+                    
+                    
+                        Call us at
+                        +91-9591847880
+                    
+                
+                                
+                    
+                    
+                        Connect with us
+                        +91-9591847880
+                    
+                
+                                
+                    
+                    
+                        Mail us at
+                        kshitij.singh@geeksforgeeks.org
+                        
+                            
+                            Copy to clipboard
+                        
+                        
+                    
+                    
+                
+                
+                kshitij.singh@geeksforgeeks.org
+                        
+                            
+                            Copy to clipboard
+                        
+                
+                            
+            
+                
+                    
+                    Thank You
+                    Your submission has been sent. Someone from our team will connect you soon!
+                
+            
+        
+        
+        
+            Contact Now
+            
+                Download Brochure
+                
+                
+            
+        
+                
+            
+                
+                    Placement Training Program
+                
+                
+                    A B2B program that focuses on technical campus training to enable students to become interview ready and employable.                
+                
+                    
+                        
+                    
+                
+                
+                    
+                        
+                            Download Brochure
+                        
+                        
+                        
+                    
+                    
+                        Apply Now
+                    
+                
+            
+
+            
+                
+                    
+                
+            
+        
+                
+            
+                
+                    Assisting Campus Students                
+                
+                    The focus of this program is to equip students with industry-standard methodologies and knowledge to help them become job-ready.                
+            
+            
+                
+                            
+                                
+                            
+                            Interview Centric
+                        
+                            
+                                
+                            
+                            Skill Centric
+                        
+                            
+                                
+                            
+                            Basic Programming
+                                        
+            
+        
+                
+            
+                
+                Features of this Program                
+                
+                    Our exclusive Placement Training Program is designed to provide the students of your college with the competitive edge they need in today's job market.                
+            
+                        
+                   
+                                
+                                    
+                                
+                                Live classes by industry experts
+                                Students get to interact with industry professionals for expert guidance and advice
+                               
+                                
+                                    
+                                
+                                Dedicated doubt assistance
+                                24X7 Assistance by dedicated TAs ensure that students get personalized attention, feedback, and insights
+                               
+                                
+                                    
+                                
+                                LMS with practice questions & quiz
+                                Enhance learning through interactive practice and assessment with our learning management system
+                               
+                                
+                                    
+                                
+                                Project centric learning
+                                Get a better understanding of how factual concepts are implemented in real-life scenarios
+                               
+                                
+                                    
+                                
+                                Real-time interview centric contests
+                                Foster healthy competition among students through coding contests, encouraging them to enhance their problem-solving abilities and coding speed.
+                            
+            
+                    
+                
+            
+                
+                    An advantage to Campus                
+                
+                    Enrolling your campus for this program will help you strengthen your colleges’ reputation, demonstrate better results, build industry connections and help your students become future-technology ready.                
+            
+                        
+                                    
+                        
+                            
+                        
+                        
+                        
+                            
+                                Performance Tracker                            
+                            
+                                Gain insights into your students' progress like never before. Stay informed about their quiz scores, project completion rates, and coding challenges to ensure personalized guidance and tailored support.                            
+                            
+                        
+                    
+                                    
+                        
+                            
+                        
+                        
+                        
+                            
+                                Skill enhancement                            
+                            
+                                Through interactive learning, coding exercises, and hands-on projects, your campus will witness a significant boost in students' proficiency and their readiness to tackle real-world challenges.                            
+                            
+                        
+                    
+                                    
+                        
+                            
+                        
+                        
+                        
+                            
+                                Hiring assistance                            
+                            
+                                From resume building workshops to interview preparation and connecting them with top-tier companies, our program ensures that your campus becomes a launchpad for professional success.                            
+                            
+                        
+                    
+                                    
+                        
+                            
+                        
+                        
+                        
+                            
+                                Key account manager                            
+                            
+                                Our dedicated account manager serves as your direct point of contact, ensuring that your campus's unique needs are understood and catered to.                            
+                            
+                        
+                    
+                                
+            
+                        
+                Apply Now
+            
+        
+    
+
+        
+            
+                Placement Oriented Training Program
+                
+                    Through this program, your campus ensures that students are not just academically strong, but also industry-ready. Our Placement Oriented Training Program is the bridge between classroom learning and professional success                
+                
+                    
+                        
+                        
+                            B2B Business
+                            This collaborative approach paves the way for a mutually beneficial relationship, enhancing your students' education while contributing to your campus's growth.
+                        
+                        
+                        
+                            Upscale your Campus with GfG
+                            Elevate your campus's educational offerings by integrating GeeksforGeeks into your curriculum. Our comprehensive resources, expert guidance, and industry-aligned programs can add immense value to your campus's reputation
+                        
+                        
+                        
+                            Placement Centric
+                            We understand the significance of a strong foundation in technical and soft skills for securing job placements.With our Placement Centric offerings, your campus will become a launchpad for success!
+                        
+                        
+                        
+                            Affordable Prices
+                            We understand the budget constraints that institutions may face, which is why we have tailored our pricing to ensure that even the most cost-conscious campuses can benefit from our offerings.
+                        
+                                            
+                    
+                        
+                    
+                
+            
+            
+                        
+                Our Partner Institutions
+                
+                    We are already revolutionizing education and paving the way for brighter futures in these campuses’. Your college can be the next!                
+                
+                                        
+                        
+                    
+                                        
+                        
+                    
+                                        
+                        
+                    
+                                        
+                        
+                    
+                                        
+                        
+                    
+                                        
+                        
+                    
+                                        
+                        
+                    
+                                        
+                        
+                    
+                                        
+                        
+                    
+                                        
+                        
+                    
+                                        
+                        
+                    
+                                    
+            
+           
+            
+            Certificate
+            Get job-ready with affordable, career-aligned training programs taught by expert instructors from top companies and universities. Start pursuing your career dreams today with our program and get GeeksforGeeks certified
+            
+                
+            
+            
+                Direct Call
+            
+        
+            
+            Testimonials
+            Hear what our students say
+            Find GeeksforGeeks alumni profiles and hear what they say about GeekforGeeks courses!            
+            
+                                
+                    
+                        
+                            
+                        
+                        
+                            Nikhil Isaac                        
+                    
+                    
+                        Geeks for Geeks' DSA course has been an absolute game-changer for my career. As an electronics engineering student aspiring to land an internship at a FAANG company, I knew I needed to strengthen my data structures and programming algorithms skills. This course provided the comprehensive and structured learning I was seeking                    
+                    
+                
+                                
+                    
+                        
+                            
+                        
+                        
+                            Sarvesh Chavan                        
+                    
+                    
+                        The GFG DSA course exceeded my expectations. The content is well-structured, with clear explanations and relevant examples. Thank you GeeksforGeeks for amazing content. The interactive approach truly enhances learning. Overall, it's a great course for mastering Data Structures and Algorithms.                    
+                    
+                
+                                
+                    
+                        
+                            
+                        
+                        
+                            Pranav Masekar                        
+                    
+                    
+                        The DSA course was comprehensive and well-structured, covering essential data structures and algorithms. The instructors provided clear explanations and practical examples, making it easy to understand and apply the concepts. The course greatly improved my problem-solving skills and prepared me for coding interviews. Highly recommended!                    
+                    
+                
+                                
+                    
+                        
+                            
+                        
+                        
+                            Apoorva Chauhan                        
+                    
+                    
+                        I usually read from this app when I cannot use my laptop. Useful App to Learn DS & Algo, Programming while travelling. It has access to all content I can read from my laptop and is....                    
+                    
+                
+                                
+                    
+                        
+                            
+                        
+                        
+                            Ajit Pawar                        
+                    
+                    
+                        I recently completed the online DSA (Data Structures and Algorithms) course, and I must say it was an exceptional learning experience. The course was well-structured, comprehensive, and delivered with utmost professionalism. I would like to express my sincere appreciation for the incredible effort put in by the instructors and the entire course team.                    
+                    
+                
+                                
+                    
+                        
+                            
+                        
+                        
+                            Susmit Garudkar                        
+                    
+                    
+                        The course is very organised and i am able to learn and revised all the things that are needed for placements is efficient manne                    
+                    
+                
+                                
+                    
+                        
+                            
+                        
+                        
+                            Pratiksha Kadam                        
+                    
+                    
+                        GeeksforGeeks have very helpful course for all the students who want to know about DSA in details                    
+                    
+                
+                
+            
+            
+            
+        
+            
+            
+            
+            
+                Hiring assistance with GfG            
+            
+                We collaborate closely with campuses to understand their unique needs, curricula, and student profiles. Leveraging our extensive industry network, we connect students with leading companies actively seeking fresh talent.            
+            
+                                
+                    
+                    
+                    
+                        GFG Recruitment Platform
+                        Empowering tech talent to connect with top companies and unlock their career potential
+                    
+                
+                                
+                    
+                    
+                    
+                        Monthly Job-A-Thon
+                        Monthly hiring challenges providing access to multiple job openings via a single contest
+                    
+                
+                                
+                    
+                    
+                    
+                        Job Fair
+                        Free job fair where hundreds of companies are invited with multiple job openings for students
+                    
+                
+                                
+                    
+                    
+                    
+                        Placement Assistance
+                        Dedicated placement cell aimed at assisting students with their job applications process
+                    
+                
+                            
+
+        
+            
+            
+                
+                    Learning Journey                
+                
+                     With us, the journey is just as rewarding as the destination! Have a look at what the students will experience-                
+            
+            
+                            
+                    
+                    Training Program
+                
+                            
+                    
+                    Access to Contests
+                
+                            
+                    
+                    Access to Hiring Partners
+                
+                        
+            
+                
+                    
+                    Start Here
+                
+
+                
+                    
+                        
+                            
+                                
+                                    01
+                                
+                                
+                                    
+                                    Programming Languages
+                                
+                            
+                            
+                        
+
+                        
+                            
+                                
+                                    03
+                                
+                                
+                                    
+                                    Live Sessions
+                                
+                            
+                            
+                        
+
+                        
+                            
+                                
+                                    05
+                                
+                                
+                                    
+                                    Assessment Tests
+                                
+                            
+                            
+                        
+
+                        
+                            
+                                
+                                    07
+                                
+                                
+                                    
+                                    Get a SDE Role
+                                
+                            
+                            
+                        
+                        
+                    
+                    
+                        
+                    
+                    
+                        
+                        
+                            
+                                
+                                    02
+                                
+                                
+                                    
+                                    Data Structures & Algorithms
+                                
+                            
+                            
+                        
+                        
+                            
+                                
+                                    04
+                                
+                                
+                                    
+                                    Practice Questions
+                                
+                            
+                            
+                        
+                        
+                            
+                                
+                                    06
+                                
+                                
+                                    
+                                    Placement Assistance
+                                
+                            
+                            
+                        
+    
+                    
+
+                
+
+                
+                    
+                    Crack Interview
+                
+                
+            
+        
+            
+            Contact Us
+            
+                
+                    
+                        First Name*
+                          
+                    
+                    
+                        Last Name*
+                          
+                    
+                    
+                        Email Address*
+                          
+                    
+                    
+                        Mobile Number*
+                          
+                    
+                    
+                        Designation*
+                          
+                    
+                    
+                        Institute*
+                          
+                    
+                
+                *This form is exclusively filled by the Training & Placement Department or the Faculty Members of the College.
+                
+                    Submit
+                
+            
+        
+            
+            
+                
+                    Frequently Asked Question                
+                
+                Questions you might have about our products and services                
+            
+            
+                                
+                    
+                        How would this training program be helpful in placements?
+                        
+                    
+                    
+                    This training program is designed in such a way that every candidate would be prepared on industry relevant requirements. Expert mentors would help each and every candidate and will ensure their learning curve is growing extensively.                    
+                
+                                
+                    
+                        Who are eligible for this training program?
+                        
+                    
+                    
+                    Students who wants to get into product based companies (from 3rd Semester till 7th Semester) and targeting software developer roles can be part of this training program.                    
+                
+                                
+                    
+                        How is this training program is different?
+                        
+                    
+                    
+                    GeeksforGeeks offers lots of perks to the universities and institutions with this training program like: 24*7 Doubt Support, LIVE Classes from Industry Experts, LMS access to stakeholders for performance tracking, Placement Assistance etc.                    
+                
+                                
+                    
+                        How the curriculum is designed for the training program?
+                        
+                    
+                    
+                    We design the curriculum according to the university or an individual institution requirement. Also, we provide our curriculum which is curated by industry experts and mentors.                    
+                
+                                
+                    
+                        Do you provide certification to the students over the completion of this training program?
+                        
+                    
+                    
+                    Yes, GeeksforGeeks provides certification after the completion of the training program.                    
+                
+                               
+            
+        
+        
+
+
+    
+
+
+        .grecaptcha-badge {
+            visibility: hidden !important;
+        }
+        .thank-you-message {
+            height: 100%;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .thank-you-message-content {
+            margin-top: 17px;
+            font: 400 20px var(--font-secondary);
+            color: var(--improve-modal-text);
+            line-height: 180%;
+            text-align: center;
+        }
+        
+        .thank-you-message-content h2{
+          font-family: var(--font-secondary);
+        }
+        .all-footer-information{
+          width: 100% !important;
+          height: fit-content;
+        }
+        .footer-wrapper_links-list{
+           margin-block-start: 0em !important;
+           width: 16% !important; 
+           padding-inline-start: 18px !important;
+        }
+        .link-head{
+          margin-bottom: 0px;
+        }
+        .footer-wrapper_branding{
+          height: fit-content;
+        }
+        .footer-wrapper_branding-social{
+          height: fit-content;
+        }
+       .advertise-block{
+           display: block  !important;
+          }
+        @media only screen and (max-width:1340px) {
+              .footer-wrapper_links-list{
+              overflow-wrap: break-word;
+          }
+        }
+        @media screen and (min-width: 991px)  {
+              .all-footer-information{
+                padding-left:15px;
+                height: fit-content;
+            }
+              .footer-wrapper_branding-app{
+                display: flex !important;
+                margin: 22px 0 0 20px;
+          }
+        }
+        @media only screen and (max-width:980px) {
+          .footer-wrapper_branding-address{
+               padding-top: 10px;
+          }
+        }
+        @media (max-width: 750px) {
+            .thank-you-message-content{
+                font-size: 14px;
+                line-height: 170%;
+            }
+        }
+        @media only screen and (max-width:991px) {
+          .footer-wrapper_branding-app-wrapper{
+               display: block !important;
+               margin: auto !important;
+               max-height: none !important;
+            }
+        }
+        @media (min-width: 991px) and (max-width: 1046px) {
+          .footer-wrapper_branding-app-wrapper{
+               display: block !important;
+               max-height: none !important;
+            }
+          .footer-wrapper_branding-app{
+            margin: 22px 0 0 6px !important;
+            }
+        }
+
+        /* CSS variable meant to handle the dark and light mode icon for three 90 event in header courses dropdown */
+        :root{
+          --three90headericon : url('https://media.geeksforgeeks.org/auth-dashboard-uploads/three90daylogocompressed.svg');
+          --three90headericonposition : 0px -40px;
+          --three90leftbarimggrid : url('https://media.geeksforgeeks.org/auth-dashboard-uploads/three90leftbarspritecompressed.svg');
+          --three90leftbarimgposition : -5px -55px;
+          --three90leftbarbgcolour : #b3abd0;
+        }
+
+        body[data-dark-mode="true"]{
+          --three90leftbarimgposition : -6px 1px;
+          --three90headericonposition : 0px 0px;
+          --three90leftbarbgcolour: #8c82b9;
+        }
+
+        .three90leftbarimg{
+          margin-left: -5px;
+          height: 30px;
+          background-image: var(--three90leftbarimggrid);
+          background-repeat: no-repeat;
+          background-position: var(--three90leftbarimgposition);
+          background-size: 212px;
+        }
+
+        .courseTabShimmer{
+          position: absolute;
+          height: 110%;
+          width: 0;
+          opacity: .7;
+          -webkit-animation: courseShimmer 2s cubic-bezier(0,0,.07,.61) infinite;
+          animation: courseShimmer 2s cubic-bezier(0,0,.07,.61) infinite;
+          box-shadow: 0 0 25px 5px #dddcdc;
+          -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+          padding:0px !important;
+          border:unset !important;
+        }
+
+        @keyframes courseShimmer{
+          0% {
+              left: 0;
+          }
+          55% {
+              left: 100%;
+          }
+          99% {
+              left: 110%;
+          }
+        }
+
+
+
+
+	
+  
+    
+      
+      
+        
+        
+        
+            
+              
+                
+              
+            
+        
+      
+    
+    
+  
+  
+  
+
+
+
+
+
+
+
+
+
+   
+   
+
+
+
+
+
+
+
+
+
+
+/* Temporary CSS for Three90 pop up modal (START)*/
+    .three90popup__container {
+      width: 100vw;
+      height: 100vh; 
+      position: fixed;
+      top:0px;
+      background: var(--job-tab-faded-background);
+      z-index: 1024;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .three90modal__wrapper{
+      background-color: white;
+      max-width: 350px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      overflow: hidden;
+
+    }
+    .three90modal__message-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: var(--font-primary);
+    }
+    .three90modal__subheading {
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: 600;
+    }
+    .three90modal__text-message {
+      margin-top: 20px;
+      font-size: 15px;
+      font-weight: 400;
+      text-align: center;
+      padding: 0 5px;
+    }
+    .three90__modal__button-wrapper {
+      width: 100%;
+      padding: 20px 0px;
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .three90__modal__button-wrapper > button {
+      width: 105px;
+      height: 35px;
+      border-radius: 13px;
+      border:none;
+      font-weight: 600;
+      cursor: pointer;
+    } 
+    #three90__modal-close-btn:hover {
+      background-color: #cacbcd;
+    }
+    #three90__modal-explore-btn {
+      background-color: #0a0727;
+      color: white
+    }
+
+    @media screen and (max-width: 441px) {
+      .three90modal__wrapper {
+        max-width: 300px;
+      }
+    }
+
+  /* Temporary CSS for Three90 pop up modal (END)*/
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    :root {
+        --com-extra-icons-mobile-image: url(https://media.geeksforgeeks.org/auth-dashboard-uploads/Com-Extra-Icons13.svg);
+        --write-experience-card-1: #ECF5F5;
+        --write-experience-card-icon-1: #21898C;
+        --write-experience-card-2: #EAF2F7;
+        --write-experience-card-icon-2: #3079AC;
+        --write-experience-card-3: #FDEFE6;
+        --write-experience-card-icon-3: #F5A572;
+        --write-experience-card-4: #F1F8F5;
+        --write-experience-card-icon-4: #91C4AD;
+        --write-experience-card-5: #EEE7FF;
+        --write-experience-card-icon-5: #8B72C9;
+        --write-experience-card-6: #F2F8E6;
+        --write-experience-card-icon-6: #78C57F;
+        --editor-button-text-color: #6E6E73;
+        --write-modal-background: #fefefe;
+        --experience-sidebar: #000;
+        --left-bar-background: #FFFFFF;
+        --write-redirect-container:#EAF2F7;
+        --write-redirect-container-hover:#d6e7f2;
+        
+    }
+
+    /* Dark Mode */
+    body[data-dark-mode="true"] {
+        --write-modal-background: #161c23;
+        --experience-sidebar: #000;
+        --left-bar-background: #F0F3F5;
+    }
+
+    .popup-main {
+        padding: 20px 18px 20px 18px;
+        border-radius: 8px;
+    }
+
+    .popup-main .popup-heading {
+        display: flex;
+        align-items: center;
+        color: #E9E9EA;
+        margin-bottom: 10px;
+        justify-content: space-between;
+    }
+
+    .popup-main .close-icon {
+        background-image: var(--com-extra-icons-mobile-image);background-position: -15px -1651px;height: 22px;width: 22px;transform: scale(1);
+        margin-bottom: 12px;
+        cursor: pointer;
+    }
+
+    .popup-main .experience-card {
+        color: #000;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        /* margin-bottom:10px; */
+    }
+
+    .popup-main a:hover,
+    .popup-main a:active,
+    .popup-main a:visited {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .popup-main .exp-card1,
+    .popup-main .exp-card2,
+    .popup-main .exp-card3,
+    .popup-main .exp-card4,
+    .popup-main .exp-card5,
+    .popup-main .exp-card6 {
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .popup-main .exp-card1 .icon1,
+    .popup-main .exp-card2 .icon2,
+    .popup-main .exp-card3 .icon3,
+    .popup-main .exp-card4 .icon4,
+    .popup-main .exp-card5 .icon5,
+    .popup-main .exp-card6 .icon6 {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px 0px 0px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--write-experience-card-icon-1);
+    }
+
+    .popup-main .exp-card1 .icon1,
+    .popup-main .exp-card2 .icon2,
+    .popup-main .exp-card3 .icon3,
+    .popup-main .exp-card4 .icon4,
+    .popup-main .exp-card5 .icon5,
+    .popup-main .exp-card6 .icon6 {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px 0px 0px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .popup-main .exp-card1 .icon1 {
+        background: var(--write-experience-card-icon-1);
+    }
+
+    .popup-main .exp-card2 .icon2 {
+        background: var(--write-experience-card-icon-2);
+    }
+
+    .popup-main .exp-card3 .icon3 {
+        background: var(--write-experience-card-icon-3);
+    }
+
+    .popup-main .exp-card4 .icon4 {
+        background: var(--write-experience-card-icon-4);
+    }
+
+    .popup-main .exp-card5 .icon5 {
+        background: var(--write-experience-card-icon-5);
+    }
+
+    .popup-main .exp-card6 .icon6 {
+        background: var(--write-experience-card-icon-6);
+    }
+
+    .popup-main .exp-card6 .icon6-image {
+        background-image: url(https://media.geeksforgeeks.org/auth-dashboard-uploads/compass.svg);
+        width: 46px;
+        height: 30px;
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .popup-main .exp-card1 .icon1-image {
+        background-image: var(--com-extra-icons-mobile-image);
+        width: 46px;
+        height: 28px;
+        background-position: -4px -812px;
+    }
+
+    .popup-main .exp-card2 .icon2-image {
+        background-image: var(--com-extra-icons-mobile-image);
+        width: 46px;
+        height: 28px;
+        background-position: -4px -888px;
+    }
+
+    .popup-main .exp-card3 .icon3-image {
+        background-image: var(--com-extra-icons-mobile-image);
+        width: 46px;
+        height: 28px;
+        background-position: -4px -848px;
+    }
+
+    .popup-main .exp-card4 .icon4-image {
+        background-image: url(https://media.geeksforgeeks.org/auth-dashboard-uploads/competitive.svg);
+        width: 46px;
+        height: 30px;
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .popup-main .exp-card5 .icon5-image {
+        background-image: var(--com-extra-icons-mobile-image);
+        width: 46px;
+        height: 33px;
+        background-position: -4px -1217px;
+    }
+
+
+    .popup-main .exp-card1 .exp-card1-text,
+    .popup-main .exp-card2 .exp-card2-text,
+    .popup-main .exp-card3 .exp-card3-text,
+    .popup-main .exp-card4 .exp-card4-text,
+    .popup-main .exp-card5 .exp-card5-text,
+    .popup-main .exp-card6 .exp-card6-text {
+        display: flex;
+        align-items: center;
+        border-radius: 0px 10px 10px 0px;
+        height: 80px;
+        width: calc(100% - 80px);
+    }
+
+    .popup-main .exp-card1 {
+        justify-content: flex-start;
+        background: var(--write-experience-card-1);
+    }
+
+    .popup-main .exp-card2 {
+        justify-content: flex-start;
+        background: var(--write-experience-card-2);
+    }
+
+    .popup-main .exp-card3 {
+        justify-content: flex-start;
+        background: var(--write-experience-card-3);
+    }
+
+    .popup-main .exp-card4 {
+        justify-content: flex-start;
+        background: var(--write-experience-card-4);
+    }
+
+    .popup-main .exp-card5 {
+        justify-content: flex-start;
+        background: var(--write-experience-card-5);
+    }
+
+    .popup-main .exp-card6 {
+        justify-content: flex-start;
+        background: var(--write-experience-card-6);
+    }
+
+    .popup-main span {
+        font-family: var(--font-primary);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    #popup {
+        display: none;
+        background-color: var(--write-modal-background);
+        padding: 20px;
+        text-align: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1026;
+        width: min(650px, calc(100% - 20px));
+    }
+    .link-container-write{
+        display:flex;
+        flex-direction:column;
+    }
+    .link-container-write > a {
+        margin:7px 0px;
+    }
+    .phrase__container{
+        color:var(--color-gfg);
+        border-radius: 6px;
+        width: 100%;
+        background-color:var(--write-redirect-container);
+        padding: 15px;
+        text-align: justify;
+        font-size:14px;
+    }
+    .phrase__container:hover {
+        color:var(--color-gfg) !important;
+        background-color:var(--write-redirect-container-hover);
+    }
+
+
+        
+            
+                What kind of Experience do you want to share?
+                
+            
+            
+            
+                
+                    
+                        
+                    
+                    
+                        Interview Experiences
+                    
+                
+                
+                    
+                        
+                    
+                    
+                        Admission Experiences
+                    
+                
+                
+                    
+                        
+                    
+                    
+                        Career Journeys
+                    
+                
+                
+                    
+                        
+                    
+                    
+                        Work Experiences
+                    
+                
+                
+                    
+                        
+                    
+                    
+                        Campus Experiences
+                    
+                
+                
+                    
+                        
+                    
+                    
+                        Competitive Exam Experiences

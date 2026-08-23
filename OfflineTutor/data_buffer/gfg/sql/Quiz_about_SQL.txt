@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsSQLLast Updated : DiscussCommentsQuestion 1Table A:Table B: Table C: Consider the above tables A, B and C. How many tuples does the result of the following SQL query contains? SELECT A.id 
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsSQLLast Updated : DiscussCommentsQuestion 1Table A:Table B: Table C: Consider the above tables A, B and C. How many tuples does the result of the following SQL query contains? SELECT A.id 
 FROM   A 
 WHERE  A.age > ALL (SELECT B.age 
                     FROM   B 

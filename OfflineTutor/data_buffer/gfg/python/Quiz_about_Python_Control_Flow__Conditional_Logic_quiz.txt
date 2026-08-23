@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython Control Flow & Conditional Logic quizLast Updated : DiscussCommentsQuestion 1What is the purpose of the if statement in Python? To define a functionTo declare a variableTo execute a block of code conditionally To create a loopQuestion 2Which of the following operators is used for equality comparison in Python?=== ===>Question 3What will be the output of the following code snippet?
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython Control Flow & Conditional Logic quizLast Updated : DiscussCommentsQuestion 1What is the purpose of the if statement in Python? To define a functionTo declare a variableTo execute a block of code conditionally To create a loopQuestion 2Which of the following operators is used for equality comparison in Python?=== ===>Question 3What will be the output of the following code snippet?
         Python
         
         x = 5

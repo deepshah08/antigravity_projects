@@ -1,0 +1,47 @@
+# Sort students by marks in Java - GeeksforGeeks
+
+The arrays roll[] and marks[] store student roll numbers and their corresponding marks. The objective is to reorder the roll numbers such that they follow the descending order of marks, while maintaining the correct roll-marks association.Example:Input: roll[] = {101, 108, 103, 105}, marks[] = {70, 80, 40, 90}Output: {105, 108, 101, 103}Explanation: After sorting marks[] in decreasing order as {90, 80, 70, 40}, the corresponding roll[] values are rearranged to {105, 108, 101, 103} respectively.ApproachFollow these steps to solve the problem efficiently:Create a custom Student class to store marks and the corresponding roll number togetherTraverse both arrays and store each marks–roll pair as a Student object in an ArrayListSort the list using Collections.sort() based on marks in decreasing orderTraverse the sorted list and print the roll numbers in the new order based on marks
+            Java
+
+    import java.util.*;
+
+class Student {
+    int marks;
+    int roll;
+
+    Student(int marks, int roll) {
+        this.marks = marks;
+        this.roll = roll;
+    }
+}
+
+class GFG {
+
+    static void sortRollByMarks(int[] roll, int[] marks) {
+        int n = roll.length;
+
+        ArrayList<Student> list = new ArrayList<>();
+
+        // Create pairs of marks and roll numbers
+        for (int i = 0; i < n; i++) {
+            list.add(new Student(marks[i], roll[i]));
+        }
+
+        // Sort by marks in decreasing order
+        Collections.sort(list, (a, b) -> b.marks - a.marks);
+
+        // Print sorted roll numbers
+        for (Student s : list) {
+            System.out.print(s.roll + " ");
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] roll = {101, 108, 103, 105};
+        int[] marks = {70, 80, 40, 90};
+
+        sortRollByMarks(roll, marks);
+    }
+}
+
+Output105 108 101 103 Time Complexity: O(N log N), where N is the number of students.Space Complexity: O(N) due to the ArrayList storing the student objects.

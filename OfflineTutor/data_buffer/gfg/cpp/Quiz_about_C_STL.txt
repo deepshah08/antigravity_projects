@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsC++ STLLast Updated : DiscussCommentsQuestion 1What is the primary purpose of the C++ Standard Template Library (STL)?To provide low-level access to hardwareTo offer a collection of pre-built, generic data structures and algorithms.To replace the need for manual memory managementTo enable object-oriented programming in C++.Question 2Which of the following is not a component of the Standard Template Library (STL) in C++?ContainersIteratorsClassesAlgorithmsQuestion 3How is the std::map class implemented in C++?As a linked listAs an arrayAs a red-black treeAs a hash tableQuestion 4What will happen when using at() with non-existing key?
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsC++ STLLast Updated : DiscussCommentsQuestion 1What is the primary purpose of the C++ Standard Template Library (STL)?To provide low-level access to hardwareTo offer a collection of pre-built, generic data structures and algorithms.To replace the need for manual memory managementTo enable object-oriented programming in C++.Question 2Which of the following is not a component of the Standard Template Library (STL) in C++?ContainersIteratorsClassesAlgorithmsQuestion 3How is the std::map class implemented in C++?As a linked listAs an arrayAs a red-black treeAs a hash tableQuestion 4What will happen when using at() with non-existing key?
         C++
         
         map<int,int> m;

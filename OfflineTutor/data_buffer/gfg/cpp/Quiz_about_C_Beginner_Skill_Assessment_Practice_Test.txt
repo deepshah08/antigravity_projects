@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsC++ Beginner Skill Assessment Practice TestLast Updated : DiscussCommentsQuestion 1What is the file extension for a C++ source file?.c.cpp.h.exeQuestion 2Which among the following symbol is used to comment a single line in C++?#/*//\\Question 3What is the output of the following C++ code?
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsC++ Beginner Skill Assessment Practice TestLast Updated : DiscussCommentsQuestion 1What is the file extension for a C++ source file?.c.cpp.h.exeQuestion 2Which among the following symbol is used to comment a single line in C++?#/*//\\Question 3What is the output of the following C++ code?
         C++
         
         #include <iostream>
