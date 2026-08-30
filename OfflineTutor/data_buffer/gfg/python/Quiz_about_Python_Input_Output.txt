@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython Input OutputLast Updated : DiscussCommentsQuestion 1Find the output of the below python code:
+    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython Input OutputLast Updated : DiscussCommentsQuestion 1Find the output of the below python code:
         Python
         
         print("GFG ")

@@ -1,41 +1,24 @@
 # Vector in C++ STL - GeeksforGeeks
 
-A vector represents a dynamic sized array in the Standard Template Library(STL) that automatically grows when elements are added beyond current capacity.A programmer does not have to worry about maintaining the capacity and allocating extra space initially.Certain insertions and removals can become slightly costly in terms of time as it internally resizes itself beyond certain predefined limits. If time taken for these operations is super critical, then use of plain arrays in C++ should be preferred.Vectors support bound checking by using v.at(i) for accessing an element at index i in a vector v. 
+A vector in C++ is a dynamic sequence container provided by the Standard Template Library (STL). It stores elements in contiguous memory and automatically manages its storage as elements are added or removed.Vectors can dynamically grow or shrink during program execution.They provide constant-time random access and support efficient insertion and deletion at the end.
             C++
 
     #include <iostream>
 #include <vector>
 using namespace std;
-int main() {
-    
-    // Declares an empty vector
-    vector<int> v1;
-    
-    // Declares vector with given size
-    // and fills it with a value
-    vector<int> v2(3, 5);  
-    
-    // Print items of v2
-    for (int x : v2) {
-        cout << x << " ";
-    }
-    
-    cout << endl;
-    
-    // Initializes vector using 
-    // initializer list.
-    vector<int> v3 = {1, 2, 3};  
-    
-    // Print items of v3
-    for (int x : v3) {
-        cout << x << " ";
-    }
-    
-    return 0;
-}
 
-Output5 5 5 
-1 2 3 Declaration and Initialization of a Vector A vector is defined as the std::vector class template in the <vector> header file.vector<T> v;where T is the data type of elements and v is the name assigned to the vector.Operations in VectorVectors in C++ support various useful operations that allow you to add, remove, access, and modify elements dynamically.Insert Elementspush_back(value): Inserts element at the end of the vector efficiently. Takes constant time O(1) on average, so it's very fast.insert(position, value): Inserts element at any position (beginning, middle, or end). Takes linear time O(n), as it shifts elements to make space.
+int main()
+{
+    vector<int> v = {10, 20, 30, 40};
+
+    for (int x : v) {
+        cout << x << " ";
+    }
+
+    return 0;
+}  
+
+Output10 20 30 40 Declaration and InitializationThe vector class template is defined in the <vector> header file.Syntaxvector<T> v;where:T is the data type of the elements.v is the name of the vector.Operations on a VectorC++ vectors provide several functions to insert, access, modify, and remove elements.Insert ElementsThe push_back() function adds an element at the end of a vector, while insert() adds an element at a specified position.push_back(value): Inserts element at the end of the vector efficiently. Takes constant time O(1) on average, so it's very fast.insert(position, value): Inserts element at any position (beginning, middle, or end). Takes linear time O(n), as it shifts elements to make space.
             C++
 
     #include <iostream>
@@ -56,7 +39,7 @@ int main() {
     return 0;
 }
 
-Outputa c f d z Access elementsWe can access elements in a vector using v[i] for direct access or v.at(i) for bounds-checked access.Both return the element at index i, but at(i) throws an exception if i is out of range.It takes constant time O(1) on average, so it's very fast.
+Outputa c f d z Access elementsVector elements can be accessed using the subscript operator [] or the at() function.v[i] provides direct access without bounds checking.v.at(i) performs bounds checking and throws std::out_of_range if the index is invalid.Both provide constant-time O(1) access.
             C++
 
     #include <iostream>
@@ -81,7 +64,7 @@ int main()
 
 OutputElement at index 2 using []: 30
 Element at index 3 using at(): 40
-Update elementsTo update an element, you simply use its index with the assignment operator, for example v[i]=newValue;This replaces the old element at index i with the new value you want.
+Update elementsAn existing element can be modified using its index and the assignment operator.To update an element, you simply use its index with the assignment operator, for example v[i]=newValue;This replaces the old element at index i with the new value you want.
             C++
 
     #include <iostream>
@@ -103,7 +86,7 @@ int main()
 
 OutputOriginal value at index 1: 20
 Updated value at index 1: 50
-Find Vector SizeWe can find the size(number of elements) of a vector using the size() function, like v.size(). 
+Find Vector SizeThe size() function returns the number of elements currently stored in a vector.
             C++
 
     #include <iostream>
@@ -119,7 +102,7 @@ int main() {
     return 0;
 }
 
-Output5Traverse VectorTraversing a vector means going through each element one by one, usually using a loop.We can use a for loop with an index (v[i]), a range-based for loop (for(int x: v)), or iterators.It takes linear time O(n) .
+Output5Traverse VectorTraversing a vector means visiting its elements one by one. A vector can be traversed using an index-based loop, a range-based loop, or iterators.Traversing a vector means going through each element one by one, usually using a loop.We can use a for loop with an index (v[i]), a range-based for loop (for(int x: v)), or iterators.It takes linear time O(n) .
             C++
 
     #include <iostream>
@@ -135,7 +118,7 @@ int main() {
     return 0;
 }
 
-Outputa c f d z Recommendation:Use "for (char &x : v)" when you want to modify the elements of the vector. Use "for (const char &x : v)" for read-only access, as it avoids copying and improves efficiency.Delete ElementsElements can be deleted from a vector using erase(), which requires an iterator pointing to the element. It takes linear time O(n) because all elements after the erased one need to be shifted.To remove the last element efficiently, use pop_back() . It takes constant time O(1) on average, so it's very fast.
+Outputa c f d z Note:Use "for (char &x : v)" when you want to modify the elements of the vector. Use "for (const char &x : v)" for read-only access, as it avoids copying and improves efficiency.Delete ElementsThe erase() function removes an element or a range of elements, while pop_back() removes the last element.erase() generally takes O(n) time because elements after the erased position may need to be shifted.pop_back() removes the last element in O(1) time.
             C++
 
     #include <iostream>
@@ -158,7 +141,7 @@ int main() {
     return 0;
 }
 
-Outputa c d Vector is EmptyTo check if the vector is empty we use empty() function. It returns true if the vector has no elements ,and false otherwise. This is useful before accessing or modifying the vector to avoid errors.
+Outputa c d Check Whether a Vector is EmptyThe empty() function checks whether a vector contains any elements. It returns true if the vector is empty and false otherwise.
             C++
 
     #include <iostream>
@@ -184,7 +167,7 @@ int main() {
 
 OutputVector is empty.
 Vector is not empty. First element 100
-Multidimensional VectorsMultidimensional vectors are dynamic arrays that can store data in more than one dimension, like tables or grids. They are implemented using vector inside another vector, allowing flexible row-column (2D), or even higher-dimensional structures.Syntax to declare a 2D vector:vector<vector<int>> matrix;Below is an example of creating a 2D vector and traversing over it:
+Multidimensional VectorsMultidimensional vectors are dynamic arrays that can store data in more than one dimension, like tables or grids. They are implemented using vector inside another vector, allowing flexible row-column (2D), or even higher-dimensional structures.Syntax to declare a 2D vector:vector<vector<int>> matrix;
             C++
 
     #include <iostream>
@@ -211,4 +194,5 @@ int main() {
 
 Output1 2 3 
 4 5 6 
-7 8 9
+7 8 9 
+Advantages of VectorVectors provide several advantages:Dynamic Size: The size can change during program execution.Random Access: Elements can be accessed directly using an index in O(1) time.Automatic Storage Management: The vector automatically manages its underlying storage.STL Compatibility: Vectors work with STL algorithms, iterators, and other containers.

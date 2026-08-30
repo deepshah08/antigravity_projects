@@ -1,0 +1,182 @@
+# typedef in C++ - GeeksforGeeks
+
+The typedef keyword in C++ is used to create an alias (alternative name) for an existing data type. It helps simplify complex type declarations and improves code readability by allowing shorter and more meaningful type names.Can be used with built-in types, user-defined types, arrays, pointers, and function pointers. Helps make lengthy type declarations easier to read and maintain. Commonly used when a type name is frequently repeated in the code.
+            C++
+
+    #include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    
+    // Giving new name 
+    // of vector<int>
+    typedef vector<int> vInt;
+
+    // vec1 is a vector of 
+    // type int
+    vInt v;
+
+    v.push_back(190);
+    v.push_back(180);
+    v.push_back(10);
+    v.push_back(10);
+    v.push_back(27);
+
+    for (auto X : v) {
+        cout << X << " ";
+    }
+    return 0;
+}
+
+Output190 180 10 10 27 Explanationtypedef vector<int> vInt; creates vInt as an alias for vector<int>. The alias can be used anywhere vector<int> is required. This reduces code verbosity and improves readability.Syntaxtypedef current_name new_namApplications of typedef in C++The typedef keyword can be used in a variety of scenarios to simplify type declarations and improve code readability. Common applications include built-in data types, STL containers, arrays, pointers, and function pointers.Using typedef with Built-in Data Typestypedef can be used to create aliases for built-in data types such as int, char, float, and their variants like long, short, signed, and unsigned. This can make code easier to read, especially when working with lengthy type names.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+int main() {
+    
+    // Giving the new name to
+    // predefined data type
+    typedef long long ulli;
+    
+    // ulli used to make
+    // long long variables
+    ulli a = 1232133 ;
+    cout << a;
+    return 0;
+}
+
+Output1232133Explanationulli is created as an alias for long long. Variables declared using ulli behave exactly like long long variables. This improves readability and reduces repetitive type declarations. Using typedef with STL ContainersComplex STL declarations can become lengthy and difficult to read. typedef helps simplify container declarations by creating shorter aliases for commonly used container types.Example:
+            C++
+
+    #include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    
+    // Give the new name to
+    // map<int, string>
+    typedef map<int, string> mp;
+    mp m {{1, "Geeks"},
+             {2,"For"}, {3,"Geeks"}};
+
+    for (auto& p : m)
+        cout << p.first << " " 
+             << p.second << "\n";
+    return 0;
+}
+
+Output1 Geeks
+2 For
+3 Geeks
+Explanationmp is created as an alias for map<int, string>. The alias can be used anywhere a map<int, string> is required. This makes STL-heavy code more concise and readable.Using typedef with arraystypedef can also be used to create aliases for array types. This is particularly useful when creating multidimensional arrays or repeatedly using arrays of the same size.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+int main() {
+    typedef int arr[3];
+
+    // Making new 1D array
+    arr array1{ 1 , 1, 1};
+
+    cout << "Array output: "
+         << "\n";
+    for (int i = 0; i < 3; i++) 
+        cout << array1[i] << " ";
+    cout << "\n";
+    cout << "\n";
+
+    // Making new 2D array
+    // Matrix is an array of 
+    // arrays with size (3X3)
+    arr matrix[3];
+    for (int i = 0; i < 3; i++) 
+        for (int j = 0; j < 3; j++) 
+            // Initializing the matrix
+            matrix[i][j] = i * j;
+
+    cout << "Matrix output: "
+         << "\n";
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << matrix[i][j] << "  ";
+        }
+        cout << "\n";
+    }
+    return 0;
+}
+
+OutputArray output: 
+1 1 1 
+
+Matrix output: 
+0  0  0  
+0  1  2  
+0  2  4  
+Explanationarr is defined as an alias for an integer array of size 3. The alias is used to create both a one-dimensional array and a two-dimensional matrix. This simplifies array declarations and improves code clarity. Using typedef with pointerstypedef can simplify pointer declarations by creating aliases for pointer types. This improves readability and makes complex pointer syntax easier to understand.1. Using typedef with Data PointersA pointer type can be aliased and reused to create multiple pointer variables.Syntax:typedef <data_type>* <alias_name>
+            C++
+
+    #include <iostream>
+using namespace std;
+
+int main(){
+    
+    int a = 10;
+    int b = 20;
+    
+    // typedef with pointers
+    typedef int* iPtr;
+
+    iPtr pointer_to_a = &a;
+    iPtr pointer_to_b = &b;
+
+    cout << "a is: " << 
+            *pointer_to_a << "\n";
+    cout << "b is: " << 
+            *pointer_to_b << "\n";
+
+    return 0;
+}
+
+Outputa is: 10
+b is: 20
+ExplanationiPtr is an alias for int*. Variables declared using iPtr are integer pointers. This reduces repetition when working with multiple pointers of the same type.2. Usage with function pointersFunction pointer declarations can be difficult to read. typedef makes them easier to write and understand.Syntax:typedef <return_type> (*<alias_name>)(<parameter_type>,<parameter_type>,....);
+            C++
+
+    #include <bits/stdc++.h>
+using namespace std;
+
+// Normal pointer to a function
+int (*func_ptr1)(int, int);
+
+// Using typedef with pointer 
+// to a function
+typedef int (*func_ptr2)(int, int);
+
+// Function to multiply two numbers
+int product(int u, int v) { return u * v; }
+
+int main(void) {
+    
+    func_ptr1 = &product;
+
+    // Using typedefed function 
+    // pointer for creating new
+    // function pointer "new_func"
+    func_ptr2 new_func_ptr = &product;
+
+    // Using normal pointer to a function
+    int x2 = (*func_ptr1)(3, 2);
+
+    // Using the new function pointer
+    int x1 = (*new_func_ptr)(2, 4);
+
+    cout << x1 << endl;
+    cout << x2;
+}
+
+Output8
+6Explanationfunc_ptr2 is an alias for a pointer to a function that takes two int arguments and returns an int. New function pointers of the same type can be created using this alias. This makes function pointer declarations significantly more readable. Note: Once defined, func_ptr2 acts as a type alias and can be used to declare additional function pointers with the same signature.

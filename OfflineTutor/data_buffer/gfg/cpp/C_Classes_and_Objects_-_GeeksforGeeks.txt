@@ -1,6 +1,6 @@
 # C++ Classes and Objects - GeeksforGeeks
 
-In Object Oriented Programming, classes and objects are basic concepts that are used to represent real-world concepts and entities.A class is a template to create objects having similar properties and behavior, or in other words, we can say that a class is a blueprint for objects.An object is an instance of a class. For example, the animal type Dog is a class, while a particular dog named Tommy is an object of the Dog class.Class-and-ObjectC++ ClassesA class in C++ is a user-defined data type that combines data members and member functions into a single unit. It acts as a blueprint for creating objects and helps organize code in an object-oriented way.Data Members: Variables inside the class used to store data. Member Functions: Functions inside the class used to perform operations on the data. Creating a ClassA class must be defined before creating its objects. In C++, a class is declared using the class keyword.
+In Object Oriented Programming, classes and objects are basic concepts that are used to represent real-world concepts and entities.A class is a template to create objects having similar properties and behavior, or in other words, we can say that a class is a blueprint for objects.An object is an instance of a class. For example, the animal type Dog is a class, while a particular dog named Tommy is an object of the Dog class. C++ ClassesA class in C++ is a user-defined data type that combines data members and member functions into a single unit. It acts as a blueprint for creating objects and helps organize code in an object-oriented way.Data Members: Variables inside the class used to store data. Member Functions: Functions inside the class used to perform operations on the data. Creating a ClassA class must be defined before creating its objects. In C++, a class is declared using the class keyword.
             C++
 
     #include <iostream>
@@ -54,4 +54,4 @@ int main() {
 
 Try It YourselfOutputDog Name: Tuffy
 Breed: Papillon
-Explanation: Above program defines a Dog class with two data members, name and breed, along with a member function display() to print their values. In the main() function, an object tuffy is created, values are assigned to its data members, and the display() function is called to show the dog details.Related ArticleClass vs Object local classEnum classesnested class
+Explanation: Above program defines a Dog class with two data members, name and breed, along with a member function display() to print their values. In the main() function, an object tuffy is created, values are assigned to its data members, and the display() function is called to show the dog details.

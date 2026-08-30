@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T01:01:34.426Z",
+  "generatedAt": "2026-08-30T03:12:45.201Z",
   "topics": [
     {
       "id": "dsa",
@@ -3829,18 +3829,18 @@
       "articles": [
         {
           "id": "cpp-001",
-          "title": "Introduction",
-          "url": "https://www.geeksforgeeks.org/cpp/cpp-programming-intro/"
+          "title": "C++ development environment",
+          "url": "https://www.geeksforgeeks.org/cpp/setting-c-development-environment/"
         },
         {
           "id": "cpp-002",
-          "title": "Installing C++ Compiler",
+          "title": "C++ compiler",
           "url": "https://www.geeksforgeeks.org/cpp/complete-guide-to-install-c17-in-windows/"
         },
         {
           "id": "cpp-003",
-          "title": "Setting up C++ Development Environment",
-          "url": "https://www.geeksforgeeks.org/cpp/setting-c-development-environment/"
+          "title": "Introduction",
+          "url": "https://www.geeksforgeeks.org/cpp/cpp-programming-intro/"
         },
         {
           "id": "cpp-004",
@@ -3869,446 +3869,371 @@
         },
         {
           "id": "cpp-009",
-          "title": "Basics",
-          "url": "https://www.geeksforgeeks.org/quizzes/c-basics-1/"
-        },
-        {
-          "id": "cpp-010",
-          "title": "Variables and Data Types",
-          "url": "https://www.geeksforgeeks.org/quizzes/cpp-variables-and-data-types/"
-        },
-        {
-          "id": "cpp-011",
           "title": "Operators",
           "url": "https://www.geeksforgeeks.org/cpp/operators-in-cpp/"
         },
         {
-          "id": "cpp-012",
-          "title": "Operator",
-          "url": "https://www.geeksforgeeks.org/quizzes/cpp-operators/"
-        },
-        {
-          "id": "cpp-013",
-          "title": "Input Output",
-          "url": "https://www.geeksforgeeks.org/quizzes/cpp-input-output/"
-        },
-        {
-          "id": "cpp-014",
+          "id": "cpp-010",
           "title": "Conditional Statements",
           "url": "https://www.geeksforgeeks.org/cpp/cpp-decision-making/"
         },
         {
-          "id": "cpp-015",
+          "id": "cpp-011",
           "title": "Loops",
           "url": "https://www.geeksforgeeks.org/cpp/cpp-loops/"
         },
         {
-          "id": "cpp-016",
-          "title": "Control Statements",
-          "url": "https://www.geeksforgeeks.org/quizzes/cpp-flow-control/"
-        },
-        {
-          "id": "cpp-017",
-          "title": "Loops",
-          "url": "https://www.geeksforgeeks.org/quizzes/cpp-loops/"
-        },
-        {
-          "id": "cpp-018",
+          "id": "cpp-012",
           "title": "Functions",
           "url": "https://www.geeksforgeeks.org/cpp/functions-in-cpp/"
         },
         {
-          "id": "cpp-019",
+          "id": "cpp-013",
           "title": "Function Overloading",
           "url": "https://www.geeksforgeeks.org/cpp/function-overloading-c/"
         },
         {
-          "id": "cpp-020",
+          "id": "cpp-014",
           "title": "Parameter Passing",
           "url": "https://www.geeksforgeeks.org/cpp/parameter-passing-techniques-in-cpp/"
         },
         {
-          "id": "cpp-021",
+          "id": "cpp-015",
           "title": "Default Arguments",
           "url": "https://www.geeksforgeeks.org/cpp/default-arguments-c/"
         },
         {
-          "id": "cpp-022",
+          "id": "cpp-016",
           "title": "Inline Functions",
           "url": "https://www.geeksforgeeks.org/cpp/inline-functions-cpp/"
         },
         {
-          "id": "cpp-023",
+          "id": "cpp-017",
           "title": "Recursion",
           "url": "https://www.geeksforgeeks.org/cpp/cpp-recursion/"
         },
         {
-          "id": "cpp-024",
+          "id": "cpp-018",
           "title": "Lambda Expression",
           "url": "https://www.geeksforgeeks.org/cpp/lambda-expression-in-c/"
         },
         {
-          "id": "cpp-025",
-          "title": "Functions",
-          "url": "https://www.geeksforgeeks.org/quizzes/quiz-cpp-functions/"
-        },
-        {
-          "id": "cpp-026",
+          "id": "cpp-019",
           "title": "Arrays",
           "url": "https://www.geeksforgeeks.org/cpp/cpp-arrays/"
         },
         {
-          "id": "cpp-027",
+          "id": "cpp-020",
           "title": "Multidimensional Arrays",
           "url": "https://www.geeksforgeeks.org/cpp/cpp-multidimensional-array/"
         },
         {
-          "id": "cpp-028",
+          "id": "cpp-021",
           "title": "Strings",
           "url": "https://www.geeksforgeeks.org/cpp/strings-in-cpp/"
         },
         {
-          "id": "cpp-029",
+          "id": "cpp-022",
           "title": "String Class",
           "url": "https://www.geeksforgeeks.org/cpp/stdstring-class-in-c/"
         },
         {
-          "id": "cpp-030",
+          "id": "cpp-023",
           "title": "String Functions",
           "url": "https://www.geeksforgeeks.org/cpp/cpp-string-functions/"
         },
         {
-          "id": "cpp-031",
-          "title": "Strings",
-          "url": "https://www.geeksforgeeks.org/quizzes/quiz-cpp-strings/"
-        },
-        {
-          "id": "cpp-032",
-          "title": "Array",
-          "url": "https://www.geeksforgeeks.org/quizzes/quiz-cpp-arrays/"
-        },
-        {
-          "id": "cpp-033",
+          "id": "cpp-024",
           "title": "Pointers",
           "url": "https://www.geeksforgeeks.org/cpp/cpp-pointers/"
         },
         {
-          "id": "cpp-034",
+          "id": "cpp-025",
           "title": "References",
           "url": "https://www.geeksforgeeks.org/cpp/references-in-cpp/"
         },
         {
-          "id": "cpp-035",
+          "id": "cpp-026",
           "title": "References vs Pointers",
-          "url": "https://www.geeksforgeeks.org/cpp/pointers-vs-references-cpp/"
+          "url": "https://www.geeksforgeeks.org/cpp/pointers-and-references-in-c/"
         },
         {
-          "id": "cpp-036",
-          "title": "Pointer",
-          "url": "https://www.geeksforgeeks.org/quizzes/quiz-cpp-pointers/"
-        },
-        {
-          "id": "cpp-037",
-          "title": "Reference",
-          "url": "https://www.geeksforgeeks.org/quizzes/references-gq/"
-        },
-        {
-          "id": "cpp-038",
+          "id": "cpp-027",
           "title": "Structures",
           "url": "https://www.geeksforgeeks.org/cpp/structures-in-cpp/"
         },
         {
-          "id": "cpp-039",
+          "id": "cpp-028",
           "title": "Unions",
           "url": "https://www.geeksforgeeks.org/cpp/cpp-unions/"
         },
         {
-          "id": "cpp-040",
+          "id": "cpp-029",
           "title": "Enumeration",
           "url": "https://www.geeksforgeeks.org/cpp/enumeration-in-cpp/"
         },
         {
-          "id": "cpp-041",
-          "title": "Structure and Union",
-          "url": "https://www.geeksforgeeks.org/quizzes/cpp-structures-and-unions/"
+          "id": "cpp-030",
+          "title": "typedef",
+          "url": "https://www.geeksforgeeks.org/cpp/typedef-in-cpp/"
         },
         {
-          "id": "cpp-042",
+          "id": "cpp-031",
+          "title": "using",
+          "url": "https://www.geeksforgeeks.org/cpp/using-keyword-in-cpp-stl/"
+        },
+        {
+          "id": "cpp-032",
+          "title": "Dynamic Memory Allocation",
+          "url": "https://www.geeksforgeeks.org/cpp/what-is-dynamic-memory-allocation/"
+        },
+        {
+          "id": "cpp-033",
           "title": "new and delete",
           "url": "https://www.geeksforgeeks.org/cpp/new-and-delete-operators-in-cpp-for-dynamic-memory/"
         },
         {
-          "id": "cpp-043",
+          "id": "cpp-034",
           "title": "Memory Leak",
           "url": "https://www.geeksforgeeks.org/cpp/memory-leak-in-c-and-how-to-avoid-it/"
         },
         {
-          "id": "cpp-044",
-          "title": "Dynamic Memory Management",
-          "url": "https://www.geeksforgeeks.org/quizzes/quiz-on-cpp-memory-management/"
-        },
-        {
-          "id": "cpp-045",
+          "id": "cpp-035",
           "title": "Object Oriented Programming (OOP)",
           "url": "https://www.geeksforgeeks.org/cpp/object-oriented-programming-in-cpp/"
         },
         {
-          "id": "cpp-046",
+          "id": "cpp-036",
           "title": "Classes and Objects",
           "url": "https://www.geeksforgeeks.org/cpp/c-classes-and-objects/"
         },
         {
-          "id": "cpp-047",
+          "id": "cpp-037",
           "title": "Constructors",
           "url": "https://www.geeksforgeeks.org/cpp/constructors-c/"
         },
         {
-          "id": "cpp-048",
+          "id": "cpp-038",
           "title": "Encapsulation",
           "url": "https://www.geeksforgeeks.org/cpp/encapsulation-in-cpp/"
         },
         {
-          "id": "cpp-049",
+          "id": "cpp-039",
           "title": "Polymorphism",
           "url": "https://www.geeksforgeeks.org/cpp/cpp-polymorphism/"
         },
         {
-          "id": "cpp-050",
+          "id": "cpp-040",
           "title": "Inheritance",
           "url": "https://www.geeksforgeeks.org/cpp/inheritance-in-c/"
         },
         {
-          "id": "cpp-051",
+          "id": "cpp-041",
           "title": "Abstraction",
           "url": "https://www.geeksforgeeks.org/cpp/abstraction-in-cpp/"
         },
         {
-          "id": "cpp-052",
-          "title": "OOP Quiz",
-          "url": "https://www.geeksforgeeks.org/quizzes/quiz-on-cpp-oop/"
-        },
-        {
-          "id": "cpp-053",
+          "id": "cpp-042",
           "title": "Templates",
           "url": "https://www.geeksforgeeks.org/cpp/templates-cpp/"
         },
         {
-          "id": "cpp-054",
+          "id": "cpp-043",
           "title": "Standard Template Library (STL)",
           "url": "https://www.geeksforgeeks.org/cpp/the-c-standard-template-library-stl/"
         },
         {
-          "id": "cpp-055",
+          "id": "cpp-044",
           "title": "Algorithms",
           "url": "https://www.geeksforgeeks.org/cpp/c-magicians-stl-algorithms/"
         },
         {
-          "id": "cpp-056",
+          "id": "cpp-045",
           "title": "Containers",
           "url": "https://www.geeksforgeeks.org/cpp/containers-cpp-stl/"
         },
         {
-          "id": "cpp-057",
+          "id": "cpp-046",
           "title": "Iterators",
           "url": "https://www.geeksforgeeks.org/cpp/iterators-c-stl/"
         },
         {
-          "id": "cpp-058",
+          "id": "cpp-047",
           "title": "Vector",
           "url": "https://www.geeksforgeeks.org/cpp/vector-in-cpp-stl/"
         },
         {
-          "id": "cpp-059",
+          "id": "cpp-048",
           "title": "Stack",
           "url": "https://www.geeksforgeeks.org/cpp/stack-in-cpp-stl/"
         },
         {
-          "id": "cpp-060",
+          "id": "cpp-049",
           "title": "Queue",
           "url": "https://www.geeksforgeeks.org/cpp/queue-cpp-stl/"
         },
         {
-          "id": "cpp-061",
+          "id": "cpp-050",
           "title": "Map",
           "url": "https://www.geeksforgeeks.org/cpp/map-associative-containers-the-c-standard-template-library-stl/"
         },
         {
-          "id": "cpp-062",
+          "id": "cpp-051",
           "title": "Set",
           "url": "https://www.geeksforgeeks.org/cpp/set-in-cpp-stl/"
         },
         {
-          "id": "cpp-063",
-          "title": "STL Quiz",
-          "url": "https://www.geeksforgeeks.org/quizzes/c-stl/"
-        },
-        {
-          "id": "cpp-064",
+          "id": "cpp-052",
           "title": "Exception Handling",
           "url": "https://www.geeksforgeeks.org/cpp/exception-handling-c/"
         },
         {
-          "id": "cpp-065",
+          "id": "cpp-053",
           "title": "Exception Handling using Classes",
           "url": "https://www.geeksforgeeks.org/cpp/exception-handling-using-classes-in-cpp/"
         },
         {
-          "id": "cpp-066",
+          "id": "cpp-054",
           "title": "Stack Unwinding",
           "url": "https://www.geeksforgeeks.org/cpp/stack-unwinding-in-c/"
         },
         {
-          "id": "cpp-067",
+          "id": "cpp-055",
           "title": "User-Defined Exceptions",
           "url": "https://www.geeksforgeeks.org/cpp/user-defined-custom-exception-with-class-in-c/"
         },
         {
-          "id": "cpp-068",
-          "title": "Exception Handling Quiz",
-          "url": "https://www.geeksforgeeks.org/quizzes/exception-handling-gq/"
-        },
-        {
-          "id": "cpp-069",
+          "id": "cpp-056",
           "title": "Files and Streams",
           "url": "https://www.geeksforgeeks.org/cpp/file-handling-c-classes/"
         },
         {
-          "id": "cpp-070",
+          "id": "cpp-057",
           "title": "I/O Redirection",
           "url": "https://www.geeksforgeeks.org/cpp/io-redirection-c/"
         },
         {
-          "id": "cpp-071",
-          "title": "File Handling Quiz",
-          "url": "https://www.geeksforgeeks.org/quizzes/quiz-on-cpp-file-handling/"
-        },
-        {
-          "id": "cpp-072",
+          "id": "cpp-058",
           "title": "Introduction",
           "url": "https://www.geeksforgeeks.org/cpp/multithreading-in-cpp/"
         },
         {
-          "id": "cpp-073",
+          "id": "cpp-059",
           "title": "Creating Threads",
           "url": "https://www.geeksforgeeks.org/cpp/how-to-create-a-thread-in-cpp/"
         },
         {
-          "id": "cpp-074",
+          "id": "cpp-060",
           "title": "std::thread::join()",
           "url": "https://www.geeksforgeeks.org/cpp/std-thread-join-in-cpp/"
         },
         {
-          "id": "cpp-075",
+          "id": "cpp-061",
           "title": "Detach a Thread",
           "url": "https://www.geeksforgeeks.org/cpp/how-to-detach-a-thread-in-cpp/"
         },
         {
-          "id": "cpp-076",
+          "id": "cpp-062",
           "title": "Mutex",
           "url": "https://www.geeksforgeeks.org/cpp/std-mutex-in-cpp/"
         },
         {
-          "id": "cpp-077",
+          "id": "cpp-063",
           "title": "Lock Guard",
           "url": "https://www.geeksforgeeks.org/cpp/stdunique_lock-or-stdlock_guard-which-is-better/"
         },
         {
-          "id": "cpp-078",
+          "id": "cpp-064",
           "title": "Race Conditions",
           "url": "https://www.geeksforgeeks.org/operating-systems/implementing-race-condition-in-c/"
         },
         {
-          "id": "cpp-079",
+          "id": "cpp-065",
           "title": "Thread Synchronization",
           "url": "https://www.geeksforgeeks.org/cpp/thread-synchronization-in-cpp/"
         },
         {
-          "id": "cpp-080",
+          "id": "cpp-066",
           "title": "Preprocessor",
           "url": "https://www.geeksforgeeks.org/cpp/cpp-preprocessors-and-directives/"
         },
         {
-          "id": "cpp-081",
+          "id": "cpp-067",
           "title": "Namespaces",
           "url": "https://www.geeksforgeeks.org/cpp/namespace-in-c/"
         },
         {
-          "id": "cpp-082",
+          "id": "cpp-068",
           "title": "Smart Pointers",
           "url": "https://www.geeksforgeeks.org/cpp/smart-pointers-cpp/"
         },
         {
-          "id": "cpp-083",
+          "id": "cpp-069",
           "title": "Callbacks",
           "url": "https://www.geeksforgeeks.org/cpp/passing-a-function-as-a-parameter-in-cpp/"
         },
         {
-          "id": "cpp-084",
+          "id": "cpp-070",
           "title": "Signal Handling",
           "url": "https://www.geeksforgeeks.org/cpp/signal-handling-in-cpp/"
         },
         {
-          "id": "cpp-085",
+          "id": "cpp-071",
           "title": "Beginner Skill Assessment Practice Test",
           "url": "https://www.geeksforgeeks.org/quizzes/cpp-beginner-skill-assessment-practice-test/"
         },
         {
-          "id": "cpp-086",
+          "id": "cpp-072",
           "title": "Intermediate Skill Assessment Practice Test",
           "url": "https://www.geeksforgeeks.org/quizzes/c-intermediate-skill-assessment-practice-test/"
         },
         {
-          "id": "cpp-087",
+          "id": "cpp-073",
           "title": "Advanced Skill Assessment Practice Test",
           "url": "https://www.geeksforgeeks.org/quizzes/c-advanced-skill-assessment-practice-test/"
         },
         {
-          "id": "cpp-088",
+          "id": "cpp-074",
           "title": "C++ Interview Questions and Answers",
           "url": "https://www.geeksforgeeks.org/cpp/cpp-interview-questions/"
         },
         {
-          "id": "cpp-089",
+          "id": "cpp-075",
           "title": "Comparison of various programming languages",
           "url": "https://www.geeksforgeeks.org/java/c-vs-java-vs-python/"
         },
         {
-          "id": "cpp-090",
+          "id": "cpp-076",
           "title": "Careers and jobs in C++",
           "url": "https://www.geeksforgeeks.org/blogs/careers-and-jobs-in-c/"
         },
         {
-          "id": "cpp-091",
+          "id": "cpp-077",
           "title": "Companies that use C++",
           "url": "https://www.geeksforgeeks.org/cpp/companies-that-use-cpp/"
         },
         {
-          "id": "cpp-092",
+          "id": "cpp-078",
           "title": "Control Flow Statements15+ min read",
           "url": "https://www.geeksforgeeks.org/computer-science-fundamentals/control-flow-statements-in-programming/"
         },
         {
-          "id": "cpp-093",
-          "title": "Pointers and References4 min read",
-          "url": "https://www.geeksforgeeks.org/cpp/pointers-and-references-in-c/"
-        },
-        {
-          "id": "cpp-094",
+          "id": "cpp-079",
           "title": "Struct Union Enum3 min read",
           "url": "https://www.geeksforgeeks.org/cpp/structures-unions-and-enumerations-in-cpp/"
         },
         {
-          "id": "cpp-095",
+          "id": "cpp-080",
           "title": "Programming Examples4 min read",
           "url": "https://www.geeksforgeeks.org/cpp/cpp-programming-examples/"
         },
         {
-          "id": "cpp-096",
+          "id": "cpp-081",
           "title": "Placement 360 Course2 min read",
           "url": "https://www.geeksforgeeks.org/courses/placement-360-cip-complete-tech-interview"
         },
         {
-          "id": "cpp-097",
+          "id": "cpp-082",
           "title": "DSA and System Design Course2 min read",
           "url": "https://www.geeksforgeeks.org/courses/interviewe-101-data-structures-algorithm-system-design"
         }
@@ -4321,396 +4246,326 @@
       "articles": [
         {
           "id": "c-001",
+          "title": "C development environment",
+          "url": "https://www.geeksforgeeks.org/c/setting-up-c-development-environment/"
+        },
+        {
+          "id": "c-002",
+          "title": "Visual Studio Code",
+          "url": "https://www.geeksforgeeks.org/installation-guide/how-to-install-visual-studio-code-on-windows/"
+        },
+        {
+          "id": "c-003",
+          "title": "Code::Blocks",
+          "url": "https://www.geeksforgeeks.org/installation-guide/how-to-install-code-blocks-for-c-on-windows/"
+        },
+        {
+          "id": "c-004",
           "title": "Introduction",
           "url": "https://www.geeksforgeeks.org/c/c-language-introduction/"
         },
         {
-          "id": "c-002",
-          "title": "Setting Up C Development Environment",
-          "url": "https://www.geeksforgeeks.org/c/setting-up-c-development-environment/"
-        },
-        {
-          "id": "c-003",
-          "title": "Run C program in Terminal",
-          "url": "https://www.geeksforgeeks.org/techtips/how-to-compile-and-run-c-program-in-terminal/"
-        },
-        {
-          "id": "c-004",
+          "id": "c-005",
           "title": "Compilation Process",
           "url": "https://www.geeksforgeeks.org/c/compiling-a-c-program-behind-the-scenes/"
         },
         {
-          "id": "c-005",
+          "id": "c-006",
           "title": "Identifiers",
           "url": "https://www.geeksforgeeks.org/c/c-identifiers/"
         },
         {
-          "id": "c-006",
+          "id": "c-007",
           "title": "Keywords",
           "url": "https://www.geeksforgeeks.org/c/keywords-in-c/"
         },
         {
-          "id": "c-007",
+          "id": "c-008",
           "title": "Input and Output",
           "url": "https://www.geeksforgeeks.org/c/basic-input-and-output-in-c/"
         },
         {
-          "id": "c-008",
+          "id": "c-009",
           "title": "Variables",
           "url": "https://www.geeksforgeeks.org/c/variables-in-c/"
         },
         {
-          "id": "c-009",
+          "id": "c-010",
           "title": "Data Type",
           "url": "https://www.geeksforgeeks.org/c/data-types-in-c/"
         },
         {
-          "id": "c-010",
-          "title": "Basics",
-          "url": "https://www.geeksforgeeks.org/quizzes/basics-of-c-programming/"
-        },
-        {
           "id": "c-011",
-          "title": "Variables",
-          "url": "https://www.geeksforgeeks.org/quizzes/variables-in-c-programming/"
-        },
-        {
-          "id": "c-012",
-          "title": "Data Types",
-          "url": "https://www.geeksforgeeks.org/quizzes/data-types-in-c-programming/"
-        },
-        {
-          "id": "c-013",
           "title": "Operators",
           "url": "https://www.geeksforgeeks.org/c/operators-in-c/"
         },
         {
-          "id": "c-014",
-          "title": "Input and Output",
-          "url": "https://www.geeksforgeeks.org/quizzes/inputoutput-in-c-programming/"
-        },
-        {
-          "id": "c-015",
-          "title": "Operators",
-          "url": "https://www.geeksforgeeks.org/quizzes/operators-in-c-programming/"
-        },
-        {
-          "id": "c-016",
+          "id": "c-012",
           "title": "Conditional Statements",
           "url": "https://www.geeksforgeeks.org/c/decision-making-in-c/"
         },
         {
-          "id": "c-017",
+          "id": "c-013",
           "title": "Loops",
           "url": "https://www.geeksforgeeks.org/c/c-loops/"
         },
         {
-          "id": "c-018",
-          "title": "Conditional Statements and Loops",
-          "url": "https://www.geeksforgeeks.org/quizzes/c-loops-and-conditional-statements/"
-        },
-        {
-          "id": "c-019",
+          "id": "c-014",
           "title": "Functions",
           "url": "https://www.geeksforgeeks.org/c/c-functions/"
         },
         {
-          "id": "c-020",
+          "id": "c-015",
           "title": "Parameter Passing Techniques",
           "url": "https://www.geeksforgeeks.org/c/parameter-passing-techniques-in-c-cpp/"
         },
         {
-          "id": "c-021",
+          "id": "c-016",
           "title": "Main Function",
           "url": "https://www.geeksforgeeks.org/c/main-function-in-c/"
         },
         {
-          "id": "c-022",
+          "id": "c-017",
           "title": "Recursion",
           "url": "https://www.geeksforgeeks.org/c/c-recursion/"
         },
         {
-          "id": "c-023",
+          "id": "c-018",
           "title": "Inline Function",
           "url": "https://www.geeksforgeeks.org/c/inline-function-in-c/"
         },
         {
-          "id": "c-024",
+          "id": "c-019",
           "title": "Nested Functions",
           "url": "https://www.geeksforgeeks.org/c/nested-functions-c/"
         },
         {
-          "id": "c-025",
-          "title": "Functions",
-          "url": "https://www.geeksforgeeks.org/quizzes/functions-in-c/"
-        },
-        {
-          "id": "c-026",
+          "id": "c-020",
           "title": "Arrays",
           "url": "https://www.geeksforgeeks.org/c/c-arrays/"
         },
         {
-          "id": "c-027",
+          "id": "c-021",
           "title": "Multidimensional Arrays",
           "url": "https://www.geeksforgeeks.org/c/multidimensional-arrays-in-c/"
         },
         {
-          "id": "c-028",
+          "id": "c-022",
           "title": "Strings",
           "url": "https://www.geeksforgeeks.org/c/strings-in-c/"
         },
         {
-          "id": "c-029",
+          "id": "c-023",
           "title": "String Functions",
           "url": "https://www.geeksforgeeks.org/c/string-functions-in-c/"
         },
         {
-          "id": "c-030",
-          "title": "Array",
-          "url": "https://www.geeksforgeeks.org/quizzes/arrays-in-c-1/"
-        },
-        {
-          "id": "c-031",
-          "title": "Strings",
-          "url": "https://www.geeksforgeeks.org/quizzes/strings-in-c/"
-        },
-        {
-          "id": "c-032",
+          "id": "c-024",
           "title": "Pointer",
           "url": "https://www.geeksforgeeks.org/c/c-pointers/"
         },
         {
-          "id": "c-033",
+          "id": "c-025",
           "title": "Pointer Arithmetic",
           "url": "https://www.geeksforgeeks.org/c/pointer-arithmetics-in-c-with-examples/"
         },
         {
-          "id": "c-034",
+          "id": "c-026",
           "title": "Pointer to Pointer",
           "url": "https://www.geeksforgeeks.org/c/c-pointer-to-pointer-double-pointer/"
         },
         {
-          "id": "c-035",
+          "id": "c-027",
           "title": "Function Pointers",
           "url": "https://www.geeksforgeeks.org/c/function-pointer-in-c/"
         },
         {
-          "id": "c-036",
-          "title": "Pointers",
-          "url": "https://www.geeksforgeeks.org/quizzes/pointers-in-c/"
-        },
-        {
-          "id": "c-037",
+          "id": "c-028",
           "title": "Structures",
           "url": "https://www.geeksforgeeks.org/c/structures-c/"
         },
         {
-          "id": "c-038",
+          "id": "c-029",
           "title": "Unions",
           "url": "https://www.geeksforgeeks.org/c/c-unions/"
         },
         {
-          "id": "c-039",
+          "id": "c-030",
           "title": "Enumeration (or enum)",
           "url": "https://www.geeksforgeeks.org/c/enumeration-enum-c/"
         },
         {
-          "id": "c-040",
-          "title": "Structure & Union",
-          "url": "https://www.geeksforgeeks.org/quizzes/structure-union-gq/"
-        },
-        {
-          "id": "c-041",
+          "id": "c-031",
           "title": "Program's Memory Layout",
           "url": "https://www.geeksforgeeks.org/c/memory-layout-of-c-program/"
         },
         {
-          "id": "c-042",
+          "id": "c-032",
           "title": "Dynamic Memory Allocation",
           "url": "https://www.geeksforgeeks.org/c/dynamic-memory-allocation-in-c-using-malloc-calloc-free-and-realloc/"
         },
         {
-          "id": "c-043",
+          "id": "c-033",
           "title": "Memory Leaks",
           "url": "https://www.geeksforgeeks.org/c/what-is-memory-leak-how-can-we-avoid/"
         },
         {
-          "id": "c-044",
-          "title": "Memory Management",
-          "url": "https://www.geeksforgeeks.org/quizzes/memory-management-in-c/"
-        },
-        {
-          "id": "c-045",
+          "id": "c-034",
           "title": "Basics of File Handling",
           "url": "https://www.geeksforgeeks.org/c/basics-file-handling-c/"
         },
         {
-          "id": "c-046",
+          "id": "c-035",
           "title": "Read a File",
           "url": "https://www.geeksforgeeks.org/c/c-program-to-read-contents-of-whole-file/"
         },
         {
-          "id": "c-047",
+          "id": "c-036",
           "title": "Read/Write Structure From/to a File",
           "url": "https://www.geeksforgeeks.org/c/read-write-structure-from-to-a-file-in-c/"
         },
         {
-          "id": "c-048",
+          "id": "c-037",
           "title": "EOF, getc() and feof()",
           "url": "https://www.geeksforgeeks.org/c/eof-and-feof-in-c/"
         },
         {
-          "id": "c-049",
+          "id": "c-038",
           "title": "Delete a File",
           "url": "https://www.geeksforgeeks.org/c/c-program-delete-file/"
         },
         {
-          "id": "c-050",
-          "title": "File Handling",
-          "url": "https://www.geeksforgeeks.org/quizzes/file-handling-gq/"
-        },
-        {
-          "id": "c-051",
+          "id": "c-039",
           "title": "Exception Handling Using goto",
           "url": "https://www.geeksforgeeks.org/c/using-goto-for-exception-handling-in-c/"
         },
         {
-          "id": "c-052",
+          "id": "c-040",
           "title": "File Error Handling",
           "url": "https://www.geeksforgeeks.org/c/error-handling-during-file-operations-in-c-c/"
         },
         {
-          "id": "c-053",
+          "id": "c-041",
           "title": "Divide by Zero Exception",
           "url": "https://www.geeksforgeeks.org/c/c-program-to-handle-divide-by-zero-and-multiple-exceptions/"
         },
         {
-          "id": "c-054",
+          "id": "c-042",
           "title": "Preprocessors",
           "url": "https://www.geeksforgeeks.org/c/cc-preprocessors/"
         },
         {
-          "id": "c-055",
+          "id": "c-043",
           "title": "Macros",
           "url": "https://www.geeksforgeeks.org/c/macros-and-its-types-in-c-cpp/"
         },
         {
-          "id": "c-056",
-          "title": "Preprocessors and Macros",
-          "url": "https://www.geeksforgeeks.org/quizzes/macro-preprocessor-gq/"
-        },
-        {
-          "id": "c-057",
+          "id": "c-044",
           "title": "Header Files",
           "url": "https://www.geeksforgeeks.org/c/header-files-in-c-cpp-and-its-uses/"
         },
         {
-          "id": "c-058",
+          "id": "c-045",
           "title": "Date and Time",
           "url": "https://www.geeksforgeeks.org/c/time-h-header-file-in-c-with-examples/"
         },
         {
-          "id": "c-059",
+          "id": "c-046",
           "title": "Linkage",
           "url": "https://www.geeksforgeeks.org/c/internal-linkage-external-linkage-c/"
         },
         {
-          "id": "c-060",
+          "id": "c-047",
           "title": "Storage Classes",
           "url": "https://www.geeksforgeeks.org/c/storage-classes-in-c/"
         },
         {
-          "id": "c-061",
-          "title": "Storage Classes",
-          "url": "https://www.geeksforgeeks.org/quizzes/classes-and-type-qualifiers-in-c/"
-        },
-        {
-          "id": "c-062",
+          "id": "c-048",
           "title": "Variadic Functions",
           "url": "https://www.geeksforgeeks.org/c/variadic-functions-in-c/"
         },
         {
-          "id": "c-063",
+          "id": "c-049",
           "title": "Input-Output System Calls",
           "url": "https://www.geeksforgeeks.org/c/input-output-system-calls-c-create-open-close-read-write/"
         },
         {
-          "id": "c-064",
+          "id": "c-050",
           "title": "Signals",
           "url": "https://www.geeksforgeeks.org/c/signals-c-language/"
         },
         {
-          "id": "c-065",
+          "id": "c-051",
           "title": "Socket Programming",
           "url": "https://www.geeksforgeeks.org/c/socket-programming-cc/"
         },
         {
-          "id": "c-066",
+          "id": "c-052",
           "title": "_Generics Keyword",
           "url": "https://www.geeksforgeeks.org/c/_generic-keyword-c/"
         },
         {
-          "id": "c-067",
+          "id": "c-053",
           "title": "Multithreading",
           "url": "https://www.geeksforgeeks.org/c/multithreading-in-c/"
         },
         {
-          "id": "c-068",
+          "id": "c-054",
           "title": "Comparison of various programming languages",
           "url": "https://www.geeksforgeeks.org/java/c-vs-java-vs-python/"
         },
         {
-          "id": "c-069",
+          "id": "c-055",
           "title": "Careers and Jobs",
           "url": "https://www.geeksforgeeks.org/c/careers-and-jobs-in-c-programming/"
         },
         {
-          "id": "c-070",
+          "id": "c-056",
           "title": "Companies That Use C",
           "url": "https://www.geeksforgeeks.org/c/companies-that-use-c-programming/"
         },
         {
-          "id": "c-071",
+          "id": "c-057",
           "title": "C Programming Interview Questions and Answers",
           "url": "https://www.geeksforgeeks.org/c/c-interview-questions/"
         },
         {
-          "id": "c-072",
+          "id": "c-058",
           "title": "Data structures and Algorithms in C",
           "url": "https://www.geeksforgeeks.org/c/learn-dsa-in-c/"
         },
         {
-          "id": "c-073",
+          "id": "c-059",
           "title": "Fundamental Practice Problems",
           "url": "https://www.geeksforgeeks.org/c/c-fundamental-practice-problems/"
         },
         {
-          "id": "c-074",
+          "id": "c-060",
           "title": "Functions Practice Problems",
           "url": "https://www.geeksforgeeks.org/c/c-functions-practice-problems/"
         },
         {
-          "id": "c-075",
+          "id": "c-061",
           "title": "Compound Data Types Practice Problems",
           "url": "https://www.geeksforgeeks.org/c/c-compound-data-types-practice-problems/"
         },
         {
-          "id": "c-076",
+          "id": "c-062",
           "title": "Structure Alignment, Padding & Data Packing5 min read",
           "url": "https://www.geeksforgeeks.org/c/structure-member-alignment-padding-and-data-packing/"
         },
         {
-          "id": "c-077",
+          "id": "c-063",
           "title": "Error Handling5 min read",
           "url": "https://www.geeksforgeeks.org/c/error-handling-in-c/"
         },
         {
-          "id": "c-078",
+          "id": "c-064",
           "title": "Placement 360 Course2 min read",
           "url": "https://www.geeksforgeeks.org/courses/placement-360-cip-complete-tech-interview"
         },
         {
-          "id": "c-079",
+          "id": "c-065",
           "title": "DSA and System Design Course2 min read",
           "url": "https://www.geeksforgeeks.org/courses/interviewe-101-data-structures-algorithm-system-design"
         }

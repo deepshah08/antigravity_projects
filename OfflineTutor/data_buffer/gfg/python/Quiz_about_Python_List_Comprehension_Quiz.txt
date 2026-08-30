@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython List Comprehension QuizLast Updated : DiscussCommentsQuestion 1In list comprehension, what does the expression represent?The iterable being traversed.The condition for filtering elements.The value to be included in the new list.The index of the current element.Question 2In what scenarios might it be better to use traditional loops instead of list comprehension?When the code needs to be more concise.When the logic involves complex conditions.In situations where performance is critical.List comprehension is always preferable.Question 3What will the following list comprehension output?
+    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython List Comprehension QuizLast Updated : DiscussCommentsQuestion 1In list comprehension, what does the expression represent?The iterable being traversed.The condition for filtering elements.The value to be included in the new list.The index of the current element.Question 2In what scenarios might it be better to use traditional loops instead of list comprehension?When the code needs to be more concise.When the logic involves complex conditions.In situations where performance is critical.List comprehension is always preferable.Question 3What will the following list comprehension output?
         Python
         
         words = ['apple', 'banana', 'cherry']

@@ -1,6 +1,6 @@
 # Program for Armstrong Numbers - GeeksforGeeks
 
-Given a number x, determine whether the given number is Armstrong's number or not. A positive integer  of n digits is called an Armstrong number of order n (order is the number of digits) ifabcd... = pow(a,n) + pow(b,n) + pow(c,n) + pow(d,n) + .... Here a, b, c and d are digits of input number abcd.....ExamplesInput: n = 153Output: trueExplanation: 153 is an Armstrong number, 1*1*1 + 5*5*5 + 3*3*3 = 153Input: n = 9474Output: trueExplanation: 94 + 44 + 74 + 44 = 6561 + 256 + 2401 + 256 = 9474Input: n = 123Output: falseExplanation: 1³ + 2³ + 3³ = 1 + 8 + 27 = 36Try It YourselfTable of Content[Approach 1] Naive Approach[Approach 2] Using Numeric Strings[Approach 1] Naive ApproachThe idea is to first count the number of digits (or find the order). Let the number of digits be n. For every digit r in input number x, compute rn. If the sum of all such values is equal to x, then return true, else false. 
+Given a number x, check if the given number is Armstrong's number or not. A positive integer  of n digits is called an Armstrong number of order n (order is the number of digits) ifabcd... = pow(a,n) + pow(b,n) + pow(c,n) + pow(d,n) + .... Here a, b, c and d are digits of input number abcd.....ExamplesInput: n = 153Output: trueExplanation: 153 is an Armstrong number, 1*1*1 + 5*5*5 + 3*3*3 = 153Input: n = 9474Output: trueExplanation: 94 + 44 + 74 + 44 = 6561 + 256 + 2401 + 256 = 9474Input: n = 123Output: falseExplanation: 1³ + 2³ + 3³ = 1 + 8 + 27 = 36Try It YourselfTable of ContentNaive ApproachUsing Numeric StringsNaive ApproachCount the number of digits (or find the order). Let the number of digits be n. For every digit r in input number x, compute rn. If the sum of all such values is equal to x, then return true, else false. 
             C++
 
     #include <iostream>
@@ -252,7 +252,7 @@ if (armstrong(n)) {
     console.log("false");
 }
 
-OutputtrueTime Complexity: O(d*log(d)), where d is the number of digits in n, since we compute the power for each digit.Space Complexity: O(1)[Approach 2] Using Numeric StringsThe idea is to determine if a number is an Armstrong number by first converting it to a string to easily access its digits and count them. Each digit is then raised to the power of the total number of digits, and the results are summed. If this sum is equal to the original number, it is classified as an Armstrong number. This approach leverages simple string manipulation and power calculation to perform the check efficiently.
+OutputtrueTime Complexity: O(d*log(d)), where d is the number of digits in n, since we compute the power for each digit.Space Complexity: O(1)Using Numeric StringsConvert it to a string to easily access its digits and count them. Each digit is then raised to the power of the total number of digits, and the results are summed. If this sum is equal to the original number, it is classified as an Armstrong number. 
             C++
 
     #include <iostream>

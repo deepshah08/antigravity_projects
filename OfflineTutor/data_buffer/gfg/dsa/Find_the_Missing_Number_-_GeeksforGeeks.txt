@@ -1,6 +1,6 @@
 # Find the Missing Number - GeeksforGeeks
 
-Given an array arr[] of size n-1 with distinct integers in the range of [1, n]. This array represents a permutation of the integers from 1 to n with one element missing. Find the missing element in the array.Examples: Input: arr[] = [8, 2, 4, 5, 3, 7, 1]Output: 6Explanation: All the numbers from 1 to 8 are present except 6.Input: arr[] = [1, 2, 3, 5]Output: 4Explanation: Here the size of the array is 4, so the range will be [1, 5]. The missing number between 1 to 5 is 4Try It YourselfTable of Content[Naive Approach] Linear Search for Missing Number - O(n^2) Time and O(1) Space[Better Approach] Using Hashing - O(n) Time and O(n) Space[Expected Approach 1] Using Sum of n terms Formula - O(n) Time and O(1) Space[Expected Approach 2] Using XOR Operation - O(n) Time and O(1) Space[Naive Approach] Linear Search for Missing Number - O(n^2) Time and O(1) SpaceThis approach iterates through each number from 1 to n (where n is the size of the array + 1) and checks if the number is present in the array. For each number, it uses a nested loop to search the array. If a number is not found, it is returned as the missing number. 
+Given an array arr[] of size n-1 with distinct integers in the range of [1, n]. This array represents a permutation of the integers from 1 to n with one element missing. Find the missing element in the array.Examples: Input: arr[] = [8, 2, 4, 5, 3, 7, 1]Output: 6Explanation: All the numbers from 1 to 8 are present except 6.Input: arr[] = [1, 2, 3, 5]Output: 4Explanation: Here the size of the array is 4, so the range will be [1, 5]. The missing number between 1 to 5 is 4Try It YourselfTable of Content[Naive Approach] Linear Search for Missing Number - O(n^2) Time and O(1) Space[Better Approach] Using Hashing - O(n) Time and O(n) Space[Expected Approach 1] Using Sum of n terms Formula - O(n) Time and O(1) Space[Expected Approach 2] Using XOR Operation - O(n) Time and O(1) Space[Naive Approach] Linear Search for Missing Number - O(n^2) Time and O(1) SpaceThis approach iterates through each number from 1 to n (where n is the size of the array + 1) and checks if the number is present in the array. 
             C++
 
     #include <iostream>
@@ -151,7 +151,7 @@ const arr = [8, 2, 4, 5, 3, 7, 1];
 console.log(missingNum(arr));
 
 Output6
-[Better Approach] Using Hashing - O(n) Time and O(n) SpaceThis approach uses a hash array (or frequency array) to track the presence of each number from 1 to n in the input array. It first initializes a hash array to store the frequency of each element. Then, it iterates through the hash array to find the number that is missing (i.e., the one with a frequency of 0).
+[Better Approach] Using Hashing - O(n) Time and O(n) SpaceThis approach uses a hash array (or frequency array) to track the presence of each number from 1 to n in the input array. Initialize a hash array to store frequency of each element. Iterate through the hash array to find the number that is missing (i.e., the one with a frequency of 0).
             C++
 
     #include <iostream>
@@ -431,7 +431,7 @@ class GfG {
 let arr = [8, 2, 4, 5, 3, 7, 1];
 console.log(missingNum(arr));
 
-Output6[Expected Approach 2] Using XOR Operation - O(n) Time and O(1) Space XOR of a number with itself is 0 i.e. x ^ x = 0 and the given array arr[] has numbers in range [1, n]. This means that the result of XOR of first n natural numbers with the XOR of all the array elements will be the missing number. To do so, calculate XOR of first n natural numbers and XOR of all the array arr[] elements, and then our result will be the XOR of both the resultant values.
+Output6[Expected Approach 2] Using XOR Operation - O(n) Time and O(1) SpaceThe idea is based on properties of Bitwise XOR, XOR of two same numbers is 0, i.e., x XOR x = 0XOR is associative, i.e., (a XOR b) XOR x = a XOR (b XOR c). Sot the order of elements does not matter.The result of XOR of first n natural numbers with the XOR of all the array elements will be the missing number as every number in this XOR appears twice except the missing number.We calculate XOR of first n natural numbers and XOR of all the array arr[] elements, and then our result will be the XOR of both the resultant values.
             C++
 
     #include <iostream>

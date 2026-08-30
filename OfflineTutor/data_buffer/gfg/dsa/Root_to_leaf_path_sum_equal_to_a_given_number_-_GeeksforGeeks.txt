@@ -1,6 +1,6 @@
 # Root to leaf path sum equal to a given number - GeeksforGeeks
 
-Given a binary tree and a sum, return true if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum. Return false if no such path can be found.  Example:Input:Output: True Explanation:  Root to leaf path sum, existing in this tree are:10 -> 8 -> 3  =  2110 -> 8 -> 5  = 2310 -> 2 -> 2 = 14So it is possible to get sum = 21Try It YourselfTable of Content[Expected Approach - 1] Using Recursion - O(n) Time and O(h) Space[Expected Approach - 2] Using Iterative - O(n) Time and O(h) Space[Expected Approach - 1] Using Recursion - O(n) Time and O(h) SpaceThe idea is to recursively move to left and right subtree and decrease sum by the value of the current node and if at any point the current node is equal to a leaf node and remaining sum is equal to zero then the answer is true.Follow the given steps to solve the problem using the above approach:Recursively move to the left and right subtree and at each call decrease the sum by the value of the current node.If at any level the current node is a leaf node and the remaining sum is equal to zero then return true.Below is the implementation of the above approach:
+Given a binary tree and a sum, return true if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum. Return false if no such path can be found.  Example:Input: Output: True Explanation:  Root to leaf path sum, existing in this tree are:10 -> 8 -> 3  =  2110 -> 8 -> 5  = 2310 -> 2 -> 2 = 14So it is possible to get sum = 21Try It YourselfTable of ContentRecursive - O(n) Time and O(h) SpaceIterative - O(n) Time and O(h) SpaceRecursive - O(n) Time and O(h) SpaceThe idea is to recursively move to left and right subtree and decrease sum by the value of the current node.If at any point the current node is equal to a leaf node and remaining sum is equal to zero then the answer is true.
             C++
 
     // C++ Program to Check if Root to leaf path
@@ -146,10 +146,7 @@ int main() {
 
             Java
 
-    // Java Program to Check if Root to leaf path 
-// sum equal to a given number
-
-class Node {
+    class Node {
     Node left, right;
     int data;
 
@@ -161,7 +158,7 @@ class Node {
 }
 
 class GfG {
-  
+
     // Given a tree and a sum, return true if there is a path from
     // the root down to a leaf, such that adding up all the values
     // along the path equals the given sum.
@@ -177,8 +174,8 @@ class GfG {
         // Otherwise check both subtrees
         boolean left = false, right = false;
 
-        if (root.left != null) left = hasPathSum(root.left, subSum);
-        if (root.right != null) right = hasPathSum(root.right, subSum);
+        if (root.left!= null) left = hasPathSum(root.left, subSum);
+        if (root.right!= null) right = hasPathSum(root.right, subSum);
 
         return left || right;
     }
@@ -190,8 +187,8 @@ class GfG {
         //         10
         //       /    \
         //      8      2
-        //     / \    /
-        //    3   5  2
+        //     / \     /
+        //    3   5   2
 
         Node root = new Node(10);
         root.left = new Node(8);
@@ -257,12 +254,7 @@ if __name__ == "__main__":
 
             C#
 
-    // C# Program to Check if Root to leaf path
-// sum equal to a given number 
-
-using System;
-
-class Node {
+    public class Node {
     public Node left, right;
     public int data;
 
@@ -273,38 +265,38 @@ class Node {
     }
 }
 
-class GfG {
-  
+public class GfG {
+
     // Given a tree and a sum, return true if there is a path from
     // the root down to a leaf, such that adding up all the values
     // along the path equals the given sum.
-    static bool HasPathSum(Node root, int sum) {
+    public static bool hasPathSum(Node root, int sum) {
         if (root == null) return false;
 
         int subSum = sum - root.data;
 
         // If we reach a leaf node and sum becomes 0 then return true
-        if (subSum == 0 && root.left == null 
+        if (subSum == 0 && root.left == null
             && root.right == null) return true;
 
         // Otherwise check both subtrees
         bool left = false, right = false;
 
-        if (root.left != null) left = HasPathSum(root.left, subSum);
-        if (root.right != null) right = HasPathSum(root.right, subSum);
+        if (root.left!= null) left = hasPathSum(root.left, subSum);
+        if (root.right!= null) right = hasPathSum(root.right, subSum);
 
         return left || right;
     }
 
-    static void Main(string[] args) {
+    public static void Main(string[] args) {
         int sum = 21;
 
         // Constructed binary tree is
         //         10
         //       /    \
-        //      8      2
-        //     / \    /
-        //    3   5  2
+        //      8       2
+        //     / \      /
+        //    3   5    2
 
         Node root = new Node(10);
         root.left = new Node(8);
@@ -312,18 +304,15 @@ class GfG {
         root.left.left = new Node(3);
         root.left.right = new Node(5);
         root.right.left = new Node(2);
-      
-        Console.WriteLine(HasPathSum(root, sum));
+
+        System.Console.WriteLine(hasPathSum(root, sum) ? "True" : "False");
     }
 }
 
 
             JavaScript
 
-    // JavaScript Program to Check if Root to leaf
-// path sum equal to a given number
-
-class Node {
+    class Node {
     constructor(data) {
         this.data = data;
         this.left = null;
@@ -335,40 +324,46 @@ class Node {
 // the root down to a leaf, such that adding up all the values
 // along the path equals the given sum.
 function hasPathSum(root, sum) {
-    if (root === null) return false;
+    if (root === null) {
+        return false;
+    }
 
-    const subSum = sum - root.data;
+    let subSum = sum - root.data;
 
     // If we reach a leaf node and sum becomes 0 then return true
-    if (subSum === 0 && root.left === null 
-    	&& root.right === null) return true;
+    if (subSum === 0 && root.left === null && root.right === null) {
+        return true;
+    }
 
     // Otherwise check both subtrees
-    const left = root.left ? hasPathSum(root.left, subSum) : false;
-    const right = root.right ? hasPathSum(root.right, subSum) : false;
+    let left = root.left ? hasPathSum(root.left, subSum) : false;
+    let right = root.right? hasPathSum(root.right, subSum) : false;
 
     return left || right;
 }
 
-// Constructed binary tree is
-//         10
-//       /    \
-//      8      2
-//     / \    /
-//    3   5  2
+if (typeof require!== 'undefined' && require.main === module) {
+    let sum = 21;
 
-const sum = 21;
-const root = new Node(10);
-root.left = new Node(8);
-root.right = new Node(2);
-root.left.left = new Node(3);
-root.left.right = new Node(5);
-root.right.left = new Node(2);
+    // Constructed binary tree is
+    //         10
+    //       /    \
+    //      8      2
+    //     / \     /
+    //    3   5   2
 
-console.log(hasPathSum(root, sum));
+    let root = new Node(10);
+    root.left = new Node(8);
+    root.right = new Node(2);
+    root.left.left = new Node(3);
+    root.left.right = new Node(5);
+    root.right.left = new Node(2);
+
+    console.log(hasPathSum(root, sum));
+}
 
 OutputTrue
-Time Complexity: O(n), where n is the number of nodes.Auxiliary Space: O(h), where h is the height of the tree.[Expected Approach - 2] Using Iterative - O(n) Time and O(h) SpaceIn this approach, we use a stack to perform a preorder traversal of the binary tree. We maintain two stacks - one to store the nodes and another to store the sum of values along the path to that node. Whenever we encounter a leaf node, we check if the sum matches the target sum. If it does, we return true, otherwise, we continue traversing the tree.Follow the given steps to solve the problem using the above approach:Check if the root node is NULL. If it is, return false, since there is no path to follow.Create two stacks, one for the nodes and one for the sums. Push the root node onto the node stack and its data onto the sum stack. While the node stack is not empty, do the following:Pop a node from the node stack and its corresponding sum from the sum stack. Check if the node is a leaf node (i.e., it has no left or right child). If it is, check if the sum equals the target sum. If it does, return true, since we have found a path that adds up to the target sum. If the node has a left child, push it onto the node stack and push the sum plus the left child’s data onto the sum stack.If the node has a right child, push it onto the node stack and push the sum plus the right child’s data onto the sum stack.If we reach this point, it means we have exhausted all paths and haven’t found any that add up to the target sum. Return false.Below is the implementation of the above approach:
+Time Complexity: O(n), where n is the number of nodes.Auxiliary Space: O(h), where h is the height of the tree.Iterative - O(n) Time and O(h) SpaceWe use stack based iterative preorder traversal.  We maintain two stacks - one to store the nodes and another to store the sum of values along the path to that node. Whenever we encounter a leaf node, we check if the sum matches the target sum. If it does, we return true, otherwise, we continue traversing the tree.Follow the given steps to solve the problem using the above approach:Step 1 : Create two stacks, one for the nodes and one for the sums. Push the root node onto the node stack and its data onto the sum stack. Step 2: While the node stack is not empty, do the following:Pop a node from the node stack and its corresponding sum from the sum stack.Check if the node is a leaf node If it is, check if the sum equals the target sum. If it does, return true.If the node has a left child, push it onto the node stack and push the sum plus the left child’s data onto the sum stack.If the node has a right child, push it onto the node stack and push the sum plus the right child’s data onto the sum stack.Step 3: If we reach this point, it means we have exhausted all paths and haven’t found any that add up to the target sum. 
             C++
 
     // C++ Program to Check if Root to leaf path sum 
@@ -586,66 +581,73 @@ if __name__ == "__main__":
 
             C#
 
-    // C# Program to Check if Root to leaf path
-// sum equal to a given number 
-
-using System;
+    using System;
 using System.Collections.Generic;
 
-class Node {
-    public Node left, right;
+public class Node
+{
     public int data;
+    public Node left, right;
 
-    public Node(int key) {
-        data = key;
-        left = null;
-        right = null;
+    public Node(int item)
+    {
+        data = item;
+        left = right = null;
     }
 }
 
-class GfG {
-  
-    // Check if there's a root-to-leaf path with the given sum
-    static bool hasPathSum(Node root, int targetSum) {
-        if (root == null) return false;
+public class GFG
+{
+    // Check if there's a root-to-leaf path with
+    // the given sum
+    public static bool hasPathSum(Node root, int targetSum)
+    {
+        if (root == null)
+        {
+            return false;
+        }
 
-        Stack<Node> stk = new Stack<Node>();
+        Stack<Node> stack = new Stack<Node>();
         Stack<int> sums = new Stack<int>();
-        stk.Push(root);
+        stack.Push(root);
         sums.Push(root.data);
 
-        while (stk.Count > 0) {
-            Node node = stk.Pop();
-            int sum = sums.Pop();
+        while (stack.Count > 0)
+        {
+            Node node = stack.Pop();
+            int sumValue = sums.Pop();
 
             // Check if leaf node and sum matches
-            if (node.left == null && node.right == null
-                && sum == targetSum)
+            if (node.left == null && node.right == null && sumValue == targetSum)
+            {
                 return true;
+            }
 
             // Add children to stacks with updated sums
-            if (node.left != null) {
-                stk.Push(node.left);
-                sums.Push(sum + node.left.data);
+            if (node.right!= null)
+            {
+                stack.Push(node.right);
+                sums.Push(sumValue + node.right.data);
             }
-            if (node.right != null) {
-                stk.Push(node.right);
-                sums.Push(sum + node.right.data);
+            if (node.left!= null)
+            {
+                stack.Push(node.left);
+                sums.Push(sumValue + node.left.data);
             }
         }
 
         return false;
     }
 
-    static void Main(string[] args) {
-      
+    public static void Main(string[] args)
+    {
         // Construct binary tree
         //         10
         //       /  \
         //      8    2
-        //     / \   /
+        //     / \  /
         //    3   5 2
-      
+
         Node root = new Node(10);
         root.left = new Node(8);
         root.right = new Node(2);
@@ -654,6 +656,7 @@ class GfG {
         root.right.left = new Node(2);
 
         int targetSum = 21;
+
         Console.WriteLine(hasPathSum(root, targetSum));
     }
 }
@@ -661,10 +664,7 @@ class GfG {
 
             JavaScript
 
-    // JavaScript Program to Check if Root to leaf
-// path sum equal to a given number 
-
-class Node {
+    class Node {
     constructor(key) {
         this.data = key;
         this.left = null;
@@ -672,54 +672,60 @@ class Node {
     }
 }
 
-// Check if there's a root-to-leaf path 
-// with the given sum
+// Check if there's a root-to-leaf path with
+// the given sum
 function hasPathSum(root, targetSum) {
-    if (root === null) return false;
+    if (root === null) {
+        return false;
+    }
 
-    const stack = [];
-    const sums = [];
+    let stack = [];
+    let sums = [];
     stack.push(root);
     sums.push(root.data);
-    
+
     while (stack.length > 0) {
-        const node = stack.pop();
-        const sum = sums.pop();
-        
+        let node = stack.pop();
+        let sumValue = sums.pop();
+
         // Check if leaf node and sum matches
-        if (node.left === null && node.right === null 
-        	&& sum === targetSum)
+        if (node.left === null && node.right === null && sumValue === targetSum) {
             return true;
-        
-        // Add children to stacks with updated sums
-        if (node.left) {
-            stack.push(node.left);
-            sums.push(sum + node.left.data);
         }
-        if (node.right) {
+
+        // Add children to stacks with updated sums
+        if (node.left!== null) {
+            stack.push(node.left);
+            sums.push(sumValue + node.left.data);
+        }
+        if (node.right!== null) {
             stack.push(node.right);
-            sums.push(sum + node.right.data);
+            sums.push(sumValue + node.right.data);
         }
     }
-    
+
     return false;
 }
 
-  // Construct binary tree
-  //         10
-  //       /  \
-  //      8    2
-  //     / \   /
-  //    3   5 2
-const root = new Node(10);
-root.left = new Node(8);
-root.right = new Node(2);
-root.left.left = new Node(3);
-root.left.right = new Node(5);
-root.right.left = new Node(2);
+if (typeof require!== 'undefined') {
+    // Construct binary tree
+    //         10
+    //       /  \
+    //      8    2
+    //     / \  /
+    //    3   5 2
 
-const targetSum = 21;
-console.log(hasPathSum(root, targetSum));
+    let root = new Node(10);
+    root.left = new Node(8);
+    root.right = new Node(2);
+    root.left.left = new Node(3);
+    root.left.right = new Node(5);
+    root.right.left = new Node(2);
+
+    let targetSum = 21;
+
+    console.log(hasPathSum(root, targetSum));
+}
 
 OutputTrue
 Time Complexity: O(n) where n is the number of nodes.Auxiliary Space: O(h) where h is the height of the tree.

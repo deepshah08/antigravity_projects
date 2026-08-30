@@ -27,7 +27,7 @@ Skip to content
             
 
         
-        CoursesDSA / PlacementsDA / Data Science & AIDevelopmentDevOps CourseGATE PrepAll CoursesTutorialsPythonJavaDSAML & Data ScienceInterview CornerProgramming LanguagesWeb DevelopmentGATECS SubjectsDevOpsSchool LearningSoftware and ToolsPracticeSummer SkillupPractice Coding ProblemsProblem of the DayConnect 1:1 with ExpertsJobsApply Now!Post JobsJobs Updates
+        CoursesDSA / PlacementsDA / Data Science & AIDevelopmentDevOps CourseAll CoursesTutorialsPythonJavaML & Data ScienceProgramming LanguagesWeb DevelopmentCS SubjectsDevOpsSoftware and ToolsSchool LearningInterview PrepInterview CornerPractice DSAGfG 160Problem of the Day
         
             
                                             
@@ -48,94 +48,7 @@ Skip to content
                     
                 
 
-                
-                
-                    .hidden{
-                        display:none !important; 
-                      }
-                    
-                    .notification-bell-icon::after {
-                        background-position: -7px -3186px;
-                        transform: scale(0.8);
-                    }
-                        
-                    #toggleButton{
-                        display:block !important;
-                    }
-                
-                    
-
-    
-        
-            
-            
-        
-        
-        
-            
-                Notifications
-                
-                    Mark all as read
-                
-            
-            
-                
-                    
-                        All
-                    
-    
-                
-            
-            
-                
-                 
-                    
-                        View All
-                    
-                
-            
-            
-                
-                    
-                
-                
-                    
-                        Notifications
-                        
-                            
                                 
-                                Mark all as read
-                            
-                        
-                    
-                
-                    
-                        
-                            All
-                        
-                        
-                            Unread
-                        
-                        
-                            Read
-                        
-                    
-                
-                
-                    
-                        You're all caught up!!
-                    
-                
-                
-                
-                    
-                    
-                
-            
-        
-    
-    
-                
 
                 
                     

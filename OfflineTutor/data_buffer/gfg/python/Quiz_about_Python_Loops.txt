@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython LoopsLast Updated : DiscussCommentsQuestion 1The best command to repeat a control statement a fixed number of times? While loopFor loopIfElseQuestion 2What will be the output of the following Python code?
+    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython LoopsLast Updated : DiscussCommentsQuestion 1The best command to repeat a control statement a fixed number of times? While loopFor loopIfElseQuestion 2What will be the output of the following Python code?
         Python
         
         for i in range(int(2.0)):

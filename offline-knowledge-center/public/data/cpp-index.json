@@ -4,7 +4,7 @@
   "articles": [
     {
       "id": "cpp-001",
-      "title": "Introduction to C++ - GeeksforGeeks"
+      "title": "Setting up C++ Development Environment - GeeksforGeeks"
     },
     {
       "id": "cpp-002",
@@ -12,7 +12,7 @@
     },
     {
       "id": "cpp-003",
-      "title": "Setting up C++ Development Environment - GeeksforGeeks"
+      "title": "Introduction to C++ - GeeksforGeeks"
     },
     {
       "id": "cpp-004",
@@ -36,1167 +36,1167 @@
     },
     {
       "id": "cpp-009",
-      "title": "Quiz about C++ Basics"
-    },
-    {
-      "id": "cpp-010",
-      "title": "Quiz about C++ Variables and Data Types"
-    },
-    {
-      "id": "cpp-011",
       "title": "Operators in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-012",
-      "title": "Quiz about C++ Operators"
-    },
-    {
-      "id": "cpp-013",
-      "title": "Quiz about C++ Input Output"
-    },
-    {
-      "id": "cpp-014",
+      "id": "cpp-010",
       "title": "Decision Making in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-015",
+      "id": "cpp-011",
       "title": "Loops in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-016",
-      "title": "Quiz about C++ Flow Control"
-    },
-    {
-      "id": "cpp-017",
-      "title": "Quiz about C++ Loops"
-    },
-    {
-      "id": "cpp-018",
+      "id": "cpp-012",
       "title": "Functions in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-019",
+      "id": "cpp-013",
       "title": "Function Overloading in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-020",
+      "id": "cpp-014",
       "title": "Parameter Passing Techniques in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-021",
+      "id": "cpp-015",
       "title": "Default Arguments in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-022",
+      "id": "cpp-016",
       "title": "Inline Functions in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-023",
+      "id": "cpp-017",
       "title": "C++ Recursion - GeeksforGeeks"
     },
     {
-      "id": "cpp-024",
+      "id": "cpp-018",
       "title": "Lambda Expression in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-025",
-      "title": "Quiz about Quiz on C++ Functions"
-    },
-    {
-      "id": "cpp-026",
+      "id": "cpp-019",
       "title": "Arrays in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-027",
+      "id": "cpp-020",
       "title": "C++ Multidimensional Array - GeeksforGeeks"
     },
     {
-      "id": "cpp-028",
+      "id": "cpp-021",
       "title": "Strings in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-029",
+      "id": "cpp-022",
       "title": "std::string class in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-030",
+      "id": "cpp-023",
       "title": "String Functions in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-031",
-      "title": "Quiz about Quiz on C++ Strings"
-    },
-    {
-      "id": "cpp-032",
-      "title": "Quiz about Quiz on C++ Arrays"
-    },
-    {
-      "id": "cpp-033",
+      "id": "cpp-024",
       "title": "C++ Pointers - GeeksforGeeks"
     },
     {
-      "id": "cpp-034",
+      "id": "cpp-025",
       "title": "References in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-035",
+      "id": "cpp-026",
       "title": "Pointers and References in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-036",
-      "title": "Quiz about Quiz on C++ Pointers"
-    },
-    {
-      "id": "cpp-037",
-      "title": "Quiz about C++ References"
-    },
-    {
-      "id": "cpp-038",
+      "id": "cpp-027",
       "title": "Structures in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-039",
+      "id": "cpp-028",
       "title": "C++ Unions - GeeksforGeeks"
     },
     {
-      "id": "cpp-040",
+      "id": "cpp-029",
       "title": "Enumeration in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-041",
-      "title": "Quiz about C++ Structure and Union"
-    },
-    {
-      "id": "cpp-042",
-      "title": "new and delete Operators in C++ For Dynamic Memory - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-043",
-      "title": "Memory leak in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-044",
-      "title": "Quiz about Quiz on C++ Memory Management"
-    },
-    {
-      "id": "cpp-045",
-      "title": "Object Oriented Programming in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-046",
-      "title": "C++ Classes and Objects - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-047",
-      "title": "Constructors in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-048",
-      "title": "Encapsulation in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-049",
-      "title": "Polymorphism in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-050",
-      "title": "Inheritance in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-051",
-      "title": "Abstraction in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-052",
-      "title": "Quiz about Object Oriented Programming in C++"
-    },
-    {
-      "id": "cpp-053",
-      "title": "Templates in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-054",
-      "title": "Standard Template Library (STL) in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-055",
-      "title": "C++ STL Algorithm Library - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-056",
-      "title": "Containers in C++ STL - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-057",
-      "title": "Iterators in C++ STL - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-058",
-      "title": "Vector in C++ STL - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-059",
-      "title": "Stack in C++ STL - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-060",
-      "title": "Queue in C++ STL - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-061",
-      "title": "Map in C++ STL - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-062",
-      "title": "Set in C++ STL - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-063",
-      "title": "Quiz about C++ STL"
-    },
-    {
-      "id": "cpp-064",
-      "title": "Exception Handling in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-065",
-      "title": "Exception Handling using Classes in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-066",
-      "title": "Stack Unwinding in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-067",
-      "title": "User-defined Custom Exception with class in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-068",
-      "title": "Quiz about C++ Exception Handling"
-    },
-    {
-      "id": "cpp-069",
-      "title": "File Handling in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-070",
-      "title": "I/O Redirection in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-071",
-      "title": "Quiz about Quiz on C++ File Handling"
-    },
-    {
-      "id": "cpp-072",
-      "title": "Multithreading in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-073",
-      "title": "How to Create a Thread in C++? - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-074",
-      "title": "std::thread::join() in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-075",
-      "title": "How to Detach a Thread in C++? - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-076",
-      "title": "Mutex in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-077",
-      "title": "unique_lock or lock_guard: Which Is Better? - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-078",
-      "title": "Implementing Race Condition in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-079",
-      "title": "Thread Synchronization in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-080",
-      "title": "C++ Preprocessor And Preprocessor Directives - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-081",
-      "title": "Namespace in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-082",
-      "title": "Smart Pointers in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-083",
-      "title": "Passing a Function as a Parameter in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-084",
-      "title": "Signal Handling in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-085",
-      "title": "Quiz about C++ Beginner Skill Assessment Practice Test"
-    },
-    {
-      "id": "cpp-086",
-      "title": "Quiz about C++ Intermediate Skill Assessment Practice Test"
-    },
-    {
-      "id": "cpp-087",
-      "title": "Quiz about C++ Advanced Skill Assessment Practice Test"
-    },
-    {
-      "id": "cpp-088",
-      "title": "C++ Interview Questions and Answers - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-089",
-      "title": "C vs C++ vs Java vs Python vs JavaScript - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-090",
-      "title": "Careers and Jobs in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-091",
-      "title": "Companies That Use C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-092",
-      "title": "Control flow statements in Programming - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-093",
-      "title": "Pointers and References in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-094",
-      "title": "Structures, Unions and Enumerations in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-095",
-      "title": "C++ Programming Examples - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-096",
-      "title": "Placement 360 Course - Complete Tech Interview Prep"
-    },
-    {
-      "id": "cpp-097",
-      "title": "DSA & System Design Course - SDE Interview Prep"
-    },
-    {
-      "id": "cpp-098",
-      "title": "History of C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-099",
-      "title": "Features of C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-100",
-      "title": "Difference between cerr and clog - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-101",
-      "title": "Naming Convention in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-102",
-      "title": "C++ Booleans - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-103",
-      "title": "C++ Char Data Types - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-104",
-      "title": "char8_t Data Type in C++ 20 - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-105",
-      "title": "C++  if else Statement - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-106",
-      "title": "Switch Statement in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-107",
-      "title": "for Loop in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-108",
-      "title": "C++ While Loop - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-109",
-      "title": "C++ do while Loop - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-110",
-      "title": "C++ Break Statement - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-111",
-      "title": "continue Statement in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-112",
-      "title": "goto Statement in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-113",
-      "title": "Understanding nullptr in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-114",
-      "title": "delete keyword in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-115",
-      "title": "C++ sizeof Operator - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-116",
-      "title": "Alignas in C++ 11 - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-117",
-      "title": "alignof operator in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-118",
-      "title": "Friend Class and Function in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-119",
-      "title": "C++ mutable keyword - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-120",
-      "title": "'this' pointer in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-121",
-      "title": "Access Modifiers in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-122",
-      "title": "Use of explicit keyword in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-123",
-      "title": "Virtual Function in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-124",
-      "title": "C++ final Specifier - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-125",
-      "title": "Understanding constexpr Specifier in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-126",
-      "title": "constinit Specifier in C++ 20 - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-127",
+      "id": "cpp-030",
       "title": "typedef in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-128",
+      "id": "cpp-031",
+      "title": "Using Keyword in C++ STL - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-032",
+      "title": "What is Dynamic Memory Allocation? - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-033",
+      "title": "new and delete Operators in C++ For Dynamic Memory - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-034",
+      "title": "Memory leak in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-035",
+      "title": "Object Oriented Programming in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-036",
+      "title": "C++ Classes and Objects - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-037",
+      "title": "Constructors in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-038",
+      "title": "Encapsulation in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-039",
+      "title": "Polymorphism in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-040",
+      "title": "Inheritance in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-041",
+      "title": "Abstraction in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-042",
+      "title": "Templates in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-043",
+      "title": "Standard Template Library (STL) in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-044",
+      "title": "C++ STL Algorithm Library - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-045",
+      "title": "Containers in C++ STL - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-046",
+      "title": "Iterators in C++ STL - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-047",
+      "title": "Vector in C++ STL - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-048",
+      "title": "Stack in C++ STL - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-049",
+      "title": "Queue in C++ STL - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-050",
+      "title": "Map in C++ STL - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-051",
+      "title": "Set in C++ STL - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-052",
+      "title": "Exception Handling in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-053",
+      "title": "Exception Handling using Classes in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-054",
+      "title": "Stack Unwinding in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-055",
+      "title": "User-defined Custom Exception with class in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-056",
+      "title": "File Handling in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-057",
+      "title": "I/O Redirection in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-058",
+      "title": "Multithreading in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-059",
+      "title": "How to Create a Thread in C++? - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-060",
+      "title": "std::thread::join() in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-061",
+      "title": "How to Detach a Thread in C++? - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-062",
+      "title": "Mutex in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-063",
+      "title": "unique_lock or lock_guard: Which Is Better? - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-064",
+      "title": "Implementing Race Condition in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-065",
+      "title": "Thread Synchronization in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-066",
+      "title": "C++ Preprocessor And Preprocessor Directives - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-067",
+      "title": "Namespace in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-068",
+      "title": "Smart Pointers in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-069",
+      "title": "Passing a Function as a Parameter in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-070",
+      "title": "Signal Handling in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-071",
+      "title": "Quiz about C++ Beginner Skill Assessment Practice Test"
+    },
+    {
+      "id": "cpp-072",
+      "title": "Quiz about C++ Intermediate Skill Assessment Practice Test"
+    },
+    {
+      "id": "cpp-073",
+      "title": "Quiz about C++ Advanced Skill Assessment Practice Test"
+    },
+    {
+      "id": "cpp-074",
+      "title": "C++ Interview Questions and Answers - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-075",
+      "title": "C vs C++ vs Java vs Python vs JavaScript - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-076",
+      "title": "Careers and Jobs in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-077",
+      "title": "Companies That Use C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-078",
+      "title": "Control flow statements in Programming - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-079",
+      "title": "Structures, Unions and Enumerations in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-080",
+      "title": "C++ Programming Examples - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-081",
+      "title": "Placement 360 Course - Complete Tech Interview Prep"
+    },
+    {
+      "id": "cpp-082",
+      "title": "DSA & System Design Course - SDE Interview Prep"
+    },
+    {
+      "id": "cpp-083",
+      "title": "History of C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-084",
+      "title": "Features of C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-085",
+      "title": "Difference between cerr and clog - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-086",
+      "title": "Naming Convention in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-087",
+      "title": "C++ Booleans - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-088",
+      "title": "C++ Char Data Types - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-089",
+      "title": "char8_t Data Type in C++ 20 - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-090",
+      "title": "C++  if else Statement - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-091",
+      "title": "Switch Statement in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-092",
+      "title": "for Loop in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-093",
+      "title": "C++ While Loop - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-094",
+      "title": "C++ do while Loop - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-095",
+      "title": "C++ Break Statement - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-096",
+      "title": "continue Statement in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-097",
+      "title": "goto Statement in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-098",
+      "title": "Understanding nullptr in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-099",
+      "title": "delete keyword in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-100",
+      "title": "C++ sizeof Operator - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-101",
+      "title": "Alignas in C++ 11 - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-102",
+      "title": "alignof operator in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-103",
+      "title": "Friend Class and Function in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-104",
+      "title": "C++ mutable keyword - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-105",
+      "title": "'this' pointer in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-106",
+      "title": "Access Modifiers in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-107",
+      "title": "Use of explicit keyword in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-108",
+      "title": "Virtual Function in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-109",
+      "title": "C++ final Specifier - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-110",
+      "title": "Understanding constexpr Specifier in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-111",
+      "title": "constinit Specifier in C++ 20 - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-112",
       "title": "How to Use typename Keyword in C++? - GeeksforGeeks"
     },
     {
-      "id": "cpp-129",
+      "id": "cpp-113",
       "title": "How to Use the Try and Catch Blocks in C++? - GeeksforGeeks"
     },
     {
-      "id": "cpp-130",
+      "id": "cpp-114",
       "title": "noexcept Operator in C++ 11 - GeeksforGeeks"
     },
     {
-      "id": "cpp-131",
+      "id": "cpp-115",
       "title": "const_cast in C++ | Type Casting operators - GeeksforGeeks"
     },
     {
-      "id": "cpp-132",
+      "id": "cpp-116",
       "title": "Dynamic _Cast in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-133",
+      "id": "cpp-117",
       "title": "reinterpret_cast in C++ | Type Casting operators - GeeksforGeeks"
     },
     {
-      "id": "cpp-134",
+      "id": "cpp-118",
       "title": "static_cast in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-135",
+      "id": "cpp-119",
       "title": "Type Inference in C++ (auto and decltype) - GeeksforGeeks"
     },
     {
-      "id": "cpp-136",
+      "id": "cpp-120",
       "title": "typeid operator in C++ with Examples - GeeksforGeeks"
     },
     {
-      "id": "cpp-137",
+      "id": "cpp-121",
       "title": "Const keyword in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-138",
+      "id": "cpp-122",
       "title": "Static Keyword in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-139",
+      "id": "cpp-123",
       "title": "Understanding static_assert in C++ 11 - GeeksforGeeks"
     },
     {
-      "id": "cpp-140",
+      "id": "cpp-124",
       "title": "extern Keyword in C - GeeksforGeeks"
     },
     {
-      "id": "cpp-141",
+      "id": "cpp-125",
       "title": "thread_local Storage in C++ 11 - GeeksforGeeks"
     },
     {
-      "id": "cpp-142",
+      "id": "cpp-126",
       "title": "How to Use the Volatile Keyword in C++? - GeeksforGeeks"
     },
     {
-      "id": "cpp-143",
+      "id": "cpp-127",
       "title": "C++ | asm declaration - GeeksforGeeks"
     },
     {
-      "id": "cpp-144",
+      "id": "cpp-128",
       "title": "return Statement in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-145",
+      "id": "cpp-129",
       "title": "Difference between Keyword and Identifier in C - GeeksforGeeks"
     },
     {
-      "id": "cpp-146",
+      "id": "cpp-130",
       "title": "Assignment Operators in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-147",
+      "id": "cpp-131",
       "title": "Literals in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-148",
+      "id": "cpp-132",
       "title": "C++ Arithmetic Operators - GeeksforGeeks"
     },
     {
-      "id": "cpp-149",
+      "id": "cpp-133",
       "title": "Storage Classes in C++ with Examples - GeeksforGeeks"
     },
     {
-      "id": "cpp-150",
+      "id": "cpp-134",
       "title": "Constants in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-151",
+      "id": "cpp-135",
       "title": "Scope of Variables in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-152",
+      "id": "cpp-136",
       "title": "Type Conversion in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-153",
+      "id": "cpp-137",
       "title": "Modulo Operator (%) in C/C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-154",
+      "id": "cpp-138",
       "title": "Unary Operators In C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-155",
+      "id": "cpp-139",
       "title": "Relational Operators in C - GeeksforGeeks"
     },
     {
-      "id": "cpp-156",
+      "id": "cpp-140",
       "title": "Bitwise Operators in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-157",
+      "id": "cpp-141",
       "title": "C++ Ternary or Conditional Operator - GeeksforGeeks"
     },
     {
-      "id": "cpp-158",
+      "id": "cpp-142",
       "title": "Comma in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-159",
+      "id": "cpp-143",
       "title": "C++ Pointer Operators - GeeksforGeeks"
     },
     {
-      "id": "cpp-160",
+      "id": "cpp-144",
       "title": "Dot (.) Operator in C - GeeksforGeeks"
     },
     {
-      "id": "cpp-161",
+      "id": "cpp-145",
       "title": "Arrow operator  -&gt; in C/C++ with Examples - GeeksforGeeks"
     },
     {
-      "id": "cpp-162",
+      "id": "cpp-146",
       "title": "Casting Operators in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-163",
+      "id": "cpp-147",
       "title": "Operator Precedence and Associativity in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-164",
+      "id": "cpp-148",
       "title": "C++ if Statement - GeeksforGeeks"
     },
     {
-      "id": "cpp-165",
+      "id": "cpp-149",
       "title": "C++ if else if Ladder - GeeksforGeeks"
     },
     {
-      "id": "cpp-166",
+      "id": "cpp-150",
       "title": "C++ Nested if-else Statement - GeeksforGeeks"
     },
     {
-      "id": "cpp-167",
+      "id": "cpp-151",
       "title": "Jump statements in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-168",
+      "id": "cpp-152",
       "title": "Range-Based for Loop in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-169",
+      "id": "cpp-153",
       "title": "Nested Loops in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-170",
+      "id": "cpp-154",
       "title": "sqrt, sqrtl and sqrtf in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-171",
+      "id": "cpp-155",
       "title": "abs(), labs(), llabs() functions in C/C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-172",
+      "id": "cpp-156",
       "title": "getline (string) in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-173",
+      "id": "cpp-157",
       "title": "Header Files in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-174",
+      "id": "cpp-158",
       "title": "C++ Functions - Pass By Reference - GeeksforGeeks"
     },
     {
-      "id": "cpp-175",
+      "id": "cpp-159",
       "title": "Functions that cannot be overloaded in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-176",
+      "id": "cpp-160",
       "title": "Types of Recursion in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-177",
+      "id": "cpp-161",
       "title": "Function Call Stack in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-178",
+      "id": "cpp-162",
       "title": "Difference between Recursion and Iteration - GeeksforGeeks"
     },
     {
-      "id": "cpp-179",
+      "id": "cpp-163",
       "title": "Lambda Capture Clause in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-180",
+      "id": "cpp-164",
       "title": "Overloading Subscript or array index operator [] in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-181",
+      "id": "cpp-165",
       "title": "Assignment Operators in C - GeeksforGeeks"
     },
     {
-      "id": "cpp-182",
+      "id": "cpp-166",
       "title": "sizeof operator in C - GeeksforGeeks"
     },
     {
-      "id": "cpp-183",
+      "id": "cpp-167",
       "title": "Relationship Between Pointer and Array in C - GeeksforGeeks"
     },
     {
-      "id": "cpp-184",
+      "id": "cpp-168",
       "title": "Pass Array to Functions in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-185",
+      "id": "cpp-169",
       "title": "Segmentation Fault in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-186",
+      "id": "cpp-170",
       "title": "How to Pass 2D Array to Functions in C++ ? - GeeksforGeeks"
     },
     {
-      "id": "cpp-187",
+      "id": "cpp-171",
       "title": "How to pass and return a 3-Dimensional Array in C++? - GeeksforGeeks"
     },
     {
-      "id": "cpp-188",
+      "id": "cpp-172",
       "title": "substr() in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-189",
+      "id": "cpp-173",
       "title": "String find() in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-190",
+      "id": "cpp-174",
       "title": "swap() in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-191",
+      "id": "cpp-175",
       "title": "std::string::size() in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-192",
+      "id": "cpp-176",
       "title": "std::string::resize() in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-193",
+      "id": "cpp-177",
       "title": "std::string::push_back() in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-194",
+      "id": "cpp-178",
       "title": "How to Remove Last Character From C++ String? - GeeksforGeeks"
     },
     {
-      "id": "cpp-195",
+      "id": "cpp-179",
       "title": "std::string::clear in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-196",
+      "id": "cpp-180",
       "title": "std::string::replace() in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-197",
+      "id": "cpp-181",
       "title": "std::string::compare() in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-198",
+      "id": "cpp-182",
       "title": "string erase in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-199",
+      "id": "cpp-183",
       "title": "std::string::rfind in C++ with Examples - GeeksforGeeks"
     },
     {
-      "id": "cpp-200",
+      "id": "cpp-184",
       "title": "string shrink_to_fit() function in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-201",
+      "id": "cpp-185",
       "title": "string::rbegin() and string::rend() in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-202",
+      "id": "cpp-186",
       "title": "vector :: cbegin() and vector :: cend() in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-203",
+      "id": "cpp-187",
       "title": "std::string::crbegin() and std::string::crend() in C++ with Examples - GeeksforGeeks"
     },
     {
-      "id": "cpp-204",
+      "id": "cpp-188",
       "title": "std::string::length, std::string::capacity, std::string::size in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-205",
+      "id": "cpp-189",
       "title": "string at() in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-206",
+      "id": "cpp-190",
       "title": "std::string::append() in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-207",
+      "id": "cpp-191",
       "title": "string insert() in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-208",
+      "id": "cpp-192",
       "title": "basic_string c_str function in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-209",
+      "id": "cpp-193",
       "title": "C++ Dereferencing - GeeksforGeeks"
     },
     {
-      "id": "cpp-210",
+      "id": "cpp-194",
       "title": "NULL Pointer in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-211",
+      "id": "cpp-195",
       "title": "void Pointer in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-212",
+      "id": "cpp-196",
       "title": "C++ Pointer Arithmetic - GeeksforGeeks"
     },
     {
-      "id": "cpp-213",
+      "id": "cpp-197",
       "title": "C++ Pointer To Pointer (Double Pointer) - GeeksforGeeks"
     },
     {
-      "id": "cpp-214",
+      "id": "cpp-198",
       "title": "Function Pointer in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-215",
+      "id": "cpp-199",
+      "title": "Pointers and References in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-200",
       "title": "Features and Use of Pointers in C/C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-216",
+      "id": "cpp-201",
       "title": "Passing Pointers to Functions In C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-217",
+      "id": "cpp-202",
       "title": "Designated Initializers in C++ 20 - GeeksforGeeks"
     },
     {
-      "id": "cpp-218",
+      "id": "cpp-203",
       "title": "dot (.) operator in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-219",
+      "id": "cpp-204",
       "title": "Why does empty Structure has size 1 byte in C++ but 0 byte in C - GeeksforGeeks"
     },
     {
-      "id": "cpp-220",
+      "id": "cpp-205",
       "title": "Self Referential Structures - GeeksforGeeks"
     },
     {
-      "id": "cpp-221",
+      "id": "cpp-206",
       "title": "C++ Bit Fields - GeeksforGeeks"
     },
     {
-      "id": "cpp-222",
+      "id": "cpp-207",
       "title": "bad_alloc in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-223",
+      "id": "cpp-208",
       "title": "Dangling Pointers in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-224",
+      "id": "cpp-209",
       "title": "Placement new operator in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-225",
+      "id": "cpp-210",
       "title": "Destructors in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-226",
+      "id": "cpp-211",
       "title": "How to Detect Memory Leaks in C++? - GeeksforGeeks"
     },
     {
-      "id": "cpp-227",
+      "id": "cpp-212",
       "title": "Association - Class Relationship - GeeksforGeeks"
     },
     {
-      "id": "cpp-228",
+      "id": "cpp-213",
       "title": "Aggregation - Class Relationship - GeeksforGeeks"
     },
     {
-      "id": "cpp-229",
+      "id": "cpp-214",
       "title": "Object Composition-Delegation in C++ with Examples - GeeksforGeeks"
     },
     {
-      "id": "cpp-230",
-      "title": "Classes and Objects in Java - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-231",
-      "title": "Local Classes in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-232",
-      "title": "Enum Classes in C++ and Their Advantage over Enum DataType - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-233",
-      "title": "Nested Classes in C++ - GeeksforGeeks"
-    },
-    {
-      "id": "cpp-234",
+      "id": "cpp-215",
       "title": "Copy Constructor in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-235",
+      "id": "cpp-216",
       "title": "Rule Of Three in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-236",
+      "id": "cpp-217",
       "title": "The Rule of Five in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-237",
+      "id": "cpp-218",
       "title": "C++ Getters and Setters - GeeksforGeeks"
     },
     {
-      "id": "cpp-238",
+      "id": "cpp-219",
       "title": "Operator Overloading in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-239",
+      "id": "cpp-220",
       "title": "Function Overriding in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-240",
+      "id": "cpp-221",
       "title": "Difference Between Compile Time And Run Time Polymorphism In C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-241",
+      "id": "cpp-222",
       "title": "Multiple Inheritance in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-242",
+      "id": "cpp-223",
       "title": "C++ Multilevel Inheritance - GeeksforGeeks"
     },
     {
-      "id": "cpp-243",
+      "id": "cpp-224",
       "title": "C++ Hierarchical Inheritance - GeeksforGeeks"
     },
     {
-      "id": "cpp-244",
+      "id": "cpp-225",
       "title": "Hybrid Inheritance In C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-245",
+      "id": "cpp-226",
       "title": "Diamond Problem in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-246",
+      "id": "cpp-227",
       "title": "virtual inheritance in C++"
     },
     {
-      "id": "cpp-247",
+      "id": "cpp-228",
       "title": "Generics in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-248",
+      "id": "cpp-229",
       "title": "Template Metaprogramming in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-249",
+      "id": "cpp-230",
       "title": "List in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-250",
+      "id": "cpp-231",
       "title": "Forward List in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-251",
+      "id": "cpp-232",
       "title": "STD::array in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-252",
+      "id": "cpp-233",
       "title": "Multiset in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-253",
+      "id": "cpp-234",
       "title": "Multimap in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-254",
+      "id": "cpp-235",
       "title": "Unordered Multiset in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-255",
+      "id": "cpp-236",
       "title": "Unordered Multimap in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-256",
+      "id": "cpp-237",
       "title": "Sort in C++ Standard Template Library (STL) - GeeksforGeeks"
     },
     {
-      "id": "cpp-257",
+      "id": "cpp-238",
       "title": "std::binary_search() in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-258",
+      "id": "cpp-239",
       "title": "find() in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-259",
+      "id": "cpp-240",
       "title": "count() in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-260",
+      "id": "cpp-241",
       "title": "reverse() in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-261",
+      "id": "cpp-242",
       "title": "accumulate() and partial_sum() in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-262",
+      "id": "cpp-243",
       "title": "std::unique in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-263",
+      "id": "cpp-244",
       "title": "std::replace and std::replace_if in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-264",
+      "id": "cpp-245",
       "title": "Introduction to Iterators in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-265",
+      "id": "cpp-246",
       "title": "std::find_if , std::find_if_not in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-266",
+      "id": "cpp-247",
       "title": "C++ Program For Binary Search - GeeksforGeeks"
     },
     {
-      "id": "cpp-267",
+      "id": "cpp-248",
       "title": "std::find_end in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-268",
+      "id": "cpp-249",
       "title": "stable_sort() in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-269",
+      "id": "cpp-250",
       "title": "std::partial_sort in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-270",
+      "id": "cpp-251",
       "title": "std::nth_element in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-271",
+      "id": "cpp-252",
       "title": "is_sorted() in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-272",
+      "id": "cpp-253",
       "title": "std::is_sorted_until in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-273",
+      "id": "cpp-254",
       "title": "Different methods to copy in C++ STL | std::copy(), copy_n(), copy_if(), copy_backward() - GeeksforGeeks"
     },
     {
-      "id": "cpp-274",
+      "id": "cpp-255",
       "title": "std::move in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-275",
+      "id": "cpp-256",
       "title": "std::remove in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-276",
+      "id": "cpp-257",
       "title": "fill in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-277",
+      "id": "cpp-258",
       "title": "transform() in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-278",
+      "id": "cpp-259",
       "title": "std::generate in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-279",
+      "id": "cpp-260",
       "title": "Shuffle an Array using STL in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-280",
+      "id": "cpp-261",
       "title": "count_if() in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-281",
+      "id": "cpp-262",
       "title": "std::equal() in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-282",
+      "id": "cpp-263",
       "title": "std::mismatch() with examples in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-283",
+      "id": "cpp-264",
       "title": "lexicographical_compare() in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-284",
+      "id": "cpp-265",
       "title": "std::is_permutation in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-285",
+      "id": "cpp-266",
       "title": "iota() in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-286",
+      "id": "cpp-267",
       "title": "std::inner_product in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-287",
+      "id": "cpp-268",
       "title": "Array class in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-288",
+      "id": "cpp-269",
       "title": "Vector begin() in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-289",
+      "id": "cpp-270",
       "title": "set cbegin() and cend() function in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-290",
+      "id": "cpp-271",
       "title": "vector rbegin() and rend() Functions in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-291",
+      "id": "cpp-272",
       "title": "set crbegin() and crend() function in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-292",
+      "id": "cpp-273",
       "title": "Iterators Operations in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-293",
+      "id": "cpp-274",
       "title": "C++ Increment and Decrement Operators - GeeksforGeeks"
     },
     {
-      "id": "cpp-294",
+      "id": "cpp-275",
       "title": "Input Iterators in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-295",
+      "id": "cpp-276",
       "title": "Output Iterators in C++ - GeeksforGeeks"
     },
     {
-      "id": "cpp-296",
+      "id": "cpp-277",
       "title": "How to Reverse Iterate a Vector in C++? - GeeksforGeeks"
     },
     {
-      "id": "cpp-297",
+      "id": "cpp-278",
       "title": "std::istream_iterator and std::ostream_iterator in C++ STL - GeeksforGeeks"
     },
     {
-      "id": "cpp-298",
+      "id": "cpp-279",
       "title": "std::move_iterator in C++ 11 - GeeksforGeeks"
     },
     {
-      "id": "cpp-299",
+      "id": "cpp-280",
       "title": "std::inserter in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-281",
+      "title": "std::back_inserter in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-282",
+      "title": "std::front_inserter in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-283",
+      "title": "std::advance in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-284",
+      "title": "std::next in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-285",
+      "title": "std::prev in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-286",
+      "title": "std::distance in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-287",
+      "title": "Vector push_back() in C++ STL - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-288",
+      "title": "Vector insert() in C++ STL - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-289",
+      "title": "Vector erase() in C++ STL - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-290",
+      "title": "Vector empty() in C++ STL - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-291",
+      "title": "Vector of Vectors in C++ STL with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-292",
+      "title": "stack::push() and stack::pop() in C++ STL - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-293",
+      "title": "stack top() in C++ STL - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-294",
+      "title": "Container Adapter in C++ - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-295",
+      "title": "queue push() and pop() in C++ STL - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-296",
+      "title": "queue::front() and queue::back() in C++ STL - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-297",
+      "title": "queue::empty() and queue::size() in C++ STL - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-298",
+      "title": "queue::emplace() in C++ STL - GeeksforGeeks"
+    },
+    {
+      "id": "cpp-299",
+      "title": "queue::swap() in C++ STL - GeeksforGeeks"
     }
   ]
 }

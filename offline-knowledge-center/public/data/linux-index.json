@@ -1080,111 +1080,111 @@
     },
     {
       "id": "linux-273",
-      "title": "How to Download and Install Visual Studio Code on Ubuntu? - GeeksforGeeks"
-    },
-    {
-      "id": "linux-274",
       "title": "How to install LibreOffice on Arch-based Linux Distributions(Manjaro) ? - GeeksforGeeks"
     },
     {
-      "id": "linux-275",
+      "id": "linux-274",
       "title": "How to install GIMP on Linux? - GeeksforGeeks"
     },
     {
-      "id": "linux-276",
+      "id": "linux-275",
       "title": "How to Install ProtonVPN in Linux - GeeksforGeeks"
     },
     {
-      "id": "linux-277",
+      "id": "linux-276",
       "title": "How to Install Krita on Ubuntu - GeeksforGeeks"
     },
     {
-      "id": "linux-278",
+      "id": "linux-277",
       "title": "Listing Files and Directories in Linux - GeeksforGeeks"
     },
     {
-      "id": "linux-279",
+      "id": "linux-278",
       "title": "basename Command in Linux - GeeksforGeeks"
     },
     {
-      "id": "linux-280",
+      "id": "linux-279",
       "title": "cksum Command in Linux - GeeksforGeeks"
     },
     {
-      "id": "linux-281",
+      "id": "linux-280",
       "title": "cmp Command in Linux - GeeksforGeeks"
     },
     {
-      "id": "linux-282",
+      "id": "linux-281",
       "title": "cpio Command in Linux - GeeksforGeeks"
     },
     {
-      "id": "linux-283",
+      "id": "linux-282",
       "title": "csplit Command in Linux - GeeksforGeeks"
     },
     {
-      "id": "linux-284",
+      "id": "linux-283",
       "title": "cut Command in Linux - GeeksforGeeks"
     },
     {
-      "id": "linux-285",
+      "id": "linux-284",
       "title": "How to Compare Files Line by Line in Linux | diff Command - GeeksforGeeks"
     },
     {
-      "id": "linux-286",
+      "id": "linux-285",
       "title": "diff3 command in Linux with examples - GeeksforGeeks"
     },
     {
-      "id": "linux-287",
+      "id": "linux-286",
       "title": "expand Command in LINUX with examples - GeeksforGeeks"
     },
     {
-      "id": "linux-288",
+      "id": "linux-287",
       "title": "file command in Linux with examples - GeeksforGeeks"
     },
     {
-      "id": "linux-289",
+      "id": "linux-288",
       "title": "fold command in Linux with examples - GeeksforGeeks"
     },
     {
-      "id": "linux-290",
+      "id": "linux-289",
       "title": "join Command in Linux - GeeksforGeeks"
     },
     {
-      "id": "linux-291",
+      "id": "linux-290",
       "title": "look command in Linux with Examples - GeeksforGeeks"
     },
     {
-      "id": "linux-292",
+      "id": "linux-291",
       "title": "od command in Linux with example - GeeksforGeeks"
     },
     {
-      "id": "linux-293",
+      "id": "linux-292",
       "title": "Paste command in Linux with examples - GeeksforGeeks"
     },
     {
-      "id": "linux-294",
+      "id": "linux-293",
       "title": "readlink command in Linux with Examples - GeeksforGeeks"
     },
     {
-      "id": "linux-295",
+      "id": "linux-294",
       "title": "How to Rename File in Linux | rename Command - GeeksforGeeks"
     },
     {
-      "id": "linux-296",
+      "id": "linux-295",
       "title": "rev command in Linux with Examples - GeeksforGeeks"
     },
     {
-      "id": "linux-297",
+      "id": "linux-296",
       "title": "shred Command in Linux with Examples - GeeksforGeeks"
     },
     {
-      "id": "linux-298",
+      "id": "linux-297",
       "title": "Split Command in Linux with Examples - GeeksforGeeks"
     },
     {
-      "id": "linux-299",
+      "id": "linux-298",
       "title": "tac command in Linux with Examples - GeeksforGeeks"
+    },
+    {
+      "id": "linux-299",
+      "title": "tee command in Linux with examples - GeeksforGeeks"
     }
   ]
 }

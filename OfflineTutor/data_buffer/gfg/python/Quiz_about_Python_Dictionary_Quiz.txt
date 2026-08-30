@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython Dictionary QuizLast Updated : DiscussCommentsQuestion 1What will be the output of the following code?
+    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython Dictionary QuizLast Updated : DiscussCommentsQuestion 1What will be the output of the following code?
         Python
         
         d = {'a': 5, 'b': 10}

@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython Data TypeLast Updated : DiscussCommentsQuestion 1Which of these is not a core data type?ListsDictionaryTuplesClassQuestion 2What is the data type of variable x in the following code?
+    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython Data TypeLast Updated : DiscussCommentsQuestion 1Which of these is not a core data type?ListsDictionaryTuplesClassQuestion 2What is the data type of variable x in the following code?
         Python
         
         x = [1, 23, ‘hello’, 1]

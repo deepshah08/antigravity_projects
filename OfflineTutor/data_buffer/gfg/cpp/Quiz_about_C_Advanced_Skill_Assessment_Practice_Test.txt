@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsC++ Advanced Skill Assessment Practice TestLast Updated : DiscussCommentsQuestion 1Given the following class definition, which of the following statements is true regarding object construction and destruction?
+    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsC++ Advanced Skill Assessment Practice TestLast Updated : DiscussCommentsQuestion 1Given the following class definition, which of the following statements is true regarding object construction and destruction?
         C++
         
         #include <iostream>

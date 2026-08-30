@@ -1,3 +1,42 @@
 # SQL  ALTERNATE KEY - GeeksforGeeks
 
-An Alternate Key is a candidate key that is not chosen as the Primary Key but can still uniquely identify a record in a table.When multiple attributes can uniquely identify records, only one is selected as the Primary Key.The remaining unique attributes act as Alternate Keys, providing alternative ways to identify records.Query:CREATE TABLE CustomerInfo (    CustomerID INT PRIMARY KEY,             CustomerName VARCHAR(50),    EmailAddress VARCHAR(100) UNIQUE,      PanNumber VARCHAR(20) UNIQUE,           City VARCHAR(50));INSERT INTO CustomerInfo VALUES (1, 'James Carter', 'james.carter@example.com', 'PANA12345Z', 'New York'),(2, 'Emily Watson', 'emily.watson@example.com', 'PANB67890Q', 'Los Angeles');Output:CustomerInfo TableEmailAddress and PanNumber act as Alternate Keys (unique but not the Primary Key).Both rows follow the uniqueness rules.Syntax:The ALTERNATE Keys in SQL are defined using the SQL constraint UNIQUE:CREATE TABLE CustomerInfo (    colum_1 datatype PRIMARY KEY,   -- Primary Key    column_2 datatype ,    column_3 datatype UNIQUE,    -- Alternate Key    column_4 datatype UNIQUE,    -- Alternate Key    . . . ,);Note: A candidate key should be a column that can uniquely identify any row in a table, and any of them are eligible to be selected as the Primary Key.Creating an Alternate Key in SQLAn Alternate Key in SQL is created using the UNIQUE constraint to enforce uniqueness on a column.Query:CREATE TABLE Product (    ProductID INT PRIMARY KEY,    ProductName VARCHAR(50),    ProductCode VARCHAR(20) UNIQUE      -- Alternate Key);CREATE TABLE Orders (    OrderID INT PRIMARY KEY,    OrderNumber VARCHAR(30) UNIQUE,     -- Alternate Key    ProductID INT,    Quantity INT,    FOREIGN KEY (ProductID) REFERENCES Product(ProductID));-- Insert data into Product tableINSERT INTO Product VALUES(101, 'Wireless Mouse', 'WMX-100'),(102, 'Bluetooth Speaker', 'BTS-250');-- Insert data into Order tableINSERT INTO Orders VALUES(1, 'ORD-9001', 101, 2),(2, 'ORD-9002', 102, 1);Output:Product TableOrders TableProductID is the Primary Key in Product, while ProductCode is UNIQUE, making it the Alternate Key.OrderID is the Primary Key in Orders, and ProductID functions as a Foreign Key referencing Product.OrderNumber is UNIQUE, so it serves as the Alternate Key in the Orders table.Primary Key Vs Alternate KeyHere are the detailed comparison between Primary and Alternate key:Primary KeyAlternate KeyMust be uniqueMust be uniqueCannot contain NULL valuesCan contain NULL valuesUsed to identify each row uniquelyAn alternate option for uniquenessThe selected candidate keyOther candidate keys not selected as primaryOne primary key per tableMultiple alternate keys possible
+An Alternate Key is a candidate key that is not chosen as the Primary Key but can still uniquely identify a record in a table.When multiple attributes can uniquely identify records, only one is selected as the Primary Key.The remaining unique attributes act as Alternate Keys, providing alternative ways to identify records.Query:CREATE TABLE customer_info (
+    customer_id INT PRIMARY KEY,
+    customer_name VARCHAR(50),
+    email_address VARCHAR(100) UNIQUE,
+    pan_number VARCHAR(20) UNIQUE,
+    city VARCHAR(50)
+);
+
+INSERT INTO customer_info
+VALUES
+    (1, 'James Carter', 'james.carter@example.com', 'PANA12345Z', 'New York'),
+    (2, 'Emily Watson', 'emily.watson@example.com', 'PANB67890Q', 'Los Angeles');Output:email_address and pan_number act as Alternate Keys (unique but not the Primary Key).Both rows follow the uniqueness rules.SyntaxThe ALTERNATE Keys in SQL are defined using the SQL constraint UNIQUE:CREATE TABLE Customer_info (
+    column_1 datatype PRIMARY KEY,   -- Primary Key
+    column_2 datatype ,
+    column_3 datatype UNIQUE,    -- Alternate Key
+    column_4 datatype UNIQUE,    -- Alternate Key
+    . . . ,
+);Note: A candidate key should be a column that can uniquely identify any row in a table and any of them are eligible to be selected as the Primary Key.Creating an Alternate Key in SQLAn Alternate Key in SQL is created using the UNIQUE constraint to enforce uniqueness on a column.Query:CREATE TABLE product (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(50),
+    product_code VARCHAR(20) UNIQUE
+);
+
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    order_number VARCHAR(30) UNIQUE,
+    product_id INT,
+    quantity INT,
+    FOREIGN KEY (product_id) REFERENCES product(product_id)
+);
+
+INSERT INTO product
+VALUES
+    (101, 'Wireless Mouse', 'WMX-100'),
+    (102, 'Bluetooth Speaker', 'BTS-250');
+
+INSERT INTO orders
+VALUES
+    (1, 'ORD-9001', 101, 2),
+    (2, 'ORD-9002', 102, 1);Output:product table:orders table:product_id is the Primary Key in Product, while product_code is UNIQUE, making it the Alternate Key.order_id is the Primary Key in Orders and product_id functions as a Foreign Key referencing Product.order_number is UNIQUE, so it serves as the Alternate Key in the Orders table.Primary Key vs. Alternate KeyHere are the detailed comparison between Primary and Alternate key:Primary KeyAlternate KeyMust be uniqueMust be uniqueCannot contain NULL valuesCan contain NULL valuesUsed to identify each row uniquelyAn alternate option for uniquenessThe selected candidate keyOther candidate keys not selected as primaryOne primary key per tableMultiple alternate keys possible

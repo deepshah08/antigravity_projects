@@ -1068,135 +1068,135 @@
     },
     {
       "id": "os-267",
-      "title": "Program for Next Fit algorithm in Memory Management - GeeksforGeeks"
-    },
-    {
-      "id": "os-268",
       "title": "Buddy System - Memory Allocation Technique - GeeksforGeeks"
     },
     {
-      "id": "os-269",
-      "title": "Non-Contiguous Allocation in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-270",
-      "title": "Paging - GeeksforGeeks"
-    },
-    {
-      "id": "os-271",
+      "id": "os-268",
       "title": "Page Table Entries in Page Table - GeeksforGeeks"
     },
     {
-      "id": "os-272",
-      "title": "Segmentation in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-273",
+      "id": "os-269",
       "title": "Overlays in Memory Management - GeeksforGeeks"
     },
     {
-      "id": "os-274",
+      "id": "os-270",
       "title": "Virtual Memory in Operating System - GeeksforGeeks"
     },
     {
-      "id": "os-275",
-      "title": "Demand Paging in Operating System - GeeksforGeeks"
-    },
-    {
-      "id": "os-276",
+      "id": "os-271",
       "title": "Page Fault Handling in Operating System - GeeksforGeeks"
     },
     {
-      "id": "os-277",
+      "id": "os-272",
       "title": "Swap Space in Operating System - GeeksforGeeks"
     },
     {
-      "id": "os-278",
-      "title": "Page Replacement Algorithms in Operating Systems - GeeksforGeeks"
-    },
-    {
-      "id": "os-279",
+      "id": "os-273",
       "title": "Belady's Anomaly in Page Replacement Algorithms - GeeksforGeeks"
     },
     {
-      "id": "os-280",
+      "id": "os-274",
       "title": "Second Chance (or Clock) Page Replacement Policy - GeeksforGeeks"
     },
     {
-      "id": "os-281",
-      "title": "Thrashing - GeeksforGeeks"
-    },
-    {
-      "id": "os-282",
+      "id": "os-275",
       "title": "Working Set in Paging - GeeksforGeeks"
     },
     {
-      "id": "os-283",
+      "id": "os-276",
       "title": "Allocating kernel memory (buddy system and slab system) - GeeksforGeeks"
     },
     {
-      "id": "os-284",
+      "id": "os-277",
       "title": "Memory Interleaving - GeeksforGeeks"
     },
     {
-      "id": "os-285",
+      "id": "os-278",
       "title": "Operating system  based Virtualization - GeeksforGeeks"
     },
     {
-      "id": "os-286",
+      "id": "os-279",
       "title": "File Systems in Operating System - GeeksforGeeks"
     },
     {
-      "id": "os-287",
+      "id": "os-280",
       "title": "Unix File System - GeeksforGeeks"
     },
     {
-      "id": "os-288",
+      "id": "os-281",
       "title": "Path Name in File Directory - GeeksforGeeks"
     },
     {
-      "id": "os-289",
+      "id": "os-282",
       "title": "Structures of Directory in Operating System - GeeksforGeeks"
     },
     {
-      "id": "os-290",
+      "id": "os-283",
       "title": "File Allocation Methods - GeeksforGeeks"
     },
     {
-      "id": "os-291",
+      "id": "os-284",
       "title": "File Access Methods in Operating System - GeeksforGeeks"
     },
     {
-      "id": "os-292",
+      "id": "os-285",
       "title": "Secondary Memory - GeeksforGeeks"
     },
     {
-      "id": "os-293",
+      "id": "os-286",
       "title": "Hard Disk Drive (HDD) Secondary Memory - GeeksforGeeks"
     },
     {
-      "id": "os-294",
+      "id": "os-287",
       "title": "Disk Scheduling Algorithms - GeeksforGeeks"
     },
     {
-      "id": "os-295",
+      "id": "os-288",
       "title": "Program for SSTF Disk Scheduling Algorithm - GeeksforGeeks"
     },
     {
-      "id": "os-296",
+      "id": "os-289",
       "title": "Spooling in Operating System - GeeksforGeeks"
     },
     {
-      "id": "os-297",
+      "id": "os-290",
       "title": "Spooling vs Buffering - GeeksforGeeks"
     },
     {
-      "id": "os-298",
+      "id": "os-291",
       "title": "Free Space Management in Operating System - GeeksforGeeks"
     },
     {
-      "id": "os-299",
+      "id": "os-292",
       "title": "Operating System Interview Questions - GeeksforGeeks"
+    },
+    {
+      "id": "os-293",
+      "title": "Windows 11 vs. Windows 10:  What's the Difference - GeeksforGeeks"
+    },
+    {
+      "id": "os-294",
+      "title": "Resetting Windows to Improve Performance - GeeksforGeeks"
+    },
+    {
+      "id": "os-295",
+      "title": "How to Install Windows 10 From a USB Flash Drive? - GeeksforGeeks"
+    },
+    {
+      "id": "os-296",
+      "title": "How to Disable Cortana in Windows 10 - GeeksforGeeks"
+    },
+    {
+      "id": "os-297",
+      "title": "What is Taskbar? - GeeksforGeeks"
+    },
+    {
+      "id": "os-298",
+      "title": "How to Create a New User Account in Windows? - GeeksforGeeks"
+    },
+    {
+      "id": "os-299",
+      "title": "What is the Windows Key (winkey)? - GeeksforGeeks"
     }
   ]
 }

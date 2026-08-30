@@ -16,7 +16,7 @@ int main() {
     return 0;
 }
 
-OutputStart the showExplanationIn the above example, the if statement executes the code only when the specified condition is true.If num > 50 is true, the message is displayed.If num <= 50, the if block is skipped and no output is produced.Types of Conditional Statements in CIn the above program, we have used if statement, but there are many different types of conditional statements available in C language:if statementThe if statement is used to execute a block of code only when a specified condition is true.It is the simplest decision-making statement in C.The condition must evaluate to true or false to determine whether the block is executed.
+OutputStart the showExplanationIn the above example, the if statement executes the code only when the specified condition is true.If num > 50 is true, the message is displayed.If num <= 50, the if block is skipped and no output is produced.Types of Conditional Statements in CIn the above program, we have used if statement, but there are many different types of conditional statements available in C language: if statementThe if statement is used to execute a block of code only when a specified condition is true.It is the simplest decision-making statement in C.The condition must evaluate to true or false to determine whether the block is executed.
             C
 
     #include <stdio.h>
@@ -143,4 +143,3 @@ int main() {
 }
 
 OutputValue of var when flag is 0: 25
-Related ArticleJump Statements in C.Break Statement in C
