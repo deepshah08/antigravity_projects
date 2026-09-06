@@ -1,0 +1,79 @@
+# Conditional Statements in Python - GeeksforGeeks
+
+Conditional statements are used to control the flow of execution in a program based on specific conditions. They allow programs to execute different blocks of code depending on whether a condition evaluates to True or False.If StatementIf statement is used to execute a block of code only when a specified condition evaluates to True.If Statement
+            Python
+
+    age = 20
+if age >= 18:
+    print("Eligible to vote.")
+
+OutputEligible to vote.
+Short Hand ifShort-hand if is used to write if statements in a single line. It is useful when only one statement needs to be executed.
+            Python
+
+    age = 19
+if age > 18: print("Eligible to Vote.")
+
+OutputEligible to Vote.
+If else StatementIf Else statement is used to execute one block of code when the condition is True and another block when the condition is False.If else Conditional Statement
+            Python
+
+    age = 10
+if age <= 12:
+    print("Travel for free.")
+else:
+    print("Pay for ticket.")
+
+OutputTravel for free.
+If-elif-else Statementelif statement is used to check multiple conditions in a program. It executes a block of code when its condition evaluates to True after previous conditions evaluate to False.
+            Python
+
+    age = 25
+
+if age <= 12:
+    print("Child.")
+elif age <= 19:
+    print("Teenager.")
+elif age <= 35:
+    print("Young adult.")
+else:
+    print("Adult.")
+
+OutputYoung adult.
+Explanation: Since age is 25, it skips the first two conditions (age <= 12 and age <= 19) and the third condition (age <= 35) is True, so it prints "Young adult.".Nested if-else StatementNested if-else statement is an if-else statement placed inside another if or else block. It is used to check conditions within another condition.Nested If Else
+            Python
+
+    age = 70
+is_member = True
+
+if age >= 60:
+    if is_member:
+        print("30% senior discount!")
+    else:
+        print("20% senior discount.")
+else:
+    print("Not eligible for a senior discount.")
+
+Output30% senior discount!
+Conditional Expression (Ternary Operator)Conditional Expression (Ternary Operator) is a short way to write an if-else statement in a single line. It is used when choosing between two values based on a condition.
+            Python
+
+    age = 20
+s = "Adult" if age >= 18 else "Minor"
+print(s)
+
+OutputAdult
+Explanation: If age >= 18 is True, status is assigned "Adult". Otherwise, status is assigned "Minor".Match-Case Statement Match-Case statement is used to compare a value against multiple patterns and execute the matching block of code. It is similar to the switch-case statement available in other programming languages.
+            Python
+
+    number = 2
+
+match number:
+    case 1:
+        print("One")
+    case 2 | 3:
+        print("Two or Three")
+    case _:
+        print("Other number")
+
+OutputTwo or ThreeRelated Articles:Multiple Conditions in if statementTaking Conditional User Inputs

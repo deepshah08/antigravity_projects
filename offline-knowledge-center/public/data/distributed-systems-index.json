@@ -480,35 +480,35 @@
     },
     {
       "id": "distributed-systems-120",
-      "title": "Process Creation and Deletions in Operating Systems - GeeksforGeeks"
-    },
-    {
-      "id": "distributed-systems-121",
-      "title": "The Problem of Redundancy in Database - GeeksforGeeks"
-    },
-    {
-      "id": "distributed-systems-122",
       "title": "What is CIFS (Common Internet File System)? - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-123",
+      "id": "distributed-systems-121",
       "title": "Introduction to Hadoop - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-124",
+      "id": "distributed-systems-122",
       "title": "Introduction to Hadoop Distributed File System(HDFS) - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-125",
+      "id": "distributed-systems-123",
       "title": "MapReduce Programming Model and its role in Hadoop. - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-126",
+      "id": "distributed-systems-124",
       "title": "Strategies for Achieving High Availability in Distributed Systems - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-127",
+      "id": "distributed-systems-125",
       "title": "Difference Between Buffering and Caching in OS - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-126",
+      "title": "distributed-systems-126"
+    },
+    {
+      "id": "distributed-systems-127",
+      "title": "distributed-systems-127"
     },
     {
       "id": "distributed-systems-128",
@@ -520,683 +520,683 @@
     },
     {
       "id": "distributed-systems-130",
-      "title": "distributed-systems-130"
-    },
-    {
-      "id": "distributed-systems-131",
-      "title": "distributed-systems-131"
-    },
-    {
-      "id": "distributed-systems-132",
-      "title": "Dual Core vs Quad Core Processor - GeeksforGeeks"
-    },
-    {
-      "id": "distributed-systems-133",
-      "title": "What is Data Structure? - GeeksforGeeks"
-    },
-    {
-      "id": "distributed-systems-134",
       "title": "Authentication in Distributed System - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-135",
+      "id": "distributed-systems-131",
       "title": "Authorization Mechanisms for Distributed Systems - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-136",
+      "id": "distributed-systems-132",
       "title": "Malwares - Malicious Software - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-137",
+      "id": "distributed-systems-133",
       "title": "Phishing Attack - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-138",
+      "id": "distributed-systems-134",
       "title": "Zero-day Exploit (Cyber Security Attack) - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-139",
+      "id": "distributed-systems-135",
       "title": "Introduction to Password Attacks - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-140",
+      "id": "distributed-systems-136",
       "title": "Types of Authentication Protocols - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-141",
+      "id": "distributed-systems-137",
       "title": "Access Matrix in Operating System - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-142",
+      "id": "distributed-systems-138",
       "title": "Semantic Heterogeneity in DBMS - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-143",
+      "id": "distributed-systems-139",
       "title": "Advantages of Distributed database - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-144",
+      "id": "distributed-systems-140",
       "title": "Federated database management system issues - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-145",
+      "id": "distributed-systems-141",
       "title": "Definition and Overview of ODBMS - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-146",
+      "id": "distributed-systems-142",
       "title": "Vertical Partitioning vs Horizontal Partitioning - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-147",
+      "id": "distributed-systems-143",
       "title": "Hierarchical Model in DBMS - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-148",
+      "id": "distributed-systems-144",
       "title": "Network Model in DBMS - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-149",
+      "id": "distributed-systems-145",
       "title": "What is Semi-structured data? - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-150",
+      "id": "distributed-systems-146",
       "title": "What is Graph Database - Introduction - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-151",
+      "id": "distributed-systems-147",
       "title": "Document Databases in NoSQL - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-152",
+      "id": "distributed-systems-148",
+      "title": "MongoDB Query - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-149",
       "title": "Difference between Centralized Database and Distributed Database - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-153",
+      "id": "distributed-systems-150",
       "title": "Oracle Architecture - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-154",
+      "id": "distributed-systems-151",
       "title": "Deadlock System model - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-155",
+      "id": "distributed-systems-152",
       "title": "Difference Between VB.NET and Visual Basic - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-156",
+      "id": "distributed-systems-153",
       "title": "Types of Locks in Concurrency Control - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-157",
-      "title": "Multiple Granularity Locking in DBMS - GeeksforGeeks"
-    },
-    {
-      "id": "distributed-systems-158",
+      "id": "distributed-systems-154",
       "title": "Transaction States  in DBMS - GeeksforGeeks"
     },
     {
+      "id": "distributed-systems-155",
+      "title": "Numbers - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-156",
+      "title": "Numbers - Solved Questions and Answers - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-157",
+      "title": "HCF / GCD and LCM - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-158",
+      "title": "HCF and LCM - Solved Questions and Answers - GeeksforGeeks"
+    },
+    {
       "id": "distributed-systems-159",
-      "title": "Multithreading in Python - GeeksforGeeks"
+      "title": "Ratio and Proportion - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-160",
-      "title": "Hadoop - Cluster, Properties and its Types - GeeksforGeeks"
+      "title": "Ratio and Proportion - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-161",
-      "title": "Hadoop - Daemons and Their Features - GeeksforGeeks"
+      "title": "Average in Maths - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-162",
-      "title": "MapReduce Architecture - GeeksforGeeks"
+      "title": "Average - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-163",
-      "title": "Hadoop - Mapper In MapReduce - GeeksforGeeks"
+      "title": "Ages - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-164",
-      "title": "Hadoop - Reducer in Map-Reduce - GeeksforGeeks"
+      "title": "Ages - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-165",
-      "title": "What are Heartbeat Messages? - GeeksforGeeks"
+      "title": "Percentage - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-166",
-      "title": "Cache Memory - GeeksforGeeks"
+      "title": "Percentages - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-167",
-      "title": "What is Processor? - GeeksforGeeks"
+      "title": "Profit and Loss - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-168",
-      "title": "What is a Storage Device? Definition, Types, Examples - GeeksforGeeks"
+      "title": "Profit and Loss - Aptitude Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-169",
-      "title": "Introduction to Data Processing - GeeksforGeeks"
+      "title": "Mixture and Alligation - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-170",
-      "title": "What are Different Sources of Malware? - GeeksforGeeks"
+      "title": "Mixture and Alligation - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-171",
-      "title": "What is Computer Worm? - GeeksforGeeks"
+      "title": "Simple Interest - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-172",
-      "title": "What is a Logic Bomb? - GeeksforGeeks"
+      "title": "Simple Interest - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-173",
-      "title": "Difference Between Virus, Worm and Trojan Horse - GeeksforGeeks"
+      "title": "Compound Interest - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-174",
-      "title": "Cyber Criminals and their types - GeeksforGeeks"
+      "title": "Compound Interest - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-175",
-      "title": "What is Anti-Malware? - GeeksforGeeks"
+      "title": "Time Speed Distance - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-176",
-      "title": "How to Download and Install MalwareBytes on Windows? - GeeksforGeeks"
+      "title": "Speed, Time and Distance – Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-177",
-      "title": "Internet of Things and careers in IoT - GeeksforGeeks"
+      "title": "Boats and Streams - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-178",
-      "title": "What is Pegasus Spyware and How It Works - GeeksforGeeks"
+      "title": "Boats and Streams -Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-179",
-      "title": "What is Shoulder Surfing in Cyber Security? - GeeksforGeeks"
+      "title": "Race and Games - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-180",
-      "title": "Introduction to Social Engineering - GeeksforGeeks"
+      "title": "Races and Games - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-181",
-      "title": "Dumpster Diving/Trashing - GeeksforGeeks"
+      "title": "Work,  Wages and Time - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-182",
-      "title": "What is a Dictionary Attack? - GeeksforGeeks"
+      "title": "Work and Wages - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-183",
-      "title": "Rainbow Table Attack - GeeksforGeeks"
+      "title": "Pipes and Cistern - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-184",
-      "title": "Credential Stuffing in Ethical Hacking - GeeksforGeeks"
+      "title": "Pipes and Cistern - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-185",
-      "title": "What is Password Spraying? - GeeksforGeeks"
+      "title": "Basics of Algebra - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-186",
-      "title": "Introduction to Phishing - GeeksforGeeks"
+      "title": "Algebra - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-187",
-      "title": "Introduction to Keyloggers - GeeksforGeeks"
+      "title": "2D Mensuration - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-188",
-      "title": "What is Spyware in Cyber Security? - GeeksforGeeks"
+      "title": "Mensuration 2D - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-189",
-      "title": "What is a Backdoor Attack? - GeeksforGeeks"
+      "title": "3D Mensuration - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-190",
-      "title": "What is a Trojan Horse? Definition, Examples and More - GeeksforGeeks"
+      "title": "Mensuration 3D - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-191",
-      "title": "RADIUS Protocol - GeeksforGeeks"
+      "title": "Basic Geometry Formulas - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-192",
-      "title": "Difference between Structured, Semi-structured and Unstructured data - GeeksforGeeks"
+      "title": "Geometry - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-193",
-      "title": "Neo4j : The Graph Database - GeeksforGeeks"
+      "title": "Trigonometry | Height and Distance - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-194",
-      "title": "Consistency in DBMS - GeeksforGeeks"
+      "title": "Height and Distance - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-195",
-      "title": "Integrity Rules in  DBMS - GeeksforGeeks"
+      "title": "Progressions | Aptitude - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-196",
-      "title": "Deadlock in DBMS - GeeksforGeeks"
+      "title": "Progression - Aptitude Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-197",
-      "title": "MapReduce - Combiners - GeeksforGeeks"
+      "title": "Introduction to Logarithm - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-198",
-      "title": "MapReduce Job Execution - GeeksforGeeks"
+      "title": "Logarithm - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-199",
-      "title": "Introduction to Control Unit and its Design - GeeksforGeeks"
+      "title": "Permutation and Combination - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-200",
-      "title": "ALU Functions and Bus Organization - GeeksforGeeks"
+      "title": "Clocks - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-201",
-      "title": "Primary Instruction Cycles - GeeksforGeeks"
+      "title": "Clock - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-202",
-      "title": "Integrated Circuits - GeeksforGeeks"
+      "title": "Calendars - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-203",
-      "title": "Motherboard - GeeksforGeeks"
+      "title": "Calendar - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-204",
-      "title": "Primary Memory - GeeksforGeeks"
+      "title": "Simplification and Approximation - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-205",
-      "title": "SDRAM Full Form - GeeksforGeeks"
+      "title": "Simplification and Approximation - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-206",
-      "title": "Data Processing in Machine learning - GeeksforGeeks"
+      "title": "Data Interpretation - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-207",
-      "title": "Data Cleaning - GeeksforGeeks"
+      "title": "Data Interpretation - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-208",
-      "title": "Data Preprocessing and Its Types - GeeksforGeeks"
+      "title": "Number Series - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-209",
-      "title": "Introduction to Phishing - GeeksforGeeks"
+      "title": "Number Series - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-210",
-      "title": "Development of computer system - GeeksforGeeks"
+      "title": "Alphanumeric Series - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-211",
-      "title": "What are the Security Risks of USB drives? - GeeksforGeeks"
+      "title": "Alphanumeric Series - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-212",
-      "title": "What is an Email? - GeeksforGeeks"
+      "title": "Classification - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-213",
-      "title": "Different Types of Websites - GeeksforGeeks"
+      "title": "Classification - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-214",
-      "title": "How Does an Antivirus Work? - GeeksforGeeks"
+      "title": "Analogy - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-215",
-      "title": "Difference between Antivirus and Antimalware - GeeksforGeeks"
+      "title": "Analogy - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-216",
-      "title": "What is a Proxy Firewall? - GeeksforGeeks"
+      "title": "Logical Problems - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-217",
-      "title": "How to Identify and Spot Phishing Emails with Examples (2025 Updated) - GeeksforGeeks"
+      "title": "Logical Problems  - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-218",
-      "title": "What is a bot ? - GeeksforGeeks"
+      "title": "Course of Action - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-219",
-      "title": "What is Macro Virus and How They Affect Computer Systems? - GeeksforGeeks"
+      "title": "Course of Action - Solved  Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-220",
-      "title": "Introduction of Radio Frequency Identification (RFID) - GeeksforGeeks"
+      "title": "Statement and Conclusion - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-221",
-      "title": "Difference between IoT and Big Data - GeeksforGeeks"
+      "title": "Statement and Conclusion -Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-222",
-      "title": "How to Become an Embedded Software Engineer - GeeksforGeeks"
+      "title": "Theme Detection - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-223",
-      "title": "What is Cyber Threat Intelligence? - GeeksforGeeks"
+      "title": "Theme Detection - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-224",
-      "title": "Viruses - From Newbie to pro - GeeksforGeeks"
+      "title": "Blood Relation - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-225",
-      "title": "Data Breach - GeeksforGeeks"
+      "title": "Blood Relation - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-226",
-      "title": "What are Tailgating? - GeeksforGeeks"
+      "title": "Direction Sense - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-227",
-      "title": "Pretexting in Social Engineering - GeeksforGeeks"
+      "title": "Direction Sense - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-228",
-      "title": "What is Scareware? - GeeksforGeeks"
+      "title": "Statement and Argument - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-229",
-      "title": "How to Prevent Social Engineering Attacks? - GeeksforGeeks"
+      "title": "Statement and Argument - Solved  Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-230",
-      "title": "Vishing (Voice Phishing) - GeeksforGeeks"
+      "title": "Logical Deduction - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-231",
-      "title": "IP Spoofing - GeeksforGeeks"
+      "title": "Logical Deduction - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-232",
-      "title": "Two Factor Authentication Implementation Methods and Bypasses - GeeksforGeeks"
+      "title": "Letter Series - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-233",
-      "title": "CAPTCHA, reCAPTCHA and Related Things - GeeksforGeeks"
+      "title": "Letter Series - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-234",
-      "title": "What is Hacking? Definition, Types, Identification, Safety - GeeksforGeeks"
+      "title": "Coding -Decoding - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-235",
-      "title": "What is Endpoint Detection and Response (EDR)? - GeeksforGeeks"
+      "title": "Coding Decoding - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-236",
-      "title": "What is Session Hijacking? - GeeksforGeeks"
+      "title": "Statement and Assumption - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-237",
-      "title": "OSINT Techniques - GeeksforGeeks"
+      "title": "Venn Diagrams in Reasoning - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-238",
-      "title": "Introduction to Social Engineering - GeeksforGeeks"
+      "title": "Venn Diagrams - Solved  Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-239",
-      "title": "Identity Theft in Cyber Crime - GeeksforGeeks"
+      "title": "Spotting Errors - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-240",
-      "title": "Difference between Adware and Spyware - GeeksforGeeks"
+      "title": "Spotting Errors-Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-241",
-      "title": "Anti-Virus | Its Benefits and Drawbacks - GeeksforGeeks"
+      "title": "Synonyms - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-242",
-      "title": "What is Cyber Espionage? - GeeksforGeeks"
+      "title": "Synonyms - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-243",
-      "title": "Difference between Trojan Horse and Adware - GeeksforGeeks"
+      "title": "Antonyms - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-244",
-      "title": "Difference between Virus and Trojan Horse - GeeksforGeeks"
+      "title": "Antonyms - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-245",
-      "title": "TACACS+ Protocol - GeeksforGeeks"
+      "title": "Selecting Words - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-246",
-      "title": "What is Structured Data? - GeeksforGeeks"
+      "title": "Selecting Words - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-247",
-      "title": "What is Unstructured Data? - GeeksforGeeks"
+      "title": "Spellings - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-248",
-      "title": "Neo4j Query Cypher Language - GeeksforGeeks"
+      "title": "Spellings - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-249",
-      "title": "Difference Between MapReduce and Apache Spark - GeeksforGeeks"
+      "title": "Sentence Formation - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-250",
-      "title": "Applications of Microprogrammed Control Unit - GeeksforGeeks"
+      "title": "Sentence Formation - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-251",
-      "title": "Addressing Modes in 8086 - GeeksforGeeks"
+      "title": "Ordering of Words - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-252",
-      "title": "What is a Computer Bus? - GeeksforGeeks"
+      "title": "Ordering of Words - Solved Question and Answer - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-253",
-      "title": "Control Signals Generation using Counter - GeeksforGeeks"
+      "title": "Sentence Correction - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-254",
-      "title": "Data Path Components and Designs - GeeksforGeeks"
+      "title": "Sentence Correction - Solved Question and Answer - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-255",
-      "title": "Electric Current - GeeksforGeeks"
+      "title": "Sentence Improvement - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-256",
-      "title": "Diode - GeeksforGeeks"
+      "title": "Sentence Improvement - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-257",
-      "title": "Logic Gates - GeeksforGeeks"
+      "title": "Sentence Completion - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-258",
-      "title": "What is Resistor? - GeeksforGeeks"
+      "title": "Sentence Completion - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-259",
-      "title": "AND Gate - GeeksforGeeks"
+      "title": "Para Jumbles - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-260",
-      "title": "Flip-Flop Types - GeeksforGeeks"
+      "title": "Para Jumbles - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-261",
-      "title": "What is Surface Mount Device or (SMD)? - GeeksforGeeks"
+      "title": "Paragraph Formation - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-262",
-      "title": "Operational Amplifier (op-amp) in Digital Electronics - GeeksforGeeks"
+      "title": "Paragraph Formation - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-263",
-      "title": "Semiconductors - GeeksforGeeks"
+      "title": "Cloze Test - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-264",
-      "title": "Introduction of Microprocessor - GeeksforGeeks"
+      "title": "Cloze Test - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-265",
-      "title": "Moore's Law - GeeksforGeeks"
+      "title": "Reading Comprehension - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-266",
-      "title": "Difference between North bridge and South bridge - GeeksforGeeks"
+      "title": "Reading Comprehension - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-267",
-      "title": "Different Types of RAM (Random Access Memory ) - GeeksforGeeks"
+      "title": "One Word Substitutes - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-268",
-      "title": "Motherboard parts - South Bridge - GeeksforGeeks"
+      "title": "One Word Substitutes – Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-269",
-      "title": "What is AMR(Adaptive Multi-Rate Codec)? - GeeksforGeeks"
+      "title": "Idioms and Phrases - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-270",
-      "title": "Peripheral Component Interconnect (PCI) - GeeksforGeeks"
+      "title": "Idioms and Phrases - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-271",
-      "title": "What is AGP(Accelerated Graphics Port)? - GeeksforGeeks"
+      "title": "Change of Voice - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-272",
-      "title": "What is the need of CMOS battery in Computers? - GeeksforGeeks"
+      "title": "Change of Voice - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-273",
-      "title": "Types of Integrated Circuits - GeeksforGeeks"
+      "title": "Change of Speech - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-274",
-      "title": "What is a Graphics Card? - GeeksforGeeks"
+      "title": "Change of Speech - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-275",
-      "title": "Input Output Ports - GeeksforGeeks"
+      "title": "Verbal Analogies - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-276",
-      "title": "Memory Hierarchy Design and its Characteristics - GeeksforGeeks"
+      "title": "Verbal Analogies - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-277",
-      "title": "Python | Data Augmentation - GeeksforGeeks"
+      "title": "Articles: 'a', 'an', 'the' - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-278",
-      "title": "Working of Email - GeeksforGeeks"
+      "title": "Article - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-279",
-      "title": "Advantages and Disadvantages of E-mail - GeeksforGeeks"
+      "title": "Prepositions || Aptitude - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-280",
-      "title": "Difference between Worms and Virus - GeeksforGeeks"
+      "title": "Preposition - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-281",
-      "title": "Types of Rootkits - GeeksforGeeks"
+      "title": "Adjective | Aptitude - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-282",
-      "title": "Difference between Rootkit and Spyware - GeeksforGeeks"
+      "title": "Adjective - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-283",
-      "title": "Types of Ransomware - GeeksforGeeks"
+      "title": "Artificial Language - Solved Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-284",
-      "title": "What is Remote Code Execution (RCE)? - GeeksforGeeks"
+      "title": "Matching Definitions - Logical Reasoning Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-285",
-      "title": "What is Browser Sandboxing? - GeeksforGeeks"
+      "title": "Making Judgements - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-286",
-      "title": "Heuristic Evaluation - GeeksforGeeks"
+      "title": "Logical Games - Logical Reasoning Questions and Answers - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-287",
-      "title": "Difference between Spam and Phishing Mail - GeeksforGeeks"
+      "title": "Verification of the Truth of the Statement - Verbal Reasoning - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-288",
-      "title": "Transceivers - GeeksforGeeks"
+      "title": "Assertion and Reason Questions- Logical Reasoning - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-289",
-      "title": "Transponder - GeeksforGeeks"
+      "title": "Web Development Prerequisites - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-290",
-      "title": "Difference between Bandwidth and Throughput - GeeksforGeeks"
+      "title": "Why to learn Web Development? - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-291",
-      "title": "Von Neumann Architecture - GeeksforGeeks"
+      "title": "Difference between Server Side Scripting and Client Side Scripting - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-292",
-      "title": "Harvard Architecture - GeeksforGeeks"
+      "title": "Node.js Tutorial - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-293",
-      "title": "Actuators in IoT - GeeksforGeeks"
+      "title": "Go Tutorial - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-294",
-      "title": "Asynchronous Communication Interface - GeeksforGeeks"
+      "title": "C# Tutorial - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-295",
-      "title": "Universal Asynchronous Receiver Transmitter (UART) Protocol - GeeksforGeeks"
+      "title": "Apache Cassandra (NOSQL Database) - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-296",
-      "title": "I2C Communication Protocol - GeeksforGeeks"
+      "title": "HTML Canvas Basics - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-297",
-      "title": "What is Debuggers? - GeeksforGeeks"
+      "title": "HTML SVG Basics - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-298",
-      "title": "Introduction to Soft Skills - GeeksforGeeks"
+      "title": "History And Evolution of Web Development - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-299",
-      "title": "Microcontroller and its Types - GeeksforGeeks"
+      "title": "Difference Between Web 1.0, Web 2.0, and Web 3.0 - GeeksforGeeks"
     }
   ]
 }

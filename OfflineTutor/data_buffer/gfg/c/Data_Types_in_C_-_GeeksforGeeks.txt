@@ -66,7 +66,122 @@ int main()
 }
 
 OutputHello, welcome!
-Derived Data Types in CDerived data types are created from primitive data types.ArraysAn array stores multiple values of the same type in contiguous memory locations.int arr[5] = {1, 2, 3, 4, 5};PointersA pointer stores the memory address of another variable.int x = 10;int *ptr = &x;FunctionsFunctions are also considered derived types based on return type and parameters.int add(int a, int b) {    return a + b;}User Defined Data Types in CUser-defined data types allow programmers to create custom data structures.Structure (struct)A structure groups related variables under one namestruct Student {    char name[50];    int age;};UnionA union allows multiple members to share the same memory location.union Data {    int i;    float f;};Enumeration (enum)Enum is used to define named integer constants.enum Day {    MON, TUE, WED, THU, FRI, SAT, SUN};Size of Data Types in CThe size of the data types in C is dependent on the size of the architecture, so we cannot define the universal size of the data types. For that, the C language provides the sizeof() operator to check the size of the data types.
+Derived Data Types in CDerived data types are created from primitive data types.ArraysAn array stores multiple values of the same data type in contiguous memory locations. Each element is accessed using an index, starting from 0.
+            C++
+
+    #include <stdio.h>
+
+int main() {
+    int arr[5] = {10, 20, 30, 40, 50};
+
+    printf("First element: %d\n", arr[0]);
+    printf("Third element: %d\n", arr[2]);
+
+    return 0;
+}
+
+OutputFirst element: 10
+Third element: 30
+Explanation:int arr[5] declares an array that can store 5 integers. {10, 20, 30, 40, 50} initializes the array elements. arr[0] accesses the first element, while arr[2] accesses the third element. PointersA pointer is a derived data type that stores the memory address of another variable. The & operator is used to get an address, while the * operator is used to declare and dereference a pointer.
+            C++
+
+    #include <stdio.h>
+
+int main() {
+    int x = 10;
+    int *ptr = &x;
+
+    printf("Value of x: %d\n", x);
+    printf("Address of x: %p\n", (void *)&x);
+    printf("Value using pointer: %d\n", *ptr);
+
+    return 0;
+}
+
+OutputValue of x: 10
+Address of x: 0x7fffffffe9c4
+Value using pointer: 10
+Explanation: int x = 10; declares an integer variable, while int *ptr = &x; declares a pointer that stores the address of x. The & operator gets the address of x, and the * operator accesses the value stored at that address.FunctionsFunctions are derived types that define a block of code to perform a specific task and can have a return type and parameters.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    cout << add(10, 20);
+    return 0;
+}
+
+Output30Explanation: int add(int a, int b) defines a function that takes two integers and returns their sum and add(10, 20) calls the function, which returns 30.\User Defined Data Types in CUser-defined data types allow programmers to create custom data structures.Structure (struct)A structure groups related variables of different data types under a single name.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+struct Student {
+    string name;
+    int age;
+};
+
+int main() {
+    Student s1 = {"Riya", 20};
+
+    cout << "Name: " << s1.name << endl;
+    cout << "Age: " << s1.age << endl;
+
+    return 0;
+}
+
+OutputName: Riya
+Age: 20
+Explanation: struct Student defines a structure containing name and age as its data members. Student s1 creates a structure variable, and s1.name and s1.age access its members.UnionA union allows multiple members to share the same memory location, but only one member can hold a meaningful value at a time.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+union Data {
+    int i;
+    float f;
+};
+
+int main() {
+    Data data;
+
+    data.i = 10;
+    cout << "Integer: " << data.i << endl;
+
+    data.f = 5.5f;
+    cout << "Float: " << data.f << endl;
+
+    return 0;
+}
+
+OutputInteger: 10
+Float: 5.5
+Explanation: union Data defines multiple members that share the same memory location. When data.f is assigned a value, it overwrites the value previously stored in data.i.Enumeration (enum)An enumeration (enum) is a user-defined data type that defines a set of named integral constants.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+enum Day {
+    MON, TUE, WED, THU, FRI, SAT, SUN
+};
+
+int main() {
+    Day today = WED;
+
+    cout << "Day: " << today << endl;
+
+    return 0;
+}
+
+Explanation: enum Day defines named constants such as MON, TUE, and WED, which are assigned integer values starting from 0. Day today = WED creates an enum variable and assigns it the value WED.Size of Data Types in CThe size of the data types in C is dependent on the size of the architecture, so we cannot define the universal size of the data types. For that, the C language provides the sizeof() operator to check the size of the data types.
             C
 
     #include <stdio.h>
@@ -86,4 +201,4 @@ int main()
 OutputThe size of int: 4
 The size of char: 1
 The size of float: 4
-The size of double: 8Different data types also have different ranges up to which can vary from compiler to compiler. If you want to know more about ranges refer to this Ranges of Datatypes in C.Note: The long, short, signed and unsigned are datatype modifier that can be used with some primitive data types to change the size or length of the datatype.Related ArticleLiteralsType conversion
+The size of double: 8Explanation: sizeof() returns the amount of memory occupied by a data type or variable, measured in bytes. The exact size of some data types can vary across systems, while types such as char are guaranteed to occupy 1 byte.Note: The long, short, signed and unsigned are datatype modifier that can be used with some primitive data types to change the size or length of the datatype.Related ArticleLiteralsType conversionRanges of Datatypes in C

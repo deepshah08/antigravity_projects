@@ -1,0 +1,579 @@
+# Sort a Stack - GeeksforGeeks
+
+Given a stack of integers st[], sort the stack in ascending order such that the largest element is at the top and the smallest element is at the bottom.Example: Input: st[] = [41, 3, 32, 2, 11]Output: [41, 32, 11, 3, 2]Explanation: After sorting, the smallest element (2) is at the bottom and the largest element (41) is at the top. Input: st[] = [3, 2, 1]Output: [3, 2, 1]Explanation: The stack is already sorted in ascending order. Try It YourselfTable of ContentUsing an Auxiliary Stack - O(n^2) Time and O(n) Auxiliary SpaceUsing Recursion - O(n^2) Time and O(n) Auxiliary SpaceUsing an Auxiliary Stack - O(n^2) Time and O(n) Auxiliary SpaceWe use a temporary stack to maintain sorted items.  We take the top items one by one from given stack and put it at right place in temp. Create an empty auxiliary stack temp.Pop the top element from st and store it in a variable x.While temp is not empty and its top element is smaller than x, move the top element of temp back to st.Push x into temp.Repeat the above steps until all elements from st are processed.Finally, move all elements from temp back to st.Since temp maintains the elements in sorted order, the final stack has the largest element at the top and the smallest element at the bottom.
+            C++
+
+    #include <bits/stdc++.h>
+using namespace std;
+
+void sortStack(stack<int> &st) {
+    stack<int> temp;
+
+    while (!st.empty()) {
+        int x = st.top();
+        st.pop();
+
+        // Move smaller elements back to st
+        while (!temp.empty() && temp.top() < x) {
+            st.push(temp.top());
+            temp.pop();
+        }
+
+        temp.push(x);
+    }
+
+    // Move sorted elements back to st
+    while (!temp.empty()) {
+        st.push(temp.top());
+        temp.pop();
+    }
+}
+
+int main() {
+    stack<int> st;
+
+    st.push(11);
+    st.push(2);
+    st.push(32);
+    st.push(3);
+    st.push(41);
+
+    sortStack(st);
+
+    cout << "[";
+
+    // Print stack from top to bottom
+    while (!st.empty()) {
+        cout << st.top();
+        st.pop();
+
+        if (!st.empty())
+            cout << ", ";
+    }
+
+    cout << "]";
+
+    return 0;
+}
+
+
+            Java
+
+    import java.util.Stack;
+
+class GFG {
+
+    static void sortStack(Stack<Integer> st) {
+        Stack<Integer> temp = new Stack<>();
+
+        while (!st.isEmpty()) {
+            int x = st.pop();
+
+            // Move smaller elements back to st
+            while (!temp.isEmpty() && temp.peek() < x) {
+                st.push(temp.pop());
+            }
+
+            temp.push(x);
+        }
+
+        // Move sorted elements back to st
+        while (!temp.isEmpty()) {
+            st.push(temp.pop());
+        }
+    }
+
+    public static void main(String[] args) {
+        Stack<Integer> st = new Stack<>();
+
+        st.push(11);
+        st.push(2);
+        st.push(32);
+        st.push(3);
+        st.push(41);
+
+        sortStack(st);
+
+        System.out.print("[");
+
+        while (!st.isEmpty()) {
+            System.out.print(st.pop());
+
+            if (!st.isEmpty()) {
+                System.out.print(", ");
+            }
+        }
+
+        System.out.print("]");
+    }
+}
+
+
+            Python
+
+    def sortStack(st):
+    temp = []
+
+    while st:
+        x = st.pop()
+
+        # Move smaller elements back to st
+        while temp and temp[-1] < x:
+            st.append(temp.pop())
+
+        temp.append(x)
+
+    # Move sorted elements back to st
+    while temp:
+        st.append(temp.pop())
+
+
+if __name__ == "__main__":
+    st = []
+
+    st.append(11)
+    st.append(2)
+    st.append(32)
+    st.append(3)
+    st.append(41)
+
+    sortStack(st)
+
+    print("[", end="")
+
+    while st:
+        print(st.pop(), end="")
+
+        if st:
+            print(", ", end="")
+
+    print("]")
+
+
+            C#
+
+    using System;
+using System.Collections.Generic;
+
+class GFG {
+
+    static void sortStack(Stack<int> st) {
+        Stack<int> temp = new Stack<int>();
+
+        while (st.Count > 0) {
+            int x = st.Pop();
+
+            // Move smaller elements back to st
+            while (temp.Count > 0 && temp.Peek() < x) {
+                st.Push(temp.Pop());
+            }
+
+            temp.Push(x);
+        }
+
+        // Move sorted elements back to st
+        while (temp.Count > 0) {
+            st.Push(temp.Pop());
+        }
+    }
+
+    public static void Main() {
+        Stack<int> st = new Stack<int>();
+
+        st.Push(11);
+        st.Push(2);
+        st.Push(32);
+        st.Push(3);
+        st.Push(41);
+
+        sortStack(st);
+
+        Console.Write("[");
+
+        while (st.Count > 0) {
+            Console.Write(st.Pop());
+
+            if (st.Count > 0) {
+                Console.Write(", ");
+            }
+        }
+
+        Console.Write("]");
+    }
+}
+
+
+            JavaScript
+
+    class Stack {
+    constructor() {
+        this.st = [];
+    }
+
+    push(x) {
+        this.st.push(x);
+    }
+
+    pop() {
+        return this.st.pop();
+    }
+
+    top() {
+        return this.st[this.st.length - 1];
+    }
+
+    empty() {
+        return this.st.length === 0;
+    }
+}
+
+function sortStack(st) {
+    let temp = new Stack();
+
+    while (!st.empty()) {
+        let x = st.top();
+        st.pop();
+
+        // Move smaller elements back to st
+        while (!temp.empty() && temp.top() < x) {
+            st.push(temp.top());
+            temp.pop();
+        }
+
+        temp.push(x);
+    }
+
+    // Move sorted elements back to st
+    while (!temp.empty()) {
+        st.push(temp.top());
+        temp.pop();
+    }
+}
+
+// Driver code
+let st = new Stack();
+
+st.push(11);
+st.push(2);
+st.push(32);
+st.push(3);
+st.push(41);
+
+sortStack(st);
+
+let ans = [];
+
+while (!st.empty()) {
+    ans.push(st.top());
+    st.pop();
+}
+
+console.log("[" + ans.join(", ") + "]");
+
+Output[41, 32, 11, 3, 2]Using Recursion - O(n^2) Time and O(n) Auxiliary SpaceWe use recursion to sort the stack without relying on extra data structures. The approach will be:Remove the top element of the stack.Recursively sort the remaining stack.Insert the removed element back into the stack in its correct sorted position.We use two functions:sortStack() removes elements from the stack and recursively sorts the remaining elements.sortedInsert() inserts a removed element into its correct position in the sorted stack.StepsRemove the top element from the stack and store it in x.Recursively call sortStack() to sort the remaining stack.Once the remaining stack is sorted, call sortedInsert() to place x at its correct position.In sortedInsert(), if the stack is empty or its top element is smaller than or equal to x, push x.Otherwise, temporarily remove the top element and recursively find the correct position for x.After inserting x, push the temporarily removed elements back.This process continues until all elements are placed in their correct positions.As a result, the largest element is at the top and the smallest element is at the bottom.
+            C++
+
+    #include <iostream>
+#include <stack>
+using namespace std;
+
+// Insert element into sorted stack
+void sortedInsert(stack<int> &st, int x) {
+  
+    // If stack is empty or
+    // top element is smaller, push x
+    if (st.empty() || st.top() <= x) {
+        st.push(x);
+        return;
+    }
+
+    int top = st.top();
+    st.pop();
+
+    // Recursively insert x in sorted order
+    sortedInsert(st, x);
+
+    st.push(top);
+}
+
+// Sort the stack recursively
+void sortStack(stack<int> &st) {
+    if (st.empty()) return;
+
+    int top = st.top();
+    st.pop();
+    
+    // Recursively sort the remaining stack
+    sortStack(st);
+
+    sortedInsert(st, top);
+}
+
+int main() {
+    stack<int> st;
+    st.push(41);
+    st.push(3);
+    st.push(32);
+    st.push(2);
+    st.push(11);
+
+    sortStack(st);
+
+    cout << "[";
+
+    // Print stack from top to bottom
+    while (!st.empty()) {
+        cout << st.top();
+        st.pop();
+
+        if (!st.empty())
+            cout << ", ";
+    }
+
+    cout << "]";
+
+    return 0;
+}
+
+
+            Java
+
+    import java.util.Stack;
+
+class GfG {
+
+    // Insert element into sorted stack
+    static void sortedInsert(Stack<Integer> st, int x) {
+        
+        // If stack is empty or
+        // top element is smaller, push x
+        if (st.isEmpty() || st.peek() <= x) {
+            st.push(x);
+            return;
+        }
+
+        int top = st.pop();
+
+        // Recursively insert x in sorted order
+        sortedInsert(st, x);
+
+        st.push(top);
+    }
+
+    // Sort the stack recursively
+    static void sortStack(Stack<Integer> st) {
+        if (st.isEmpty()) return;
+
+        int top = st.pop();
+
+        // Recursively sort the remaining stack
+        sortStack(st);
+
+        sortedInsert(st, top);
+    }
+
+    public static void main(String[] args) {
+        Stack<Integer> st = new Stack<>();
+        st.push(41);
+        st.push(3);
+        st.push(32);
+        st.push(2);
+        st.push(11);
+
+        sortStack(st);
+
+        System.out.print("[");
+
+        while (!st.isEmpty()) {
+            System.out.print(st.pop());
+
+            if (!st.isEmpty()) {
+                System.out.print(", ");
+            }
+        }
+
+        System.out.print("]");
+    }
+}
+
+
+            Python
+
+    # Insert element into sorted stack
+def sortedInsert(st, x):
+    
+    # If stack is empty or
+    # top element is smaller, push x
+    if not st or st[-1] <= x:
+        st.append(x)
+        return
+
+    top = st.pop()
+
+    # Recursively insert x in sorted order
+    sortedInsert(st, x)
+
+    st.append(top)
+
+# Sort the stack recursively
+def sortStack(st):
+    if not st:
+        return
+
+    top = st.pop()
+
+    # Recursively sort the remaining stack
+    sortStack(st)
+
+    sortedInsert(st, top)
+
+if __name__ == "__main__":
+    st = [41, 3, 32, 2, 11]
+
+    sortStack(st)
+
+    print("[", end="")
+
+    while st:
+        print(st.pop(), end="")
+
+        if st:
+            print(", ", end="")
+
+    print("]")
+
+
+            C#
+
+    using System;
+using System.Collections.Generic;
+
+class GfG {
+    
+    // Insert element into sorted stack
+    static void sortedInsert(Stack<int> st, int x) {
+        
+        // If stack is empty
+        // or top element is smaller, push x
+        if (st.Count == 0 || st.Peek() <= x)
+        {
+            st.Push(x);
+            return;
+        }
+
+        int top = st.Pop();
+
+        // Recursively insert x in sorted order
+        sortedInsert(st, x);
+
+        st.Push(top);
+    }
+
+    // Sort the stack recursively
+    static void sortStack(Stack<int> st) {
+        if (st.Count == 0) return;
+
+        int top = st.Pop();
+
+        // Recursively sort the remaining stack
+        sortStack(st);
+
+        sortedInsert(st, top);
+    }
+
+    static void Main() {
+      
+        Stack<int> st = new Stack<int>();
+        st.Push(41);
+        st.Push(3);
+        st.Push(32);
+        st.Push(2);
+        st.Push(11);
+
+        sortStack(st);
+
+        while (st.Count > 0) {
+            Console.Write(st.Pop());
+
+            if (st.Count > 0) {
+                Console.Write(", ");
+            }
+        }
+
+        Console.Write("]");
+    }
+}
+
+
+            JavaScript
+
+    class Stack {
+    constructor() {
+        this.st = [];
+    }
+
+    push(x) {
+        this.st.push(x);
+    }
+
+    pop() {
+        return this.st.pop();
+    }
+
+    top() {
+        return this.st[this.st.length - 1];
+    }
+
+    empty() {
+        return this.st.length === 0;
+    }
+}
+
+function sortedInsert(st, x) {
+
+    // If stack is empty or 
+    // top element is smaller, push x
+    if (st.length === 0 || st[st.length - 1] <= x) {
+        st.push(x);
+        return;
+    }
+
+    let top = st.pop();
+
+    // Recursively insert x in sorted order
+    sortedInsert(st, x);
+
+    st.push(top);
+}
+
+function sortStack(st) {
+    if (st.length === 0) return;
+
+    let top = st.pop();
+
+    // Recursively sort the remaining stack
+    sortStack(st);
+
+    sortedInsert(st, top);
+}
+
+// Driver Code
+let st = [];
+st.push(41);
+st.push(3);
+st.push(32);
+st.push(2);
+st.push(11);
+
+sortStack(st);
+
+let ans = [];
+
+while (!st.empty()) {
+    ans.push(st.top());
+    st.pop();
+}
+
+console.log("[" + ans.join(", ") + "]");
+
+Output[41, 32, 11, 3, 2]

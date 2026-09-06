@@ -1,6 +1,6 @@
 # Java Interface - GeeksforGeeks
 
-An interface in Java is a blueprint that defines a set of methods a class must implement without providing full implementation details. It helps achieve abstraction by focusing on what a class should do rather than how it does it. Interfaces also support multiple inheritance in Java.A class must implement all abstract methods of an interface. All variables in an interface are public, static, and final by default. Interfaces can have default, static, and private methods (Java 8+ and 9+).Example: Defines constants and abstract methods, which are implemented by a class.
+An interface in Java is a blueprint that defines a set of methods a class must implement without providing full implementation details. It helps achieve abstraction by focusing on what a class should do rather than how it does it. Interfaces also support multiple inheritance in Java.A class must implement all abstract methods of an interface. All variables in an interface are public, static, and final by default. Interfaces can have default, static, and private methods (Java 8+ and 9+).
             Java
 
     import java.io.*;
@@ -36,7 +36,7 @@ class Geeks{
 
 OutputGeek
 10
-Notes:Private methods can only be called inside default or static methods.Static methods are accessed using the interface name, not via objects.To implement an interface, use the implements keyword.Relationship Between Class and InterfaceA class can extend another class and similarly, an interface can extend another interface. However, only a class can implement an interface and the reverse (an interface implementing a class) is not allowed.Use case of Class:Use a class when you need to represent a real-world entity with attributes (fields) and behaviors (methods).Use a class when you need  to create objects that hold state and perform actionsClasses are used for defining templates for objects with specific functionality and properties.Use case of Interface: Use an interface when you need to define a contract for behavior that multiple classes can implement.Interface is ideal for achieving abstraction and multiple inheritance.Implementation: To implement an interface, we use the keyword implementsVehicles like bicycles, cars, and bikes share common functionalities that can be defined in an interface. Each class implements these in its own way, ensuring reusability, scalability, and consistency.
+Explanation: TestInterface declares the constant a and the abstract method display(). TestClass implements the interface and provides the implementation of display(). In main(), a TestClass object is created and its display() method is called. The value of a is accessed through the object.Notes: The interface variable a is automatically public static final, and display() is automatically public abstract.Relationship Between Class and InterfaceA class can extend another class and similarly, an interface can extend another interface. However, only a class can implement an interface and the reverse (an interface implementing a class) is not allowed. An interface can extend multiple interfaces. An interface cannot implement a class. A class cannot extend an interface.Use case of ClassUse a class when you need to represent a real-world entity with attributes (fields) and behaviors (methods).Use a class when you need  to create objects that hold state and perform actionsClasses are used for defining templates for objects with specific functionality and properties.Use case of InterfaceUse an interface when you need to define a contract for behavior that multiple classes can implement.Interface is ideal for achieving abstraction and multiple inheritance.Implementing an InterfaceA class uses the implements keyword to implement an interface.Consider vehicles such as bicycles and bikes. Both can change gears, increase speed, and apply brakes, but each class can provide its own implementation.
             Java
 
     import java.io.*;
@@ -138,7 +138,7 @@ class Main
 
 OutputBicycle present state : speed: 2 gear: 2
 Bike present state : speed: 1 gear: 1
-Multiple Inheritance in Java Using InterfaceJava does not support multiple inheritance with classes to avoid ambiguity, but it supports multiple inheritance using interfaces.
+Explanation: Vehicle defines three common operations. Both Bicycle and Bike implement these methods. The two classes maintain their own speed and gear values. Although both classes follow the same Vehicle contract, each class can provide its own implementation.Multiple Inheritance Using InterfaceJava does not support multiple inheritance with classes to avoid ambiguity, but it supports multiple inheritance using interfaces. A class can implement more than one interface.Multiple interfaces are separated using commas. The implements keyword is used only once. The implementing class must provide implementations for all inherited abstract methods.A class can extend one class and implement multiple interfaces at the same time.
             Java
 
     import java.io.*;
@@ -179,7 +179,7 @@ class GFG{
 
 OutputAddition : 3
 Substraction : 1
-New Features Added in Interfaces in JDK 8There are certain features added to Interfaces in JDK 8 update mentioned below:1. Default MethodsInterfaces can define methods with default implementations.Useful for adding new methods to interfaces without breaking existing implementations.
+Explanation: Add defines the add() contract and Sub defines the sub() contract. Calculator implements both interfaces using implements Add, Sub. Therefore, it must provide implementations for both methods. This demonstrates how a class can implement multiple interfaces.New Features Added in Interfaces in JDK 8There are certain features added to Interfaces in JDK 8 update mentioned below:1. Default MethodsInterfaces can define methods with default implementations.Useful for adding new methods to interfaces without breaking existing implementations.
             Java
 
     interface TestInterface
@@ -202,7 +202,7 @@ class TestClass implements TestInterface
 }
 
 Outputhello
-2. Static MethodsInterfaces can now include static methods.These methods are called directly using the interface name and are not inherited by implementing classes.Another feature that was added in JDK 8 is that we can now define static methods in interfaces that can be called independently without an object. These methods are not inherited.
+Explanation: display() already has an implementation in the interface. Therefore, TestClass does not need to override it and can directly use the inherited default method.2. Static MethodsInterfaces can now include static methods.These methods are called directly using the interface name and are not inherited by implementing classes.Another feature that was added in JDK 8 is that we can now define static methods in interfaces that can be called independently without an object. These methods are not inherited.
             Java
 
     interface TestInterface
@@ -225,7 +225,7 @@ class TestClass implements TestInterface
 }
 
 Outputhello
-3. Functional InterfaceFunctional interfaces can be used with lambda expressions or method references.The @FunctionalInterface annotation can be used to indicate that an interface is a functional interface, although it’s optional.
+Explanation: The static method belongs to the interface itself, so it is called using the interface name. It is not inherited by implementing classes.3. Functional InterfaceFunctional interfaces can be used with lambda expressions or method references.The @FunctionalInterface annotation can be used to indicate that an interface is a functional interface, although it’s optional.
             Java
 
     @FunctionalInterface
@@ -233,7 +233,7 @@ public interface Calculator {
     int compute(int x, int y); // single abstract method
 }
 
-New Features Added in Interfaces in JDK 9From Java 9 onwards, interfaces can contain the following also:1. Private MethodsInterface can now include private methods.Private methods are defined within the interface but it cannot be accessed by the implementing classes.Private methods cannot be overridden by implementing classes as they are not inherited.
+Explanation: Calculator is a functional interface because it contains one abstract method, compute(). The @FunctionalInterface annotation tells the compiler that the interface is intended to have exactly one abstract method.New Features Added in Interfaces in JDK 9From Java 9 onwards, interfaces can contain the following also:1. Private MethodsInterface can now include private methods.Private methods are defined within the interface but it cannot be accessed by the implementing classes.Private methods cannot be overridden by implementing classes as they are not inherited.
             Java
 
     interface Vehicle {
@@ -264,7 +264,7 @@ public class Main {
 
 OutputEngine started.
 Vehicle is now driving.
-Extending InterfacesOne interface can inherit another by the use of keyword extends. When a class implements an interface that inherits another interface, it must provide an implementation for all methods required by the interface inheritance chain.
+Explanation: startEngine() is private, so it cannot be called directly by Car. The default method drive() calls it internally. This allows interfaces to reuse common logic without exposing that helper method to implementing classes.Extending InterfacesOne interface can inherit another by the use of keyword extends. When a class implements an interface that inherits another interface, it must provide an implementation for all methods required by the interface inheritance chain.
             Java
 
     interface A {
@@ -307,4 +307,4 @@ class GFG implements B
 Try It YourselfOutputMethod 1
 Method 2
 Method 3
-Related ArticleClass vs Interfaces
+Explanation: B extends A, so B inherits the contracts of A and adds method3(). Since GFG implements B, it must provide implementations for method1(), method2(), and method3().Related ArticleClass vs Interfaces

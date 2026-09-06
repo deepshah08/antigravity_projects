@@ -37,7 +37,7 @@ int main() {
     return 0;
 }
 
-Output10Note: Earlier, we used %d for printing pointers, but C provides a separate format specifier %p for printing pointers.Size of PointersThe size of a pointer in C depends on the architecture (bit system) of the machine, not the data type it points to.On a 32-bit system, all pointers typically occupy 4 bytes.On a 64-bit system, all pointers typically occupy 8 bytes.The size remains constant regardless of the data type (int*, char*, float*, etc.). We can verify this using the sizeof operator.
+Output10Note: %p is used to print pointer addresses, while %d is used to print int values. Using %d with a pointer results in undefined behavior.Size of PointersThe size of a pointer in C depends on the architecture (bit system) of the machine, not the data type it points to.On a 32-bit system, all pointers typically occupy 4 bytes.On a 64-bit system, all pointers typically occupy 8 bytes.The size remains constant regardless of the data type (int*, char*, float*, etc.). We can verify this using the sizeof operator.
             C
 
     #include <stdio.h>
@@ -54,7 +54,7 @@ int main() {
 }
 
 Output8
-8The reason for the same size is that the pointers store the memory addresses, no matter what type they are. As the space required to store the addresses of the different memory locations is the same, the memory required by one pointer type will be equal to the memory required by other pointer types.Note: The actual size of the pointer may vary depending on the compiler and system architecture, but it is always uniform across all data types on the same system.Special Types of PointersThere are 4 special types of pointers that used or referred to in different contexts:1. NULL PointerA NULL Pointers is a pointer that does not point to any valid memory location. It is created by assigning the value NULL to a pointer variable.A pointer of any data type can be initialized or assigned with NULL to indicate that it is not pointing to any object.Checking whether a pointer is NULL helps prevent invalid memory access and ensures the pointer references a valid memory location before use.
+8The reason for the same size is that the pointers store the memory addresses, no matter what type they are. As the space required to store the addresses of the different memory locations is the same, the memory required by one pointer type will be equal to the memory required by other pointer types.Note: The actual size of the pointer may vary depending on the compiler and system architecture, but it is always uniform across all data types on the same system.Types of PointersThere are 4 special types of pointers that used or referred to in different contexts:1. NULL PointerA NULL Pointers is a pointer that does not point to any valid memory location. It is created by assigning the value NULL to a pointer variable.A pointer of any data type can be initialized or assigned with NULL to indicate that it is not pointing to any object.Checking whether a pointer is NULL helps prevent invalid memory access and ensures the pointer references a valid memory location before use.
             C
 
     #include <stdio.h>

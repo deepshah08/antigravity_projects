@@ -4,1183 +4,1199 @@
   "articles": [
     {
       "id": "ml-ai-001",
-      "title": "Supervised Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-002",
-      "title": "Unsupervised Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-003",
-      "title": "Reinforcement Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-004",
-      "title": "Self-Supervised Learning (SSL) - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-005",
-      "title": "Semi-Supervised Learning in ML - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-006",
       "title": "Introduction to Machine Learning - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-007",
+      "id": "ml-ai-002",
+      "title": "Artificial intelligence vs Machine Learning vs Deep Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-003",
       "title": "Machine Learning Lifecycle - GeeksforGeeks"
     },
     {
+      "id": "ml-ai-004",
+      "title": "Python Introduction - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-005",
+      "title": "Python Variables - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-006",
+      "title": "Python Data Types - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-007",
+      "title": "Python Operators - GeeksforGeeks"
+    },
+    {
       "id": "ml-ai-008",
-      "title": "Data Cleaning - GeeksforGeeks"
+      "title": "Conditional Statements in Python - GeeksforGeeks"
     },
     {
       "id": "ml-ai-009",
-      "title": "Data Preprocessing in Python - GeeksforGeeks"
+      "title": "Loops in Python - GeeksforGeeks"
     },
     {
       "id": "ml-ai-010",
-      "title": "Feature Engineering - Scaling, Normalization and Standardization - GeeksforGeeks"
+      "title": "Python Functions - GeeksforGeeks"
     },
     {
       "id": "ml-ai-011",
-      "title": "Feature Extraction - GeeksforGeeks"
+      "title": "Python Lists - GeeksforGeeks"
     },
     {
       "id": "ml-ai-012",
-      "title": "Feature Engineering - GeeksforGeeks"
+      "title": "Python Dictionary - GeeksforGeeks"
     },
     {
       "id": "ml-ai-013",
-      "title": "Feature Selection Techniques in Machine Learning - GeeksforGeeks"
+      "title": "Python NumPy - GeeksforGeeks"
     },
     {
       "id": "ml-ai-014",
-      "title": "Exploratory Data Analysis - GeeksforGeeks"
+      "title": "Pandas Step by Step Guide - GeeksforGeeks"
     },
     {
       "id": "ml-ai-015",
-      "title": "EDA - Exploratory Data Analysis in Python - GeeksforGeeks"
+      "title": "Data Visualization using Matplotlib in Python - GeeksforGeeks"
     },
     {
       "id": "ml-ai-016",
-      "title": "Advanced EDA - GeeksforGeeks"
+      "title": "Data Visualization with Seaborn - Python - GeeksforGeeks"
     },
     {
       "id": "ml-ai-017",
-      "title": "Time Series Analysis & Visualization in Python - GeeksforGeeks"
+      "title": "Learning Model Building in Scikit-learn - GeeksforGeeks"
     },
     {
       "id": "ml-ai-018",
-      "title": "Regularization in Machine Learning - GeeksforGeeks"
+      "title": "Basic Concepts of Probability - GeeksforGeeks"
     },
     {
       "id": "ml-ai-019",
-      "title": "Understanding the Confusion Matrix in Machine Learning - GeeksforGeeks"
+      "title": "Conditional Probability - GeeksforGeeks"
     },
     {
       "id": "ml-ai-020",
-      "title": "Precision and Recall in  Machine Learning - GeeksforGeeks"
+      "title": "Bayes Theorem in Machine learning - GeeksforGeeks"
     },
     {
       "id": "ml-ai-021",
-      "title": "F1 Score in Machine Learning - GeeksforGeeks"
+      "title": "Probability Distributions in Data Science - GeeksforGeeks"
     },
     {
       "id": "ml-ai-022",
-      "title": "AUC-ROC Curve in Machine Learning - GeeksforGeeks"
+      "title": "Descriptive Statistic for Data Science - GeeksforGeeks"
     },
     {
       "id": "ml-ai-023",
-      "title": "Cross Validation in Machine Learning - GeeksforGeeks"
+      "title": "Introduction to Inferential Statistics - GeeksforGeeks"
     },
     {
       "id": "ml-ai-024",
-      "title": "Hyperparameter Tuning - GeeksforGeeks"
+      "title": "Understanding Skewness and Kurtosis in Python - GeeksforGeeks"
     },
     {
       "id": "ml-ai-025",
-      "title": "Getting started with Classification - GeeksforGeeks"
+      "title": "Pearson Correlation in Data Science - GeeksforGeeks"
     },
     {
       "id": "ml-ai-026",
-      "title": "Regression in Machine Learning - GeeksforGeeks"
+      "title": "Spearman's Rank Correlation - GeeksforGeeks"
     },
     {
       "id": "ml-ai-027",
-      "title": "Linear Regression in Machine learning - GeeksforGeeks"
+      "title": "Vectors for ML - GeeksforGeeks"
     },
     {
       "id": "ml-ai-028",
-      "title": "Gradient Descent in Linear Regression - GeeksforGeeks"
+      "title": "Matrices and Matrix Arithmetic for Machine Learning - GeeksforGeeks"
     },
     {
       "id": "ml-ai-029",
-      "title": "Multiple Linear Regression using Python - ML - GeeksforGeeks"
+      "title": "Scalar Product of Vectors - GeeksforGeeks"
     },
     {
       "id": "ml-ai-030",
-      "title": "Logistic Regression in Machine Learning - GeeksforGeeks"
+      "title": "Solving Linear Equations Data Science - GeeksforGeeks"
     },
     {
       "id": "ml-ai-031",
-      "title": "Cost function in Logistic Regression - GeeksforGeeks"
+      "title": "First and Second Order Derivatives - GeeksforGeeks"
     },
     {
       "id": "ml-ai-032",
-      "title": "Decision Tree in Machine Learning - GeeksforGeeks"
+      "title": "What is Gradient Descent - GeeksforGeeks"
     },
     {
       "id": "ml-ai-033",
-      "title": "Decision Tree Algorithms - GeeksforGeeks"
+      "title": "Data Preprocessing in Python - GeeksforGeeks"
     },
     {
       "id": "ml-ai-034",
-      "title": "Implementing Decision Tree Regression using Scikit-Learn - GeeksforGeeks"
+      "title": "Data Cleaning - GeeksforGeeks"
     },
     {
       "id": "ml-ai-035",
-      "title": "Implementing Decision Tree Classifiers with Scikit-Learn - GeeksforGeeks"
+      "title": "Handling Missing Values in Machine Learning - GeeksforGeeks"
     },
     {
       "id": "ml-ai-036",
-      "title": "Support Vector Machine (SVM) Algorithm - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-037",
-      "title": "SVM Hyperparameter Tuning using GridSearchCV - ML - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-038",
-      "title": "Non-Linear SVM - ML - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-039",
-      "title": "K-Nearest Neighbor(KNN) Algorithm - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-040",
-      "title": "Understanding Decision Boundaries in K-Nearest Neighbours (KNN) - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-041",
-      "title": "Naive Bayes Classifiers - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-042",
-      "title": "Gaussian Naive Bayes - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-043",
-      "title": "Multinomial Naive Bayes - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-044",
-      "title": "Bernoulli Naive Bayes - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-045",
-      "title": "Complement Naive Bayes (CNB) Algorithm - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-046",
-      "title": "Random Forest Algorithm in Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-047",
-      "title": "Random Forest Classifier using Scikit-learn - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-048",
-      "title": "Random Forest Regression in Python - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-049",
-      "title": "Random Forest Hyperparameter Tuning in Python - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-050",
-      "title": "Ensemble Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-051",
-      "title": "Bagging Classifier - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-052",
-      "title": "AdaBoost in Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-053",
-      "title": "Clustering in Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-054",
-      "title": "Association Rule - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-055",
-      "title": "Introduction to Dimensionality Reduction - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-056",
-      "title": "K means Clustering – Introduction - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-057",
-      "title": "Elbow Method for optimal value of k in KMeans - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-058",
-      "title": "K-means++ Algorithm - ML - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-059",
-      "title": "K-Mode Clustering in Python - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-060",
-      "title": "Fuzzy Clustering - ML - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-061",
-      "title": "Gaussian Mixture Model - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-062",
-      "title": "Expectation-Maximization Algorithm - ML - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-063",
-      "title": "Dirichlet Process Mixture Models (DPMMs) - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-064",
-      "title": "Hierarchical Clustering in Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-065",
-      "title": "Implementing Agglomerative Clustering using Sklearn - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-066",
-      "title": "Divisive Clustering - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-067",
-      "title": "Affinity Propagation - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-068",
-      "title": "DBSCAN Clustering in ML - Density based clustering - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-069",
-      "title": "OPTICS Clustering - ML - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-070",
-      "title": "Principal Component Analysis (PCA) - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-071",
-      "title": "T-distributed Stochastic Neighbor Embedding (t-SNE) Algorithm - ML - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-072",
-      "title": "Non-Negative Matrix Factorization - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-073",
-      "title": "Independent Component Analysis - ML - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-074",
-      "title": "Isomap - A Non-linear Dimensionality Reduction Technique - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-075",
-      "title": "Swiss Roll Reduction with LLE in Scikit Learn - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-076",
-      "title": "Market Basket Analysis in Data Mining - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-077",
-      "title": "Apriori Algorithm - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-078",
-      "title": "Implementing Apriori algorithm in Python - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-079",
-      "title": "Frequent Pattern Growth Algorithm - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-080",
-      "title": "ECLAT Algorithm - ML - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-081",
-      "title": "Markov Decision Process - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-082",
-      "title": "Bellman Equation - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-083",
-      "title": "Implement Value Iteration in Python - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-084",
-      "title": "Monte Carlo Tree Search (MCTS) in Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-085",
-      "title": "Q-Learning in Reinforcement Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-086",
-      "title": "SARSA (State-Action-Reward-State-Action) in Reinforcement Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-087",
-      "title": "Monte Carlo integration in Python - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-088",
-      "title": "REINFORCE Algorithm - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-089",
-      "title": "Actor-Critic Algorithm in Reinforcement Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-090",
-      "title": "Semi Supervised Classification - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-091",
-      "title": "Self-Training in Semi-Supervised Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-092",
-      "title": "Few Shot Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-093",
-      "title": "ARIMA - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-094",
-      "title": "SARIMA  (Seasonal Autoregressive Integrated Moving Average) - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-095",
-      "title": "Exponential Smoothing for Time Series Forecasting - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-096",
-      "title": "Machine learning deployment - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-097",
-      "title": "Deploy an AI Model using Streamlit Library - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-098",
-      "title": "Deploy your Machine Learning  model on Render - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-099",
-      "title": "Python - Create UIs for Prototyping Machine Learning Model with Gradio - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-100",
-      "title": "Deploy Machine Learning Model using Flask - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-101",
-      "title": "Deploying ML Models as API using FastAPI - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-102",
-      "title": "MLOps: Everything You Need to Know - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-103",
-      "title": "Continuous Integration and Continuous Deployment (CI/CD) in MLOps - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-104",
-      "title": "End-to-End MLOps Pipeline: A Comprehensive Project - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-105",
-      "title": "Machine Learning Projects - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-106",
-      "title": "Deep Learning Tutorial - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-107",
-      "title": "Types of Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-108",
-      "title": "What is Machine Learning Pipeline? - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-109",
-      "title": "Applications of Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-110",
-      "title": "Machine Learning with Python Tutorial - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-111",
-      "title": "NumPy Tutorial - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-112",
-      "title": "Pandas Tutorial - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-113",
-      "title": "Evaluation Metrics in Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-114",
-      "title": "Underfitting and Overfitting in ML - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-115",
-      "title": "Bias and Variance in Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-116",
-      "title": "Machine Learning Interview Questions and Answers - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-117",
-      "title": "Data Science 360 Course - Data Analytics, ML & AI"
-    },
-    {
-      "id": "ml-ai-118",
-      "title": "AI Engineering Course - Generative AI & Agentic AI"
-    },
-    {
-      "id": "ml-ai-119",
-      "title": "Mean-Shift Clustering - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-120",
-      "title": "Spectral Clustering - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-121",
-      "title": "Locally Linear Embedding in Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-122",
-      "title": "What is Sparse Categorical Crossentropy - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-123",
-      "title": "Traditional Programming vs Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-124",
-      "title": "Data Collection Methods - Primary and Secondary Data - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-125",
-      "title": "Power - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-126",
-      "title": "Machine Learning Model Evaluation - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-127",
-      "title": "here"
-    },
-    {
-      "id": "ml-ai-128",
-      "title": "here"
-    },
-    {
-      "id": "ml-ai-129",
-      "title": "here"
-    },
-    {
-      "id": "ml-ai-130",
-      "title": "here"
-    },
-    {
-      "id": "ml-ai-131",
-      "title": "Mean in Statistics - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-132",
-      "title": "Median in Statistics - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-133",
-      "title": "Standard Deviation - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-134",
-      "title": "Covariance and Correlation - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-135",
-      "title": "Linear Discriminant Analysis in Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-136",
-      "title": "Bag of words (BoW) model in NLP - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-137",
-      "title": "Understanding TF-IDF (Term Frequency-Inverse Document Frequency) - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-138",
-      "title": "Fourier Transform - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-139",
-      "title": "Wavelet Transforms - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-140",
-      "title": "HOG Feature Visualization in Python Using skimage - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-141",
-      "title": "Binning in Data Mining - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-142",
-      "title": "Removing stop words with NLTK in Python - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-143",
-      "title": "Introduction to Stemming - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-144",
-      "title": "Vectors and Vectorization Techniques in NLP - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-145",
-      "title": "Feature Selection using Filter Methods - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-146",
-      "title": "Information Gain and Mutual Information for Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-147",
-      "title": "Chi-Square Test - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-148",
-      "title": "Fisher’s F-Test in R Programming - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-149",
-      "title": "Pearson Correlation Coefficient - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-150",
-      "title": "Variance Threshold - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-151",
-      "title": "Mean Absolute Deviation - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-152",
-      "title": "Measures of Dispersion - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-153",
-      "title": "Wrapper Methods - Feature Selection - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-154",
-      "title": "Forward Feature Selection in Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-155",
-      "title": "Multiple Linear Regression with Backward Elimination - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-156",
-      "title": "Recursive Feature Elimination - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-157",
-      "title": "Feature Selection | Embedded methods - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-158",
-      "title": "What is Lasso Regression - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-159",
-      "title": "Histogram - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-160",
-      "title": "Box Plot - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-161",
-      "title": "Bar Graph - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-162",
-      "title": "Bivariate Analysis - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-163",
-      "title": "Scatter Plot - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-164",
-      "title": "Cross-Tabulation - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-165",
-      "title": "Line Graph - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-166",
-      "title": "Multivariate Analysis in R - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-167",
-      "title": "What is Spatial Analysis - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-168",
-      "title": "Data visualization with ggplot2 in R - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-169",
-      "title": "dplyr Package in R Programming - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-170",
-      "title": "tidyr Package in R Programming - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-171",
-      "title": "How KNN Imputer Works in Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-172",
-      "title": "Exploring Data Distribution | Set 1 - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-173",
-      "title": "Central Tendency in Statistics- Mean, Median, Mode - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-174",
-      "title": "Difference Between Skewness and Kurtosis - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-175",
-      "title": "StandardScaler, MinMaxScaler and RobustScaler techniques - ML - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-176",
-      "title": "Standardization in Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-177",
-      "title": "Square root of a number using log - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-178",
       "title": "How to Detect Outliers in Machine Learning - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-179",
-      "title": "Interquartile Range in Statistics - GeeksforGeeks"
+      "id": "ml-ai-037",
+      "title": "Splitting Data for Machine Learning Models - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-180",
-      "title": "Z-Score in Statistics - GeeksforGeeks"
+      "id": "ml-ai-038",
+      "title": "Feature Selection Techniques in Machine Learning - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-181",
-      "title": "link"
+      "id": "ml-ai-039",
+      "title": "Feature Engineering - Scaling, Normalization and Standardization - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-182",
+      "id": "ml-ai-040",
+      "title": "Feature Engineering - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-041",
+      "title": "Feature Extraction - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-042",
+      "title": "Handling Imbalanced Data for Classification - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-043",
+      "title": "EDA - Exploratory Data Analysis in Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-044",
       "title": "Univariate, Bivariate and Multivariate data and its analysis - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-183",
-      "title": "Violin Plot for Data Analysis - GeeksforGeeks"
+      "id": "ml-ai-045",
+      "title": "Introduction to Data Visualization - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-184",
-      "title": "Interquartile Range (IQR) - GeeksforGeeks"
+      "id": "ml-ai-046",
+      "title": "What is Correlation Analysis? - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-185",
-      "title": "Box and Whisker Plot | Meaning, Uses and Example - GeeksforGeeks"
+      "id": "ml-ai-047",
+      "title": "Advanced EDA - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-186",
-      "title": "Plotting Correlation Matrix using Python - GeeksforGeeks"
+      "id": "ml-ai-048",
+      "title": "Supervised Machine Learning - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-187",
-      "title": "Skewness - Measures and Interpretation - GeeksforGeeks"
+      "id": "ml-ai-049",
+      "title": "Getting started with Classification - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-188",
-      "title": "How to Calculate Kurtosis in Statistics? - GeeksforGeeks"
+      "id": "ml-ai-050",
+      "title": "Regression in Machine Learning - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-189",
-      "title": "Pie Chart - GeeksforGeeks"
+      "id": "ml-ai-051",
+      "title": "Linear Regression in Machine learning - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-190",
-      "title": "UMAP: Uniform Manifold Approximation and Projection - GeeksforGeeks"
+      "id": "ml-ai-052",
+      "title": "Multiple Linear Regression using Python - ML - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-191",
-      "title": "AutoCorrelation - GeeksforGeeks"
+      "id": "ml-ai-053",
+      "title": "Logistic Regression in Machine Learning - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-192",
-      "title": "How to Resample Time Series Data in Python? - GeeksforGeeks"
+      "id": "ml-ai-054",
+      "title": "Cost function in Logistic Regression - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-193",
-      "title": "here"
+      "id": "ml-ai-055",
+      "title": "Decision Tree in Machine Learning - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-194",
+      "id": "ml-ai-056",
+      "title": "Decision Tree Algorithms - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-057",
+      "title": "Implementing Decision Tree Regression using Scikit-Learn - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-058",
+      "title": "Implementing Decision Tree Classifiers with Scikit-Learn - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-059",
+      "title": "K-Nearest Neighbor(KNN) Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-060",
+      "title": "Understanding Decision Boundaries in K-Nearest Neighbours (KNN) - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-061",
+      "title": "Naive Bayes Classifiers - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-062",
+      "title": "Gaussian Naive Bayes - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-063",
+      "title": "Multinomial Naive Bayes - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-064",
+      "title": "Bernoulli Naive Bayes - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-065",
+      "title": "Support Vector Machine (SVM) Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-066",
+      "title": "Non-Linear SVM - ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-067",
+      "title": "Ensemble Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-068",
+      "title": "Bagging vs Boosting in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-069",
+      "title": "AdaBoost in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-070",
+      "title": "Gradient Boosting in ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-071",
+      "title": "XGBoost - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-072",
+      "title": "Random Forest Algorithm in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-073",
+      "title": "Random Forest Classifier using Scikit-learn - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-074",
+      "title": "Random Forest Regression in Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-075",
+      "title": "Understanding the Confusion Matrix in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-076",
+      "title": "Precision and Recall in  Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-077",
+      "title": "F1 Score in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-078",
+      "title": "AUC-ROC Curve in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-079",
+      "title": "Regression Metrics - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-080",
+      "title": "Cross Validation in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-081",
+      "title": "Underfitting and Overfitting in ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-082",
+      "title": "Bias-Variance Trade Off - Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-083",
+      "title": "Regularization in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-084",
+      "title": "Hyperparameter Tuning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-085",
+      "title": "Model Selection for Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-086",
+      "title": "Unsupervised Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-087",
+      "title": "Clustering in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-088",
+      "title": "Association Rule - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-089",
+      "title": "Introduction to Dimensionality Reduction - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-090",
+      "title": "K means Clustering – Introduction - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-091",
+      "title": "Elbow Method for optimal value of k in KMeans - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-092",
+      "title": "K-means++ Algorithm - ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-093",
+      "title": "Hierarchical Clustering in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-094",
+      "title": "Implementing Agglomerative Clustering using Sklearn - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-095",
+      "title": "DBSCAN Clustering in ML - Density based clustering - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-096",
+      "title": "OPTICS Clustering - ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-097",
+      "title": "Gaussian Mixture Model - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-098",
+      "title": "Expectation-Maximization Algorithm - ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-099",
+      "title": "Principal Component Analysis (PCA) - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-100",
+      "title": "T-distributed Stochastic Neighbor Embedding (t-SNE) Algorithm - ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-101",
+      "title": "Non-Negative Matrix Factorization - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-102",
+      "title": "Independent Component Analysis - ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-103",
+      "title": "Isomap - A Non-linear Dimensionality Reduction Technique - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-104",
+      "title": "Apriori Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-105",
+      "title": "Frequent Pattern Growth Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-106",
+      "title": "What is Anomaly Detection? - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-107",
+      "title": "Reinforcement Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-108",
+      "title": "Markov Decision Process - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-109",
+      "title": "Bellman Equation - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-110",
+      "title": "Implement Value Iteration in Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-111",
+      "title": "Q-Learning in Reinforcement Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-112",
+      "title": "SARSA (State-Action-Reward-State-Action) in Reinforcement Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-113",
+      "title": "REINFORCE Algorithm - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-114",
+      "title": "Actor-Critic Algorithm in Reinforcement Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-115",
+      "title": "Semi-Supervised Learning in ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-116",
+      "title": "Semi Supervised Classification - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-117",
+      "title": "Self-Training in Semi-Supervised Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-118",
+      "title": "Self-Supervised Learning (SSL) - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-119",
+      "title": "Time Series Analysis and Forecasting - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-120",
+      "title": "Seasonality Detection in Time Series Data - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-121",
       "title": "Check if Time Series Data is Stationary with Python - GeeksforGeeks"
     },
     {
+      "id": "ml-ai-122",
+      "title": "Exponential Smoothing for Time Series Forecasting - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-123",
+      "title": "ARIMA - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-124",
+      "title": "SARIMA  (Seasonal Autoregressive Integrated Moving Average) - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-125",
+      "title": "Machine learning deployment - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-126",
+      "title": "Deploy an AI Model using Streamlit Library - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-127",
+      "title": "Python - Create UIs for Prototyping Machine Learning Model with Gradio - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-128",
+      "title": "Deploy Machine Learning Model using Flask - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-129",
+      "title": "Deploying ML Models as API using FastAPI - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-130",
+      "title": "MLOps: Everything You Need to Know - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-131",
+      "title": "Continuous Integration and Continuous Deployment (CI/CD) in MLOps - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-132",
+      "title": "End-to-End MLOps Pipeline: A Comprehensive Project - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-133",
+      "title": "Machine Learning Projects - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-134",
+      "title": "Machine Learning Interview Questions and Answers - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-135",
+      "title": "Data Science Coding Interview Questions - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-136",
+      "title": "Deep Learning Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-137",
+      "title": "Types of Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-138",
+      "title": "What is Machine Learning Pipeline? - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-139",
+      "title": "Applications of Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-140",
+      "title": "Machine Learning with Python Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-141",
+      "title": "NumPy Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-142",
+      "title": "Pandas Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-143",
+      "title": "ECLAT Algorithm - ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-144",
+      "title": "Evaluation Metrics in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-145",
+      "title": "Bias and Variance in Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-146",
+      "title": "Data Science 360 Course - Data Analytics, ML & AI"
+    },
+    {
+      "id": "ml-ai-147",
+      "title": "AI Engineering Course - Generative AI & Agentic AI"
+    },
+    {
+      "id": "ml-ai-148",
+      "title": "Traditional Programming vs Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-149",
+      "title": "Data Collection Methods - Primary and Secondary Data - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-150",
+      "title": "Exploratory Data Analysis - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-151",
+      "title": "Power - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-152",
+      "title": "Machine Learning Model Evaluation - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-153",
+      "title": "NumPy Array Functions - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-154",
+      "title": "Basic Slicing and Advanced Indexing in NumPy - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-155",
+      "title": "rand vs normal in Numpy.random in Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-156",
+      "title": "NumPy in Python | Set 2 (Advanced) - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-157",
+      "title": "CSV File Format | .csv Extension - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-158",
+      "title": "Polars - Reading JSON File | polars.read_json() - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-159",
+      "title": "Pandas Dataframe/Series.head() method - Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-160",
+      "title": "Pandas Dataframe/Series.tail() method - Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-161",
+      "title": "Python | Pandas dataframe.info() - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-162",
+      "title": "Pandas DataFrame describe() Method - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-163",
+      "title": "Count NaN or missing values in Pandas DataFrame - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-164",
+      "title": "Pandas df.size, df.shape and df.ndim Methods - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-165",
+      "title": "Select row with maximum and minimum value in Pandas dataframe - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-166",
+      "title": "How to Select Rows & Columns by Name or Index in Pandas Dataframe - Using loc and iloc - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-167",
+      "title": "Boolean Indexing in Pandas - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-168",
+      "title": "Select Rows With Multiple Filters in Pandas - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-169",
+      "title": "Filter Pandas Dataframe by Column Value - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-170",
+      "title": "Python | Pandas DataFrame.isin() - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-171",
+      "title": "How to Select Rows from a Dataframe based on Column Values ? - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-172",
+      "title": "Dealing with Rows and Columns in Pandas DataFrame - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-173",
+      "title": "Adding New Column to Existing DataFrame in Pandas - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-174",
+      "title": "How to add column from another DataFrame in Pandas ? - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-175",
+      "title": "Rename Columns in Pandas DataFrame - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-176",
+      "title": "Rename Column by Index in Pandas - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-177",
+      "title": "Reindexing in Pandas DataFrame - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-178",
+      "title": "Check for NaN in Pandas DataFrame - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-179",
+      "title": "How to Convert Index to Column in Pandas Dataframe? - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-180",
+      "title": "Pandas isnull() and notnull() Method - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-181",
+      "title": "What does inplace mean in Pandas? - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-182",
+      "title": "Replacing missing values using Pandas in Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-183",
+      "title": "Pandas DataFrame.fillna() | Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-184",
+      "title": "Pandas DataFrame.dropna() Method - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-185",
+      "title": "Drop rows from Pandas dataframe with missing values or NaN in columns - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-186",
+      "title": "How to Drop One or Multiple Columns in Pandas DataFrame - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-187",
+      "title": "Write custom aggregation function in Pandas - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-188",
+      "title": "Grouping Rows in pandas - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-189",
+      "title": "Joining Two Pandas DataFrames using merge() - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-190",
+      "title": "How to Concatenate Column Values in Pandas DataFrame? - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-191",
+      "title": "Merge two Pandas DataFrames on certain columns - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-192",
+      "title": "How to Merge multiple CSV Files into a single Pandas dataframe ? - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-193",
+      "title": "Pandas.pivot_table() - Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-194",
+      "title": "Reshape a Pandas DataFrame using stack,unstack and melt method - GeeksforGeeks"
+    },
+    {
       "id": "ml-ai-195",
-      "title": "here"
+      "title": "Pandas DataFrame transpose() Method - Swap Rows and Columns - GeeksforGeeks"
     },
     {
       "id": "ml-ai-196",
-      "title": "Ridge Regression - GeeksforGeeks"
+      "title": "How to Load a Massive File as small chunks in Pandas? - GeeksforGeeks"
     },
     {
       "id": "ml-ai-197",
-      "title": "Implementation of Elastic Net Regression From Scratch - GeeksforGeeks"
+      "title": "Pandas Memory Management - GeeksforGeeks"
     },
     {
       "id": "ml-ai-198",
-      "title": "Lasso vs Ridge vs Elastic Net - ML - GeeksforGeeks"
+      "title": "Pandas DataFrame.astype()-Python - GeeksforGeeks"
     },
     {
       "id": "ml-ai-199",
-      "title": "Techniques To Evaluate Accuracy of Classifier in Data Mining - GeeksforGeeks"
+      "title": "Pandas Exercises and Programs - GeeksforGeeks"
     },
     {
       "id": "ml-ai-200",
-      "title": "Precision-Recall Curve - ML - GeeksforGeeks"
+      "title": "Scatter Plot - GeeksforGeeks"
     },
     {
       "id": "ml-ai-201",
-      "title": "Precision, Recall and F1-Score using R - GeeksforGeeks"
+      "title": "Box Plot - GeeksforGeeks"
     },
     {
       "id": "ml-ai-202",
-      "title": "Calculate Sensitivity, Specificity and Predictive Values in CARET - GeeksforGeeks"
+      "title": "Make Violinplot with data points using Seaborn - GeeksforGeeks"
     },
     {
       "id": "ml-ai-203",
-      "title": "Type I and Type II Errors - GeeksforGeeks"
+      "title": "Python - seaborn.swarmplot() method - GeeksforGeeks"
     },
     {
       "id": "ml-ai-204",
-      "title": "Multiclass classification using scikit-learn - GeeksforGeeks"
+      "title": "Comprehensive Guide to Adding Titles and Customizing Seaborn Boxplots - GeeksforGeeks"
     },
     {
       "id": "ml-ai-205",
-      "title": "Harmonic Mean - GeeksforGeeks"
+      "title": "How to set a Seaborn chart figure size? - GeeksforGeeks"
     },
     {
       "id": "ml-ai-206",
-      "title": "How to plot ROC curve in Python - GeeksforGeeks"
+      "title": "Grid Plot in Python using Seaborn - GeeksforGeeks"
     },
     {
       "id": "ml-ai-207",
-      "title": "How to Calculate AUC (Area Under Curve) in R? - GeeksforGeeks"
+      "title": "Events in Probability - GeeksforGeeks"
     },
     {
       "id": "ml-ai-208",
-      "title": "One-vs-Rest strategy  for Multi-Class Classification - GeeksforGeeks"
+      "title": "Probability in Maths - GeeksforGeeks"
     },
     {
       "id": "ml-ai-209",
-      "title": "Introduction of Holdout Method - GeeksforGeeks"
+      "title": "Dependent and Independent Events - GeeksforGeeks"
     },
     {
       "id": "ml-ai-210",
-      "title": "K-fold Cross Validation in R Programming - GeeksforGeeks"
+      "title": "Addition Rule for Probability - GeeksforGeeks"
     },
     {
       "id": "ml-ai-211",
-      "title": "Performing Feature Selection with gridsearchcv in Sklearn - GeeksforGeeks"
+      "title": "Probability Distribution - GeeksforGeeks"
     },
     {
       "id": "ml-ai-212",
-      "title": "How to Optimize Logistic Regression Performance - GeeksforGeeks"
+      "title": "Probability in Computer Science - GeeksforGeeks"
     },
     {
       "id": "ml-ai-213",
-      "title": "Comparing Randomized Search and Grid Search for Hyperparameter Estimation in Scikit Learn - GeeksforGeeks"
+      "title": "Chance and Probability - GeeksforGeeks"
     },
     {
       "id": "ml-ai-214",
-      "title": "How to tune a Decision Tree in Hyperparameter tuning - GeeksforGeeks"
+      "title": "Empirical Probability - GeeksforGeeks"
     },
     {
       "id": "ml-ai-215",
-      "title": "Bayesian Optimization in Machine Learning - GeeksforGeeks"
+      "title": "Probability Theory - GeeksforGeeks"
     },
     {
       "id": "ml-ai-216",
-      "title": "Binary Cross Entropy/Log Loss for Binary Classification - GeeksforGeeks"
+      "title": "Practice Problems on Probability | Class 9 Maths - GeeksforGeeks"
     },
     {
       "id": "ml-ai-217",
-      "title": "MultiLabel classification - GeeksforGeeks"
+      "title": "What Is the Difference Between \"Likelihood\" and \"Probability\"? - GeeksforGeeks"
     },
     {
       "id": "ml-ai-218",
-      "title": "Stochastic Gradient Descent Classifier - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-219",
-      "title": "Major Kernel Functions in Support Vector Machine (SVM) - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-220",
-      "title": "Implementing the AdaBoost Algorithm From Scratch - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-221",
-      "title": "Voting Classifier using Sklearn - ML - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-222",
-      "title": "ML | Extra Tree Classifier for Feature Selection - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-223",
-      "title": "Polynomial Regression ( From Scratch using Python ) - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-224",
-      "title": "Support Vector Regression (SVR) using Linear and Non-Linear Kernels in Scikit Learn - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-225",
-      "title": "How to Calculate Mean Absolute Error in Python? - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-226",
-      "title": "Mean Squared Error in Python - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-227",
-      "title": "RMSE - Root Mean Square Error in MATLAB - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-228",
-      "title": "Different Loss functions in SGD - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-229",
-      "title": "Python - Coefficient of Determination-R2 score - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-230",
-      "title": "here"
-    },
-    {
-      "id": "ml-ai-231",
-      "title": "Least Square Method - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-232",
-      "title": "Univariate Linear Regression in Python - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-233",
-      "title": "Multivariate Regression - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-234",
-      "title": "Simple Linear Regression in Python - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-235",
-      "title": "Multicollinearity in Regression Analysis - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-236",
-      "title": "Root-Mean-Square Error in R Programming - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-237",
-      "title": "R Squared | Coefficient of Determination - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-238",
-      "title": "Adjusted R - Squared - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-239",
-      "title": "Implementation of Lasso Regression From Scratch using Python - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-240",
-      "title": "Implementation of Ridge Regression from Scratch using Python - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-241",
-      "title": "Cost Function in Linear Regression - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-242",
-      "title": "Normal Equation in Linear Regression - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-243",
-      "title": "Implementation of Polynomial Regression - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-244",
-      "title": "Mean Squared Error - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-245",
-      "title": "Pandas Functions in Python: A Toolkit for Data Analysis - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-246",
-      "title": "Detecting Multicollinearity with VIF - Python - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-247",
-      "title": "here"
-    },
-    {
-      "id": "ml-ai-248",
-      "title": "Sigmoid Function - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-249",
-      "title": "Iterative Dichotomiser 3 (ID3) Algorithm From Scratch - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-250",
-      "title": "CART (Classification And Regression Tree) in Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-251",
-      "title": "Implementing CART (Classification And Regression Tree) in Python - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-252",
-      "title": "Conditional Inference Trees in R Programming - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-253",
-      "title": "Grid Searching From Scratch using Python - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-254",
-      "title": "Hyperparameter Optimization Based on Bayesian Optimization - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-255",
-      "title": "Hinge-loss & Relationship with Support Vector Machines - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-256",
-      "title": "Hyperparameter tuning using GridSearchCV and KerasClassifier - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-261",
-      "title": "k-nearest neighbor algorithm using  Sklearn - Python - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-262",
-      "title": "Implementation of K-Nearest Neighbors from Scratch using Python - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-263",
-      "title": "Mathematical explanation of K-Nearest Neighbour - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-264",
-      "title": "Weighted K-NN - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-265",
       "title": "Bayes' Theorem - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-266",
-      "title": "Gaussian Naive Bayes using Sklearn - GeeksforGeeks"
+      "id": "ml-ai-219",
+      "title": "Multiplication Theorem - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-267",
-      "title": "How to plot the decision boundary for a Gaussian Naive Bayes classifier in R? - GeeksforGeeks"
+      "id": "ml-ai-220",
+      "title": "Conditional Probability Practice Question - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-268",
-      "title": "Naive Bayes Scratch Implementation using Python - GeeksforGeeks"
+      "id": "ml-ai-221",
+      "title": "Bayesian Inference - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-269",
-      "title": "Probability Density Estimation & Maximum Likelihood Estimation - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-270",
-      "title": "Using CountVectorizer to Extracting Features from Text - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-271",
-      "title": "How to split the Dataset With scikit-learn's train_test_split() Function - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-272",
-      "title": "Classification Metrics using Sklearn - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-273",
+      "id": "ml-ai-222",
       "title": "here"
     },
     {
-      "id": "ml-ai-274",
-      "title": "Python - Bernoulli Distribution in Statistics - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-275",
+      "id": "ml-ai-223",
       "title": "here"
     },
     {
-      "id": "ml-ai-276",
-      "title": "here"
+      "id": "ml-ai-224",
+      "title": "Bayesian Optimization in Machine Learning - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-277",
-      "title": "R-squared in Regression Analysis in Machine Learning - GeeksforGeeks"
+      "id": "ml-ai-225",
+      "title": "Basic Understanding of Bayesian Belief Networks - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-278",
-      "title": "here"
+      "id": "ml-ai-226",
+      "title": "P-Value: Comprehensive Guide to Understand, Apply and Interpret - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-279",
-      "title": "OOB Errors for Random Forests in Scikit Learn - GeeksforGeeks"
+      "id": "ml-ai-227",
+      "title": "Probability Mass Function - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-280",
-      "title": "here"
-    },
-    {
-      "id": "ml-ai-281",
-      "title": "here"
-    },
-    {
-      "id": "ml-ai-282",
-      "title": "CatBoost in Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-283",
-      "title": "ML | Intercluster and Intracluster Distance - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-284",
-      "title": "K-Medoids clustering in Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-285",
-      "title": "Agglomerative Clustering - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-286",
-      "title": "NetworkX : Python software package for study of complex networks - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-287",
-      "title": "Factor Analysis - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-288",
-      "title": "Euclidean Distance - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-289",
-      "title": "here"
-    },
-    {
-      "id": "ml-ai-290",
-      "title": "Source Code"
-    },
-    {
-      "id": "ml-ai-291",
-      "title": "here"
-    },
-    {
-      "id": "ml-ai-292",
-      "title": "Gaussian Distribution In Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-293",
-      "title": "here"
-    },
-    {
-      "id": "ml-ai-294",
+      "id": "ml-ai-228",
       "title": "Probability Density Function - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-295",
-      "title": "Kernel Density Estimation - GeeksforGeeks"
+      "id": "ml-ai-229",
+      "title": "Cumulative Distribution Function - GeeksforGeeks"
     },
     {
-      "id": "ml-ai-296",
+      "id": "ml-ai-230",
+      "title": "Discrete Probability Distributions for Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-231",
+      "title": "Binomial Distribution in Data Science - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-232",
+      "title": "Bernoulli Distribution in Statistics - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-233",
+      "title": "Poisson Distribution : Meaning, Characteristics, Shape, Mean and Variance - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-234",
+      "title": "Geometric Distribution - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-235",
+      "title": "Continuous Probability Distributions for Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-236",
+      "title": "Normal Distribution in Data Science - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-237",
+      "title": "Exponential Distribution - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-238",
+      "title": "Uniform Distribution in Data Science - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-239",
+      "title": "Mathematics | Beta Distribution Model - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-240",
+      "title": "Gamma Distribution in Statistics - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-241",
+      "title": "Chi-Squared Distributions - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-242",
+      "title": "Lognormal Distribution in Business Statistics - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-243",
+      "title": "Measures of Central Tendency in Statistics - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-244",
+      "title": "Measures of Spread - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-245",
+      "title": "Frequency Distribution - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-246",
+      "title": "statistics.mean() function | Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-247",
+      "title": "Mode - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-248",
+      "title": "Median in Statistics - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-249",
+      "title": "Python statistics | variance() - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-250",
+      "title": "Mean, Variance and Standard Deviation - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-251",
+      "title": "Confidence Interval - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-252",
+      "title": "A/B Testing using Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-253",
+      "title": "P-Value: Comprehensive Guide to Understand, Apply and Interpret - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-254",
+      "title": "Central Limit Theorem in Statistics - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-255",
+      "title": "Type I and Type II Errors - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-256",
+      "title": "Parametric Methods in Statistics - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-257",
+      "title": "Anova Test - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-258",
+      "title": "Non-Parametric Tests - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-259",
+      "title": "Skewness - Measures and Interpretation - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-260",
+      "title": "How to Calculate Kurtosis in Statistics? - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-261",
       "title": "here"
     },
     {
+      "id": "ml-ai-262",
+      "title": "here"
+    },
+    {
+      "id": "ml-ai-263",
+      "title": "Anscombe’s quartet - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-264",
+      "title": "here"
+    },
+    {
+      "id": "ml-ai-265",
+      "title": "Covariance and Correlation - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-266",
+      "title": "Pearson Correlation Coefficient - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-267",
+      "title": "Euclidean Distance - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-268",
+      "title": "Cosine Similarity - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-269",
+      "title": "Matrix Addition - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-270",
+      "title": "Subtraction of Matrices - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-271",
+      "title": "Linear Algebra - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-272",
+      "title": "Null Space and Nullity of a Matrix - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-273",
+      "title": "Lagrange Multipliers - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-274",
+      "title": "Moore - Penrose Pseudoinverse | Mathematics - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-275",
+      "title": "Second Order Derivatives - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-276",
+      "title": "Constant Multiple Rule - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-277",
+      "title": "Power Rule - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-278",
+      "title": "Product Rule - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-279",
+      "title": "Quotient Rule - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-280",
+      "title": "Chain Rule: Theorem, Formula and Solved Examples - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-281",
+      "title": "Implicit Differentiation - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-282",
+      "title": "Derivative of Functions in Parametric Forms - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-283",
+      "title": "Partial Differential Equation - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-284",
+      "title": "Logarithmic Differentiation - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-285",
+      "title": "Inflection Point - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-286",
+      "title": "First Principle of Derivatives - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-287",
+      "title": "Higher Order Derivatives - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-288",
+      "title": "Application of Derivatives - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-289",
+      "title": "Derivative Formulas in Calculus - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-290",
+      "title": "Mean Squared Error - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-291",
+      "title": "Difference between Batch Gradient Descent and Stochastic Gradient Descent - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-292",
+      "title": "Stochastic Gradient Descent (SGD) - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-293",
+      "title": "Mini-Batch Gradient Descent with Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-294",
+      "title": "Momentum-based Gradient Optimizer - ML - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-295",
+      "title": "Adagrad Optimizer in Deep Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-296",
+      "title": "RMSProp Optimizer in Deep Learning - GeeksforGeeks"
+    },
+    {
       "id": "ml-ai-297",
-      "title": "SciPy - Constants - GeeksforGeeks"
+      "title": "Different Variants of Gradient Descent - GeeksforGeeks"
     },
     {
       "id": "ml-ai-298",
-      "title": "Applications of Beta Function in Real Life - GeeksforGeeks"
+      "title": "here"
     },
     {
       "id": "ml-ai-299",
-      "title": "Dirichlet Distribution - GeeksforGeeks"
+      "title": "here"
     }
   ]
 }

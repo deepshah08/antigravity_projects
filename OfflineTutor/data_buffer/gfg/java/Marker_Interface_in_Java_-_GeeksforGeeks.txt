@@ -92,7 +92,6 @@ public class Geeks
 }
 
 Output20
-GeeksForGeeks
 2. Serializable InterfaceSerializable interface is present in java.io package. It is used to make an object eligible for saving its state into a file. This is called Serialization. Classes that do not implement serializable will not have their state serialized or deserialized. All subtypes of a serializable class are themselves serializable.
             Java
 

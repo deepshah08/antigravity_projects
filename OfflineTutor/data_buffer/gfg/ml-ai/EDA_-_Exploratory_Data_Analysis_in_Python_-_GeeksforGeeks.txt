@@ -1,6 +1,6 @@
 # EDA - Exploratory Data Analysis in Python - GeeksforGeeks
 
-EDA is an essential step in data analysis that focuses on understanding patterns, relationships and distributions within a dataset using statistical methods and visualizations. Python libraries such as pandas, NumPy, plotly, matplotlib and seaborn make this process efficient and insightful. Some common EDA techniques are:Data Inspection: Check the size of the dataset, how it is organized, the types of data it contains and basic summary values.Handling Missing and Duplicate Data: Find and fix empty values or repeated rows to keep the data clean.Univariate Analysis: Study one variable at a time to understand its distribution, trend and outliers.Bivariate Analysis: Compare two variables to see how they are related.Multivariate Analysis: Analyze three or more variables together to understand deeper relationships.Key Steps for Exploratory Data Analysis (EDA)Step 1: Importing Required Libraries We need to install Pandas, NumPy, Matplotlib and Seaborn libraries in python to proceed further.
+EDA is an essential step in data analysis that focuses on understanding patterns, relationships and distributions within a dataset using statistical methods and visualizations. Python libraries such as pandas, NumPy, plotly, matplotlib and seaborn make this process efficient and insightful. Some common EDA techniques are:Data Inspection: Check the size of the dataset, how it is organized, the types of data it contains and basic summary values.Handling Missing and Duplicate Data: Find and fix empty values or repeated rows to keep the data clean.Univariate Analysis: Study one variable at a time to understand its distribution, trend and outliers.Bivariate Analysis: Compare two variables to see how they are related.Multivariate Analysis: Analyze three or more variables together to understand deeper relationships.Steps for Exploratory Data Analysis (EDA)Step 1: Importing Required Libraries We need to install Pandas, NumPy, Matplotlib and Seaborn libraries in python to proceed further.
             Python
 
     import pandas as pd
@@ -79,14 +79,13 @@ Output:Kernel density plotThe features in the dataset with a skewness of 0 shows
 
     plt.figure(figsize=(10, 8))
 
-sns.swarmplot(x="quality", y="alcohol", data=df, palette='viridis')
+sns.swarmplot(y="alcohol", data=df, color='skyblue')
 
-plt.title('Swarm Plot for Quality and Alcohol')
-plt.xlabel('Quality')
+plt.title('Swarm Plot of Alcohol')
 plt.ylabel('Alcohol')
 plt.show()
 
-Output:Swarm PlotThis graph shows the swarm plot for the 'Quality' and 'Alcohol' columns. The higher point density in certain areas shows where most of the data points are concentrated. Points that are isolated and far from these clusters represent outliers highlighting uneven values in the dataset.Step 7: Bivariate Analysis In bivariate analysis two variables are analyzed together to identify patterns, dependencies or interactions between them. This method helps in understanding how changes in one variable might affect another.1. Pair Plot for showing the distribution of the individual variables
+Output:Swarm PlotThis graph shows the swarm plot for the 'Alcohol' column. The distribution of points shows how the alcohol values are spread across the dataset, with areas having more points indicating a higher concentration of values. Isolated points that are far from the main distribution may represent potential outliers.Step 7: Bivariate Analysis In bivariate analysis two variables are analyzed together to identify patterns, dependencies or interactions between them. This method helps in understanding how changes in one variable might affect another.1. Pair Plot for showing the distribution of the individual variables
             Python
 
     sns.set_palette("Pastel1")
@@ -128,4 +127,4 @@ sns.heatmap(df.corr(), annot=True, fmt='.2f', cmap='Pastel2', linewidths=2)
 plt.title('Correlation Heatmap')
 plt.show()
 
-Output:Correlation MatrixValues close to +1 shows strong positive correlation, -1 shows a strong negative correlation and 0 suggests no linear correlation. Darker colors signify strong correlation, while light colors represents weaker correlations. Positive correlation variable move in same directions. As one increases, the other also increases. Negative correlation variable move in opposite directions. An increase in one variable is associated with a decrease in the other.
+Output:Correlation MatrixValues close to +1 shows strong positive correlation, -1 shows a strong negative correlation and 0 suggests no linear correlation. Darker colors signify strong correlation, while light colors represents weaker correlations. Positive correlation variable move in same directions. As one increases, the other also increases. Negative correlation variable move in opposite directions. An increase in one variable is associated with a decrease in the other. You can download the source code from here.

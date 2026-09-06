@@ -697,4 +697,4 @@ const s = "abba";
 console.log(isPalindrome(s));
 
 Outputtrue
-Related Article:Palindrome String Coding Problems
+Related Article:Palindrome based Problems

@@ -1,6 +1,6 @@
 # Program for sum of n natural numbers - GeeksforGeeks
 
-Given a positive integer n, find the sum of the first n natural numbers.Examples : Input: n = 3Output: 6Explanation: 1 + 2 + 3 = 6Input: n = 5Output: 15 Explanation:  1 + 2 + 3 + 4 + 5 = 15Try It YourselfTable of Content[Naive Approach] Using Loop - O(n) Time and O(1) Space[Alternative Approach] Using Recursion -O(n) and O(n) Space[Expected Approach] Formula Based Method- O(1) Time and O(1) SpaceSum of Natural Numbers is represented by Triangular Numbers.[Naive Approach] Using Loop - O(n) Time and O(1) SpaceInitialize sum as 0Run a loop from i equals to 1 to n. Inside the loop add i to sum. For example n = 4Initially : sum = 0i = 1, sum = sum + 1 = 1i = 2, sum = sum + 2 = 3i = 3, sum = sum + 3 = 7i = 4, sum = sum + 4 = 11
+Given a positive integer n, find the sum of the first n natural numbers.Examples : Input: n = 3Output: 6Explanation: 1 + 2 + 3 = 6Input: n = 5Output: 15 Explanation:  1 + 2 + 3 + 4 + 5 = 15Try It YourselfTable of Content[Naive Approach] Using Loop - O(n) Time and O(1) Space[Alternative Approach] Using Recursion -O(n) and O(n) Space[Expected Approach] Formula Based Method- O(1) Time and O(1) SpaceSum of Natural Numbers is represented by Triangular Numbers.[Naive Approach] Using Loop - O(n) Time and O(1) SpaceInitialize sum as 0Run a loop from i equals to 1 to n. Inside the loop add i to sum. For example n = 4Initially : sum = 0i = 1, sum = sum + 1 = 1i = 2, sum = sum + 2 = 3i = 3, sum = sum + 3 = 6i = 4, sum = sum + 4 = 10
             C++
 
     #include <iostream>

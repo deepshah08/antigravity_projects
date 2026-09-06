@@ -1,0 +1,57 @@
+# Splitting Data for Machine Learning Models - GeeksforGeeks
+
+Splitting data, an important step in the machine learning workflow, involves dividing a dataset into separate subsets for training, validation and testing so that a model can be trained, tuned and evaluated on appropriate data.Splitting Data A model should not be evaluated on the same data used for training, as it may perform well simply because it has already seen those examples. Therefore, the data is divided into different subsets:Training Set: Used to train the model and learn its parameters. Validation (Dev) Set: Used during model development to compare models and tune hyperparameters. Test Set: Used only for the final evaluation of the selected model. Keeping the test set separate prevents it from influencing model selection and evaluation.Common Methods1. Train-Test SplitThe dataset is divided into two subsets: a training set for training the model and a test set for evaluating it on unseen data.A common split is 70–80% for training and 20–30% for testing, though the ratio depends on the dataset. It is useful when a separate validation set is not needed or cross-validation is used for model selection.2. Train-Validation-Test SplitWhen hyperparameter tuning or model comparison is required, divide the data into three subsets: training for training, validation for tuning and comparison and test for final evaluation.A common split is 80% training, 10% validation and 10% testing, but the proportions can vary. For large datasets, smaller percentages may still provide enough samples. For example, a dataset with millions of records may use 98% training, 1% validation and 1% testing. The appropriate split depends on the dataset size and evaluation needs.3. K-fold Cross ValidationFor small datasets, setting aside a validation set can reduce the data available for training. K-fold cross-validation can be used instead.The training data is divided into K folds. The model is trained on K−1 folds and validated on the remaining fold, repeating the process K times. The validation scores are combined, commonly by taking their average, to estimate model performance. A separate test set should still be kept aside for final evaluation.4. Stratified SamplingIn classification, a random split may produce different class proportions across subsets.Stratified splitting preserves approximately the same class proportions in each subset. It is especially useful for imbalanced datasets or rare classes.5. Time-based SplitRandom splitting is unsuitable when data order matters, such as in time-series data.Using future data for training can lead to unrealistic performance estimates. Use chronological or time-aware splitting instead.6. Group-Based SplitRelated observations, such as records from the same patient or customer, should generally stay in the same subset.Group-aware splitting prevents related samples from appearing in both training and test sets. It provides a more realistic evaluation when the model will encounter new groups.How to Split Data Using Python Scikit-learn provides the train_test_split() function for creating a random training and test split.
+            Python
+
+    from sklearn.model_selection import train_test_split
+from sklearn.datasets import load_iris
+
+X, y = load_iris(return_X_y=True)
+
+# Split data into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, 
+    test_size=0.2, 
+    random_state=42, 
+    stratify=y 
+)
+
+print("Training samples:", len(X_train))
+print("Test samples:", len(X_test))
+
+test_size=0.2 reserves 20% of the data for testing.random_state=42 makes the random split reproducible.stratify=y preserves the class distribution between the training and test sets.Output:Training samples: 120 Test samples: 30Creating Training, Validation & Test SetsA validation set can be created by splitting the data twice.
+            Python
+
+    from sklearn.model_selection import train_test_split
+from sklearn.datasets import load_iris
+
+X, y = load_iris(return_X_y=True)
+
+# First split: 80% training, 20% temporary data
+X_train, X_temp, y_train, y_temp = train_test_split(X, y,
+    test_size=0.2,
+    random_state=42,
+    stratify=y
+)
+
+# Second split: divide the remaining 20% equally
+X_val, X_test, y_val, y_test = train_test_split(X_temp, y_temp,
+    test_size=0.5,
+    random_state=42,
+    stratify=y_temp
+)
+
+print("Training:", len(X_train))
+print("Validation:", len(X_val))
+print("Testing:", len(X_test))
+
+Output:Training: 120 Validation: 15 Testing: 15This creates an 80(train)/10(validation)/10(test) split. Avoiding Data LeakageData leakage occurs when information unavailable during prediction influences model training or evaluation, leading to overly optimistic results and poor performance on new data.A common cause is preprocessing the entire dataset before splitting. For example, when standardizing features, fit the scaler only on the training data:
+            Python
+
+    from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+The scaler learns its parameters from X_train and applies the same transformation to X_test.The same principle applies to imputation, feature selection, dimensionality reduction and scaling. A Scikit-learn Pipeline helps prevent leakage during cross-validation and hyperparameter tuning.You can download the source code from here.Handling Mismatched Train & Dev/Test DistributionsIn real-world problems, training data may come from a different distribution than the data encountered after deployment.For example, a flower-classification app may have 200,000 web images and 10,000 mobile-camera images. If the app receives mobile-camera images, these should be prioritized for validation and test sets because they better represent real-world data.Option 1: Randomly Split the Entire Dataset The complete dataset could be shuffled and randomly divided:Train : 205,000Dev   :   2,500Test  :   2,500The dev and test sets may contain many web images, even though all three sets have similar overall distributions.This can lead to less useful evaluation because the model will ultimately handle camera images.Option 2: Match Dev/Test Data to the Real-World DistributionInstead, the available web images can be used primarily for training, while the camera images are reserved for development and testing.For example:Train : 200,000 web images + 5,000 camera imagesDev   : 2,500 camera imagesTest  : 2,500 camera imagesThe dev and test sets now better represent the data expected after deployment.The key principle is to make dev and test sets representative of the target distribution and important real-world cases, while the training set can include additional related data when useful.Best Practices for Splitting DataChoose an appropriate split: Base it on the dataset and problem rather than a fixed ratio. Keep the test set separate: Use validation data or cross-validation for model selection. Use appropriate splitting methods: Use stratification for classification, time-based splitting for time-dependent data and group-based splitting for related samples. Prevent data leakage: Split before fitting preprocessing steps and learn parameters from training data only. Represent the target distribution: Ensure dev and test sets reflect the data expected after deployment. Ensure reproducibility: Use a fixed random state for randomized splits. Advantages of Proper Data SplittingReliable evaluation: Measures performance on unseen data. Better model selection: Supports model comparison and hyperparameter tuning. Detects overfitting: Reveals differences between training and unseen-data performance. Reduces data leakage: Keeps training and evaluation information properly separated. LimitationsLess training data: Holding out validation and test sets reduces data available for training. Unstable results on small datasets: A single split may depend heavily on the selected samples. Incorrect splits can mislead: Random splitting may not suit time-series, grouped or distribution-shifted data. Higher computational cost: Cross-validation requires training the model multiple times. Depends on test-set quality: A poorly designed test set can still produce misleading results.

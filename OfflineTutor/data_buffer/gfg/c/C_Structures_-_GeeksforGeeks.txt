@@ -1,6 +1,6 @@
 # C Structures - GeeksforGeeks
 
-In C, a structure is a user-defined data type that can be used to group items of possibly different types into a single type. The struct keyword is used to define a structure. The items in the structure are called its members and they can be of any valid data type. Applications of structures involve creating data structures Linked List and Tree.  Structures are also used to represent real world objects in a software like Students and Faculty in a college management software.
+A structure in C is a user-defined data type that groups related variables of different data types under a single name. It is useful for representing real-world entities and organizing related data into a single unit.The struct keyword is used to define a structure, and its variables are called members.Structure members can be of different valid data types, including arrays, pointers and other structures.Structures are widely used to represent entities such as students, employees and products, and to build data structures such as linked lists and trees.
             C
 
     #include <stdio.h>
@@ -22,7 +22,38 @@ int main() {
     return 0;
 }
 
-Output11Explanation: In this example, a structure A is defined to hold an integer member x. A variable a of type struct A is created and its member x is initialized to 11 by accessing it using dot operator. The value of a.x is then printed to the console. Basic Operations of StructureFollowing are the basic operations commonly used on structures:1. Access Structure MembersTo access or modify members of a structure, we use the ( . ) dot operator. This is applicable when we are using structure variables directly.In the case where we have a pointer to the structure, we can also use the arrow operator to access the members.2. Initialize Structure MembersStructure members cannot be initialized inside the structure definition. However, they can be initialized at the time of declaring a structure variable using initializer lists.
+Output11Explanation: In the above example, a structure A is defined to hold an integer member x. A variable a of type struct A is created and its member x is initialized to 11 by accessing it using dot operator. The value of a.x is then printed to the console. Basic Operations of StructureFollowing are the basic operations commonly used on structures:1. Access Structure MembersTo access or modify members of a structure, we use the ( . ) dot operator. This is applicable when we are using structure variables directly.In the case where we have a pointer to the structure, we can also use the arrow operator to access the members.
+            C++
+
+    #include <stdio.h>
+
+struct Student {
+    int age;
+    float marks;
+};
+
+int main() {
+
+    struct Student s = {20, 85.5};
+
+    // Accessing members using dot operator
+    printf("Age: %d\n", s.age);
+    printf("Marks: %.1f\n", s.marks);
+
+    // Creating a pointer to the structure
+    struct Student *ptr = &s;
+
+    // Accessing members using arrow operator
+    printf("Age using pointer: %d\n", ptr->age);
+    printf("Marks using pointer: %.1f", ptr->marks);
+
+    return 0;
+}
+
+OutputAge: 20
+Marks: 85.5
+Age using pointer: 20
+Marks using pointer: 85.5Explanation: In above example, s is a structure variable, while ptr stores its address. The code accesses the same age and marks members through both s and ptr and prints their values.2. Initialize Structure MembersStructure members cannot be initialized inside the structure definition. However, they can be initialized at the time of declaring a structure variable using initializer lists.
             C
 
     #include <stdio.h>
@@ -53,7 +84,7 @@ int main()
 
 OutputRahul	20	18.50
 Vikas	18	22.00
-We can initialize structure members in 4 ways which are as follows:Default InitializationBy default, structure members are not automatically initialized to 0 or NULL. Uninitialized structure members will contain garbage values. However, when a structure variable is declared with an initializer, all members not explicitly initialized are zero-initialized.Note: We cannot initialize the arrays or strings using assignment operator after variable declaration.Initialization using Initializer Liststruct structure_name str = {value1, value2, value3 ....};In this type of initialization, the values are assigned in sequential order as they are declared in the structure template.Initialization using Designated Initializer ListDesignated Initialization allows structure members to be initialized in any order. This feature has been added in the C99 standard.struct structure_name str = { .member1 = value1, .member2 = value2, .member3 = value3 };The Designated Initialization is only supported in C but not in C++.3. Copy StructureCopying structure is simple as copying any other variables. For example, s1 is copied into s2 using assignment operator.s2 = s1;But this method only creates a shallow copy of s1 i.e. if the structure s1 have some dynamic resources allocated by malloc, and it contains pointer to that resource, then only the pointer will be copied to s2. If the dynamic resource is also needed, then it has to be copied manually (deep copy).
+Explanation: In the above example, the Student structure contains name, age, and grade members. s1 is initialized using an initializer list, while s2 uses designated initializers to assign values to specific members. The values of both structure variables are then accessed and printed using the dot (.) operator.Types of Structure InitializationWe can initialize structure members in 4 ways which are as follows:1. Default InitializationBy default, structure members are not automatically initialized to 0 or NULL. Uninitialized structure members will contain garbage values. However, when a structure variable is declared with an initializer, all members not explicitly initialized are zero-initialized.Note: We cannot initialize the arrays or strings using assignment operator after variable declaration.2. Initialization using Initializer Liststruct structure_name str = {value1, value2, value3 ....};In this type of initialization, the values are assigned in sequential order as they are declared in the structure template.3. Initialization using Designated Initializer ListDesignated Initialization allows structure members to be initialized in any order. This feature has been added in the C99 standard.struct structure_name str = { .member1 = value1, .member2 = value2, .member3 = value3 };The Designated Initialization is only supported in C but not in C++.3. Copy StructureCopying structure is simple as copying any other variables. For example, s1 is copied into s2 using assignment operator.s2 = s1;But this method only creates a shallow copy of s1 i.e. if the structure s1 have some dynamic resources allocated by malloc, and it contains pointer to that resource, then only the pointer will be copied to s2. If the dynamic resource is also needed, then it has to be copied manually (deep copy).
             C
 
     #include <stdio.h>
@@ -76,7 +107,7 @@ int main() {
 }
 
 OutputStudent 1 ID: 1
-Student 1 Grade: A4. Passing Structure to FunctionsStructure can be passed to a function in the same way as normal variables. Though, it is recommended to pass it as a pointer to avoid copying a large amount of data.
+Student 1 Grade: AExplanation: In this example, s1 is initialized with an ID and grade, and s1c is created as a copy of s1 using the assignment operator. The copied values are then accessed through s1c and printed.4. Passing Structure to FunctionsStructure can be passed to a function in the same way as normal variables. Though, it is recommended to pass it as a pointer to avoid copying a large amount of data.
             C
 
     #include <stdio.h>
@@ -103,7 +134,7 @@ int main() {
     return 0;
 }
 
-Outputa.x: 10 	b.x: 115. typedef for StructuresThe typedef keyword is used to define an alias for the already existing datatype. In structures, we have to use the struct keyword along with the structure name to define the variables. Sometimes, this increases the length and complexity of the code. We can use the typedef to define some new shorter name for the structure.
+Outputa.x: 10 	b.x: 11Explanation: In this example, a is passed to the increment() function by value, while b is passed by pointer. The change to a.x affects only its copy, whereas b->x modifies the original structure.5. typedef for StructuresThe typedef keyword is used to define an alias for the already existing datatype. In structures, we have to use the struct keyword along with the structure name to define the variables. Sometimes, this increases the length and complexity of the code. We can use the typedef to define some new shorter name for the structure.
             C
 
     #include <stdio.h>
@@ -130,7 +161,7 @@ int main() {
 }
 
 Outputvar1.a = 20
-var2.x = 314Explanation: In this code, str1 and str2 are defined as aliases for the unnamed structures, allowing the creation of structure variables (var1 and var2) using these new names. This simplifies the syntax when declaring variables of the structure.Size of StructuresThe size of a structure is not always equal to the sum of its members’ sizes because of structure padding.Structure padding means adding extra empty bytes in memory to align data properly.Padding helps the CPU access data faster by reducing read cycles.Sometimes, we need to remove these extra bytes to save memory — this is called structure packing.Structure packing forces the compiler to store members without gaps.It can be done using: #pragma pack(1)__attribute__((packed))To know more about structure padding and packing, refer to this article - Structure Member Alignment, Padding and Data Packing.Nested StructuresIn C, a nested structure refers to a structure that contains another structure as one of its members. This allows you to create more complex data types by grouping multiple structures together, which is useful when dealing with related data that needs to be grouped within a larger structure.There are two ways in which we can nest one structure into another:Embedded Structure Nesting: The structure being nested is also declared inside the parent structure.Separate Structure Nesting: Two structures are declared separately and then the member structure is nested inside the parent structure.Accessing Nested MembersWe can access nested Members by using the same ( . ) dot operator two times.
+var2.x = 314Explanation: In this code, str1 and str2 are defined as aliases for the unnamed structures, allowing the creation of structure variables (var1 and var2) using these new names. This simplifies the syntax when declaring variables of the structure.Size of a Structure The size of a structure is not necessarily equal to the sum of the sizes of its members because the compiler may add padding bytes to satisfy alignment requirements.Structure Padding: Extra bytes inserted between or after members to properly align data in memory.Structure Packing: A technique that reduces or removes padding to minimize memory usage.Packing can be requested using compiler-specific features such as #pragma pack or __attribute__((packed)).Nested StructuresIn C, a nested structure refers to a structure that contains another structure as one of its members. This allows you to create more complex data types by grouping multiple structures together, which is useful when dealing with related data that needs to be grouped within a larger structure.There are two ways in which we can nest one structure into another:Embedded Structure Nesting: The structure being nested is also declared inside the parent structure.Separate Structure Nesting: Two structures are declared separately and then the member structure is nested inside the parent structure.Accessing Nested MembersWe can access nested Members by using the same ( . ) dot operator two times.
             C
 
     #include <stdio.h>
@@ -181,4 +212,4 @@ int main() {
     return 0;
 }
 
-Try It YourselfOutput1 2Explanation: In this example, ptr is a pointer to the structure Point. It holds the address of the structure variable p. The structure members x and y are accessed using the -> operator, which is used to dereference the pointer and access the members of the structure.Self-Referential StructuresThe self-referential structures are those structures that contain references to the same type as themselves i.e. they contain a member of the type pointer pointing to the same structure type.Bit FieldsBit Fields are used to specify the length of the structure members in bits. When we know the maximum length of the member, we can use bit fields to specify the size and reduce memory consumption.Uses of Structure in CThe structure can be used to define the custom data types that can be used to create some complex data types such as dates, time, complex numbers, etc. which are not present in the language.It can also be used in data organization where a large amount of data can be stored in different fields.Structures are used to create data structures such as trees, linked lists, etc.They can also be used for returning multiple values from a function.
+Try It YourselfOutput1 2Explanation: In this example, ptr is a pointer to the structure Point. It holds the address of the structure variable p. The structure members x and y are accessed using the -> operator, which is used to dereference the pointer and access the members of the structure.Self-Referential StructuresA self-referential structures contains a pointer member that points to another object of the same structure type. Self-referential structures are commonly used to implement dynamic data structures such as linked lists, trees and graphs.struct Node {     int data;     struct Node *next; };Bit FieldsBit Fields are used to specify the length of the structure members in bits. When we know the maximum length of the member, we can use bit fields to specify the size and reduce memory consumption.struct Status {     unsigned int isReady : 1;     unsigned int error : 1; };Here, isReady and error are each allocated one bit.Uses of Structure in CStructures are widely used for organizing related data and building complex programs.They allow programmers to create custom data types for entities such as students, employees, dates and complex numbers.They group related data of different types into a single unit.They are used to implement data structures such as linked lists, trees, stacks and graphs.They can be passed to functions and used to return multiple related values from a function.They are commonly used to model records in applications such as student management, employee management and banking systems.

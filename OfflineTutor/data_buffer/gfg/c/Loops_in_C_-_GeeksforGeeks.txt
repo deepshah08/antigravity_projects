@@ -1,6 +1,6 @@
 # Loops in C - GeeksforGeeks
 
-In C programming, there is often a need for repeating the same part of the code multiple times. For example, to print a text three times, we have to use printf() three times as shown in the code:
+Loops in C are used to repeatedly execute a block of code as long as a specified condition is satisfied. They reduce code repetition and are useful when the same task needs to be performed multiple times.C provides three main loops: for, while, and do-while. Loops can also be nested and can be controlled using statements such as break and continue. A loop can be made infinite when its condition never becomes false.Using Loops to Repeat CodeWithout a loop, the same statement must be written multiple times to repeat an operation.
             C
 
     #include <stdio.h>
@@ -14,7 +14,7 @@ int main() {
 
 OutputHello GfG
 Hello GfG
-Hello GfGBut if we say to write this 20 times, it will take some time to write statement. Now imagine writing it 100 or 1000 times. Then it becomes a really hectic task to write same statements again and again. To solve such kind of problems, we have loops in programming languages.In the following code, we have used a loop to print text 3 times. We could have done it for 100 or even 1000 times in the same number of code lines.
+Hello GfGUsing a loop, the same output can be produced with fewer lines of code.
             C
 
     #include <stdio.h>
@@ -31,14 +31,7 @@ int main() {
 OutputHello GfG
 Hello GfG
 Hello GfG
-Types of loops in C?Loops in C programming are used to repeat a block of code until the specified condition is met. It allows programmers to execute a statement or group of statements multiple times without writing the code again and again.There are 3 looping statements in C: Let's discuss all 3 types of loops in C one by one.for Loopfor loop is an entry-controlled loop, which means that the condition is checked before the loop's body executes.Syntax
-            C
-
-    for (initialization; condition; updation) { 
-     // body of for loop
-}
-
-The various parts of the for loop are:Initialization: Initialize the variable to some initial value.Test Condition: This specifies the test condition. If the condition evaluates to true, then body of the loop is executed. If evaluated false, loop is terminated.Update Expression: After the execution loop’s body, this expression increments/decrements the loop variable by some value.Body of Loop: Statements to repeat. Generally enclosed inside {} braces.Example:
+The same loop can be used to repeat the statement 100 or 1000 times by changing the loop condition.Types of loopsThere are 3 looping statements in C: for Loopfor loop is an entry-controlled loop, which means that the condition is checked before the loop's body executes.Syntaxfor (initialization; condition; update) {    // Body of loop}The main parts of a for loop are:Initialization: Sets the initial value of the loop variable. Condition: Determines whether the loop should continue executing. Update: Changes the loop variable after each iteration. Body: Contains the statements to be executed repeatedly. 
             C
 
     #include <stdio.h>
@@ -53,14 +46,7 @@ int main() {
     return 0;
 }
 
-Output1 2 3 4 5 Flowchart of for Loop while LoopA while loop  is also an entry-controlled loop in which the condition is checked before entering the body.Syntax
-            C
-
-    while (condition) {
-    // Body of the loop
-}
-
-Only the condition is the part of while loop syntax, we have to initialize and update loop variable manually.Example:
+Output1 2 3 4 5 Flowchart of for Loopfor Loopwhile LoopA while loop  is also an entry-controlled loop in which the condition is checked before entering the body.Syntaxwhile (condition) {    // Body of loop}The initialization and update of the loop variable are performed separately.
             C
 
     #include <stdio.h>
@@ -80,14 +66,7 @@ int main() {
   return 0;
 }
 
-Output1 2 3 4 5 6 Flowchart of while LoopThe below flowchart demonstrates execution flow of the while loop. do-while LoopThe do-while loop is an exit-controlled loop, which means that the condition is checked after executing the loop body. Due to this, the loop body will execute at least once irrespective of the test condition.Syntax
-            C
-
-    do {
-    // Body of the loop
-} while (condition);
-
-Like while loop, only the condition is the part of do while loop syntax, we have to do the initialization and updating of loop variable manually.Example:
+Output1 2 3 4 5 6 Flowchart of while Loopwhile Loopdo-while LoopThe do-while loop is an exit-controlled loop, which means that the condition is checked after executing the loop body. Due to this, the loop body will execute at least once irrespective of the test condition.Syntaxdo {    // Body of loop} while (condition);The initialization and update of the loop variable are performed separately.
             C
 
     #include <stdio.h>
@@ -111,7 +90,7 @@ int main() {
   return 0;
 }
 
-Output0 1 2 3 4 5 6 7 8 9 10 Flowchart of do-while LoopThe below flowchart demonstrates execution flow of the do while loop. Infinite LoopAn infinite loop is executed when the test expression never becomes false, and the body of the loop is executed repeatedly. A program is stuck in an Infinite loop when the condition is always true. Mostly this is an error that can be resolved by using Loop Control statements. Using for loop:
+Output0 1 2 3 4 5 6 7 8 9 10 Flowchart of do-while Loop Infinite LoopAn infinite loop is executed when the test expression never becomes false, and the body of the loop is executed repeatedly. A program is stuck in an Infinite loop when the condition is always true. Mostly this is an error that can be resolved by using Loop Control statements. Using for loop:
             C
 
     #include <stdio.h>
@@ -160,7 +139,7 @@ int main() {
 OutputThis loop will run forever.
 This loop will run forever.
 This loop will run forever.
-...Nested LoopsNesting loops means placing one loop inside another. The inner loop runs fully for each iteration of the outer loop. This technique is helpful when you need to perform multiple iterations within each cycle of a larger loop, like when working with a two-dimensional array or performing tasks that require multiple levels of iteration.Example:
+...Nested LoopsNesting loops means placing one loop inside another. The inner loop runs fully for each iteration of the outer loop. This technique is helpful when you need to perform multiple iterations within each cycle of a larger loop, like when working with a two-dimensional array or performing tasks that require multiple levels of iteration.
             C
 
     #include <stdio.h>
@@ -230,4 +209,4 @@ skip:
 Output0 1 2 
 0 1 2 4 
 0 1 2 
-Jumped to the 'skip' label when i equals 3.
+Jumped to the 'skip' label when i equals 3.Explanation: The first for loop uses break to terminate when i becomes 3, while the second loop uses continue to skip the iteration when i is 3. The third loop uses goto to transfer control to the skip label when i becomes 3, after which the corresponding message is printed.

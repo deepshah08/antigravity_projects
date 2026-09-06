@@ -1,6 +1,6 @@
 # Swap Two Numbers - GeeksforGeeks
 
-Given two numbers a and b, the task is to swap them.Examples: Input: a = 2, b = 3Output: 3 2Input: a = 20, b = 0Output: 0 20Input: a = 10, b = 10Output: 10 10 Table of ContentUsing a Third VariableWithout a Third Variable – Using Arithmetic OperationsWithout a Third Variable – Using Bitwise XORUsing Built-in Swap MethodsUsing a Third VariableThe idea is to use a third variable, say temp to store the original value of one of the variables during the swap.Let us understand with an example, a = 10, b = 20Store the value of a in temp, temp = 10Assign the value of b to a, a = 20Assign the value of temp to b, b = 10
+Given two numbers a and b, the task is to swap them.Examples: Input: a = 2, b = 3Output: 3 2Input: a = 20, b = 0Output: 0 20Input: a = 10, b = 10Output: 10 10 Try It YourselfTable of ContentUsing a Third VariableWithout a Third Variable – Using Arithmetic OperationsWithout a Third Variable – Using Bitwise XORUsing Built-in Swap MethodsUsing a Third VariableThe idea is to use a third variable, say temp to store the original value of one of the variables during the swap.Let us understand with an example, a = 10, b = 20Store the value of a in temp, temp = 10Assign the value of b to a, a = 20Assign the value of temp to b, b = 10
             C++
 
     // C++ Code to swap two numbers using third variable

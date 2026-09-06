@@ -1,0 +1,90 @@
+# Tic Tac Toe Game in Python - GeeksforGeeks
+
+Tic-Tac-Toe is a two-player game played on a 3×3 grid. Players take turns placing X and O on the board and the first player to get three symbols in a row wins the game.Winning Rules Player X and Player O take turns making moves.  A player wins by placing three of their symbols in a row.  The three symbols can be in a row, column, or diagonal.  If all 9 positions are filled and no player wins, the game is a draw.  A position already occupied by a player cannot be selected again. Algorithm Create a 3×3 board with numbered positions.  Display the board and ask the first player to choose a position.  Validate the user's input and check whether the position is available.  Place the player's symbol on the selected position.  Check all possible winning combinations.  If a player has three symbols in a row, declare that player the winner.  If all positions are filled without a winner, declare the game a draw.  Switch to the other player.  Repeat the process until the game ends. Implementation
+            Python
+
+    board = ["1", "2", "3",
+         "4", "5", "6",
+         "7", "8", "9"]
+
+players = {
+    "X": "Player 1",
+    "O": "Player 2"
+}
+
+winning_combinations = (
+    (0, 1, 2),
+    (3, 4, 5),
+    (6, 7, 8),
+    (0, 3, 6),
+    (1, 4, 7),
+    (2, 5, 8),
+    (0, 4, 8),
+    (2, 4, 6)
+)
+
+occupied = set()
+
+def display_board():
+    print()
+    print(board[0], "|", board[1], "|", board[2])
+    print("--+---+--")
+    print(board[3], "|", board[4], "|", board[5])
+    print("--+---+--")
+    print(board[6], "|", board[7], "|", board[8])
+    print()
+
+def check_winner(symbol):
+    for combination in winning_combinations:
+        if all(board[position] == symbol for position in combination):
+            return True
+    return False
+
+def make_move(symbol):
+    while True:
+        choice = input(
+            f"{players[symbol]} ({symbol}), choose a position (1-9): "
+        )
+
+        if not choice.isdigit():
+            print("Please enter a valid number.")
+            continue
+
+        position = int(choice) - 1
+
+        if position < 0 or position > 8:
+            print("Please choose a position between 1 and 9.")
+            continue
+
+        if position in occupied:
+            print("This position is already occupied.")
+            continue
+
+        board[position] = symbol
+        occupied.add(position)
+        break
+
+print("Welcome to Tic-Tac-Toe!")
+
+current_player = "X"
+
+while True:
+    display_board()
+
+    make_move(current_player)
+
+    if check_winner(current_player):
+        display_board()
+        print(players[current_player], "wins!")
+        break
+
+    if len(occupied) == 9:
+        display_board()
+        print("It's a draw!")
+        break
+
+    current_player = "O" if current_player == "X" else "X"
+
+print("\nThanks for playing!")
+
+Output:Tic Tac Toe GameExplanation:Program starts with a board containing positions from 1 to 9 and displays it in a 3×3 format.Each player is assigned a symbol, with Player 1 using X and Player 2 using O.Game accepts a position from the current player and checks whether the input is valid and the selected position is free.After every valid move, the board is updated with the player's symbol.Program checks the predefined winning combinations after each move to determine whether the current player has won.If all 9 positions are filled without a winner, the game ends in a draw.Players take turns until one player wins or the game ends in a draw.Final board and game result are displayed when the game ends.

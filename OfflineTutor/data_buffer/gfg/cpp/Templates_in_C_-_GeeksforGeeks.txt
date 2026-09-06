@@ -1,6 +1,6 @@
 # Templates in C++ - GeeksforGeeks
 
-A C++ template is a tool for creating generic classes or functions. This allows us to write code that works for any data type without rewriting it for each type. Avoid code duplication by allowing one function or class to work with multiple data types, mainly allowing generic functions and classes.Provides type safety unlike void* pointers or macros, and can be specialized for specific data types when needed.Form the basis of STL containers and algorithms like vector, map, and sort.Example: Below code demonstrates a generic function that return the maximum among the two passed arguments to the function:
+C++ templates allow us to write generic code that works with different data types without rewriting the same logic for each type.Reduce code duplication by allowing the same function or class to work with multiple data types.Provide type safety compared to approaches such as void* pointers and macros.Form the foundation of many STL components, including containers and algorithms .Example: Below code demonstrates a generic function that return the maximum among the two passed arguments to the function:
             C++
 
     #include <iostream>
@@ -22,7 +22,7 @@ int main(){
 OutputMax of 3 and 7 is: 7
 Max of 3.5 and 7.5 is :7.5
 Max of 'g' and 'e' is: g
-Explanation: "template <typename T>" makes "myMax" a generic function that works with any data type.The compiler creates a separate version of myMax for int, double, and char based on how it’s called.myMax<int>(3,7), myMax<double>(3.5,7.5), and myMax<char>('g','e') compare values of those types.The function returns the larger of the two values using the condition (x > y) ? x : y.Compiler creates type-specific functions from a single template automatically.Syntax of TemplatesTemplates are defined using the template keyword and template parameters declared using typename or class.template <typename A, typename B, ...>entity_definitiontypename and class are interchangeable in template declarations.Templates can be used to define:Function TemplatesClass TemplatesVariable Templates (C++14 onwards)Function TemplatesIn C++, templates allow us to write generic code for functions that can be used with different data types, and this can be achieved by function templates. Example: Maximum of Two Values
+Explanation:template <typename T> makes myMax() a generic function for different data types.The compiler generates the required version of myMax() based on the type used.myMax<int>, myMax<double>, and myMax<char> compare values of their respective types.The function returns the larger value using (x > y) ? x : y.Compiler creates type-specific functions from a single template automatically.Syntax of TemplatesTemplates are defined using the template keyword and template parameters declared using typename or class.template <typename A, typename B, ...>entity_definitiontypename and class are interchangeable in template declarations.Types of TemplatesTemplates can be used to define:1. Function TemplatesIn C++, templates allow us to write generic code for functions that can be used with different data types, and this can be achieved by function templates. Example: Maximum of Two Values
             C++
 
     #include <iostream>
@@ -43,39 +43,39 @@ int main(){
 Output7
 7
 g
-Class TemplatesClass templates like function templates, are useful when a class defines something that is independent of the data type. It is useful for classes like LinkedList, BinaryTree, Stack, Queue, Array, etc.
+Explanation:template <typename T> makes myMax() a generic function.myMax<int>, myMax<double>, and myMax<char> use the same function logic with different data types.The function returns the larger value using the conditional operator.2. Class TemplatesA class template allows a class to work with different data types. It is useful when the class logic remains the same regardless of the type of data it stores. Class templates are commonly used to implement data structures such as linked lists, stacks, queues, and arrays.
             C++
 
     #include <iostream>
 using namespace std;
 
-
-template <typename T> class Geek{
-  public:
+template <typename T>
+class Geek {
+public:
     T x;
     T y;
 
-    // Constructor
-    Geek(T val1, T val2) : x(val1), y(val2){
-    }
+    Geek(T val1, T val2) : x(val1), y(val2) {}
 
-    // Method to get values
-    void getValues(){
+    void getValues() {
         cout << x << " " << y;
     }
 };
 
-int main(){
+int main() {
     Geek<int> intGeek(10, 20);
     Geek<double> doubleGeek(3.14, 6.28);
+
     intGeek.getValues();
     cout << endl;
+
     doubleGeek.getValues();
+
     return 0;
-}
+} 
 
 Output10 20
-3.14 6.28Explanation:"template <typename T>" makes "Geek" a generic class that can work with different data types.When you write "Geek<int>" or "Geek<double>", the compiler creates a version of the class for that type.The constructor stores the passed values into x and y.Calling "getValues()" prints the stored values for each template instance.We can pass more than one data type as arguments to templates.
+3.14 6.28Explanation:Geek<T> is a class template that can store values of type T.Geek<int> creates a class instance where T is int.Geek<double> creates a class instance where T is double.The constructor initializes x and y, and getValues() prints them.Multiple Template ParametersA template can have multiple type parameters, allowing a class or function to work with different types simultaneously.
             C++
 
     #include <iostream>
@@ -107,7 +107,7 @@ int main(){
 }
 
 Output10 3.14 Hello
-A 5.67 1Template Variables (Since C++ 14)A template variable is a variable that can work with any type specified when the variable is used, similar to how we use templates for functions or classes.Syntax:template <typename T> constexpr T pi = T(3.14159);In the above statement, pi is the template variable. We use constexpr with the template variable because it ensures that the variable is a constant expression and is evaluated at compile time rather than at runtime.
+A 5.67 13. Variable Templates (C++14 Onwards)A variable template allows a variable to be defined for different types. Each specialization of the variable template can have a different type.Syntax:template <typename T> constexpr T pi = T(3.14159);
             C++
 
     #include <iostream>
@@ -122,7 +122,7 @@ int main(){
 }
 
 OutputPi as float: 3.14159
-Pi as double: 3.14159Explanation:"template <typename T> constexpr T pi" defines a variable template for different data types.When you use "pi<float>" or "pi<double>", the compiler creates a version of pi for that type."constexpr" ensures the value is known at compile time for better optimization.The program prints pi as a float and a double using the same template.Default Template ArgumentsLike normal parameters, we can also specify default type arguments to templates. 
+Pi as double: 3.14159Explanation:pi<T> is a variable template whose type depends on T.pi<float> creates a float specialization, while pi<double> creates a double specialization.constexpr allows the value to be used as a constant expression.Default Template ArgumentsTemplate parameters can have default arguments. If a template argument is not explicitly provided, its default type is used.
             C++
 
     #include <iostream>

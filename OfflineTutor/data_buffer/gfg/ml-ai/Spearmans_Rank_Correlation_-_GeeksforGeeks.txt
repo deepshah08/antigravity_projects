@@ -1,0 +1,42 @@
+# Spearman's Rank Correlation - GeeksforGeeks
+
+Spearman’s Rank Correlation is a statistical measure used to find the strength and direction of association between two ranked variables. It checks how well the relationship between two variables can be described using a monotonic function.Works on ranks instead of actual valuesUsed when data is not normally distributedSuitable for ordinal dataMeasures monotonic relationships, not just linear onesMathematical IntuitionSpearman’s Rank Correlation, denoted by ρ (rho), measures the strength and direction of association between two variables based on their ranks instead of actual values. Values range from -1 to +1+1: perfect positive monotonic relationship i.e if one variable increases as the other increases-1: perfect negative monotonic relationship i.e if one increases while the other decreases0: no monotonic relationshipMonotonic Relationship means a relationship where variables move in one direction only.Spearman's Correlation formula\rho = 1 - \frac{6\sum d ^{2}}{n(n^2-1)}where:d: difference between ranks of corresponding valuesn: total number of observationWhen to Use Spearman’s Rank CorrelationWorks with non-linear dataData follows a monotonic trendVariables contain ranks or scoresDoes not assume normal distributionHandles ordinal dataDataset contains outliersCalculating Spearman’s Rank CorrelationStep 1: Original DataNumberX1Y1175264345456581067771098329981021Step 2: Convert Data into RanksRanks are assigned by sorting values in ascending order. If values are tied, the average rank is assigned.Ranking X1:Sorted X1 values: 2, 3, 4, 5, 6, 7, 7, 8, 9, 10The two values 7 and 7 are tied → both get rank 6.5Ranking Y1:Ranks are assigned using the same method.Sorted Y1 values: 1, 2, 4, 5, 5, 6, 7, 8, 9, 10The two values 5 and 5 are tied i.e both receive the average rank 4.5Step 3: Rank Table with DifferencesNo.Rank X1Rank Y1dd²16.54.52425324334.5-1.52.25446-245810-2466.57-0.50.257109118220099811101100\sum d^2 = 20.5Step 4: Apply the Formula\rho = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}\rho = 1 - \frac{6 \times 20.5}{10(10^2 - 1)}\rho = 1 - 0.12424\rho \approx 0.88This indicates a strong positive monotonic relationshipCalculating Spearman’s Rank Correlation in PythonStep 1: Sample Data
+            Python
+
+    import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+data = {
+    'Hours_Studied': [2, 4, 6, 8, 10],
+    'Marks': [50, 55, 65, 70, 90]
+}
+
+df = pd.DataFrame(data)
+df
+
+Output:DatasetStep 2: Apply Spearman’s Correlation
+            Python
+
+    spearman_corr = df['Hours_Studied'].corr(df['Marks'], method='spearman')
+print("Spearman Correlation:", spearman_corr)
+
+Output:Spearman Correlation: 0.9999999999999999Data shows a perfect increasing rank order. Hence, correlation value is 0.9Step 3: Visualizing Spearman CorrelationHeatmap displays correlation between only the selected columnsHelps visually confirm strength of relationship
+            Python
+
+    corr_data = df[['Hours_Studied', 'Marks']].corr(method='spearman')
+
+sns.heatmap(corr_data, annot=True, cmap='coolwarm')
+plt.title("Spearman Rank Correlation Heatmap")
+plt.show()
+
+Output:HeatmapStep 4: Scatter Plot for Monotonic Relationship
+            Python
+
+    plt.scatter(df['Hours_Studied'], df['Marks'])
+plt.xlabel("Hours Studied")
+plt.ylabel("Marks")
+plt.title("Monotonic Relationship")
+plt.show()
+
+Output:Scatter PlotScatter plot shows consistent upward trend hence confirming monotonic relationship.Difference Between Pearson and Spearman CorrelationLets see difference between Pearson Correlation and Spearman Correlation:AspectPearson CorrelationSpearman CorrelationData typeContinuousOrdinal or continuousUses actual valuesYesNoUses ranksNoYesAssumes normal distributionYesNoRelationship typeLinearMonotonicAdvantagesWorks with non-linear monotonic dataLess affected by outliersSimple to compute and interpretNo strict distribution assumptionsLimitationsIgnores actual data valuesCannot detect non-monotonic patternsLess informative for precise numerical relationshipsLess accurate for very small datasetsApplicationsRanking students based on marksComparing search result rankingsMeasuring customer satisfaction levelsBehavioral and social science studiesSurvey data analysisFeature ranking in MLMedical and social science studies

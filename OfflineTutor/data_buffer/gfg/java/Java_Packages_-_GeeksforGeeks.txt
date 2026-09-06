@@ -1,6 +1,6 @@
 # Java Packages - GeeksforGeeks
 
-A package in Java is a mechanism to group related classes, interfaces, and sub-packages into a single unit. Packages help organize large applications, avoid naming conflicts, provide access protection, and make code modular and maintainable.Avoiding name conflicts (two classes with the same name can exist in different packages)Providing access control using public, protected, and default accessReusability: packaged code can be imported and used anywhereEncouraging modular programmingTypes of Java PackagesTypes of Package1. Built-in PackagesBuilt-in Packages comprise a large number of classes that are part of the Java API. Some of the commonly used built-in packages are: java.lang: Contains language support classes(e.g, classes that define primitive data types, math operations). This package is automatically imported. java.io: Contains classes for supporting input/output operations. java.util: Contains utility classes that implement data structures such as Linked Lists and Dictionaries, as well as support for date and time operations. java.applet: Contains classes for creating Applets.java.awt: Contains classes for implementing the components for graphical user interfaces (like buttons, menus, etc). 6) Example: Using java.util.Random (Built-in Package)
+A package in Java is used to group related classes, interfaces, enums, and sub-packages. Packages help organize code, avoid naming conflicts, control access, and make large applications easier to maintain.A package can contain classes, interfaces, enums, and sub-packages.The package statement defines the package of a source file.They make code easier to maintain and reuse. Types of Java PackagesJava packages are mainly divided into two types:Types of Package1. Built-in PackagesBuilt-in Packages are packages provided by the Java API. They contain classes and interfaces for common programming tasks. Some of the commonly used built-in packages are: java.lang: Contains language support classes(e.g, classes that define primitive data types, math operations). This package is automatically imported. java.io: Contains classes for supporting input/output operations. java.util: Contains utility classes that implement data structures such as Linked Lists and Dictionaries, as well as support for date and time operations. java.awt: Contains classes for implementing the components for graphical user interfaces (like buttons, menus, etc). 6) Example: Using java.util.Random (Built-in Package)
             Java
 
     import java.util.Random;   // built-in package
@@ -20,7 +20,7 @@ public class GFG{
 }
 
 OutputRandom number: 59
-2. User-defined PackagesUser-defined Packages are the packages that are defined by the user.Example:
+Explanation: The program imports the Random class from the java.util package. The nextInt(100) method generates a random integer from 0 to 99.2. User-defined PackagesUser-defined Packages are packages created by programmers to organize application-specific classes and interfaces.
             Java
 
     package com.myapp;
@@ -42,7 +42,7 @@ public class Test {
     }
 }
 
-Forder StructureForder StructureAccessing Classes Inside a PackageIn Java, we can import classes from a package using either of the following methods:1 Import a Single Classimport java.util.Vector; This imports only the Vector class from the java.util package.2. Import all classes from a package:import java.util.*; This imports all classes and interfaces from the java.util package but does not include sub-packages.Example: Import the Vector class
+Explanation: The Helper class belongs to the com.myapp package. The Test class imports it using the import statement and calls its static show() method. Package DeclarationThe package statement is used to specify the package to which a class belongs. Syntax:package packageName; Forder Structure The directory structure normally follows the package name.Forder StructureAccessing Classes Inside a PackageIn Java, we can import classes from a package using either of the following methods:1 Import a Single Classimport java.util.Vector; This imports only the Vector class from the java.util package.2. Import all classes from a package:import java.util.*; This imports all classes and interfaces from the java.util package but does not include sub-packages.Example: Import the Vector class
             Java
 
     import java.util.Vector;
@@ -71,4 +71,4 @@ public class Geeks {
 }
 
 Output[3, 5, 7]
-Access Modifiers and PackagesPackages directly influence Java access levels:Access Modifiers and Packages
+Explanation: Vector is accessed directly because it is imported. ArrayList is accessed using its fully qualified name, java.util.ArrayList.Access Modifiers and PackagesPackages directly influence Java access levels:Access Modifiers and Packages Advantages of PackagesOrganize related classes and interfaces. Avoid naming conflicts. Provide access control. Improve code maintainability. Promote code reuse. Make large applications easier to manage. Support modular application design.

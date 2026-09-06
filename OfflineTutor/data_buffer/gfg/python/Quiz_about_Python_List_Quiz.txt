@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython  List QuizLast Updated : DiscussCommentsQuestion 1Find the output of the following program:
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython  List QuizLast Updated : DiscussCommentsQuestion 1Find the output of the following program:
         Python
         
         name = ['Alex', 'Emma', 'Bob', 'Lucas']

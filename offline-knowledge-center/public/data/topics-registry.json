@@ -3,7 +3,7 @@
     {
       "id": "dsa",
       "title": "Dsa Tutorial",
-      "articleCount": 580,
+      "articleCount": 583,
       "icon": "book"
     },
     {
@@ -55,12 +55,6 @@
       "icon": "book"
     },
     {
-      "id": "web-dev",
-      "title": "Web Dev Tutorial",
-      "articleCount": 299,
-      "icon": "book"
-    },
-    {
       "id": "devops",
       "title": "Devops Tutorial",
       "articleCount": 299,
@@ -69,7 +63,7 @@
     {
       "id": "ml-ai",
       "title": "Ml Ai Tutorial",
-      "articleCount": 295,
+      "articleCount": 299,
       "icon": "book"
     },
     {

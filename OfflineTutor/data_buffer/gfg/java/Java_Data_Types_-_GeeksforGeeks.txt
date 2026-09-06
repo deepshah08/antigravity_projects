@@ -1,6 +1,6 @@
 # Java Data Types - GeeksforGeeks
 
-Java data types define the type of data a variable can store in a program. They help the compiler allocate memory efficiently and ensure type safety. Java provides two main categories: primitive and non-primitive data types.Memory allocation determines how much memory is required for each variable Operations support defines what operations can be performed on data Each data type has a default value when not initializedSyntax:dataType variableName = value;Types of Data Types Data types in Java define the kind of data a variable can hold and the memory required to store it. They are broadly divided into two categories:Primitive Data Types: Store simple values directly in memory.Non-Primitive (Reference) Data Types: Store memory references to objects.Data Types in Java1. Primitive Data TypesPrimitive data types store simple values directly in memory. Java provides eight primitive data types, each with a fixed size and range, which are summarized below:TypeDescriptionDefaultSizeExampleRangebooleanLogical valuesfalseNot JVM-definedtrue, falsetrue or falsebyte8-bit signed integer01 byte10-128 to 127char16-bit Unicode character\u00002 bytes'A', '\u0041'0 to 65,535short16-bit signed integer02 bytes2000-32,768 to 32,767int32-bit signed integer04 bytes1000, -500-2,147,483,648 to 2,147,483,647long64-bit signed integer0L8 bytes123456789L±9.22e18float32-bit floating point0.0f4 bytes3.14f~6–7 digits precisiondouble64-bit floating point0.0d8 bytes3.14159d~15–16 digits precision1. boolean Data Type Represents one of two logical values: true or false. It is commonly used in conditions and control statements.Syntax: boolean booleanVar;
+Java data types define the type of data a variable can store in a program. They help the compiler allocate memory efficiently and ensure type safety. Java provides two main categories: primitive and non-primitive data types.Memory allocation determines how much memory is required for each variable Operations support defines what operations can be performed on data Each data type has a default value when not initializedSyntaxdataType variableName = value;Types of Data Types Data types in Java define the kind of data a variable can hold and the memory required to store it. They are broadly divided into two categories:Primitive Data Types: Store simple values directly in memory.Non-Primitive (Reference) Data Types: Store memory references to objects.Data Types in Java1. Primitive Data TypesPrimitive data types store simple values directly in memory. Java provides eight primitive data types, each with a fixed size and range, which are summarized below:TypeDescriptionDefaultSizeExampleRangebooleanLogical valuesfalseNot JVM-definedtrue, falsetrue or falsebyte8-bit signed integer01 byte10-128 to 127char16-bit Unicode character\u00002 bytes'A', '\u0041'0 to 65,535short16-bit signed integer02 bytes2000-32,768 to 32,767int32-bit signed integer04 bytes1000, -500-2,147,483,648 to 2,147,483,647long64-bit signed integer0L8 bytes123456789L±9.22e18float32-bit floating point0.0f4 bytes3.14f~6–7 digits precisiondouble64-bit floating point0.0d8 bytes3.14159d~15–16 digits precision1. boolean Data Type Represents one of two logical values: true or false. It is commonly used in conditions and control statements.Syntax: boolean booleanVar;
             Java
 
     public class Geeks {
@@ -112,7 +112,7 @@ Avogadro's Number: 6.02214076E23
 
 OutputGrade: A
 Symbol: $
-2.Non-Primitive (Reference) Data Types Non-primitive data types store references (memory addresses) rather than actual values. They are created by users and include types like String, Class, Object, Interface, and Array.1. StringString represents a sequence of characters enclosed in double quotes. Unlike C/C++, Java strings are objects and are immutable.Syntax:String str = "Hello";
+2. Non-Primitive (Reference) Data Types Non-primitive data types store references (memory addresses) rather than actual values. They are created by users and include types like String, Class, Object, Interface, and Array.1. StringString represents a sequence of characters enclosed in double quotes. Unlike C/C++, Java strings are objects and are immutable.Syntax:String str = "Hello";
             Java
 
     public class Geeks {
@@ -126,7 +126,7 @@ Symbol: $
 
 OutputName: Geek1
 Message: Welcome to Java
-Note: String cannot be modified after creation. Use StringBuilder for heavy string manipulation.2. Class A class is a user-defined blueprint that defines variables and methods. It represents a type of object and forms the foundation of Object-Oriented Programming.
+Explanation: The example creates two String objects, name and message, and stores text values in them. The println() statements display these values on the console.Note: String cannot be modified after creation. Use StringBuilder for heavy string manipulation.2. Class A class is a user-defined blueprint that defines variables and methods. It represents a type of object and forms the foundation of Object-Oriented Programming.
             Java
 
     class Car {
@@ -151,7 +151,7 @@ public class Geeks {
 }
 
 OutputToyota 2020
-3. Object An Object is an instance of a class representing real-world entities. It has state (data), behavior (methods), and identity (unique reference).
+Explanation: The Car class defines two fields, model and year, and a constructor to initialize them. In main(), a Car object is created using new Car("Toyota", 2020), and the display() method prints its model and year.3. Object An Object is an instance of a class representing real-world entities. It has state (data), behavior (methods), and identity (unique reference).
             Java
 
     class Car {
@@ -174,7 +174,7 @@ public class Geeks {
 
 OutputCar Model: Honda
 Car Year: 2021
-4. Interface An interface defines a contract of abstract methods that implementing classes must define. It provides a way to achieve abstraction and multiple inheritance in Java.
+Explanation: The example creates a Car object named myCar using the Car class. The values "Honda" and 2021 are assigned to its model and year fields through the constructor, and these values are then accessed using the object reference.4. Interface An interface defines a contract of abstract methods that implementing classes must define. It provides a way to achieve abstraction and multiple inheritance in Java.
             Java
 
     interface Animal {
@@ -195,7 +195,7 @@ public class Geeks {
 }
 
 OutputWoof
-5. Array An array stores multiple elements of the same type in a single structure. Java arrays are objects, dynamically allocated, and indexed from 0.
+Explanation: The Animal interface declares the sound() method. The Dog class implements the interface and provides its implementation by printing "Woof". In main(), an Animal reference refers to a Dog object, and calling sound() executes the Dog implementation.5. Array An array stores multiple elements of the same type in a single structure. Java arrays are objects, dynamically allocated, and indexed from 0.
             Java
 
     public class Geeks {
@@ -209,3 +209,4 @@ OutputWoof
 
 OutputFirst number: 1
 Second name: Geek2
+Explanation: The example creates an integer array named numbers and a String array named names. The elements are accessed using their index, where indexing starts from 0; therefore, numbers[0] gives 1 and names[1] gives "Geek2". Advantages of Java Data TypesProvide type safety and help prevent invalid data assignments.Make the code easier to understand and read.Help use memory efficiently, especially with primitive data types.Improve program performance when appropriate primitive types are used.Allow Java to handle different kinds of data such as numbers, characters, boolean values, and objects.Make programs easier to maintain and debug.Help the compiler detect many type-related errors during compilation.

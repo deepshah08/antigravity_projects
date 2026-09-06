@@ -7,8 +7,11 @@ Given a binary matrix mat[][], print the rows which are duplicates of rows that 
 #include <vector>
 using namespace std;
 
-vector<int> repeatedRows(vector<vector<int>> &matrix, int rows, int columns) {
+vector<int> repeatedRows(vector<vector<int>> &matrix) {
     vector<int> result;
+    
+    int rows = matrix.size();
+    int columns = matrix[0].size();
 
     for (int i = 0; i < rows; i++) {
         bool found = false;
@@ -48,10 +51,8 @@ int main() {
         {0, 0, 1, 0, 0, 1}
     };
 
-    int rows = matrix.size();
-    int columns = matrix[0].size();
 
-    vector<int> duplicates = repeatedRows(matrix, rows, columns);
+    vector<int> duplicates = repeatedRows(matrix);
 
     for (int idx : duplicates) {
         cout << idx + 1 << " ";
@@ -65,13 +66,12 @@ int main() {
 
     import java.util.ArrayList;
 
-public class GFG {
-
-    public static ArrayList<Integer>
-    repeatedRows(ArrayList<ArrayList<Integer>> matrix,
-                 int rows, int columns)
-    {
+class GFG {
+    public ArrayList<Integer> repeatedRows(int[][] mat) {
         ArrayList<Integer> result = new ArrayList<>();
+        int rows = mat.length;
+        if (rows == 0) return result;
+        int columns = mat[0].length;
 
         for (int i = 0; i < rows; i++) {
             boolean found = false;
@@ -81,8 +81,7 @@ public class GFG {
 
                 // check if all elements of both rows are equal or not
                 for (k = 0; k < columns; k++) {
-                    if (!matrix.get(i).get(k)
-                             .equals(matrix.get(j).get(k)))
+                    if (mat[i][k] != mat[j][k])
                         break;
                 }
 
@@ -102,35 +101,18 @@ public class GFG {
         return result;
     }
 
-    public static void main(String[] args)
-    {
-        ArrayList<ArrayList<Integer>> matrix
-            = new ArrayList<>();
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 1, 0, 1, 0, 1},
+            {0, 0, 1, 0, 0, 1},
+            {1, 0, 1, 1, 0, 0},
+            {1, 1, 0, 1, 0, 1},
+            {0, 0, 1, 0, 0, 1},
+            {0, 0, 1, 0, 0, 1}
+        };
 
-        matrix.add(new ArrayList<Integer>() {{
-            add(1); add(1); add(0); add(1); add(0); add(1);
-        }});
-        matrix.add(new ArrayList<Integer>() {{
-            add(0); add(0); add(1); add(0); add(0); add(1);
-        }});
-        matrix.add(new ArrayList<Integer>() {{
-            add(1); add(0); add(1); add(1); add(0); add(0);
-        }});
-        matrix.add(new ArrayList<Integer>() {{
-            add(1); add(1); add(0); add(1); add(0); add(1);
-        }});
-        matrix.add(new ArrayList<Integer>() {{
-            add(0); add(0); add(1); add(0); add(0); add(1);
-        }});
-        matrix.add(new ArrayList<Integer>() {{
-            add(0); add(0); add(1); add(0); add(0); add(1);
-        }});
-
-        int rows = matrix.size();
-        int columns = matrix.get(0).size();
-
-        ArrayList<Integer> duplicates =
-            repeatedRows(matrix, rows, columns);
+        GFG obj = new GFG();
+        ArrayList<Integer> duplicates = obj.repeatedRows(matrix);
 
         for (int idx : duplicates) {
             System.out.print((idx + 1) + " ");
@@ -141,8 +123,12 @@ public class GFG {
 
             Python
 
-    def repeatedRows(matrix, rows, columns):
+    def repeatedRows(mat):
     result = []
+    rows = len(mat)
+    if rows == 0:
+        return result
+    columns = len(mat[0])
 
     for i in range(rows):
         found = False
@@ -152,7 +138,7 @@ public class GFG {
             
             # check if all elements of both rows are equal or not
             while k < columns:
-                if matrix[i][k] != matrix[j][k]:
+                if mat[i][k] != mat[j][k]:
                     break
                 k += 1
 
@@ -167,7 +153,6 @@ public class GFG {
 
     return result
 
-
 if __name__ == "__main__":
     matrix = [[1, 1, 0, 1, 0, 1],
               [0, 0, 1, 0, 0, 1],
@@ -176,10 +161,7 @@ if __name__ == "__main__":
               [0, 0, 1, 0, 0, 1],
               [0, 0, 1, 0, 0, 1]]
 
-    rows = len(matrix)
-    columns = len(matrix[0])
-
-    duplicates = repeatedRows(matrix, rows, columns)
+    duplicates = repeatedRows(matrix)
 
     for idx in duplicates:
         print(idx + 1, end=" ")
@@ -192,10 +174,11 @@ using System.Collections.Generic;
 
 public class GFG {
     
-    public static List<int>
-    repeatedRows(List<List<int>> matrix, int rows, int columns)
-    {
+    public List<int> repeatedRows(int[][] mat) {
         List<int> result = new List<int>();
+        int rows = mat.Length;
+        if (rows == 0) return result;
+        int columns = mat[0].Length;
 
         for (int i = 0; i < rows; i++) {
             bool found = false;
@@ -205,7 +188,7 @@ public class GFG {
                 
                 // check if all elements of both rows are equal or not
                 for (k = 0; k < columns; k++) {
-                    if (matrix[i][k] != matrix[j][k])
+                    if (mat[i][k] != mat[j][k])
                         break;
                 }
 
@@ -225,22 +208,18 @@ public class GFG {
         return result;
     }
 
-    public static void Main()
-    {
-        List<List<int>> matrix = new List<List<int>>{
-            new List<int>{ 1, 1, 0, 1, 0, 1 },
-            new List<int>{ 0, 0, 1, 0, 0, 1 },
-            new List<int>{ 1, 0, 1, 1, 0, 0 },
-            new List<int>{ 1, 1, 0, 1, 0, 1 },
-            new List<int>{ 0, 0, 1, 0, 0, 1 },
-            new List<int>{ 0, 0, 1, 0, 0, 1 }
+    public static void Main() {
+        int[][] matrix = new int[][] {
+            new int[] { 1, 1, 0, 1, 0, 1 },
+            new int[] { 0, 0, 1, 0, 0, 1 },
+            new int[] { 1, 0, 1, 1, 0, 0 },
+            new int[] { 1, 1, 0, 1, 0, 1 },
+            new int[] { 0, 0, 1, 0, 0, 1 },
+            new int[] { 0, 0, 1, 0, 0, 1 }
         };
 
-        int rows = matrix.Count;
-        int columns = matrix[0].Count;
-
-        List<int> duplicates =
-            repeatedRows(matrix, rows, columns);
+        GFG obj = new GFG();
+        List<int> duplicates = obj.repeatedRows(matrix);
 
         foreach (int idx in duplicates) {
             Console.Write((idx + 1) + " ");
@@ -251,8 +230,11 @@ public class GFG {
 
             JavaScript
 
-    function repeatedRows(matrix, rows, columns) {
+    function repeatedRows(mat) {
     const result = [];
+    const rows = mat.length;
+    if (rows === 0) return result;
+    const columns = mat[0].length;
 
     for (let i = 0; i < rows; i++) {
         let found = false;
@@ -262,7 +244,7 @@ public class GFG {
             
             // check if all elements of both rows are equal or not
             while (k < columns) {
-                if (matrix[i][k] !== matrix[j][k]) {
+                if (mat[i][k] !== mat[j][k]) {
                     break;
                 }
                 k++;
@@ -294,10 +276,7 @@ const matrix = [
     [0, 0, 1, 0, 0, 1]
 ];
 
-const rows = matrix.length;
-const columns = matrix[0].length;
-
-const duplicates = repeatedRows(matrix, rows, columns);
+const duplicates = repeatedRows(matrix);
 
 for (let idx of duplicates) {
     console.log(idx + 1);
@@ -314,7 +293,7 @@ struct Trie {
     bool leaf;
     Trie* children[2];
     Trie() {
-        children[0] = children[1] = NULL;
+        children[0] = children[1] = nullptr;
         leaf = false;
     }
 };
@@ -325,7 +304,7 @@ bool insert(Trie*& head, vector<int>& row, int columns) {
     for (int i = 0; i < columns; i++) {
         
         // create a new node if path doesn't exist
-        if (curr->children[row[i]] == NULL)
+        if (curr->children[row[i]] == nullptr)
             curr->children[row[i]] = new Trie();
 
         curr = curr->children[row[i]];
@@ -339,9 +318,11 @@ bool insert(Trie*& head, vector<int>& row, int columns) {
     return (curr->leaf = true);
 }
 
-vector<int> repeatedRows(vector<vector<int>> &matrix, int rows, int columns) {
+vector<int> repeatedRows(vector<vector<int>> &matrix) {
     vector<int> result;
     Trie* head = new Trie();
+    int rows = matrix.size();
+    int columns = matrix[0].size();
 
     for (int i = 0; i < rows; i++) {
 
@@ -364,10 +345,8 @@ int main() {
         {0, 0, 1, 0, 0, 1}
     };
 
-    int rows = matrix.size();
-    int columns = matrix[0].size();
 
-    vector<int> duplicates = repeatedRows(matrix, rows, columns);
+    vector<int> duplicates = repeatedRows(matrix);
 
     for (int idx : duplicates) {
         cout << idx + 1 << " ";
@@ -411,8 +390,11 @@ class GFG {
         return (curr.leaf = true);
     }
 
-    static ArrayList<Integer> repeatedRows(int[][] matrix, int rows, int columns) {
+    static ArrayList<Integer> repeatedRows(int[][] matrix) {
         ArrayList<Integer> result = new ArrayList<>();
+        
+        int rows = matrix.length;
+        int columns = matrix[0].length;
 
         // create root of Trie
         Trie head = new Trie();
@@ -438,8 +420,7 @@ class GFG {
             {0, 0, 1, 0, 0, 1}
         };
 
-        int rows = matrix.length;
-        int columns = matrix[0].length;
+        
 
         ArrayList<Integer> duplicates =
             repeatedRows(matrix, rows, columns);
@@ -459,36 +440,30 @@ class GFG {
         self.leaf = False
 
 
-def insert(head, row, columns):
-    curr = head
-
-    for i in range(columns):
-        
-        # create a new node if path doesn't exist
-        if curr.children[row[i]] is None:
-            curr.children[row[i]] = Trie()
-
-        curr = curr.children[row[i]]
-
-    # row already exists in trie
-    if curr.leaf:
-        return False
-
-    # mark this path as a complete row
-    curr.leaf = True
-    return True
+    def insert(head, row):
+        curr = head
+        for val in row:
+            # Create a new node if path doesn't exist
+            if curr.children[val] is None:
+                curr.children[val] = Trie()
+            curr = curr.children[val]
+    
+        # If row already exists in trie
+        if curr.leaf:
+            return False
+    
+        # Mark this path as a complete row
+        curr.leaf = True
+        return True
 
 
-def repeatedRows(matrix, rows, columns):
+def repeatedRows(mat):
     result = []
-
-    # create root of Trie
     head = Trie()
 
-    for i in range(rows):
-
-        # insert row and check for duplication
-        if not insert(head, matrix[i], columns):
+    for i in range(len(mat)):
+        # Insert row and check for duplication
+        if not insert(head, mat[i]):
             result.append(i)
 
     return result
@@ -504,10 +479,7 @@ if __name__ == "__main__":
         [0, 0, 1, 0, 0, 1],
     ]
 
-    rows = len(matrix)
-    columns = len(matrix[0])
-
-    duplicates = repeatedRows(matrix, rows, columns)
+    duplicates = repeatedRows(matrix)
 
     for idx in duplicates:
         print(idx + 1, end=" ")
@@ -551,9 +523,12 @@ class GFG {
         return true;
     }
 
-    static List<int> repeatedRows(int[][] matrix, int rows, int columns)
+    static List<int> repeatedRows(int[][] matrix)
     {
         List<int> result = new List<int>();
+        
+        int rows = matrix.Length;
+        int columns = matrix[0].Length;
 
         // create root of Trie
         Trie head = new Trie();
@@ -580,11 +555,8 @@ class GFG {
             new int[] { 0, 0, 1, 0, 0, 1 },
         };
 
-        int rows = matrix.Length;
-        int columns = matrix[0].Length;
-
         List<int> duplicates =
-            repeatedRows(matrix, rows, columns);
+            repeatedRows(matrix);
 
         foreach (int idx in duplicates) {
             Console.Write((idx + 1) + " ");
@@ -621,8 +593,10 @@ function insert(head, row, columns) {
     return true;
 }
 
-function repeatedRows(matrix, rows, columns) {
+function repeatedRows(matrix) {
     const result = [];
+    let rows = matrix.length;
+    let columns = matrix[0].length;
 
     // create root of Trie
     let head = new Trie();
@@ -648,15 +622,13 @@ let matrix = [
     [0, 0, 1, 0, 0, 1],
 ];
 
-let rows = matrix.length;
-let columns = matrix[0].length;
-let duplicates = repeatedRows(matrix, rows, columns);
+let duplicates = repeatedRows(matrix);
 
 for (let idx of duplicates) {
     console.log(idx + 1);
 }
 
-Output4 5 6 [Expected Approach-2] Using a hash set of rows as strings: O(m*n) Time and O(m*n) SpaceUse a hash set to store string representations of each row, allowing for quick lookup and comparison. By iterating through the rows and concatenating their elements into strings, then checks for duplicate strings in the hash set. If a duplicate is found, the index of the corresponding row is added to a result array. 
+Output4 5 6 [Expected Approach-2] Using a hash set of rows as strings: O(m*n) Time and O(m*n) SpaceUse a hash set to store string representations of each row, allowing for quick lookup and comparison. Iterate through the rows and concate their elements into strings, then checks for duplicate strings in the hash set. If a duplicate is found, the index of the corresponding row is added to a result array. 
             C++
 
     #include <iostream>
@@ -664,9 +636,12 @@ Output4 5 6 [Expected Approach-2] Using a hash set of rows as strings: O(m*n) Ti
 #include <unordered_set>
 using namespace std;
 
-vector<int> repeatedRows(vector<vector<int>> &matrix, int rows, int columns) {
+vector<int> repeatedRows(vector<vector<int>> &matrix) {
     vector<int> result;
     unordered_set<string> seen;
+    
+    int rows = matrix.size();
+    int columns = matrix[0].size();
 
     for (int i = 0; i < rows; i++) {
         string temp = "";
@@ -698,10 +673,7 @@ int main() {
         {0, 0, 1, 0, 0, 1}
     };
 
-    int rows = matrix.size();
-    int columns = matrix[0].size();
-
-    vector<int> duplicates = repeatedRows(matrix, rows, columns);
+    vector<int> duplicates = repeatedRows(matrix);
 
     for (int idx : duplicates) {
         cout << idx + 1 << " ";
@@ -720,8 +692,8 @@ import java.util.Set;
 
 public class GFG {
 
-    public static List<Integer> repeatedRows(int[][] matrix) {
-        List<Integer> result = new ArrayList<>();
+    public static ArrayList<Integer> repeatedRows(int[][] matrix) {
+        ArrayList<Integer> result = new ArrayList<>();
         Set<String> seen = new HashSet<>();
 
         for (int i = 0; i < matrix.length; i++) {

@@ -1,0 +1,61 @@
+# Number Guessing Game in Python - GeeksforGeeks
+
+Number Guessing Game is a game in which the computer randomly selects a number between 1 and 100. The user must guess the number within a limited number of attempts. After each incorrect guess, the program provides a hint indicating whether the guess is too low or too high.In this game, randint() is used to generate a random number within the specified range.Winning RulesComputer generates a random number between 1 and 100.User has a maximum of 7 attempts to guess the number.User wins immediately if the guess matches the randomly generated number.If the guess is lower than the selected number, the program displays "Too Low" and the user should try a higher number.If the guess is higher than the selected number, the program displays "Too High" and the user should try a lower number.Invalid input or numbers outside the range of 1 to 100 do not count as an attempt.If the user does not guess the number within 7 valid attempts, the game ends and reveals the correct number.Implementation
+            Python
+
+    import random
+
+attempts = 7
+
+
+def display_rules():
+    print("Welcome to Number Guessing Game!\n")
+    print("I have selected a number between 1 and 100.")
+    print("You have 7 attempts to guess it.\n")
+
+
+def play_game(number, attempt=1):
+    if attempt > attempts:
+        print("\nGame Over!")
+        print("The correct number was:", number)
+        return
+
+    guess = input(f"Attempt {attempt}/7 - Enter your guess: ")
+
+    try:
+        guess = int(guess)
+    except ValueError:
+        print("Please enter a valid number.\n")
+        return play_game(number, attempt)
+
+    if guess < 1 or guess > 100:
+        print("Please enter a number between 1 and 100.\n")
+        return play_game(number, attempt)
+
+    check_guess = lambda x, y: "correct" if x == y else (
+        "low" if x < y else "high"
+    )
+
+    result = check_guess(guess, number)
+
+    if result == "correct":
+        print("\nCongratulations! You guessed the correct number!")
+        print("You guessed it in", attempt, "attempt(s).")
+        return
+
+    if result == "low":
+        print("Too Low! Try a higher number.\n")
+    else:
+        print("Too High! Try a lower number.\n")
+
+    play_game(number, attempt + 1)
+
+
+# Start the game
+display_rules()
+
+random_number = random.randint(1, 100)
+
+play_game(random_number)
+
+Output:Number Guessing GameExplanation:Program generates a random number between 1 and 100.User gets 7 attempts to guess the number. display_rules() displays the game instructions. play_game() takes the generated number and handles the guessing process. Program checks whether the entered value is a valid number between 1 and 100. For each incorrect guess, it displays whether the number is too low or too high. If the user guesses correctly, the program displays a congratulatory message and the number of attempts used. If all 7 attempts are used, the game ends and displays the correct number. check_guess lambda function compares the user's guess with the generated number. Function calls itself with the next attempt until the user wins or all attempts are completed.

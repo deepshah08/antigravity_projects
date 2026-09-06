@@ -1,0 +1,954 @@
+# Data Science Coding Interview Questions - GeeksforGeeks
+
+To excel in data science coding interviews, it's essential to master a variety of questions that test your programming skills and understanding of data science concepts. We have prepared a list of the Top 50 Data Science Interview Questions along with their answers to ace interviews. 1. Write a function to reverse a string in PythonReversing a string means flipping its order of characters. You can do this by using Python slicing ([::-1]) or by iterating from the end to the start. This is a common operation in string manipulation.
+            Python
+
+    def reverse_string(s):
+    return s[::-1]
+
+print(reverse_string("hello"))
+
+Output:olleh2. Check if a string is a palindrome.Compare the original string with its reversed version to see if they are the same. If they match, it means the string is a palindrome. Return True or False based on this comparison. How can you check a string is palindrome or not in Python:
+            Python
+
+    def is_palindrome(s):
+    return s == s[::-1]
+
+print(is_palindrome("madam"))
+
+Output:True3. Write a function to find the nth Fibonacci number using recursion.The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, usually starting with 0 and 1. Let's see the code to find the nth Fibonacci number:
+            Python
+
+    def fibonacci(n):
+    
+    if n <= 1:
+        return n
+    else:
+        
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+n = 5
+print(f"The {n}th Fibonacci number is: {fibonacci(n)}") 
+
+Output:The 5th Fibonacci number is: 54. Find indices of two numbers that add up to a specific target in an array.First we create a dictionary to store numbers and their indices as you iterate through the array.For each number, check if its complement (target minus the number) exists in the dictionary. If it does, return their indices. Let's see the code:
+            Python
+
+    def two_sum(nums, target):
+    num_map = {}
+    for index, num in enumerate(nums):
+        complement = target - num
+        if complement in num_map:
+            return [num_map[complement], index]
+        num_map[num] = index
+
+
+print(two_sum([2, 7, 3, 15], 10))  
+
+Output:[1, 2]5. Write a Python function to calculate the factorial of a number.This function calculates the factorial of a number using recursion. If the number is 0 or 1, it returns 1. Otherwise, it multiplies the number by the factorial of the number minus 1. 
+            Python
+
+    def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5)) 
+
+Output:1206. How would you count the occurrences of each element in a list?we use Python's Counter from the collections module to count how often each element appears in a list. Let's do the implementation:
+            Python
+
+    from collections import Counter
+
+def count_occurrences(lst):
+    return Counter(lst)
+
+print(count_occurrences([1, 2, 2, 3, 3, 3]))  
+
+Output:Counter({3: 3, 2: 2, 1: 1})7. Find the first non-repeated character in a string.Track the frequency of each character with a dictionary, then return the first character whose count is exactly 1.
+            Python
+
+    def first_non_repeated_char(s):
+    char_count = {}
+    for char in s:
+        char_count[char] = char_count.get(char, 0) + 1
+
+    for char in s:
+        if char_count[char] == 1:
+            return char
+    return None
+
+print(first_non_repeated_char("swiss"))
+print(first_non_repeated_char("aabbcc"))
+
+Output:wNone8. Check if two strings are anagrams of each other.Two strings are anagrams if they contain exactly the same characters in the same frequency. Sorting both and comparing is the simplest approach.
+            Python
+
+    def are_anagrams(str1, str2):
+    if len(str1) != len(str2):
+        return False
+    return sorted(str1) == sorted(str2)
+
+print(are_anagrams("listen", "silent"))
+print(are_anagrams("hello", "world"))
+
+Output:TrueFalse9. Explain *args and **kwargs with an example.*argscollects extra positional arguments into a tuple; **kwargs collects extra keyword arguments into a dictionary. Both let a function accept a variable number of inputs — useful when writing flexible data-processing utility functions.
+            Python
+
+    def summarize(*args, **kwargs):
+    print("Positional:", args)
+    print("Keyword:", kwargs)
+
+summarize(1, 2, 3, model="linear_regression", verbose=True)
+
+Output:Positional: (1, 2, 3)Keyword: {'model': 'linear_regression', 'verbose': True}10. Write a generator function that lazily yields squares of numbers.Generators (using yield) produce values one at a time and don't hold the entire sequence in memory — critical when streaming large datasets that don't fit in RAM.
+            Python
+
+    def square_generator(n):
+    for i in range(n):
+        yield i * i
+
+for val in square_generator(5):
+    print(val, end=" ")
+
+Output:0 1 4 9 1611. Write a decorator that times how long a function takes to run.Decorators wrap a function to add behavior (logging, timing, caching) without modifying its internal code — commonly used to profile slow data pipelines.
+            Python
+
+    import time
+from functools import wraps
+
+def timer(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        print(f"{func.__name__} took {time.time() - start:.4f}s")
+        return result
+    return wrapper
+
+@timer
+def slow_square(n):
+    return [i * i for i in range(n)]
+
+slow_square(1000000)
+
+12. Explain the difference between shallow copy and deep copy, with an example.A shallow copy duplicates the outer object but nested objects still point to the same memory; a deep copy recursively duplicates everything. This matters a lot when copying nested lists/DataFrames before mutating them for feature engineering experiments.
+            Python
+
+    import copy
+
+original = [[1, 2], [3, 4]]
+shallow = copy.copy(original)
+deep = copy.deepcopy(original)
+
+original[0][0] = 99
+print("Shallow:", shallow)  # affected: shares inner lists
+print("Deep:", deep)        # unaffected: fully independent
+
+Output:Shallow: [[99, 2], [3, 4]]Deep: [[1, 2], [3, 4]]13. Handle multiple exception types and use finally in a data-loading function.Robust data pipelines need to distinguish between error types (missing file vs. bad format) and guarantee cleanup regardless of outcome.
+            Python
+
+    def load_number(value):
+    try:
+        return 1 / int(value)
+    except ZeroDivisionError:
+        print("Cannot divide by zero")
+    except ValueError:
+        print(f"'{value}' is not a valid integer")
+    finally:
+        print("Attempted to process:", value)
+
+load_number("0")
+load_number("abc")
+
+Output:Cannot divide by zeroAttempted to process: 0'abc' is not a valid integerAttempted to process: abc14. Explain how a hash table works, with an example.A hash table stores key-value pairs. A hash function maps each key to an index (bucket) in an underlying array, giving average O(1) lookup, insert, and delete.
+            Python
+
+    hash_table = {}
+hash_table["name"] = "Rihan"
+hash_table["age"] = 22
+hash_table["city"] = "America"
+
+print(hash_table["name"])
+print(hash_table["age"])
+print(hash_table["city"])
+
+15. Create a class to represent a Person with basic attributes. __init__ initializes state, a normal method mutates state, and __str__ controls how print() displays the object.
+            Python
+
+    class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def birthday(self):
+        self.age += 1
+
+    def __str__(self):
+        return f"Name: {self.name}, Age: {self.age}"
+
+person1 = Person("Alice", 30)
+print(person1)
+person1.birthday()
+print(person1)
+
+Output:Name: Alice, Age: 30Name: Alice, Age: 3116.  Find the median of two sorted arrays of different sizes.Merge and sort both arrays, then pick the middle element (or average the two middle elements if the combined length is even).
+            Python
+
+    def find_median(arr1, arr2):
+    merged = sorted(arr1 + arr2)
+    n = len(merged)
+    return (merged[n // 2] + merged[n // 2 - 1]) / 2 if n % 2 == 0 else merged[n // 2]
+
+print(find_median([1, 3], [2, 4, 5]))
+
+Output:317. Implement a sliding window to find the maximum sum of a subarray of size k.Compute the sum of the first window, then slide it forward one element at a time — adding the new element and subtracting the one that fell out. This avoids recomputing the sum from scratch (O(n) instead of O(n·k)).
+            Python
+
+    def max_sum_subarray(arr, k):
+    window_sum = sum(arr[:k])
+    max_sum = window_sum
+    for i in range(k, len(arr)):
+        window_sum += arr[i] - arr[i - k]
+        max_sum = max(max_sum, window_sum)
+    return max_sum
+
+print(max_sum_subarray([2, 1, 5, 1, 3, 2], 3))
+
+Output:9Q18. Find the kth smallest element in an unsorted array.heapq.nsmallest returns the k smallest elements in sorted order; the last one is the kth smallest.
+            Python
+
+    import heapq
+
+def kth_smallest(arr, k):
+    return heapq.nsmallest(k, arr)[-1]
+
+print(kth_smallest([7, 10, 4, 3, 20, 15], 3))
+
+Output:719. Generate all possible permutations of a list of numbers.itertools.permutations generates every possible ordering.
+            Python
+
+    from itertools import permutations
+
+def generate_permutations(arr):
+    return list(permutations(arr))
+
+print(generate_permutations([1, 2, 3]))
+
+Output:[(1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2), (3, 2, 1)]Q20. Find the maximum sum of a contiguous subarray (Kadane's Algorithm).Given an integer array, find the sum of the largest contiguous subarray. E.g., for A = [0,-1,-5,-2,3,14], the answer is 17 (from [3, 14]). If all elements are negative, the function must return 0.
+            Python
+
+    def max_subarray(arr):
+    max_sum = 0
+    curr_sum = 0
+    for num in arr:
+        curr_sum += num
+        max_sum = max(max_sum, curr_sum)
+        if curr_sum < 0:
+            curr_sum = 0
+    return max_sum
+
+print(max_subarray([0, -1, -5, -2, 3, 14]))  # 17
+print(max_subarray([-1, -2, -3]))            # 0  (now correct)
+
+21. Implement binary search on a sorted array.Binary search repeatedly halves the search space — O(log n) — by comparing the target to the middle element. It's the most frequently asked "warm-up" DSA question in data-science coding rounds.
+            Python
+
+    def binary_search(arr, target):
+    low, high = 0, len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+
+print(binary_search([1, 3, 5, 7, 9, 11], 7))
+
+Output:322. Implement Merge Sort.Merge sort recursively splits the array in half, sorts each half, then merges the two sorted halves. Guaranteed O(n log n) — a common "implement a sort from scratch" ask.
+            Python
+
+    def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left, right = merge_sort(arr[:mid]), merge_sort(arr[mid:])
+
+    merged, i, j = [], 0, 0
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            merged.append(left[i]); i += 1
+        else:
+            merged.append(right[j]); j += 1
+    merged.extend(left[i:])
+    merged.extend(right[j:])
+    return merged
+
+print(merge_sort([5, 2, 9, 1, 5, 6]))
+
+Output:[1, 2, 5, 5, 6, 9]Q23. Reverse a singly linked list.This is one of the most common data-structure questions; it tests pointer manipulation, not just built-in functions.
+            Python
+
+    class Node:
+    def __init__(self, val):
+        self.val = val
+        self.next = None
+
+def reverse_linked_list(head):
+    prev = None
+    current = head
+    while current:
+        nxt = current.next
+        current.next = prev
+        prev = current
+        current = nxt
+    return prev  # new head
+
+# Build 1 -> 2 -> 3, reverse it, print result
+head = Node(1); head.next = Node(2); head.next.next = Node(3)
+new_head = reverse_linked_list(head)
+while new_head:
+    print(new_head.val, end=" ")
+    new_head = new_head.next
+
+Output:3 2 1Q24. Detect a cycle in a linked list (Floyd's Tortoise and Hare).Use two pointers moving at different speeds. If they ever meet, there's a cycle; if the fast pointer reaches the end, there isn't.
+            Python
+
+    def has_cycle(head):
+    slow = fast = head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        if slow == fast:
+            return True
+    return False
+
+25. Check for valid (balanced) parentheses using a stack.Push opening brackets onto a stack; on a closing bracket, check it matches the top of the stack.
+            Python
+
+    def is_valid_parentheses(s):
+    stack = []
+    pairs = {')': '(', ']': '[', '}': '{'}
+    for char in s:
+        if char in "([{":
+            stack.append(char)
+        elif char in pairs:
+            if not stack or stack.pop() != pairs[char]:
+                return False
+    return not stack
+
+print(is_valid_parentheses("{[()]}"))
+print(is_valid_parentheses("{[(])}"))
+
+Output:TrueFalse26. Implement an LRU (Least Recently Used) Cache.An LRU cache evicts the least recently used item once it reaches capacity. OrderedDict makes this simple in Python and it's a very common "design a system component" coding question.
+            Python
+
+    from collections import OrderedDict
+
+class LRUCache:
+    def __init__(self, capacity):
+        self.cache = OrderedDict()
+        self.capacity = capacity
+
+    def get(self, key):
+        if key not in self.cache:
+            return -1
+        self.cache.move_to_end(key)
+        return self.cache[key]
+
+    def put(self, key, value):
+        if key in self.cache:
+            self.cache.move_to_end(key)
+        self.cache[key] = value
+        if len(self.cache) > self.capacity:
+            self.cache.popitem(last=False)
+
+lru = LRUCache(2)
+lru.put(1, 'a'); lru.put(2, 'b')
+print(lru.get(1))     # 'a' -> 1 becomes most recently used
+lru.put(3, 'c')        # evicts key 2 (least recently used)
+print(lru.get(2))     # -1, evicted
+
+27. Implement BFS and DFS traversal of a graph.BFS explores neighbor-by-neighbor using a queue (good for shortest paths); DFS explores as deep as possible using a stack/recursion (good for connectivity/cycle checks).
+            Python
+
+    from collections import deque
+
+def bfs(graph, start):
+    visited, queue, order = {start}, deque([start]), []
+    while queue:
+        node = queue.popleft()
+        order.append(node)
+        for neighbor in graph[node]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+    return order
+
+def dfs(graph, start, visited=None, order=None):
+    if visited is None:
+        visited, order = set(), []
+    visited.add(start)
+    order.append(start)
+    for neighbor in graph[start]:
+        if neighbor not in visited:
+            dfs(graph, neighbor, visited, order)
+    return order
+
+graph = {'A': ['B', 'C'], 'B': ['D'], 'C': ['D'], 'D': []}
+print(bfs(graph, 'A'))
+print(dfs(graph, 'A'))
+
+Output:['A', 'B', 'C', 'D']['A', 'B', 'D', 'C']28. Solve the 0/1 Knapsack problem using Dynamic Programming.DP questions test whether a candidate can recognize overlapping subproblems and build a solution bottom-up — frequently asked to assess algorithmic maturity beyond basic scripting.
+            Python
+
+    def knapsack(weights, values, capacity):
+    n = len(weights)
+    dp = [[0] * (capacity + 1) for _ in range(n + 1)]
+
+    for i in range(1, n + 1):
+        for w in range(capacity + 1):
+            if weights[i - 1] <= w:
+                dp[i][w] = max(dp[i - 1][w], values[i - 1] + dp[i - 1][w - weights[i - 1]])
+            else:
+                dp[i][w] = dp[i - 1][w]
+    return dp[n][capacity]
+
+print(knapsack(weights=[1, 3, 4, 5], values=[1, 4, 5, 7], capacity=7))
+
+Output:929. Write a function to calculate the element-wise sum of two Numpy arrays.This adds corresponding elements of two Numpy arrays, creating a new array with the results.
+            Python
+
+    import numpy as np
+arr1 = np.array([1, 2])
+arr2 = np.array([4, 5])
+result = np.add(arr1, arr2)
+print(result)
+
+Output:[5 7]30. How would you extract the diagonal elements of a Numpy matrix?In this question we have to retreive the diagonal elements in the numpy matrix and we do this with the help of a function called 'np.diagonal'. 
+            Python
+
+    import numpy as np
+matrix = np.array([[1, 2, 3], [4, 5, 6]])
+print(np.diagonal(matrix)) 
+
+Output:[1 5]31. Write code to reshape a 1D Numpy array into a 2D array with 3 rows.To reshape 1D Numpy array into 2D array  we use the function named as 'array.reshape' and this concept iscalled reshaping the Array
+            Python
+
+    import numpy as np
+arr = np.array([1, 2, 3, 4, 5, 6])
+reshaped = arr.reshape(3, 2)
+print(reshaped)
+
+Output:[[1 2] [3 4] [5 6]]32. How do you transpose a NumPy array?
+            Python
+
+    import numpy as np
+array = np.array([[1, 2], [4, 5]])
+print(array.T)
+
+Output:[[1 4] [2 5]]33. Explain NumPy broadcasting with an example.Broadcasting lets NumPy perform element-wise operations on arrays of different shapes without explicit loops.This is why vectorized NumPy code is faster than Python loops.
+            Python
+
+    import numpy as np
+matrix = np.array([[1, 2, 3], [4, 5, 6]])
+row_vector = np.array([10, 20, 30])
+print(matrix + row_vector)  # row_vector is "broadcast" across every row
+
+Output:[[11 22 33] [14 25 36]]34.  Use np.where to conditionally replace values in an array.np.where(condition, value_if_true, value_if_false) is the vectorized equivalent of an if/else applied element-wise — commonly used to cap outliers or flag values.
+            Python
+
+    import numpy as np
+arr = np.array([5, -3, 12, -8, 7])
+result = np.where(arr < 0, 0, arr)  # replace negatives with 0
+print(result)
+
+Output:[ 5  0 12  0  7]35. How would you load a CSV file into a Pandas DataFrame?
+            Python
+
+    import pandas as pd
+df = pd.read_csv('file.csv')
+
+36. How would you handle missing values in a DataFrame?fillna()replaces missing values (e.g., with the column mean); dropna() removes rows containing any missing value.
+            Python
+
+    df.fillna(df.mean(), inplace=True)   # fill with mean
+df.dropna(inplace=True)              # or drop rows with NaN
+
+37. How do you read and write data from a file in Python?To read and write data from file in Python, we use the built-in open() function, which provides a way to open a file and perform various operations on it, such as reading or writing.Reading a file:
+            Python
+
+    with open('file.txt', 'r') as file:
+    content = file.read()
+print(content)
+
+Writing a file:
+            Python
+
+    with open('file.txt', 'w') as file:
+    file.write("Hello, world!")
+
+38. Perform one-hot encoding of categorical variables in a dataset.
+            Python
+
+    import pandas as pd
+
+def one_hot_encode(data, column):
+    return pd.get_dummies(data, columns=[column])
+
+df = pd.DataFrame({'Color': ['Red', 'Blue', 'Green']})
+print(one_hot_encode(df, 'Color'))
+
+Output:       Color_Blue  Color_Green  Color_Red0           0                    0                       1  1           1                    0                      02           0                  1                       039. Handle missing data using imputation.
+            Python
+
+    from sklearn.impute import SimpleImputer
+import numpy as np
+
+def impute_missing_data(data):
+    imputer = SimpleImputer(strategy='mean')
+    return imputer.fit_transform(data)
+
+data = np.array([[1, 2], [np.nan, 3], [7, 6]])
+print(impute_missing_data(data))
+
+40. Group a dataset by a column and calculate the rolling average for another column.the multi-index produced by groupby().rolling() can look unfamiliar the first time you see it — the level_1 column is the original row index preserved after reset_index(). This is expected pandas behavior, not an error.
+            Python
+
+    import pandas as pd
+
+def rolling_average(df, group_col, target_col, window):
+    return df.groupby(group_col)[target_col].rolling(window=window).mean().reset_index()
+
+data = {'Group': ['A', 'A', 'B', 'B'], 'Value': [10, 20, 30, 40]}
+df = pd.DataFrame(data)
+print(rolling_average(df, 'Group', 'Value', 2))
+
+Output:    Group  level_1  Value0     A        0           NaN1     A        1            15.02     B        2        NaN3     B        3       35.041.  Create a pivot table from raw transactional data.
+            Python
+
+    import pandas as pd
+
+def create_pivot_table(df, index, columns, values, aggfunc):
+    return pd.pivot_table(df, index=index, columns=columns, values=values, aggfunc=aggfunc)
+
+data = {'Category': ['A', 'A', 'B'], 'Type': ['X', 'Y', 'X'], 'Value': [10, 20, 30]}
+df = pd.DataFrame(data)
+print(create_pivot_table(df, index='Category', columns='Type', values='Value', aggfunc='sum'))
+
+Output:Type               X     YCategory            A                  10.0  20.0B                 30.0   NaN42. Merge two DataFrames using different join types (inner, left, right, outer).Merging is one of the most tested Pandas skills — interviewers want to see you understand which rows survive under each join type.
+            Python
+
+    import pandas as pd
+
+customers = pd.DataFrame({'id': [1, 2, 3], 'name': ['A', 'B', 'C']})
+orders = pd.DataFrame({'customer_id': [1, 2, 4], 'amount': [100, 200, 300]})
+
+inner = customers.merge(orders, left_on='id', right_on='customer_id', how='inner')
+left  = customers.merge(orders, left_on='id', right_on='customer_id', how='left')
+
+print(inner)
+print(left)
+
+43. Find and remove duplicate rows, and count value frequencies.
+            Python
+
+    import pandas as pd
+
+df = pd.DataFrame({'id': [1, 2, 2, 3], 'city': ['NY', 'LA', 'LA', 'NY']})
+print(df.duplicated().sum())        # count of duplicate rows
+df_clean = df.drop_duplicates()
+print(df['city'].value_counts())    # frequency of each category
+
+44. Convert a column to datetime and extract day/month/year features.Feature engineering from timestamps (day-of-week, month, is-weekend) is a near-universal step in real DS pipelines and frequently tested.
+            Python
+
+    import pandas as pd
+
+df = pd.DataFrame({'order_date': ['2024-01-15', '2024-03-22']})
+df['order_date'] = pd.to_datetime(df['order_date'])
+df['year'] = df['order_date'].dt.year
+df['month'] = df['order_date'].dt.month
+df['day_of_week'] = df['order_date'].dt.day_name()
+print(df)
+
+45. Detect and remove outliers using the IQR method.
+            Python
+
+    import pandas as pd
+
+def remove_outliers_iqr(df, column):
+    Q1, Q3 = df[column].quantile(0.25), df[column].quantile(0.75)
+    IQR = Q3 - Q1
+    lower, upper = Q1 - 1.5 * IQR, Q3 + 1.5 * IQR
+    return df[(df[column] >= lower) & (df[column] <= upper)]
+
+df = pd.DataFrame({'value': [10, 12, 11, 13, 12, 300]})
+print(remove_outliers_iqr(df, 'value'))
+
+46. Write an SQL query to retrieve all columns from a table named employees where the age is greater than 30.This query selects all columns from the employees table where the age column value is greater than 30.SELECT * FROM employees WHERE age > 30;47. Write an SQL query to join two tables: orders and customers, where the customer_id in orders matches the id in customers.TheJOIN operation merges orders and customers based on the matching customer_id and id columns.SELECT orders, customers.FROM ordersJOIN customers ON orders.customer_id = customers.id;48. Write an SQL query to find the average salary for each department in a company table, but only for departments with more than 10 employees.This query calculates the average salary by department but only for those departments that have more than 10 employees, using HAVING to filter the groups.SELECT department, AVG(salary) AS avg_salary FROM employees GROUP BY department HAVING COUNT(employee_id) > 10;49. Find all employees whose salary is greater than the company average.SELECT *FROM employeesWHERE salary > (SELECT AVG(salary) FROM employees);50. Find total sales per product.SELECT product_id, SUM(sales_amount) AS total_salesFROM salesGROUP BY product_id;51. Find the Nth highest salary in the employees table.A classic SQL interview staple, testable with LIMIT/OFFSET or a window function.-- Using LIMIT/OFFSET (find the 2nd highest salary)SELECT DISTINCT salaryFROM employeesORDER BY salary DESCLIMIT 1 OFFSET 1;-- Using a window function (works across SQL dialects that support it)SELECT salary FROM (    SELECT salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS rnk    FROM employees) rankedWHERE rnk = 2;52. Rank employees by salary within each department.RANK(), DENSE_RANK(), and ROW_NUMBER() are the most commonly tested window functions — know the difference: RANK() skips numbers after ties, DENSE_RANK() doesn't, ROW_NUMBER() never ties.SELECT    employee_id,    department,    salary,    RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS dept_rankFROM employees;53. Find duplicate rows in a table.SELECT email, COUNT(*) AS occurrencesFROM usersGROUP BY emailHAVING COUNT(*) > 1;54. Use a CTE (WITH clause) to simplify a multi-step query.CTEs make complex, multi-stage queries (aggregate → filter → join) far more readable than nested subqueries — interviewers look for this as a sign of SQL maturity.WITH dept_avg AS (    SELECT department, AVG(salary) AS avg_salary    FROM employees    GROUP BY department)SELECT e.employee_id, e.department, e.salary, d.avg_salaryFROM employees eJOIN dept_avg d ON e.department = d.departmentWHERE e.salary > d.avg_salary;55. How do you create a simple “Hello, World!” app in Flask?To create a simple Flask app, you define a route using the @app.route() decorator and return a response from a view function. This will start a basic Flask app that responds with “Hello, World!” when the root URL is accessed.
+            Python
+
+    from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return "Hello, World!"
+
+if __name__ == '__main__':
+    app.run()
+
+56. How can you return JSON data in a Flask route?To return JSON data, you can use the jsonify() function, which converts Python dictionaries to JSON format.This route will return the dictionary as a JSON response.
+            Python
+
+    from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/data')
+def data():
+    return jsonify({"name": "John", "age": 30})
+
+if __name__ == '__main__':
+    app.run()
+
+57. Can you explain how Flask handles HTTP methods like GET and POST?Flask allows you to specify which HTTP methods a route should respond to by using the methods parameter in the @app.route() decorator.By default, Flask routes respond to GET requests, but you can specify others such as POST, PUT, DELETE, etc
+            Python
+
+    from flask import request
+
+@app.route('/form', methods=['GET', 'POST'])
+def handle_form():
+    if request.method == 'POST':
+        return 'Form submitted!'
+    return 'Form not yet submitted.'
+
+58. Write a Python function to calculate the mean, median, and standard deviation of a list of numbers.we calculate the mean, median, and standard deviation of a list using Numpy's built-in functions. Now we see the implementation of this: 
+            Python
+
+    import numpy as np
+lst = [10, 20, 30, 40]
+mean = np.mean(lst)
+median = np.median(lst)
+std_dev = np.std(lst)
+print(mean)
+print(median)
+print(std_dev)
+
+Output:25.0 25.0 11.18033988749894959. Simulate a biased coin flip using a fair coin function (von Neumann's trick).Flip the fair coin twice; if the two results differ, return the first flip — otherwise repeat. This removes bias regardless of how skewed the "fair" coin actually is.
+            Python
+
+    import random
+
+def biased_coin():
+    flip1, flip2 = random.randint(0, 1), random.randint(0, 1)
+    if flip1 != flip2:
+        return flip1
+    return biased_coin()
+
+print(biased_coin())
+
+60. Calculate the confidence interval for a dataset A confidence interval gives a range that we expect to contain the true population parameter with a stated probability (e.g., 95%). It's computed from the sample mean plus/minus a margin of error based on the standard deviation and the z-score for the chosen confidence level.
+            Python
+
+    import numpy as np
+from scipy.stats import norm
+
+def confidence_interval(data, confidence=0.95):
+    mean, std = np.mean(data), np.std(data, ddof=1)
+    z = norm.ppf((1 + confidence) / 2)
+    margin_of_error = z * (std / np.sqrt(len(data)))
+    return mean - margin_of_error, mean + margin_of_error
+
+print(confidence_interval([1, 2, 3, 4, 5]))
+
+61. Implement the Chi-squared test for independence on a contingency table.
+            Python
+
+    from scipy.stats import chi2_contingency
+
+def chi_squared_test(contingency_table):
+    chi2, p, dof, expected = chi2_contingency(contingency_table)
+    return chi2, p
+
+table = [[10, 20], [20, 40]]
+print(chi_squared_test(table))
+
+62. Generate random numbers following a given probability distribution.
+            Python
+
+    import numpy as np
+
+def generate_random_numbers(elements, probabilities, size):
+    return np.random.choice(elements, size=size, p=probabilities)
+
+print(generate_random_numbers([1, 2, 3], [0.2, 0.5, 0.3], 10))
+
+63. Compute a correlation matrix and flag highly correlated features.Checking multicollinearity before modeling is one of the most common practical DS coding tasks.
+            Python
+
+    import pandas as pd
+
+df = pd.DataFrame({
+    'x1': [1, 2, 3, 4, 5],
+    'x2': [2, 4, 6, 8, 10],   # perfectly correlated with x1
+    'x3': [5, 3, 6, 2, 9]
+})
+corr_matrix = df.corr()
+high_corr = corr_matrix[(corr_matrix.abs() > 0.9) & (corr_matrix != 1.0)]
+print(corr_matrix)
+print(high_corr.dropna(how='all').dropna(axis=1, how='all'))
+
+64. Implement k-nearest neighbors (KNN) from scratch.
+            Python
+
+    import numpy as np
+from collections import Counter
+
+def knn(X_train, y_train, X_test, k):
+    distances = [np.linalg.norm(x - X_test) for x in X_train]
+    k_neighbors = [y_train[i] for i in np.argsort(distances)[:k]]
+    return Counter(k_neighbors).most_common(1)[0][0]
+
+X_train = np.array([[1, 2], [2, 3], [3, 4]])
+y_train = [0, 1, 1]
+X_test = np.array([2.5, 3])
+print(knn(X_train, y_train, X_test, 2))
+
+Output:165.Write a function to calculate the silhouette score for clustering results.
+            Python
+
+    from sklearn.metrics import silhouette_score
+from sklearn.datasets import make_blobs
+
+def calculate_silhouette_score(X, labels):
+    return silhouette_score(X, labels)
+
+X, labels = make_blobs(n_samples=10, centers=2, random_state=0)
+print(calculate_silhouette_score(X, labels))
+
+66. Implement Principal Component Analysis (PCA) to reduce dimensionality.
+            Python
+
+    import numpy as np
+
+def pca(X, n_components):
+    X_centered = X - np.mean(X, axis=0)
+    covariance_matrix = np.cov(X_centered, rowvar=False)
+    eigenvalues, eigenvectors = np.linalg.eig(covariance_matrix)
+
+    # sort eigenvectors by descending eigenvalue (the fix)
+    sorted_idx = np.argsort(eigenvalues)[::-1]
+    eigenvectors = eigenvectors[:, sorted_idx]
+
+    principal_components = eigenvectors[:, :n_components]
+    return X_centered.dot(principal_components).real
+
+X = np.array([[1, 2], [3, 4], [5, 6]])
+print(pca(X, 1))
+
+67. Split data into train/test sets and perform k-fold cross-validation.
+            Python
+
+    from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.linear_model import LogisticRegression
+from sklearn.datasets import make_classification
+
+X, y = make_classification(n_samples=200, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+model = LogisticRegression()
+scores = cross_val_score(model, X_train, y_train, cv=5)
+print("CV scores:", scores)
+print("Mean CV accuracy:", scores.mean())
+
+68.  Implement Linear Regression using Gradient Descent from scratch.This is one of the most-asked "implement an ML algorithm without sklearn" questions — it checks whether you understand the optimization loop, not just the .fit() API.
+            Python
+
+    import numpy as np
+
+def linear_regression_gd(X, y, lr=0.01, epochs=1000):
+    n, m = X.shape
+    weights, bias = np.zeros(m), 0.0
+
+    for _ in range(epochs):
+        y_pred = X.dot(weights) + bias
+        error = y_pred - y
+        dw = (2 / n) * X.T.dot(error)
+        db = (2 / n) * np.sum(error)
+        weights -= lr * dw
+        bias -= lr * db
+
+    return weights, bias
+
+X = np.array([[1], [2], [3], [4]], dtype=float)
+y = np.array([3, 5, 7, 9], dtype=float)   # y = 2x + 1
+weights, bias = linear_regression_gd(X, y)
+print("weights:", weights, "bias:", bias)
+
+69. Compute Confusion Matrix, Precision, Recall, and F1-score from scratch.
+            Python
+
+    def evaluate_classifier(y_true, y_pred):
+    tp = sum(1 for t, p in zip(y_true, y_pred) if t == 1 and p == 1)
+    tn = sum(1 for t, p in zip(y_true, y_pred) if t == 0 and p == 0)
+    fp = sum(1 for t, p in zip(y_true, y_pred) if t == 0 and p == 1)
+    fn = sum(1 for t, p in zip(y_true, y_pred) if t == 1 and p == 0)
+
+    precision = tp / (tp + fp) if (tp + fp) else 0
+    recall = tp / (tp + fn) if (tp + fn) else 0
+    f1 = 2 * precision * recall / (precision + recall) if (precision + recall) else 0
+
+    return {"confusion_matrix": {"TP": tp, "TN": tn, "FP": fp, "FN": fn},
+            "precision": precision, "recall": recall, "f1_score": f1}
+
+y_true = [1, 0, 1, 1, 0, 1]
+y_pred = [1, 0, 0, 1, 0, 1]
+print(evaluate_classifier(y_true, y_pred))
+
+70.  Implement K-Means clustering from scratch.
+            Python
+
+    import numpy as np
+
+def kmeans(X, k, iterations=100):
+    centroids = X[np.random.choice(len(X), k, replace=False)]
+
+    for _ in range(iterations):
+        distances = np.array([[np.linalg.norm(x - c) for c in centroids] for x in X])
+        labels = np.argmin(distances, axis=1)
+        new_centroids = np.array([X[labels == i].mean(axis=0) for i in range(k)])
+        if np.allclose(centroids, new_centroids):
+            break
+        centroids = new_centroids
+
+    return labels, centroids
+
+X = np.array([[1, 2], [1, 4], [1, 0], [10, 2], [10, 4], [10, 0]])
+labels, centroids = kmeans(X, k=2)
+print(labels)
+print(centroids)
+
+71.  Find the most common n-grams in a text dataset.
+            Python
+
+    from nltk import ngrams
+from collections import Counter
+
+def most_common_ngrams(text, n, top_k):
+    words = text.split()
+    n_grams = list(ngrams(words, n))
+    return Counter(n_grams).most_common(top_k)
+
+text = "data science is fun and data science is interesting"
+print(most_common_ngrams(text, 2, 2))
+
+72. Extract named entities (people, locations) from text using spaCy.
+            Python
+
+    import spacy
+
+def extract_entities(text):
+    nlp = spacy.load("en_core_web_sm")
+    doc = nlp(text)
+    return [(ent.text, ent.label_) for ent in doc.ents]
+
+print(extract_entities("Barack Obama was born in Hawaii."))
+
+73. Write a Python function to tokenize a sentence into words, removing punctuation.
+            Python
+
+    import re
+
+def simple_tokenizer(text):
+    return re.findall(r'\b\w+\b', text.lower())
+
+print(simple_tokenizer("Hello, how are you?"))
+
+74.  Implement a simple NER function using regular expressions.
+            Python
+
+    import re
+
+def simple_ner(text):
+    names = re.findall(r'\b[A-Z][a-z]*\b', text)
+    locations = re.findall(r'\b(?:New York|Paris|London)\b', text)
+    dates = re.findall(r'\b\d{1,2}/\d{1,2}/\d{4}\b', text)
+    return {'names': names, 'locations': locations, 'dates': dates}
+
+text = "John went to New York on 12/12/2020"
+entities = simple_ner(text)
+print(entities)
+
+75. Remove stopwords and compute TF-IDF vectors for a small text corpus.TF-IDF is one of the most-tested feature-extraction techniques for text data, and stopword removal is a standard preprocessing step before it.
+            Python
+
+    from sklearn.feature_extraction.text import TfidfVectorizer
+
+corpus = [
+    "data science is fun",
+    "machine learning is a part of data science"
+]
+
+vectorizer = TfidfVectorizer(stop_words='english')
+tfidf_matrix = vectorizer.fit_transform(corpus)
+
+print(vectorizer.get_feature_names_out())
+print(tfidf_matrix.toarray())
+
+76. Write a function to convert a color image into grayscale.
+            Python
+
+    import cv2
+
+def to_grayscale(image_path):
+    image = cv2.imread(image_path)
+    return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+77. Write a custom loss function that penalizes large predictions more heavily.
+            Python
+
+    import tensorflow as tf
+
+def custom_loss(y_true, y_pred):
+    mse = tf.reduce_mean(tf.square(y_true - y_pred))
+    penalty = tf.reduce_mean(tf.square(y_pred)) * 0.01
+    return mse + penalty
+
+78. Implement a custom activation function that combines ReLU and Sigmoid.
+            Python
+
+    import tensorflow as tf
+from tensorflow.keras.layers import Layer
+
+class CustomActivation(Layer):
+    def call(self, inputs):
+        return tf.nn.relu(inputs) * tf.sigmoid(inputs)
+
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(128, activation=CustomActivation(), input_shape=(784,))
+])
+
+79. Build and train a minimal CNN on image data using Keras.A hands-on end-to-end example — build a small convolutional network, compile it, and fit it — is a common follow-up once candidates show they know individual building blocks (loss functions, activations).
+            Python
+
+    import tensorflow as tf
+from tensorflow.keras import layers, models
+
+model = models.Sequential([
+    layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),
+    layers.MaxPooling2D((2, 2)),
+    layers.Flatten(),
+    layers.Dense(64, activation='relu'),
+    layers.Dense(10, activation='softmax')
+])
+
+model.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy',
+              metrics=['accuracy'])
+
+model.summary()

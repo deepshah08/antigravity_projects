@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesSaleTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython ArraysLast Updated : DiscussCommentsQuestion 1Which of the following is the correct way to create an array in Python using the array module?arr = [1, 2, 3]arr = array.array('i', [1, 2, 3])arr = array('i', [1, 2, 3])arr = {1, 2, 3}Question 2What is the output of the following code?
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython ArraysLast Updated : DiscussCommentsQuestion 1Which of the following is the correct way to create an array in Python using the array module?arr = [1, 2, 3]arr = array.array('i', [1, 2, 3])arr = array('i', [1, 2, 3])arr = {1, 2, 3}Question 2What is the output of the following code?
         Python
         
         from array import array

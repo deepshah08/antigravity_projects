@@ -1,0 +1,126 @@
+# What is Correlation Analysis? - GeeksforGeeks
+
+Most of the data in the world is interrelated by various factors. Data Science deals with understanding the relationships between different variables. This helps us learn the underlying patterns and connections that can give us valuable insights. "Correlation Analysis" is an important tool used to understand the type of relation between variables. In this article, we will learn about correlation analysis and how to implement it.
+
+Correlation AnalysisCorrelation analysis is a statistical technique for determining the strength of a link between two variables. It is used to detect patterns and trends in data and to forecast future occurrences.
+
+Consider a problem with different factors to be considered for making optimal conclusionsCorrelation explains how these variables are dependent on each other.Correlation quantifies how strong the relationship between two variables is. A higher value of the correlation coefficient implies a stronger association.The sign of the correlation coefficient indicates the direction of the relationship between variables. It can be either positive, negative, or zero.What is Correlation?The Pearson correlation coefficient is the most often used metric of correlation. It expresses the linear relationship between two variables in numerical terms. The Pearson correlation coefficient, written as "r," is as follows:
+
+r = \frac{\sum(x_i -\bar{x})(y_i -\bar{y})}{\sqrt{\sum(x_i -\bar{x})^{2}\sum(y_i -\bar{y})^{2}}}     
+
+where,
+
+r: Correlation coefficient x_i : i^th value first dataset X\bar{x} : Mean of first dataset Xy_i  : i^th value second dataset Y\bar{y}  : Mean of second dataset YThe correlation coefficient, denoted by "r",  ranges between -1 and 1. 
+
+r = -1 indicates a perfect negative correlation.r = 0 indicates no linear correlation between the variables.r = 1 indicates a perfect positive correlation.
+
+Types of Correlation There are three types of correlation:
+
+
+Correlation
+
+Positive Correlation: Positive correlation indicates that two variables have a direct relationship. As one variable increases, the other variable also increases. For example, there is a positive correlation between height and weight. As people get taller, they also tend to weigh more.Negative Correlation: Negative correlation indicates that two variables have an inverse relationship. As one variable increases, the other variable decreases. For example, there is a negative correlation between price and demand. As the price of a product increases, the demand for that product decreases.Zero Correlation: Zero correlation indicates that there is no relationship between two variables. The changes in one variable do not affect the other variable. For example, there is zero correlation between shoe size and intelligence.A positive correlation indicates that the two variables move in the same direction, while a negative correlation indicates that the two variables move in opposite directions. 
+
+The strength of the correlation is measured by a correlation coefficient, which can range from -1 to 1. A correlation coefficient of 0 indicates no correlation, while a correlation coefficient of 1 or -1 indicates a perfect correlation.
+
+Correlation CoefficientsThe different types of correlation coefficients used to measure the relation between two variables are:
+
+Correlation Coefficient 
+
+Type of Relation
+
+Levels of Measurement
+
+Data Distribution
+
+Pearson Correlation Coefficient
+
+Linear
+
+Interval/Ratio
+
+Normal distribution
+
+Spearman Rank Correlation Coefficient
+
+Non-Linear
+
+Ordinal
+
+Any distribution
+
+Kendall Tau Coefficient
+
+Non-Linear
+
+Ordinal
+
+Any distribution
+
+Phi Coefficient
+
+Non-Linear
+
+Nominal vs. Nominal (nominal with 2 categories (dichotomous))
+
+Any distribution
+
+Cramer’s V
+
+Non-Linear
+
+Two nominal variables
+
+Any distribution
+
+How to Conduct Correlation AnalysisTo conduct a correlation analysis, you will need to follow these steps:
+
+Identify Variable: Identify the two variables that we want to correlate. The variables should be quantitative, meaning that they can be represented by numbers.Collect data : Collect data on the two variables. We can collect data from a variety of sources, such as surveys, experiments, or existing records.Choose the appropriate correlation coefficient. The Pearson correlation coefficient is the most commonly used correlation coefficient, but there are other correlation coefficients that may be more appropriate for certain types of data.Calculate the correlation coefficient. We can use a statistical software package to calculate the correlation coefficient, or you can use a formula.Interpret the correlation coefficient. The correlation coefficient can be interpreted as a measure of the strength and direction of the linear relationship between the two variables.ImplementationsPython provides libraries such as "NumPy" and "Pandas" which have various methods to ease various calculations, including correlation analysis.
+
+Using NumPy
+
+            
+            Python3
+
+    import numpy as np
+
+# Create sample data
+x = np.array([1, 2, 3, 4, 5])
+y = np.array([5, 7, 3, 9, 1])
+
+# Calculate correlation coefficient
+correlation_coefficient = np.corrcoef(x, y)
+
+print(&quot;Correlation Coefficient:&quot;, correlation_coefficient)
+
+
+Output:
+
+Correlation Coefficient: [[ 1.  -0.3]
+ [-0.3  1. ]]
+Using pandas
+
+            
+            Python3
+
+    import pandas as pd
+
+# Create a DataFrame with sample data
+data = pd.DataFrame({'X': [1, 2, 3, 4, 5], 'Y': [5, 7, 3, 9, 1]})
+
+# Calculate correlation coefficient
+correlation_coefficient = data['X'].corr(data['Y'])
+
+print(&quot;Correlation Coefficient:&quot;, correlation_coefficient)
+
+
+Output:
+
+Correlation Coefficient: -0.3
+Interpretation of Correlation coefficientsPerfect: 0.80 to 1.00Strong: 0.50 to 0.79Moderate: 0.30 to 0.49Weak: 0.00 to 0.29Value greater than 0.7 is considered a strong correlation between variables.
+
+Applications of Correlation AnalysisCorrelation Analysis is an important tool that helps in better decision-making, enhances predictions and enables better optimization techniques across different fields. Predictions or decision making dwell on the relation between the different variables to produce better results, which can be achieved by correlation analysis.
+
+The various fields in which it can be used are:
+
+Economics and Finance : Help in analyzing the economic trends by understanding the relations between supply and demand.Business Analytics : Helps in making better decisions for the company and provides valuable insights.Market Research and Promotions : Helps in creating better marketing strategies by analyzing the relation between recent market trends and customer behavior.Medical Research : Correlation can be employed in Healthcare so as to better understand the relation between different symptoms of diseases and understand genetical diseases better.Weather Forecasts: Analyzing the correlation between different variables so as to predict weather.Better Customer Service : Helps in better understand the customers and significantly increases the quality of customer service.Environmental Analysis: help create better environmental policies by understanding various environmental factors.Advantages of Correlation AnalysisCorrelation analysis helps us understand how two variables affect each other or are related to each other.They are simple and very easy to interpret.Aids in decision-making process in business, healthcare, marketing, etcHelps in feature selection in machine learning.Gives a measure of the relation between two variables.Disadvantages of Correlation AnalysisCorrelation does not imply causation, which means a variable may not be the cause for the other variable even though they are correlated.If outliers are not dealt with well they may cause errors.It works well only on bivariate relations and may not produce accurate results for multivariate relations.Complex relations can not be analyzed accurately.

@@ -172,7 +172,7 @@ function lis(arr) {
 let arr = [ 3, 10, 2, 1, 20];
 console.log(lis(arr));
 
-Output4[Better Approach - 1] Using Memoization - O(n^2) Time and O(n) SpaceIn the recursive solution, each index tries to compute the LIS ending at that position by checking all smaller indices. However, many of these smaller-index calls overlap.For example, while solving LIS at idx = 7, you may again need the LIS at indices 3, 5, or 6 - and these same indices might also be needed when solving LIS for other positions. This leads to repeated computation of the same subproblems.To avoid this, we use a dp array where dp[idx] stores the LIS length ending at index idx, and reuse it whenever needed later.This memoization ensures that each index’s LIS is computed only once, reducing the overall time complexity from exponential to quadratic.
+Output3[Better Approach - 1] Using Memoization - O(n^2) Time and O(n) SpaceIn the recursive solution, many smaller-index calls overlap. For example, while solving LIS at idx = 7, you may again need the LIS at indices 3, 5, or 6. To avoid re-computations, we use a dp array where dp[idx] stores the LIS length ending at index idx, and reuse it whenever needed later.Memoization ensures that each index’s LIS is computed only once, reducing the overall time complexity from exponential to quadratic.
             C++
 
     #include <iostream>
@@ -405,7 +405,7 @@ function lis(arr) {
 let arr = [3, 10, 2, 1, 20];
 console.log(lis(arr));
 
-Output4[Better Approach - 2] Using DP (Bottom Up Tabulation) - O(n^2) Time and O(n) SpaceThe idea is to maintain a 1D array lis[], where lis[i] stores the length of the longest increasing subsequence that ends at index i. Initially, each element in lis[] is set to 1, as the smallest possible subsequence for any element is the element itself.The algorithm then iterates over each element of the array. For each element arr[i], it checks all previous elements arr[0] to arr[i-1]. If arr[i] is greater than arr[prev] (ensuring the subsequence is increasing), it updates lis[i] to the maximum of its current value or lis[prev] + 1, indicating that we can extend the subsequence ending at arr[prev] by including arr[i].Finally, the length of the longest increasing subsequence is the maximum value in the lis[] array.In this approach, we build the solution from smaller subproblems to larger ones. We start by assuming that the LIS ending at each index is 1 (every single element is an LIS of length 1). Then, for each index i, we look at all previous indices prev < i. If arr[prev] < arr[i], it means the subsequence ending at prev can be extended by arr[i]. So we update lis[i] using the best LIS found so far for all valid previous positions.By the time we reach the end of the array, lis[i] already contains the correct LIS ending at i, because all smaller subproblems (earlier indices) have been computed. Finally, the overall LIS is the maximum value in the lis array.
+Output3[Better Approach - 2] Using DP (Bottom Up Tabulation) - O(n^2) Time and O(n) SpaceThe idea is to maintain a 1D array lis[], where lis[i] stores the length of the longest increasing subsequence that ends at index i. Initially, each element in lis[] is set to 1, as the smallest possible subsequence for any element is the element itself.For each element arr[i], we check all previous elements arr[0] to arr[i-1]. If arr[i] is greater than arr[prev] (ensuring the subsequence is increasing), we update lis[i] to the maximum of its current value or lis[prev] + 1, indicating that we can extend the subsequence ending at arr[prev] by including arr[i].By the time we reach the end of the array, lis[i] already contains the correct LIS ending at i, because all smaller subproblems (earlier indices) have been computed. Finally, the overall LIS is the maximum value in the lis array.
             C++
 
     #include <vector>
@@ -571,7 +571,7 @@ class GFG {
 let arr = [3, 10, 2, 1, 20];
 console.log(lis(arr));
 
-Output4
+Output3
 [Expected Approach] Using Binary Search - O(n Log n) Time and O(n) SpaceThe idea is to simulate the process of finding a subsequence by maintaining a list of "buckets" where each bucket represents a valid subsequence. Initially, start with an empty list and iterate through the input vector arr from left to right.For each number in arr, perform the following steps:If the number is greater than the last element of the last bucket (i.e., the largest element in the current subsequence), we append the number to the end of the list. This indicates that we have found a longer subsequence.Otherwise, perform a binary search on the list of buckets to find the smallest element that is greater than or equal to the current number. This step helps maintain the property of increasing elements in the buckets.Once find the position to update, replace that element with the current number. This keeps the buckets sorted and ensures that we have the potential for a longer subsequence in the future.Note: The resulting array only stores the length of longest increasing subsequence, and not the actual subsequence. Go through the illustration to clear this doubt.Illustration:Example: arr = [3, 10, 2, 1, 20], why keeping 1 (the smallest value) helps?Use binary search to find the position where new element is to be inserted.First two elements: buckets = [3, 10]arr[2] = 2 buckets = [2, 10] -> replaces 3arr[3] = 1 buckets = [1, 10] -> 1 replaces 2 as it's smallerarr[4] = 20 buckets = [1, 10, 20] -> 20 is appended as it's largerThis shows that by replacing 3 with 1, we created the opportunity to find the subsequence [1, 10, 20], which is longer than our initial [3, 10]. If we had kept [3, 10], we wouldn't have been able to add 2 to our sequence!The key insight is that keeping smaller values at each position:Maintains the same length informationCreates more opportunities for future elements to form longer increasing subsequences
             C++
 
@@ -869,5 +869,5 @@ class GFG {
 const arr = [3, 10, 2, 1, 20];
 console.log(lengthOfLIS(arr));
 
-Output4
+Output3
 Problems based on LISLIS on Circular Array Printing LISCount LISsMax Sum SubsequenceLongest Arithmetic SubsequenceLongest Bitonic SubsequenceLongest Alternating SubsequenceLongest Common Increasing Subsequence Building BridgesBox StackingMore Problems on LIS

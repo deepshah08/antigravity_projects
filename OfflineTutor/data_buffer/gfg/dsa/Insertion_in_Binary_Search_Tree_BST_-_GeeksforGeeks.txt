@@ -1,218 +1,90 @@
 # Insertion in Binary Search Tree (BST) - GeeksforGeeks
 
-Given the root of a Binary Search Tree (BST) and an integer key, insert a new node with value key into the BST. Return the root of the modified tree after the insertion.Note:  All the nodes have distinct values in the BST and the new value to be inserted is not present in the BST.Example:Input: root = [2, 1, 3], key = 4 Output: [2, 1, 3, N, N, N, 4]Explanation: After inserting the node 4, the new tree will be [2, 1, 3, N, N, N, 4]. Input: root = [2, 1, 3, N, N, N, 6], key = 4 Output: [2, 1, 3, N, N, N, 4, N, 6]Explanation: After inserting the node 4, the new tree will be [2, 1, 3, N, N, N, 4, N, 6]. Try It YourselfTable of Content[Naive Approach] Recursive Insertion - O(h) Time and O(h) Space[Expected Approach] Iterative Traversal - O(h) Time and O(1) Space[Naive Approach] Recursive Insertion - O(h) Time and O(h) SpaceThe idea is to insert the new key at a position that preserves the Binary Search Tree (BST) property. Starting from the root, compare the key with the current node. If the key is smaller, move to the left child; otherwise, move to the right child. Continue this process until a NULL child is reached, then insert the new node at that position as a leaf node. This ensures that the BST property remains valid after the insertion.
+Given a root of Binary Search Tree (BST) and an integer key, insert a new node with value key into the BST. Return the root of the modified tree after the insertion.Note: If the key is already present in the BST, return the root.Examples:Input: root = [2, 1, 3], key = 4 Output: [2, 1, 3, N, N, N, 4]Explanation: After inserting the node 4, the new tree will be [2, 1, 3, N, N, N, 4]. Input: root = [2, 1, 3, N, N, N, 6], key = 4 Output: [2, 1, 3, N, N, N, 6, 4]Explanation: After inserting the node 4, the new tree will be [2, 1, 3, N, N, N, 6, 4]. Try It YourselfTable of Content[Naive Approach] Using Recursive Insertion - O(h) Time and O(h) Space[Expected Approach] Using Iterative Traversal - O(h) Time and O(1) Space[Naive Approach] Using Recursive Insertion - O(h) Time and O(h) SpaceThe idea is to compare the key with the current node and based on comparison result, recursively move left or right until an empty position is found.Working of Approach:Start from the root node and compare the key with the current node's value.If the key is already present, return the current root without inserting a duplicate.If the key is smaller, recursively insert it into the left subtree.Otherwise, recursively insert it into the right subtree.When a nullptr position is reached, create and insert the new node at that position.
             C++
 
     #include <iostream>
 #include <queue>
-#include <vector>
 using namespace std;
 
-// Structure for a Binary Search Tree node
-class Node {
-public:
+class Node
+{
+  public:
     int data;
-    Node* left;
-    Node* right;
+    Node *left;
+    Node *right;
 
-    Node(int x) {
-        data = x;
+    Node(int val)
+    {
+        data = val;
         left = right = nullptr;
     }
 };
 
-// Insert a node into the BST
-Node* insert(Node* root, int key) {
-
-    // If tree is empty, create a new node
-    if (root == nullptr) {
+Node *insert(Node *root, int key)
+{
+    // Insert the new node at an empty position
+    if (root == nullptr)
         return new Node(key);
-    }
+
+    // If key is already present, do not insert it again
+    if (key == root->data)
+        return root;
 
     // Insert into the left subtree
-    if (key < root->data) {
+    if (key < root->data)
         root->left = insert(root->left, key);
-    }
 
     // Insert into the right subtree
-    else {
+    else
         root->right = insert(root->right, key);
-    }
 
     return root;
 }
 
-// Print the tree in level order
-void printTree(Node* root) {
-    if (root == nullptr) {
-        cout << "[]";
-        return;
-    }
+int main()
+{
 
-    vector<string> ans;
-    queue<Node*> q;
+    // Create the BST
+    Node *root = new Node(2);
+    root->left = new Node(1);
+    root->right = new Node(3);
+    root->right->right = new Node(6);
+
+    int key = 4;
+
+    root = insert(root, key);
+
+    // Print level order
+    queue<Node *> q;
     q.push(root);
 
-    while (!q.empty()) {
-        Node* curr = q.front();
+    cout << "[";
+
+    bool first = true;
+
+    while (!q.empty())
+    {
+        Node *curr = q.front();
         q.pop();
 
-        if (curr == nullptr) {
-            ans.push_back("N");
-        } else {
-            ans.push_back(to_string(curr->data));
+        if (!first)
+            cout << ", ";
+        first = false;
+
+        if (curr)
+        {
+            cout << curr->data;
             q.push(curr->left);
             q.push(curr->right);
         }
-    }
-
-    // Remove trailing N's
-    while (!ans.empty() && ans.back() == "N") {
-        ans.pop_back();
-    }
-
-    cout << "[";
-    for (int i = 0; i < ans.size(); i++) {
-        cout << ans[i];
-        if (i + 1 < ans.size()) {
-            cout << ", ";
+        else
+        {
+            cout << "N";
         }
     }
+
     cout << "]";
-}
-
-int main() {
-
-    // Create the BST
-    //        22
-    //       /  \
-    //     12    30
-    //    /  \
-    //   8    20
-    //          \
-    //           21
-
-    Node* root = new Node(22);
-    root->left = new Node(12);
-    root->right = new Node(30);
-    root->left->left = new Node(8);
-    root->left->right = new Node(20);
-    root->left->right->right = new Node(21);
-
-    int key = 15;
-
-    root = insert(root, key);
-
-    printTree(root);
-
-    return 0;
-}
-
-
-            C
-
-    #include <stdio.h>
-#include <stdlib.h>
-
-// Structure for a Binary Search Tree node
-struct Node {
-    int data;
-    struct Node *left;
-    struct Node *right;
-};
-
-struct Node* createNode(int x) {
-    struct Node* temp = (struct Node*)malloc(sizeof(struct Node));
-    temp->data = x;
-    temp->left = NULL;
-    temp->right = NULL;
-    return temp;
-}
-
-// Insert a node into the BST
-struct Node* insert(struct Node* root, int key) {
-
-    // If tree is empty, create a new node
-    if (root == NULL) {
-        return createNode(key);
-    }
-
-    // Insert into the left subtree
-    if (key < root->data) {
-        root->left = insert(root->left, key);
-    }
-
-    // Insert into the right subtree
-    else {
-        root->right = insert(root->right, key);
-    }
-
-    return root;
-}
-
-// Print the tree in level order
-void printTree(struct Node* root) {
-    if (root == NULL) {
-        printf("[]");
-        return;
-    }
-
-    struct Node* queue[100];
-    char ans[100][10];
-    int front = 0, rear = 0, size = 0;
-
-    queue[rear++] = root;
-
-    while (front < rear) {
-        struct Node* curr = queue[front++];
-
-        if (curr == NULL) {
-            sprintf(ans[size++], "N");
-        } else {
-            sprintf(ans[size++], "%d", curr->data);
-            queue[rear++] = curr->left;
-            queue[rear++] = curr->right;
-        }
-    }
-
-    // Remove trailing N's
-    while (size > 0 && strcmp(ans[size - 1], "N") == 0) {
-        size--;
-    }
-
-    printf("[");
-    for (int i = 0; i < size; i++) {
-        printf("%s", ans[i]);
-        if (i + 1 < size) {
-            printf(", ");
-        }
-    }
-    printf("]");
-}
-
-int main() {
-
-    // Create the BST
-    //        22
-    //       /  \
-    //     12    30
-    //    /  \
-    //   8    20
-    //          \
-    //           21
-
-    struct Node* root = createNode(22);
-    root->left = createNode(12);
-    root->right = createNode(30);
-    root->left->left = createNode(8);
-    root->left->right = createNode(20);
-    root->left->right->right = createNode(21);
-
-    int key = 15;
-
-    root = insert(root, key);
-
-    printTree(root);
 
     return 0;
 }
@@ -220,108 +92,82 @@ int main() {
 
             Java
 
-    import java.util.LinkedList;
-import java.util.Queue;
-import java.util.List;
-import java.util.ArrayList;
+    import java.util.*;
 
-// Structure for a Binary Search Tree node
 class Node {
     int data;
     Node left;
     Node right;
 
-    Node(int x) {
-        data = x;
-        left = null;
-        right = null;
+    Node(int val)
+    {
+        data = val;
+        left = right = null;
     }
 }
 
-public class GFG {
+class GFG {
 
-    // Insert a node into the BST
-    static Node insert(Node root, int key) {
-
-        // If tree is empty, create a new node
-        if (root == null) {
+    static Node insert(Node root, int key)
+    {
+        // Insert the new node at an empty position
+        if (root == null)
             return new Node(key);
-        }
+
+        // If key is already present, do not insert it again
+        if (key == root.data)
+            return root;
 
         // Insert into the left subtree
-        if (key < root.data) {
+        if (key < root.data)
             root.left = insert(root.left, key);
-        }
 
         // Insert into the right subtree
-        else {
+        else
             root.right = insert(root.right, key);
-        }
 
         return root;
     }
 
-    // Print the tree in level order
-    static void printTree(Node root) {
-        if (root == null) {
-            System.out.print("[]");
-            return;
-        }
+    public static void main(String[] args)
+    {
 
-        ArrayList<String> ans = new ArrayList<>();
+        // Create the BST
+        Node root = new Node(2);
+        root.left = new Node(1);
+        root.right = new Node(3);
+        root.right.right = new Node(6);
+
+        int key = 4;
+
+        root = insert(root, key);
+
+        // Print level order
         Queue<Node> q = new LinkedList<>();
         q.offer(root);
+
+        System.out.print("[");
+
+        boolean first = true;
 
         while (!q.isEmpty()) {
             Node curr = q.poll();
 
-            if (curr == null) {
-                ans.add("N");
-            } else {
-                ans.add(String.valueOf(curr.data));
+            if (!first)
+                System.out.print(", ");
+            first = false;
+
+            if (curr != null) {
+                System.out.print(curr.data);
                 q.offer(curr.left);
                 q.offer(curr.right);
             }
-        }
-
-        // Remove trailing N's
-        while (!ans.isEmpty() && ans.get(ans.size() - 1).equals("N")) {
-            ans.remove(ans.size() - 1);
-        }
-
-        System.out.print("[");
-        for (int i = 0; i < ans.size(); i++) {
-            System.out.print(ans.get(i));
-            if (i + 1 < ans.size()) {
-                System.out.print(", ");
+            else {
+                System.out.print("N");
             }
         }
+
         System.out.print("]");
-    }
-
-    public static void main(String[] args) {
-
-        // Create the BST
-        //        22
-        //       /  \
-        //     12    30
-        //    /  \
-        //   8    20
-        //          \
-        //           21
-
-        Node root = new Node(22);
-        root.left = new Node(12);
-        root.right = new Node(30);
-        root.left.left = new Node(8);
-        root.left.right = new Node(20);
-        root.left.right.right = new Node(21);
-
-        int key = 15;
-
-        root = insert(root, key);
-
-        printTree(root);
     }
 }
 
@@ -330,19 +176,23 @@ public class GFG {
 
     from collections import deque
 
-# Structure for a Binary Search Tree node
+
 class Node:
-    def __init__(self, x):
-        self.data = x
+    def __init__(self, val):
+        self.data = val
         self.left = None
         self.right = None
 
-# Insert a node into the BST
-def insert(root, key):
 
-    # If tree is empty, create a new node
+def insert(root, key):
+    
+    # Insert the new node at an empty position
     if root is None:
         return Node(key)
+
+    # If key is already present, do not insert it again
+    if key == root.data:
+        return root
 
     # Insert into the left subtree
     if key < root.data:
@@ -354,54 +204,39 @@ def insert(root, key):
 
     return root
 
-# Print the tree in level order
-def printTree(root):
-    if root is None:
-        print("[]")
-        return
 
-    ans = []
+if __name__ == "__main__":
+    # Create the BST
+    root = Node(2)
+    root.left = Node(1)
+    root.right = Node(3)
+    root.right.right = Node(6)
+
+    key = 4
+
+    root = insert(root, key)
+
+    # Print level order
     q = deque([root])
+
+    print("[", end="")
+    first = True
 
     while q:
         curr = q.popleft()
 
-        if curr is None:
-            ans.append("N")
-        else:
-            ans.append(str(curr.data))
+        if not first:
+            print(", ", end="")
+        first = False
+
+        if curr:
+            print(curr.data, end="")
             q.append(curr.left)
             q.append(curr.right)
+        else:
+            print("N", end="")
 
-    # Remove trailing N's
-    while ans and ans[-1] == "N":
-        ans.pop()
-
-    print("[" + ", ".join(ans) + "]")
-
-if __name__ == "__main__":
-
-    # Create the BST
-    #        22
-    #       /  \
-    #     12    30
-    #    /  \
-    #   8    20
-    #          \
-    #           21
-
-    root = Node(22)
-    root.left = Node(12)
-    root.right = Node(30)
-    root.left.left = Node(8)
-    root.left.right = Node(20)
-    root.left.right.right = Node(21)
-
-    key = 15
-
-    root = insert(root, key)
-
-    printTree(root)
+    print("]")
 
 
             C#
@@ -409,432 +244,260 @@ if __name__ == "__main__":
     using System;
 using System.Collections.Generic;
 
-// Structure for a Binary Search Tree node
 class Node {
     public int data;
     public Node left;
     public Node right;
 
-    public Node(int x) {
-        data = x;
-        left = null;
-        right = null;
+    public Node(int val)
+    {
+        data = val;
+        left = right = null;
     }
 }
 
 class GFG {
-
-    // Insert a node into the BST
-    static Node insert(Node root, int key) {
-
-        // If tree is empty, create a new node
-        if (root == null) {
+    static Node insert(Node root, int key)
+    {
+        // Insert the new node at an empty position
+        if (root == null)
             return new Node(key);
-        }
+
+        // If key is already present, do not insert it again
+        if (key == root.data)
+            return root;
 
         // Insert into the left subtree
-        if (key < root.data) {
+        if (key < root.data)
             root.left = insert(root.left, key);
-        }
 
         // Insert into the right subtree
-        else {
+        else
             root.right = insert(root.right, key);
-        }
 
         return root;
     }
 
-    // Print the tree in level order
-    static void printTree(Node root) {
-        if (root == null) {
-            Console.Write("[]");
-            return;
-        }
+    public static void Main()
+    {
+        // Create the BST
+        Node root = new Node(2);
+        root.left = new Node(1);
+        root.right = new Node(3);
+        root.right.right = new Node(6);
 
-        List<string> ans = new List<string>();
+        int key = 4;
+
+        root = insert(root, key);
+
+        // Print level order
         Queue<Node> q = new Queue<Node>();
         q.Enqueue(root);
+
+        Console.Write("[");
+
+        bool first = true;
 
         while (q.Count > 0) {
             Node curr = q.Dequeue();
 
-            if (curr == null) {
-                ans.Add("N");
-            } else {
-                ans.Add(curr.data.ToString());
+            if (!first)
+                Console.Write(", ");
+            first = false;
+
+            if (curr != null) {
+                Console.Write(curr.data);
                 q.Enqueue(curr.left);
                 q.Enqueue(curr.right);
             }
-        }
-
-        // Remove trailing N's
-        while (ans.Count > 0 && ans[ans.Count - 1] == "N") {
-            ans.RemoveAt(ans.Count - 1);
-        }
-
-        Console.Write("[");
-        for (int i = 0; i < ans.Count; i++) {
-            Console.Write(ans[i]);
-            if (i + 1 < ans.Count) {
-                Console.Write(", ");
+            else {
+                Console.Write("N");
             }
         }
+
         Console.Write("]");
-    }
-
-    static void Main() {
-
-        // Create the BST
-        //        22
-        //       /  \
-        //     12    30
-        //    /  \
-        //   8    20
-        //          \
-        //           21
-
-        Node root = new Node(22);
-        root.left = new Node(12);
-        root.right = new Node(30);
-        root.left.left = new Node(8);
-        root.left.right = new Node(20);
-        root.left.right.right = new Node(21);
-
-        int key = 15;
-
-        root = insert(root, key);
-
-        printTree(root);
     }
 }
 
 
-            Javascript
+            JavaScript
 
-    // Structure for a Binary Search Tree node
-class Node {
-    constructor(x) {
-        this.data = x;
+    class Node {
+    constructor(val)
+    {
+        this.data = val;
         this.left = null;
         this.right = null;
     }
 }
 
-// Insert a node into the BST
-function insert(root, key) {
-
-    // If tree is empty, create a new node
-    if (root === null) {
+function insert(root, key)
+{
+    // Insert the new node at an empty position
+    if (root === null)
         return new Node(key);
-    }
+
+    // If key is already present, do not insert it again
+    if (key === root.data)
+        return root;
 
     // Insert into the left subtree
-    if (key < root.data) {
+    if (key < root.data)
         root.left = insert(root.left, key);
-    }
 
     // Insert into the right subtree
-    else {
+    else
         root.right = insert(root.right, key);
-    }
 
     return root;
 }
 
-// Print the tree in level order
-function printTree(root) {
-    if (root === null) {
-        process.stdout.write("[]");
-        return;
-    }
-
-    const ans = [];
-    const q = [root];
-
-    while (q.length > 0) {
-        const curr = q.shift();
-
-        if (curr === null) {
-            ans.push("N");
-        } else {
-            ans.push(curr.data.toString());
-            q.push(curr.left);
-            q.push(curr.right);
-        }
-    }
-
-    // Remove trailing N's
-    while (ans.length > 0 && ans[ans.length - 1] === "N") {
-        ans.pop();
-    }
-
-    process.stdout.write("[" + ans.join(", ") + "]");
-}
-
-// Driver code
+// Driver Code
 
 // Create the BST
-//        22
-//       /  \
-//     12    30
-//    /  \
-//   8    20
-//          \
-//           21
+let root = new Node(2);
+root.left = new Node(1);
+root.right = new Node(3);
+root.right.right = new Node(6);
 
-let root = new Node(22);
-root.left = new Node(12);
-root.right = new Node(30);
-root.left.left = new Node(8);
-root.left.right = new Node(20);
-root.left.right.right = new Node(21);
-
-let key = 15;
+const key = 4;
 
 root = insert(root, key);
 
-printTree(root);
+// Print level order
+const q = [ root ];
+let front = 0;
 
-Output[22, 12, 30, 8, 20, N, N, N, N, 15, 21][Expected Approach] Iterative Traversal - O(h) Time and O(1) SpaceThe idea is to iteratively traverse the BST to find the correct position for the new key. Starting from the root, move left if the key is smaller; otherwise, move right. When a NULL child is found, insert the new node there as a leaf node, preserving the BST property.
+let res = [];
+let first = true;
+
+while (front < q.length) {
+    const curr = q[front++];
+
+    if (!first)
+        res.push(", ");
+    first = false;
+
+    if (curr !== null) {
+        res.push(curr.data);
+        q.push(curr.left);
+        q.push(curr.right);
+    }
+    else {
+        res.push("N");
+    }
+}
+
+console.log("[" + res.join("") + "]");
+
+Output[2, 1, 3, N, N, N, 6, 4, N, N, N][Expected Approach] Using Iterative Traversal - O(h) Time and O(1) SpaceThe idea is to compare the key with the current node and based on comparison result, iteratively move left or right until an empty position is found.Working of Approach:Create a new node temp containing the given key.If the BST is empty, return temp as the root.Otherwise, start from the root and traverse the BST.If the key is already present, return the root without inserting a duplicate.If the key is smaller than the current node, move to the left subtree.If the key is greater, move to the right subtree.When an appropriate empty position is found, attach the new node as either the left or right child.Let us understand with an example:Input: root = [2, 1, 3, N, N, N, 6], key = 4 Start with root = 2 and key = 4.Since 4 > 2, move to the right child 3.Since 4 > 3, move to the right child 6.Since 4 < 6 and the left child of 6 is NULL, stop the traversal.Insert 4 as the left child of 6.The final BST in level-order representation is [2, 1, 3, N, N, N, 6, 4]. 
             C++
 
     #include <iostream>
 #include <queue>
-#include <vector>
 using namespace std;
 
-// Structure for a Binary Search Tree node
-class Node {
-public:
+class Node
+{
+  public:
     int data;
-    Node* left;
-    Node* right;
+    Node *left;
+    Node *right;
 
-    Node(int x) {
-        data = x;
+    Node(int val)
+    {
+        data = val;
         left = right = nullptr;
     }
 };
 
-// Insert a node into the BST
-Node* insert(Node* root, int key) {
-    Node* temp = new Node(key);
+Node *insert(Node *root, int key)
+{
+    Node *temp = new Node(key);
 
     // If tree is empty
-    if (root == nullptr) {
+    if (root == nullptr)
+    {
         return temp;
     }
 
     // Find the node who is going to
     // have the new node as its child
-    Node* curr = root;
-    while (curr != nullptr) {
-        if (curr->data > key && curr->left != nullptr) {
-            curr = curr->left;
-        } else if (curr->data < key && curr->right != nullptr) {
-            curr = curr->right;
-        } else {
-            break;
+    Node *curr = root;
+    while (curr != nullptr)
+    {
+        if (curr->data == key)
+        {
+            return root;
         }
+        else if (curr->data > key && curr->left != nullptr)
+        {
+            curr = curr->left;
+        }
+        else if (curr->data < key && curr->right != nullptr)
+        {
+            curr = curr->right;
+        }
+        else
+            break;
     }
 
     // If key is smaller, make it left
     // child, else right child
-    if (curr->data > key) {
+    if (curr->data > key)
+    {
         curr->left = temp;
-    } else {
+    }
+    else
+    {
         curr->right = temp;
     }
-
     return root;
 }
 
-// Print the tree in level order
-void printTree(Node* root) {
-    if (root == nullptr) {
-        cout << "[]";
-        return;
-    }
+int main()
+{
 
-    vector<string> ans;
-    queue<Node*> q;
+    // Create the BST
+    Node *root = new Node(2);
+    root->left = new Node(1);
+    root->right = new Node(3);
+    root->right->right = new Node(6);
+
+    int key = 4;
+
+    root = insert(root, key);
+
+    // Print level order
+    queue<Node *> q;
     q.push(root);
 
-    while (!q.empty()) {
-        Node* curr = q.front();
+    cout << "[";
+
+    bool first = true;
+
+    while (!q.empty())
+    {
+        Node *curr = q.front();
         q.pop();
 
-        if (curr == nullptr) {
-            ans.push_back("N");
-        } else {
-            ans.push_back(to_string(curr->data));
+        if (!first)
+            cout << ", ";
+        first = false;
+
+        if (curr)
+        {
+            cout << curr->data;
             q.push(curr->left);
             q.push(curr->right);
         }
-    }
-
-    // Remove trailing N's
-    while (!ans.empty() && ans.back() == "N") {
-        ans.pop_back();
-    }
-
-    cout << "[";
-    for (int i = 0; i < ans.size(); i++) {
-        cout << ans[i];
-        if (i + 1 < ans.size()) {
-            cout << ", ";
+        else
+        {
+            cout << "N";
         }
     }
+
     cout << "]";
-}
-
-int main() {
-
-    // Create the BST
-    //        22
-    //       /  \
-    //     12    30
-    //    /  \
-    //   8    20
-    //          \
-    //           21
-
-    Node* root = new Node(22);
-    root->left = new Node(12);
-    root->right = new Node(30);
-    root->left->left = new Node(8);
-    root->left->right = new Node(20);
-    root->left->right->right = new Node(21);
-
-    int key = 15;
-
-    root = insert(root, key);
-
-    printTree(root);
-
-    return 0;
-}
-
-
-            C
-
-    #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-// Structure for a Binary Search Tree node
-struct Node {
-    int data;
-    struct Node *left;
-    struct Node *right;
-};
-
-struct Node* createNode(int x) {
-    struct Node* temp = (struct Node*)malloc(sizeof(struct Node));
-    temp->data = x;
-    temp->left = NULL;
-    temp->right = NULL;
-    return temp;
-}
-
-// Insert a node into the BST
-struct Node* insert(struct Node* root, int key) {
-    struct Node* temp = createNode(key);
-
-    // If tree is empty
-    if (root == NULL) {
-        return temp;
-    }
-
-    // Find the node who is going to
-    // have the new node as its child
-    struct Node* curr = root;
-    while (curr != NULL) {
-        if (curr->data > key && curr->left != NULL) {
-            curr = curr->left;
-        } else if (curr->data < key && curr->right != NULL) {
-            curr = curr->right;
-        } else {
-            break;
-        }
-    }
-
-    // If key is smaller, make it left
-    // child, else right child
-    if (curr->data > key) {
-        curr->left = temp;
-    } else {
-        curr->right = temp;
-    }
-
-    return root;
-}
-
-// Print the tree in level order
-void printTree(struct Node* root) {
-    if (root == NULL) {
-        printf("[]");
-        return;
-    }
-
-    struct Node* q[100];
-    char ans[100][10];
-    int front = 0, rear = 0;
-    int size = 0;
-
-    q[rear++] = root;
-
-    while (front < rear) {
-        struct Node* curr = q[front++];
-
-        if (curr == NULL) {
-            strcpy(ans[size++], "N");
-        } else {
-            sprintf(ans[size++], "%d", curr->data);
-            q[rear++] = curr->left;
-            q[rear++] = curr->right;
-        }
-    }
-
-    // Remove trailing N's
-    while (size > 0 && strcmp(ans[size - 1], "N") == 0) {
-        size--;
-    }
-
-    printf("[");
-    for (int i = 0; i < size; i++) {
-        printf("%s", ans[i]);
-        if (i + 1 < size) {
-            printf(", ");
-        }
-    }
-    printf("]");
-}
-
-int main() {
-
-    // Create the BST
-    //        22
-    //       /  \
-    //     12    30
-    //    /  \
-    //   8    20
-    //          \
-    //           21
-
-    struct Node* root = createNode(22);
-    root->left = createNode(12);
-    root->right = createNode(30);
-    root->left->left = createNode(8);
-    root->left->right = createNode(20);
-    root->left->right->right = createNode(21);
-
-    int key = 15;
-
-    root = insert(root, key);
-
-    printTree(root);
 
     return 0;
 }
@@ -842,27 +505,24 @@ int main() {
 
             Java
 
-    import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
+    import java.util.*;
 
-// Structure for a Binary Search Tree node
 class Node {
     int data;
     Node left;
     Node right;
 
-    Node(int x) {
-        data = x;
-        left = null;
-        right = null;
+    Node(int val)
+    {
+        data = val;
+        left = right = null;
     }
 }
 
-public class Main {
+class GFG {
 
-    // Insert a node into the BST
-    static Node insert(Node root, int key) {
+    static Node insert(Node root, int key)
+    {
         Node temp = new Node(key);
 
         // If tree is empty
@@ -873,12 +533,19 @@ public class Main {
         // Find the node who is going to
         // have the new node as its child
         Node curr = root;
+
         while (curr != null) {
-            if (curr.data > key && curr.left != null) {
+            if (curr.data == key) {
+                return root;
+            }
+            else if (curr.data > key && curr.left != null) {
                 curr = curr.left;
-            } else if (curr.data < key && curr.right != null) {
+            }
+            else if (curr.data < key
+                     && curr.right != null) {
                 curr = curr.right;
-            } else {
+            }
+            else {
                 break;
             }
         }
@@ -887,74 +554,54 @@ public class Main {
         // child, else right child
         if (curr.data > key) {
             curr.left = temp;
-        } else {
+        }
+        else {
             curr.right = temp;
         }
 
         return root;
     }
 
-    // Print the tree in level order
-    static void printTree(Node root) {
-        if (root == null) {
-            System.out.print("[]");
-            return;
-        }
+    public static void main(String[] args)
+    {
 
-        ArrayList<String> ans = new ArrayList<>();
+        // Create the BST
+        Node root = new Node(2);
+        root.left = new Node(1);
+        root.right = new Node(3);
+        root.right.right = new Node(6);
+
+        int key = 4;
+
+        root = insert(root, key);
+
+        // Print level order
         Queue<Node> q = new LinkedList<>();
         q.offer(root);
+
+        System.out.print("[");
+
+        boolean first = true;
 
         while (!q.isEmpty()) {
             Node curr = q.poll();
 
-            if (curr == null) {
-                ans.add("N");
-            } else {
-                ans.add(String.valueOf(curr.data));
+            if (!first) {
+                System.out.print(", ");
+            }
+            first = false;
+
+            if (curr != null) {
+                System.out.print(curr.data);
                 q.offer(curr.left);
                 q.offer(curr.right);
             }
-        }
-
-        // Remove trailing N's
-        while (!ans.isEmpty() && ans.get(ans.size() - 1).equals("N")) {
-            ans.remove(ans.size() - 1);
-        }
-
-        System.out.print("[");
-        for (int i = 0; i < ans.size(); i++) {
-            System.out.print(ans.get(i));
-            if (i + 1 < ans.size()) {
-                System.out.print(", ");
+            else {
+                System.out.print("N");
             }
         }
+
         System.out.print("]");
-    }
-
-    public static void main(String[] args) {
-
-        // Create the BST
-        //        22
-        //       /  \
-        //     12    30
-        //    /  \
-        //   8    20
-        //          \
-        //           21
-
-        Node root = new Node(22);
-        root.left = new Node(12);
-        root.right = new Node(30);
-        root.left.left = new Node(8);
-        root.left.right = new Node(20);
-        root.left.right.right = new Node(21);
-
-        int key = 15;
-
-        root = insert(root, key);
-
-        printTree(root);
     }
 }
 
@@ -963,14 +610,14 @@ public class Main {
 
     from collections import deque
 
-# Structure for a Binary Search Tree node
+
 class Node:
-    def __init__(self, x):
-        self.data = x
+    def __init__(self, val):
+        self.data = val
         self.left = None
         self.right = None
 
-# Insert a node into the BST
+
 def insert(root, key):
     temp = Node(key)
 
@@ -981,8 +628,11 @@ def insert(root, key):
     # Find the node who is going to
     # have the new node as its child
     curr = root
+
     while curr is not None:
-        if curr.data > key and curr.left is not None:
+        if curr.data == key:
+            return root
+        elif curr.data > key and curr.left is not None:
             curr = curr.left
         elif curr.data < key and curr.right is not None:
             curr = curr.right
@@ -998,54 +648,39 @@ def insert(root, key):
 
     return root
 
-# Print the tree in level order
-def printTree(root):
-    if root is None:
-        print("[]")
-        return
 
-    ans = []
+if __name__ == "__main__":
+    # Create the BST
+    root = Node(2)
+    root.left = Node(1)
+    root.right = Node(3)
+    root.right.right = Node(6)
+
+    key = 4
+
+    root = insert(root, key)
+
+    # Print level order
     q = deque([root])
+
+    res = []
+    first = True
 
     while q:
         curr = q.popleft()
 
-        if curr is None:
-            ans.append("N")
-        else:
-            ans.append(str(curr.data))
+        if not first:
+            res.append(", ")
+        first = False
+
+        if curr is not None:
+            res.append(str(curr.data))
             q.append(curr.left)
             q.append(curr.right)
+        else:
+            res.append("N")
 
-    # Remove trailing N's
-    while ans and ans[-1] == "N":
-        ans.pop()
-
-    print("[" + ", ".join(ans) + "]")
-
-if __name__ == "__main__":
-
-    # Create the BST
-    #        22
-    #       /  \
-    #     12    30
-    #    /  \
-    #   8    20
-    #          \
-    #           21
-
-    root = Node(22)
-    root.left = Node(12)
-    root.right = Node(30)
-    root.left.left = Node(8)
-    root.left.right = Node(20)
-    root.left.right.right = Node(21)
-
-    key = 15
-
-    root = insert(root, key)
-
-    printTree(root)
+    print("[" + "".join(res) + "]")
 
 
             C#
@@ -1053,23 +688,21 @@ if __name__ == "__main__":
     using System;
 using System.Collections.Generic;
 
-// Structure for a Binary Search Tree node
 class Node {
     public int data;
     public Node left;
     public Node right;
 
-    public Node(int x) {
-        data = x;
-        left = null;
-        right = null;
+    public Node(int val)
+    {
+        data = val;
+        left = right = null;
     }
 }
 
 class GFG {
-
-    // Insert a node into the BST
-    static Node insert(Node root, int key) {
+    static Node insert(Node root, int key)
+    {
         Node temp = new Node(key);
 
         // If tree is empty
@@ -1080,12 +713,19 @@ class GFG {
         // Find the node who is going to
         // have the new node as its child
         Node curr = root;
+
         while (curr != null) {
-            if (curr.data > key && curr.left != null) {
+            if (curr.data == key) {
+                return root;
+            }
+            else if (curr.data > key && curr.left != null) {
                 curr = curr.left;
-            } else if (curr.data < key && curr.right != null) {
+            }
+            else if (curr.data < key
+                     && curr.right != null) {
                 curr = curr.right;
-            } else {
+            }
+            else {
                 break;
             }
         }
@@ -1094,92 +734,71 @@ class GFG {
         // child, else right child
         if (curr.data > key) {
             curr.left = temp;
-        } else {
+        }
+        else {
             curr.right = temp;
         }
 
         return root;
     }
 
-    // Print the tree in level order
-    static void printTree(Node root) {
-        if (root == null) {
-            Console.Write("[]");
-            return;
-        }
+    public static void Main()
+    {
+        // Create the BST
+        Node root = new Node(2);
+        root.left = new Node(1);
+        root.right = new Node(3);
+        root.right.right = new Node(6);
 
-        List<string> ans = new List<string>();
+        int key = 4;
+
+        root = insert(root, key);
+
+        // Print level order
         Queue<Node> q = new Queue<Node>();
         q.Enqueue(root);
+
+        Console.Write("[");
+
+        bool first = true;
 
         while (q.Count > 0) {
             Node curr = q.Dequeue();
 
-            if (curr == null) {
-                ans.Add("N");
-            } else {
-                ans.Add(curr.data.ToString());
+            if (!first) {
+                Console.Write(", ");
+            }
+            first = false;
+
+            if (curr != null) {
+                Console.Write(curr.data);
                 q.Enqueue(curr.left);
                 q.Enqueue(curr.right);
             }
-        }
-
-        // Remove trailing N's
-        while (ans.Count > 0 && ans[ans.Count - 1] == "N") {
-            ans.RemoveAt(ans.Count - 1);
-        }
-
-        Console.Write("[");
-        for (int i = 0; i < ans.Count; i++) {
-            Console.Write(ans[i]);
-            if (i + 1 < ans.Count) {
-                Console.Write(", ");
+            else {
+                Console.Write("N");
             }
         }
+
         Console.Write("]");
-    }
-
-    static void Main() {
-
-        // Create the BST
-        //        22
-        //       /  \
-        //     12    30
-        //    /  \
-        //   8    20
-        //          \
-        //           21
-
-        Node root = new Node(22);
-        root.left = new Node(12);
-        root.right = new Node(30);
-        root.left.left = new Node(8);
-        root.left.right = new Node(20);
-        root.left.right.right = new Node(21);
-
-        int key = 15;
-
-        root = insert(root, key);
-
-        printTree(root);
     }
 }
 
 
-            Javascript
+            JavaScript
 
-    // Structure for a Binary Search Tree node
-class Node {
-    constructor(x) {
-        this.data = x;
+    class Node {
+    constructor(val)
+    {
+        this.data = val;
         this.left = null;
         this.right = null;
     }
 }
 
-// Insert a node into the BST
-function insert(root, key) {
-    let temp = new Node(key);
+function insert(root, key)
+{
+    const temp = new Node(key);
 
     // If tree is empty
     if (root === null) {
@@ -1189,12 +808,18 @@ function insert(root, key) {
     // Find the node who is going to
     // have the new node as its child
     let curr = root;
+
     while (curr !== null) {
-        if (curr.data > key && curr.left !== null) {
+        if (curr.data === key) {
+            return root;
+        }
+        else if (curr.data > key && curr.left !== null) {
             curr = curr.left;
-        } else if (curr.data < key && curr.right !== null) {
+        }
+        else if (curr.data < key && curr.right !== null) {
             curr = curr.right;
-        } else {
+        }
+        else {
             break;
         }
     }
@@ -1203,65 +828,51 @@ function insert(root, key) {
     // child, else right child
     if (curr.data > key) {
         curr.left = temp;
-    } else {
+    }
+    else {
         curr.right = temp;
     }
 
     return root;
 }
 
-// Print the tree in level order
-function printTree(root) {
-    if (root === null) {
-        console.log("[]");
-        return;
+// Driver Code
+
+// Create the BST
+let root = new Node(2);
+root.left = new Node(1);
+root.right = new Node(3);
+root.right.right = new Node(6);
+
+const key = 4;
+
+root = insert(root, key);
+
+// Print level order
+const q = [ root ];
+let front = 0;
+
+let res = [];
+let first = true;
+
+while (front < q.length) {
+    const curr = q[front++];
+
+    if (!first) {
+        res.push(", ");
     }
+    first = false;
 
-    const ans = [];
-    const q = [root];
-
-    while (q.length > 0) {
-        const curr = q.shift();
-
-        if (curr === null) {
-            ans.push("N");
-        } else {
-            ans.push(curr.data.toString());
-            q.push(curr.left);
-            q.push(curr.right);
-        }
+    if (curr !== null) {
+        res.push(curr.data);
+        q.push(curr.left);
+        q.push(curr.right);
     }
-
-    // Remove trailing N's
-    while (ans.length > 0 && ans[ans.length - 1] === "N") {
-        ans.pop();
+    else {
+        res.push("N");
     }
-
-    console.log("[" + ans.join(", ") + "]");
 }
 
-// Driver code
+console.log("[" + res.join("") + "]");
 
-    // Create the BST
-    //        22
-    //       /  \
-    //     12    30
-    //    /  \
-    //   8    20
-    //          \
-    //           21
-
-    let root = new Node(22);
-    root.left = new Node(12);
-    root.right = new Node(30);
-    root.left.left = new Node(8);
-    root.left.right = new Node(20);
-    root.left.right.right = new Node(21);
-
-    let key = 15;
-
-    root = insert(root, key);
-
-    printTree(root);
-
-Output[22, 12, 30, 8, 20, N, N, N, N, 15, 21]Related Links: Binary Search Tree Search OperationBinary Search Tree Delete Operation
+Output[2, 1, 3, N, N, N, 6, 4, N, N, N]Related Links: Binary Search Tree Search OperationBinary Search Tree Delete Operation
