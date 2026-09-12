@@ -176,6 +176,7 @@ async function run() {
                                 }
                             } catch (e) {
                                 // ignore invalid URL
+                                console.debug(`Invalid URL encountered: ${href}`, e);
                             }
                         }
                     }
