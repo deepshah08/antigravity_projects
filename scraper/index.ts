@@ -106,6 +106,7 @@ async function scrapeTutorialIndex(indexUrl: string, topicId: string) {
   const links = contentArea.querySelectorAll('a');
 
   const articles: ArticleInfo[] = [];
+  const seenUrls = new Set<string>();
   let count = 1;
 
   for (let i = 0; i < links.length; i++) {
@@ -121,7 +122,9 @@ async function scrapeTutorialIndex(indexUrl: string, topicId: string) {
 
     if (!href.includes('geeksforgeeks.org')) continue;
 
-    if (articles.find(a => a.url === href)) continue;
+    if (seenUrls.has(href)) continue;
+
+    seenUrls.add(href);
 
     const id = `${topicId}-${count.toString().padStart(3, '0')}`;
     articles.push({ id, title, url: href });
