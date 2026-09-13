@@ -63,7 +63,7 @@ cols = 3
 # Declaring a matrix of size 3 X 3, and 
 # initializing it with value zero
 rows, cols = (3, 3)
-arr = [[0]*cols]*rows
+arr = [[0] * cols for _ in range(rows)]
 print(arr)
 
 

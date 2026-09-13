@@ -3,7 +3,7 @@
     {
       "id": "dsa",
       "title": "Dsa Tutorial",
-      "articleCount": 583,
+      "articleCount": 582,
       "icon": "book"
     },
     {
@@ -51,6 +51,12 @@
     {
       "id": "networking",
       "title": "Networking Tutorial",
+      "articleCount": 299,
+      "icon": "book"
+    },
+    {
+      "id": "web-dev",
+      "title": "Web Dev Tutorial",
       "articleCount": 299,
       "icon": "book"
     },

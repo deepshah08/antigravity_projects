@@ -1,0 +1,250 @@
+# Smallest Subset with Greater Sum - GeeksforGeeks
+
+Given an array of non-negative integers, the task is to find the minimum number of elements such that their sum should be greater than the sum of the rest of the elements of the array.Examples: Input: arr[] = [2, 17, 7, 3]Output: 1Explanation: By selecting only the element 17, the sum of the remaining elements is 2 + 3 + 7 = 12, which is less than 17. Thus, the minimum number of elements required is 1.Input: arr[] = [20, 12, 18, 4]Output: 2Explanation: By selecting 12 and 18, their sum becomes 12 + 18 = 30, which is greater than the sum of the remaining elements 20 + 4 = 24. Alternatively, selecting 20 and 18 would also satisfy the condition. Thus, the minimum number of elements required is 2.Try It YourselfTable of Content[Naive Approach] Generating All Subsets - O(n x 2^n) Time and O(n) Space[Expected Approach] Using Greedy + Sorting - O(n * log n) Time and O(1) Space[Naive Approach] Generating All Subsets - O(n x 2^n) Time and O(n) SpaceThe idea is to try every possible subset of the array and calculate its sum and the sum of the remaining elements. If the selected subset has a greater sum, update the minimum number of elements required. Please refer to this article for generating subsets of an array.[Expected Approach] Using Greedy + Sorting - O(n * log n) Time and O(1) SpaceInstead of checking every subset, we always pick the largest elements first as we need to make sum greater.Sort the array in descending order and keep adding elements until the selected sum becomes greater than the sum of the remaining elements.Calculate the total sum of all elements in the array.Sort the array in descending order so the largest elements come first. Initialize selectedSum = 0 and traverse the sorted array. Add each element to selectedSum and subtract it from the remaining totalSum. As soon as selectedSum > totalSum, return the number of selected elements. If the condition is never satisfied earlier, return the size of the array.
+            C++
+
+    #include <bits/stdc++.h>
+using namespace std;
+
+int minSubset(vector<int> &arr)
+{
+    long long totalSum = 0;
+
+    for (int i = 0; i < arr.size(); i++)
+    {
+        totalSum += arr[i];
+    }
+
+    // Sort the array in descending order so that
+    // we can select the largest elements first.
+    sort(arr.rbegin(), arr.rend());
+
+    long long selectedSum = 0;
+
+    for (int i = 0; i < arr.size(); i++)
+    {
+        // Add the current element to the selected subset.
+        selectedSum += arr[i];
+
+        // Remove the current element from the remaining sum.
+        totalSum -= arr[i];
+
+        // Check if the selected sum is greater than
+        // the sum of the remaining elements.
+        if (selectedSum > totalSum)
+        {
+            // Return the number of selected elements.
+            return i + 1;
+        }
+    }
+
+    // If the condition is not satisfied earlier,
+    // all elements are required.
+    return arr.size();
+}
+
+int main()
+{
+    vector<int> arr = {2, 17, 7, 3};
+    cout << minSubset(arr) << endl;
+
+    return 0;
+}
+
+
+            Java
+
+    import java.util.*;
+
+class GFG {
+    static int minSubset(int[] arr)
+    {
+        long totalSum = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            totalSum += arr[i];
+        }
+
+        // Sort the array in descending order so that
+        // we can select the largest elements first.
+        Arrays.sort(arr);
+
+        // Reverse the sorted array to get descending order.
+        for (int i = 0; i < arr.length / 2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+
+        long selectedSum = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            
+            // Add the current element to the selected
+            // subset.
+            selectedSum += arr[i];
+
+            // Remove the current element from the remaining
+            // sum.
+            totalSum -= arr[i];
+
+            // Check if the selected sum is greater than
+            // the sum of the remaining elements.
+            if (selectedSum > totalSum) {
+                
+                // Return the number of selected elements.
+                return i + 1;
+            }
+        }
+
+        // If the condition is not satisfied earlier,
+        // all elements are required.
+        return arr.length;
+    }
+
+    public static void main(String[] args)
+    {
+        int[] arr = { 2, 17, 7, 3 };
+        System.out.println(minSubset(arr));
+    }
+}
+
+
+            Python
+
+    def minSubset(arr):
+    totalSum = 0
+
+    for i in range(len(arr)):
+        totalSum += arr[i]
+
+    # Sort the array in descending order so that
+    # we can select the largest elements first.
+    arr.sort(reverse=True)
+
+    selectedSum = 0
+
+    for i in range(len(arr)):
+        
+        # Add the current element to the selected subset.
+        selectedSum += arr[i]
+
+        # Remove the current element from the remaining sum.
+        totalSum -= arr[i]
+
+        # Check if the selected sum is greater than
+        # the sum of the remaining elements.
+        if selectedSum > totalSum:
+            # Return the number of selected elements.
+            return i + 1
+
+    # If the condition is not satisfied earlier,
+    # all elements are required.
+    return len(arr)
+
+
+# Driver Code
+if __name__ == "__main__":
+    arr = [2, 17, 7, 3]
+
+    print(minSubset(arr))
+
+
+            C#
+
+    using System;
+using System.Collections.Generic;
+
+class GFG {
+    static int minSubset(List<int> arr)
+    {
+        long totalSum = 0;
+
+        for (int i = 0; i < arr.Count; i++) {
+            totalSum += arr[i];
+        }
+
+        // Sort the array in descending order so that
+        // we can select the largest elements first.
+        arr.Sort();
+        arr.Reverse();
+
+        long selectedSum = 0;
+
+        for (int i = 0; i < arr.Count; i++) {
+
+            // Add the current element to the selected
+            // subset.
+            selectedSum += arr[i];
+
+            // Remove the current element from the remaining
+            // sum.
+            totalSum -= arr[i];
+
+            // Check if the selected sum is greater than
+            // the sum of the remaining elements.
+            if (selectedSum > totalSum) {
+
+                // Return the number of selected elements.
+                return i + 1;
+            }
+        }
+
+        // If the condition is not satisfied earlier,
+        // all elements are required.
+        return arr.Count;
+    }
+
+    static void Main()
+    {
+        List<int> arr = new List<int>{ 2, 17, 7, 3 };
+        Console.WriteLine(minSubset(arr));
+    }
+}
+
+
+            JavaScript
+
+    function minSubset(arr)
+{
+    let totalSum = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        totalSum += arr[i];
+    }
+
+    // Sort the array in descending order so that
+    // we can select the largest elements first.
+    arr.sort((a, b) => b - a);
+
+    let selectedSum = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+
+        // Add the current element to the selected subset.
+        selectedSum += arr[i];
+
+        // Remove the current element from the remaining
+        // sum.
+        totalSum -= arr[i];
+
+        // Check if the selected sum is greater than
+        // the sum of the remaining elements.
+        if (selectedSum > totalSum) {
+            
+            // Return the number of selected elements.
+            return i + 1;
+        }
+    }
+
+    // If the condition is not satisfied earlier,
+    // all elements are required.
+    return arr.length;
+}
+
+// Driver Code
+let arr = [ 2, 17, 7, 3 ];
+
+console.log(minSubset(arr));
+
+Output1

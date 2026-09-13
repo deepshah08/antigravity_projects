@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T02:33:02.073Z",
+  "generatedAt": "2026-09-13T02:46:26.041Z",
   "topics": [
     {
       "id": "dsa",
@@ -7591,6 +7591,198 @@
           "id": "networking-128",
           "title": "DSA and System Design Course2 min read",
           "url": "https://www.geeksforgeeks.org/courses/dsa-system-design-live-sde-interview-course"
+        }
+      ]
+    },
+    {
+      "id": "web-dev",
+      "title": "Web Dev Tutorial",
+      "indexUrl": "https://www.geeksforgeeks.org/web-development/",
+      "articles": [
+        {
+          "id": "web-dev-001",
+          "title": "Web Development Prerequisites",
+          "url": "https://www.geeksforgeeks.org/websites-apps/web-development-prerequisites/"
+        },
+        {
+          "id": "web-dev-002",
+          "title": "Important Terminologies",
+          "url": "https://www.geeksforgeeks.org/web-tech/terminologies-of-web-development/"
+        },
+        {
+          "id": "web-dev-003",
+          "title": "Why Learn Web Development?",
+          "url": "https://www.geeksforgeeks.org/blogs/why-learning-web-development-is-a-great-career-move-in-2025/"
+        },
+        {
+          "id": "web-dev-004",
+          "title": "HTML",
+          "url": "https://www.geeksforgeeks.org/html/html-tutorial/"
+        },
+        {
+          "id": "web-dev-005",
+          "title": "CSS",
+          "url": "https://www.geeksforgeeks.org/css/css-tutorial/"
+        },
+        {
+          "id": "web-dev-006",
+          "title": "JavaScript",
+          "url": "https://www.geeksforgeeks.org/javascript/javascript-tutorial/"
+        },
+        {
+          "id": "web-dev-007",
+          "title": "server-side scripting",
+          "url": "https://www.geeksforgeeks.org/html/difference-between-server-side-scripting-and-client-side-scripting/"
+        },
+        {
+          "id": "web-dev-008",
+          "title": "Node.js",
+          "url": "https://www.geeksforgeeks.org/node-js/nodejs/"
+        },
+        {
+          "id": "web-dev-009",
+          "title": "PHP",
+          "url": "https://www.geeksforgeeks.org/php/php-tutorial/"
+        },
+        {
+          "id": "web-dev-010",
+          "title": "Python",
+          "url": "https://www.geeksforgeeks.org/python/python-programming-language-tutorial/"
+        },
+        {
+          "id": "web-dev-011",
+          "title": "Ruby",
+          "url": "https://www.geeksforgeeks.org/ruby/ruby-programming-language/"
+        },
+        {
+          "id": "web-dev-012",
+          "title": "Golang",
+          "url": "https://www.geeksforgeeks.org/go-language/go/"
+        },
+        {
+          "id": "web-dev-013",
+          "title": "C#",
+          "url": "https://www.geeksforgeeks.org/c-sharp/csharp-programming-language/"
+        },
+        {
+          "id": "web-dev-014",
+          "title": "MySQL",
+          "url": "https://www.geeksforgeeks.org/sql/sql-tutorial/"
+        },
+        {
+          "id": "web-dev-015",
+          "title": "PostgreSQL",
+          "url": "https://www.geeksforgeeks.org/postgresql/postgresql-tutorial/"
+        },
+        {
+          "id": "web-dev-016",
+          "title": "MongoDB",
+          "url": "https://www.geeksforgeeks.org/mongodb/mongodb-tutorial/"
+        },
+        {
+          "id": "web-dev-017",
+          "title": "Cassandra",
+          "url": "https://www.geeksforgeeks.org/dbms/apache-cassandra-nosql-database/"
+        },
+        {
+          "id": "web-dev-018",
+          "title": "Redis",
+          "url": "https://www.geeksforgeeks.org/system-design/introduction-to-redis-server/"
+        },
+        {
+          "id": "web-dev-019",
+          "title": "Database management systems",
+          "url": "https://www.geeksforgeeks.org/dbms/introduction-of-dbms-database-management-system-set-1/"
+        },
+        {
+          "id": "web-dev-020",
+          "title": "canvas",
+          "url": "https://www.geeksforgeeks.org/html/html-canvas-basics/"
+        },
+        {
+          "id": "web-dev-021",
+          "title": "SVG",
+          "url": "https://www.geeksforgeeks.org/html/html-svg-basics/"
+        },
+        {
+          "id": "web-dev-022",
+          "title": "History And Evolution of Web Development",
+          "url": "https://www.geeksforgeeks.org/blogs/history-and-evolution-of-web-development/"
+        },
+        {
+          "id": "web-dev-023",
+          "title": "Web 1.0, Web 2.0 and Web 3.0 with their difference",
+          "url": "https://www.geeksforgeeks.org/blogs/web-1-0-web-2-0-and-web-3-0-with-their-difference/"
+        },
+        {
+          "id": "web-dev-024",
+          "title": "Projects1 min read",
+          "url": "https://www.geeksforgeeks.org/css/top-10-projects-for-beginners-to-practice-html-and-css-skills/"
+        },
+        {
+          "id": "web-dev-025",
+          "title": "JSON6 min read",
+          "url": "https://www.geeksforgeeks.org/javascript/json/"
+        },
+        {
+          "id": "web-dev-026",
+          "title": "TypeScript6 min read",
+          "url": "https://www.geeksforgeeks.org/typescript/typescript-tutorial/"
+        },
+        {
+          "id": "web-dev-027",
+          "title": "Vue.js4 min read",
+          "url": "https://www.geeksforgeeks.org/javascript/vue-js/"
+        },
+        {
+          "id": "web-dev-028",
+          "title": "jQuery7 min read",
+          "url": "https://www.geeksforgeeks.org/jquery/jquery-tutorial/"
+        },
+        {
+          "id": "web-dev-029",
+          "title": "React4 min read",
+          "url": "https://www.geeksforgeeks.org/reactjs/react/"
+        },
+        {
+          "id": "web-dev-030",
+          "title": "Node.js3 min read",
+          "url": "https://www.geeksforgeeks.org/nextjs/nextjs-tutorial/"
+        },
+        {
+          "id": "web-dev-031",
+          "title": "Angular4 min read",
+          "url": "https://www.geeksforgeeks.org/angular-js/angular-tutorial/"
+        },
+        {
+          "id": "web-dev-032",
+          "title": "Express.js2 min read",
+          "url": "https://www.geeksforgeeks.org/node-js/express-js/"
+        },
+        {
+          "id": "web-dev-033",
+          "title": "Django5 min read",
+          "url": "https://www.geeksforgeeks.org/python/django-tutorial/"
+        },
+        {
+          "id": "web-dev-034",
+          "title": "MySQL3 min read",
+          "url": "https://www.geeksforgeeks.org/mysql/mysql-tutorial/"
+        },
+        {
+          "id": "web-dev-035",
+          "title": "Placement 360 Course2 min read",
+          "url": "https://www.geeksforgeeks.org/courses/placement-360-cip-complete-tech-interview"
+        },
+        {
+          "id": "web-dev-036",
+          "title": "Java Backend Course2 min read",
+          "url": "https://www.geeksforgeeks.org/courses/Java-backend-live"
+        },
+        {
+          "id": "web-dev-037",
+          "title": "MERN Full Stack Course2 min read",
+          "url": "https://www.geeksforgeeks.org/courses/full-stack-node"
         }
       ]
     },

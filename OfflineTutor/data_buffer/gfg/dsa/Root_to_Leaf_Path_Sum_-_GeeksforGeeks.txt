@@ -1,0 +1,786 @@
+# Root to Leaf Path Sum - GeeksforGeeks
+
+Given root of a binary tree and an integer target, return true if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum. Return false if no such path can be found.  Examples:Input: root = [1, 2, 3, 4, 1], target = 4 Output: true Explanation:  The root to leaf path sums are 1 + 2 + 4 = 7, 1 + 2 + 1 = 4 and 1 + 3 = 4. Since, a path with sum 4 exists (1 -> 3 and 1 -> 2 -> 1), the answer is true.Input: root = [1, 2, 3], target = 2 Output: falseExplanation:  The root to leaf path sums are 1 + 2 = 3 and 1 + 3 = 4. Since, there is no path with sum 2, the answer is false.Try It YourselfTable of ContentRecursive - O(n) Time and O(h) SpaceIterative - O(n) Time and O(h) SpaceRecursive - O(n) Time and O(h) SpaceThe idea is to recursively move to left and right subtree and decrease sum by the value of the current node. If at any point the current node is a leaf node and remaining sum is equal to zero then the answer is true.If the tree is empty, return false.Subtract the current node's value from target. If the current node is a leaf, return true if the remaining target is 0; otherwise return false. Recursively check the left and right subtrees with the updated target. Return true if either subtree contains a valid root-to-leaf path; otherwise return false.
+            C++
+
+    #include <bits/stdc++.h>
+using namespace std;
+
+class Node
+{
+  public:
+    int data;
+    Node *left, *right;
+
+    Node(int key)
+    {
+        data = key;
+        left = right = nullptr;
+    }
+};
+
+bool hasPathSum(Node *root, int target)
+{
+    // Empty tree has no valid path.
+    if (root == nullptr)
+        return false;
+
+    // Subtract current node's value from the remaining sum.
+    target -= root->data;
+
+    // If this is a leaf and the remaining sum is 0,
+    // a valid root-to-leaf path is found.
+    if (root->left == nullptr && root->right == nullptr)
+        return target == 0;
+
+    // Check both subtrees.
+    return hasPathSum(root->left, target) || hasPathSum(root->right, target);
+}
+
+int main()
+{
+    int target = 21;
+
+    // Construct the binary tree:
+    //
+    //         10
+    //       /    \
+    //      8      2
+    //     / \    /
+    //    3   5  2
+
+    Node *root = new Node(10);
+
+    root->left = new Node(8);
+    root->right = new Node(2);
+
+    root->left->left = new Node(3);
+    root->left->right = new Node(5);
+
+    root->right->left = new Node(2);
+
+    cout << (hasPathSum(root, target) ? "true" : "false");
+
+    return 0;
+}
+
+
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+struct Node
+{
+    int data;
+    struct Node *left, *right;
+};
+
+struct Node *newNode(int key)
+{
+    struct Node *node = (struct Node *)malloc(sizeof(struct Node));
+
+    node->data = key;
+    node->left = node->right = NULL;
+
+    return node;
+}
+
+int hasPathSum(struct Node *root, int target)
+{
+    // Empty tree has no valid path.
+    if (root == NULL)
+        return 0;
+
+    // Subtract current node's value from the remaining sum.
+    target -= root->data;
+
+    // If this is a leaf and the remaining sum is 0,
+    // a valid root-to-leaf path is found.
+    if (root->left == NULL && root->right == NULL)
+        return target == 0;
+
+    // Check both subtrees.
+    return hasPathSum(root->left, target) || hasPathSum(root->right, target);
+}
+
+int main()
+{
+    int target = 21;
+
+    // Construct the binary tree:
+    //
+    //         10
+    //       /    \
+    //      8      2
+    //     / \    /
+    //    3   5  2
+
+    struct Node *root = newNode(10);
+
+    root->left = newNode(8);
+    root->right = newNode(2);
+
+    root->left->left = newNode(3);
+    root->left->right = newNode(5);
+
+    root->right->left = newNode(2);
+
+    printf("%s", hasPathSum(root, target) ? "true" : "false");
+
+    return 0;
+}
+
+
+            Java
+
+    class Node {
+    int data;
+    Node left, right;
+
+    Node(int key)
+    {
+        data = key;
+        left = right = null;
+    }
+}
+
+class GFG {
+    static boolean hasPathSum(Node root, int target)
+    {
+        // Empty tree has no valid path.
+        if (root == null)
+            return false;
+
+        // Subtract current node's value from the remaining
+        // sum.
+        target -= root.data;
+
+        // If this is a leaf and the remaining sum is 0,
+        // a valid root-to-leaf path is found.
+        if (root.left == null && root.right == null)
+            return target == 0;
+
+        // Check both subtrees.
+        return hasPathSum(root.left, target)
+            || hasPathSum(root.right, target);
+    }
+
+    public static void main(String[] args)
+    {
+        int target = 21;
+
+        // Construct the binary tree:
+        //
+        //         10
+        //       /    \
+        //      8      2
+        //     / \    /
+        //    3   5  2
+
+        Node root = new Node(10);
+
+        root.left = new Node(8);
+        root.right = new Node(2);
+
+        root.left.left = new Node(3);
+        root.left.right = new Node(5);
+
+        root.right.left = new Node(2);
+
+        System.out.print(hasPathSum(root, target) ? "true"
+                                               : "false");
+    }
+}
+
+
+            Python
+
+    class Node:
+    def __init__(self, key):
+        self.data = key
+        self.left = None
+        self.right = None
+
+
+def hasPathSum(root, target):
+    # Empty tree has no valid path.
+    if root is None:
+        return False
+
+    # Subtract current node's value from the remaining sum.
+    target -= root.data
+
+    # If this is a leaf and the remaining sum is 0,
+    # a valid root-to-leaf path is found.
+    if root.left is None and root.right is None:
+        return target == 0
+
+    # Check both subtrees.
+    return hasPathSum(root.left, target) or hasPathSum(root.right, target)
+
+
+# Driver Code
+if __name__ == "__main__":
+    target = 21
+
+    # Construct the binary tree:
+    #
+    #         10
+    #       /    \
+    #      8      2
+    #     / \    /
+    #    3   5  2
+
+    root = Node(10)
+
+    root.left = Node(8)
+    root.right = Node(2)
+
+    root.left.left = Node(3)
+    root.left.right = Node(5)
+
+    root.right.left = Node(2)
+
+    print("true" if hasPathSum(root, target) else "false")
+
+
+            C#
+
+    using System;
+
+class Node {
+    public int data;
+    public Node left, right;
+
+    public Node(int key)
+    {
+        data = key;
+        left = right = null;
+    }
+}
+
+class GFG {
+    static bool hasPathSum(Node root, int target)
+    {
+        // Empty tree has no valid path.
+        if (root == null)
+            return false;
+
+        // Subtract current node's value from the remaining
+        // sum.
+        target -= root.data;
+
+        // If this is a leaf and the remaining sum is 0,
+        // a valid root-to-leaf path is found.
+        if (root.left == null && root.right == null)
+            return target == 0;
+
+        // Check both subtrees.
+        return hasPathSum(root.left, target)
+            || hasPathSum(root.right, target);
+    }
+
+    static void Main()
+    {
+        int target = 21;
+
+        // Construct the binary tree:
+        //
+        //         10
+        //       /    \
+        //      8      2
+        //     / \    /
+        //    3   5  2
+
+        Node root = new Node(10);
+
+        root.left = new Node(8);
+        root.right = new Node(2);
+
+        root.left.left = new Node(3);
+        root.left.right = new Node(5);
+
+        root.right.left = new Node(2);
+
+        Console.Write(hasPathSum(root, target) ? "true"
+                                            : "false");
+    }
+}
+
+
+            JavaScript
+
+    class Node {
+    constructor(key)
+    {
+        this.key = key;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+function hasPathSum(root, target)
+{
+    // Empty tree has no valid path.
+    if (root === null)
+        return false;
+
+    // Subtract current node's value from the remaining sum.
+    target -= root.key;
+
+    // If this is a leaf and the remaining sum is 0,
+    // a valid root-to-leaf path is found.
+    if (root.left === null && root.right === null)
+        return target === 0;
+
+    // Check both subtrees.
+    return hasPathSum(root.left, target)
+           || hasPathSum(root.right, target);
+}
+
+// Driver Code
+const target = 21;
+
+// Construct the binary tree:
+//
+//         10
+//       /    \
+//      8      2
+//     / \    /
+//    3   5  2
+
+const root = new Node(10);
+
+root.left = new Node(8);
+root.right = new Node(2);
+
+root.left.left = new Node(3);
+root.left.right = new Node(5);
+
+root.right.left = new Node(2);
+
+console.log(hasPathSum(root, target) ? "true" : "false");
+
+OutputtrueIterative - O(n) Time and O(h) SpaceWe use stack based iterative preorder traversal. We maintain two stacks - one to store the nodes and another to store the sum of values along the path to that node. Whenever we encounter a leaf node, we check if the sum matches the target sum. If it does, we return true, otherwise, we continue traversing the tree.Follow the given steps to solve the problem using the above approach:Step 1 : Create two stacks, one for the nodes and one for the sums. Push the root node onto the node stack and its data onto the sum stack. Step 2: While the node stack is not empty, do the following:Pop a node from the node stack and its corresponding sum from the sum stack.Check if the node is a leaf node If it is, check if the sum equals the target sum. If it does, return true.If the node has a left child, push it onto the node stack and push the sum plus the left child’s data onto the sum stack.If the node has a right child, push it onto the node stack and push the sum plus the right child’s data onto the sum stack.Step 3: If we reach this point, it means we have exhausted all paths and haven’t found any that add up to the target sum. 
+            C++
+
+    #include <bits/stdc++.h>
+using namespace std;
+
+class Node
+{
+  public:
+    int data;
+    Node *left, *right;
+
+    Node(int key)
+    {
+        data = key;
+        left = right = nullptr;
+    }
+};
+
+bool hasPathSum(Node *root, int target)
+{
+    // Empty tree has no valid path.
+    if (root == nullptr)
+        return false;
+
+    // Stack for nodes and their corresponding path sums.
+    stack<Node *> nodeStack;
+    stack<int> sumStack;
+
+    nodeStack.push(root);
+    sumStack.push(root->data);
+
+    while (!nodeStack.empty())
+    {
+        // Get the current node and its path sum.
+        Node *current = nodeStack.top();
+        nodeStack.pop();
+
+        int currentSum = sumStack.top();
+        sumStack.pop();
+
+        // If current node is a leaf and its path sum
+        // matches the target, a valid path is found.
+        if (current->left == nullptr && current->right == nullptr && currentSum == target)
+        {
+            return true;
+        }
+
+        // Add the left child with its updated path sum.
+        if (current->left != nullptr)
+        {
+            nodeStack.push(current->left);
+            sumStack.push(currentSum + current->left->data);
+        }
+
+        // Add the right child with its updated path sum.
+        if (current->right != nullptr)
+        {
+            nodeStack.push(current->right);
+            sumStack.push(currentSum + current->right->data);
+        }
+    }
+
+    return false;
+}
+
+int main()
+{
+    // Construct binary tree:
+    //
+    //         10
+    //       /    \
+    //      8      2
+    //     / \    /
+    //    3   5  2
+
+    Node *root = new Node(10);
+
+    root->left = new Node(8);
+    root->right = new Node(2);
+
+    root->left->left = new Node(3);
+    root->left->right = new Node(5);
+
+    root->right->left = new Node(2);
+
+    int target = 21;
+
+    cout << (hasPathSum(root, target) ? "true" : "false");
+
+    return 0;
+}
+
+
+            Java
+
+    import java.util.*;
+
+class Node {
+    int data;
+    Node left, right;
+
+    Node(int key)
+    {
+        data = key;
+        left = right = null;
+    }
+}
+
+class GFG {
+    static boolean hasPathSum(Node root, int target)
+    {
+        // Empty tree has no valid path.
+        if (root == null)
+            return false;
+
+        // Stack for nodes and their corresponding path
+        // sums.
+        Stack<Node> nodeStack = new Stack<>();
+        Stack<Integer> sumStack = new Stack<>();
+
+        nodeStack.push(root);
+        sumStack.push(root.data);
+
+        while (!nodeStack.empty()) {
+            // Get the current node and its path sum.
+            Node current = nodeStack.pop();
+            int currentSum = sumStack.pop();
+
+            // If current node is a leaf and its path sum
+            // matches the target, a valid path is found.
+            if (current.left == null
+                && current.right == null
+                && currentSum == target) {
+                return true;
+            }
+
+            // Add the left child with its updated path sum.
+            if (current.left != null) {
+                nodeStack.push(current.left);
+                sumStack.push(currentSum
+                              + current.left.data);
+            }
+
+            // Add the right child with its updated path
+            // sum.
+            if (current.right != null) {
+                nodeStack.push(current.right);
+                sumStack.push(currentSum
+                              + current.right.data);
+            }
+        }
+
+        return false;
+    }
+
+    public static void main(String[] args)
+    {
+        // Construct binary tree:
+        //
+        //         10
+        //       /    \
+        //      8      2
+        //     / \    /
+        //    3   5  2
+
+        Node root = new Node(10);
+
+        root.left = new Node(8);
+        root.right = new Node(2);
+
+        root.left.left = new Node(3);
+        root.left.right = new Node(5);
+
+        root.right.left = new Node(2);
+
+        int target = 21;
+
+        System.out.print(
+            hasPathSum(root, target) ? "true" : "false");
+    }
+}
+
+
+            Python
+
+    class Node:
+    def __init__(self, key):
+        self.data = key
+        self.left = None
+        self.right = None
+
+
+def hasPathSum(root, target):
+    # Empty tree has no valid path.
+    if root is None:
+        return False
+
+    # Stack for nodes and their corresponding path sums.
+    nodeStack = []
+    sumStack = []
+
+    nodeStack.append(root)
+    sumStack.append(root.data)
+
+    while nodeStack:
+        # Get the current node and its path sum.
+        current = nodeStack.pop()
+        currentSum = sumStack.pop()
+
+        # If current node is a leaf and its path sum
+        # matches the target, a valid path is found.
+        if (current.left is None and
+            current.right is None and
+                currentSum == target):
+            return True
+
+        # Add the left child with its updated path sum.
+        if current.left is not None:
+            nodeStack.append(current.left)
+            sumStack.append(currentSum + current.left.data)
+
+        # Add the right child with its updated path sum.
+        if current.right is not None:
+            nodeStack.append(current.right)
+            sumStack.append(currentSum + current.right.data)
+
+    return False
+
+
+# Driver Code
+if __name__ == "__main__":
+    # Construct binary tree:
+    #
+    #         10
+    #       /    \
+    #      8      2
+    #     / \    /
+    #    3   5  2
+
+    root = Node(10)
+
+    root.left = Node(8)
+    root.right = Node(2)
+
+    root.left.left = Node(3)
+    root.left.right = Node(5)
+
+    root.right.left = Node(2)
+
+    target = 21
+
+    print("true" if hasPathSum(root, target) else "false")
+
+
+            C#
+
+    using System;
+using System.Collections.Generic;
+
+class Node {
+    public int data;
+    public Node left, right;
+
+    public Node(int key)
+    {
+        data = key;
+        left = right = null;
+    }
+}
+
+class GFG {
+    static bool hasPathSum(Node root, int target)
+    {
+        // Empty tree has no valid path.
+        if (root == null)
+            return false;
+
+        // Stack for nodes and their corresponding path
+        // sums.
+        Stack<Node> nodeStack = new Stack<Node>();
+        Stack<int> sumStack = new Stack<int>();
+
+        nodeStack.Push(root);
+        sumStack.Push(root.data);
+
+        while (nodeStack.Count > 0) {
+            // Get the current node and its path sum.
+            Node current = nodeStack.Pop();
+            int currentSum = sumStack.Pop();
+
+            // If current node is a leaf and its path sum
+            // matches the target, a valid path is found.
+            if (current.left == null
+                && current.right == null
+                && currentSum == target) {
+                return true;
+            }
+
+            // Add the left child with its updated path sum.
+            if (current.left != null) {
+                nodeStack.Push(current.left);
+                sumStack.Push(currentSum
+                              + current.left.data);
+            }
+
+            // Add the right child with its updated path
+            // sum.
+            if (current.right != null) {
+                nodeStack.Push(current.right);
+                sumStack.Push(currentSum
+                              + current.right.data);
+            }
+        }
+
+        return false;
+    }
+
+    static void Main()
+    {
+        // Construct binary tree:
+        //
+        //         10
+        //       /    \
+        //      8      2
+        //     / \    /
+        //    3   5  2
+
+        Node root = new Node(10);
+
+        root.left = new Node(8);
+        root.right = new Node(2);
+
+        root.left.left = new Node(3);
+        root.left.right = new Node(5);
+
+        root.right.left = new Node(2);
+
+        int target = 21;
+
+        Console.Write(hasPathSum(root, target) ? "true" : "false");
+    }
+}
+
+
+            JavaScript
+
+    class Node {
+    constructor(key)
+    {
+        this.key = key;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+function hasPathSum(root, target)
+{
+    // Empty tree has no valid path.
+    if (root === null)
+        return false;
+
+    // Stack for nodes and their corresponding path sums.
+    const nodeStack = [];
+    const sumStack = [];
+
+    nodeStack.push(root);
+    sumStack.push(root.key);
+
+    while (nodeStack.length > 0) {
+        // Get the current node and its path sum.
+        const current = nodeStack.pop();
+        const currentSum = sumStack.pop();
+
+        // If current node is a leaf and its path sum
+        // matches the target, a valid path is found.
+        if (current.left === null && current.right === null
+            && currentSum === target) {
+            return true;
+        }
+
+        // Add the left child with its updated path sum.
+        if (current.left !== null) {
+            nodeStack.push(current.left);
+            sumStack.push(currentSum + current.left.key);
+        }
+
+        // Add the right child with its updated path sum.
+        if (current.right !== null) {
+            nodeStack.push(current.right);
+            sumStack.push(currentSum + current.right.key);
+        }
+    }
+
+    return false;
+}
+
+// Driver Code
+
+// Construct binary tree:
+//
+//         10
+//       /    \
+//      8      2
+//     / \    /
+//    3   5  2
+
+const root = new Node(10);
+
+root.left = new Node(8);
+root.right = new Node(2);
+
+root.left.left = new Node(3);
+root.left.right = new Node(5);
+
+root.right.left = new Node(2);
+
+const target = 21;
+
+console.log(hasPathSum(root, target) ? "true" : "false");
+
+Outputtrue

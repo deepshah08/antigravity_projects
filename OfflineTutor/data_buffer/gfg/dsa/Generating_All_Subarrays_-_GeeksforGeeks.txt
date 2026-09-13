@@ -1,128 +1,109 @@
 # Generating All Subarrays - GeeksforGeeks
 
-Given an array arr[], the task is to generate all the possible subarrays of the given array.Examples: Input: arr[] = [1, 2, 3]Output: [ [1], [1, 2], [2], [1, 2, 3], [2, 3], [3] ]Input: arr[] = [1, 2]Output: [ [1], [1, 2], [2] ]Try It YourselfIterative ApproachTo generate a subarray, we need a starting index from the original array. For choosing the starting index, we can run a loop from [0 to n-1] and consider each i as the starting index. For each starting index i, we can select an ending index from the range [i to n-1]. A nested loop from [i to n-1] will help in selecting the ending index. Once we have the starting and ending indices, we need an innermost loop to print the elements in this subarray.Outermost Loop:  Picks starting index of current subarrayMiddle Loop:  Picks ending index of current subarrayInnermost Loop: Prints the subarray from the starting index to the ending index
+Given an array arr[], generate and return all possible subarrays. The subarrays must be returned in the following order:Subarrays starting from the first element, followed by those starting from the second element, and so on.For each starting index, subarrays should be arranged in increasing order of length.Examples: Input: arr[] = [1, 2, 3]Output: [[1], [1, 2], [1, 2, 3], [2], [2, 3], [3]]Explanation: Starting with the first element, we generate subarrays [1], [1, 2], and [1, 2, 3]. Then, starting from the second element, we get [2] and [2, 3].  Finally, starting from the third element, we only get [3].Input: arr[] = [1, 2]Output: [[1], [1, 2], [2]]Explanation: Starting with the first element, we generate subarrays [1] and [1, 2]. Then, starting from the second element, we get [2].Input: arr[] = [1, 1]Output: [[1], [1, 1], [1]]Explanation: Starting with the first element, we generate subarrays [1] and [1, 1] (including both elements). Starting from the second element, we only get the subarray [1].Try It YourselfTable of ContentGenerate All Subarrays Iteratively - O(n^3) Time and O(n) SpaceGenerate All Subarrays Recursively - O(n^3) Time and O(n) SpaceGenerate All Subarrays Iteratively - O(n^3) Time and O(n) SpaceThe idea is to use two nested loops to fix the starting and ending indices of each subarray. For every pair of indices, generate the elements between them and add the resulting subarray to the answer.Working of the Approach:Initialize an empty list to store all subarrays.Fix the starting index i from 0 to n - 1.For each i, extend the ending index j from i to n - 1.For every j, create the subarray from index i to j.Add the generated subarray to the answer.Return the list containing all subarrays.
             C++
 
-    #include <iostream>
-#include <vector>
+    #include <bits/stdc++.h>
 using namespace std;
 
-// Prints all subarrays in arr[0..n-1]
-void subArray(vector<int> &arr)
-{
+vector<vector<int>> getSubArrays(vector<int>& arr) {
+    vector<vector<int>> ans;
     int n = arr.size();
 
-    // Pick starting point
-    for (int i = 0; i < n; i++)
-    {
-        // Pick ending poin
-        for (int j = i; j < n; j++)
-        {
-            // Print subarray between current starting
-            // and ending points
-            for (int k = i; k <= j; k++)
-                cout << arr[k] << " ";
-            cout << endl;
-        }
-    }
-}
-
-int main()
-{
-    vector<int> arr = {1, 2, 3, 4};
-    cout << "All Non-empty Subarrays\n";
-    subArray(arr);
-    return 0;
-}
-
-
-            C
-
-    #include <stdio.h>
-
-//Prints all subarrays in arr[0..n-1]
-void subArray(int arr[], int n) {
-  
-    // Pick starting point
     for (int i = 0; i < n; i++) {
-      
-        // Pick ending point
         for (int j = i; j < n; j++) {
-          
-            // Print subarray between current starting and ending points
-            for (int k = i; k <= j; k++) {
-                printf("%d ", arr[k]);
-            }
-            printf("\n");
+            vector<int> subarray;
+
+            for (int k = i; k <= j; k++)
+                subarray.push_back(arr[k]);
+
+            ans.push_back(subarray);
         }
     }
+
+    return ans;
 }
 
 int main() {
-    int arr[] = {1, 2, 3, 4};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    printf("All Non-empty Subarrays:\n");
-    subArray(arr, n);
+    vector<int> arr = {1, 2, 3};
+
+    vector<vector<int>> ans = getSubArrays(arr);
+
+    cout << "[";
+    for (int i = 0; i < ans.size(); i++) {
+        cout << "[";
+        for (int j = 0; j < ans[i].size(); j++) {
+            cout << ans[i][j];
+            if (j + 1 < ans[i].size())
+                cout << ", ";
+        }
+        cout << "]";
+
+        if (i + 1 < ans.size())
+            cout << ", ";
+    }
+    cout << "]";
+
     return 0;
 }
 
 
             Java
 
-    import java.util.ArrayList;
+    import java.util.List;
+import java.util.ArrayList;
 
-public class GfG {
-  
-  	//Prints all subarrays in arr[0..n-1]
-    static void subArray(ArrayList<Integer> arr) {
-        int n = arr.size();
+class GFG {
+    static List<List<Integer>> getSubArrays(int[] arr) {
+        List<List<Integer>> ans = new ArrayList<>();
+        int n = arr.length;
 
-        // Pick starting point
         for (int i = 0; i < n; i++) {
-          
-            // Pick ending point
             for (int j = i; j < n; j++) {
-              
-                // Print subarray between current starting and ending points
-                for (int k = i; k <= j; k++) {
-                    System.out.print(arr.get(k) + " ");
-                }
-                System.out.println();
+                ArrayList<Integer> subarray = new ArrayList<>();
+
+                for (int k = i; k <= j; k++)
+                    subarray.add(arr[k]);
+
+                ans.add(subarray);
             }
         }
+
+        return ans;
     }
 
     public static void main(String[] args) {
-        ArrayList<Integer> arr = new ArrayList<>();
-        arr.add(1);
-        arr.add(2);
-        arr.add(3);
-        arr.add(4);
-        System.out.println("All Non-empty Subarrays:");
-        subArray(arr);
+        int[] arr = {1, 2, 3};
+
+        List<List<Integer>> ans = getSubArrays(arr);
+
+        System.out.println(ans);
     }
 }
 
 
             Python
 
-    #Prints all subarrays in arr[0..n-1]
-def sub_array(arr):
+    def getSubArrays(arr):
+    ans = []
     n = len(arr)
 
-    # Pick starting point
     for i in range(n):
-        # Pick ending point
         for j in range(i, n):
-            # Print subarray between current starting and ending points
-            for k in range(i, j + 1):
-                print(arr[k], end=" ")
-            print()  # New line after each subarray
+            subarray = []
 
-# Driver code
-arr = [1, 2, 3, 4]
-print("All Non-empty Subarrays:")
-sub_array(arr)
+            for k in range(i, j + 1):
+                subarray.append(arr[k])
+
+            ans.append(subarray)
+
+    return ans
+
+
+if __name__ == "__main__":
+    arr = [1, 2, 3]
+
+    print(getSubArrays(arr))
 
 
             C#
@@ -130,297 +111,325 @@ sub_array(arr)
     using System;
 using System.Collections.Generic;
 
-class GfG {
-  
-  	//Prints all subarrays in arr[0..n-1]
-    static void SubArray(List<int> arr) {
-        int n = arr.Count;
+class GFG
+{
+    static List<List<int>> getSubArrays(int[] arr)
+    {
+        List<List<int>> ans = new List<List<int>>();
+        int n = arr.Length;
 
-        // Pick starting point
-        for (int i = 0; i < n; i++) {
-          
-            // Pick ending point
-            for (int j = i; j < n; j++) {
-              
-                // Print subarray between current starting and ending points
-                for (int k = i; k <= j; k++) {
-                    Console.Write(arr[k] + " ");
-                }
-                Console.WriteLine();
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = i; j < n; j++)
+            {
+                List<int> subarray = new List<int>();
+
+                for (int k = i; k <= j; k++)
+                    subarray.Add(arr[k]);
+
+                ans.Add(subarray);
             }
         }
+
+        return ans;
     }
 
-    static void Main() {
-        List<int> arr = new List<int> { 1, 2, 3, 4 };
-        Console.WriteLine("All Non-empty Subarrays:");
-        SubArray(arr);
+    static void Main()
+    {
+        int[] arr = { 1, 2, 3 };
+
+        List<List<int>> ans = getSubArrays(arr);
+
+        Console.Write("[");
+        for (int i = 0; i < ans.Count; i++)
+        {
+            Console.Write("[");
+            Console.Write(string.Join(", ", ans[i]));
+            Console.Write("]");
+
+            if (i + 1 < ans.Count)
+                Console.Write(", ");
+        }
+        Console.Write("]");
     }
 }
 
 
             JavaScript
 
-    //Prints all subarrays in arr[0..n-1]
-function subArray(arr) {
-    const n = arr.length;
+    function getSubArrays(arr) {
+    let ans = [];
+    let n = arr.length;
 
-    // Pick starting point
     for (let i = 0; i < n; i++) {
-    
-        // Pick ending point
         for (let j = i; j < n; j++) {
-        
-            // Print subarray between current starting and ending points
-            let subarr = [];
-            for (let k = i; k <= j; k++) {
-                subarr.push(arr[k]);
-            }
-            console.log(subarr.join(" "));
+            let subarray = [];
+
+            for (let k = i; k <= j; k++)
+                subarray.push(arr[k]);
+
+            ans.push(subarray);
         }
     }
+
+    return ans;
 }
 
-const arr = [1, 2, 3, 4];
-console.log("All Non-empty Subarrays:");
-subArray(arr);
+// Driver Code
+let arr = [1, 2, 3];
 
-OutputAll Non-empty Subarrays
-1 
-1 2 
-1 2 3 
-1 2 3 4 
-2 
-2 3 
-2 3 4 
-3 
-3 4 
-4 
-Recursive ApproachWe use two pointers start and end to maintain the starting and ending point of the array and follow the steps given below: Stop if we have reached the end of the arrayIncrement the end index if start has become greater than endPrint the subarray from index start to end and increment the starting indexBelow is the implementation of the above approach.  
+console.log(JSON.stringify(getSubArrays(arr)));
+
+Output[[1], [1, 2], [1, 2, 3], [2], [2, 3], [3]]Generate All Subarrays Recursively - O(n^3) Time and O(n) SpaceThe idea is to use recursion to fix the starting index and generate subarrays by recursively extending the ending index. For each starting index, add the current subarray to the answer and recursively include the next element.Working of the Approach:Initialize an empty list to store all subarrays.Start recursion from index 0.For each starting index, maintain the current subarray.Add the current subarray to the answer.Recursively add the next element and generate longer subarrays.Once all subarrays for the current starting index are generated, move to the next starting index.Return the list containing all subarrays.
             C++
 
-    // C++ code to print all possible subarrays for given array
-// using recursion
-#include <iostream>
-#include <vector>
+    #include <bits/stdc++.h>
 using namespace std;
 
-// Recursive function to print all possible subarrays for given array
-void printSubArrays(vector<int>& arr, int start, int end) {
-
-    // Stop if we have reached the end of the array
+void generate(int start, int end, vector<int>& arr,
+              vector<int>& curr, vector<vector<int>>& ans) {
     if (end == arr.size())
         return;
 
-    // Increment the end point and reset the start to 0
-    else if (start > end)
-        printSubArrays(arr, 0, end + 1);
+    curr.push_back(arr[end]);
+    ans.push_back(curr);
 
-    // Print the subarray and increment the starting point
-    else {
-        for (int i = start; i <= end; i++)  
-            cout << arr[i] << " ";
-        cout << endl;
-        printSubArrays(arr, start + 1, end);  
-    }
+    generate(start, end + 1, arr, curr, ans);
+
+    curr.pop_back();
+}
+
+void generateSubarrays(int start, vector<int>& arr,
+                       vector<vector<int>>& ans) {
+    if (start == arr.size())
+        return;
+
+    vector<int> curr;
+
+    generate(start, start, arr, curr, ans);
+
+    generateSubarrays(start + 1, arr, ans);
+}
+
+vector<vector<int>> getSubArrays(vector<int>& arr) {
+    vector<vector<int>> ans;
+
+    generateSubarrays(0, arr, ans);
+
+    return ans;
 }
 
 int main() {
     vector<int> arr = {1, 2, 3};
-    printSubArrays(arr, 0, 0);
-    return 0;
-}   
 
+    vector<vector<int>> ans = getSubArrays(arr);
 
-            C
+    cout << "[";
+    for (int i = 0; i < ans.size(); i++) {
+        cout << "[";
+        for (int j = 0; j < ans[i].size(); j++) {
+            cout << ans[i][j];
+            if (j + 1 < ans[i].size())
+                cout << ", ";
+        }
+        cout << "]";
 
-    // C code to print all possible subarrays for given array
-// using recursion
-#include <stdio.h>
-
-// Recursive function to print all possible subarrays for
-// given array
-void printSubArrays(int arr[], int start, int end, int size)
-{
-  
-    // Stop if we have reached the end of the array
-    if (end == size)
-        return;
-  
-    // Increment the end point and start from 0
-    else if (start > end)
-        printSubArrays(arr, 0, end + 1, size);
-  
-    // Print the subarray and increment the starting point
-    else {
-        printf("[");
-        for (int i = start; i < end; i++)
-            printf("%d, ", arr[i]);
-        	printf("%d]\n", arr[end]);
-        	printSubArrays(arr, start + 1, end, size);
+        if (i + 1 < ans.size())
+            cout << ", ";
     }
-    return;
-}
+    cout << "]";
 
-int main()
-{
-    int arr[] = { 1, 2, 3 };
-    int n = sizeof(arr) / sizeof(arr[0]);
-    printSubArrays(arr, 0, 0, n);
     return 0;
 }
 
 
             Java
 
-    // Java code to print all possible subarrays for given array
-// using recursion
+    import java.util.ArrayList;
+import java.util.List;
 
-class solution {
+class GFG {
 
-    // Recursive function to print all possible subarrays
-    // for given array
-    static void printSubArrays(int[] arr, int start, int end)
-    { 
-        // Stop if we have reached the end of the array
+    static void generate(int start, int end, int[] arr,
+                         List<Integer> curr,
+                         List<List<Integer>> ans) {
         if (end == arr.length)
             return;
-        // Increment the end point and start from 0
-        else if (start > end)
-            printSubArrays(arr, 0, end + 1);
-        // Print the subarray and increment the starting
-        // point
-        else {
-            System.out.print("[");
-            for (int i = start; i < end; i++)
-                System.out.print(arr[i] + ", ");
-            System.out.println(arr[end] + "]");
-            printSubArrays(arr, start + 1, end);
-        }
-        return;
+
+        curr.add(arr[end]);
+        ans.add(new ArrayList<>(curr));
+
+        generate(start, end + 1, arr, curr, ans);
+
+        curr.remove(curr.size() - 1);
     }
 
-    public static void main(String args[])
-    {
-        int[] arr = { 1, 2, 3 };
-        printSubArrays(arr, 0, 0);
+    static void generateSubarrays(int start, int[] arr,
+                                  List<List<Integer>> ans) {
+        if (start == arr.length)
+            return;
+
+        List<Integer> curr = new ArrayList<>();
+
+        generate(start, start, arr, curr, ans);
+
+        generateSubarrays(start + 1, arr, ans);
+    }
+
+    static List<List<Integer>> getSubArrays(int[] arr) {
+        List<List<Integer>> ans = new ArrayList<>();
+
+        generateSubarrays(0, arr, ans);
+
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3};
+
+        System.out.println(getSubArrays(arr));
     }
 }
 
 
             Python
 
-    # Python3 code to print all possible subarrays 
-# for given array using recursion
-
-# Recursive function to print all possible subarrays 
-# for given array
-def printSubArrays(arr, start, end):
-    
-    # Stop if we have reached the end of the array    
+    def generate(start, end, arr, curr, ans):
     if end == len(arr):
         return
-    
-    # Increment the end point and start from 0
-    elif start > end:
-        return printSubArrays(arr, 0, end + 1)
-        
-    # Print the subarray and increment the starting
-    # point
-    else:
-        print(arr[start:end + 1])
-        return printSubArrays(arr, start + 1, end)
-        
-# Driver code
-arr = [1, 2, 3]
-printSubArrays(arr, 0, 0)
+
+    curr.append(arr[end])
+    ans.append(curr.copy())
+
+    generate(start, end + 1, arr, curr, ans)
+
+    curr.pop()
+
+
+def generateSubarrays(start, arr, ans):
+    if start == len(arr):
+        return
+
+    curr = []
+
+    generate(start, start, arr, curr, ans)
+
+    generateSubarrays(start + 1, arr, ans)
+
+
+def getSubArrays(arr):
+    ans = []
+
+    generateSubarrays(0, arr, ans)
+
+    return ans
+
+
+if __name__ == "__main__":
+    arr = [1, 2, 3]
+
+    print(getSubArrays(arr))
 
 
             C#
 
-    // C# code to print all possible subarrays 
-// for given array using recursion 
-using System;
+    using System;
+using System.Collections.Generic;
 
-class GFG 
-{ 
+class GFG
+{
+    static void generate(int start, int end, int[] arr,
+                         List<int> curr,
+                         List<List<int>> ans)
+    {
+        if (end == arr.Length)
+            return;
 
-    // Recursive function to print all  
-    // possible subarrays for given array 
-    static void printSubArrays(int []arr, 
-                        int start, int end) 
-    { 
-        // Stop if we have reached 
-        // the end of the array 
-        if (end == arr.Length) 
-            return; 
+        curr.Add(arr[end]);
+        ans.Add(new List<int>(curr));
 
-        // Increment the end point 
-        // and start from 0 
-        else if (start > end) 
-            printSubArrays(arr, 0, end + 1); 
+        generate(start, end + 1, arr, curr, ans);
 
-        // Print the subarray and 
-        // increment the starting point 
-        else
-        { 
-            Console.Write("["); 
-            for (int i = start; i < end; i++)
-            { 
-                Console.Write(arr[i]+", "); 
-            } 
+        curr.RemoveAt(curr.Count - 1);
+    }
 
-            Console.WriteLine(arr[end]+"]"); 
-            printSubArrays(arr, start + 1, end); 
-        } 
-        return; 
-    } 
+    static void generateSubarrays(int start, int[] arr,
+                                  List<List<int>> ans)
+    {
+        if (start == arr.Length)
+            return;
 
-    // Driver code
-    public static void Main(String []args) 
-    { 
-        int []arr = {1, 2, 3}; 
-        printSubArrays(arr, 0, 0); 
-    } 
-} 
+        List<int> curr = new List<int>();
+
+        generate(start, start, arr, curr, ans);
+
+        generateSubarrays(start + 1, arr, ans);
+    }
+
+    static List<List<int>> getSubArrays(int[] arr)
+    {
+        List<List<int>> ans = new List<List<int>>();
+
+        generateSubarrays(0, arr, ans);
+
+        return ans;
+    }
+
+    static void Main()
+    {
+        int[] arr = { 1, 2, 3 };
+
+        List<List<int>> ans = getSubArrays(arr);
+
+        Console.Write("[");
+        for (int i = 0; i < ans.Count; i++)
+        {
+            Console.Write("[" + string.Join(", ", ans[i]) + "]");
+
+            if (i + 1 < ans.Count)
+                Console.Write(", ");
+        }
+        Console.Write("]");
+    }
+}
 
 
             JavaScript
 
-    // JavaScript code to print all possible 
-// subarrays for given array using recursion 
-
-// Recursive function to print all 
-// possible subarrays for given array 
-function printSubArrays(arr, start, end) {   
-    if (end == arr.length) 
+    function generate(start, end, arr, curr, ans) {
+    if (end === arr.length)
         return;
-      
-    // Increment the end point and start
-    // from 0 
-    else if (start > end) 
-        printSubArrays(arr, 0, end + 1);
-          
-    // Print the subarray and increment 
-    // the starting point 
-    else {
-        let subArray = "[";
-        for (var i = start; i < end; i++) {
-            subArray += arr[i] + ", ";
-        }
-        subArray += arr[end] + "]";
-        console.log(subArray);
-        printSubArrays(arr, start + 1, end);
-    }
-    return;
+
+    curr.push(arr[end]);
+    ans.push([...curr]);
+
+    generate(start, end + 1, arr, curr, ans);
+
+    curr.pop();
 }
 
-var arr = [1, 2, 3];
-printSubArrays(arr, 0, 0);
+function generateSubarrays(start, arr, ans) {
+    if (start === arr.length)
+        return;
 
-Output1 
-1 2 
-2 
-1 2 3 
-2 3 
-3
+    let curr = [];
+
+    generate(start, start, arr, curr, ans);
+
+    generateSubarrays(start + 1, arr, ans);
+}
+
+function getSubArrays(arr) {
+    let ans = [];
+
+    generateSubarrays(0, arr, ans);
+
+    return ans;
+}
+
+// Driver Code
+let arr = [1, 2, 3];
+
+console.log(JSON.stringify(getSubArrays(arr)));
+
+Output[[1], [1, 2], [1, 2, 3], [2], [2, 3], [3]]
