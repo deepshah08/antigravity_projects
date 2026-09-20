@@ -1,0 +1,887 @@
+# A Valid Order to Complete All Tasks - GeeksforGeeks
+
+Given n tasks, labeled from 0 to n - 1 and a 2d array prerequisites, pre[][] where pre[i] = [x, y] indicates that task y must be completed before task x. Find an ordering of tasks in which all the tasks can be completed.Note: There may be multiple correct orders, you just need to return any one of them. If it is impossible to finish all tasks, return an empty array. Examples:Input: n = 3, pre[][] = [[1, 0], [2, 1]]Output: [0, 1, 2]Explanation: To complete task 1, you must finish task 0 first. To complete task 2, you must finish task 1 first. So the only valid order is [0, 1, 2].Input: n = 4, pre[][] = [[2, 0], [2, 1], [3, 2]]Output: [0, 1, 2, 3]Explanation: Task 2 requires both tasks 0 and 1 to be completed first. Task 3 requires task 2 to be completed first. Hence, both [0, 1, 2, 3] and [1, 0, 2, 3] are valid orders.Try It YourselfTable of ContentKahn's Algorithm (BFS) - O(n + p) Time and O(n + p) SpaceDFS-Based Topological Sort - O(n + p) Time and O(n + p) SpaceKahn's Algorithm (BFS) - O(n + p) Time and O(n + p) SpaceThe idea is to use Kahn's Algorithm for Topological Sorting. We consider each course as a node in a directed graph, and each prerequisite pair [a, b] as a directed edge from b -> a.This means:To take course a, you must complete course b first.So, there is a directed edge from b (the prerequisite) to a (the dependent course).A valid task order must ensure that every prerequisite task is completed before the dependent task, which is exactly what topological sorting provides for a directed graph. Build a directed graph with an edge y → x for every prerequisite [x, y].Calculate the in-degree of every task. Add all tasks with in-degree 0 to a queue. Remove tasks from the queue, add them to order, and decrease the in-degree of their neighbors. Add a neighbor to the queue when its in-degree becomes 0. If order contains all n tasks, return it; otherwise, return an empty array.
+            C++
+
+    #include <bits/stdc++.h>
+using namespace std;
+
+vector<int> findOrder(int n, vector<vector<int>> &pre)
+{
+    // Initialize graph and in-degree array
+    vector<vector<int>> adj(n);
+    vector<int> inDegree(n, 0);
+
+    // Build the graph
+    // If [x, y], then y must be completed before x.
+    // So, add edge y -> x.
+    for (auto &p : pre)
+    {
+        int dest = p[0];
+        int src = p[1];
+
+        adj[src].push_back(dest);
+        inDegree[dest]++;
+    }
+
+    // Add all tasks with no prerequisites
+    // to the queue.
+    queue<int> q;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (inDegree[i] == 0)
+        {
+            q.push(i);
+        }
+    }
+
+    vector<int> order;
+
+    // Process tasks using BFS
+    while (!q.empty())
+    {
+        int current = q.front();
+        q.pop();
+
+        order.push_back(current);
+
+        // Remove current task from the graph
+        // by reducing the in-degree of its neighbors.
+        for (int neighbor : adj[current])
+        {
+            inDegree[neighbor]--;
+
+            // All prerequisites of this task are completed.
+            if (inDegree[neighbor] == 0)
+            {
+                q.push(neighbor);
+            }
+        }
+    }
+
+    // If all tasks are processed, the order is valid.
+    // Otherwise, a cycle exists.
+    if (order.size() == n)
+    {
+        return order;
+    }
+
+    return {};
+}
+
+int main()
+{
+    int n = 4;
+    vector<vector<int>> pre = {{2, 0}, {2, 1}, {3, 2}};
+    
+    vector<int> order = findOrder(n, pre);
+
+    if (order.empty())
+    {
+        cout << "[]\n";
+    }
+    else
+    {
+        for (int task : order)
+        {
+            cout << task << " ";
+        }
+        cout << "\n";
+    }
+
+    return 0;
+}
+
+
+            Java
+
+    import java.util.*;
+
+class GFG {
+    static ArrayList<Integer> findOrder(int n, int[][] pre)
+    {
+        // Initialize graph and in-degree array
+        ArrayList<ArrayList<Integer> > adj
+            = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        int[] inDegree = new int[n];
+
+        // Build the graph
+        // If [x, y], then y must be completed before x.
+        // So, add edge y -> x.
+        for (int[] p : pre) {
+            int dest = p[0];
+            int src = p[1];
+
+            adj.get(src).add(dest);
+            inDegree[dest]++;
+        }
+
+        // Add all tasks with no prerequisites
+        // to the queue.
+        Queue<Integer> q = new LinkedList<>();
+
+        for (int i = 0; i < n; i++) {
+            if (inDegree[i] == 0) {
+                q.add(i);
+            }
+        }
+
+        ArrayList<Integer> order = new ArrayList<>();
+
+        // Process tasks using BFS
+        while (!q.isEmpty()) {
+            int current = q.poll();
+
+            order.add(current);
+
+            // Remove current task from the graph
+            // by reducing the in-degree of its neighbors.
+            for (int neighbor : adj.get(current)) {
+                inDegree[neighbor]--;
+
+                // All prerequisites of this task are
+                // completed.
+                if (inDegree[neighbor] == 0) {
+                    q.add(neighbor);
+                }
+            }
+        }
+
+        // If all tasks are processed, the order is valid.
+        // Otherwise, a cycle exists.
+        if (order.size() == n) {
+            return order;
+        }
+
+        return new ArrayList<>();
+    }
+
+    public static void main(String[] args)
+    {
+        int n = 4;
+        int[][] pre = { { 2, 0 }, { 2, 1 }, { 3, 2 } };
+
+        ArrayList<Integer> order = findOrder(n, pre);
+
+        if (order.isEmpty()) {
+            System.out.println("[]");
+        }
+        else {
+            for (int task : order) {
+                System.out.print(task + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+            Python
+
+    from collections import deque
+
+
+def findOrder(n, pre):
+
+    # Initialize graph and in-degree array
+    adj = [[] for _ in range(n)]
+    inDegree = [0] * n
+
+    # Build the graph
+    # If [x, y], then y must be completed before x.
+    # So, add edge y -> x.
+    for p in pre:
+        dest = p[0]
+        src = p[1]
+
+        adj[src].append(dest)
+        inDegree[dest] += 1
+
+    # Add all tasks with no prerequisites
+    # to the queue.
+    q = deque()
+
+    for i in range(n):
+        if inDegree[i] == 0:
+            q.append(i)
+
+    order = []
+
+    # Process tasks using BFS
+    while q:
+        current = q.popleft()
+
+        order.append(current)
+
+        # Remove current task from the graph
+        # by reducing the in-degree of its neighbors.
+        for neighbor in adj[current]:
+            inDegree[neighbor] -= 1
+
+            # All prerequisites of this task are completed.
+            if inDegree[neighbor] == 0:
+                q.append(neighbor)
+
+    # If all tasks are processed, the order is valid.
+    # Otherwise, a cycle exists.
+    if len(order) == n:
+        return order
+
+    return []
+
+
+# Driver Code
+if __name__ == "__main__":
+    n = 4
+    pre = [[2, 0], [2, 1], [3, 2]]
+
+    order = findOrder(n, pre)
+
+    if not order:
+        print("[]")
+    else:
+        for task in order:
+            print(task, end=" ")
+        print()
+
+
+            C#
+
+    using System;
+using System.Collections.Generic;
+
+class GFG {
+    static List<int> findOrder(int n, int[, ] pre)
+    {
+        // Initialize graph and in-degree array
+        List<List<int> > adj = new List<List<int> >();
+
+        for (int i = 0; i < n; i++) {
+            adj.Add(new List<int>());
+        }
+
+        int[] inDegree = new int[n];
+
+        // Build the graph
+        // If [x, y], then y must be completed before x.
+        // So, add edge y -> x.
+        int rows = pre.GetLength(0);
+
+        for (int i = 0; i < rows; i++) {
+            int dest = pre[i, 0];
+            int src = pre[i, 1];
+
+            adj[src].Add(dest);
+            inDegree[dest]++;
+        }
+
+        // Add all tasks with no prerequisites
+        // to the queue.
+        Queue<int> q = new Queue<int>();
+
+        for (int i = 0; i < n; i++) {
+            if (inDegree[i] == 0) {
+                q.Enqueue(i);
+            }
+        }
+
+        List<int> order = new List<int>();
+
+        // Process tasks using BFS
+        while (q.Count > 0) {
+            int current = q.Dequeue();
+
+            order.Add(current);
+
+            // Remove current task from the graph
+            // by reducing the in-degree of its neighbors.
+            foreach(int neighbor in adj[current])
+            {
+                inDegree[neighbor]--;
+
+                // All prerequisites of this task are
+                // completed.
+                if (inDegree[neighbor] == 0) {
+                    q.Enqueue(neighbor);
+                }
+            }
+        }
+
+        // If all tasks are processed, the order is valid.
+        // Otherwise, a cycle exists.
+        if (order.Count == n) {
+            return order;
+        }
+
+        return new List<int>();
+    }
+
+    public static void Main()
+    {
+        int n = 4;
+        int[, ] pre = { { 2, 0 }, { 2, 1 }, { 3, 2 } };
+
+        List<int> order = findOrder(n, pre);
+
+        if (order.Count == 0) {
+            Console.WriteLine("[]");
+        }
+        else {
+            foreach(int task in order)
+            {
+                Console.Write(task + " ");
+            }
+
+            Console.WriteLine();
+        }
+    }
+}
+
+
+            JavaScript
+
+    function findOrder(n, pre)
+{
+    // Initialize graph and in-degree array
+    let adj = Array.from({length : n}, () => []);
+    let inDegree = new Array(n).fill(0);
+
+    // Build the graph
+    // If [x, y], then y must be completed before x.
+    // So, add edge y -> x.
+    for (let p of pre) {
+        let dest = p[0];
+        let src = p[1];
+
+        adj[src].push(dest);
+        inDegree[dest]++;
+    }
+
+    // Add all tasks with no prerequisites
+    // to the queue.
+    let q = [];
+    let front = 0;
+
+    for (let i = 0; i < n; i++) {
+        if (inDegree[i] === 0) {
+            q.push(i);
+        }
+    }
+
+    let order = [];
+
+    // Process tasks using BFS
+    while (front < q.length) {
+        let current = q[front++];
+
+        order.push(current);
+
+        // Remove current task from the graph
+        // by reducing the in-degree of its neighbors.
+        for (let neighbor of adj[current]) {
+            inDegree[neighbor]--;
+
+            // All prerequisites of this task are completed.
+            if (inDegree[neighbor] === 0) {
+                q.push(neighbor);
+            }
+        }
+    }
+
+    // If all tasks are processed, the order is valid.
+    // Otherwise, a cycle exists.
+    if (order.length === n) {
+        return order;
+    }
+
+    return [];
+}
+
+// Driver Code
+let n = 4;
+let pre = [ [ 2, 0 ], [ 2, 1 ], [ 3, 2 ] ];
+
+let order = findOrder(n, pre);
+
+if (order.length === 0) {
+    console.log("[]");
+}
+else {
+    console.log(order.join(" "));
+}
+
+Output0 1 2 3 
+DFS-Based Topological Sort - O(n + p) Time and O(n + p) SpaceThe idea is to use DFS for Topological Sorting. Since tasks have dependencies on one another, we can represent them as a directed graph where an edge y → x means task y must be completed before task x. During DFS, we first explore all tasks that depend on the current task and add the current task to the result only after all its dependent tasks are processed. To detect a cycle, we keep track of the tasks currently being visited. If DFS reaches a task that is already being visited, a cycle exists, so it is impossible to complete all tasks. Finally, we reverse the result to get the required task ordering.Build a directed graph with an edge y → x for every prerequisite [x, y].Maintain a visited array to track the state of each task during DFS. If a task is already being visited, a cycle exists, so return an empty array. Run DFS for every unvisited task and mark it as completely processed after exploring all its neighbors. Add each task to the result after its DFS is completed. Reverse the result to obtain the valid ordering of tasks.
+            C++
+
+    #include <bits/stdc++.h>
+using namespace std;
+
+bool dfs(int node, vector<vector<int>> &adj, vector<int> &visited, vector<int> &order)
+{
+    // Mark the current task as being visited
+    visited[node] = 1;
+
+    // Visit all dependent tasks
+    for (int neighbor : adj[node])
+    {
+        // A cycle is found if the task is
+        // already being visited.
+        if (visited[neighbor] == 1)
+            return false;
+
+        // Visit the unvisited task
+        if (visited[neighbor] == 0)
+        {
+            if (!dfs(neighbor, adj, visited, order))
+                return false;
+        }
+    }
+
+    // Mark the task as completely processed
+    visited[node] = 2;
+
+    // Add the task after all its dependent tasks
+    // have been processed.
+    order.push_back(node);
+
+    return true;
+}
+
+vector<int> findOrder(int n, vector<vector<int>> &pre)
+{
+    // Initialize the graph
+    vector<vector<int>> adj(n);
+
+    // Build the graph
+    // If [x, y], then y must be completed before x.
+    // So, add edge y -> x.
+    for (auto &p : pre)
+    {
+        int dest = p[0];
+        int src = p[1];
+
+        adj[src].push_back(dest);
+    }
+
+    // 0 = unvisited, 1 = currently visiting,
+    // 2 = completely processed
+    vector<int> visited(n, 0);
+
+    vector<int> order;
+
+    // Run DFS for every unvisited task
+    for (int i = 0; i < n; i++)
+    {
+        if (visited[i] == 0)
+        {
+            // If a cycle is found, no valid order exists.
+            if (!dfs(i, adj, visited, order))
+                return {};
+        }
+    }
+
+    // Tasks are added in reverse topological order,
+    // so reverse them to get the required order.
+    reverse(order.begin(), order.end());
+
+    return order;
+}
+
+int main()
+{
+    int n = 4;
+    vector<vector<int>> pre = {{2, 0}, {2, 1}, {3, 2}};
+
+    vector<int> order = findOrder(n, pre);
+
+    if (order.empty())
+    {
+        cout << "[]\n";
+    }
+    else
+    {
+        for (int task : order)
+        {
+            cout << task << " ";
+        }
+        cout << "\n";
+    }
+
+    return 0;
+}
+
+
+            Java
+
+    import java.util.*;
+
+class GFG {
+    static boolean dfs(int node,
+                       ArrayList<ArrayList<Integer> > adj,
+                       int[] visited,
+                       ArrayList<Integer> order)
+    {
+        // Mark the current task as being visited
+        visited[node] = 1;
+
+        // Visit all dependent tasks
+        for (int neighbor : adj.get(node)) {
+
+            // A cycle is found if the task is
+            // already being visited.
+            if (visited[neighbor] == 1)
+                return false;
+
+            // Visit the unvisited task
+            if (visited[neighbor] == 0) {
+                if (!dfs(neighbor, adj, visited, order))
+                    return false;
+            }
+        }
+
+        // Mark the task as completely processed
+        visited[node] = 2;
+
+        // Add the task after all its dependent tasks
+        // have been processed.
+        order.add(node);
+
+        return true;
+    }
+
+    static ArrayList<Integer> findOrder(int n, int[][] pre)
+    {
+        // Initialize the graph
+        ArrayList<ArrayList<Integer> > adj
+            = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // Build the graph
+        // If [x, y], then y must be completed before x.
+        // So, add edge y -> x.
+        for (int[] p : pre) {
+            int dest = p[0];
+            int src = p[1];
+
+            adj.get(src).add(dest);
+        }
+
+        // 0 = unvisited, 1 = currently visiting,
+        // 2 = completely processed
+        int[] visited = new int[n];
+
+        ArrayList<Integer> order = new ArrayList<>();
+
+        // Run DFS for every unvisited task
+        for (int i = 0; i < n; i++) {
+            if (visited[i] == 0) {
+
+                // If a cycle is found, no valid order
+                // exists.
+                if (!dfs(i, adj, visited, order))
+                    return new ArrayList<>();
+            }
+        }
+
+        // Tasks are added in reverse topological order,
+        // so reverse them to get the required order.
+        Collections.reverse(order);
+
+        return order;
+    }
+
+    public static void main(String[] args)
+    {
+        int n = 4;
+        int[][] pre = { { 2, 0 }, { 2, 1 }, { 3, 2 } };
+
+        ArrayList<Integer> order = findOrder(n, pre);
+
+        if (order.isEmpty()) {
+            System.out.println("[]");
+        }
+        else {
+            for (int task : order) {
+                System.out.print(task + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+            Python
+
+    def dfs(node, adj, visited, order):
+
+    # Mark the current task as being visited
+    visited[node] = 1
+
+    # Visit all dependent tasks
+    for neighbor in adj[node]:
+
+        # A cycle is found if the task is
+        # already being visited.
+        if visited[neighbor] == 1:
+            return False
+
+        # Visit the unvisited task
+        if visited[neighbor] == 0:
+            if not dfs(neighbor, adj, visited, order):
+                return False
+
+    # Mark the task as completely processed
+    visited[node] = 2
+
+    # Add the task after all its dependent tasks
+    # have been processed.
+    order.append(node)
+
+    return True
+
+
+def findOrder(n, pre):
+
+    # Initialize the graph
+    adj = [[] for _ in range(n)]
+
+    # Build the graph
+    # If [x, y], then y must be completed before x.
+    # So, add edge y -> x.
+    for p in pre:
+        dest = p[0]
+        src = p[1]
+
+        adj[src].append(dest)
+
+    # 0 = unvisited, 1 = currently visiting,
+    # 2 = completely processed
+    visited = [0] * n
+
+    order = []
+
+    # Run DFS for every unvisited task
+    for i in range(n):
+        if visited[i] == 0:
+
+            # If a cycle is found, no valid order exists.
+            if not dfs(i, adj, visited, order):
+                return []
+
+    # Tasks are added in reverse topological order,
+    # so reverse them to get the required order.
+    order.reverse()
+
+    return order
+
+
+# Driver Code
+if __name__ == "__main__":
+    n = 4
+    pre = [[2, 0], [2, 1], [3, 2]]
+
+    order = findOrder(n, pre)
+
+    if not order:
+        print("[]")
+    else:
+        print(*order)
+
+
+            C#
+
+    using System;
+using System.Collections.Generic;
+
+class GFG {
+    static bool dfs(int node, List<List<int> > adj,
+                    int[] visited, List<int> order)
+    {
+        // Mark the current task as being visited
+        visited[node] = 1;
+
+        // Visit all dependent tasks
+        foreach(int neighbor in adj[node])
+        {
+            // A cycle is found if the task is
+            // already being visited.
+            if (visited[neighbor] == 1)
+                return false;
+
+            // Visit the unvisited task
+            if (visited[neighbor] == 0) {
+                if (!dfs(neighbor, adj, visited, order))
+                    return false;
+            }
+        }
+
+        // Mark the task as completely processed
+        visited[node] = 2;
+
+        // Add the task after all its dependent tasks
+        // have been processed.
+        order.Add(node);
+
+        return true;
+    }
+
+    static List<int> findOrder(int n, int[, ] pre)
+    {
+        // Initialize the graph
+        List<List<int> > adj = new List<List<int> >();
+
+        for (int i = 0; i < n; i++) {
+            adj.Add(new List<int>());
+        }
+
+        // Build the graph
+        // If [x, y], then y must be completed before x.
+        // So, add edge y -> x.
+        int rows = pre.GetLength(0);
+
+        for (int i = 0; i < rows; i++) {
+            int dest = pre[i, 0];
+            int src = pre[i, 1];
+
+            adj[src].Add(dest);
+        }
+
+        // 0 = unvisited, 1 = currently visiting,
+        // 2 = completely processed
+        int[] visited = new int[n];
+
+        List<int> order = new List<int>();
+
+        // Run DFS for every unvisited task
+        for (int i = 0; i < n; i++) {
+            if (visited[i] == 0) {
+                // If a cycle is found, no valid order
+                // exists.
+                if (!dfs(i, adj, visited, order))
+                    return new List<int>();
+            }
+        }
+
+        // Tasks are added in reverse topological order,
+        // so reverse them to get the required order.
+        order.Reverse();
+
+        return order;
+    }
+
+    public static void Main()
+    {
+        int n = 4;
+        int[, ] pre = { { 2, 0 }, { 2, 1 }, { 3, 2 } };
+
+        List<int> order = findOrder(n, pre);
+
+        if (order.Count == 0) {
+            Console.WriteLine("[]");
+        }
+        else {
+            foreach(int task in order)
+            {
+                Console.Write(task + " ");
+            }
+
+            Console.WriteLine();
+        }
+    }
+}
+
+
+            JavaScript
+
+    function dfs(node, adj, visited, order)
+{
+    // Mark the current task as being visited
+    visited[node] = 1;
+
+    // Visit all dependent tasks
+    for (let neighbor of adj[node]) {
+
+        // A cycle is found if the task is
+        // already being visited.
+        if (visited[neighbor] === 1)
+            return false;
+
+        // Visit the unvisited task
+        if (visited[neighbor] === 0) {
+            if (!dfs(neighbor, adj, visited, order))
+                return false;
+        }
+    }
+
+    // Mark the task as completely processed
+    visited[node] = 2;
+
+    // Add the task after all its dependent tasks
+    // have been processed.
+    order.push(node);
+
+    return true;
+}
+
+function findOrder(n, pre)
+{
+    // Initialize the graph
+    let adj = Array.from({length : n}, () => []);
+
+    // Build the graph
+    // If [x, y], then y must be completed before x.
+    // So, add edge y -> x.
+    for (let p of pre) {
+        let dest = p[0];
+        let src = p[1];
+
+        adj[src].push(dest);
+    }
+
+    // 0 = unvisited, 1 = currently visiting,
+    // 2 = completely processed
+    let visited = new Array(n).fill(0);
+
+    let order = [];
+
+    // Run DFS for every unvisited task
+    for (let i = 0; i < n; i++) {
+        if (visited[i] === 0) {
+
+            // If a cycle is found, no valid order exists.
+            if (!dfs(i, adj, visited, order))
+                return [];
+        }
+    }
+
+    // Tasks are added in reverse topological order,
+    // so reverse them to get the required order.
+    order.reverse();
+
+    return order;
+}
+
+// Driver Code
+let n = 4;
+let pre = [ [ 2, 0 ], [ 2, 1 ], [ 3, 2 ] ];
+
+let order = findOrder(n, pre);
+
+if (order.length === 0) {
+    console.log("[]");
+}
+else {
+    console.log(order.join(" "));
+}
+
+Output1 0 2 3

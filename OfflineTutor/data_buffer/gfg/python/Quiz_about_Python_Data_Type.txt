@@ -66,10 +66,10 @@
           transform: rotate(360deg);
         }
       }
-    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython Data TypeLast Updated : DiscussCommentsQuestion 1Which of these is not a core data type?ListsDictionaryTuplesClassQuestion 2What is the data type of variable x in the following code?
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython Data TypeLast Updated : DiscussCommentsQuestion 1Which of these is not a core data type?AListsBDictionaryCTuplesDClassQuestion 2What is the data type of variable x in the following code?
         Python
         
         x = [1, 23, ‘hello’, 1]
 
         
-    ListDictionaryTupleArrayQuestion 3Which of the following function convert a string x to a float in python?int(x [,base])long(x [,base] )float(x)str(x)Question 4Which Python datatype maintains the order of elements inserted?setlistdictBoth B and CTags:Python-QuizzesThere are 4 questions to complete.Take a part in the ongoing discussionView All Discussion
+    AListBDictionaryCTupleDArrayQuestion 3Which of the following function convert a string x to a float in python?Aint(x [,base])Blong(x [,base] )Cfloat(x)Dstr(x)Question 4Which Python datatype maintains the order of elements inserted?AsetBlistCdictDBoth B and CTags:Python-QuizzesThere are 4 questions to complete.Take a part in the ongoing discussionView All Discussion

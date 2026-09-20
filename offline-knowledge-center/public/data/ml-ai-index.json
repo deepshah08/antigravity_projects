@@ -800,95 +800,95 @@
     },
     {
       "id": "ml-ai-200",
-      "title": "Scatter Plot - GeeksforGeeks"
+      "title": "Generate a Heatmap in MatPlotLib Using a Scatter Dataset - GeeksforGeeks"
     },
     {
       "id": "ml-ai-201",
-      "title": "Box Plot - GeeksforGeeks"
+      "title": "Scatter Plot - GeeksforGeeks"
     },
     {
       "id": "ml-ai-202",
-      "title": "Make Violinplot with data points using Seaborn - GeeksforGeeks"
+      "title": "Box Plot - GeeksforGeeks"
     },
     {
       "id": "ml-ai-203",
-      "title": "Python - seaborn.swarmplot() method - GeeksforGeeks"
+      "title": "Make Violinplot with data points using Seaborn - GeeksforGeeks"
     },
     {
       "id": "ml-ai-204",
-      "title": "Comprehensive Guide to Adding Titles and Customizing Seaborn Boxplots - GeeksforGeeks"
+      "title": "Python - seaborn.swarmplot() method - GeeksforGeeks"
     },
     {
       "id": "ml-ai-205",
-      "title": "How to set a Seaborn chart figure size? - GeeksforGeeks"
+      "title": "Comprehensive Guide to Adding Titles and Customizing Seaborn Boxplots - GeeksforGeeks"
     },
     {
       "id": "ml-ai-206",
-      "title": "Grid Plot in Python using Seaborn - GeeksforGeeks"
+      "title": "How to set a Seaborn chart figure size? - GeeksforGeeks"
     },
     {
       "id": "ml-ai-207",
-      "title": "Events in Probability - GeeksforGeeks"
+      "title": "Grid Plot in Python using Seaborn - GeeksforGeeks"
     },
     {
       "id": "ml-ai-208",
-      "title": "Probability in Maths - GeeksforGeeks"
+      "title": "Events in Probability - GeeksforGeeks"
     },
     {
       "id": "ml-ai-209",
-      "title": "Dependent and Independent Events - GeeksforGeeks"
+      "title": "Probability in Maths - GeeksforGeeks"
     },
     {
       "id": "ml-ai-210",
-      "title": "Addition Rule for Probability - GeeksforGeeks"
+      "title": "Dependent and Independent Events - GeeksforGeeks"
     },
     {
       "id": "ml-ai-211",
-      "title": "Probability Distribution - GeeksforGeeks"
+      "title": "Addition Rule for Probability - GeeksforGeeks"
     },
     {
       "id": "ml-ai-212",
-      "title": "Probability in Computer Science - GeeksforGeeks"
+      "title": "Probability Distribution - GeeksforGeeks"
     },
     {
       "id": "ml-ai-213",
-      "title": "Chance and Probability - GeeksforGeeks"
+      "title": "Probability in Computer Science - GeeksforGeeks"
     },
     {
       "id": "ml-ai-214",
-      "title": "Empirical Probability - GeeksforGeeks"
+      "title": "Chance and Probability - GeeksforGeeks"
     },
     {
       "id": "ml-ai-215",
-      "title": "Probability Theory - GeeksforGeeks"
+      "title": "Empirical Probability - GeeksforGeeks"
     },
     {
       "id": "ml-ai-216",
-      "title": "Practice Problems on Probability | Class 9 Maths - GeeksforGeeks"
+      "title": "Probability Theory - GeeksforGeeks"
     },
     {
       "id": "ml-ai-217",
-      "title": "What Is the Difference Between \"Likelihood\" and \"Probability\"? - GeeksforGeeks"
+      "title": "Practice Problems on Probability | Class 9 Maths - GeeksforGeeks"
     },
     {
       "id": "ml-ai-218",
-      "title": "Bayes' Theorem - GeeksforGeeks"
+      "title": "What Is the Difference Between \"Likelihood\" and \"Probability\"? - GeeksforGeeks"
     },
     {
       "id": "ml-ai-219",
-      "title": "Multiplication Theorem - GeeksforGeeks"
+      "title": "Bayes' Theorem - GeeksforGeeks"
     },
     {
       "id": "ml-ai-220",
-      "title": "Conditional Probability Practice Question - GeeksforGeeks"
+      "title": "Multiplication Theorem - GeeksforGeeks"
     },
     {
       "id": "ml-ai-221",
-      "title": "Bayesian Inference - GeeksforGeeks"
+      "title": "Conditional Probability Practice Question - GeeksforGeeks"
     },
     {
       "id": "ml-ai-222",
-      "title": "here"
+      "title": "Bayesian Inference - GeeksforGeeks"
     },
     {
       "id": "ml-ai-223",
@@ -896,155 +896,155 @@
     },
     {
       "id": "ml-ai-224",
-      "title": "Bayesian Optimization in Machine Learning - GeeksforGeeks"
+      "title": "here"
     },
     {
       "id": "ml-ai-225",
-      "title": "Basic Understanding of Bayesian Belief Networks - GeeksforGeeks"
+      "title": "Bayesian Optimization in Machine Learning - GeeksforGeeks"
     },
     {
       "id": "ml-ai-226",
-      "title": "P-Value: Comprehensive Guide to Understand, Apply and Interpret - GeeksforGeeks"
+      "title": "Basic Understanding of Bayesian Belief Networks - GeeksforGeeks"
     },
     {
       "id": "ml-ai-227",
-      "title": "Probability Mass Function - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-228",
-      "title": "Probability Density Function - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-229",
-      "title": "Cumulative Distribution Function - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-230",
-      "title": "Discrete Probability Distributions for Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-231",
-      "title": "Binomial Distribution in Data Science - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-232",
-      "title": "Bernoulli Distribution in Statistics - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-233",
-      "title": "Poisson Distribution : Meaning, Characteristics, Shape, Mean and Variance - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-234",
-      "title": "Geometric Distribution - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-235",
-      "title": "Continuous Probability Distributions for Machine Learning - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-236",
-      "title": "Normal Distribution in Data Science - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-237",
-      "title": "Exponential Distribution - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-238",
-      "title": "Uniform Distribution in Data Science - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-239",
-      "title": "Mathematics | Beta Distribution Model - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-240",
-      "title": "Gamma Distribution in Statistics - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-241",
-      "title": "Chi-Squared Distributions - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-242",
-      "title": "Lognormal Distribution in Business Statistics - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-243",
-      "title": "Measures of Central Tendency in Statistics - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-244",
-      "title": "Measures of Spread - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-245",
-      "title": "Frequency Distribution - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-246",
-      "title": "statistics.mean() function | Python - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-247",
-      "title": "Mode - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-248",
-      "title": "Median in Statistics - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-249",
-      "title": "Python statistics | variance() - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-250",
-      "title": "Mean, Variance and Standard Deviation - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-251",
-      "title": "Confidence Interval - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-252",
-      "title": "A/B Testing using Python - GeeksforGeeks"
-    },
-    {
-      "id": "ml-ai-253",
       "title": "P-Value: Comprehensive Guide to Understand, Apply and Interpret - GeeksforGeeks"
     },
     {
+      "id": "ml-ai-228",
+      "title": "Probability Mass Function - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-229",
+      "title": "Probability Density Function - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-230",
+      "title": "Cumulative Distribution Function - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-231",
+      "title": "Discrete Probability Distributions for Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-232",
+      "title": "Binomial Distribution in Data Science - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-233",
+      "title": "Bernoulli Distribution in Statistics - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-234",
+      "title": "Poisson Distribution : Meaning, Characteristics, Shape, Mean and Variance - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-235",
+      "title": "Geometric Distribution - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-236",
+      "title": "Continuous Probability Distributions for Machine Learning - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-237",
+      "title": "Normal Distribution in Data Science - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-238",
+      "title": "Exponential Distribution - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-239",
+      "title": "Uniform Distribution in Data Science - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-240",
+      "title": "Mathematics | Beta Distribution Model - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-241",
+      "title": "Gamma Distribution in Statistics - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-242",
+      "title": "Chi-Squared Distributions - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-243",
+      "title": "Lognormal Distribution in Business Statistics - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-244",
+      "title": "Measures of Central Tendency in Statistics - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-245",
+      "title": "Measures of Spread - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-246",
+      "title": "Frequency Distribution - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-247",
+      "title": "statistics.mean() function | Python - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-248",
+      "title": "Mode - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-249",
+      "title": "Median in Statistics - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-250",
+      "title": "Python statistics | variance() - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-251",
+      "title": "Mean, Variance and Standard Deviation - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-252",
+      "title": "Confidence Interval - GeeksforGeeks"
+    },
+    {
+      "id": "ml-ai-253",
+      "title": "A/B Testing using Python - GeeksforGeeks"
+    },
+    {
       "id": "ml-ai-254",
-      "title": "Central Limit Theorem in Statistics - GeeksforGeeks"
+      "title": "P-Value: Comprehensive Guide to Understand, Apply and Interpret - GeeksforGeeks"
     },
     {
       "id": "ml-ai-255",
-      "title": "Type I and Type II Errors - GeeksforGeeks"
+      "title": "Central Limit Theorem in Statistics - GeeksforGeeks"
     },
     {
       "id": "ml-ai-256",
-      "title": "Parametric Methods in Statistics - GeeksforGeeks"
+      "title": "Type I and Type II Errors - GeeksforGeeks"
     },
     {
       "id": "ml-ai-257",
-      "title": "Anova Test - GeeksforGeeks"
+      "title": "Parametric Methods in Statistics - GeeksforGeeks"
     },
     {
       "id": "ml-ai-258",
-      "title": "Non-Parametric Tests - GeeksforGeeks"
+      "title": "Anova Test - GeeksforGeeks"
     },
     {
       "id": "ml-ai-259",
-      "title": "Skewness - Measures and Interpretation - GeeksforGeeks"
+      "title": "Non-Parametric Tests - GeeksforGeeks"
     },
     {
       "id": "ml-ai-260",
-      "title": "How to Calculate Kurtosis in Statistics? - GeeksforGeeks"
+      "title": "Skewness - Measures and Interpretation - GeeksforGeeks"
     },
     {
       "id": "ml-ai-261",
-      "title": "here"
+      "title": "How to Calculate Kurtosis in Statistics? - GeeksforGeeks"
     },
     {
       "id": "ml-ai-262",
@@ -1052,147 +1052,147 @@
     },
     {
       "id": "ml-ai-263",
-      "title": "Anscombe’s quartet - GeeksforGeeks"
+      "title": "here"
     },
     {
       "id": "ml-ai-264",
-      "title": "here"
+      "title": "Anscombe’s quartet - GeeksforGeeks"
     },
     {
       "id": "ml-ai-265",
-      "title": "Covariance and Correlation - GeeksforGeeks"
+      "title": "here"
     },
     {
       "id": "ml-ai-266",
-      "title": "Pearson Correlation Coefficient - GeeksforGeeks"
+      "title": "Covariance and Correlation - GeeksforGeeks"
     },
     {
       "id": "ml-ai-267",
-      "title": "Euclidean Distance - GeeksforGeeks"
+      "title": "Pearson Correlation Coefficient - GeeksforGeeks"
     },
     {
       "id": "ml-ai-268",
-      "title": "Cosine Similarity - GeeksforGeeks"
+      "title": "Euclidean Distance - GeeksforGeeks"
     },
     {
       "id": "ml-ai-269",
-      "title": "Matrix Addition - GeeksforGeeks"
+      "title": "Cosine Similarity - GeeksforGeeks"
     },
     {
       "id": "ml-ai-270",
-      "title": "Subtraction of Matrices - GeeksforGeeks"
+      "title": "Matrix Addition - GeeksforGeeks"
     },
     {
       "id": "ml-ai-271",
-      "title": "Linear Algebra - GeeksforGeeks"
+      "title": "Subtraction of Matrices - GeeksforGeeks"
     },
     {
       "id": "ml-ai-272",
-      "title": "Null Space and Nullity of a Matrix - GeeksforGeeks"
+      "title": "Linear Algebra - GeeksforGeeks"
     },
     {
       "id": "ml-ai-273",
-      "title": "Lagrange Multipliers - GeeksforGeeks"
+      "title": "Null Space and Nullity of a Matrix - GeeksforGeeks"
     },
     {
       "id": "ml-ai-274",
-      "title": "Moore - Penrose Pseudoinverse | Mathematics - GeeksforGeeks"
+      "title": "Lagrange Multipliers - GeeksforGeeks"
     },
     {
       "id": "ml-ai-275",
-      "title": "Second Order Derivatives - GeeksforGeeks"
+      "title": "Moore - Penrose Pseudoinverse | Mathematics - GeeksforGeeks"
     },
     {
       "id": "ml-ai-276",
-      "title": "Constant Multiple Rule - GeeksforGeeks"
+      "title": "Second Order Derivatives - GeeksforGeeks"
     },
     {
       "id": "ml-ai-277",
-      "title": "Power Rule - GeeksforGeeks"
+      "title": "Constant Multiple Rule - GeeksforGeeks"
     },
     {
       "id": "ml-ai-278",
-      "title": "Product Rule - GeeksforGeeks"
+      "title": "Power Rule - GeeksforGeeks"
     },
     {
       "id": "ml-ai-279",
-      "title": "Quotient Rule - GeeksforGeeks"
+      "title": "Product Rule - GeeksforGeeks"
     },
     {
       "id": "ml-ai-280",
-      "title": "Chain Rule: Theorem, Formula and Solved Examples - GeeksforGeeks"
+      "title": "Quotient Rule - GeeksforGeeks"
     },
     {
       "id": "ml-ai-281",
-      "title": "Implicit Differentiation - GeeksforGeeks"
+      "title": "Chain Rule: Theorem, Formula and Solved Examples - GeeksforGeeks"
     },
     {
       "id": "ml-ai-282",
-      "title": "Derivative of Functions in Parametric Forms - GeeksforGeeks"
+      "title": "Implicit Differentiation - GeeksforGeeks"
     },
     {
       "id": "ml-ai-283",
-      "title": "Partial Differential Equation - GeeksforGeeks"
+      "title": "Derivative of Functions in Parametric Forms - GeeksforGeeks"
     },
     {
       "id": "ml-ai-284",
-      "title": "Logarithmic Differentiation - GeeksforGeeks"
+      "title": "Partial Differential Equation - GeeksforGeeks"
     },
     {
       "id": "ml-ai-285",
-      "title": "Inflection Point - GeeksforGeeks"
+      "title": "Logarithmic Differentiation - GeeksforGeeks"
     },
     {
       "id": "ml-ai-286",
-      "title": "First Principle of Derivatives - GeeksforGeeks"
+      "title": "Inflection Point - GeeksforGeeks"
     },
     {
       "id": "ml-ai-287",
-      "title": "Higher Order Derivatives - GeeksforGeeks"
+      "title": "First Principle of Derivatives - GeeksforGeeks"
     },
     {
       "id": "ml-ai-288",
-      "title": "Application of Derivatives - GeeksforGeeks"
+      "title": "Higher Order Derivatives - GeeksforGeeks"
     },
     {
       "id": "ml-ai-289",
-      "title": "Derivative Formulas in Calculus - GeeksforGeeks"
+      "title": "Application of Derivatives - GeeksforGeeks"
     },
     {
       "id": "ml-ai-290",
-      "title": "Mean Squared Error - GeeksforGeeks"
+      "title": "Derivative Formulas in Calculus - GeeksforGeeks"
     },
     {
       "id": "ml-ai-291",
-      "title": "Difference between Batch Gradient Descent and Stochastic Gradient Descent - GeeksforGeeks"
+      "title": "Mean Squared Error - GeeksforGeeks"
     },
     {
       "id": "ml-ai-292",
-      "title": "Stochastic Gradient Descent (SGD) - GeeksforGeeks"
+      "title": "Difference between Batch Gradient Descent and Stochastic Gradient Descent - GeeksforGeeks"
     },
     {
       "id": "ml-ai-293",
-      "title": "Mini-Batch Gradient Descent with Python - GeeksforGeeks"
+      "title": "Stochastic Gradient Descent (SGD) - GeeksforGeeks"
     },
     {
       "id": "ml-ai-294",
-      "title": "Momentum-based Gradient Optimizer - ML - GeeksforGeeks"
+      "title": "Mini-Batch Gradient Descent with Python - GeeksforGeeks"
     },
     {
       "id": "ml-ai-295",
-      "title": "Adagrad Optimizer in Deep Learning - GeeksforGeeks"
+      "title": "Momentum-based Gradient Optimizer - ML - GeeksforGeeks"
     },
     {
       "id": "ml-ai-296",
-      "title": "RMSProp Optimizer in Deep Learning - GeeksforGeeks"
+      "title": "Adagrad Optimizer in Deep Learning - GeeksforGeeks"
     },
     {
       "id": "ml-ai-297",
-      "title": "Different Variants of Gradient Descent - GeeksforGeeks"
+      "title": "RMSProp Optimizer in Deep Learning - GeeksforGeeks"
     },
     {
       "id": "ml-ai-298",
-      "title": "here"
+      "title": "Different Variants of Gradient Descent - GeeksforGeeks"
     },
     {
       "id": "ml-ai-299",

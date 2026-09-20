@@ -700,7 +700,7 @@
     },
     {
       "id": "sql-175",
-      "title": "INSTR() function in MySQL - GeeksforGeeks"
+      "title": "INSTR() function in SQL - GeeksforGeeks"
     },
     {
       "id": "sql-176",
@@ -760,7 +760,7 @@
     },
     {
       "id": "sql-190",
-      "title": "SQL Server ROUND() Function - GeeksforGeeks"
+      "title": "ROUND() Function in SQL - GeeksforGeeks"
     },
     {
       "id": "sql-191",
@@ -776,7 +776,7 @@
     },
     {
       "id": "sql-194",
-      "title": "SQRT() Function in SQL Server - GeeksforGeeks"
+      "title": "SQRT() Function in SQL - GeeksforGeeks"
     },
     {
       "id": "sql-195",
@@ -1032,7 +1032,7 @@
     },
     {
       "id": "sql-258",
-      "title": "Clustering Indexing in Databases - GeeksforGeeks"
+      "title": "Clustered Indexing in Databases - GeeksforGeeks"
     },
     {
       "id": "sql-259",
@@ -1080,27 +1080,27 @@
     },
     {
       "id": "sql-270",
-      "title": "MySQL DATE_FORMAT() Function - GeeksforGeeks"
-    },
-    {
-      "id": "sql-271",
       "title": "DATEDIFF() Function in MySQL - GeeksforGeeks"
     },
     {
-      "id": "sql-272",
+      "id": "sql-271",
       "title": "How to Insert a Value that Contains an Apostrophe in SQL? - GeeksforGeeks"
     },
     {
-      "id": "sql-273",
+      "id": "sql-272",
       "title": "How to Select Row With Max Value in SQL? - GeeksforGeeks"
     },
     {
-      "id": "sql-274",
+      "id": "sql-273",
       "title": "How to Efficiently Convert Rows to Columns in SQL? - GeeksforGeeks"
     },
     {
-      "id": "sql-275",
+      "id": "sql-274",
       "title": "How To Use Nested SELECT Queries in SQLite - GeeksforGeeks"
+    },
+    {
+      "id": "sql-275",
+      "title": "How to Find the Maximum of Multiple Columns in SQL - GeeksforGeeks"
     },
     {
       "id": "sql-276",
@@ -1112,35 +1112,35 @@
     },
     {
       "id": "sql-278",
-      "title": "How to Find the Maximum of Multiple Columns in SQL - GeeksforGeeks"
-    },
-    {
-      "id": "sql-279",
       "title": "How to Update Top 100 Records in SQL? - GeeksforGeeks"
     },
     {
-      "id": "sql-280",
+      "id": "sql-279",
       "title": "How to Select the Last Records in a One-To-Many Relationship Using SQL Join - GeeksforGeeks"
     },
     {
-      "id": "sql-281",
+      "id": "sql-280",
       "title": "How to Join First Row in SQL? - GeeksforGeeks"
     },
     {
-      "id": "sql-282",
+      "id": "sql-281",
       "title": "How to Insert Row If Not Exists in SQL - GeeksforGeeks"
     },
     {
-      "id": "sql-283",
+      "id": "sql-282",
       "title": "How to Use GROUP BY to Concatenate Strings in SQL - GeeksforGeeks"
     },
     {
-      "id": "sql-284",
+      "id": "sql-283",
       "title": "How Inner Join works in LINQ  to SQL - GeeksforGeeks"
     },
     {
-      "id": "sql-285",
+      "id": "sql-284",
       "title": "How to Get the Identity of an Inserted Row in SQL - GeeksforGeeks"
+    },
+    {
+      "id": "sql-285",
+      "title": "How to Declare a Variable in SQL? - GeeksforGeeks"
     },
     {
       "id": "sql-286",

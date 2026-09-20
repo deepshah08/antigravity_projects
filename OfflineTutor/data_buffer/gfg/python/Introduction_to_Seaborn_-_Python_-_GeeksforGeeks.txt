@@ -76,4 +76,4 @@ iris = sns.load_dataset("iris")
 sns.pairplot(iris, hue="species")
 plt.show()
 
-OutputGrid of scatterplots and histograms for all variable pairs.Explanation: hue adds category distinctionRelated Articles:Maplotlib Library Pandas
+OutputGrid of scatterplots and histograms for all variable pairs.Explanation: hue adds category distinction.

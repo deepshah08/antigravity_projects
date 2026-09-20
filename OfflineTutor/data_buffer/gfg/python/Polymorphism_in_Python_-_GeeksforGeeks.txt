@@ -1,6 +1,6 @@
 # Polymorphism in Python - GeeksforGeeks
 
-Polymorphism means "many forms" and allows the same method, function or operator to behave differently depending on the object or data it works with. This flexibility helps create more reusable, maintainable and scalable code.Real-Life Example: In a backend payment system, multiple payment options are available such as Credit Card, UPI, NetBanking and Wallet. All payment types use a common method named processPayment() but different implementations:Credit Card Payment: validates card, talks to bank APIUPI Payment: redirects to UPI gatewayWallet Payment: checks wallet balanceNetBanking Payment: redirects to bank loginThe method name remains the same, but the action changes based on the payment type.Types of PolymorphismPolymorphism refers to the ability of the same method or operation to behave differently based on object or context. It mainly includes compile-time and runtime polymorphism.PolymorphismLet's discuss each type in detail.1. Compile-time PolymorphismCompile-time polymorphism involves selecting a method or operation before program execution, typically through method or operator overloading. Languages such as Java and C++ support this feature.Python does not support true compile-time polymorphism because method calls are resolved at runtime. However, similar behavior can be achieved using default arguments, variable-length arguments (*args), or keyword arguments (**kwargs).Example: This code demonstrates overloading-like behavior using default and variable-length arguments. While Python does not support true method overloading, the same method can handle different numbers of arguments.
+Polymorphism means "many forms" and allows the same method, function or operator to behave differently depending on the object or data it works with. This flexibility helps create more reusable, maintainable and scalable code.Real-Life Example: In an online payment system, different payment methods such as Credit Card, UPI, Wallet and NetBanking all use the same processPayment() method. The method name remains the same, but each payment type performs its own specific payment process.Types of PolymorphismPolymorphism refers to the ability of the same method or operation to behave differently based on object or context. It mainly includes compile-time and runtime polymorphism.Polymorphism in PythonLet's discuss each type in detail.1. Compile-time PolymorphismCompile-time polymorphism allows multiple methods with the same name but different parameters, with the appropriate method selected before execution. While languages like Java and C++ support this through method overloading, Python achieves similar behavior using default arguments, *args, and **kwargs because method resolution happens at runtime.Example: This code demonstrates overloading-like behavior using default and variable-length arguments. While Python does not support true method overloading, the same method can handle different numbers of arguments.
             Python
 
     class Calculator:
@@ -10,14 +10,9 @@ Polymorphism means "many forms" and allows the same method, function or operator
             result *= num
         return result
 
-# Create object
 calc = Calculator()
-
-# Using default arguments
 print(calc.multiply())            
-print(calc.multiply(4))           
-
-# Using multiple arguments
+print(calc.multiply(4))  
 print(calc.multiply(2, 3))       
 print(calc.multiply(2, 3, 4))     
 
@@ -40,7 +35,6 @@ class Cat(Animal):
     def sound(self):
         return "Meow"
 
-# Polymorphic behavior
 animals = [Dog(), Cat(), Animal()]
 for animal in animals:
     print(animal.sound())
@@ -48,7 +42,7 @@ for animal in animals:
 OutputBark
 Meow
 Some generic sound
-Explanation: Here, sound method behaves differently depending on whether object is a Dog, Cat or Animal and this decision happens at runtime. This dynamic nature makes Python particularly powerful for runtime polymorphism.Polymorphism in Built-in FunctionsPython's built-in functions such as len() and max() are polymorphic because they work with different data types and return results based on type of object passed. This showcases it's dynamic nature, where same function name adapts its behavior depending on input.Example: This code demonstrates polymorphism in built-in functions handling strings, lists, numbers and characters differently while using same function name.
+Explanation: Here, sound method behaves differently depending on whether object is a Dog, Cat or Animal and this decision happens at runtime. This dynamic nature makes Python particularly powerful for runtime polymorphism.Built-in FunctionsPython's built-in functions such as len() and max() are polymorphic because they work with different data types and return results based on type of object passed. This showcases it's dynamic nature, where same function name adapts its behavior depending on input.Example: This code demonstrates polymorphism in built-in functions handling strings, lists, numbers and characters differently while using same function name.
             Python
 
     print(len("Hello"))  # String length
@@ -90,4 +84,3 @@ print([1, 2] + [3, 4])  # List concatenation
 Output15
 Hello World!
 [1, 2, 3, 4]
-Related Articlesoperator overloadingduck typingMethod Overriding

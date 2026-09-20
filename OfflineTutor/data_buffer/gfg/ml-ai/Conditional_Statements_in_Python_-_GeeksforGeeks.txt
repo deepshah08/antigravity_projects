@@ -55,7 +55,7 @@ else:
     print("Not eligible for a senior discount.")
 
 Output30% senior discount!
-Conditional Expression (Ternary Operator)Conditional Expression (Ternary Operator) is a short way to write an if-else statement in a single line. It is used when choosing between two values based on a condition.
+Note: We can also use multiple conditions in an if statement to make decisions based on more than one condition. For detailed information on applying multiple conditions, please refer to our article, Check Multiple conditions in if statement. Conditional Expression (Ternary Operator)Conditional Expression (Ternary Operator) is a short way to write an if-else statement in a single line. It is used when choosing between two values based on a condition.
             Python
 
     age = 20
@@ -76,4 +76,4 @@ match number:
     case _:
         print("Other number")
 
-OutputTwo or ThreeRelated Articles:Multiple Conditions in if statementTaking Conditional User Inputs
+OutputTwo or Three

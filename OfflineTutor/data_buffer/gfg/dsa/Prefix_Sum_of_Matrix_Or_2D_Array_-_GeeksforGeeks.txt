@@ -1,6 +1,6 @@
 # Prefix Sum of Matrix (Or 2D Array) - GeeksforGeeks
 
-A 2D prefix sum is a technique used to calculate the sum of elements in any submatrix efficiently. It precomputes the sum of elements from the top-left corner to every cell, allowing each submatrix sum query to be answered in O(1) time.It extends the concept of prefix sums from 1D arrays to 2D matrices.It uses the inclusion-exclusion principle to avoid repeated calculations.ExampleInput:1   2   3   45   6   7   89  10  11  1213 14  15  16Try It YourselfPrefix sum matrix is:1    3    6    106   14   24    3615  33   54    7828  60   96   136Each element of the prefix sum matrix represents the sum of all elements in the rectangle from the top-left corner (0, 0) to that position.prefix[0][0] = 1prefix[0][1] = 1 + 2 = 3prefix[0][2] = 1 + 2 + 3 = 6prefix[0][3] = 1 + 2 + 3 + 4 = 10prefix[1][0] = 1 + 5 = 6prefix[1][1] = 1 + 2 + 5 + 6 = 14prefix[1][2] = 1 + 2 + 3 + 5 + 6 + 7 = 24prefix[1][3] = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 = 36prefix[2][0] = 1 + 5 + 9 = 15prefix[2][1] = 1 + 2 + 5 + 6 + 9 + 10 = 33prefix[2][2] = 1 + 2 + 3 + 5 + 6 + 7 + 9 + 10 + 11 = 54prefix[2][3] = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 = 78prefix[3][0] = 1 + 5 + 9 + 13 = 28prefix[3][1] = 1 + 2 + 5 + 6 + 9 + 10 + 13 + 14 = 60prefix[3][2] = 1 + 2 + 3 + 5 + 6 + 7 + 9 + 10 + 11 + 13 + 14 + 15 = 96prefix[3][3] = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 = 136 Approaches to Calculate Prefix Sum of a MatrixThe prefix sum matrix can be constructed using the following approach.1. Constructing the Prefix Sum MatrixFor every cell (i, j), add the current element, the prefix sum from the top, and the prefix sum from the left. The overlapping top-left region is subtracted once.The prefix sum for any cell can be calculated using:prefix[i][j] = arr[i][j]                 + prefix[i-1][j]                + prefix[i][j-1]                - prefix[i-1][j-1]The top and left prefix sums are added, while the top-left prefix sum is subtracted because it is counted twice.For example, for prefix[1][1]:prefix[1][1]= arr[1][1] + prefix[0][1] + prefix[1][0] - prefix[0][0]= 5 + 3 + 5 - 1= 12This preprocessing allows us to calculate the sum of any rectangular region of the matrix without traversing all its elements.
+A 2D prefix sum is a technique used to calculate the sum of elements in any submatrix efficiently. It precomputes the sum of elements from the top-left corner to every cell, allowing each submatrix sum query to be answered in O(1) time.It extends the concept of prefix sums from 1D arrays to 2D matrices.It uses the inclusion-exclusion principle to avoid repeated calculations.ExampleInput:1   2   3   45   6   7   89  10  11  1213 14  15  16Prefix sum matrix is:1    3    6    106   14   24    3615  33   54    7828  60   96   136Each element of the prefix sum matrix represents the sum of all elements in the rectangle from the top-left corner (0, 0) to that position.prefix[0][0] = 1prefix[0][1] = 1 + 2 = 3prefix[0][2] = 1 + 2 + 3 = 6prefix[0][3] = 1 + 2 + 3 + 4 = 10prefix[1][0] = 1 + 5 = 6prefix[1][1] = 1 + 2 + 5 + 6 = 14prefix[1][2] = 1 + 2 + 3 + 5 + 6 + 7 = 24prefix[1][3] = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 = 36prefix[2][0] = 1 + 5 + 9 = 15prefix[2][1] = 1 + 2 + 5 + 6 + 9 + 10 = 33prefix[2][2] = 1 + 2 + 3 + 5 + 6 + 7 + 9 + 10 + 11 = 54prefix[2][3] = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 = 78prefix[3][0] = 1 + 5 + 9 + 13 = 28prefix[3][1] = 1 + 2 + 5 + 6 + 9 + 10 + 13 + 14 = 60prefix[3][2] = 1 + 2 + 3 + 5 + 6 + 7 + 9 + 10 + 11 + 13 + 14 + 15 = 96prefix[3][3] = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 = 136Try It YourselfThe prefix sum matrix can be constructed using the following approach.1. Constructing the Prefix Sum MatrixFor every cell (i, j), add the current element, the prefix sum from the top, and the prefix sum from the left. The overlapping top-left region is subtracted once.The prefix sum for any cell can be calculated using:prefix[i][j] = arr[i][j]                 + prefix[i-1][j]                + prefix[i][j-1]                - prefix[i-1][j-1]The top and left prefix sums are added, while the top-left prefix sum is subtracted because it is counted twice.For example, for prefix[1][1]:prefix[1][1]= arr[1][1] + prefix[0][1] + prefix[1][0] - prefix[0][0]= 5 + 3 + 5 - 1= 12This preprocessing allows us to calculate the sum of any rectangular region of the matrix without traversing all its elements.
             C++
 
     #include <iostream>
@@ -333,7 +333,7 @@ vector<vector<int>> buildPrefix(
     return prefix;
 }
 
-int submatrixSum(
+int subMatrixSum(
     const vector<vector<int>>& prefix,
     int r1, int c1, int r2, int c2)
 {
@@ -363,7 +363,7 @@ int main()
     vector<vector<int>> prefix = buildPrefix(arr);
 
     // Query: rows 1 to 2, columns 1 to 2
-    cout << submatrixSum(prefix, 1, 1, 2, 2);
+    cout << subMatrixSum(prefix, 1, 1, 2, 2);
 
     return 0;
 } 
@@ -373,9 +373,9 @@ int main()
 
     import java.util.ArrayList;
 
- class GfG {
+class GfG {
 
-    public static ArrayList<Integer> prefixSum2D(int[][] arr, int[][] queries) {
+    public static ArrayList<Integer> subMatrixSum(int[][] arr, int[][] queries) {
         int n = arr.length;
         int m = arr[0].length;
 
@@ -441,7 +441,7 @@ int main()
             {1, 1, 2, 2}
         };
 
-        ArrayList<Integer> result = prefixSum2D(arr, queries);
+        ArrayList<Integer> result = subMatrixSum(arr, queries);
         for (int sum : result) {
             System.out.print(sum + " ");
         }
@@ -452,7 +452,7 @@ int main()
 
             Python
 
-    def prefixSum2D(mat, queries):
+    def subMatrixSum(mat, queries):
     rows = len(mat)
     cols = len(mat[0])
 
@@ -507,7 +507,7 @@ if __name__ == "__main__":
     queries = [
         [1, 1, 2, 2]
     ]
-    result = prefixSum2D(mat, queries)
+    result = subMatrixSum(mat, queries)
     print(" ".join(map(str, result)))
 
 
@@ -518,7 +518,7 @@ using System.Collections.Generic;
 
 class GfG {
 
-    public static List<int> prefixSum2D(int[,] arr, int[,] queries) {
+    public static List<int> subMatrixSum(int[,] arr, int[,] queries) {
         // number of rows
         int n = arr.GetLength(0); 
         // number of columns
@@ -553,8 +553,8 @@ class GfG {
 
             int total = prefix[r2, c2];
             int top = (r1 > 0) ? prefix[r1 - 1, c2] : 0;
-            int left = (c1 > 0) ? prefix[r2, c1 - 1] : 0;
-            int overlap = (r1 > 0 && c1 > 0) ? prefix[r1 - 1, c1 - 1] : 0;
+            int left = (c1 > 0)? prefix[r2, c1 - 1] : 0;
+            int overlap = (r1 > 0 && c1 > 0)? prefix[r1 - 1, c1 - 1] : 0;
 
             int sum = total - top - left + overlap;
             result.Add(sum);
@@ -575,7 +575,7 @@ class GfG {
             {1, 1, 2, 2}  
         };
 
-        List<int> result = prefixSum2D(arr, queries);
+        List<int> result = subMatrixSum(arr, queries);
 
         foreach (int sum in result) {
             Console.Write(sum + " ");
@@ -587,7 +587,7 @@ class GfG {
 
             JavaScript
 
-    function prefixSum2D(mat, queries) {
+    function subMatrixSum(mat, queries) {
     const rows = mat.length;
     const cols = mat[0].length;
 
@@ -648,7 +648,7 @@ const queries = [
     [1, 1, 2, 2]
 ];
 
-const result = prefixSum2D(mat, queries);
+const result = subMatrixSum(mat, queries);
 console.log(result.join(' '));
 
 Output34ExplanationFor the query (1,1) to (2,2), the required submatrix is:6  710 11Its sum is:6 + 7 + 10 + 11 = 34The prefix sum formula calculates this directly by adding and subtracting the required regions.

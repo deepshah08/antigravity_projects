@@ -1,6 +1,6 @@
 # Two Sum - Pair with given Sum - GeeksforGeeks
 
-Given an array arr[] of n integers and a target value, check if there exists a pair whose sum equals the target. This is a variation of the 2-Sum problem.Examples: Input: arr[] = [0, -1, 2, -3, 1], target = -2Output: trueExplanation: There is a pair (1, -3) with the sum equal to given target, 1 + (-3) = -2.Input: arr[] = [1, -2, 1, 0, 5], target = 0Output: falseExplanation: There is no pair with sum equals to given target.Try It YourselfTable of Content[Naive Approach] Generating all Possible Pairs - O(n^2) time and O(1) space[Better Approach 1] Sorting and Binary Search - O(n × log(n)) time and O(1) space[Better Approach 2] Sorting and Two-Pointer Technique - O(n × log(n)) time and O(1) space[Expected Approach] Using Hash Set - O(n) time and O(n) space[Naive Approach] Generating all Possible Pairs - O(n2) time and O(1) spaceThe basic approach is to generate all the possible pairs and check if any of them add up to the target value. To generate all pairs, we simply run two nested loops.
+Given an array arr[] of n integers and a target value, check if there exists a pair whose sum equals the target. Examples: Input: arr[] = [0, -1, 2, -3, 1], target = -2Output: trueExplanation: There is a pair (1, -3) with the sum equal to given target, 1 + (-3) = -2.Input: arr[] = [1, -2, 1, 0, 5], target = 0Output: falseExplanation: There is no pair with sum equals to given target.Try It YourselfTable of Content[Naive Approach] All Possible Pairs - O(n2) Time and O(1) Space[Better Approach 1] Sorting and Binary Search - O(n × log(n)) Time and O(1) Space[Better Approach 2] Sorting and Two-Pointer - O(n × log(n)) Time and O(1) Space[Expected Approach] Hash Set - O(n) Time and O(n) Space[Naive Approach] All Possible Pairs - O(n2) Time and O(1) SpaceThe basic approach is to generate all the possible pairs and check if any of them add up to the target value. To generate all pairs, we simply run two nested loops.
             C++
 
     #include <iostream>
@@ -225,7 +225,7 @@ if (twoSum(arr, target))
 else 
     console.log("false");
 
-Outputtrue[Better Approach 1] Sorting and Binary Search - O(n × log(n)) time and O(1) spaceTo check if a pair with a given sum exists in the array, we first sort the array. Then for each element, we compute the required complement (i.e., target - arr[i]) and perform binary search on the remaining subarray (from index i+1 to end) to find that complement.Step By Step Implementation:Sort the array in non-decreasing order.  Loop through each element arr[i] from index 0 to n-2.  For each arr[i], calculate complement = target - arr[i].  Perform binary search for complement in the subarray from index i+1 to n-1.  If the complement is found, return true.  If the loop completes without finding any valid pair, return false.
+Outputtrue[Better Approach 1] Sorting and Binary Search - O(n × log(n)) Time and O(1) SpaceWe first sort the array. Then for each element, we do binary search for (i.e., target - arr[i]) on the remaining subarray (from index i+1 to end) to find that complement.Step By Step Implementation:Sort the array in non-decreasing order.  Loop through each element arr[i] from index 0 to n-2.  For each arr[i], calculate complement = target - arr[i].  Perform binary search for complement in the subarray from index i+1 to n-1.  If the complement is found, return true.  If the loop completes without finding any valid pair, return false.
             C++
 
     #include <iostream>
@@ -523,7 +523,7 @@ if (twoSum(arr, target)) {
     console.log("false");
 }
 
-Outputtrue[Better Approach 2] Sorting and Two-Pointer Technique - O(n × log(n)) time and O(1) spaceThe idea is to use the two-pointer technique but for using the two-pointer technique, the array must be sorted. Once the array is sorted then we can use this approach by keeping one pointer at the beginning (left) and another at the end (right) of the array. Check the sum of the elements at these two pointers:If the sum equals the target, we’ve found the pair.If the sum is less than the target, move the left pointer to the right to increase the sum.If the sum is greater than the target, move the right pointer to the left to decrease the sum.Note: This approach is the best approach for a sorted array. But if array is not sorted, then we use the below approach.
+Outputtrue[Better Approach 2] Sorting and Two-Pointer - O(n × log(n)) Time and O(1) SpaceThe idea is to use the two-pointer technique but for using the two-pointer technique, the array must be sorted. Once the array is sorted then we can use this approach by keeping one pointer at the beginning (left) and another at the end (right) of the array. Check the sum of the elements at these two pointers:If the sum equals the target, we’ve found the pair.If the sum is less than the target, move the left pointer to the right to increase the sum.If the sum is greater than the target, move the right pointer to the left to decrease the sum.Note: This approach is the best approach for a sorted array. But if array is not sorted, then we use the below approach.
             C++
 
     #include <iostream>
@@ -785,7 +785,7 @@ if (twoSum(arr, target)) {
     console.log("false");
 }
 
-Outputtrue[Expected Approach] Using Hash Set - O(n) time and O(n) spaceHashing provides a more efficient solution to the 2-Sum problem. Rather than checking every possible pair, we store each number in an unordered set during iterating over the array's elements. For each number, we calculate its complement (i.e., target - current number) and check if this complement exists in the set. If it does, we have successfully found the pair that sums to the target. Step By Step Implementations:Create an empty Hash Set or Unordered SetIterate through the array and for each number in the array:=> Calculate the complement (target - current number).=> Check if the complement exists in the set:-  If it is, then pair found.-  If it isn’t, add the current number to the set.If the loop completes without finding a pair, return that no pair exists.
+Outputtrue[Expected Approach] Hash Set - O(n) Time and O(n) SpaceWe store each number in an unordered set during iterating over the array's elements. For each number, we calculate its complement (i.e., target - current number) and check if this complement exists in the set. If it does, we return true.Step By Step Implementations:Create an empty Hash Set or Unordered SetIterate through the array and for each number in the array:=> Calculate the complement (target - current number).=> Check if the complement exists in the set:-  If it is, then pair found.-  If it isn’t, add the current number to the set.If the loop completes without finding a pair, return that no pair exists.
             C++
 
     #include <iostream>
@@ -978,4 +978,4 @@ if (twoSum(arr, target))
 else 
     console.log("false");
 
-OutputtrueRelated Problems:  Given two unsorted arrays, find all pairs whose sum is targetCount pairs with given sumCount all distinct pairs with difference equal to k2-Sum - Complete Tutorial
+Outputtrue

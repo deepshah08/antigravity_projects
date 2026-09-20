@@ -60,4 +60,4 @@ except FileNotFoundError as e:
 finally:
     file.close()
 
-OutputHello, World!Explanation:try block contains code that may raise an error.except block handles specific errors like missing files.finally block ensures the file is always closed, even if an error occurs.Related articles: Modes in File Handling
+OutputHello, World!Explanation:try block contains code that may raise an error.except block handles specific errors like missing files.finally block ensures the file is always closed, even if an error occurs.

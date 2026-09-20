@@ -87,7 +87,7 @@ int main() {
 }
 
         
-    Constructor and Destructor will be called once.Constructor will be called twice, Destructor once.Constructor and Destructor will be called twice.Constructor will be called once, Destructor twice.Question 2How to implement a class in C++ to prevent it from being inherited?By making all constructors private.By declaring the class as sealed.By using the final keyword.By making all methods private.Question 3What will be the output of the following code?
+    AConstructor and Destructor will be called once.BConstructor will be called twice, Destructor once.CConstructor and Destructor will be called twice.DConstructor will be called once, Destructor twice.Question 2How to implement a class in C++ to prevent it from being inherited?ABy making all constructors private.BBy declaring the class as sealed.CBy using the final keyword.DBy making all methods private.Question 3What will be the output of the following code?
         C++
         
         #include <iostream>
@@ -120,7 +120,7 @@ int main(){
 }
 
         
-    Only Base Destructor is calledBase Constructor, Derived Constructor, and Base Destructor are called.Base Constructor, Derived Constructor, Derived Destructor, and Base Destructor are called.Base Constructor, Derived Constructor, and Derived Destructor are called.Question 4What would be the outcome if the following setter method were used to modify a private member without validation?
+    AOnly Base Destructor is calledBBase Constructor, Derived Constructor, and Base Destructor are called.CBase Constructor, Derived Constructor, Derived Destructor, and Base Destructor are called.DBase Constructor, Derived Constructor, and Derived Destructor are called.Question 4What would be the outcome if the following setter method were used to modify a private member without validation?
         C++
         
         class Account {
@@ -131,7 +131,7 @@ public:
 };
 
         
-    It prevents setting invalid values by default.It allows for any value to be set, including invalid states.It automatically rounds off the value to the nearest integer.It throws a runtime exception if the value is negative.Question 5Consider the following code. What will happen if the getter method is not declared as const? 
+    AIt prevents setting invalid values by default.BIt allows for any value to be set, including invalid states.CIt automatically rounds off the value to the nearest integer.DIt throws a runtime exception if the value is negative.Question 5Consider the following code. What will happen if the getter method is not declared as const? 
         C++
         
         class MyClass {
@@ -142,7 +142,7 @@ public:
 };
 
         
-    The method can modify the class's internal state.The method will automatically become a const method.The method will return a reference to the internal state.The method cannot be called on const instances of MyClass.Question 6What will be the output of the following code, considering the presence of slicing?
+    AThe method can modify the class's internal state.BThe method will automatically become a const method.CThe method will return a reference to the internal state.DThe method cannot be called on const instances of MyClass.Question 6What will be the output of the following code, considering the presence of slicing?
         C++
         
         #include <iostream>
@@ -169,7 +169,7 @@ int main() {
 }
 
         
-    BaseDerivedBase followed by DerivedCompilation errorQuestion 7What will be the output of the following code?
+    ABaseBDerivedCBase followed by DerivedDCompilation errorQuestion 7What will be the output of the following code?
         C++
         
         #include <iostream>
@@ -201,7 +201,7 @@ int main(){
 }
 
         
-    Base Constructor, Derived Constructor, Base DestructorDerived Constructor, Base Destructor, Derived DestructorBase Constructor, Derived Constructor, Derived Destructor, Base DestructorCompilation errorQuestion 8What will be the output of the following code?
+    ABase Constructor, Derived Constructor, Base DestructorBDerived Constructor, Base Destructor, Derived DestructorCBase Constructor, Derived Constructor, Derived Destructor, Base DestructorDCompilation errorQuestion 8What will be the output of the following code?
         C++
         
         #include <iostream>
@@ -231,7 +231,7 @@ int main(){
 }
 
         
-    Base DisplayDerived DisplayBase Display followed by Derived DisplayCompilation errorQuestion 9Which among the following is the correct way to implement an abstract class in C++?By declaring a class as abstractBy marking all member functions as virtualBy inheriting from another abstract classBy having at least one pure virtual functionQuestion 10What will be the output of the following code?
+    ABase DisplayBDerived DisplayCBase Display followed by Derived DisplayDCompilation errorQuestion 9Which among the following is the correct way to implement an abstract class in C++?ABy declaring a class as abstractBBy marking all member functions as virtualCBy inheriting from another abstract classDBy having at least one pure virtual functionQuestion 10What will be the output of the following code?
         C++
         
         #include <iostream>
@@ -248,4 +248,4 @@ int main(){
 }
 
         
-    7 and 2.1Compilation error7 and 3.5Undefined behaviorTags:C++C++ QuizThere are 37 questions to complete.Take a part in the ongoing discussionView All Discussion
+    A7 and 2.1BCompilation errorC7 and 3.5DUndefined behaviorTags:C++C++ QuizThere are 37 questions to complete.Take a part in the ongoing discussionView All Discussion

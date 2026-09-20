@@ -14,7 +14,7 @@ class Node {
 
     Node(int x) {
         data = x;
-        next = NULL;
+        next = nullptr;
     }
 };
 
@@ -32,14 +32,14 @@ Node *reverselist(Node *head) {
 
 void printList(Node *curr) {
   
-    while (curr != nullptr) {
+    while (curr!= nullptr) {
         cout << curr->data << " ";
         curr = curr->next;
     }
 }
 
 // Function to rearrange a linked list
-Node *rearrange(Node *head) {
+Node *reorderList(Node *head) {
   
     // Find the middle point using tortoise and hare method
     Node *slow = head, *fast = slow->next;
@@ -53,10 +53,10 @@ Node *rearrange(Node *head) {
     Node *head2 = slow->next;
     slow->next = NULL;
     
-  	// Reverse the second half
+    // Reverse the second half
     head2 = reverselist(head2);
     
-  	// Merge alternate nodes
+    // Merge alternate nodes
     head = new Node(0); 
     Node *curr = head;
     while (head1 || head2) {
@@ -80,17 +80,16 @@ Node *rearrange(Node *head) {
     return head->next;
 }
 
-
 int main() {
   
- 	// singly linked list 1->2->3->4->5
+     // singly linked list 1->2->3->4->5
     Node *head = new Node(1);
     head->next = new Node(2);
     head->next->next = new Node(3);
     head->next->next->next = new Node(4);
     head->next->next->next->next = new Node(5); 
-  	
-    head = rearrange(head); 
+     
+    head = reorderList(head); 
     printList(head);        
     return 0;
 }
@@ -108,7 +107,6 @@ struct Node {
     struct Node *next;
 };
 
-
 struct Node *reverselist(struct Node *head) {
   
     // Initialize prev and current pointers
@@ -123,17 +121,17 @@ struct Node *reverselist(struct Node *head) {
 }
 
 void printList(struct Node *curr) {
-    while (curr != NULL) {
+    while (curr!= NULL) {
         printf("%d ", curr->data);
         curr = curr->next;
     }
 }
 
-// Function to rearrange a linked list
-struct Node *rearrange(struct Node *head) {
+// Function to reorder a linked list
+struct Node *reorderList(struct Node *head) {
   
     // Find the middle point using tortoise 
-  	// and hare method
+    // and hare method
     struct Node *slow = head, *fast = slow->next;
     while (fast && fast->next) {
         slow = slow->next;
@@ -175,7 +173,6 @@ struct Node *rearrange(struct Node *head) {
     return dummy.next;
 }
 
-
 struct Node *newNode(int key) {
     struct Node *temp = 
       (struct Node *)malloc(sizeof(struct Node));
@@ -186,14 +183,14 @@ struct Node *newNode(int key) {
 
 int main() {
   
- 	// singly linked list 1->2->3->4->5
+    // singly linked list 1->2->3->4->5
     struct Node *head = newNode(1);
     head->next = newNode(2);
     head->next->next = newNode(3);
     head->next->next->next = newNode(4);
     head->next->next->next->next = newNode(5);
 
-    head = rearrange(head);
+    head = reorderList(head);
   
     printList(head);        
     return 0;
@@ -219,7 +216,7 @@ class GfG {
         if (node == null) {
             return;
         }
-        while (node != null) {
+        while (node!= null) {
             System.out.print(node.data + " ");
             node = node.next;
         }
@@ -227,7 +224,7 @@ class GfG {
 
      static Node reverseList(Node node) {
         Node prev = null, curr = node, next;
-        while (curr != null) {
+        while (curr!= null) {
             next = curr.next;
             curr.next = prev;
             prev = curr;
@@ -237,8 +234,8 @@ class GfG {
     }
 
     // Method to rearrange the linked list
-    static Node rearrange(Node node) {
-      
+    static Node reorderList(Node node) {
+        
         // Check if the list is empty or has only one node
         if (node == null || node.next == null) {
             return node;
@@ -247,7 +244,7 @@ class GfG {
         // Find the middle point using tortoise and hare
         // method
         Node slow = node, fast = node.next;
-        while (fast != null && fast.next != null) {
+        while (fast!= null && fast.next!= null) {
             slow = slow.next;
             fast = fast.next.next;
         }
@@ -263,13 +260,13 @@ class GfG {
         // Merge alternate nodes from the two halves
         Node dummy = new Node(0);
         Node curr = dummy;
-        while (firstHalf != null || secondHalf != null) {
-            if (firstHalf != null) {
+        while (firstHalf!= null || secondHalf!= null) {
+            if (firstHalf!= null) {
                 curr.next = firstHalf;
                 curr = curr.next;
                 firstHalf = firstHalf.next;
             }
-            if (secondHalf != null) {
+            if (secondHalf!= null) {
                 curr.next = secondHalf;
                 curr = curr.next;
                 secondHalf = secondHalf.next;
@@ -289,7 +286,7 @@ class GfG {
         head.next.next.next = new Node(4);
         head.next.next.next.next = new Node(5);
 
-        head = rearrange(head);
+        head = reorderList(head);
         printList(head);
     }
 }
@@ -306,67 +303,53 @@ class Node:
 
 
 def printlist(node):
-    
     if node is None:
         return
-    
     while node is not None:
         print(node.data, end=" ")
         node = node.next
 
+
 def reverselist(node):
-    
     prev = None
     curr = node
     next = None
-    
     while curr is not None:
         next = curr.next
         curr.next = prev
         prev = curr
         curr = next
-    
     node = prev
     return node
 
 
-def rearrange(node):
-    
-    # Find the middle point using the 
-    # tortoise and hare method
+def reorderList(node):
+    # Find the middle point using the tortoise and hare method
     slow = node
     fast = slow.next
-    
     while fast is not None and fast.next is not None:
         slow = slow.next
         fast = fast.next.next
-
     # Split the linked list into two halves
     node1 = node
     node2 = slow.next
     slow.next = None
-
     # Reverse the second half
     node2 = reverselist(node2)
-
     # Merge alternate nodes
     node = Node(0)  
     curr = node
-    
     while node1 is not None or node2 is not None:
-
         # Add the element from the first list
         if node1 is not None:
             curr.next = node1
             curr = curr.next
             node1 = node1.next
-
         # Add the element from the second list
         if node2 is not None:
             curr.next = node2
             curr = curr.next
             node2 = node2.next
-
     # Return the head of the rearranged list
     return node.next
 
@@ -378,111 +361,98 @@ head.next.next = Node(3)
 head.next.next.next = Node(4)
 head.next.next.next.next = Node(5)
 
-head = rearrange(head)
+head = reorderList(head)
 printlist(head)
 
 
             C#
 
-    // C# program to rearrange link list in place
-using System;
+    using System;
 
 public class Node {
-    public int Data;
-    public Node Next;
+    public int data;
+    public Node next;
 
-    public Node(int data) {
-        Data = data;
-        Next = null;
+    public Node(int d) {
+        data = d;
+        next = null;
     }
 }
 
-class GfG {
-  
-    static void PrintList(Node node) {
+public class GfG {
+    public static void printList(Node node) {
         if (node == null) {
-            Console.WriteLine("List is empty.");
             return;
         }
-
-        while (node != null) {
-             Console.Write(node.Data + " ");
-            node = node.Next;
+        while (node!= null) {
+            Console.Write(node.data + " ");
+            node = node.next;
         }
     }
 
-    static Node ReverseList(Node node) {
-        Node prev = null;
-        Node curr = node;
-        Node next = null;
-
-        while (curr != null) {
-            next = curr.Next;
-            curr.Next = prev;
+    public static Node reverseList(Node node) {
+        Node prev = null, curr = node, next;
+        while (curr!= null) {
+            next = curr.next;
+            curr.next = prev;
             prev = curr;
             curr = next;
         }
-
         return prev;
     }
 
-    // Method to rearrange the linked list in-place and
-    // return the new head
-    static Node Rearrange(Node node) {
-        if (node == null || node.Next == null)
+    // Method to rearrange the linked list
+    public static Node reorderList(Node node) {
+        // Check if the list is empty or has only one node
+        if (node == null || node.next == null) {
             return node;
+        }
 
-        // Find the middle point using tortoise and hare
-        // method
-        Node slow = node;
-        Node fast = node.Next;
-
-        while (fast != null && fast.Next != null) {
-            slow = slow.Next;
-            fast = fast.Next.Next;
+        // Find the middle point using tortoise and hare method
+        Node slow = node, fast = node.next;
+        while (fast!= null && fast.next!= null) {
+            slow = slow.next;
+            fast = fast.next.next;
         }
 
         // Split the linked list into two halves
         Node firstHalf = node;
-        Node secondHalf = slow.Next;
-        slow.Next = null;
+        Node secondHalf = slow.next;
+        slow.next = null;
 
-        // Reverse the second half
-        secondHalf = ReverseList(secondHalf);
+        // Reverse the second half of the list
+        secondHalf = reverseList(secondHalf);
 
-        // Merge alternate nodes
+        // Merge alternate nodes from the two halves
         Node dummy = new Node(0);
         Node curr = dummy;
-
-        while (firstHalf != null || secondHalf != null) {
-            if (firstHalf != null) {
-                curr.Next = firstHalf;
-                curr = curr.Next;
-                firstHalf = firstHalf.Next;
+        while (firstHalf!= null || secondHalf!= null) {
+            if (firstHalf!= null) {
+                curr.next = firstHalf;
+                curr = curr.next;
+                firstHalf = firstHalf.next;
             }
-
-            if (secondHalf != null) {
-                curr.Next = secondHalf;
-                curr = curr.Next;
-                secondHalf = secondHalf.Next;
+            if (secondHalf!= null) {
+                curr.next = secondHalf;
+                curr = curr.next;
+                secondHalf = secondHalf.next;
             }
         }
 
-        // Return the new head of the list
-        return dummy.Next;
+        // Return the new head of the rearranged list
+        return dummy.next;
     }
 
-    public static void Main(string[] args) {
-      
-       	//singly linked list 1->2->3->4->5
+    public static void Main(string[] args){
+        // singly linked list 1->2->3->4->5
         Node head = new Node(1);
-        head.Next = new Node(2);
-        head.Next.Next = new Node(3);
-        head.Next.Next.Next = new Node(4);
-        head.Next.Next.Next.Next = new Node(5);
-      
-        head = Rearrange(head);
-        PrintList(head);
+        head.next = new Node(2);
+        head.next.next = new Node(3);
+        head.next.next.next = new Node(4);
+        head.next.next.next.next = new Node(5);
+
+        head = reorderList(head);
+        printList(head);
     }
 }
 
@@ -499,7 +469,7 @@ class Node {
 
 function printList(node) {
     let result = "";
-    while (node != null) {
+    while (node!= null) {
         result += node.data + " ";
         node = node.next;
     }
@@ -508,7 +478,7 @@ function printList(node) {
 
 function reverseList(node) {
     let prev = null, curr = node, next;
-    while (curr != null) {
+    while (curr!= null) {
         next = curr.next;
         curr.next = prev;
         prev = curr;
@@ -517,8 +487,8 @@ function reverseList(node) {
     return prev;
 }
 
-// Function to rearrange the linked list
-function rearrange(head) {
+// Function to reorder the linked list
+function reorderList(head) {
     if (head == null || head.next == null) {
         return head;
     }
@@ -526,7 +496,7 @@ function rearrange(head) {
     // Find the middle point using 
     // tortoise and hare method
     let slow = head, fast = slow.next;
-    while (fast != null && fast.next != null) {
+    while (fast!= null && fast.next!= null) {
         slow = slow.next;
         fast = fast.next.next;
     }
@@ -542,14 +512,14 @@ function rearrange(head) {
     // Merge alternate nodes
     let dummy = new Node(0);
     let curr = dummy;
-    while (node1 != null || node2 != null) {
-        if (node1 != null) {
+    while (node1!= null || node2!= null) {
+        if (node1!= null) {
             curr.next = node1;
             curr = curr.next;
             node1 = node1.next;
         }
 
-        if (node2 != null) {
+        if (node2!= null) {
             curr.next = node2;
             curr = curr.next;
             node2 = node2.next;
@@ -566,7 +536,7 @@ head.next.next = new Node(3);
 head.next.next.next = new Node(4);
 head.next.next.next.next = new Node(5);
 
-head = rearrange(head);
+head = reorderList(head);
 
 printList(head);
 

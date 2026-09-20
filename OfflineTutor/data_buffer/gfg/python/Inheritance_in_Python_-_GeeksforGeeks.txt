@@ -63,4 +63,4 @@ d = Dog()
 d.sound()
 
 OutputBark
-Explanation:Animal defines a method sound().Dog inherits from Animal and overrides the sound() method.When d.sound() is called, Python executes the overridden method in the child class instead of the parent class method.Related Articles:Types of inheritanceMultiple Inheritancesuper() functionMethod Resolution Order (MRO)
+Explanation:Animal defines a method sound().Dog inherits from Animal and overrides the sound() method.When d.sound() is called, Python executes the overridden method in the child class instead of the parent class method.

@@ -91,4 +91,4 @@ print(c)
 Output1
 [2, 3, 4]
 5
-Explanation: a gets the first item, c gets the last item and *b collects everything in between into a list.Related Links:Reversing a TupleConvert a list of Tuples into DictionaryNamedtuple
+Explanation: a gets the first item, c gets the last item and *b collects everything in between into a list.

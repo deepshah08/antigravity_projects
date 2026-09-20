@@ -66,14 +66,14 @@
           transform: rotate(360deg);
         }
       }
-    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython LoopsLast Updated : DiscussCommentsQuestion 1The best command to repeat a control statement a fixed number of times? While loopFor loopIfElseQuestion 2What will be the output of the following Python code?
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython LoopsLast Updated : DiscussCommentsQuestion 1The best command to repeat a control statement a fixed number of times?A While loopBFor loopCIfDElseQuestion 2What will be the output of the following Python code?
         Python
         
         for i in range(int(2.0)):
    print(i)
 
         
-    0.0 1.00 1Error01Question 3What will be the output of the following Python code?
+    A0.0 1.0B0 1CErrorD01Question 3What will be the output of the following Python code?
         Python
         
         x = 'abcd'
@@ -81,7 +81,7 @@ for i in range(len(x)):
     print(i, end= " ")
 
         
-    1 2 3 4 0 1 2 3ErrorNo outputQuestion 4What will be the output of the following code? 
+    A1 2 3 4 B0 1 2 3CErrorDNo outputQuestion 4What will be the output of the following code? 
         Python
         
         x = "GFG"
@@ -89,7 +89,7 @@ for i in range(x):
     print(i)
 
         
-    G F G0 1 2ErrorNo outputQuestion 5What is the output of the following code?
+    AG F GB0 1 2CErrorDNo outputQuestion 5What is the output of the following code?
         Python
         
         while True:
@@ -97,7 +97,7 @@ for i in range(x):
 	print(“Geeks!”)
 
         
-    Geeks!“Geeks!”‘Geeks!’Geeks!Geeks!Geeks!(Repeated infinite times)Question 6Which type of loop continues to iterate until explicitly instructed to stop?For loopWhile loopFor-each loopNone of the aboveQuestion 7Which two statements are used to implement iteration?IF and WHILEIF and FORFOR and WHILEIF and ELSEQuestion 8The character that must be at the end of the line for if, while, for etc.:;,.Question 9What is the output of the following code?
+    AGeeks!B“Geeks!”C‘Geeks!’DGeeks!Geeks!Geeks!(Repeated infinite times)Question 6Which type of loop continues to iterate until explicitly instructed to stop?AFor loopBWhile loopCFor-each loopDNone of the aboveQuestion 7Which two statements are used to implement iteration?AIF and WHILEBIF and FORCFOR and WHILEDIF and ELSEQuestion 8The character that must be at the end of the line for if, while, for etc.A:B;C,D.Question 9What is the output of the following code?
         Python
         
         i = 1
@@ -108,7 +108,7 @@ while True:
    i += 1
 
         
-    1 2 3 4 5 6 1 2 3 4 5 6 7No outputErrorQuestion 10What is the output of the following code?
+    A1 2 3 4 5 6 B1 2 3 4 5 6 7CNo outputDErrorQuestion 10What is the output of the following code?
         Python
         
         while True:
@@ -116,4 +116,4 @@ while True:
     break
 
         
-    Geeks!“Geeks!”‘Geeks!’Geeks!Geeks!Geeks!(Repeated infinite times)Tags:PythonPython-QuizzesThere are 19 questions to complete.Take a part in the ongoing discussionView All Discussion
+    AGeeks!B“Geeks!”C‘Geeks!’DGeeks!Geeks!Geeks!(Repeated infinite times)Tags:PythonPython-QuizzesThere are 19 questions to complete.Take a part in the ongoing discussionView All Discussion

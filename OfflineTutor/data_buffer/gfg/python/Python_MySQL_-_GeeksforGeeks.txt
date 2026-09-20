@@ -289,4 +289,4 @@ cursorObject.execute(query)
 dataBase.commit()
 dataBase.close()
 
-The above example, will not create any error and output because we have used the Drop Table is exists query. If we will simply use the Drop table Employee then ProgrammingError: 1051 (42S02): Unknown table 'gfg.Employee' is raised.Applications and ProjectsCreate MySQL Database Login PageExtract Data from Database using MySQL-Connector and XAMPP
+The above example, will not create any error and output because we have used the Drop Table is exists query. If we will simply use the Drop table Employee then ProgrammingError: 1051 (42S02): Unknown table 'gfg.Employee' is raised.

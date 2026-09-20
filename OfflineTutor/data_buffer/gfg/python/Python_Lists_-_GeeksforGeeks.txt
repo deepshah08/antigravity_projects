@@ -1,6 +1,6 @@
 # Python Lists - GeeksforGeeks
 
-List is a built-in data structure used to store an ordered collection of items. They are dynamic, resizable and capable of storing multiple data types.Mutable: list elements can be changed, updated, added, or removed after the list is created.Ordered: elements maintain the order in which they are inserted.Index-based: elements are accessed using their position, starting from index 0.Above image demonstrates that a list can contain elements of different data types.Creating a ListLists can be created in several ways, such as using square brackets [], the list() constructor or by repeating elements.1. Using Square Brackets: Square brackets [] are used to create a list directly.
+List is a built-in data structure used to store an ordered collection of items. They are dynamic, resizable and capable of storing multiple data types.List elements can be changed, updated, added, or removed after the list is created.Elements maintain the order in which they are inserted.Elements are accessed using their position, starting from index 0.Above image demonstrates that a list can contain elements of different data types.Creating a ListLists can be created in several ways, such as using square brackets [], the list() constructor or by repeating elements.1. Using Square Brackets: Square brackets [] are used to create a list directly.
             Python
 
     a = [1, 2, 3]
@@ -114,7 +114,7 @@ a.clear()
 print(a)
 
 Output[]
-Iterating Over ListsLists can be iterated using loops, allowing operations to be performed on each element.
+Iterating Over ListsWe can use loop to Iterate Over a list, allowing operations to be performed on each element.
             Python
 
     a = ['apple', 'banana', 'cherry']
@@ -133,4 +133,4 @@ print(a[1][0])
 
 Output[1, 2]
 3
-To know more, please refer to this article: List comprehensionRelated Articles:TupleStringIterate over a list Multi-dimensional Lists
+To know more, please refer to this article: List comprehension

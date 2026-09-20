@@ -38,7 +38,7 @@ d["name"] = "Alex"   # Updating an existing value
 print(d)
 
 Output{'name': 'Alex', 'age': 21}
-Removing Dictionary ItemsDictionary items can be removed using built-in deletion methods that work on keys:1. del: removes an item using its key
+Removing Dictionary ItemsDictionary items can be removed using built-in deletion methods that work on keys:1. del: del removes an item using its key
             Python
 
     d = {"a": 1, "b": 2}
@@ -46,7 +46,7 @@ del d["a"]
 print(d)
 
 Output{'b': 2}
-2. pop(): removes the item with the given key and returns its value
+2. pop(): pop() removes the item with the given key and returns its value
             Python
 
     d = {"a": 1, "b": 2}
@@ -57,14 +57,14 @@ print(d)
 
 Output1
 {'b': 2}
-3. popitem(): removes and returns the last inserted key-value pair
+3. popitem(): popitem() removes and returns the last inserted key-value pair
             Python
 
     d = {"a": 1, "b": 2}
 print(d.popitem())
 
 Output('b', 2)
-4. clear(): removes all items from the dictionary
+4. clear(): clear() removes all items from the dictionary
             Python
 
     d = {"a": 1, "b": 2}
@@ -112,4 +112,3 @@ Read in detail: Ways to Iterate Over a DictionaryNested DictionariesA nested dic
 print(d["student"]["name"])
 
 OutputSam
-Related Articles:Dictionary ComprehensionDictionary MethodsDictionary Copy Vs Deep Copy

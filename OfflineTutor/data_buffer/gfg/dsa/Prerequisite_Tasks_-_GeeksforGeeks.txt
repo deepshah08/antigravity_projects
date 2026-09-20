@@ -1,0 +1,789 @@
+# Prerequisite Tasks - GeeksforGeeks
+
+Given n tasks numbered from 0 to n - 1 and a list of p prerequisite pairs pre[][], where each pair [a, b] means that task b must be completed before task a, determine whether it is possible to complete all the tasks.Return true if all tasks can be finished; otherwise, return false.Examples:Input: n = 4, pre[][] = [[1,0],[2,1],[3,2]]Output: trueExplanation: Task 0 can be completed first. After completing task 0, task 1 can be completed, followed by task 2 and then task 3. Since all prerequisites can be satisfied, it is possible to complete all the tasks.Input: n = 2, pre[][] = [[1,0],[0,1]]Output: falseExplanation: Task 1 requires task 0 to be completed first, while task 0 requires task 1 to be completed first. This creates a cycle, so neither task can be completed first. Hence, it is impossible to complete all the tasks.Try It YourselfTable of ContentUsing DFS for Cycle Detection - O(n + p) Time and O(n + p) SpaceTopological Sorting (Kahn's Algo) - O(n + p) Time and O(n + p) SpaceUsing DFS for Cycle Detection - O(n + p) Time and O(n + p) SpaceThe idea is to treat each task as a node of a directed graph. If [a, b] is a prerequisite pair, we add an edge from b to a because task b must be completed before task a.Now, all tasks can be completed only if this graph has no cycle. We use DFS to detect a cycle by keeping track of the tasks that are currently being explored. If during DFS we reach a task that is already in the current DFS path, a cycle exists, so completing all tasks is impossible. Build a directed graph where an edge from b to a represents that task b must be completed before task a.Maintain a visited array with three states: 0 for unvisited, 1 for currently visiting, and 2 for completely visited. Start DFS from every unvisited task. Mark the current task as 1 before exploring its neighbors. If we reach a neighbor with state 1, a cycle is found, so return false. After all neighbors are processed, mark the task as 2. If no cycle is found, return true.
+            C++
+
+    //Driver Code Starts
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// DFS to detect a cycle in the prerequisite graph
+//Driver Code Ends
+
+bool dfs(int node, vector<vector<int>> &adj, vector<int> &visited)
+{
+    // Mark the current task as currently being visited
+    visited[node] = 1;
+
+    // Visit all tasks that depend on the current task
+    for (int neighbor : adj[node])
+    {
+        // If the neighbor is currently being visited,
+        // a cycle is present
+        if (visited[neighbor] == 1)
+            return false;
+
+        // If the neighbor has not been visited,
+        // explore it using DFS
+        if (visited[neighbor] == 0)
+        {
+            if (!dfs(neighbor, adj, visited))
+                return false;
+        }
+    }
+
+    // Mark the task as completely processed
+    visited[node] = 2;
+
+    return true;
+}
+
+// Returns true if all tasks can be completed
+bool prerequisiteTasks(int n, vector<vector<int>> &pre)
+{
+    vector<vector<int>> adj(n);
+
+    // Build the directed graph
+    // If [a, b] is given, task b must be completed
+    // before task a, so add an edge b -> a.
+    for (auto &p : pre)
+    {
+        int task = p[0];
+        int prerequisite = p[1];
+
+        adj[prerequisite].push_back(task);
+    }
+
+    // 0 = unvisited
+    // 1 = currently being visited
+    // 2 = completely visited
+    vector<int> visited(n, 0);
+
+//Driver Code Starts
+
+    // Check every task because the graph may have
+    // multiple disconnected components
+    for (int i = 0; i < n; i++)
+    {
+        if (visited[i] == 0)
+        {
+            // If a cycle is found, all tasks cannot be completed
+            if (!dfs(i, adj, visited))
+                return false;
+        }
+    }
+
+    // No cycle was found, so all tasks can be completed
+    return true;
+}
+
+int main()
+{
+    int n = 4;
+    vector<vector<int>> pre = {{1, 0}, {2, 1}, {3, 2}};
+
+    cout << (prerequisiteTasks(n, pre) ? "true" : "false") << endl;
+
+    return 0;
+}
+//Driver Code Ends
+
+
+            Java
+
+    //Driver Code Starts
+import java.util.*;
+
+class GFG {
+    static boolean dfs(int node, ArrayList<ArrayList<Integer> > adj,
+//Driver Code Ends
+
+                       int[] visited)
+    {
+        // Mark the current task as currently being visited
+        visited[node] = 1;
+
+        // Visit all tasks that depend on the current task
+        for (int neighbor : adj.get(node)) {
+            
+            // If the neighbor is currently being visited,
+            // a cycle is present
+            if (visited[neighbor] == 1)
+                return false;
+
+            // If the neighbor has not been visited,
+            // explore it using DFS
+            if (visited[neighbor] == 0) {
+                if (!dfs(neighbor, adj, visited))
+                    return false;
+            }
+        }
+
+        // Mark the task as completely processed
+        visited[node] = 2;
+
+        return true;
+    }
+
+    // Returns true if all tasks can be completed
+    static boolean prerequisiteTasks(int n, int[][] pre)
+    {
+        ArrayList<ArrayList<Integer> > adj
+            = new ArrayList<>();
+
+        for (int i = 0; i < n; i++)
+            adj.add(new ArrayList<>());
+
+        // Build the directed graph
+        // If [a, b] is given, task b must be completed
+        // before task a, so add an edge b -> a.
+        for (int[] p : pre) {
+            int task = p[0];
+            int prerequisite = p[1];
+
+            adj.get(prerequisite).add(task);
+        }
+
+        // 0 = unvisited
+        // 1 = currently being visited
+
+//Driver Code Starts
+        // 2 = completely visited
+        int[] visited = new int[n];
+
+        // Check every task because the graph may have
+        // multiple disconnected components
+        for (int i = 0; i < n; i++) {
+            if (visited[i] == 0) {
+                
+                // If a cycle is found, all tasks cannot be
+                // completed
+                if (!dfs(i, adj, visited))
+                    return false;
+            }
+        }
+
+        // No cycle was found, so all tasks can be completed
+        return true;
+    }
+
+    public static void main(String[] args)
+    {
+        int n = 4;
+        int[][] pre = { { 1, 0 }, { 2, 1 }, { 3, 2 } };
+
+        System.out.println(prerequisiteTasks(n, pre));
+    }
+}
+//Driver Code Ends
+
+
+            Python
+
+    #Driver Code Starts
+# DFS to detect a cycle in the prerequisite graph
+def dfs(node, adj, visited):
+#Driver Code Ends
+
+
+    # Mark the current task as currently being visited
+    visited[node] = 1
+
+    # Visit all tasks that depend on the current task
+    for neighbor in adj[node]:
+
+        # If the neighbor is currently being visited,
+        # a cycle is present
+        if visited[neighbor] == 1:
+            return False
+
+        # If the neighbor has not been visited,
+        # explore it using DFS
+        if visited[neighbor] == 0:
+            if not dfs(neighbor, adj, visited):
+                return False
+
+    # Mark the task as completely processed
+    visited[node] = 2
+
+    return True
+
+
+# Returns true if all tasks can be completed
+def prerequisiteTasks(n, pre):
+    adj = [[] for _ in range(n)]
+
+    # Build the directed graph
+    # If [a, b] is given, task b must be completed
+    # before task a, so add an edge b -> a.
+    for p in pre:
+        task = p[0]
+        prerequisite = p[1]
+
+        adj[prerequisite].append(task)
+
+
+#Driver Code Starts
+    # 0 = unvisited
+    # 1 = currently being visited
+    # 2 = completely visited
+    visited = [0] * n
+
+    # Check every task because the graph may have
+    # multiple disconnected components
+    for i in range(n):
+        if visited[i] == 0:
+
+            # If a cycle is found, all tasks cannot be completed
+            if not dfs(i, adj, visited):
+                return False
+
+    # No cycle was found, so all tasks can be completed
+    return True
+
+
+# Driver Code
+if __name__ == "__main__":
+    n = 4
+    pre = [[1, 0], [2, 1], [3, 2]]
+
+    print("true" if prerequisiteTasks(n, pre) else "false")
+
+#Driver Code Ends
+
+
+            C#
+
+    //Driver Code Starts
+using System;
+using System.Collections.Generic;
+
+class GFG {
+    static bool dfs(int node, List<List<int> > adj,
+//Driver Code Ends
+
+                    int[] visited)
+    {
+        // Mark the current task as currently being visited
+        visited[node] = 1;
+
+        // Visit all tasks that depend on the current task
+        foreach(int neighbor in adj[node])
+        {
+            // If the neighbor is currently being visited,
+            // a cycle is present
+            if (visited[neighbor] == 1)
+                return false;
+
+            // If the neighbor has not been visited,
+            // explore it using DFS
+            if (visited[neighbor] == 0) {
+                if (!dfs(neighbor, adj, visited))
+                    return false;
+            }
+        }
+
+        // Mark the task as completely processed
+        visited[node] = 2;
+
+        return true;
+    }
+
+    // Returns true if all tasks can be completed
+    static bool prerequisiteTasks(int n, int[][] pre)
+    {
+        List<List<int> > adj = new List<List<int> >();
+
+        for (int i = 0; i < n; i++)
+            adj.Add(new List<int>());
+
+        // Build the directed graph
+        // If [a, b] is given, task b must be completed
+        // before task a, so add an edge b -> a.
+        foreach(int[] p in pre)
+        {
+            int task = p[0];
+            int prerequisite = p[1];
+
+            adj[prerequisite].Add(task);
+        }
+
+        // 0 = unvisited
+        // 1 = currently being visited
+        // 2 = completely visited
+        int[] visited = new int[n];
+
+        // Check every task because the graph may have
+        // multiple disconnected components
+
+//Driver Code Starts
+        for (int i = 0; i < n; i++) {
+            if (visited[i] == 0) {
+                // If a cycle is found, all tasks cannot be
+                // completed
+                if (!dfs(i, adj, visited))
+                    return false;
+            }
+        }
+
+        // No cycle was found, so all tasks can be completed
+        return true;
+    }
+
+    static void Main()
+    {
+        int n = 4;
+        int[][] pre
+            = { new int[] { 1, 0 }, new int[] { 2, 1 },
+                new int[] { 3, 2 } };
+
+        Console.WriteLine(
+            prerequisiteTasks(n, pre) ? "true" : "false");
+    }
+}
+//Driver Code Ends
+
+
+            JavaScript
+
+    // DFS to detect a cycle in the prerequisite graph
+function dfs(node, adj, visited)
+{
+    // Mark the current task as currently being visited
+    visited[node] = 1;
+
+    // Visit all tasks that depend on the current task
+    for (let neighbor of adj[node]) {
+
+        // If the neighbor is currently being visited,
+        // a cycle is present
+        if (visited[neighbor] === 1)
+            return false;
+
+        // If the neighbor has not been visited,
+        // explore it using DFS
+        if (visited[neighbor] === 0) {
+            if (!dfs(neighbor, adj, visited))
+                return false;
+        }
+    }
+
+    // Mark the task as completely processed
+    visited[node] = 2;
+
+    return true;
+}
+
+// Returns true if all tasks can be completed
+function prerequisiteTasks(n, pre)
+{
+    let adj = Array.from({length : n}, () => []);
+
+    // Build the directed graph
+    // If [a, b] is given, task b must be completed
+    // before task a, so add an edge b -> a.
+    for (let p of pre) {
+        let task = p[0];
+        let prerequisite = p[1];
+
+        adj[prerequisite].push(task);
+    }
+
+    // 0 = unvisited
+    // 1 = currently being visited
+    // 2 = completely visited
+    let visited = new Array(n).fill(0);
+
+
+//Driver Code Starts
+    // Check every task because the graph may have
+    // multiple disconnected components
+    for (let i = 0; i < n; i++) {
+        if (visited[i] === 0) {
+
+            // If a cycle is found, all tasks cannot be
+            // completed
+            if (!dfs(i, adj, visited))
+                return false;
+        }
+    }
+
+    // No cycle was found, so all tasks can be completed
+    return true;
+}
+
+// Driver Code
+let n = 4;
+let pre = [ [ 1, 0 ], [ 2, 1 ], [ 3, 2 ] ];
+
+console.log(prerequisiteTasks(n, pre) ? "true" : "false");
+//Driver Code Ends
+
+Outputtrue
+Topological Sorting (Kahn's Algo) - O(n + p) Time and O(n + p) SpaceThe idea is to use Kahn's algorithm to find a topological ordering of the tasks. We start with the tasks that have no prerequisites. We can complete these tasks first and then remove their dependency from the remaining tasks. Whenever a task has no remaining prerequisites, we add it to the queue and process it next. If we can process all n tasks, all prerequisites can be satisfied. Otherwise, some tasks remain because of a cycle.Build a directed graph where an edge from b to a means task b must be completed before a.Calculate the indegree of every task, which represents the no. of prerequisites it currently has. Add all tasks with indegree 0 to a queue because they can be completed immediately. Remove tasks from the queue and decrease the indegree of their dependent tasks. Add a dependent task to the queue when its indegree becomes 0. Count the number of tasks processed. If all n tasks are processed, return true; Otherwise, return false because a cycle exists.
+            C++
+
+    //Driver Code Starts
+#include <iostream>
+#include <queue>
+#include <vector>
+using namespace std;
+
+//Driver Code Ends
+
+// Returns true if all tasks can be completed
+bool prerequisiteTasks(int n, vector<vector<int>> &pre)
+{
+    vector<vector<int>> adj(n);
+    vector<int> inDegree(n, 0);
+
+    // Build the directed graph
+    // If [a, b] is given, task b must be completed
+    // before task a, so add an edge b -> a.
+    for (auto &p : pre)
+    {
+        int task = p[0];
+        int prerequisite = p[1];
+
+        adj[prerequisite].push_back(task);
+        inDegree[task]++;
+    }
+
+    // Store tasks that currently have no prerequisites
+    queue<int> q;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (inDegree[i] == 0)
+            q.push(i);
+    }
+
+    // Count the number of tasks that can be completed
+    int completed = 0;
+
+    // Process tasks in topological order
+    while (!q.empty())
+    {
+        int node = q.front();
+        q.pop();
+
+        completed++;
+
+        // Remove the completed task as a prerequisite
+
+//Driver Code Starts
+        // from all dependent tasks
+        for (int neighbor : adj[node])
+        {
+            inDegree[neighbor]--;
+
+            // If all prerequisites of this task are completed,
+            // add it to the queue
+            if (inDegree[neighbor] == 0)
+                q.push(neighbor);
+        }
+    }
+
+    // If all tasks were processed, a valid topological
+    // ordering exists and all tasks can be completed
+    return completed == n;
+}
+
+int main()
+{
+    int n = 4;
+    vector<vector<int>> pre = {{1, 0}, {2, 1}, {3, 2}};
+
+    cout << (prerequisiteTasks(n, pre) ? "true" : "false") << endl;
+
+    return 0;
+}
+//Driver Code Ends
+
+
+            Java
+
+    //Driver Code Starts
+import java.util.*;
+
+
+class GFG {
+    static boolean prerequisiteTasks(int n, int[][] pre)
+    {
+//Driver Code Ends
+
+        ArrayList<ArrayList<Integer> > adj
+            = new ArrayList<>();
+        int[] inDegree = new int[n];
+
+        for (int i = 0; i < n; i++)
+            adj.add(new ArrayList<>());
+
+        // Build the directed graph
+        // If [a, b] is given, task b must be completed
+        // before task a, so add an edge b -> a.
+        for (int[] p : pre) {
+            int task = p[0];
+            int prerequisite = p[1];
+
+            adj.get(prerequisite).add(task);
+            inDegree[task]++;
+        }
+
+        // Store tasks that currently have no prerequisites
+        Queue<Integer> q = new LinkedList<>();
+
+        for (int i = 0; i < n; i++) {
+            if (inDegree[i] == 0)
+                q.add(i);
+        }
+
+        // Count the number of tasks that can be completed
+        int completed = 0;
+
+        // Process tasks in topological order
+        while (!q.isEmpty()) {
+            int node = q.poll();
+
+            completed++;
+
+            // Remove the completed task as a prerequisite
+            // from all dependent tasks
+            for (int neighbor : adj.get(node)) {
+                inDegree[neighbor]--;
+
+
+//Driver Code Starts
+                // If all prerequisites of this task are
+                // completed, add it to the queue
+                if (inDegree[neighbor] == 0)
+                    q.add(neighbor);
+            }
+        }
+
+        // If all tasks were processed, a valid topological
+        // ordering exists and all tasks can be completed
+        return completed == n;
+    }
+
+    public static void main(String[] args)
+    {
+        int n = 4;
+        int[][] pre = { { 1, 0 }, { 2, 1 }, { 3, 2 } };
+
+        System.out.println(prerequisiteTasks(n, pre) ? "true" : "false");
+    }
+}
+//Driver Code Ends
+
+
+            Python
+
+    #Driver Code Starts
+from collections import deque
+
+#Driver Code Ends
+
+# Returns true if all tasks can be completed
+def prerequisiteTasks(n, pre):
+    adj = [[] for _ in range(n)]
+    inDegree = [0] * n
+
+    # Build the directed graph
+    # If [a, b] is given, task b must be completed
+    # before task a, so add an edge b -> a.
+    for p in pre:
+        task = p[0]
+        prerequisite = p[1]
+
+        adj[prerequisite].append(task)
+        inDegree[task] += 1
+
+    # Store tasks that currently have no prerequisites
+    q = deque()
+
+    for i in range(n):
+        if inDegree[i] == 0:
+            q.append(i)
+
+    # Count the number of tasks that can be completed
+    completed = 0
+
+    # Process tasks in topological order
+    while q:
+        node = q.popleft()
+
+        completed += 1
+
+
+#Driver Code Starts
+        # Remove the completed task as a prerequisite
+        # from all dependent tasks
+        for neighbor in adj[node]:
+            inDegree[neighbor] -= 1
+
+            # If all prerequisites of this task are completed,
+            # add it to the queue
+            if inDegree[neighbor] == 0:
+                q.append(neighbor)
+
+    # If all tasks were processed, a valid topological
+    # ordering exists and all tasks can be completed
+    return completed == n
+
+
+# Driver Code
+if __name__ == "__main__":
+    n = 4
+    pre = [[1, 0], [2, 1], [3, 2]]
+
+    print("true" if prerequisiteTasks(n, pre) else "false")
+
+#Driver Code Ends
+
+
+            C#
+
+    //Driver Code Starts
+using System;
+using System.Collections.Generic;
+
+//Driver Code Ends
+
+class GFG {
+    static bool prerequisiteTasks(int n, int[][] pre)
+    {
+        List<List<int> > adj = new List<List<int> >();
+        int[] inDegree = new int[n];
+
+        for (int i = 0; i < n; i++)
+            adj.Add(new List<int>());
+
+        // Build the directed graph
+        // If [a, b] is given, task b must be completed
+        // before task a, so add an edge b -> a.
+        foreach(int[] p in pre)
+        {
+            int task = p[0];
+            int prerequisite = p[1];
+
+            adj[prerequisite].Add(task);
+            inDegree[task]++;
+        }
+
+        // Store tasks that currently have no prerequisites
+        Queue<int> q = new Queue<int>();
+
+        for (int i = 0; i < n; i++) {
+            if (inDegree[i] == 0)
+                q.Enqueue(i);
+        }
+
+        // Count the number of tasks that can be completed
+        int completed = 0;
+
+        // Process tasks in topological order
+        while (q.Count > 0) {
+            int node = q.Dequeue();
+
+            completed++;
+
+            // Remove the completed task as a prerequisite
+            // from all dependent tasks
+            foreach(int neighbor in adj[node])
+
+//Driver Code Starts
+            {
+                inDegree[neighbor]--;
+
+                // If all prerequisites of this task are
+                // completed, add it to the queue
+                if (inDegree[neighbor] == 0)
+                    q.Enqueue(neighbor);
+            }
+        }
+
+        // If all tasks were processed, a valid topological
+        // ordering exists and all tasks can be completed
+        return completed == n;
+    }
+
+    static void Main()
+    {
+        int n = 4;
+        int[][] pre
+            = { new int[] { 1, 0 }, new int[] { 2, 1 },
+                new int[] { 3, 2 } };
+
+        Console.WriteLine(
+            prerequisiteTasks(n, pre) ? "true" : "false");
+    }
+}
+//Driver Code Ends
+
+
+            JavaScript
+
+    // Returns true if all tasks can be completed
+function prerequisiteTasks(n, pre)
+{
+    let adj = Array.from({length : n}, () => []);
+    let inDegree = new Array(n).fill(0);
+
+    // Build the directed graph
+    // If [a, b] is given, task b must be completed
+    // before task a, so add an edge b -> a.
+    for (let p of pre) {
+        let task = p[0];
+        let prerequisite = p[1];
+
+        adj[prerequisite].push(task);
+        inDegree[task]++;
+    }
+
+    // Store tasks that currently have no prerequisites
+    let q = [];
+    let idx = 0;
+
+    for (let i = 0; i < n; i++) {
+        if (inDegree[i] === 0)
+            q.push(i);
+    }
+
+    // Count the number of tasks that can be completed
+    let completed = 0;
+
+    // Process tasks in topological order
+    while (idx < q.length) {
+        let node = q[idx++];
+
+        completed++;
+
+        // Remove the completed task as a prerequisite
+        // from all dependent tasks
+
+        for (let neighbor of adj[node]) {
+//Driver Code Starts
+            inDegree[neighbor]--;
+
+            // If all prerequisites of this task are
+            // completed, add it to the queue
+            if (inDegree[neighbor] === 0)
+                q.push(neighbor);
+        }
+    }
+
+    // If all tasks were processed, a valid topological
+    // ordering exists and all tasks can be completed
+    return completed === n;
+}
+
+// Driver Code
+let n = 4;
+let pre = [ [ 1, 0 ], [ 2, 1 ], [ 3, 2 ] ];
+
+console.log(prerequisiteTasks(n, pre) ? "true" : "false");
+//Driver Code Ends
+
+Outputtrue

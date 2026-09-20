@@ -15,7 +15,7 @@ Calling a FunctionAfter creating a function, call it by using the name of the f
 fun() 
 
 OutputWelcome to GFG
-Function ArgumentsArguments are values passed to a function when it is called. They allow functions to receive input data and perform operations using those values.Syntaxdef function_name(arguments):    # function body    return valuedef function_name(arguments): defines a function with optional arguments.# function body contains the statements to be executed.return value returns a result from the function. If no return statement is used, it returns None by default.Example: In this example, function checks whether the number passed as an argument is even or odd.
+We can also assign a Function to a variable, and call that function using that variable. Function ArgumentsArguments are values passed to a function when it is called. They allow functions to receive input data and perform operations using those values.Syntaxdef function_name(arguments):    # function body    return valuedef function_name(arguments): defines a function with optional arguments.# function body contains the statements to be executed.return value returns a result from the function. If no return statement is used, it returns None by default.Example: In this example, function checks whether the number passed as an argument is even or odd.
             Python
 
     def evenOdd(x):
@@ -133,4 +133,4 @@ print(a)
 
 Output[20, 11, 12, 13]
 10
-Explanation:myFun(x) modifies the first element of the list and lists are mutable, so the original list changes.myFun2(x) assigns a new value to x. Integers are immutable, so the original value of a remains unchanged.Note: Python uses pass-by-object-reference, where functions receive references to objects instead of actual copies.Related Links:Assign Function to a VariableLambda FunctionRecursive FunctionsReturning a function from a Function
+Explanation:myFun(x) modifies the first element of the list and lists are mutable, so the original list changes.myFun2(x) assigns a new value to x. Integers are immutable, so the original value of a remains unchanged.Note: Python uses pass-by-object-reference, where functions receive references to objects instead of actual copies.

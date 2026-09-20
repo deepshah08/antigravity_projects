@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython ArraysLast Updated : DiscussCommentsQuestion 1Which of the following is the correct way to create an array in Python using the array module?arr = [1, 2, 3]arr = array.array('i', [1, 2, 3])arr = array('i', [1, 2, 3])arr = {1, 2, 3}Question 2What is the output of the following code?
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython ArraysLast Updated : DiscussCommentsQuestion 1Which of the following is the correct way to create an array in Python using the array module?Aarr = [1, 2, 3]Barr = array.array('i', [1, 2, 3])Carr = array('i', [1, 2, 3])Darr = {1, 2, 3}Question 2What is the output of the following code?
         Python
         
         from array import array
@@ -74,7 +74,7 @@ arr = array('i', [1, 2, 3, 4, 5])
 print(arr[0])
 
         
-    015ErrorQuestion 3Which of the following methods is used to add an element to the end of an array?insert()append()extend()add()Question 4What will be the output of the following code?
+    A0B1C5DErrorQuestion 3Which of the following methods is used to add an element to the end of an array?Ainsert()Bappend()Cextend()Dadd()Question 4What will be the output of the following code?
         Python
         
         from array import array
@@ -83,7 +83,7 @@ arr.insert(1, 4)
 print(arr)
 
         
-    array('i', [1, 4, 2, 3])array('i', [4, 1, 2, 3])array('i', [1, 2, 3, 4])ErrorQuestion 5What does the index method do in an array?Returns the last occurrence of a specified valueInserts a value at a specified positionReturns the index of the first occurrence of a specified valueRemoves an element at a specified positionQuestion 6How to create an empty array of integers in Python using the array module?arr = array.array('i')arr = array.array('i', [])Both a and bNone of the aboveQuestion 7What does the following code print?
+    Aarray('i', [1, 4, 2, 3])Barray('i', [4, 1, 2, 3])Carray('i', [1, 2, 3, 4])DErrorQuestion 5What does the index method do in an array?AReturns the last occurrence of a specified valueBInserts a value at a specified positionCReturns the index of the first occurrence of a specified valueDRemoves an element at a specified positionQuestion 6How to create an empty array of integers in Python using the array module?Aarr = array.array('i')Barr = array.array('i', [])CBoth a and bDNone of the aboveQuestion 7What does the following code print?
         Python
         
         from array import array
@@ -92,7 +92,7 @@ arr[1] = 5
 print(arr)
 
         
-    array('i', [1, 2, 3])array('i', [5, 2, 3])array('i', [1, 5, 3])ErrorQuestion 8What is the result of the following code?
+    Aarray('i', [1, 2, 3])Barray('i', [5, 2, 3])Carray('i', [1, 5, 3])DErrorQuestion 8What is the result of the following code?
         Python
         
         from array import array
@@ -102,4 +102,4 @@ arr1 += arr2
 print(arr1)
 
         
-    array('i', [1, 2, 3, 4, 5])array('i', [4, 5, 1, 2, 3])array('i', [1, 2, 3, 9, 10])ErrorQuestion 9What is the time complexity of accessing an element in an array by index?O(n)O(log n)O(1)O(n^2)Question 10Which of the following operations is not allowed on a Python array?Accessing an element by indexSlicingAdding elements of different typesIterating through elementsTags:PythonPython-QuizzesThere are 10 questions to complete.Take a part in the ongoing discussionView All Discussion
+    Aarray('i', [1, 2, 3, 4, 5])Barray('i', [4, 5, 1, 2, 3])Carray('i', [1, 2, 3, 9, 10])DErrorQuestion 9What is the time complexity of accessing an element in an array by index?AO(n)BO(log n)CO(1)DO(n^2)Question 10Which of the following operations is not allowed on a Python array?AAccessing an element by indexBSlicingCAdding elements of different typesDIterating through elementsTags:PythonPython-QuizzesThere are 10 questions to complete.Take a part in the ongoing discussionView All Discussion

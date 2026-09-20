@@ -74,14 +74,14 @@ pos = name.index("GeeksforGeeks")
 print(pos * 3)
 
         
-    03NoneValueError: 'GeeksforGeeks' is not in listQuestion 2Find the output of the following program: 
+    A0B3CNoneDValueError: 'GeeksforGeeks' is not in listQuestion 2Find the output of the following program: 
         Python
         
         li = ['Alex', 'Emma', 'Bob', 'Lucas']
 print(li[1][-1])
 
         
-    rbsaQuestion 3Find the output of the following program: 
+    ArBbCsDaQuestion 3Find the output of the following program: 
         Python
         
         li = [1, 2, 3, 4]
@@ -89,7 +89,7 @@ li.append([5, 6, 7, 8])
 print(li)
 
         
-    [1, 2, 3, 4, 5, 6, 7, 8][1, 2, 3, 4][1, 2, 3, 4, [5, 6, 7, 8]][[1, 2, 3, 4], [5, 6, 7, 8]]Question 4Find the output of the following program: 
+    A[1, 2, 3, 4, 5, 6, 7, 8]B[1, 2, 3, 4]C[1, 2, 3, 4, [5, 6, 7, 8]]D[[1, 2, 3, 4], [5, 6, 7, 8]]Question 4Find the output of the following program: 
         Python
         
         def addToList(a):
@@ -100,7 +100,7 @@ addToList(b)
 print(len(b))
 
         
-    45610Question 5Find the output of the following program: 
+    A4B5C6D10Question 5Find the output of the following program: 
         Python
         
         a = ['Python', 'Java', 'C++', 'Go']
@@ -120,7 +120,7 @@ for x in (a, b, c):
 print(count)
 
         
-    451112Question 6Find the output of the following program: 
+    A4B5C11D12Question 6Find the output of the following program: 
         Python
         
         def square_list(x, li=[]):
@@ -131,14 +131,14 @@ print(count)
 square_list(3, [3, 2, 1])
 
         
-    [3, 2, 1, 0, 1, 4][0, 1, 0, 1, 4][0, 1][ ]Question 7Find the output of the following program: 
+    A[3, 2, 1, 0, 1, 4]B[0, 1, 0, 1, 4]C[0, 1]D[ ]Question 7Find the output of the following program: 
         Python
         
         li = list(range(100, 110))
 print(li.index(105))
 
         
-    1055106104Question 8Find the output of the following program: 
+    A105B5C106D104Question 8Find the output of the following program: 
         Python
         
         a = [1, 2, 3, 4, 5]
@@ -148,7 +148,7 @@ b[0] = 0
 print(a)
 
         
-    [1, 2, 3, 4, 5, 0][0, 1, 2, 3, 4, 5][0, 2, 3, 4, 5][1, 2, 3, 4, 0]Question 9Find the output of the following program: 
+    A[1, 2, 3, 4, 5, 0]B[0, 1, 2, 3, 4, 5]C[0, 2, 3, 4, 5]D[1, 2, 3, 4, 0]Question 9Find the output of the following program: 
         Python
         
         a = [1998, 2002]
@@ -156,11 +156,11 @@ b = [2014, 2016]
 print((a + b) * 2)
 
         
-    [1998, 2002, 2014, 2016, 1998, 2002, 2014, 2016][1998, 2002, 2014, 2016][1998, 2002, 1998, 2002][2014, 2016, 2014, 2016]Question 10Find the output of the following program: 
+    A[1998, 2002, 2014, 2016, 1998, 2002, 2014, 2016]B[1998, 2002, 2014, 2016]C[1998, 2002, 1998, 2002]D[2014, 2016, 2014, 2016]Question 10Find the output of the following program: 
         Python
         
         a = ['Apple', 'Banana', 'Mango', 'Orange']
 print(a[2][1])
 
         
-    anmgTags:Python-QuizzesThere are 25 questions to complete.Take a part in the ongoing discussionView All Discussion
+    AaBnCmDgTags:Python-QuizzesThere are 25 questions to complete.Take a part in the ongoing discussionView All Discussion

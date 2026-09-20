@@ -37,7 +37,7 @@ z = "Hi"
     x = 10
 x = "Now a string"
 
-3. Assigning Same Value: same value can be assigned to multiple variables in a single line.
+3. Assigning Same Value: Same value can be assigned to multiple variables in a single line.
             Python
 
     a = b = c = 100
@@ -51,7 +51,7 @@ Output100 100 100
 print(x, y, z) 
 
 Output1 2.5 Python
-Concept of Object Reference Let us assign a variable x to value 5.x = 5When x = 5 is executed, Python creates an object to represent the value 5 and makes x reference this object.object referenceNow, let's assign another variable y to the variable x.y = xThis statement creates y and references the same object as x, not x itself. This is called a Shared Reference, where multiple variables reference the same object.shared referenceNow, if we writex = 'Geeks'Python creates a new object for the value "Geeks" and makes x reference this new object.value of variable x is changed to 'Geeks'The variable y remains unchanged, still referencing the original object 5. Now, If we assign a new value to y:y = "Computer"new value is assigned to variable y and previous object becomes eligible for garbage collectionPython variables store references to objects, not the actual values themselves. When a variable is reassigned, it starts referencing a new object while the old unreferenced object becomes eligible for garbage collection.Understanding Variable ReassignmentIn this example, we check whether modifying one variable affects another when both initially reference the same object.
+Concept of Object Reference Let us assign a variable x to value 5.x = 5When x = 5 is executed, Python creates an object to represent the value 5 and makes x reference this object.object referenceNow, let's assign another variable y to the variable x.y = xThis statement creates y and references the same object as x, not x itself. This is called a Shared Reference, where multiple variables reference the same object.shared referenceNow, if we writex = 'Geeks'Python creates a new object for the value "Geeks" and makes x reference this new object.value of variable x is changed to 'Geeks'The variable y remains unchanged, still referencing the original object 5. Now, If we assign a new value to y:y = "Computer"new value is assigned to variable y and previous object becomes eligible for garbage collectionPython variables store references to objects, not the actual values themselves. When a variable is reassigned, it starts referencing a new object while the old unreferenced object becomes eligible for garbage collection.The scope of the variable determines where it can be accessed in Python program, such as within a function or throughout the program. For detailed information, on variable scope, please refer to our article, Python Scope of Variables.Understanding Variable ReassignmentIn this example, we check whether modifying one variable affects another when both initially reference the same object.
             Python
 
     x = 1
@@ -86,4 +86,3 @@ length = len(word)
 print("Length of the word:", length) 
 
 OutputLength of the word: 6
-Related Articles:OperatorType Castingtype() functionLocal and Global Scope Insert a Variable into a String

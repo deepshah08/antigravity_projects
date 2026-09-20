@@ -18,7 +18,7 @@ Output2
 6
 8
 10
-Types of Loops in javaJava provides different types of loops that allow a block of code to be executed repeatedly based on a specified condition.Types of Loops1. for loopThe for loop is used when we know the number of iterations (we know how many times we want to repeat a task). The for statement includes the initialization, condition, and increment/decrement in one line. Example: Program demonstrates a for loop that prints numbers from 0 to 10 in a single line.
+Types of Loops in javaJava provides different types of loops that allow a block of code to be executed repeatedly based on a specified condition.Loops1. for loopThe for loop is used when we know the number of iterations (we know how many times we want to repeat a task). The for statement includes the initialization, condition, and increment/decrement in one line. Example: Program demonstrates a for loop that prints numbers from 0 to 10 in a single line.
             Java
 
     import java.io.*;

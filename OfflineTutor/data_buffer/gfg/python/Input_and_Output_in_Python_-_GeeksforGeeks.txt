@@ -6,7 +6,7 @@ The print() function is  used for  output in various formats and the input() fun
     name = input("Enter your name: ")
 print("Hello,", name, "! Welcome!")
 
-OutputEnter your name: GeeksforGeeksHello, GeeksforGeeks ! Welcome!The code prompts the user to input their name, stores it in the variable "name" and then prints a greeting message addressing the user by their entered name.Printing Output using print() print() function allows us to display text, variables and expressions on the console. In the below example, "Hello, World!" is a string literal enclosed within double quotes. When executed, this statement will output the text to the console.
+OutputEnter your name: GeeksforGeeksHello, GeeksforGeeks ! Welcome!The code prompts the user to input their name, stores it in the variable "name" and then prints a greeting message addressing the user by their entered name.For detailed information, on Standard input method, please refer to our article, Take Input from stdin.Printing Output using print() print() function allows us to display text, variables and expressions on the console. In the below example, "Hello, World!" is a string literal enclosed within double quotes. When executed, this statement will output the text to the console.
             Python
 
     print("Hello, World!")
@@ -38,4 +38,4 @@ OutputEnter two numbers: 10 2010 20Taking Different types of User InputWe can ch
 f = float(input("Evaluate 7/2: "))
 print(i, f)
 
-OutputHow old are you?: 23Evaluate 7/2: 3.523 3.5Related Links:Take input from stdinInput Methods for Competitive Programming
+OutputHow old are you?: 23Evaluate 7/2: 3.523 3.5

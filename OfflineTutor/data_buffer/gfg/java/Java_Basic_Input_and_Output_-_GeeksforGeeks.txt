@@ -1,0 +1,108 @@
+# Java Basic Input and Output - GeeksforGeeks
+
+Input and output are fundamental operations in Java programs. Input allows a program to receive data from the user, while output allows it to display results to the user.Java commonly uses the Scanner class to take console input. System.out.print(), System.out.println(), and System.out.printf() are commonly used to display output.Input and OutputIn a Java program, data generally flows in two directions: In Above diagram shows how Java handles standard input and output using System.in, System.out, and System.err. System.in receives input, while System.out displays normal output and System.err displays error messages.For example, a program can take two numbers from the user as input, add them, and display their sum as output.
+            Java
+
+    import java.util.Scanner;
+
+class GFG{
+    
+    public static void main(String[] args){
+        
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int a = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = sc.nextInt();
+
+        System.out.println("Sum: " + (a + b));
+
+        sc.close();
+    }
+}
+
+Input:1020Output:Enter first number: 10Enter second number: 20Sum: 30Here, Scanner reads the values entered by the user, while System.out.println() displays the result.Printing OutputJava provides the standard output stream System.out for displaying information on the console. The three commonly used methods are:1. Using System.out.print()The print() method displays output without adding a new line.
+            Java
+
+    class GFG{
+    
+    public static void main(String[] args){
+        
+        System.out.print("Hello ");
+        System.out.print("Geeks");
+    }
+}
+
+OutputHello GeeksBoth statements produce output on the same line.2. Using System.out.println()The println() method prints the given value and then moves the cursor to the next line.
+            Java
+
+    class GFG{
+    public static void main(String[] args) {
+        System.out.println("Hello");
+        System.out.println("Geeks");
+    }
+}
+
+OutputHello
+Geeks
+3. Using System.out.printf()The printf() method is used when formatted output is required.
+            Java
+
+    class GFG{
+    public static void main(String[] args) {
+        String name = "Alice";
+        int age = 25;
+
+        System.out.printf("Name: %s, Age: %d%n", name, age);
+    }
+}
+
+OutputName: Alice, Age: 25
+Here, %s is used for a string and %d is used for an integer.Taking InputJava provides several ways to take input. For beginners, the Scanner class from the java.util package is one of the simplest approaches.To use Scanner, first import it:import java.util.Scanner;Then create a Scanner object:Scanner sc = new Scanner(System.in);Here, System.in represents the standard input stream, which is normally connected to the keyboard.Example: Taking Integer Input
+            Java
+
+    import java.util.Scanner;
+
+class GFG{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter your age: ");
+        int age = sc.nextInt();
+
+        System.out.println("Your age is: " + age);
+
+        sc.close();
+    }
+}
+
+Input:25Output:Enter your age: 25Your age is: 25Taking Different Types of InputThe Scanner class provides different methods for different types of data.MethodUsed ForExamplenextInt()Integerint n = sc.nextInt();nextLong()Long integerlong n = sc.nextLong();nextFloat()Floatfloat n = sc.nextFloat();nextDouble()Doubledouble n = sc.nextDouble();nextBoolean()Booleanboolean b = sc.nextBoolean();next()Single word/tokenString s = sc.next();nextLine()Complete lineString s = sc.nextLine();Example: Taking Different Types of Input
+            Java
+
+    import java.util.Scanner;
+
+class GFG{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter age: ");
+        int age = sc.nextInt();
+
+        System.out.print("Enter marks: ");
+        double marks = sc.nextDouble();
+
+        System.out.println("\nStudent Details");
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Marks: " + marks);
+
+        sc.close();
+    }
+}
+
+Input:Alice2089.5Output:Enter name: AliceEnter age: 20Enter marks: 89.5Student DetailsName: AliceAge: 20Marks: 89.5Other Ways to Take Input in JavaApart from Scanner, Java provides other mechanisms for reading input, such as:BufferedReaderConsoleStreamTokenizerFor beginner programs, Scanner is generally easier to understand because it directly provides methods such as nextInt(), nextDouble(), and nextLine().

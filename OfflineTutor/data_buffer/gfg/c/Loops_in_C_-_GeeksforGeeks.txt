@@ -31,7 +31,7 @@ int main() {
 OutputHello GfG
 Hello GfG
 Hello GfG
-The same loop can be used to repeat the statement 100 or 1000 times by changing the loop condition.Types of loopsThere are 3 looping statements in C: for Loopfor loop is an entry-controlled loop, which means that the condition is checked before the loop's body executes.Syntaxfor (initialization; condition; update) {    // Body of loop}The main parts of a for loop are:Initialization: Sets the initial value of the loop variable. Condition: Determines whether the loop should continue executing. Update: Changes the loop variable after each iteration. Body: Contains the statements to be executed repeatedly. 
+The same loop can be used to repeat the statement 100 or 1000 times by changing the loop condition.Types of loopsThere are 3 looping statements in C:Types of loopsfor Loopfor loop is an entry-controlled loop, which means that the condition is checked before the loop's body executes.Syntaxfor (initialization; condition; update) {    // Body of loop}The main parts of a for loop are:Initialization: Sets the initial value of the loop variable. Condition: Determines whether the loop should continue executing. Update: Changes the loop variable after each iteration. Body: Contains the statements to be executed repeatedly. 
             C
 
     #include <stdio.h>

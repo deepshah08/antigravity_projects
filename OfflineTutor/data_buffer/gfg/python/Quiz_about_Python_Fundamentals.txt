@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython FundamentalsLast Updated : DiscussCommentsQuestion 1Which of the following is a valid way to comment in Python?// This is a comment # This is a comment<!-- This is a comment --> /* This is a comment */Question 2What is the result of the following expression in Python: 5 + 2 * 32117111Question 3What will be the output of the following code snippet?
+    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython FundamentalsLast Updated : DiscussCommentsQuestion 1Which of the following is a valid way to comment in Python?A// This is a commentB # This is a commentC<!-- This is a comment -->D /* This is a comment */Question 2What is the result of the following expression in Python: 5 + 2 * 3A21B17C11D1Question 3What will be the output of the following code snippet?
         Python
         
         a = 5
@@ -74,7 +74,7 @@ b = 2
 print(a // b)
 
         
-    2.5 22.02.00Question 4What is the output of the following code?
+    A2.5 B2C2.0D2.00Question 4What is the output of the following code?
         Python
         
         num1 = "5"
@@ -83,14 +83,14 @@ result = num1 * num2
 print(result)
 
         
-    15"555"8"333"Question 5What is the output of the following code?
+    A15B"555"C8D"333"Question 5What is the output of the following code?
         Python
         
         value = 2 + 3 * 4 / 2
 print(value)
 
         
-    4.510.08.012.0Question 6What is the output of the following code?
+    A4.5B10.0C8.0D12.0Question 6What is the output of the following code?
         Python
         
         x = "5"
@@ -98,7 +98,7 @@ y = "2"
 print(x + y)
 
         
-    7 52103Question 7Which of the following statements is true about Python variables?Variables must be declared before they are used.Variables can contain only letters.Python variables are case-sensitive.Python variables cannot be reassigned.Question 8Which of the following is the correct way to take user input in Python?input()get_input()user_input()read_input() Question 9Which of the following is the correct type conversion for converting a floating-point number to an integer in Python?int(float_num)integer(float_num)float_to_int(float_num)convert_int(float_num)Question 10What is the value of result in the following code?
+    A7 B52C10D3Question 7Which of the following statements is true about Python variables?AVariables must be declared before they are used.BVariables can contain only letters.CPython variables are case-sensitive.DPython variables cannot be reassigned.Question 8Which of the following is the correct way to take user input in Python?Ainput()Bget_input()Cuser_input()Dread_input() Question 9Which of the following is the correct type conversion for converting a floating-point number to an integer in Python?Aint(float_num)Binteger(float_num)Cfloat_to_int(float_num)Dconvert_int(float_num)Question 10What is the value of result in the following code?
         Python
         
         num = "8"
@@ -106,4 +106,4 @@ result = int(num) + 5
 print(result)
 
         
-    13 "85"58"13"Tags:Python-QuizzesThere are 15 questions to complete.Take a part in the ongoing discussionView All Discussion
+    A13 B"85"C58D"13"Tags:Python-QuizzesThere are 15 questions to complete.Take a part in the ongoing discussionView All Discussion

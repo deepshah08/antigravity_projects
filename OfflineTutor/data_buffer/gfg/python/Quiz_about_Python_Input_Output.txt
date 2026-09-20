@@ -73,7 +73,7 @@
 print("Hello")
 
         
-    Compilation Error GFGHelloGFG Hello GFG Hello Question 2Find the output of the below python code, for x = 5 and y = 5
+    ACompilation Error BGFGHelloCGFG Hello DGFG Hello Question 2Find the output of the below python code, for x = 5 and y = 5
         Python
         
         x = input()
@@ -81,25 +81,25 @@ y = input()
 print(x+5)
 
         
-    10 50Compilation Error Question 3Find the output of the below python code, for x=1.5
+    A10 B5C0DCompilation Error Question 3Find the output of the below python code, for x=1.5
         Python
         
         x = int(input())
 print(x)
 
         
-    11.5Raises ValueErrorCompilation Error Question 4Find the output of the below python code for x=2
+    A1B1.5CRaises ValueErrorDCompilation Error Question 4Find the output of the below python code for x=2
         Python
         
         x = float(input())
 print(x)
 
         
-    2.02Compilation Error None of the aboveQuestion 5What will happen if a user enters a non-numeric value in the following code?
+    A2.0B2CCompilation Error DNone of the aboveQuestion 5What will happen if a user enters a non-numeric value in the following code?
         Python
         
         age = int(input("Enter your age: "))
 print("You are", age, "years old")
 
         
-    It will print the age as a string.It will convert the input to a string and print.It will raise a ValueError.It will print "You are 0 years old".Question 6Which statement is used to display a message entered by the user, and then move the cursor to a new line?print(input("Enter message: "))input(print("Enter message: "))print("Enter message: " + input())print("Enter message: ", input())Tags:PythonThere are 6 questions to complete.Take a part in the ongoing discussionView All Discussion
+    AIt will print the age as a string.BIt will convert the input to a string and print.CIt will raise a ValueError.DIt will print "You are 0 years old".Question 6Which statement is used to display a message entered by the user, and then move the cursor to a new line?Aprint(input("Enter message: "))Binput(print("Enter message: "))Cprint("Enter message: " + input())Dprint("Enter message: ", input())Tags:PythonThere are 6 questions to complete.Take a part in the ongoing discussionView All Discussion

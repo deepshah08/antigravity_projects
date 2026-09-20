@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T02:46:26.041Z",
+  "generatedAt": "2026-09-20T03:01:18.966Z",
   "topics": [
     {
       "id": "dsa",
@@ -3612,716 +3612,711 @@
         },
         {
           "id": "java-007",
-          "title": "Print output",
-          "url": "https://www.geeksforgeeks.org/java/system-out-println-in-java/"
+          "title": "Input/Output",
+          "url": "https://www.geeksforgeeks.org/java/java-basic-input-and-output/"
         },
         {
           "id": "java-008",
-          "title": "Taking Input",
-          "url": "https://www.geeksforgeeks.org/java/java-user-input-scanner-class/"
-        },
-        {
-          "id": "java-009",
           "title": "Identifiers",
           "url": "https://www.geeksforgeeks.org/java/java-identifiers/"
         },
         {
-          "id": "java-010",
+          "id": "java-009",
           "title": "Keywords",
           "url": "https://www.geeksforgeeks.org/java/java-keywords/"
         },
         {
-          "id": "java-011",
+          "id": "java-010",
           "title": "Variables",
           "url": "https://www.geeksforgeeks.org/java/variables-in-java/"
         },
         {
-          "id": "java-012",
+          "id": "java-011",
           "title": "Data Types",
           "url": "https://www.geeksforgeeks.org/java/java-data-types/"
         },
         {
-          "id": "java-013",
+          "id": "java-012",
           "title": "Wrapper Classes",
           "url": "https://www.geeksforgeeks.org/java/wrapper-classes-java/"
         },
         {
-          "id": "java-014",
+          "id": "java-013",
           "title": "Operators",
           "url": "https://www.geeksforgeeks.org/java/operators-in-java/"
         },
         {
-          "id": "java-015",
+          "id": "java-014",
           "title": "Decision Making",
           "url": "https://www.geeksforgeeks.org/java/decision-making-javaif-else-switch-break-continue-jump/"
         },
         {
-          "id": "java-016",
+          "id": "java-015",
           "title": "Loops",
           "url": "https://www.geeksforgeeks.org/java/loops-in-java/"
         },
         {
-          "id": "java-017",
+          "id": "java-016",
           "title": "Jump Statements",
           "url": "https://www.geeksforgeeks.org/java/jump-statements-in-java/"
         },
         {
-          "id": "java-018",
+          "id": "java-017",
           "title": "Number Guessing Game",
           "url": "https://www.geeksforgeeks.org/dsa/number-guessing-game-in-java/"
         },
         {
-          "id": "java-019",
+          "id": "java-018",
           "title": "Introduction",
           "url": "https://www.geeksforgeeks.org/java/methods-in-java/"
         },
         {
-          "id": "java-020",
+          "id": "java-019",
           "title": "Static Methods vs Instance Methods",
           "url": "https://www.geeksforgeeks.org/java/static-methods-vs-instance-methods-in-java/"
         },
         {
-          "id": "java-021",
+          "id": "java-020",
           "title": "Access Modifiers",
           "url": "https://www.geeksforgeeks.org/java/access-modifiers-java/"
         },
         {
-          "id": "java-022",
+          "id": "java-021",
           "title": "Command Line Arguments",
           "url": "https://www.geeksforgeeks.org/java/command-line-arguments-in-java/"
         },
         {
-          "id": "java-023",
+          "id": "java-022",
           "title": "Variable Arguments (Varargs)",
           "url": "https://www.geeksforgeeks.org/java/variable-arguments-varargs-in-java/"
         },
         {
-          "id": "java-024",
+          "id": "java-023",
           "title": "Introduction",
           "url": "https://www.geeksforgeeks.org/java/arrays-in-java/"
         },
         {
-          "id": "java-025",
+          "id": "java-024",
           "title": "Multi-Dimensional Arrays",
           "url": "https://www.geeksforgeeks.org/java/multidimensional-arrays-in-java/"
         },
         {
-          "id": "java-026",
+          "id": "java-025",
           "title": "Jagged Arrays",
           "url": "https://www.geeksforgeeks.org/java/jagged-array-in-java/"
         },
         {
-          "id": "java-027",
+          "id": "java-026",
           "title": "Arrays Class",
           "url": "https://www.geeksforgeeks.org/java/array-class-in-java/"
         },
         {
-          "id": "java-028",
+          "id": "java-027",
           "title": "Final Arrays",
           "url": "https://www.geeksforgeeks.org/java/final-arrays-in-java/"
         },
         {
-          "id": "java-029",
+          "id": "java-028",
           "title": "Tic-Tac-Toe Game",
           "url": "https://www.geeksforgeeks.org/java/tic-tac-toe-game-in-java/"
         },
         {
-          "id": "java-030",
+          "id": "java-029",
           "title": "Introduction",
           "url": "https://www.geeksforgeeks.org/java/strings-in-java/"
         },
         {
-          "id": "java-031",
+          "id": "java-030",
           "title": ".equals() vs ==",
           "url": "https://www.geeksforgeeks.org/java/difference-between-and-equals-method-in-java/"
         },
         {
-          "id": "java-032",
+          "id": "java-031",
           "title": "String Methods",
           "url": "https://www.geeksforgeeks.org/java/java-string-methods/"
         },
         {
-          "id": "java-033",
+          "id": "java-032",
           "title": "String Class",
           "url": "https://www.geeksforgeeks.org/java/string-class-in-java/"
         },
         {
-          "id": "java-034",
+          "id": "java-033",
           "title": "StringBuffer Class",
           "url": "https://www.geeksforgeeks.org/java/stringbuffer-class-in-java/"
         },
         {
-          "id": "java-035",
+          "id": "java-034",
           "title": "StringBuilder Class",
           "url": "https://www.geeksforgeeks.org/java/stringbuilder-class-in-java-with-examples/"
         },
         {
-          "id": "java-036",
+          "id": "java-035",
           "title": "Strings vs StringBuffer vs StringBuilder",
           "url": "https://www.geeksforgeeks.org/java/string-vs-stringbuilder-vs-stringbuffer-in-java/"
         },
         {
-          "id": "java-037",
+          "id": "java-036",
           "title": "Introduction",
           "url": "https://www.geeksforgeeks.org/java/object-oriented-programming-oops-concept-in-java/"
         },
         {
-          "id": "java-038",
+          "id": "java-037",
           "title": "this Keyword",
           "url": "https://www.geeksforgeeks.org/java/java-this-keyword/"
         },
         {
-          "id": "java-039",
+          "id": "java-038",
           "title": "super Keyword",
           "url": "https://www.geeksforgeeks.org/java/super-keyword/"
         },
         {
-          "id": "java-040",
+          "id": "java-039",
           "title": "Encapsulation",
           "url": "https://www.geeksforgeeks.org/java/encapsulation-in-java/"
         },
         {
-          "id": "java-041",
+          "id": "java-040",
           "title": "Inheritance",
           "url": "https://www.geeksforgeeks.org/java/inheritance-in-java/"
         },
         {
-          "id": "java-042",
+          "id": "java-041",
           "title": "Polymorphism",
           "url": "https://www.geeksforgeeks.org/java/polymorphism-in-java/"
         },
         {
-          "id": "java-043",
+          "id": "java-042",
           "title": "Abstraction",
           "url": "https://www.geeksforgeeks.org/java/abstraction-in-java-2/"
         },
         {
-          "id": "java-044",
+          "id": "java-043",
           "title": "Object Class",
           "url": "https://www.geeksforgeeks.org/java/object-class-in-java/"
         },
         {
-          "id": "java-045",
+          "id": "java-044",
           "title": "Packages",
           "url": "https://www.geeksforgeeks.org/java/packages-in-java/"
         },
         {
-          "id": "java-046",
+          "id": "java-045",
           "title": "Simple Banking Application",
           "url": "https://www.geeksforgeeks.org/java/mini-banking-application-in-java/"
         },
         {
-          "id": "java-047",
+          "id": "java-046",
           "title": "Interfaces",
           "url": "https://www.geeksforgeeks.org/java/interfaces-in-java/"
         },
         {
-          "id": "java-048",
+          "id": "java-047",
           "title": "Class vs Interface",
           "url": "https://www.geeksforgeeks.org/java/differences-between-interface-and-class-in-java/"
         },
         {
-          "id": "java-049",
+          "id": "java-048",
           "title": "Functional Interface",
           "url": "https://www.geeksforgeeks.org/java/java-functional-interfaces/"
         },
         {
-          "id": "java-050",
+          "id": "java-049",
           "title": "Nested Interface",
           "url": "https://www.geeksforgeeks.org/java/nested-interface-in-java/"
         },
         {
-          "id": "java-051",
+          "id": "java-050",
           "title": "Marker Interface",
           "url": "https://www.geeksforgeeks.org/java/marker-interface-in-java/"
         },
         {
-          "id": "java-052",
+          "id": "java-051",
           "title": "Employee Management System",
           "url": "https://www.geeksforgeeks.org/projects/program-for-employee-management-system/"
         },
         {
-          "id": "java-053",
+          "id": "java-052",
           "title": "Introduction",
           "url": "https://www.geeksforgeeks.org/java/exceptions-in-java/"
         },
         {
-          "id": "java-054",
+          "id": "java-053",
           "title": "Try-Catch Block",
           "url": "https://www.geeksforgeeks.org/java/java-try-catch-block/"
         },
         {
-          "id": "java-055",
+          "id": "java-054",
           "title": "Final, Finally and Finalize",
           "url": "https://www.geeksforgeeks.org/java/java-final-finally-and-finalize/"
         },
         {
-          "id": "java-056",
+          "id": "java-055",
           "title": "Throw and Throws",
           "url": "https://www.geeksforgeeks.org/java/throw-throws-java/"
         },
         {
-          "id": "java-057",
+          "id": "java-056",
           "title": "Customized Exception Handling",
           "url": "https://www.geeksforgeeks.org/java/user-defined-custom-exception-in-java/"
         },
         {
-          "id": "java-058",
+          "id": "java-057",
           "title": "Chained Exceptions",
           "url": "https://www.geeksforgeeks.org/java/chained-exceptions-in-java/"
         },
         {
-          "id": "java-059",
+          "id": "java-058",
           "title": "Null Pointer Exceptions",
           "url": "https://www.geeksforgeeks.org/java/null-pointer-exception-in-java/"
         },
         {
-          "id": "java-060",
+          "id": "java-059",
           "title": "Exception Handling with Method Overriding",
           "url": "https://www.geeksforgeeks.org/java/exception-handling-with-method-overriding-in-java/"
         },
         {
-          "id": "java-061",
+          "id": "java-060",
           "title": "Introduction",
           "url": "https://www.geeksforgeeks.org/java/regular-expressions-in-java/"
         },
         {
-          "id": "java-062",
+          "id": "java-061",
           "title": "Matcher Class",
           "url": "https://www.geeksforgeeks.org/java/matcher-class-in-java/"
         },
         {
-          "id": "java-063",
+          "id": "java-062",
           "title": "Character Class",
           "url": "https://www.geeksforgeeks.org/java/regex-character-cases-in-java/"
         },
         {
-          "id": "java-064",
+          "id": "java-063",
           "title": "Quantifiers",
           "url": "https://www.geeksforgeeks.org/java/quantifiers-in-java/"
         },
         {
-          "id": "java-065",
+          "id": "java-064",
           "title": "Java Memory Management",
           "url": "https://www.geeksforgeeks.org/java/java-memory-management/"
         },
         {
-          "id": "java-066",
+          "id": "java-065",
           "title": "How Java Objects Stored in Memory?",
           "url": "https://www.geeksforgeeks.org/java/how-are-java-objects-stored-in-memory/"
         },
         {
-          "id": "java-067",
+          "id": "java-066",
           "title": "Types of Memory Areas Allocated by JVM",
           "url": "https://www.geeksforgeeks.org/java/how-many-types-of-memory-areas-are-allocated-by-jvm/"
         },
         {
-          "id": "java-068",
+          "id": "java-067",
           "title": "Stack vs Heap Memory Allocation",
           "url": "https://www.geeksforgeeks.org/java/java-stack-vs-heap-memory-allocation/"
         },
         {
-          "id": "java-069",
+          "id": "java-068",
           "title": "Garbage Collection",
           "url": "https://www.geeksforgeeks.org/java/garbage-collection-in-java/"
         },
         {
-          "id": "java-070",
+          "id": "java-069",
           "title": "Types of JVM Garbage Collectors",
           "url": "https://www.geeksforgeeks.org/java/types-of-jvm-garbage-collectors-in-java-with-implementation-details/"
         },
         {
-          "id": "java-071",
+          "id": "java-070",
           "title": "Memory Leaks",
           "url": "https://www.geeksforgeeks.org/java/memory-leaks-in-java/"
         },
         {
-          "id": "java-072",
+          "id": "java-071",
           "title": "Generic Classes",
           "url": "https://www.geeksforgeeks.org/java/generic-class-in-java/"
         },
         {
-          "id": "java-073",
+          "id": "java-072",
           "title": "Wildcards",
           "url": "https://www.geeksforgeeks.org/java/wildcards-in-java/"
         },
         {
-          "id": "java-074",
+          "id": "java-073",
           "title": "Bounded Types",
           "url": "https://www.geeksforgeeks.org/java/bounded-types-generics-java/"
         },
         {
-          "id": "java-075",
+          "id": "java-074",
           "title": "Type Erasure",
           "url": "https://www.geeksforgeeks.org/java/type-erasure-java/"
         },
         {
-          "id": "java-076",
+          "id": "java-075",
           "title": "Collections Class",
           "url": "https://www.geeksforgeeks.org/java/collections-class-in-java/"
         },
         {
-          "id": "java-077",
+          "id": "java-076",
           "title": "Collection Interface",
           "url": "https://www.geeksforgeeks.org/java/collection-interface-in-java-with-examples/"
         },
         {
-          "id": "java-078",
+          "id": "java-077",
           "title": "List Interface",
           "url": "https://www.geeksforgeeks.org/java/list-interface-java-examples/"
         },
         {
-          "id": "java-079",
+          "id": "java-078",
           "title": "Set Interface",
           "url": "https://www.geeksforgeeks.org/java/set-in-java/"
         },
         {
-          "id": "java-080",
+          "id": "java-079",
           "title": "Queue Interface",
           "url": "https://www.geeksforgeeks.org/java/queue-interface-java/"
         },
         {
-          "id": "java-081",
+          "id": "java-080",
           "title": "Map Interface",
           "url": "https://www.geeksforgeeks.org/java/map-interface-in-java/"
         },
         {
-          "id": "java-082",
+          "id": "java-081",
           "title": "Iterator",
           "url": "https://www.geeksforgeeks.org/java/iterators-in-java/"
         },
         {
-          "id": "java-083",
+          "id": "java-082",
           "title": "Comparator Interface",
           "url": "https://www.geeksforgeeks.org/java/java-comparator-interface/"
         },
         {
-          "id": "java-084",
+          "id": "java-083",
           "title": "Comparable Interface",
           "url": "https://www.geeksforgeeks.org/java/comparable-interface-in-java-with-examples/"
         },
         {
-          "id": "java-085",
+          "id": "java-084",
           "title": "Collection Framework Complete Tutorial",
           "url": "https://www.geeksforgeeks.org/java/java-collection-tutorial/"
         },
         {
-          "id": "java-086",
+          "id": "java-085",
           "title": "Face Detection System",
           "url": "https://www.geeksforgeeks.org/java/image-processing-in-java-face-detection/"
         },
         {
-          "id": "java-087",
+          "id": "java-086",
           "title": "Lambda Expressions",
           "url": "https://www.geeksforgeeks.org/java/lambda-expressions-java-8/"
         },
         {
-          "id": "java-088",
+          "id": "java-087",
           "title": "Predicate",
           "url": "https://www.geeksforgeeks.org/java/java-8-predicate-with-examples/"
         },
         {
-          "id": "java-089",
+          "id": "java-088",
           "title": "Consumer",
           "url": "https://www.geeksforgeeks.org/java/java-8-consumer-interface-in-java-with-examples/"
         },
         {
-          "id": "java-090",
+          "id": "java-089",
           "title": "Supplier",
           "url": "https://www.geeksforgeeks.org/java/supplier-interface-in-java-with-examples/"
         },
         {
-          "id": "java-091",
+          "id": "java-090",
           "title": "Method References",
           "url": "https://www.geeksforgeeks.org/java/java-method-references/"
         },
         {
-          "id": "java-092",
+          "id": "java-091",
           "title": "Streams",
           "url": "https://www.geeksforgeeks.org/java/java-8-stream-tutorial/"
         },
         {
-          "id": "java-093",
+          "id": "java-092",
           "title": "Optional",
           "url": "https://www.geeksforgeeks.org/java/java-8-optional-class/"
         },
         {
-          "id": "java-094",
+          "id": "java-093",
           "title": "Collectors",
           "url": "https://www.geeksforgeeks.org/java/java-collectors/"
         },
         {
-          "id": "java-095",
+          "id": "java-094",
           "title": "Introduction",
           "url": "https://www.geeksforgeeks.org/java/new-date-time-api-java8/"
         },
         {
-          "id": "java-096",
+          "id": "java-095",
           "title": "LocalDate",
           "url": "https://www.geeksforgeeks.org/java/java-time-localdate-class-in-java/"
         },
         {
-          "id": "java-097",
+          "id": "java-096",
           "title": "LocalTime",
           "url": "https://www.geeksforgeeks.org/java/java-time-localtime-class-in-java/"
         },
         {
-          "id": "java-098",
+          "id": "java-097",
           "title": "LocalDateTime",
           "url": "https://www.geeksforgeeks.org/java/java-time-localdatetime-class-in-java/"
         },
         {
-          "id": "java-099",
+          "id": "java-098",
           "title": "Duration",
           "url": "https://www.geeksforgeeks.org/java/duration-ofminuteslong-method-in-java-with-examples/"
         },
         {
-          "id": "java-100",
+          "id": "java-099",
           "title": "Period",
           "url": "https://www.geeksforgeeks.org/java/java-time-period-class-in-java/"
         },
         {
-          "id": "java-101",
+          "id": "java-100",
           "title": "DateTimeFormatter",
           "url": "https://www.geeksforgeeks.org/java/java-time-format-datetimeformatterbuilder-class-in-java/"
         },
         {
-          "id": "java-102",
+          "id": "java-101",
           "title": "Introduction",
           "url": "https://www.geeksforgeeks.org/java/multithreading-in-java/"
         },
         {
-          "id": "java-103",
+          "id": "java-102",
           "title": "Thread.start() vs Thread.run() Method",
           "url": "https://www.geeksforgeeks.org/java/difference-between-thread-start-and-thread-run-in-java/"
         },
         {
-          "id": "java-104",
+          "id": "java-103",
           "title": "Main Thread",
           "url": "https://www.geeksforgeeks.org/java/main-thread-java/"
         },
         {
-          "id": "java-105",
+          "id": "java-104",
           "title": "Thread Priority",
           "url": "https://www.geeksforgeeks.org/java/java-thread-priority-multithreading/"
         },
         {
-          "id": "java-106",
+          "id": "java-105",
           "title": "Synchronization",
           "url": "https://www.geeksforgeeks.org/java/synchronization-in-java/"
         },
         {
-          "id": "java-107",
+          "id": "java-106",
           "title": "Thread Safety",
           "url": "https://www.geeksforgeeks.org/java/thread-safety-and-how-to-achieve-it-in-java/"
         },
         {
-          "id": "java-108",
+          "id": "java-107",
           "title": "Locks",
           "url": "https://www.geeksforgeeks.org/java/how-to-use-locks-in-multi-threaded-java-program/"
         },
         {
-          "id": "java-109",
+          "id": "java-108",
           "title": "Reentrant Lock",
           "url": "https://www.geeksforgeeks.org/java/reentrant-lock-in-java/"
         },
         {
-          "id": "java-110",
+          "id": "java-109",
           "title": "Deadlock",
           "url": "https://www.geeksforgeeks.org/java/deadlock-in-java-multithreading/"
         },
         {
-          "id": "java-111",
+          "id": "java-110",
           "title": "Thread Pools",
           "url": "https://www.geeksforgeeks.org/java/thread-pools-java/"
         },
         {
-          "id": "java-112",
+          "id": "java-111",
           "title": "Multithreading Complete Tutorial",
           "url": "https://www.geeksforgeeks.org/java/java-multithreading-tutorial/"
         },
         {
-          "id": "java-113",
+          "id": "java-112",
           "title": "Snake Game",
           "url": "https://www.geeksforgeeks.org/advance-java/design-snake-game/"
         },
         {
-          "id": "java-114",
+          "id": "java-113",
           "title": "Introduction to Java IO",
           "url": "https://www.geeksforgeeks.org/java/java-io-input-output-in-java-with-examples/"
         },
         {
-          "id": "java-115",
+          "id": "java-114",
           "title": "Reader Class",
           "url": "https://www.geeksforgeeks.org/java/java-io-reader-class-java/"
         },
         {
-          "id": "java-116",
+          "id": "java-115",
           "title": "Writer Class",
           "url": "https://www.geeksforgeeks.org/java/java-io-writer-class-java/"
         },
         {
-          "id": "java-117",
+          "id": "java-116",
           "title": "File Handling",
           "url": "https://www.geeksforgeeks.org/java/file-handling-in-java/"
         },
         {
-          "id": "java-118",
+          "id": "java-117",
           "title": "BufferedReader Input Stream",
           "url": "https://www.geeksforgeeks.org/java/java-io-bufferedreader-class-java/"
         },
         {
-          "id": "java-119",
+          "id": "java-118",
           "title": "BufferedReader Output stream",
           "url": "https://www.geeksforgeeks.org/java/java-io-bufferedoutputstream-class-java/"
         },
         {
-          "id": "java-120",
+          "id": "java-119",
           "title": "FilePermission Class",
           "url": "https://www.geeksforgeeks.org/java/java-io-filepermission-class-java/"
         },
         {
-          "id": "java-121",
+          "id": "java-120",
           "title": "FileDescriptor Class",
           "url": "https://www.geeksforgeeks.org/java/java-io-filedescriptor-java/"
         },
         {
-          "id": "java-122",
+          "id": "java-121",
           "title": "Text Editor",
           "url": "https://www.geeksforgeeks.org/java/java-swing-create-a-simple-text-editor/"
         },
         {
-          "id": "java-123",
+          "id": "java-122",
           "title": "Introduction",
           "url": "https://www.geeksforgeeks.org/java/java-networking/"
         },
         {
-          "id": "java-124",
+          "id": "java-123",
           "title": "Socket Programming",
           "url": "https://www.geeksforgeeks.org/java/socket-programming-in-java/"
         },
         {
-          "id": "java-125",
+          "id": "java-124",
           "title": "Server Socket Class",
           "url": "https://www.geeksforgeeks.org/java/java-net-serversocket-class-in-java/"
         },
         {
-          "id": "java-126",
+          "id": "java-125",
           "title": "URL Class and Methods",
           "url": "https://www.geeksforgeeks.org/java/url-class-java-examples/"
         },
         {
-          "id": "java-127",
+          "id": "java-126",
           "title": "Chat Application",
           "url": "https://www.geeksforgeeks.org/java/simple-chat-application-using-sockets-in-java/"
         },
         {
-          "id": "java-128",
+          "id": "java-127",
           "title": "Introduction",
           "url": "https://www.geeksforgeeks.org/java/introduction-to-jdbc/"
         },
         {
-          "id": "java-129",
+          "id": "java-128",
           "title": "JDBC Driver",
           "url": "https://www.geeksforgeeks.org/java/jdbc-drivers/"
         },
         {
-          "id": "java-130",
+          "id": "java-129",
           "title": "JDBC Connection",
           "url": "https://www.geeksforgeeks.org/java/establishing-jdbc-connection-in-java/"
         },
         {
-          "id": "java-131",
+          "id": "java-130",
           "title": "Types of Statements in JDBC",
           "url": "https://www.geeksforgeeks.org/java/types-of-statements-in-jdbc/"
         },
         {
-          "id": "java-132",
+          "id": "java-131",
           "title": "Transactions",
           "url": "https://www.geeksforgeeks.org/java/transactions-in-jdbc/"
         },
         {
-          "id": "java-133",
+          "id": "java-132",
           "title": "ResultSet",
           "url": "https://www.geeksforgeeks.org/java/jdbc-result-set/"
         },
         {
-          "id": "java-134",
+          "id": "java-133",
           "title": "Metadata",
           "url": "https://www.geeksforgeeks.org/java/how-to-extract-database-metadata-using-jdbc/"
         },
         {
-          "id": "java-135",
+          "id": "java-134",
           "title": "Connection Pooling",
           "url": "https://www.geeksforgeeks.org/java/how-to-handle-connection-pooling-in-jdbc-in-java/"
         },
         {
-          "id": "java-136",
+          "id": "java-135",
           "title": "Java Topic-wise Quiz",
           "url": "https://www.geeksforgeeks.org/java/java-quiz/"
         },
         {
-          "id": "java-137",
+          "id": "java-136",
           "title": "Coding Practice Problems",
           "url": "https://www.geeksforgeeks.org/java/java-coding-practice-problems-1/"
         },
         {
-          "id": "java-138",
+          "id": "java-137",
           "title": "Core Java Interview Questions and Answers",
           "url": "https://www.geeksforgeeks.org/java/java-interview-questions/"
         },
         {
-          "id": "java-139",
+          "id": "java-138",
           "title": "Advanced Java Interview Questions and Answers",
           "url": "https://www.geeksforgeeks.org/advance-java/advanced-java-interview-questions/"
         },
         {
-          "id": "java-140",
+          "id": "java-139",
           "title": "Comparison of various programming languages",
           "url": "https://www.geeksforgeeks.org/java/c-vs-java-vs-python/"
         },
         {
-          "id": "java-141",
+          "id": "java-140",
           "title": "Companies That Use Java",
           "url": "https://www.geeksforgeeks.org/java/companies-that-use-java/"
         },
         {
-          "id": "java-142",
+          "id": "java-141",
           "title": "Careers and Jobs in Java",
           "url": "https://www.geeksforgeeks.org/java/careers-jobs-in-java/"
         },
         {
-          "id": "java-143",
+          "id": "java-142",
           "title": "Constructors6 min read",
           "url": "https://www.geeksforgeeks.org/java/constructors-in-java/"
         },
         {
-          "id": "java-144",
+          "id": "java-143",
           "title": "JDBC5 min read",
           "url": "https://www.geeksforgeeks.org/java/jdbc-tutorial/"
         },
         {
-          "id": "java-145",
+          "id": "java-144",
           "title": "Programs6 min read",
           "url": "https://www.geeksforgeeks.org/java/java-programming-examples/"
         },
         {
-          "id": "java-146",
+          "id": "java-145",
           "title": "Practice Problems5 min read",
           "url": "https://www.geeksforgeeks.org/java/java-exercises/"
         },
         {
-          "id": "java-147",
+          "id": "java-146",
           "title": "Project Ideas15+ min read",
           "url": "https://www.geeksforgeeks.org/blogs/java-projects/"
         },
         {
-          "id": "java-148",
+          "id": "java-147",
           "title": "Java Backend Course2 min read",
           "url": "https://www.geeksforgeeks.org/courses/Java-backend-live"
         },
         {
-          "id": "java-149",
+          "id": "java-148",
           "title": "Placement 360 Course2 min read",
           "url": "https://www.geeksforgeeks.org/courses/placement-360-cip-complete-tech-interview"
         }
@@ -7726,7 +7721,7 @@
         },
         {
           "id": "web-dev-026",
-          "title": "TypeScript6 min read",
+          "title": "TypeScript5 min read",
           "url": "https://www.geeksforgeeks.org/typescript/typescript-tutorial/"
         },
         {
@@ -8318,7 +8313,7 @@
         },
         {
           "id": "devops-106",
-          "title": "Working with Prometheus and Grafana Using Helm5 min read",
+          "title": "Working with Prometheus and Grafana Using Helm3 min read",
           "url": "https://www.geeksforgeeks.org/devops/working-with-prometheus-and-grafana-using-helm/"
         },
         {

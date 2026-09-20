@@ -7,4 +7,4 @@ Python is a high-level programming language known for its simple and readable sy
 print("Hello, World!") 
 
 OutputHello, World!
-How does this work:Hellow World Programprint() is a built-in Python function that instructs the computer to display text on the screen."Hello, World!" is a string enclosed within quotes (either single ' or double "). Python uses indentation (spaces or tabs) to define code blocks instead of braces {} in C, C++ and Java .# is used to write comments in Python. Comments are ignored during execution.Related Articles:CommentsApplications, Advantages and Disadvantages of Python
+How does this work:Hello World Programprint() is a built-in Python function that instructs the computer to display text on the screen."Hello, World!" is a string enclosed within quotes (either single ' or double "). Python uses indentation (spaces or tabs) to define code blocks instead of braces {} in C, C++ and Java .# is used to write Python Comments. Comments are ignored during execution.
