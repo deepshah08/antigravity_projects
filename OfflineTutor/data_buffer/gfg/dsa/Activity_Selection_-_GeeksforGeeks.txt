@@ -1,42 +1,37 @@
 # Activity Selection - GeeksforGeeks
 
-Given two arrays start[] and finish[], representing the start and finish times of activities. A person can perform only one activity at a time, and an activity can be performed only if its start time is greater than the finish time of the last chosen activity. Find the maximum number of activities that can be performed without overlapping.Examples:  Input: start[] = [1, 3, 0, 5, 8, 5], finish[] = [2, 4, 6, 7, 9, 9]Output: 4Explanation: A person can perform at most four activities. The maximum set of activities that can be performed is {0, 1, 3, 4} (these are the indexes in the start[] and finish[] arrays).Input: start[] = [10, 12, 20], finish[] = [20, 25, 30]Output: 1Explanation: A person can perform at most one activity.Try It YourselfTable of Content[Naive Approach] Generate All Subsets - O(2^n) Time and O(n) Space[Expected Approach 1] - Using Sorting - O(n * log(n)) Time and O(n) Space[Expected Approach 2] - Using Priority Queue - O(n * log(n)) Time and O(n) Space[Naive Approach] Generate All Subsets - O(2n) Time and O(n) SpaceGenerates all possible subsets of activities, where each subset represents a potential selection. For each subset, we check if the activities are mutually non-overlapping by comparing their time intervals pairwise. If a subset is valid and contains more activities than our current maximum, we update the maximum count. In the end, we get the size of the largest valid subset.Note: Generating all possible subsets and checks them one by one will lead to an exponential time complexity, which becomes impossible to compute for larger values of n. Hence, this approach is not practical.[Expected Approach 1] - Using Sorting - O(n * log(n)) Time and O(n) SpaceThe problem can be solved using a greedy approach. The idea is that whenever multiple activities overlap, we should pick the one that finishes earliest, because finishing sooner leaves the most room to schedule upcoming activities. This way, the schedule stays flexible, and more activities can fit without conflict. To achieve this, we sort all activities by their finishing times. Then, starting with the first one, we repeatedly pick the next activity that both starts after the last selected activity ends and has the earliest finish time among the remaining ones.
+Given two arrays start[] and finish[], representing the start and finish times of activities. A person can perform only one activity at a time, and an activity can be performed only if its start time is greater than the finish time of the last chosen activity. Find the maximum number of activities that can be performed without overlapping.Examples:  Input: start[] = [1, 3, 0, 5, 8, 5], finish[] = [2, 4, 6, 7, 9, 9]Output: 4Explanation: A person can perform at most four activities. The maximum set of activities that can be performed is {0, 1, 3, 4} (these are the indexes in the start[] and finish[] arrays).Input: start[] = [10, 12, 20], finish[] = [20, 25, 30]Output: 1Explanation: A person can perform at most one activity.Try It YourselfTable of Content[Naive Approach] Generate All Subsets - O(2n) Time and O(n) Space[Expected Approach 1]  Sorting - O(n * log(n)) Time and O(n) Space[Expected Approach 2] Priority Queue - O(n * log(n)) Time and O(n) Space[Naive Approach] Generate All Subsets - O(2n) Time and O(n) SpaceGenerates all possible subsets of activities, where each subset represents a potential selection. For each subset, we check if the activities are mutually non-overlapping by comparing their time intervals pairwise. If a subset is valid and contains more activities than our current maximum, we update the maximum count.Note: Generating all possible subsets and checks them one by one will lead to an exponential time complexity, which becomes impossible to compute for larger values of n. Hence, this approach is not practical.[Expected Approach 1]  Sorting - O(n * log(n)) Time and O(n) SpaceThe problem can be solved using a greedy approach. The idea is that whenever multiple activities overlap, we should pick the one that finishes earliest, because finishing sooner leaves the most room to schedule upcoming activities. To achieve this, we sort all activities by their finishing times. Then, starting with the first one, we repeatedly pick the next activity that both starts after the last selected activity ends and has the earliest finish time among the remaining ones.
             C++
 
     #include <iostream>
-#include<vector>
-#include<algorithm>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-bool compare(const vector<int>& a, const vector<int>& b) {
-    return a[1] < b[1];
-}
-
 int activitySelection(vector<int> &start, vector<int> &finish) {
-    vector<vector<int>> arr;
- 
-    for (int i = 0; i < start.size(); i++) {
-        arr.push_back({start[i], finish[i]});
+    int n = start.size();
+    vector<vector<int>> arr(n, vector<int>(2));
+
+    for (int i = 0; i < n; i++) {
+        arr[i][0] = start[i];
+        arr[i][1] = finish[i];
     }
 
     // Sort activities by finish time
-    sort(arr.begin(), arr.end(), compare);
-    
-    // At least one activity can be performed
-    int count = 1;  
-    
-    // Index of last selected activity
-    int j = 0;      
+    sort(arr.begin(), arr.end(),
+         [](const vector<int>& a, const vector<int>& b) {
+             return a[1] < b[1];
+         });
 
-    for (int i = 1; i < arr.size(); i++) {
-       
-        // Check if current activity starts
-        // after last selected activity finishes
+    int count = 1;
+    int j = 0;
+
+    for (int i = 1; i < n; i++) {
+
+        // Select the activity if it starts after the last one finishes
         if (arr[i][0] > arr[j][1]) {
             count++;
-            
-            // Update last selected activity
-            j = i;  
+            j = i;
         }
     }
 
@@ -46,7 +41,9 @@ int activitySelection(vector<int> &start, vector<int> &finish) {
 int main() {
     vector<int> start = {1, 3, 0, 5, 8, 5};
     vector<int> finish = {2, 4, 6, 7, 9, 9};
-    cout << activitySelection(start, finish);
+
+    cout << activitySelection(start, finish) << endl;
+
     return 0;
 }
 
@@ -210,7 +207,7 @@ const start = [1, 3, 0, 5, 8, 5];
 const finish = [2, 4, 6, 7, 9, 9];
 console.log(activitySelection(start, finish));
 
-Output4[Expected Approach 2] - Using Priority Queue - O(n * log(n)) Time and O(n) SpaceInstead of sorting, we can also use a min-heap (priority queue) to directly process activities in order of their finishing time. By storing each activity as (finish, start) in the heap, the activity with the earliest finish time is always available at the top. We then apply the same greedy rule as above: pick it if its start time is after the last chosen activity’s finish, update the finish time, and continue.
+Output4[Expected Approach 2] Priority Queue - O(n * log(n)) Time and O(n) SpaceInstead of sorting, we can also use a min-heap (priority queue) to directly process activities in order of their finishing time. By storing each activity as (finish, start) in the heap, the activity with the earliest finish time is always available at the top. We then apply the same greedy rule as above: pick it if its start time is after the last chosen activity's finish, update the finish time, and continue.
             C++
 
     #include <iostream>
@@ -262,7 +259,7 @@ int main() {
 
     import java.util.PriorityQueue;
 
-class GfG {
+class GFG {
 
     static int activitySelection(int[] start, int[] finish) {
         int n = start.length;
@@ -339,88 +336,31 @@ if __name__ == "__main__":
     using System;
 using System.Collections.Generic;
 
-class MinHeap {
-    private List<(int end, int start)> heap = new List<(int end, int start)>();
+class GFG {
 
-    // Get parent/child index helpers
-    private int Parent(int i) => (i - 1) / 2;
-    private int Left(int i) => 2 * i + 1;
-    private int Right(int i) => 2 * i + 2;
-
-    private void Swap(int i, int j)
-    {
-        var temp = heap[i];
-        heap[i] = heap[j];
-        heap[j] = temp;
-    }
-
-    // Push element into heap
-    public void Push((int end, int start) val)
-    {
-        heap.Add(val);
-        int i = heap.Count - 1;
-
-        // Fix heap property (bubble up)
-        while (i > 0 && heap[Parent(i)].end > heap[i].end)
-        {
-            Swap(i, Parent(i));
-            i = Parent(i);
-        }
-    }
-
-    // Pop smallest element (by end time)
-    public (int end, int start) Pop()
-    {
-        if (heap.Count == 0) throw new InvalidOperationException("Heap is empty");
-
-        var root = heap[0];
-        heap[0] = heap[heap.Count - 1];
-        heap.RemoveAt(heap.Count - 1);
-        Heapify(0);
-        return root;
-    }
-
-    // Heapify from index i
-    private void Heapify(int i)
-    {
-        int l = Left(i), r = Right(i), smallest = i;
-
-        if (l < heap.Count && heap[l].end < heap[smallest].end)
-            smallest = l;
-        if (r < heap.Count && heap[r].end < heap[smallest].end)
-            smallest = r;
-
-        if (smallest != i)
-        {
-            Swap(i, smallest);
-            Heapify(smallest);
-        }
-    }
-
-    public int Count => heap.Count;
-}
-
-class GfG {
     static int activitySelection(int[] start, int[] finish) {
+        int n = start.Length;
         int ans = 0;
 
-        // Custom MinHeap (by end time)
-        MinHeap pq = new MinHeap();
+        // Min Heap to store activities in ascending order
+        // of finish time
+        PriorityQueue<int[], int> p = new PriorityQueue<int[], int>();
 
-        for (int i = 0; i < start.Length; i++) {
-            pq.Push((finish[i], start[i]));
+        for (int i = 0; i < n; i++) {
+            p.Enqueue(
+                new int[] { finish[i], start[i] },
+                finish[i]
+            );
         }
-        
-        // to store the end time of last activity
+
+        // To store the end time of the last selected activity
         int finishtime = -1;
 
-        while (pq.Count > 0) {
-            
-            // get activity with smallest end time
-            var activity = pq.Pop(); 
-            
-            if (activity.start > finishtime)  {
-                finishtime = activity.end;
+        while (p.Count > 0) {
+            int[] activity = p.Dequeue();
+
+            if (activity[1] > finishtime) {
+                finishtime = activity[0];
                 ans++;
             }
         }
@@ -428,75 +368,114 @@ class GfG {
         return ans;
     }
 
-    static void Main()
-    {
+    public static void Main(string[] args) {
         int[] start = { 1, 3, 0, 5, 8, 5 };
         int[] finish = { 2, 4, 6, 7, 9, 9 };
 
-        Console.WriteLine(activitySelection(start, finish));
+        Console.WriteLine(
+            activitySelection(start, finish));
     }
 }
 
 
             JavaScript
 
-    function activitySelection(start, finish) {
-    
-    let ans = 0;
-
-    // Priority queue to store activities 
-    // based on finishing time.
-    let activities = new PriorityQueue();
-
-    for (let i = 0; i < start.length; i++) {
-        activities.enqueue({ finish: finish[i], start: start[i] }, finish[i]);
+    class PriorityQueue {
+    constructor() {
+        this.heap = [];
     }
 
-    // to store the end time of last activity
+    enqueue(element, priority) {
+        this.heap.push({ element, priority });
+
+        let i = this.heap.length - 1;
+
+        while (i > 0) {
+            let parent = Math.floor((i - 1) / 2);
+
+            if (this.heap[parent].priority <= this.heap[i].priority)
+                break;
+
+            [this.heap[parent], this.heap[i]] =
+                [this.heap[i], this.heap[parent]];
+
+            i = parent;
+        }
+    }
+
+    dequeue() {
+        let root = this.heap[0];
+        let last = this.heap.pop();
+
+        if (this.heap.length > 0) {
+            this.heap[0] = last;
+            let i = 0;
+
+            while (true) {
+                let left = 2 * i + 1;
+                let right = 2 * i + 2;
+                let smallest = i;
+
+                if (left < this.heap.length &&
+                    this.heap[left].priority < this.heap[smallest].priority)
+                    smallest = left;
+
+                if (right < this.heap.length &&
+                    this.heap[right].priority < this.heap[smallest].priority)
+                    smallest = right;
+
+                if (smallest === i)
+                    break;
+
+                [this.heap[i], this.heap[smallest]] =
+                    [this.heap[smallest], this.heap[i]];
+
+                i = smallest;
+            }
+        }
+
+        return root.element;
+    }
+
+    isEmpty() {
+        return this.heap.length === 0;
+    }
+}
+
+function activitySelection(start, finish) {
+    let n = start.length;
+    let ans = 0;
+
+    // Min Heap to store activities in ascending order
+    // of finish time
+    let p = new PriorityQueue();
+
+    for (let i = 0; i < n; i++) {
+        p.enqueue(
+            { finish: finish[i], start: start[i] },
+            finish[i]
+        );
+    }
+
+    // To store the end time of the last selected activity
     let finishtime = -1;
 
-    while (!activities.isEmpty()) {
-        let activity = activities.dequeue();
+    while (!p.isEmpty()) {
+        let activity = p.dequeue();
+
         if (activity.start > finishtime) {
             finishtime = activity.finish;
             ans++;
         }
     }
-    
+
     return ans;
-}
-
-class PriorityQueue {
-    constructor() {
-        this.elements = [];
-    }
-
-    enqueue(element, priority) {
-        let added = false;
-        for (let i = 0; i < this.elements.length; i++) {
-            if (priority < this.elements[i].priority) {
-                this.elements.splice(i, 0, { element, priority });
-                added = true;
-                break;
-            }
-        }
-        if (!added) {
-            this.elements.push({ element, priority });
-        }
-    }
-
-    dequeue() {
-        return this.elements.shift().element;
-    }
-
-    isEmpty() {
-        return this.elements.length === 0;
-    }
 }
 
 // Driver Code
 let start = [1, 3, 0, 5, 8, 5];
 let finish = [2, 4, 6, 7, 9, 9];
+
 console.log(activitySelection(start, finish));
 
 Output4

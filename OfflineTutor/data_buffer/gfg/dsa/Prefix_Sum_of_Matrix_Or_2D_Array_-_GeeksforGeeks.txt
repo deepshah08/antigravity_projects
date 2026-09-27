@@ -302,196 +302,189 @@ Output1 3 6 10
 Explanationprefix[i][j] initially stores arr[i][j].The prefix sums from the top and left are added.The top-left region is included twice, so it is subtracted once.This process is repeated for every cell to build the complete prefix sum matrix.2. Using Prefix Sum to Answer Submatrix Sum QueriesOnce the prefix sum matrix is constructed, the sum of any submatrix from (r1, c1) to (r2, c2) can be calculated using inclusion-exclusion.The formula is:sum = prefix[r2][c2]       - prefix[r1-1][c2]      - prefix[r2][c1-1]      + prefix[r1-1][c1-1]When r1 = 0 or c1 = 0, the corresponding prefix value is treated as 0.
             C++
 
-    #include <iostream>
-#include <vector>
+    #include <bits/stdc++.h>
 using namespace std;
 
-vector<vector<int>> buildPrefix(
-    const vector<vector<int>>& arr)
+vector<int> prefixSum2D(vector<vector<int>> &mat, vector<vector<int>> &queries)
 {
-    int n = arr.size();
-    int m = arr[0].size();
+    int rows = mat.size(), cols = mat[0].size();
 
-    vector<vector<int>> prefix(n, vector<int>(m));
-
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
-
-            prefix[i][j] = arr[i][j];
-
-            if (i > 0)
-                prefix[i][j] += prefix[i - 1][j];
-
-            if (j > 0)
-                prefix[i][j] += prefix[i][j - 1];
-
-            if (i > 0 && j > 0)
-                prefix[i][j] -= prefix[i - 1][j - 1];
+    // build prefix sum over rows
+    for (int i = 1; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            mat[i][j] += mat[i - 1][j];
         }
     }
 
-    return prefix;
-}
+    // build prefix sum over columns
+    for (int j = 1; j < cols; j++)
+    {
+        for (int i = 0; i < rows; i++)
+        {
+            mat[i][j] += mat[i][j - 1];
+        }
+    }
 
-int subMatrixSum(
-    const vector<vector<int>>& prefix,
-    int r1, int c1, int r2, int c2)
-{
-    int sum = prefix[r2][c2];
+    vector<int> result;
 
-    if (r1 > 0)
-        sum -= prefix[r1 - 1][c2];
+    // process each query using inclusion-exclusion
+    for (auto &q : queries)
+    {
+        int r1 = q[0], c1 = q[1], r2 = q[2], c2 = q[3];
 
-    if (c1 > 0)
-        sum -= prefix[r2][c1 - 1];
+        // get the total prefix sum from (0,0) to (r2,c2)
+        int total = mat[r2][c2];
 
-    if (r1 > 0 && c1 > 0)
-        sum += prefix[r1 - 1][c1 - 1];
+        // subtract the area above the submatrix (if any)
+        int left = (c1 > 0) ? mat[r2][c1 - 1] : 0;
 
-    return sum;
+        // subtract the area to the left of the submatrix (if any)
+        int top = (r1 > 0) ? mat[r1 - 1][c2] : 0;
+
+        // add back the top-left overlapping area,
+        // which was subtracted twice
+        int overlap = (r1 > 0 && c1 > 0) ? mat[r1 - 1][c1 - 1] : 0;
+
+        // final submatrix sum using inclusion-exclusion
+        int sum = total - left - top + overlap;
+
+        result.push_back(sum);
+    }
+
+    return result;
 }
 
 int main()
 {
-    vector<vector<int>> arr = {
-        {1, 2, 3, 4},
-        {5, 6, 7, 8},
-        {9, 10, 11, 12},
-        {13, 14, 15, 16}
-    };
+    vector<vector<int>> mat = {{1, 2, 3}, {1, 1, 0}, {4, 2, 2}};
+    vector<vector<int>> queries = {{0, 0, 1, 1}, {1, 0, 2, 2}};
 
-    vector<vector<int>> prefix = buildPrefix(arr);
+    vector<int> result = prefixSum2D(mat, queries);
 
-    // Query: rows 1 to 2, columns 1 to 2
-    cout << subMatrixSum(prefix, 1, 1, 2, 2);
+    for (int x : result)
+    {
+        cout << x << " ";
+    }
 
     return 0;
-} 
+}
 
 
             Java
 
-    import java.util.ArrayList;
+    import java.util.*;
 
-class GfG {
+class GFG {
+    static ArrayList<Integer> prefixSum2D(int[][] mat, int[][] queries)
+    {
+        int rows = mat.length, cols = mat[0].length;
 
-    public static ArrayList<Integer> subMatrixSum(int[][] arr, int[][] queries) {
-        int n = arr.length;
-        int m = arr[0].length;
-
-        // Construct prefix sum matrix
-        int[][] prefix = new int[n][m];
-
-        for (int i = 0; i < n; ++i) {
-            for (int j = 0; j < m; ++j) {
-
-                // Start with original value
-                prefix[i][j] = arr[i][j];
-
-                // Add value from top cell if it exists
-                if (i > 0)
-                    prefix[i][j] += prefix[i - 1][j];
-
-                // Add value from left cell if it exists
-                if (j > 0)
-                    prefix[i][j] += prefix[i][j - 1];
-
-                // Subtract overlap from top-left diagonal if it exists
-                if (i > 0 && j > 0)
-                    prefix[i][j] -= prefix[i - 1][j - 1];
+        // build prefix sum over rows
+        for (int i = 1; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                mat[i][j] += mat[i - 1][j];
             }
         }
 
-        // Result list
+        // build prefix sum over columns
+        for (int j = 1; j < cols; j++) {
+            for (int i = 0; i < rows; i++) {
+                mat[i][j] += mat[i][j - 1];
+            }
+        }
+
         ArrayList<Integer> result = new ArrayList<>();
 
-        // Process each query using inclusion-exclusion
-        for (int i = 0; i < queries.length; i++) {
-            int r1 = queries[i][0];
-            int c1 = queries[i][1];
-            int r2 = queries[i][2];
-            int c2 = queries[i][3];
+        // process each query using inclusion-exclusion
+        for (int[] q : queries) {
+            int r1 = q[0], c1 = q[1], r2 = q[2], c2 = q[3];
 
-            int total = prefix[r2][c2];
+            // get the total prefix sum from (0,0) to
+            // (r2,c2)
+            int total = mat[r2][c2];
 
-            if (r1 > 0)
-                total -= prefix[r1 - 1][c2];
+            // subtract the area above the submatrix (if
+            // any)
+            int left = (c1 > 0) ? mat[r2][c1 - 1] : 0;
 
-            if (c1 > 0)
-                total -= prefix[r2][c1 - 1];
+            // subtract the area to the left of the
+            // submatrix (if any)
+            int top = (r1 > 0) ? mat[r1 - 1][c2] : 0;
 
-            if (r1 > 0 && c1 > 0)
-                total += prefix[r1 - 1][c1 - 1];
+            // add back the top-left overlapping area,
+            // which was subtracted twice
+            int overlap = (r1 > 0 && c1 > 0)
+                              ? mat[r1 - 1][c1 - 1]
+                              : 0;
 
-            result.add(total);
+            // final submatrix sum using inclusion-exclusion
+            int sum = total - left - top + overlap;
+
+            result.add(sum);
         }
 
         return result;
     }
 
-    public static void main(String[] args) {
-        int[][] arr = {
-        {1, 2, 3, 4},
-        {5, 6, 7, 8},
-        {9, 10, 11, 12},
-        {13, 14, 15, 16}
-        };
+    public static void main(String[] args)
+    {
+        int[][] mat
+            = { { 1, 2, 3 }, { 1, 1, 0 }, { 4, 2, 2 } };
 
-        int[][] queries = {
-            {1, 1, 2, 2}
-        };
+        int[][] queries
+            = { { 0, 0, 1, 1 }, { 1, 0, 2, 2 } };
 
-        ArrayList<Integer> result = subMatrixSum(arr, queries);
-        for (int sum : result) {
-            System.out.print(sum + " ");
+        ArrayList<Integer> result
+            = prefixSum2D(mat, queries);
+
+        for (int x : result) {
+            System.out.print(x + " ");
         }
-        System.out.println();
     }
 }
 
 
             Python
 
-    def subMatrixSum(mat, queries):
+    def prefixSum2D(mat, queries):
     rows = len(mat)
     cols = len(mat[0])
 
-    # create prefix matrix of size (rows+1)x(cols+1) 
-    # to simplify boundaries
-    pre = [[0] * (cols + 1) for _ in range(rows + 1)]
+    # build prefix sum over rows
+    for i in range(1, rows):
+        for j in range(cols):
+            mat[i][j] += mat[i - 1][j]
 
-    # Build prefix matrix with 1-based indexing
-    for i in range(1, rows + 1):
-        for j in range(1, cols + 1):
-            pre[i][j] = mat[i - 1][j - 1] \
-                        + pre[i - 1][j] \
-                        + pre[i][j - 1] \
-                        - pre[i - 1][j - 1]
+    # build prefix sum over columns
+    for j in range(1, cols):
+        for i in range(rows):
+            mat[i][j] += mat[i][j - 1]
 
     result = []
 
     # process each query using inclusion-exclusion
     for q in queries:
-        topRow = q[0] + 1
-        leftCol = q[1] + 1
-        bottomRow = q[2] + 1
-        rightCol = q[3] + 1
+        r1, c1, r2, c2 = q
 
-        # get total area from (1,1) to (bottomRow, rightCol)
-        total = pre[bottomRow][rightCol]
+        # get the total prefix sum from (0,0) to (r2,c2)
+        total = mat[r2][c2]
 
-        # subtract area above the submatrix
-        top = pre[topRow - 1][rightCol]
+        # subtract the area above the submatrix (if any)
+        left = mat[r2][c1 - 1] if c1 > 0 else 0
 
-        # subtract area to the left of the submatrix
-        left = pre[bottomRow][leftCol - 1]
+        # subtract the area to the left of the submatrix (if any)
+        top = mat[r1 - 1][c2] if r1 > 0 else 0
 
-        # add back the overlapping top-left area,
+        # add back the top-left overlapping area,
         # which was subtracted twice
-        overlap = pre[topRow - 1][leftCol - 1]
+        overlap = mat[r1 - 1][c1 - 1] if r1 > 0 and c1 > 0 else 0
 
         # final submatrix sum using inclusion-exclusion
-        result.append(total - top - left + overlap)
+        sum = total - left - top + overlap
+
+        result.append(sum)
 
     return result
 
@@ -499,16 +492,20 @@ class GfG {
 # Driver Code
 if __name__ == "__main__":
     mat = [
-        [1, 2, 3, 4],
-        [5, 6, 7, 8],
-        [9, 10, 11, 12],
-        [13, 14, 15, 16]
+        [1, 2, 3],
+        [1, 1, 0],
+        [4, 2, 2]
     ]
+
     queries = [
-        [1, 1, 2, 2]
+        [0, 0, 1, 1],
+        [1, 0, 2, 2]
     ]
-    result = subMatrixSum(mat, queries)
-    print(" ".join(map(str, result)))
+
+    result = prefixSum2D(mat, queries)
+
+    for x in result:
+        print(x, end=" ")
 
 
             C#
@@ -516,139 +513,141 @@ if __name__ == "__main__":
     using System;
 using System.Collections.Generic;
 
-class GfG {
+class GFG {
+    static List<int> prefixSum2D(int[, ] mat, int[, ] queries)
+    {
+        int rows = mat.GetLength(0);
+        int cols = mat.GetLength(1);
 
-    public static List<int> subMatrixSum(int[,] arr, int[,] queries) {
-        // number of rows
-        int n = arr.GetLength(0); 
-        // number of columns
-        int m = arr.GetLength(1);  
+        // build prefix sum over rows
+        for (int i = 1; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                mat[i, j] += mat[i - 1, j];
+            }
+        }
 
-        // Construct prefix sum matrix using 0-based indexing
-        int[,] prefix = new int[n, m];
-
-        for (int i = 0; i < n; ++i) {
-            for (int j = 0; j < m; ++j) {
-                prefix[i, j] = arr[i, j];
-
-                if (i > 0)
-                    prefix[i, j] += prefix[i - 1, j];
-
-                if (j > 0)
-                    prefix[i, j] += prefix[i, j - 1];
-
-                if (i > 0 && j > 0)
-                    prefix[i, j] -= prefix[i - 1, j - 1];
+        // build prefix sum over columns
+        for (int j = 1; j < cols; j++) {
+            for (int i = 0; i < rows; i++) {
+                mat[i, j] += mat[i, j - 1];
             }
         }
 
         List<int> result = new List<int>();
-        int q = queries.GetLength(0); 
 
-        for (int k = 0; k < q; k++) {
-            int r1 = queries[k, 0];
-            int c1 = queries[k, 1];
-            int r2 = queries[k, 2];
-            int c2 = queries[k, 3];
+        // process each query using inclusion-exclusion
+        for (int i = 0; i < queries.GetLength(0); i++) {
+            int r1 = queries[i, 0];
+            int c1 = queries[i, 1];
+            int r2 = queries[i, 2];
+            int c2 = queries[i, 3];
 
-            int total = prefix[r2, c2];
-            int top = (r1 > 0) ? prefix[r1 - 1, c2] : 0;
-            int left = (c1 > 0)? prefix[r2, c1 - 1] : 0;
-            int overlap = (r1 > 0 && c1 > 0)? prefix[r1 - 1, c1 - 1] : 0;
+            // get the total prefix sum from (0,0) to
+            // (r2,c2)
+            int total = mat[r2, c2];
 
-            int sum = total - top - left + overlap;
+            // subtract the area above the submatrix (if
+            // any)
+            int left = (c1 > 0) ? mat[r2, c1 - 1] : 0;
+
+            // subtract the area to the left of the
+            // submatrix (if any)
+            int top = (r1 > 0) ? mat[r1 - 1, c2] : 0;
+
+            // add back the top-left overlapping area,
+            // which was subtracted twice
+            int overlap = (r1 > 0 && c1 > 0)
+                              ? mat[r1 - 1, c1 - 1]
+                              : 0;
+
+            // final submatrix sum using inclusion-exclusion
+            int sum = total - left - top + overlap;
+
             result.Add(sum);
         }
 
         return result;
     }
 
-    public static void Main() {
-        int[,] arr = {
-            {1, 2, 3, 4},
-            {5, 6, 7, 8},
-            {9, 10, 11, 12},
-            {13, 14, 15, 16}
-        };
+    static void Main()
+    {
+        int[, ] mat
+            = { { 1, 2, 3 }, { 1, 1, 0 }, { 4, 2, 2 } };
+        int[, ] queries
+            = { { 0, 0, 1, 1 }, { 1, 0, 2, 2 } };
 
-        int[,] queries = {
-            {1, 1, 2, 2}  
-        };
+        List<int> result = prefixSum2D(mat, queries);
 
-        List<int> result = subMatrixSum(arr, queries);
-
-        foreach (int sum in result) {
-            Console.Write(sum + " ");
-        }
-        Console.WriteLine();
+        foreach(int x in result) { Console.Write(x + " "); }
     }
 }
 
 
             JavaScript
 
-    function subMatrixSum(mat, queries) {
-    const rows = mat.length;
-    const cols = mat[0].length;
+    function prefixSum2D(mat, queries)
+{
+    let rows = mat.length;
+    let cols = mat[0].length;
 
-    // create prefix matrix of size (rows+1)x(cols+1) 
-    // to simplify boundaries
-    const pre = Array.from({ length: rows + 1 }, () =>
-        new Array(cols + 1).fill(0)
-    );
-
-    // Build prefix matrix with 1-based indexing
-    for (let i = 1; i <= rows; i++) {
-        for (let j = 1; j <= cols; j++) {
-            pre[i][j] = mat[i - 1][j - 1]
-                      + pre[i - 1][j]
-                      + pre[i][j - 1]
-                      - pre[i - 1][j - 1];
+    // build prefix sum over rows
+    for (let i = 1; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            mat[i][j] += mat[i - 1][j];
         }
     }
 
-    const result = [];
+    // build prefix sum over columns
+    for (let j = 1; j < cols; j++) {
+        for (let i = 0; i < rows; i++) {
+            mat[i][j] += mat[i][j - 1];
+        }
+    }
+
+    let result = [];
 
     // process each query using inclusion-exclusion
-    for (const q of queries) {
-        const topRow = q[0] + 1;
-        const leftCol = q[1] + 1;
-        const bottomRow = q[2] + 1;
-        const rightCol = q[3] + 1;
+    for (let q of queries) {
+        let r1 = q[0];
+        let c1 = q[1];
+        let r2 = q[2];
+        let c2 = q[3];
 
-        // get total area from (1,1) to (bottomRow, rightCol)
-        const total = pre[bottomRow][rightCol];
+        // get the total prefix sum from (0,0) to (r2,c2)
+        let total = mat[r2][c2];
 
-        // subtract area above the submatrix
-        const top = pre[topRow - 1][rightCol];
+        // subtract the area above the submatrix (if any)
+        let left = (c1 > 0) ? mat[r2][c1 - 1] : 0;
 
-        // subtract area to the left of the submatrix
-        const left = pre[bottomRow][leftCol - 1];
+        // subtract the area to the left of the submatrix
+        // (if any)
+        let top = (r1 > 0) ? mat[r1 - 1][c2] : 0;
 
-        // add back the overlapping top-left area,
+        // add back the top-left overlapping area,
         // which was subtracted twice
-        const overlap = pre[topRow - 1][leftCol - 1];
+        let overlap
+            = (r1 > 0 && c1 > 0) ? mat[r1 - 1][c1 - 1] : 0;
 
         // final submatrix sum using inclusion-exclusion
-        result.push(total - top - left + overlap);
+        let sum = total - left - top + overlap;
+
+        result.push(sum);
     }
 
     return result;
 }
 
 // Driver Code
-const mat = [
-    [1, 2, 3, 4],
-    [5, 6, 7, 8],
-    [9, 10, 11, 12],
-    [13, 14, 15, 16]
-];
+let mat = [ [ 1, 2, 3 ], [ 1, 1, 0 ], [ 4, 2, 2 ] ];
+let queries = [ [ 0, 0, 1, 1 ], [ 1, 0, 2, 2 ] ];
 
-const queries = [
-    [1, 1, 2, 2]
-];
+let result = prefixSum2D(mat, queries);
 
-const result = subMatrixSum(mat, queries);
-console.log(result.join(' '));
+let ans = "";
+for (let x of result) {
+    ans += x + " ";
+}
 
-Output34ExplanationFor the query (1,1) to (2,2), the required submatrix is:6  710 11Its sum is:6 + 7 + 10 + 11 = 34The prefix sum formula calculates this directly by adding and subtracting the required regions.
+console.log(ans.trim());
+
+Output5 10

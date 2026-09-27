@@ -1,6 +1,6 @@
 # Move all Zeros to End of Array - GeeksforGeeks
 
-Given an array of integers arr[], move all the zeros to the end of the array while maintaining the relative order of all non-zero elements.Examples: Input: arr[] = [1, 2, 0, 4, 3, 0, 5, 0]Output: [1, 2, 4, 3, 5, 0, 0, 0]Explanation: There are three 0s that are moved to the end.Input: arr[] = [10, 20, 30]Output: [10, 20, 30]Explanation: No change in array as there are no 0s.Input: arr[] = [0, 0]Output: [0, 0]Explanation: No change in array as there are all 0s.Try It YourselfTable of Content[Naive Approach] Using Temporary Array - O(n) Time and O(n) Space[Better Approach] Two Traversals-O(n) Time and O(1) space[Expected Approach] One Traversal-O(n) Time and O(1) space[Naive Approach] Using Temporary Array - O(n) Time and O(n) SpaceThe idea is to use a temporary array of the same size, copy all non-zero elements into it, fill the remaining positions with zeros, and then copy the temporary array back to the original array.Working: 
+Given an array of integers arr[], move all the zeros to the end of the array while maintaining the relative order of all non-zero elements.Examples: Input: arr[] = [1, 2, 0, 4, 3, 0, 5, 0]Output: [1, 2, 4, 3, 5, 0, 0, 0]Explanation: There are three 0s that are moved to the end.Input: arr[] = [10, 20, 30]Output: [10, 20, 30]Explanation: No change in array as there are no 0s.Input: arr[] = [0, 0]Output: [0, 0]Explanation: No change in array as there are all 0s.Try It YourselfTable of Content[Naive Approach] Using Temporary Array - O(n) Time and O(n) Space[Better Approach] Two Traversals-O(n) Time and O(1) space[Expected Approach] One Traversal-O(n) Time and O(1) space[Naive Approach] Using Temporary Array - O(n) Time and O(n) SpaceThe idea is to use a temporary array of the same size and do the following:Copy all non-zero elements into the temp arrayFill the remaining positions with zeros Copy the temporary array back to the original array. 
             C++
 
     #include <iostream>
@@ -231,7 +231,7 @@ pushZerosToEnd(arr);
 
 console.log(arr.join(" "));
 
-Output1 2 4 3 5 0 0 0 [Better Approach] Two Traversals-O(n) Time and O(1) spaceThe idea is to move all the zeros to the end of the array while maintaining the relative order of non-zero elements using two traversals. Traverse the array once to move all non-zero elements to the front while maintaining order, then traverse the remaining positions and fill them with zeros.Working: 
+Output1 2 4 3 5 0 0 0 [Better Approach] Two Traversals-O(n) Time and O(1) spaceThe idea is to move all the zeros to the end of the array while maintaining the relative order of non-zero elements using two traversals. Traverse the array once to move all non-zero elements to the front while maintaining orderTraverse the remaining positions and fill them with zeros.
             C++
 
     #include <iostream>
@@ -428,7 +428,7 @@ const arr = [ 1, 2, 0, 4, 3, 0, 5, 0 ];
 pushZerosToEnd(arr);
 console.log(arr.join(" "));
 
-Output1 2 4 3 5 0 0 0 [Expected Approach] One Traversal-O(n) Time and O(1) spaceThe idea is similar to the previous approach where we took a pointer, say count to track where the next non-zero element should be placed. However, on encountering a non-zero element, instead of directly placing the non-zero element at arr[count], we will swap the non-zero element with arr[count]. This will ensure that if there is any zero present at arr[count], it is pushed towards the end of array and is not overwritten.Working:
+Output1 2 4 3 5 0 0 0 [Expected Approach] One Traversal-O(n) Time and O(1) spaceThe idea is similar to the previous approach. Here we a pointer count to track where the next non-zero element should be placed.Initialize count as 0 and traverse the array.When a non-zero element is found, swap it with arr[count] and increment count.  This places the non-zero element at the correct position.
             C++
 
     #include <iostream>
@@ -449,6 +449,7 @@ void pushZerosToEnd(vector<int>& arr) {
             // Swap the current element with 
             // the 0 at index 'count'
             swap(arr[i], arr[count]);
+            
             // Move 'count' pointer to the 
             // next position
             count++;

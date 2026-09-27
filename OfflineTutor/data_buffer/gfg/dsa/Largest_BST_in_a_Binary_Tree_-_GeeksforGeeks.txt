@@ -1,6 +1,6 @@
 # Largest BST in a Binary Tree - GeeksforGeeks
 
-Given the root of a binary tree, find the size of the largest subtree that is also a Binary Search Tree (BST). A subtree is considered a BST if, for every node in the subtree:All nodes in its left subtree have values less than the node's value.All nodes in its right subtree have values greater than the node's value.The subtree contains no duplicate values.Return the number of nodes in the largest BST subtree.Note: The size of a subtree is the total number of nodes it contains.Examples:Input: root = [5, 2, 4, 1, 3] Output: 3Explanation: The following sub-tree is a BST of size 3 Input: root = [6, 7, 3, N, 2, 2, 4] Output: 3Explanation: The following sub-tree is a BST of size 3: Try It YourselfTable of Content[Naive Approach] By Checking All Subtree - O(n^2) Time and O(n) Space[Expected Approach] Using Binary Search Tree Property - O(n) Time and O(h) Space[Naive Approach] By Checking All Subtree - O(n^2) Time and O(n) SpaceThe idea is to recursively check each subtree of a binary tree to determine whether it is a valid BST or not. If it is valid, count the nodes in that subtree and keep track of the maximum size.
+Given the root of a binary tree, find the size of the largest subtree that is also a Binary Search Tree (BST). A subtree is considered a BST if, for every node in the subtree:All nodes in its left subtree have values less than the node's value.All nodes in its right subtree have values greater than the node's value.The subtree contains no duplicate values.Return the number of nodes in the largest BST subtree.Note: The size of a subtree is the total number of nodes it contains.Examples:Input: root = [5, 2, 4, 1, 3] Output: 3Explanation: The following sub-tree is a BST of size 3 Input: root = [6, 7, 3, N, 2, 2, 4] Output: 3Explanation: The following sub-tree is a BST of size 3: Try It YourselfTable of Content[Naive Approach] By Checking All Subtree - O(n^2) Time and O(n) Space[Expected Approach] Using Binary Search Tree Property - O(n) Time and O(h) Space[Naive Approach] By Checking All Subtree - O(n^2) Time and O(n) SpaceThe idea is to recursively check each subtree of a binary tree to find it is a valid BST or not. If valid, count the nodes in that subtree and keep track of the maximum.
             C++
 
     #include <iostream>
@@ -326,11 +326,10 @@ root.left.right = new Node(3);
 console.log(largestBst(root));
 
 Output3
-[Expected Approach] Using Binary Search Tree Property - O(n) Time and O(h) SpaceThe idea is to traverse the tree in postorder so that the left and right subtrees are processed before the current node. For each subtree, maintain four pieces of information: whether it is a BST, its size, its minimum value, and its maximum value. Using the information returned by the left and right subtrees, determine whether the current subtree is a BST. If it is, update its size and value range. Otherwise, propagate the size of the largest BST found in either subtree. This allows the answer to be computed in a single traversal.Consider the following binary tree: We process the tree in postorder, i.e., left subtree, right subtree, and then the current node.Node 1: It is a leaf node, so it forms a BST of size 1 with minVal = 1 and maxVal = 1.Node 3: It is also a leaf node, so it forms a BST of size 1 with minVal = 3 and maxVal = 3.Node 2: Both left and right subtrees are BSTs, and 1 < 2 < 3. Hence, the subtree rooted at 2 is a BST of size 3 with minVal = 1 and maxVal = 3.Node 4: It is a leaf node, so it forms a BST of size 1 with minVal = 4 and maxVal = 4.Node 5: Although both subtrees are BSTs, the condition 5 < 4 is false. Hence, the subtree rooted at 5 is not a BST. Therefore, the largest BST size is max(3, 1) = 3.Hence, the size of the largest BST in the given binary tree is: 3
+[Expected Approach] Using Binary Search Tree Property - O(n) Time and O(h) SpaceThe idea is to traverse the tree in postorder so that the left and right subtrees are processed before the current node. For each subtree, maintain four pieces of information: Whether a BST or not  Size,  Minimum valueMaximum value. Using the information returned by the left and right subtrees, find whether the current subtree is a BST. If it is, update its size and value range. Otherwise, propagate the size of the largest BST found in either subtree. Consider the following binary tree: We process the tree in postorder, i.e., left subtree, right subtree, and then the current node.Node 1: It is a leaf node, so it forms a BST of size 1 with minVal = 1 and maxVal = 1.Node 3: It is also a leaf node, so it forms a BST of size 1 with minVal = 3 and maxVal = 3.Node 2: Both left and right subtrees are BSTs, and 1 < 2 < 3. Hence, the subtree rooted at 2 is a BST of size 3 with minVal = 1 and maxVal = 3.Node 4: It is a leaf node, so it forms a BST of size 1 with minVal = 4 and maxVal = 4.Node 5: Although both subtrees are BSTs, the condition 5 < 4 is false. Hence, the subtree rooted at 5 is not a BST. Therefore, the largest BST size is max(3, 1) = 3.Hence, the size of the largest BST in the given binary tree is: 3
             C++
 
-    //Driver Code Starts
-#include <iostream>
+    #include <iostream>
 #include <climits>
 #include <algorithm>
 using namespace std;
@@ -347,8 +346,6 @@ public:
         left = right = nullptr;
     }
 };
-//Driver Code Ends
-
 
 // Structure to store information about a subtree
 class Info {
@@ -387,8 +384,6 @@ Info solve(Node* root) {
     }
 
     // Current subtree is not a BST
-
-//Driver Code Starts
     return Info(false, max(left.size, right.size),
                 INT_MIN, INT_MAX);
 }
@@ -417,13 +412,11 @@ int main() {
 
     return 0;
 }
-//Driver Code Ends
 
 
             Java
 
-    //Driver Code Starts
-class Node {
+    class Node {
     int data;
     Node left;
     Node right;
@@ -435,8 +428,6 @@ class Node {
 }
 
 // Structure to store information about a subtree
-//Driver Code Ends
-
 class Info {
     boolean isBST;
     int size;
@@ -477,8 +468,6 @@ public class GFG {
         // Current subtree is not a BST
         return new Info(false,
                 Math.max(left.size, right.size),
-
-//Driver Code Starts
                 Integer.MIN_VALUE,
                 Integer.MAX_VALUE);
     }
@@ -506,13 +495,11 @@ public class GFG {
         System.out.println(largestBst(root));
     }
 }
-//Driver Code Ends
 
 
             Python
 
-    #Driver Code Starts
-import sys
+    import sys
 
 # Node structure
 class Node:
@@ -522,8 +509,6 @@ class Node:
         self.right = None
 
 # Structure to store information about a subtree
-#Driver Code Ends
-
 class Info:
     def __init__(self, isBST, size, minVal, maxVal):
         self.isBST = isBST
@@ -555,8 +540,6 @@ def solve(root):
     return Info(False,
                 max(left.size, right.size),
                 -sys.maxsize - 1,
-
-#Driver Code Starts
                 sys.maxsize)
 
 # Finds the size of the largest BST
@@ -580,13 +563,11 @@ if __name__ == "__main__":
     root.left.right = Node(3)
 
     print(largestBst(root))
-#Driver Code Ends
 
 
             C#
 
-    //Driver Code Starts
-using System;
+    using System;
 
 // Node structure
 class Node {
@@ -599,8 +580,6 @@ class Node {
         left = right = null;
     }
 }
-//Driver Code Ends
-
 
 // Structure to store information about a subtree
 class Info {
@@ -641,8 +620,6 @@ class GFG {
 
         // Current subtree is not a BST
         return new Info(false, Math.Max(left.size, right.size),
-
-//Driver Code Starts
             int.MinValue, int.MaxValue);
     }
 
@@ -669,13 +646,11 @@ class GFG {
         Console.WriteLine(largestBst(root));
     }
 }
-//Driver Code Ends
 
 
             JavaScript
 
-    //Driver Code Starts
-// Node structure
+    // Node structure
 class Node {
     constructor(x) {
         this.data = x;
@@ -683,8 +658,6 @@ class Node {
         this.right = null;
     }
 }
-
-//Driver Code Ends
 
 // Structure to store information about a subtree
 class Info {
@@ -719,8 +692,6 @@ function solve(root) {
     }
 
     // Current subtree is not a BST
-
-//Driver Code Starts
     return new Info(false,
         Math.max(left.size, right.size),
         Number.MIN_SAFE_INTEGER,
@@ -748,6 +719,5 @@ root.left.left = new Node(1);
 root.left.right = new Node(3);
 
 console.log(largestBst(root));
-//Driver Code Ends
 
 Output3

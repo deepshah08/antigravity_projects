@@ -4,30 +4,42 @@ reduce() function (from the functools module) applies a function cumulatively to
             Python
 
     from functools import reduce
+
 a = ["Geeks", "for", "Geeks"]
-r = reduce(lambda x, y: x + " " + y, a)
+
+r = reduce(lambda result, current: result + " " + current, a)
+
 print(r)
 
 OutputGeeks for Geeks
-Explanation: reduce(lambda x, y: x + " " + y, a) joins elements step-by-step into one string.Syntaxreduce(function, iterable[, initializer])Parameters:function: A function that takes two arguments and returns a single value.iterable: The sequence to be reduced (list, tuple, etc.).initializer (optional): A starting value that is placed before first element.Returns: Returns a single final value after processing all elements.ExamplesExample 1: Here, the code adds all numbers in a list using reduce(). The function combines two numbers at a time.
+Explanation:result stores the value accumulated from the previous step. current represents the next element from the list. First, "Geeks" and "for" are combined to produce "Geeks for". Syntaxreduce(function, iterable[, initializer])Parameters:function: A function that takes two arguments and returns a single value.iterable: The sequence to be reduced (list, tuple, etc.).initializer (optional): A starting value that is placed before first element.Returns: Returns a single final value after processing all elements.ExamplesExample 1: Here, the code adds all numbers in a list using reduce(). The function combines two numbers at a time.
             Python
 
     from functools import reduce
+
 a = [2, 4, 6, 8]
-r = reduce(lambda x, y: x + y, a)
+
+r = reduce(lambda result, current: result + current, a)
+
 print(r)
 
 Output20
-Explanation: reduce(lambda x, y: x + y, a) adds elements step-by-step ((2 + 4) + 6) + 8 = 20.Example 2: Here, the code finds the largest number from a list using reduce().
+Explanation:result represents the sum calculated up to the current step. current represents the next number from the list. First, 2 + 4 gives 6. Then, 6 + 6 gives 12. Finally, 12 + 8 gives 20. Therefore, the final result is 20.Example 2: Here, the code finds the largest number from a list using reduce().
             Python
 
     from functools import reduce
+
 a = [5, 9, 3, 12, 7]
-r = reduce(lambda x, y: x if x > y else y, a)
+
+r = reduce(
+    lambda result, current: result if result > current else current,
+    a
+)
+
 print(r)
 
 Output12
-Explanation: lambda x, y: x if x > y else y compares two values at each step and keeps the larger one, resulting in the maximum value 12.Example 3: This example uses functools.reduce() with built-in functions from operator module to perform sum, product and string concatenation on lists.
+Explanation:lambda x, y: x if x > y else y compares two values at each step.Keeps the larger one, resulting in the maximum value 12.Example 3: This example uses functools.reduce() with built-in functions from operator module to perform sum, product and string concatenation on lists.
             Python
 
     import functools
@@ -52,4 +64,4 @@ res = accumulate(a, add)
 print(list(res))
 
 Output[1, 3, 6, 10, 15]
-Explanation: accumulate(a, add) - Adds elements cumulatively:Step 1: 1Step 2: 1 + 2 = 3Step 3: 3 + 3 = 6Step 4: 6 + 4 = 10Step 5: 10 + 5 = 15Let's understand the difference between accumulate() and reduce() more clearly with the help of the table below:Featurereduce()accumulate()Return ValueA single final value (e.g., 15).Intermediate results (e.g., [1, 3, 6, 10, 15]).Output TypeReturns a single value.Returns an iterator.Use CaseUseful when only the final result is needed.Useful when tracking cumulative steps.ImportFrom functools.From itertools.
+Explanation: accumulate(a, add) - Adds elements cumulatively:Step 1: 1Step 2: 1 + 2 = 3Step 3: 3 + 3 = 6Step 4: 6 + 4 = 10Step 5: 10 + 5 = 15Let's understand the difference between accumulate() and reduce() more clearly with the help of the table below:Featurereduce()accumulate()Return ValueA single final value, such as 15.Intermediate results, such as [1, 3, 6, 10, 15].Output TypeReturns a single value.Returns an iterator.Use CaseUseful when only the final result is required.Useful when intermediate cumulative results are required.ImportFrom functools.From itertools.Argument OrderTakes the function first and the iterable second.Takes the iterable first and the function second.

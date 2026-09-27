@@ -437,7 +437,7 @@ console.log(bitset13);
 Output00000000000000000000010000000000
 00000000000000000000001000000000
 0000000100000000
-Application of Bit OperatorsBit operations are used for the optimization of embedded systems.The Exclusive-or operator can be used to confirm the integrity of a file, making sure it has not been corrupted, especially after it has been in transit.Bitwise operations are used in Data encryption and compression.Bits are used in the area of networking, framing the packets of numerous bits which are sent to another system generally through any type of serial interface.Digital Image Processors use bitwise operations to enhance image pixels and to extract different sections of a microscopic image.Practice Problems on Bitwise AlgorithmSolve these questions to improve your understanding of bitwise operators and bit manipulation techniques.Note: All the above Bitwise Practice Problems are optimized and run in O(1) Time Complexity with O(1) Auxiliary Space.1. Set a bit in the numberIf we want to set a bit at nth position in the number 'num', it can be done using the 'OR' operator( | ).First, we left shift 1 to n position via (1<<n).Then, use the "OR" operator to set the bit at that position. "OR" operator is used because it will set the bit even if the bit is unset previously in the binary representation of the number 'num'.Note: If the bit would be already set then it would remain unchanged.
+Application of Bit OperatorsBit operations are used for the optimization of embedded systems.The Exclusive-or operator can be used to confirm the integrity of a file, making sure it has not been corrupted, especially after it has been in transit.Bitwise operations are used in Data encryption and compression.Bits are used in the area of networking, framing the packets of numerous bits which are sent to another system generally through any type of serial interface.Digital Image Processors use bitwise operations to enhance image pixels and to extract different sections of a microscopic image.Practice Problems on Bitwise Algorithm1. Set a bit in the numberIf we want to set a bit at nth position in the number 'num', it can be done using the 'OR' operator( | ).First, we left shift 1 to n position via (1<<n).Then, use the "OR" operator to set the bit at that position. "OR" operator is used because it will set the bit even if the bit is unset previously in the binary representation of the number 'num'.Note: If the bit would be already set then it would remain unchanged.
             C++
 
     #include <iostream>
@@ -1343,4 +1343,455 @@ function positionOfRightmostSetBit(n) {
 
 console.log(positionOfRightmostSetBit(18));
 
-Related article:Bits manipulation (Important tactics)Bitwise Hacks for Competitive ProgrammingBit Tricks for Competitive Programming More Practice Problems on Bitwise Algorithms
+11. Compute XOR from 1 to nThe XOR of all integers from 1 to n follows a repeating pattern based on n % 4. If n % 4 == 0, the result is n.  If n % 4 == 1, the result is 1.  If n % 4 == 2, the result is n + 1.  If n % 4 == 3, the result is 0.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+int computeXOR(int n)
+{
+    if (n % 4 == 0)
+        return n;
+    if (n % 4 == 1)
+        return 1;
+    if (n % 4 == 2)
+        return n + 1;
+
+    return 0;
+}
+
+int main()
+{
+    int n = 5;
+
+    cout << computeXOR(n) << endl;
+
+    return 0;
+}
+
+
+            Java
+
+    public class Main {
+
+    static int computeXOR(int n) {
+        if (n % 4 == 0)
+            return n;
+        if (n % 4 == 1)
+            return 1;
+        if (n % 4 == 2)
+            return n + 1;
+
+        return 0;
+    }
+
+    public static void main(String[] args) {
+        int n = 5;
+
+        System.out.println(computeXOR(n));
+    }
+}
+
+
+            Python
+
+    def compute_xor(n):
+    if n % 4 == 0:
+        return n
+    if n % 4 == 1:
+        return 1
+    if n % 4 == 2:
+        return n + 1
+
+    return 0
+
+
+n = 5
+
+print(compute_xor(n))
+
+
+            C#
+
+    using System;
+
+class Program
+{
+    static int ComputeXOR(int n)
+    {
+        if (n % 4 == 0)
+            return n;
+        if (n % 4 == 1)
+            return 1;
+        if (n % 4 == 2)
+            return n + 1;
+
+        return 0;
+    }
+
+    static void Main()
+    {
+        int n = 5;
+
+        Console.WriteLine(ComputeXOR(n));
+    }
+}
+
+
+            JavaScript
+
+    function computeXOR(n) {
+    if (n % 4 === 0)
+        return n;
+    if (n % 4 === 1)
+        return 1;
+    if (n % 4 === 2)
+        return n + 1;
+
+    return 0;
+}
+
+let n = 5;
+
+console.log(computeXOR(n));
+
+Output1
+Time Complexity: O(1)Auxiliary Space: O(1)12. Check if a Number is a Power of 2A positive number is a power of 2 if its binary representation contains exactly one set bit.For such a number n, n & (n - 1) is 0. The condition n > 0 is also required because 0 & (-1) is 0, but 0 is not a power of 2.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+bool isPowerOfTwo(int n)
+{
+    return n > 0 && (n & (n - 1)) == 0;
+}
+
+int main()
+{
+    int n = 16;
+
+    cout << isPowerOfTwo(n) << endl;
+
+    return 0;
+}
+
+
+            Java
+
+    public class Main {
+
+    static boolean isPowerOfTwo(int n) {
+        return n > 0 && (n & (n - 1)) == 0;
+    }
+
+    public static void main(String[] args) {
+        int n = 16;
+
+        System.out.println(isPowerOfTwo(n));
+    }
+}
+
+
+            Python
+
+    def is_power_of_two(n):
+    return n > 0 and (n & (n - 1)) == 0
+
+
+n = 16
+
+print(is_power_of_two(n))
+
+
+            C#
+
+    using System;
+
+class Program
+{
+    static bool IsPowerOfTwo(int n)
+    {
+        return n > 0 && (n & (n - 1)) == 0;
+    }
+
+    static void Main()
+    {
+        int n = 16;
+
+        Console.WriteLine(IsPowerOfTwo(n));
+    }
+}
+
+
+            JavaScript
+
+    function isPowerOfTwo(n) {
+    return n > 0 && (n & (n - 1)) === 0;
+}
+
+let n = 16;
+
+console.log(isPowerOfTwo(n));
+
+Output1
+Time Complexity: O(1)Auxiliary Space: O(1)13. Count Set Bits in an IntegerCounting set bits means finding the total number of 1s in the binary representation of an integer.The expression n & 1 checks whether the current least significant bit is set. After checking it, n is right-shifted by one position to process the next bit.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+int countSetBits(int n)
+{
+    int count = 0;
+
+    while (n > 0) {
+        count += (n & 1);
+        n >>= 1;
+    }
+
+    return count;
+}
+
+int main()
+{
+    int n = 5;
+
+    cout << countSetBits(n) << endl;
+
+    return 0;
+}
+
+
+            Java
+
+    public class Main {
+
+    static int countSetBits(int n) {
+        int count = 0;
+
+        while (n > 0) {
+            count += (n & 1);
+            n >>= 1;
+        }
+
+        return count;
+    }
+
+    public static void main(String[] args) {
+        int n = 5;
+
+        System.out.println(countSetBits(n));
+    }
+}
+
+
+            Python
+
+    def count_set_bits(n):
+    count = 0
+
+    while n > 0:
+        count += (n & 1)
+        n >>= 1
+
+    return count
+
+
+n = 5
+
+print(count_set_bits(n))
+
+
+            C#
+
+    using System;
+
+class Program
+{
+    static int CountSetBits(int n)
+    {
+        int count = 0;
+
+        while (n > 0)
+        {
+            count += (n & 1);
+            n >>= 1;
+        }
+
+        return count;
+    }
+
+    static void Main()
+    {
+        int n = 5;
+
+        Console.WriteLine(CountSetBits(n));
+    }
+}
+
+
+            JavaScript
+
+    function countSetBits(n) {
+    let count = 0;
+
+    while (n > 0) {
+        count += (n & 1);
+        n >>= 1;
+    }
+
+    return count;
+}
+
+let n = 5;
+
+console.log(countSetBits(n));
+
+Output2
+For 5, the binary representation is 101, which contains two set bits.Time Complexity: O(log n)Auxiliary Space: O(1)14. Find the Position of the Rightmost Set BitThe rightmost set bit is the first 1 encountered from the right side of the binary representation.To isolate it, we can use:n & (-n)The resulting value contains only the rightmost set bit. We then count its position from the right, starting from position 1.For example, 20 is represented as 10100, so its rightmost set bit is at position 3.  10100   (20)& 01100   (-20)-------  00100
+            C++
+
+    #include <iostream>
+using namespace std;
+
+int positionOfRightmostSetBit(int n)
+{
+    if (n == 0)
+        return 0;
+
+    // Isolate the rightmost set bit
+    int bit = n & (-n);
+
+    int position = 1;
+
+    while (bit > 1) {
+        bit >>= 1;
+        position++;
+    }
+
+    return position;
+}
+
+int main()
+{
+    int n = 20;
+
+    cout << positionOfRightmostSetBit(n) << endl;
+
+    return 0;
+}
+
+
+            Java
+
+    public class Main {
+
+    static int positionOfRightmostSetBit(int n) {
+        if (n == 0)
+            return 0;
+
+        // Isolate the rightmost set bit
+        int bit = n & (-n);
+
+        int position = 1;
+
+        while (bit > 1) {
+            bit >>= 1;
+            position++;
+        }
+
+        return position;
+    }
+
+    public static void main(String[] args) {
+        int n = 20;
+
+        System.out.println(positionOfRightmostSetBit(n));
+    }
+}
+
+
+            Python
+
+    def position_of_rightmost_set_bit(n):
+    if n == 0:
+        return 0
+
+    # Isolate the rightmost set bit
+    bit = n & (-n)
+
+    position = 1
+
+    while bit > 1:
+        bit >>= 1
+        position += 1
+
+    return position
+
+
+n = 20
+
+print(position_of_rightmost_set_bit(n))
+
+
+            C#
+
+    using System;
+
+class Program
+{
+    static int PositionOfRightmostSetBit(int n)
+    {
+        if (n == 0)
+            return 0;
+
+        // Isolate the rightmost set bit
+        int bit = n & (-n);
+
+        int position = 1;
+
+        while (bit > 1)
+        {
+            bit >>= 1;
+            position++;
+        }
+
+        return position;
+    }
+
+    static void Main()
+    {
+        int n = 20;
+
+        Console.WriteLine(PositionOfRightmostSetBit(n));
+    }
+}
+
+
+            JavaScript
+
+    function positionOfRightmostSetBit(n) {
+    if (n === 0)
+        return 0;
+
+    // Isolate the rightmost set bit
+    let bit = n & (-n);
+
+    let position = 1;
+
+    while (bit > 1) {
+        bit >>= 1;
+        position++;
+    }
+
+    return position;
+}
+
+let n = 20;
+
+console.log(positionOfRightmostSetBit(n));
+
+Output3
+Time Complexity: O(log n)Auxiliary Space: O(1)Related articles:Bits manipulation (Important tactics)Bitwise Hacks for Competitive ProgrammingBit Tricks for Competitive Programming More Practice Problems on Bitwise Algorithms

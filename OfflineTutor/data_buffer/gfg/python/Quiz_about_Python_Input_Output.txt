@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython Input OutputLast Updated : DiscussCommentsQuestion 1Find the output of the below python code:
+    CoursesTutorialsPracticeJobsDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsEarn Google BadgePython FundamentalsIntroductionInput & OutputVariablesOperatorsKeywordsData TypesConditional StatementsLoopsFunctionsPython Data StructuresStringListTuplesDictionarySetArraysAdvanced PythonOOP ConceptsException HandlingFile HandlingPython DatabaseMongoDBMySQLPackagesModulesDSA LibrariesPython GUIData Science with PythonNumpyPandasMatplotlibSeabornStatsModelModel BuildingTensorFlowPyTorchWeb Development with PythonFlaskDjangoDjango ORMJinja2 TemplatingDjango TemplatesREST APIBuild API with DRFPython PracticeQuizPractice ProblemsInterview Q & ACoursesPlacement 360 CourseData Science 360 CourseAI Engg CourseData Science 360 CourseExplorePython Input OutputLast Updated : DiscussCommentsQuestion 1Find the output of the below python code:
         Python
         
         print("GFG ")

@@ -66,7 +66,7 @@
           transform: rotate(360deg);
         }
       }
-    CoursesTutorialsInterview PrepDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsPython LoopsLast Updated : DiscussCommentsQuestion 1The best command to repeat a control statement a fixed number of times?A While loopBFor loopCIfDElseQuestion 2What will be the output of the following Python code?
+    CoursesTutorialsPracticeJobsDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsEarn Google BadgePython FundamentalsIntroductionInput & OutputVariablesOperatorsKeywordsData TypesConditional StatementsLoopsFunctionsPython Data StructuresStringListTuplesDictionarySetArraysAdvanced PythonOOP ConceptsException HandlingFile HandlingPython DatabaseMongoDBMySQLPackagesModulesDSA LibrariesPython GUIData Science with PythonNumpyPandasMatplotlibSeabornStatsModelModel BuildingTensorFlowPyTorchWeb Development with PythonFlaskDjangoDjango ORMJinja2 TemplatingDjango TemplatesREST APIBuild API with DRFPython PracticeQuizPractice ProblemsInterview Q & ACoursesPlacement 360 CourseData Science 360 CourseAI Engg CourseData Science 360 CourseExplorePython LoopsLast Updated : DiscussCommentsQuestion 1The best command to repeat a control statement a fixed number of times?A While loopBFor loopCIfDElseQuestion 2What will be the output of the following Python code?
         Python
         
         for i in range(int(2.0)):

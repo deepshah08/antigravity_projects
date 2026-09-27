@@ -1,6 +1,6 @@
 # Searching in Binary Search Tree (BST) - GeeksforGeeks
 
-Given the root of a Binary Search Tree and a value key, find if key is present in the BST or not.Note: The key may or may not be present in the BST.Input: key = 7 Output: trueExplanation: 7 is present in the BST.Input: key = 14 Output: falseExplanation: 14 is not present in the BST.Try It YourselfHow to search a value in Binary Search Tree:Let's say we want to search for the number key, We start at the root. Then:We compare the value to be searched with the value of the root. If it's equal we are done with the search.If it's smaller we know that we need to go to the left subtree.If it's greater we search in the right subtree. Repeat the above step till no more traversal is possibleIf at any iteration, key is found, return True. If the node is null, return False.Illustration of searching a key in BST:See the illustration below for a better understanding:Searching in Binary Search Tree using Recursion:
+Given the root of a Binary Search Tree and a value key, find if key is present in the BST or not.Note: The key may or may not be present in the BST.Input: key = 7 Output: trueExplanation: 7 is present in the BST.Input: key = 14 Output: falseExplanation: 14 is not present in the BST.Try It YourselfLet's say we want to search for the number key, We start at the root. Then:We compare the value to be searched with the value of the root. If it's equal we are done with the search.If it's smaller we know that we need to go to the left subtree.If it's greater we search in the right subtree. Repeat the above step till no more traversal is possibleIf at any iteration, key is found, return True. If the node is null, return False.See the illustration below for a better understanding:Implementation Using Recursion:
             C++
 
     #include <iostream>
@@ -291,7 +291,7 @@ const key = 7;
 console.log(search(root, key));
 
 Output1
-Time complexity: O(h), where h is the height of the BST.Auxiliary Space: O(h) This is because of the space needed to store the recursion stack.We can avoid the auxiliary space and recursion overhead withe help of iterative implementation. Below is the iterative implementation that works in O(h) time and O(1) auxiliary space.Searching in Binary Search Tree using Iterative approach:
+Time complexity: O(h), where h is the height of the BST.Auxiliary Space: O(h) This is because of the space needed to store the recursion stack.We can avoid the auxiliary space and recursion overhead withe help of iterative implementation. Below is the iterative implementation that works in O(h) time and O(1) auxiliary space.Implementation Using Iterative Approach:
             C++
 
     #include <iostream>

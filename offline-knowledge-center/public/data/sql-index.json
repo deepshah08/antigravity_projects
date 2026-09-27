@@ -552,15 +552,15 @@
     },
     {
       "id": "sql-138",
-      "title": "Data Science 360 Course - Data Analytics, ML & AI"
-    },
-    {
-      "id": "sql-139",
       "title": "Placement 360 Course - Complete Tech Interview Prep"
     },
     {
+      "id": "sql-139",
+      "title": "Data Science 360 Course - Data Analytics, ML & AI"
+    },
+    {
       "id": "sql-140",
-      "title": "DSA & System Design Course - SDE Interview Prep"
+      "title": "MERN Full Stack Course - React, Node & MongoDB with AI"
     },
     {
       "id": "sql-141",
@@ -748,7 +748,7 @@
     },
     {
       "id": "sql-187",
-      "title": "STRCMP() Function in MySQL - GeeksforGeeks"
+      "title": "STRCMP() Function in SQL - GeeksforGeeks"
     },
     {
       "id": "sql-188",
@@ -772,7 +772,7 @@
     },
     {
       "id": "sql-193",
-      "title": "SQL Server POWER() Function - GeeksforGeeks"
+      "title": "SQL  POWER() Function - GeeksforGeeks"
     },
     {
       "id": "sql-194",
@@ -784,11 +784,11 @@
     },
     {
       "id": "sql-196",
-      "title": "LOG() Function in SQL Server - GeeksforGeeks"
+      "title": "LOG() Function in SQL - GeeksforGeeks"
     },
     {
       "id": "sql-197",
-      "title": "SQL Server RAND() Function - GeeksforGeeks"
+      "title": "RAND() Function in SQL - GeeksforGeeks"
     },
     {
       "id": "sql-198",

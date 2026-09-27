@@ -195,7 +195,7 @@ const intervals = [[1, 2], [2, 3], [3, 4], [1, 3]];
 console.log(minRemoval(intervals));
 
 Output1
-Sorting by the Ending Values - O(n log n) Time and O(1) SpaceTo understand this approach, think of it as trying to keep intervals short so we have more space for other intervals, without overlap. By sorting intervals by their end times, we can easily check if the next interval overlaps with the previous one. If there’s an overlap, we remove the interval with the later end time, so it doesn’t block the next intervals from fitting in. This way, we end up with the minimum number of removals needed to make all intervals non-overlapping.
+Sorting by the Ending Values - O(n log n) Time and O(1) SpaceTo understand this approach, think of it as trying to keep intervals short so we have more space for other intervals, without overlap. By sorting intervals by their end times, we can easily check if the next interval overlaps with the previous one. If there’s an overlap, we remove the interval with the later end time, so it doesn’t block the next intervals from fitting in. 
             C++
 
     #include <iostream>

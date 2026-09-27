@@ -1,6 +1,6 @@
 # Lower Bound - GeeksforGeeks
 
-Given a sorted array arr[] and a number target, find the lower bound of the target in this given array. The lower bound of a number is defined as the smallest index in the sorted array where the element is greater than or equal to the target.Note: If all the elements in the given array are smaller than the target, the lower bound will be the length of the array.Examples: Input: arr[] = [2, 3, 7, 10, 11, 11, 25], target = 9Output: 3Explanation: 3 is the smallest index in arr[] where element (arr[3] = 10) is greater than or equal to 9.Input: arr[] = [2, 3, 7, 10, 11, 11, 25], target = 11Output: 4Explanation: 4 is the smallest index in arr[] where element (arr[4] = 11) is greater than or equal to 11.Input: arr[] = [2, 3, 7, 10, 11, 11, 25], target = 100Output: 7Explanation: As no element in arr[] is greater than 100, return the length of array.Try It YourselfTable of Content[Naive Approach] Using Linear Search - O(n) Time and O(1) Space[Expected Approach - 1] Using Binary Search - O(log n) Time and O(1) Space[Expected Approach - 2] Using Built-In Methods - O(log n) Time and O(1) Space[Naive Approach] Using Linear Search - O(n) Time and O(1) SpaceThe idea is to use linear search. We compare each element of the given array with the target and find the first index where the element is greater than or equal to the target.
+Given a sorted array arr[] and a number target, find the lower bound of the target in this given array. The lower bound of a number is defined as the smallest index in the sorted array where the element is greater than or equal to the target. If all the elements in the given array are smaller than the target, the lower bound will be the length of the array.Examples: Input: arr[] = [2, 3, 7, 10, 11, 11, 25], target = 9Output: 3Explanation: 3 is the smallest index in arr[] where element (arr[3] = 10) is greater than or equal to 9.Input: arr[] = [2, 3, 7, 10, 11, 11, 25], target = 11Output: 4Explanation: 4 is the smallest index in arr[] where element (arr[4] = 11) is greater than or equal to 11.Input: arr[] = [2, 3, 7, 10, 11, 11, 25], target = 100Output: 7Explanation: As no element in arr[] is greater than 100, return the length of array.Try It YourselfTable of Content[Naive Approach] Using Linear Search - O(n) Time and O(1) Space[Expected Approach - 1] Using Binary Search - O(log n) Time and O(1) Space[Expected Approach - 2] Using Built-In Methods - O(log n) Time and O(1) Space[Naive Approach] Using Linear Search - O(n) Time and O(1) SpaceThe idea is to use linear search. We compare each element of the given array with the target and find the first index where the element is greater than or equal to the target.
             C++
 
     #include <iostream>
@@ -23,6 +23,7 @@ int lowerBound(vector<int> &arr, int target) {
   	// if all elements are smaller, return length
   	return n;
 }
+
 int main() {
     vector<int> arr = {2, 3, 7, 10, 11, 11, 25};
     int target = 9;
@@ -64,7 +65,7 @@ int main() {
 
             Java
 
-    class GfG {
+    class GFG {
     static int lowerBound(int[] arr, int target) {
         int n = arr.length;
 
@@ -117,7 +118,7 @@ if __name__ == "__main__":
 
     using System;
 
-class GfG {
+class GFG {
     static int lowerBound(int[] arr, int target) {
         int n = arr.Length;
 
@@ -163,6 +164,7 @@ class GfG {
     return n;
 }
 
+// Driver Code
 let arr = [2, 3, 7, 10, 11, 11, 25];
 let target = 9;
 console.log(lowerBound(arr, target));
@@ -249,7 +251,7 @@ int main() {
 
             Java
 
-    class GfG {
+    class GFG {
 
     static int lowerBound(int[] arr, int target) {
         int low = 0, high = arr.length - 1;
@@ -321,8 +323,8 @@ if __name__ == "__main__":
 
     using System;
 
-class GfG {
-    static int LowerBound(int[] arr, int target) {
+class GFG {
+    static int lowerBound(int[] arr, int target) {
         int low = 0, high = arr.Length - 1;
         int res = arr.Length;
 
@@ -350,7 +352,7 @@ class GfG {
         int[] arr = { 2, 3, 7, 10, 11, 11, 25 };
         int target = 9;
 
-        Console.WriteLine(LowerBound(arr, target));
+        Console.WriteLine(lowerBound(arr, target));
     }
 }
 

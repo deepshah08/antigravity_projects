@@ -34,7 +34,6 @@ public:
         int end = (i + 1) * segSize - 1;
 
         if (top[i] == end) {
-            cout << "Stack " << i << " overflow" << endl;
             return;
         }
 
@@ -47,7 +46,6 @@ public:
         int start = i * segSize;
 
         if (top[i] < start) {
-            cout << "Stack " << i << " underflow" << endl;
             return -1;
         }
 
@@ -121,7 +119,6 @@ class kStacks {
         int end = (i + 1) * segSize - 1;
 
         if (top[i] == end) {
-            System.out.println("Stack " + i + " overflow");
             return;
         }
 
@@ -134,7 +131,6 @@ class kStacks {
         int start = i * segSize;
 
         if (top[i] < start) {
-            System.out.println("Stack " + i + " underflow");
             return -1;
         }
 
@@ -192,7 +188,6 @@ public class GfG {
         end = (i + 1) * self.segSize - 1
 
         if self.top[i] == end:
-            print(f'Stack {i} overflow')
             return
 
         self.top[i] += 1
@@ -203,7 +198,6 @@ public class GfG {
         start = i * self.segSize
 
         if self.top[i] < start:
-            print(f'Stack {i} underflow')
             return -1
 
         val = self.arr[self.top[i]]
@@ -272,7 +266,6 @@ class kStacks {
         int end = (i + 1) * segSize - 1;
 
         if (top[i] == end) {
-            Console.WriteLine("Stack " + i + " overflow");
             return;
         }
 
@@ -286,7 +279,6 @@ class kStacks {
         int start = i * segSize;
 
         if (top[i] < start) {
-            Console.WriteLine("Stack " + i + " underflow");
             return -1;
         }
 
@@ -357,7 +349,6 @@ class GfG {
         const end = (i + 1) * this.segSize - 1;
 
         if (this.top[i] === end) {
-            console.log(`Stack ${i} overflow`);
             return;
         }
 
@@ -370,7 +361,6 @@ class GfG {
         const start = i * this.segSize;
 
         if (this.top[i] < start) {
-            console.log(`Stack ${i} underflow`);
             return -1;
         }
 
@@ -409,10 +399,8 @@ for (const op of operations) {
     }
 }
 
-OutputStack 0 overflow
-Poped Element: 9
-Poped Element: 15
-Stack 1 underflow
+OutputPopped Element: 9
+Popped Element: 15
 Time Complexity: O(1) for push operation and pop operationAuxiliary Space: O(n)[Efficient Approach] Using Space Optimized MethodThe idea is to allow all stacks to share the array dynamically instead of dividing it into fixed parts. For this, we use three additional structures:An array top[] of size k, where top[i] stores the index of the top element of the i-th stack.An array next[] of size n, which links free slots together and also helps connect elements within a stack.A variable freeTop that stores the index of the first free slot in the array.Push Operation:When we push an element into stack i, we pick the first free slot from freeTop. The element is placed at this index, and the next[] array is updated to link this slot with the previous top of stack i. Finally, top[i] is updated to this new index, and freeTop moves to the next available free slot.Pop Operation:When we pop from stack i, we look at the index stored in top[i]. The element at that index is removed, and top[i] is updated to the next link stored in next[]. The freed index is then added back to the free list by updating freeTop. Illustrations:
             C++
 
@@ -453,7 +441,6 @@ public:
     // push element x into stack i
     void push(int x, int i) {
         if (freeTop == -1) {
-            cout << "Stack Overflow\n";
             return;
         }
 
@@ -476,7 +463,6 @@ public:
     // pop element from stack i
     int pop(int i) {
         if (top[i] == -1) {
-            cout << "Stack Underflow\n";
             return -1;
         }
 
@@ -568,7 +554,6 @@ class kStacks {
     // push element x into stack i
     public void push(int x, int i) {
         if (freeTop == -1) {
-            System.out.println("Stack Overflow");
             return;
         }
 
@@ -591,7 +576,6 @@ class kStacks {
     // pop element from stack i
     public int pop(int i) {
         if (top[i] == -1) {
-            System.out.println("Stack Underflow");
             return -1;
         }
 
@@ -663,7 +647,6 @@ public class Main {
 
     def push(self, x, i):
         if self.freeTop == -1:
-            print("Stack Overflow")
             return
 
         index = self.freeTop
@@ -674,7 +657,6 @@ public class Main {
 
     def pop(self, i):
         if self.top[i] == -1:
-            print("Stack Underflow")
             return -1
 
         index = self.top[i]
@@ -753,7 +735,6 @@ public class kStacks {
     // push element x into stack i
     public void push(int x, int i) {
         if (freeTop == -1) {
-            Console.WriteLine("Stack Overflow");
             return;
         }
 
@@ -776,7 +757,6 @@ public class kStacks {
     // pop element from stack i
     public int pop(int i) {
         if (top[i] == -1) {
-            Console.WriteLine("Stack Underflow");
             return -1;
         }
 
@@ -867,7 +847,6 @@ public class GfG {
     // push element x into stack i
     push(x, i) {
         if (this.freeTop === -1) {
-            console.log('Stack Overflow');
             return;
         }
 
@@ -890,7 +869,6 @@ public class GfG {
     // pop element from stack i
     pop(i) {
         if (this.top[i] === -1) {
-            console.log('Stack Underflow');
             return -1;
         }
 

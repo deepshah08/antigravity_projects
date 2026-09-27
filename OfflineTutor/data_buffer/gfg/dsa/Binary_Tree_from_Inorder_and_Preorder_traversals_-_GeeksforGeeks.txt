@@ -1,6 +1,6 @@
 # Binary Tree from Inorder and Preorder traversals - GeeksforGeeks
 
-Given inorder and preorder traversals of a Binary Tree in array inorder[] and preorder[] respectively, Construct the Binary Tree and return it’s root.Note: All values in inorder[] and preorder[] are distinct.Example:Input: inorder[] = [3, 1, 4, 0, 5, 2], preorder[] = [0, 1, 3, 4, 2, 5]Output: [[0], [1, 2], [3, 4, 5, N]]Explanation: The tree will look like: Try It YourselfTable of Content[Approach 1] Using Pre-order traversal - O(n^2) Time and O(h) Space[Approach 2] Using Pre-order traversal and Hash map - O(n) Time and O(n) Space[Approach 1] Using Pre-order traversal - O(n2) Time and O(h) SpaceThe idea is to construct the tree using pre-order traversal. Take the first element of the pre-order array and create root node. Find the index of this node in the in-order array. Create the left subtree using the elements present on left side of root node in in-order array. Similarly create the right subtree using the elements present on the right side of the root node in in-order array.
+Given inorder and preorder traversals of a Binary Tree in array inorder[] and preorder[] respectively, Construct the Binary Tree and return it’s root.Note: All values in inorder[] and preorder[] are distinct.Example:Input: inorder[] = [3, 1, 4, 0, 5, 2], preorder[] = [0, 1, 3, 4, 2, 5]Output: [[0], [1, 2], [3, 4, 5, N]]Explanation: The tree will look like: Try It YourselfTable of Content[Naive Approach] Index of Root in Inorder - O(n2) Time and O(h) Space[Expected Approach] Index of Root and Hash Map - O(n) Time and O(n) Space[Naive Approach] Index of Root in Inorder - O(n2) Time and O(h) SpaceTake the first element of the preorder array and create root node and find its index in the inrder array, then do the following.Create the left subtree using the elements present on left side of root node in in-order array. Create the right subtree using the elements present on the right side of the root node in in-order array.
             C++
 
     #include <iostream>
@@ -598,7 +598,7 @@ levelOrder(root);
 Output0 
 1 2 
 3 4 5 N 
-[Approach 2] Using Pre-order traversal and Hash map - O(n) Time and O(n) SpaceThe idea is similar to first approach, but instead of linearly searching the in-order array for each node we can use hashing. Map the values of in-order array to its indices. This will reduce the searching complexity from O(n) to O(1).
+[Expected Approach] Index of Root and Hash Map - O(n) Time and O(n) SpaceThe idea is similar to first approach, but instead of linearly searching the in-order array for each node we can use hashing. Map the values of in-order array to its indices. This will reduce the searching complexity from O(n) to O(1).
             C++
 
     #include <iostream>
@@ -1154,5 +1154,4 @@ levelOrder(root);
 
 Output0 
 1 2 
-3 4 5 N 
-Related articles:Construct a Binary Tree from Postorder and Inorder
+3 4 5 N

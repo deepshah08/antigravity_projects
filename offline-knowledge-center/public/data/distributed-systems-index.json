@@ -188,7 +188,7 @@
     },
     {
       "id": "distributed-systems-047",
-      "title": "What is DFS (Distributed File System)? - GeeksforGeeks"
+      "title": "Distributed File System and Shared Memory - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-048",
@@ -480,27 +480,27 @@
     },
     {
       "id": "distributed-systems-120",
-      "title": "What is CIFS (Common Internet File System)? - GeeksforGeeks"
+      "title": "Distributed File System and Shared Memory - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-121",
-      "title": "Introduction to Hadoop - GeeksforGeeks"
+      "title": "What is Distributed Shared Memory and its Advantages? - GeeksforGeeks"
     },
     {
       "id": "distributed-systems-122",
-      "title": "Introduction to Hadoop Distributed File System(HDFS) - GeeksforGeeks"
-    },
-    {
-      "id": "distributed-systems-123",
-      "title": "MapReduce Programming Model and its role in Hadoop. - GeeksforGeeks"
-    },
-    {
-      "id": "distributed-systems-124",
       "title": "Strategies for Achieving High Availability in Distributed Systems - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-125",
+      "id": "distributed-systems-123",
       "title": "Difference Between Buffering and Caching in OS - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-124",
+      "title": "distributed-systems-124"
+    },
+    {
+      "id": "distributed-systems-125",
+      "title": "distributed-systems-125"
     },
     {
       "id": "distributed-systems-126",
@@ -512,691 +512,691 @@
     },
     {
       "id": "distributed-systems-128",
-      "title": "distributed-systems-128"
-    },
-    {
-      "id": "distributed-systems-129",
-      "title": "distributed-systems-129"
-    },
-    {
-      "id": "distributed-systems-130",
       "title": "Authentication in Distributed System - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-131",
+      "id": "distributed-systems-129",
       "title": "Authorization Mechanisms for Distributed Systems - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-132",
+      "id": "distributed-systems-130",
       "title": "Malwares - Malicious Software - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-133",
+      "id": "distributed-systems-131",
       "title": "Phishing Attack - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-134",
+      "id": "distributed-systems-132",
       "title": "Zero-day Exploit (Cyber Security Attack) - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-135",
+      "id": "distributed-systems-133",
       "title": "Introduction to Password Attacks - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-136",
+      "id": "distributed-systems-134",
       "title": "Types of Authentication Protocols - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-137",
+      "id": "distributed-systems-135",
       "title": "Access Matrix in Operating System - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-138",
+      "id": "distributed-systems-136",
       "title": "Semantic Heterogeneity in DBMS - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-139",
+      "id": "distributed-systems-137",
       "title": "Advantages of Distributed database - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-140",
+      "id": "distributed-systems-138",
       "title": "Federated database management system issues - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-141",
+      "id": "distributed-systems-139",
       "title": "Definition and Overview of ODBMS - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-142",
+      "id": "distributed-systems-140",
       "title": "Vertical Partitioning vs Horizontal Partitioning - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-143",
+      "id": "distributed-systems-141",
       "title": "Hierarchical Model in DBMS - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-144",
+      "id": "distributed-systems-142",
       "title": "Network Model in DBMS - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-145",
+      "id": "distributed-systems-143",
       "title": "Structured Query Language (SQL) - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-146",
+      "id": "distributed-systems-144",
       "title": "What is Semi-structured data? - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-147",
+      "id": "distributed-systems-145",
       "title": "What is Graph Database - Introduction - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-148",
+      "id": "distributed-systems-146",
       "title": "Document Databases in NoSQL - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-149",
+      "id": "distributed-systems-147",
       "title": "Difference between Centralized Database and Distributed Database - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-150",
+      "id": "distributed-systems-148",
       "title": "Oracle Architecture - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-151",
+      "id": "distributed-systems-149",
       "title": "Deadlock System model - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-152",
+      "id": "distributed-systems-150",
       "title": "Difference Between VB.NET and Visual Basic - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-153",
+      "id": "distributed-systems-151",
       "title": "Types of Locks in Concurrency Control - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-154",
+      "id": "distributed-systems-152",
       "title": "Transaction States  in DBMS - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-155",
+      "id": "distributed-systems-153",
       "title": "Numbers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-156",
+      "id": "distributed-systems-154",
       "title": "Numbers - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-157",
+      "id": "distributed-systems-155",
       "title": "HCF / GCD and LCM - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-158",
+      "id": "distributed-systems-156",
       "title": "HCF and LCM - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-159",
+      "id": "distributed-systems-157",
       "title": "Ratio and Proportion - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-160",
+      "id": "distributed-systems-158",
       "title": "Ratio and Proportion - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-161",
+      "id": "distributed-systems-159",
       "title": "Average in Maths - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-162",
+      "id": "distributed-systems-160",
       "title": "Average - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-163",
+      "id": "distributed-systems-161",
       "title": "Ages - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-164",
+      "id": "distributed-systems-162",
       "title": "Ages - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-165",
+      "id": "distributed-systems-163",
       "title": "Percentage - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-166",
+      "id": "distributed-systems-164",
       "title": "Percentages - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-167",
+      "id": "distributed-systems-165",
       "title": "Profit and Loss - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-168",
+      "id": "distributed-systems-166",
       "title": "Profit and Loss - Aptitude Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-169",
+      "id": "distributed-systems-167",
       "title": "Mixture and Alligation - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-170",
+      "id": "distributed-systems-168",
       "title": "Mixture and Alligation - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-171",
+      "id": "distributed-systems-169",
       "title": "Simple Interest - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-172",
+      "id": "distributed-systems-170",
       "title": "Simple Interest - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-173",
+      "id": "distributed-systems-171",
       "title": "Compound Interest - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-174",
+      "id": "distributed-systems-172",
       "title": "Compound Interest - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-175",
+      "id": "distributed-systems-173",
       "title": "Time Speed Distance - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-176",
+      "id": "distributed-systems-174",
       "title": "Speed, Time and Distance – Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-177",
+      "id": "distributed-systems-175",
       "title": "Boats and Streams - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-178",
+      "id": "distributed-systems-176",
       "title": "Boats and Streams -Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-179",
+      "id": "distributed-systems-177",
       "title": "Race and Games - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-180",
+      "id": "distributed-systems-178",
       "title": "Races and Games - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-181",
+      "id": "distributed-systems-179",
       "title": "Work,  Wages and Time - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-182",
+      "id": "distributed-systems-180",
       "title": "Work and Wages - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-183",
+      "id": "distributed-systems-181",
       "title": "Pipes and Cistern - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-184",
+      "id": "distributed-systems-182",
       "title": "Pipes and Cistern - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-185",
+      "id": "distributed-systems-183",
       "title": "Basics of Algebra - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-186",
+      "id": "distributed-systems-184",
       "title": "Algebra - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-187",
+      "id": "distributed-systems-185",
       "title": "2D Mensuration - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-188",
+      "id": "distributed-systems-186",
       "title": "Mensuration 2D - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-189",
+      "id": "distributed-systems-187",
       "title": "3D Mensuration - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-190",
+      "id": "distributed-systems-188",
       "title": "Mensuration 3D - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-191",
+      "id": "distributed-systems-189",
       "title": "Basic Geometry Formulas - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-192",
+      "id": "distributed-systems-190",
       "title": "Geometry - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-193",
+      "id": "distributed-systems-191",
       "title": "Trigonometry | Height and Distance - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-194",
+      "id": "distributed-systems-192",
       "title": "Height and Distance - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-195",
+      "id": "distributed-systems-193",
       "title": "Progressions | Aptitude - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-196",
+      "id": "distributed-systems-194",
       "title": "Progression - Aptitude Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-197",
+      "id": "distributed-systems-195",
       "title": "Introduction to Logarithm - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-198",
+      "id": "distributed-systems-196",
       "title": "Logarithm - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-199",
+      "id": "distributed-systems-197",
       "title": "Permutation and Combination - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-200",
+      "id": "distributed-systems-198",
       "title": "Clocks - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-201",
+      "id": "distributed-systems-199",
       "title": "Clock - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-202",
+      "id": "distributed-systems-200",
       "title": "Calendars - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-203",
+      "id": "distributed-systems-201",
       "title": "Calendar - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-204",
+      "id": "distributed-systems-202",
       "title": "Simplification and Approximation - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-205",
+      "id": "distributed-systems-203",
       "title": "Simplification and Approximation - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-206",
+      "id": "distributed-systems-204",
       "title": "Data Interpretation - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-207",
+      "id": "distributed-systems-205",
       "title": "Data Interpretation - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-208",
+      "id": "distributed-systems-206",
       "title": "Number Series - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-209",
+      "id": "distributed-systems-207",
       "title": "Number Series - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-210",
+      "id": "distributed-systems-208",
       "title": "Alphanumeric Series - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-211",
+      "id": "distributed-systems-209",
       "title": "Alphanumeric Series - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-212",
+      "id": "distributed-systems-210",
       "title": "Classification - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-213",
+      "id": "distributed-systems-211",
       "title": "Classification - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-214",
+      "id": "distributed-systems-212",
       "title": "Analogy - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-215",
+      "id": "distributed-systems-213",
       "title": "Analogy - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-216",
+      "id": "distributed-systems-214",
       "title": "Logical Problems - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-217",
+      "id": "distributed-systems-215",
       "title": "Logical Problems  - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-218",
+      "id": "distributed-systems-216",
       "title": "Course of Action - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-219",
+      "id": "distributed-systems-217",
       "title": "Course of Action - Solved  Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-220",
+      "id": "distributed-systems-218",
       "title": "Statement and Conclusion - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-221",
+      "id": "distributed-systems-219",
       "title": "Statement and Conclusion -Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-222",
+      "id": "distributed-systems-220",
       "title": "Theme Detection - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-223",
+      "id": "distributed-systems-221",
       "title": "Theme Detection - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-224",
+      "id": "distributed-systems-222",
       "title": "Blood Relation - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-225",
+      "id": "distributed-systems-223",
       "title": "Blood Relation - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-226",
+      "id": "distributed-systems-224",
       "title": "Direction Sense - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-227",
+      "id": "distributed-systems-225",
       "title": "Direction Sense - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-228",
+      "id": "distributed-systems-226",
       "title": "Statement and Argument - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-229",
+      "id": "distributed-systems-227",
       "title": "Statement and Argument - Solved  Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-230",
+      "id": "distributed-systems-228",
       "title": "Logical Deduction - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-231",
+      "id": "distributed-systems-229",
       "title": "Logical Deduction - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-232",
+      "id": "distributed-systems-230",
       "title": "Letter Series - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-233",
+      "id": "distributed-systems-231",
       "title": "Letter Series - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-234",
+      "id": "distributed-systems-232",
       "title": "Coding -Decoding - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-235",
+      "id": "distributed-systems-233",
       "title": "Coding Decoding - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-236",
+      "id": "distributed-systems-234",
       "title": "Statement and Assumption - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-237",
+      "id": "distributed-systems-235",
       "title": "Venn Diagrams in Reasoning - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-238",
+      "id": "distributed-systems-236",
       "title": "Venn Diagrams - Solved  Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-239",
+      "id": "distributed-systems-237",
       "title": "Spotting Errors - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-240",
+      "id": "distributed-systems-238",
       "title": "Spotting Errors-Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-241",
+      "id": "distributed-systems-239",
       "title": "Synonyms - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-242",
+      "id": "distributed-systems-240",
       "title": "Synonyms - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-243",
+      "id": "distributed-systems-241",
       "title": "Antonyms - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-244",
+      "id": "distributed-systems-242",
       "title": "Antonyms - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-245",
+      "id": "distributed-systems-243",
       "title": "Selecting Words - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-246",
+      "id": "distributed-systems-244",
       "title": "Selecting Words - Verbal Ability Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-247",
+      "id": "distributed-systems-245",
       "title": "Spellings - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-248",
+      "id": "distributed-systems-246",
       "title": "Spellings - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-249",
+      "id": "distributed-systems-247",
       "title": "Sentence Formation - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-250",
+      "id": "distributed-systems-248",
       "title": "Sentence Formation - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-251",
+      "id": "distributed-systems-249",
       "title": "Ordering of Words - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-252",
+      "id": "distributed-systems-250",
       "title": "Ordering of Words - Solved Question and Answer - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-253",
+      "id": "distributed-systems-251",
       "title": "Sentence Correction - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-254",
+      "id": "distributed-systems-252",
       "title": "Sentence Correction - Solved Question and Answer - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-255",
+      "id": "distributed-systems-253",
       "title": "Sentence Improvement - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-256",
+      "id": "distributed-systems-254",
       "title": "Sentence Improvement - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-257",
+      "id": "distributed-systems-255",
       "title": "Sentence Completion - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-258",
+      "id": "distributed-systems-256",
       "title": "Sentence Completion - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-259",
+      "id": "distributed-systems-257",
       "title": "Para Jumbles - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-260",
+      "id": "distributed-systems-258",
       "title": "Para Jumbles - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-261",
+      "id": "distributed-systems-259",
       "title": "Paragraph Formation - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-262",
+      "id": "distributed-systems-260",
       "title": "Paragraph Formation - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-263",
+      "id": "distributed-systems-261",
       "title": "Cloze Test - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-264",
+      "id": "distributed-systems-262",
       "title": "Cloze Test - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-265",
+      "id": "distributed-systems-263",
       "title": "Reading Comprehension - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-266",
+      "id": "distributed-systems-264",
       "title": "Reading Comprehension - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-267",
+      "id": "distributed-systems-265",
       "title": "One Word Substitutes - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-268",
+      "id": "distributed-systems-266",
       "title": "One Word Substitutes – Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-269",
+      "id": "distributed-systems-267",
       "title": "Idioms and Phrases - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-270",
+      "id": "distributed-systems-268",
       "title": "Idioms and Phrases - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-271",
+      "id": "distributed-systems-269",
       "title": "Change of Voice - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-272",
+      "id": "distributed-systems-270",
       "title": "Change of Voice - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-273",
+      "id": "distributed-systems-271",
       "title": "Change of Speech - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-274",
+      "id": "distributed-systems-272",
       "title": "Change of Speech - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-275",
+      "id": "distributed-systems-273",
       "title": "Verbal Analogies - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-276",
+      "id": "distributed-systems-274",
       "title": "Verbal Analogies - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-277",
+      "id": "distributed-systems-275",
       "title": "Articles: 'a', 'an', 'the' - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-278",
+      "id": "distributed-systems-276",
       "title": "Article - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-279",
+      "id": "distributed-systems-277",
       "title": "Prepositions || Aptitude - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-280",
+      "id": "distributed-systems-278",
       "title": "Preposition - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-281",
+      "id": "distributed-systems-279",
       "title": "Adjective | Aptitude - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-282",
+      "id": "distributed-systems-280",
       "title": "Adjective - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-283",
+      "id": "distributed-systems-281",
       "title": "Artificial Language - Solved Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-284",
+      "id": "distributed-systems-282",
       "title": "Matching Definitions - Logical Reasoning Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-285",
+      "id": "distributed-systems-283",
       "title": "Making Judgements - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-286",
+      "id": "distributed-systems-284",
       "title": "Logical Games - Logical Reasoning Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-287",
+      "id": "distributed-systems-285",
       "title": "Verification of the Truth of the Statement - Verbal Reasoning - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-288",
+      "id": "distributed-systems-286",
       "title": "Assertion and Reason Questions- Logical Reasoning - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-289",
+      "id": "distributed-systems-287",
       "title": "Statistics For Data Science - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-290",
+      "id": "distributed-systems-288",
       "title": "Calculus for Machine Learning: Key Concepts and Applications - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-291",
+      "id": "distributed-systems-289",
       "title": "Statistics Practice Questions - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-292",
+      "id": "distributed-systems-290",
       "title": "Exploratory Data Analysis (EDA) with NumPy, Pandas, Matplotlib and Seaborn - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-293",
+      "id": "distributed-systems-291",
       "title": "Data Analyst Interview Questions and Answers - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-294",
+      "id": "distributed-systems-292",
       "title": "Python - Data visualization tutorial - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-295",
+      "id": "distributed-systems-293",
       "title": "Data Analytics Projects - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-296",
+      "id": "distributed-systems-294",
       "title": "Data Visualization Interview Questions - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-297",
+      "id": "distributed-systems-295",
       "title": "MLOps Tutorial - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-298",
+      "id": "distributed-systems-296",
       "title": "Data Science Projects - GeeksforGeeks"
     },
     {
-      "id": "distributed-systems-299",
+      "id": "distributed-systems-297",
       "title": "Data Science Interview Questions and Answers - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-298",
+      "title": "Data Science with R Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "distributed-systems-299",
+      "title": "30+ R projects with Source Code 2026 - GeeksforGeeks"
     }
   ]
 }

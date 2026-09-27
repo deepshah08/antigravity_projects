@@ -3,10 +3,7 @@
 Given two sorted arrays a[] and b[], the task is to return union of both the arrays in sorted order. Union of two arrays is an array having all distinct elements that are present in either array. The input arrays may contain duplicates.Examples:Input: a[] = {1, 1, 2, 2, 2, 4}, b[] = {2, 2, 4, 4}Output: {1, 2, 4}Explanation: 1, 2 and 4 are the distinct elements present in either array.Input: a[] = {3, 5, 10, 10, 10, 15, 15, 20}, b[] = {5, 10, 10, 15, 30}Output: {3, 5, 10, 15, 20, 30}Explanation: 3, 5, 10, 15, 20 and 30 are the distinct elements present in either array.Try It YourselfTable of Content[Naive Approach] Using Nested Loops – O(n*m) Time and O(1) Space[Better Approach] Using Set – O((n+m)*(log (n+m))) Time and O(n+m) Space[Expected Approach] Using Merge Step of Merge Sort - O(n+m) Time and O(1) Space[Naive Approach] Using Nested Loops – O(n*m) Time and O(1) SpaceThe intuition behind this approach is to gather unique elements from two arrays by checking each element against the current result array. The idea is to traverse both the arrays and for each element, check if the element is present in the result or not. If not, then add this element to the result.
             C++
 
-    // C++ program to find union of two sorted arrays 
-// using nested loops
-
-#include <iostream>
+    #include <iostream>
 #include <vector>
 #include <algorithm>
 using namespace std;
@@ -63,10 +60,7 @@ int main() {
 
             C
 
-    // C program to find union of two sorted arrays
-// using nested loops
-
-#include <stdio.h>
+    #include <stdio.h>
 #include <stdlib.h>
 
 // Function to compare two integers for qsort
@@ -74,7 +68,6 @@ int compare(const void* a, const void* b) {
     return (*(int*)a - *(int*)b);
 }
 
-// Function to find union of two sorted arrays
 int* findUnion(int a[], int n, int b[], int m, int* size) {
     int* res = (int*)malloc((m + n) * sizeof(int));
     int index = 0;
@@ -133,12 +126,9 @@ int main() {
 
             Java
 
-    // Java program to find union of two arrays
-// using nested loops
+    import java.util.*;
 
-import java.util.*;
-
-class GfG {
+class GFG {
     static ArrayList<Integer> findUnion(int[] a, int[] b) {
         ArrayList<Integer> res = new ArrayList<>();
         
@@ -183,10 +173,7 @@ class GfG {
 
             Python
 
-    # Python program to find union of two arrays
-# using nested loops
-
-def findUnion(a, b):
+    def findUnion(a, b):
     res = []
     
     # Traverse through a[] and search every element
@@ -222,13 +209,10 @@ if __name__ == "__main__":
 
             C#
 
-    // C# program to find union of two arrays
-// using nested loops
-
-using System;
+    using System;
 using System.Collections.Generic;
 
-class GfG {
+class GFG {
     static List<int> findUnion(int[] a, int[] b) {
         List<int> res = new List<int>();
         
@@ -272,10 +256,7 @@ class GfG {
 
             JavaScript
 
-    // JavaScript program to find union of two arrays
-// using nested loops
-
-function findUnion(a, b) {
+    function findUnion(a, b) {
     let res = [];
     
     // Traverse through a[] and search every element
@@ -303,7 +284,7 @@ function findUnion(a, b) {
     res.sort((x, y) => x - y);
     return res;
 }
-
+// Driver code
 const a = [1, 1, 2, 2, 2, 4];
 const b = [2, 2, 4, 4];
 
@@ -313,9 +294,7 @@ console.log(res.join(" "));
 Output1 2 4 Time Complexity: O((n + m)2), where n is size of a[] and m is size of b[]Copying all elements from a[] to res[] takes O(n2) time.Now in the worst case, there will be no common elements in a[] and b[]. So, to check if the first element of b[] is present in res[], we need n comparisons. Similarly, for second element of b[], we need (n + 1) comparisons. So for m elements, total number of comparisons will be: n + (n + 1) + (n + 2) …. (n + m) = (n * m) + (m2 / 2)So, overall time complexity = O(n2 + n * m + m2)Auxiliary Space: O(1)[Better Approach] Using Set – O((n+m)*(log (n+m))) Time and O(n+m) SpaceThe approach is to insert all elements from both arrays, a[] and b[], into a set. Since a set automatically removes duplicates, it gives us the union of the two arrays. Also, the set keeps the elements in sorted order, so after inserting them, we can store these sorted and unique elements in a result array.Note: In Python and JavaScript, the set data structure does not store the elements in sorted order, so we need to explicitly sort the union array.
             C++
 
-    // C++ program to find union of two sorted arrays using Set
-
-#include <iostream>
+    #include <iostream>
 #include <set>
 #include <vector>
 using namespace std;
@@ -355,11 +334,9 @@ int main() {
 
             Java
 
-    // Java program to find union of two sorted arrays using Set
+    import java.util.*;
 
-import java.util.*;
-
-class GfG {
+class GFG {
 
     static ArrayList<Integer> findUnion(int a[],
                                           int b[]) {
@@ -391,9 +368,7 @@ class GfG {
 
             Python
 
-    # Python program to find union of two sorted arrays using Set
-
-def findUnion(a, b):
+    def findUnion(a, b):
     st = set()  
     
     # Put all elements of a[] in st
@@ -425,13 +400,11 @@ if __name__ == "__main__":
 
             C#
 
-    // C# Program to find union of two sorted arrays using Set
-
-using System;
+    using System;
 using System.Collections.Generic;
 
-class GfG {
-    static List<int> FindUnion(int[] a, int[] b) {
+class GFG {
+    static List<int> findUnion(int[] a, int[] b) {
         SortedSet<int> st = new SortedSet<int>();
         
         // Put all elements of a[] in st
@@ -450,7 +423,7 @@ class GfG {
         int[] a = {1, 1, 2, 2, 2, 4};
         int[] b = {2, 2, 4, 4};
 
-        List<int> res = FindUnion(a, b);
+        List<int> res = findUnion(a, b);
 
         for (int i = 0; i < res.Count; i++) 
             Console.Write(res[i] + " ");
@@ -460,9 +433,7 @@ class GfG {
 
             JavaScript
 
-    // JavaScript program to find union of two sorted arrays using Set
-
-function findUnion(a, b) {
+    function findUnion(a, b) {
     let st = new Set();
   
     // Put all elements of a[] in st
@@ -478,6 +449,7 @@ function findUnion(a, b) {
     return res;
 }
 
+//Driver code
 let a = [1, 1, 2, 2, 2, 4];
 let b = [2, 2, 4, 4];
 
@@ -485,13 +457,10 @@ let res = findUnion(a, b);
 
 console.log(res.join(" "));
 
-Output1 2 4 Time Complexity: O((n + m) * (log (n + m))) , where n is the size of array a[] and m is the size of array b[]Auxiliary Space: O(n + m)[Expected Approach] Using Merge Step of Merge Sort - O(n+m) Time and O(1) SpaceThe idea is to find the union of two sorted arrays using merge step in merge sort. We maintain two pointers to traverse both arrays simultaneously. If the element in first array is smaller, add it to the result and move the pointer of first array forward.If the element in second array is smaller, add it to the result and move the pointer of second array forward. If both elements are equal, add one of them and move both the pointers forward.Also, while traversing both the arrays, we will compare the current element with its previous element and skip the current element if it is same as previous element. This will ensure that the union will contain only distinct elements.
+Output1 2 4 Time Complexity: O((n + m) * (log (n + m))) , where n is the size of array a[] and m is the size of array b[]Auxiliary Space: O(n + m)[Expected Approach] Using Merge Step of Merge Sort - O(n+m) Time and O(1) SpaceSince both arrays are sorted, we can traverse them simultaneously using two pointers. At each step, we process the smaller element (or one if both are equal), allowing us to build the union in sorted order while easily skipping duplicates.Initialize two pointers for the arrays and an empty result array. Traverse both arrays simultaneously.  Add the smaller element to the result and move its pointer forward.  If both elements are equal, add it once and move both pointers forward.  Skip duplicate elements while traversing.  Append the remaining elements of the unfinished array, skipping duplicates.
             C++
 
-    // C++ program to find union of two sorted arrays using 
-// merge step of merge sort
-
-#include <bits/stdc++.h>
+    #include <bits/stdc++.h>
 using namespace std;
 
 vector<int> findUnion(vector<int>& a,  vector<int>& b) {
@@ -573,12 +542,8 @@ int main() {
 
             C
 
-    // C program to find union of two sorted arrays using 
-// merge step of merge sort
+    #include <stdio.h>
 
-#include <stdio.h>
-
-// Function to find union of two sorted arrays
 int* findUnion(int a[], int n, int b[], int m, int* size) {
     int* res = (int*)malloc((m + n) * sizeof(int));
     int i = 0, j = 0;
@@ -667,11 +632,8 @@ int main() {
 
             Java
 
-    // Java program to find union of two sorted arrays using 
-// merge step of merge sort
-
-import java.util.*;
-class GfG {
+    import java.util.*;
+class GFG {
     
     static ArrayList<Integer> findUnion(int[] a, int[] b) {
         ArrayList<Integer> res = new ArrayList<>();
@@ -752,10 +714,7 @@ class GfG {
 
             Python
 
-    # Python program to find union of two sorted arrays using 
-# merge step of merge sort
-
-def findUnion(a, b):
+    def findUnion(a, b):
     res = []
     n, m = len(a), len(b)
     i, j = 0, 0
@@ -820,13 +779,10 @@ if __name__ == "__main__":
 
             C#
 
-    // C# program to find union of two sorted arrays using 
-// merge step of merge sort
-
-using System;
+    using System;
 using System.Collections.Generic;
 
-class GfG {
+class GFG {
     
     static List<int> findUnion(int[] a, int[] b) {
         List<int> res = new List<int>();
@@ -907,10 +863,7 @@ class GfG {
 
             JavaScript
 
-    // JavaScript program to find union of two sorted arrays using 
-// merge step of merge sort
-
-function findUnion(a, b) {
+    function findUnion(a, b) {
     let res = [];
     let n = a.length, m = b.length;
     let i = 0, j = 0;
@@ -973,7 +926,7 @@ function findUnion(a, b) {
     
     return res;
 }
-
+// Driver code
 let a = [1, 1, 2, 2, 2, 4];
 let b = [2, 2, 4, 4];
 

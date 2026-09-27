@@ -112,7 +112,7 @@
     },
     {
       "id": "dsa-028",
-      "title": "Factorial of a Number - GeeksforGeeks"
+      "title": "Factorial of a Number Program - GeeksforGeeks"
     },
     {
       "id": "dsa-029",
@@ -616,7 +616,7 @@
     },
     {
       "id": "dsa-154",
-      "title": "Minimum  swaps to sort an array - GeeksforGeeks"
+      "title": "Minimum swaps to sort an array - GeeksforGeeks"
     },
     {
       "id": "dsa-155",
@@ -1121,6 +1121,10 @@
     {
       "id": "dsa-280",
       "title": "Singly Linked List Tutorial - GeeksforGeeks"
+    },
+    {
+      "id": "dsa-281",
+      "title": "Doubly Linked List Tutorial - GeeksforGeeks"
     },
     {
       "id": "dsa-282",

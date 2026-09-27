@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T03:01:18.966Z",
+  "generatedAt": "2026-09-27T03:16:40.618Z",
   "topics": [
     {
       "id": "dsa",
@@ -5763,18 +5763,18 @@
         },
         {
           "id": "sql-138",
-          "title": "Data Analytics Course2 min read",
-          "url": "https://www.geeksforgeeks.org/courses/data-analytics-training-program-excel-sql-python-powerbi"
-        },
-        {
-          "id": "sql-139",
           "title": "Placement 360 Course2 min read",
           "url": "https://www.geeksforgeeks.org/courses/placement-360-cip-complete-tech-interview"
         },
         {
+          "id": "sql-139",
+          "title": "Data Science 360 Course2 min read",
+          "url": "https://www.geeksforgeeks.org/courses/complete-data-science-course-with-machine-learning"
+        },
+        {
           "id": "sql-140",
-          "title": "DSA and System Design Course2 min read",
-          "url": "https://www.geeksforgeeks.org/courses/interviewe-101-data-structures-algorithm-system-design"
+          "title": "MERN Full Stack Course2 min read",
+          "url": "https://www.geeksforgeeks.org/courses/full-stack-node"
         }
       ]
     },
@@ -6405,7 +6405,7 @@
         },
         {
           "id": "system-design-125",
-          "title": "Prepare for LLD Interviews4 min read",
+          "title": "Prepare for LLD Interviews2 min read",
           "url": "https://www.geeksforgeeks.org/system-design/how-to-prepare-for-low-level-design-interviews/"
         },
         {
@@ -6485,7 +6485,7 @@
         },
         {
           "id": "system-design-141",
-          "title": "Java Backend Development Course2 min read",
+          "title": "Java Backend Course2 min read",
           "url": "https://www.geeksforgeeks.org/courses/Java-backend-live"
         }
       ]
@@ -9040,7 +9040,7 @@
         },
         {
           "id": "ml-ai-138",
-          "title": "ML Pipeline6 min read",
+          "title": "ML Pipeline4 min read",
           "url": "https://www.geeksforgeeks.org/blogs/machine-learning-pipeline/"
         },
         {

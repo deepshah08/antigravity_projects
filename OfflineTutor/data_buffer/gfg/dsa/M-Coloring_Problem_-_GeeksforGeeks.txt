@@ -301,6 +301,7 @@ bool issafe(int vertex, int col, vector<int> adj[], vector<int> &color) {
 
 // Recursive function to try all colorings
 bool cancolor(int vertex, int m, vector<int> adj[], vector<int> &color) {
+    
     // If all vertices are colored successfully
     if (vertex == color.size())
         return true;
@@ -310,6 +311,7 @@ bool cancolor(int vertex, int m, vector<int> adj[], vector<int> &color) {
         if (issafe(vertex, i, adj, color)) {
             color[vertex] = i; 
             if (cancolor(vertex + 1, m, adj, color))
+            
                 // If the rest can be colored, return true
                 return true; 
             color[vertex] = -1; 
@@ -378,6 +380,7 @@ public class Main {
             if (issafe(vertex, i, adj, color)) {
                 color[vertex] = i;
                 if (cancolor(vertex + 1, m, adj, color))
+                
                     // If the rest can be colored, return true
                     return true;
                 color[vertex] = -1;
@@ -428,6 +431,7 @@ def issafe(vertex, col, adj, color):
 
 # Recursive function to try all colorings
 def cancolor(vertex, m, adj, color):
+    
     # If all vertices are colored successfully
     if vertex == len(color):
         return True
@@ -437,6 +441,7 @@ def cancolor(vertex, m, adj, color):
         if issafe(vertex, i, adj, color):
             color[vertex] = i
             if cancolor(vertex + 1, m, adj, color):
+                
                 # If the rest can be colored, return true
                 return True
             color[vertex] = -1  # Backtrack
@@ -473,6 +478,7 @@ if __name__ == "__main__":
 using System.Collections.Generic;
 
 class GfG{
+    
     // Function to check if it's safe to color the current 
     // vertex with the given color
     static bool issafe(int vertex, int col, List<int>[] adj, int[] color){
@@ -550,6 +556,7 @@ class GfG{
 // with the given color
 function issafe(vertex, col, adj, color) {
     for (let it of adj[vertex]) {
+        
         // If adjacent vertex has the same color, not safe
         if (color[it] !== -1 && col === color[it])
             return false;
@@ -568,6 +575,7 @@ function cancolor(vertex, m, adj, color) {
         if (issafe(vertex, i, adj, color)) {
             color[vertex] = i;
             if (cancolor(vertex + 1, m, adj, color))
+            
                 // If the rest can be colored, return true
                 return true;
             color[vertex] = -1;

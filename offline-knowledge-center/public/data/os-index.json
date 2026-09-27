@@ -468,107 +468,107 @@
     },
     {
       "id": "os-117",
-      "title": "Methods in Inter Process Communication - GeeksforGeeks"
+      "title": "Page Replacement Algorithms in Operating Systems - GeeksforGeeks"
     },
     {
       "id": "os-118",
-      "title": "Dining Philosopher Solution using Semaphores - GeeksforGeeks"
+      "title": "Methods in Inter Process Communication - GeeksforGeeks"
     },
     {
       "id": "os-119",
-      "title": "Readers-Writers Problem - GeeksforGeeks"
+      "title": "Dining Philosopher Solution using Semaphores - GeeksforGeeks"
     },
     {
       "id": "os-120",
-      "title": "Sleeping Barber problem in Process Synchronization - GeeksforGeeks"
+      "title": "Readers-Writers Problem - GeeksforGeeks"
     },
     {
       "id": "os-121",
-      "title": "Deadlock in DBMS - GeeksforGeeks"
+      "title": "Sleeping Barber problem in Process Synchronization - GeeksforGeeks"
     },
     {
       "id": "os-122",
-      "title": "Software Based Solutions in Process Synchronization - GeeksforGeeks"
+      "title": "Deadlock in DBMS - GeeksforGeeks"
     },
     {
       "id": "os-123",
-      "title": "OS Based Solutions in Process Synchronization - GeeksforGeeks"
+      "title": "Software Based Solutions in Process Synchronization - GeeksforGeeks"
     },
     {
       "id": "os-124",
-      "title": "Peterson's Algorithm for Mutual Exclusion | Set 1 (Basic C implementation) - GeeksforGeeks"
+      "title": "OS Based Solutions in Process Synchronization - GeeksforGeeks"
     },
     {
       "id": "os-125",
-      "title": "Peterson's Algorithm for Mutual Exclusion | Set 2 (CPU Cycles and Memory Fence) - GeeksforGeeks"
+      "title": "Peterson's Algorithm for Mutual Exclusion | Set 1 (Basic C implementation) - GeeksforGeeks"
     },
     {
       "id": "os-126",
-      "title": "Producer Consumer Problem in C - GeeksforGeeks"
+      "title": "Peterson's Algorithm for Mutual Exclusion | Set 2 (CPU Cycles and Memory Fence) - GeeksforGeeks"
     },
     {
       "id": "os-127",
-      "title": "Microkernel in Operating Systems - GeeksforGeeks"
+      "title": "Producer Consumer Problem in C - GeeksforGeeks"
     },
     {
       "id": "os-128",
-      "title": "Readers-Writers Problem | Writers Preference Solution - GeeksforGeeks"
+      "title": "Microkernel in Operating Systems - GeeksforGeeks"
     },
     {
       "id": "os-129",
-      "title": "Dining-Philosophers Solution Using Monitors - GeeksforGeeks"
+      "title": "Readers-Writers Problem | Writers Preference Solution - GeeksforGeeks"
     },
     {
       "id": "os-130",
-      "title": "Deadlock Ignorance - GeeksforGeeks"
+      "title": "Dining-Philosophers Solution Using Monitors - GeeksforGeeks"
     },
     {
       "id": "os-131",
-      "title": "Wait For Graph Deadlock Detection - GeeksforGeeks"
+      "title": "Deadlock Ignorance - GeeksforGeeks"
     },
     {
       "id": "os-132",
-      "title": "Real Time Operating System (RTOS) - GeeksforGeeks"
+      "title": "Wait For Graph Deadlock Detection - GeeksforGeeks"
     },
     {
       "id": "os-133",
-      "title": "Deadlock Detection Algorithm in Operating System - GeeksforGeeks"
+      "title": "Real Time Operating System (RTOS) - GeeksforGeeks"
     },
     {
       "id": "os-134",
-      "title": "What are the Functions of a CPU? - GeeksforGeeks"
+      "title": "Deadlock Detection Algorithm in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-135",
-      "title": "Understanding file sizes  | Bytes, KB, MB, GB, TB, PB, EB, ZB, YB - GeeksforGeeks"
+      "title": "What are the Functions of a CPU? - GeeksforGeeks"
     },
     {
       "id": "os-136",
-      "title": "Address Binding and its Types - GeeksforGeeks"
+      "title": "Understanding file sizes  | Bytes, KB, MB, GB, TB, PB, EB, ZB, YB - GeeksforGeeks"
     },
     {
       "id": "os-137",
-      "title": "Memory Protection in Operating Systems - GeeksforGeeks"
+      "title": "Address Binding and its Types - GeeksforGeeks"
     },
     {
       "id": "os-138",
-      "title": "Partition Allocation Methods in Memory Management - GeeksforGeeks"
+      "title": "Memory Protection in Operating Systems - GeeksforGeeks"
     },
     {
       "id": "os-139",
-      "title": "Fixed (or static) Partitioning in Operating System - GeeksforGeeks"
+      "title": "Partition Allocation Methods in Memory Management - GeeksforGeeks"
     },
     {
       "id": "os-140",
-      "title": "Variable (or Dynamic) Partitioning in Operating System - GeeksforGeeks"
+      "title": "Fixed (or static) Partitioning in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-141",
-      "title": "Swapping in Operating System - GeeksforGeeks"
+      "title": "Variable (or Dynamic) Partitioning in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-142",
-      "title": "Page Replacement Algorithms in Operating Systems - GeeksforGeeks"
+      "title": "Swapping in Operating System - GeeksforGeeks"
     },
     {
       "id": "os-143",
@@ -940,63 +940,63 @@
     },
     {
       "id": "os-235",
-      "title": "IPC through shared memory - GeeksforGeeks"
+      "title": "Program for Least Recently Used (LRU) Page Replacement algorithm - GeeksforGeeks"
     },
     {
       "id": "os-236",
-      "title": "IPC using Message Queues - GeeksforGeeks"
+      "title": "IPC through shared memory - GeeksforGeeks"
     },
     {
       "id": "os-237",
-      "title": "Lock Variable Synchronization Mechanism - GeeksforGeeks"
+      "title": "IPC using Message Queues - GeeksforGeeks"
     },
     {
       "id": "os-238",
-      "title": "OpenMP | Introduction with Installation Guide - GeeksforGeeks"
+      "title": "Lock Variable Synchronization Mechanism - GeeksforGeeks"
     },
     {
       "id": "os-239",
-      "title": "Introduction to Control Unit and its Design - GeeksforGeeks"
+      "title": "OpenMP | Introduction with Installation Guide - GeeksforGeeks"
     },
     {
       "id": "os-240",
-      "title": "Cache Memory in Computer Organization - GeeksforGeeks"
+      "title": "Introduction to Control Unit and its Design - GeeksforGeeks"
     },
     {
       "id": "os-241",
-      "title": "Special Purpose Computer Systems - GeeksforGeeks"
+      "title": "Cache Memory in Computer Organization - GeeksforGeeks"
     },
     {
       "id": "os-242",
-      "title": "ALU Functions and Bus Organization - GeeksforGeeks"
+      "title": "Special Purpose Computer Systems - GeeksforGeeks"
     },
     {
       "id": "os-243",
-      "title": "Keyboard module in Python - GeeksforGeeks"
+      "title": "ALU Functions and Bus Organization - GeeksforGeeks"
     },
     {
       "id": "os-244",
-      "title": "Multilevel Cache Organisation - GeeksforGeeks"
+      "title": "Keyboard module in Python - GeeksforGeeks"
     },
     {
       "id": "os-245",
-      "title": "Input and Output Devices - GeeksforGeeks"
+      "title": "Multilevel Cache Organisation - GeeksforGeeks"
     },
     {
       "id": "os-246",
-      "title": "Peripherals Devices in Computer Organization - GeeksforGeeks"
+      "title": "Input and Output Devices - GeeksforGeeks"
     },
     {
       "id": "os-247",
-      "title": "Difference Between Compile Time and Load Time Address Binding - GeeksforGeeks"
+      "title": "Peripherals Devices in Computer Organization - GeeksforGeeks"
     },
     {
       "id": "os-248",
-      "title": "Difference Between Compile Time and Execution Time Address Binding - GeeksforGeeks"
+      "title": "Difference Between Compile Time and Load Time Address Binding - GeeksforGeeks"
     },
     {
       "id": "os-249",
-      "title": "Program for Least Recently Used (LRU) Page Replacement algorithm - GeeksforGeeks"
+      "title": "Difference Between Compile Time and Execution Time Address Binding - GeeksforGeeks"
     },
     {
       "id": "os-250",
