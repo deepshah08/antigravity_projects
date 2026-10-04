@@ -1,6 +1,6 @@
 # Java Interface - GeeksforGeeks
 
-An interface in Java is a blueprint that defines a set of methods a class must implement without providing full implementation details. It helps achieve abstraction by focusing on what a class should do rather than how it does it. Interfaces also support multiple inheritance in Java.A class must implement all abstract methods of an interface. All variables in an interface are public, static, and final by default. Interfaces can have default, static, and private methods (Java 8+ and 9+).
+An interface in Java defines a contract that specifies the behavior implementing classes are expected to provide. It is primarily used to achieve abstraction and allows a class to implement multiple interfaces, supporting multiple inheritance of type in Java.A concrete class implementing an interface must provide implementations for all required abstract methods, while an abstract class may leave them unimplemented.Variables declared in an interface are implicitly public, static, and final.Interfaces can contain abstract, default, and static methods. They can also contain private methods starting from Java 9.
             Java
 
     import java.io.*;
@@ -173,13 +173,13 @@ class GFG{
       	// instance of Cal class
       	Cal x = new Cal();
       	System.out.println("Addition : " + x.add(2,1));
-      	System.out.println("Substraction : " + x.sub(2,1));
+      	System.out.println("Subtraction : " + x.sub(2,1));
     }
 }
 
 OutputAddition : 3
 Substraction : 1
-Explanation: Add defines the add() contract and Sub defines the sub() contract. Calculator implements both interfaces using implements Add, Sub. Therefore, it must provide implementations for both methods. This demonstrates how a class can implement multiple interfaces.New Features Added in Interfaces in JDK 8There are certain features added to Interfaces in JDK 8 update mentioned below:1. Default MethodsInterfaces can define methods with default implementations.Useful for adding new methods to interfaces without breaking existing implementations.
+Explanation: Add defines the add() contract and Sub defines the sub() contract. Calculator implements both interfaces using implements Add, Sub. Therefore, it must provide implementations for both methods. This demonstrates how a class can implement multiple interfaces.Interface Features and Enhancements in Java 8Java 8 introduced several important enhancements related to interfaces, including default methods and static methods. It also introduced lambda expressions and the @FunctionalInterface annotation, making functional interfaces especially useful in functional-style programming.1. Default MethodsInterfaces can define methods with default implementations.Useful for adding new methods to interfaces without breaking existing implementations.
             Java
 
     interface TestInterface
@@ -225,12 +225,12 @@ class TestClass implements TestInterface
 }
 
 Outputhello
-Explanation: The static method belongs to the interface itself, so it is called using the interface name. It is not inherited by implementing classes.3. Functional InterfaceFunctional interfaces can be used with lambda expressions or method references.The @FunctionalInterface annotation can be used to indicate that an interface is a functional interface, although it’s optional.
+Explanation: The static method belongs to the interface itself, so it is called using the interface name. It is not inherited by implementing classes.3. Functional InterfaceA functional interface is an interface that has exactly one abstract method. Functional interfaces existed before Java 8, but Java 8 introduced lambda expressions and the @FunctionalInterface annotation, making them especially useful for functional-style programming.A functional interface contains exactly one abstract method.It can be used as the target type for lambda expressions and method references.The @FunctionalInterface annotation is optional but helps the compiler verify that the interface satisfies the functional-interface requirements.
             Java
 
     @FunctionalInterface
 public interface Calculator {
-    int compute(int x, int y); // single abstract method
+    int compute(int x, int y);
 }
 
 Explanation: Calculator is a functional interface because it contains one abstract method, compute(). The @FunctionalInterface annotation tells the compiler that the interface is intended to have exactly one abstract method.New Features Added in Interfaces in JDK 9From Java 9 onwards, interfaces can contain the following also:1. Private MethodsInterface can now include private methods.Private methods are defined within the interface but it cannot be accessed by the implementing classes.Private methods cannot be overridden by implementing classes as they are not inherited.
@@ -307,4 +307,4 @@ class GFG implements B
 Try It YourselfOutputMethod 1
 Method 2
 Method 3
-Explanation: B extends A, so B inherits the contracts of A and adds method3(). Since GFG implements B, it must provide implementations for method1(), method2(), and method3().Related ArticleClass vs Interfaces
+Explanation: B extends A, so B inherits the contracts of A and adds method3(). Since GFG implements B, it must provide implementations for method1(), method2(), and method3().

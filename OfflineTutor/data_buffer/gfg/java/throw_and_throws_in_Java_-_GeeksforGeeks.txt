@@ -45,7 +45,7 @@ Explanation: The above example demonstrates the use of the throw keyword to expl
     }
 }
 
-Output:Hangup (SIGHUP)Exception in thread "main" java.lang.ArithmeticException: Cannot divide by zero at Geeks.main(Geeks.java:9)Explanation: The above example demonstrates an exception using throw, where an ArithmeticException is explicitly thrown due to division by zero.throws Keywordthrows is a keyword in Java that is used in the signature of a method to indicate that this method might throw one of the listed type exceptions. The caller to these methods has to handle the exception using a try-catch block. Declares possible exceptions. Mainly used with checked exceptions.Syntax:returnType methodName() throws ExceptionNameExample 1: Unhandled Exception
+Output:Hangup (SIGHUP)Exception in thread "main" java.lang.ArithmeticException: Cannot divide by zero at Geeks.main(Geeks.java:9)Explanation: The above example demonstrates an exception using throw, where an ArithmeticException is explicitly thrown due to division by zero.throws Keywordthrows is a keyword in Java that is used in the signature of a method to indicate that this method might throw one of the listed type exceptions. The caller to these methods has to handle the exception using a try-catch block. Declares possible exceptions. Mainly used with checked exceptions.Syntax:returnType methodName() throws ExceptionNameExample 1: Unhandled Checked Exception
             Java
 
     class Geeks {
@@ -56,7 +56,7 @@ Output:Hangup (SIGHUP)Exception in thread "main" java.lang.ArithmeticException: 
     }
 }
 
-Output:error: unreported exception InterruptedException; must be caught or declared to be thrownExplanation: In the above program, we are getting compile time error because there is a chance of exception if the main thread is going to sleep, other threads get the chance to execute the main() method which will cause InterruptedException. Example 2: Using throws to Handle Exception
+Output:error: unreported exception InterruptedException; must be caught or declared to be thrownExplanation: Thread.sleep() declares that it may throw an InterruptedException, which is a checked exception. Therefore, the compiler requires the exception to be either handled using a try-catch block or declared using throws. Since the program does neither, it results in a compilation error.Example 2: Declaring an Exception Using throws
             Java
 
     class Geeks {
@@ -68,7 +68,7 @@ Output:error: unreported exception InterruptedException; must be caught or decla
     }
 }
 
-Output:Hello GeeksExplanation: In the above program, by using the throws keyword we handled the InterruptedException and we will get the output as Hello Geeks.Example 3: Throwing an Exception with throws
+Output:Hello GeeksExplanation: In this example, throws InterruptedException declares that the main() method may throw an InterruptedException. The throws keyword does not handle the exception; it passes the responsibility for handling or further declaring it to the caller. If no interruption occurs while the thread is sleeping, the program prints Hello Geeks.Example 3: Declaring and Throwing an Exception
             Java
 
     class Geeks {
@@ -92,4 +92,4 @@ Output:Hello GeeksExplanation: In the above program, by using the throws keyword
 
 OutputInside fun(). 
 Caught in main.
-Explanation: The above example throwing a IllegalAccessException from a method and handling it in the main method using a try-catch block.throw Vs throwsThe main differences between throw and throws in Java are as follows:throwthrowsUsed to explicitly throw an exception.Used to declare exceptions.Written inside a method body.Written in the method signature.Throws a single exception object.Can declare multiple exceptions.Followed by an exception object.Followed by exception class names.Used with new keyword.Does not use new keyword.Stops execution immediately after throwing exception.Only informs that an exception may occur.Used for manual exception handling.Used to delegate exception handling responsibility.Can throw checked and unchecked exceptions.Mainly used for checked exceptions.Requires exception object creation.Does not create exception objects.Example: throw new IOException();Example: void test() throws IOException
+Explanation: The fun() method declares IllegalAccessException using throws and explicitly throws it using throw. The main() method calls fun() inside a try block and handles the exception using the corresponding catch block.throw vs throwsThe main differences between throw and throws in Java are as follows:throwthrowsUsed to explicitly throw an exception.Used to declare exceptions that a method may throw.Written inside a method or block.Written in the method signature.Throws one Throwable object/reference at a time.Can declare multiple exception types.Followed by a Throwable expression/reference.Followed by exception class names.Can throw a newly created or an existing exception object.Does not itself create or throw an exception object.Transfers control when the exception is thrown.Only declares that an exception may occur.Can be used to throw checked and unchecked exceptions.Commonly used to declare checked exceptions.Requires a Throwable object/reference to be thrown.Does not require an exception object to be created.Example: throw new IOException(); or throw e;Example: void test() throws IOException

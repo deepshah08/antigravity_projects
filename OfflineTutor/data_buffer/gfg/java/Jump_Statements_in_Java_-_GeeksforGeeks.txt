@@ -1,6 +1,6 @@
 # Jump Statements in Java - GeeksforGeeks
 
-In Java, jump statements control the flow of program execution by transferring control to another part of the code. They are mainly used in loops and decision-making structures to handle specific conditions efficiently. These statements help improve readability and control in programs.Used to change the normal execution flow of a program Help in exiting loops, skipping iterations, or returning from methods Common jump statements: break, continue, and returnContinue StatementThe continue statement pushes the next repetition of the loop to take place, skipping any code between itself and the conditional expression that controls the loop.
+Jump statements in Java alter the normal flow of program execution by transferring control to another part of the program. They are commonly used within loops and methods to control execution based on specific conditions.break: Terminates a loop or switch statement.continue: Skips the current loop iteration and proceeds with the next one.return: Exits a method and can optionally return a value to the caller.Continue StatementThe continue statement pushes the next repetition of the loop to take place, skipping any code between itself and the conditional expression that controls the loop.
             Java
 
     import java.io.*;
@@ -25,7 +25,7 @@ Output0
 
 3
 4
-Explanation: In the program, when the value of i is 2, the compiler encounters the continue statement, and then 2 is skipped.Flowchart of continue Statement Break statement1. Using Break Statement to exit a loop:In Java, the break statement is used to terminate the execution of the nearest looping statement or switch statement. The break statement is widely used with the switch statement, for loop, while loop, and do-while loop. When a break statement is executed inside a loop, the loop is terminated, and the control reaches the statement that follows the loop. Here is an example:
+Explanation: In the program, when the value of i is 2, the compiler encounters the continue statement, and then 2 is skipped.Flowchart of continue Statement Break statement1. Using Break Statement to exit a loopIn Java, the break statement is used to terminate the execution of the nearest looping statement or switch statement. The break statement is widely used with the switch statement, for loop, while loop, and do-while loop. When a break statement is executed inside a loop, the loop is terminated, and the control reaches the statement that follows the loop. Here is an example:
             Java
 
     import java.io.*;
@@ -46,7 +46,7 @@ Output0
 1
 2
 3
-Explanation: As you see, the code is meant to print 0 to 10 numbers using for loop, but it prints only 0 to 3 . as soon as i is equal to 4, the loop terminates. Flowchart of break Statement2. Use Break as a form of gotoJava does not have a goto statement because it produces an unstructured way to alter the flow of program execution. Java illustrates an extended form of the break statement. This form of break works with the label. The label is the name of a label that identifies a statement or a block of code.When this form of break executes, control jumps out of the labeled statement or block.
+Explanation: The loop is designed to iterate from 0 to 9. However, when i becomes 4, the break statement terminates the loop immediately. Therefore, only 0, 1, 2, and 3 are printed.Flowchart of break Statement2. Use Break as a form of gotoJava does not have a goto statement because it produces an unstructured way to alter the flow of program execution. Java illustrates an extended form of the break statement. This form of break works with the label. The label is the name of a label that identifies a statement or a block of code.When this form of break executes, control jumps out of the labeled statement or block.
             Java
 
     import java.io.*;
@@ -102,12 +102,6 @@ class ReturnExample {
 
         // Return the calculated sum
         return sum;
-
-        // Note: Any code after the 'return' statement will
-        // not be executed. But "Final" is an exception in
-        // the case of try-catch-final block.
-        // System.out.println("end"); // error : unreachable
-        // statement
     }
     public static void main(String[] args)
     {

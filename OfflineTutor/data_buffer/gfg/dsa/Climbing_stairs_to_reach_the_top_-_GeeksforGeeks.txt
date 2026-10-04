@@ -91,11 +91,8 @@ class GfG {
 
     return countWays(n - 1) + countWays(n - 2)
 
-
-//Driver Code Starts
 n = 4
 print(countWays(n))
-//Driver Code Ends
 
 
             C#
@@ -480,11 +477,8 @@ class GFG {
   
     return dp[n]
 
-
-//Driver Code Starts
 n = 4
 print(countWays(n))
-//Driver Code Ends
 
 
             C#

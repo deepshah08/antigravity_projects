@@ -403,25 +403,25 @@ Making Two Equations - O(n) Time and O(1) SpaceThe idea is to use mathematical e
 using namespace std;
 
 vector<int> findTwoElement(vector<int>& arr) {
-    int n = arr.size();
+    long long n = arr.size();
 
     // Sum of first n natural numbers
-    int  s = (n * (n + 1)) / 2;
+    long long s = (n * (n + 1)) / 2;
     // Sum of squares of first n natural numbers
-    int ssq = (n * (n + 1) * (2 * n + 1)) / 6;
+    long long ssq = (n * (n + 1) * (2 * n + 1)) / 6;
 
     // Subtract actual values from expected sums
     for (int i = 0; i < n; i++) {
         s -= arr[i];
-        ssq -= arr[i] * arr[i];
+        ssq -= 1LL * arr[i] * arr[i];
     }
 
     // Using the equations: missing - repeating = s
     // missing^2 - repeating^2 = ssq
-    int missing = (s + ssq / s) / 2;
-    int repeating = missing - s;
+    long long missing = (s + ssq / s) / 2;
+    long long repeating = missing - s;
 
-    return {repeating, missing};
+    return {(int)repeating, (int)missing};
 }
 
 int main() {
@@ -439,18 +439,18 @@ int main() {
 
 class GfG {
     static ArrayList<Integer> findTwoElement(int[] arr) {
-        int n = arr.length;
+        long n = arr.length;
 
         // Expected sum and sum of squares for numbers from 1 to n
-        int s = (n * (n + 1)) / 2;
-        int ssq = (n * (n + 1) * (2 * n + 1)) / 6;
+        long s = (n * (n + 1)) / 2;
+        long ssq = (n * (n + 1) * (2 * n + 1)) / 6;
 
-        int missing = 0, repeating = 0;
+        long missing = 0, repeating = 0;
 
         // Subtract actual values from expected sums
         for (int i = 0; i < n; i++) {
             s -= arr[i];
-            ssq -= arr[i] * arr[i];
+            ssq -= (long) arr[i] * arr[i];
         }
 
         // Let x = missing, y = repeating
@@ -463,8 +463,8 @@ class GfG {
         repeating = missing - s;
 
         ArrayList<Integer> res = new ArrayList<>();
-        res.add(repeating);
-        res.add(missing);
+        res.add((int) repeating);
+        res.add((int) missing);
         return res;
     }
 
@@ -515,18 +515,18 @@ using System.Collections.Generic;
 
 class GfG {
     static List<int> findTwoElement(int[] arr) {
-        int n = arr.Length;
+        long n = arr.Length;
 
         // Expected sum and sum of squares from 1 to n
-        int s = (n * (n + 1)) / 2;
-        int ssq = (n * (n + 1) * (2 * n + 1)) / 6;
+        long s = (n * (n + 1)) / 2;
+        long ssq = (n * (n + 1) * (2 * n + 1)) / 6;
 
-        int missing = 0, repeating = 0;
+        long missing = 0, repeating = 0;
 
         // Subtract actual values from expected ones
         for (int i = 0; i < n; i++) {
             s -= arr[i];
-            ssq -= arr[i] * arr[i];
+            ssq -= (long)arr[i] * arr[i];
         }
 
         // Let s = x - y, ssq = x^2 - y^2 = (x - y)(x + y)
@@ -534,7 +534,7 @@ class GfG {
         missing = (s + ssq / s) / 2;
         repeating = missing - s;
 
-        return new List<int> { repeating, missing };
+        return new List<int> { (int)repeating, (int)missing };
     }
 
     static void Main() {
@@ -549,26 +549,27 @@ class GfG {
             Javascript
 
     function findTwoElement(arr) {
-    let n = arr.length;
+    let n = BigInt(arr.length);
 
     // Expected sum and sum of squares from 1 to n
-    let s = (n * (n + 1)) / 2;
-    let ssq = (n * (n + 1) * (2 * n + 1)) / 6;
+    let s = (n * (n + 1n)) / 2n;
+    let ssq = (n * (n + 1n) * (2n * n + 1n)) / 6n;
 
-    let missing = 0, repeating = 0;
+    let missing = 0n, repeating = 0n;
 
     // Subtract actual values from the expected ones
-    for (let i = 0; i < n; i++) {
-        s -= arr[i];
-        ssq -= arr[i] * arr[i];
+    for (let i = 0; i < Number(n); i++) {
+        let ele = BigInt(arr[i]);
+        s -= ele;
+        ssq -= ele * ele;
     }
 
     // Let s = x - y, ssq = x^2 - y^2 = (x - y)(x + y)
     // Solve: x = (s + ssq / s) / 2, y = x - s
-    missing = (s + ssq / s) / 2;
+    missing = (s + ssq / s) / 2n;
     repeating = missing - s;
 
-    return [repeating, missing];
+    return [Number(repeating), Number(missing)];
 }
 
 

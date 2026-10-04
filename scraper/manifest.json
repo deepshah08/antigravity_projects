@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T03:16:40.618Z",
+  "generatedAt": "2026-10-04T03:57:31.905Z",
   "topics": [
     {
       "id": "dsa",
@@ -3495,7 +3495,7 @@
         },
         {
           "id": "python-114",
-          "title": "Python Database4 min read",
+          "title": "Python Database2 min read",
           "url": "https://www.geeksforgeeks.org/python/python-database-tutorial/"
         },
         {
@@ -6732,211 +6732,136 @@
         },
         {
           "id": "os-048",
-          "title": "Introduction to memory and memory units",
-          "url": "https://www.geeksforgeeks.org/computer-organization-architecture/introduction-to-memory-and-memory-units/"
-        },
-        {
-          "id": "os-049",
           "title": "Memory Management in Operating System",
           "url": "https://www.geeksforgeeks.org/operating-systems/memory-management-in-operating-system/"
         },
         {
-          "id": "os-050",
-          "title": "Logical and Physical Address in Operating System",
-          "url": "https://www.geeksforgeeks.org/operating-systems/logical-and-physical-address-in-operating-system/"
-        },
-        {
-          "id": "os-051",
-          "title": "Implementation of Contiguous Memory Management",
-          "url": "https://www.geeksforgeeks.org/operating-systems/implementation-of-contiguous-memory-management-techniques/"
-        },
-        {
-          "id": "os-052",
-          "title": "Internal Fragmentation",
-          "url": "https://www.geeksforgeeks.org/operating-systems/internal-fragmentation-in-os/"
-        },
-        {
-          "id": "os-053",
-          "title": "External Fragmentation",
-          "url": "https://www.geeksforgeeks.org/operating-systems/external-fragmentation-in-os/"
-        },
-        {
-          "id": "os-054",
-          "title": "Program for Next Fit algorithm in Memory Management",
-          "url": "https://www.geeksforgeeks.org/dsa/program-for-next-fit-algorithm-in-memory-management/"
-        },
-        {
-          "id": "os-055",
-          "title": "Buddy System: Memory allocation technique",
-          "url": "https://www.geeksforgeeks.org/operating-systems/buddy-system-memory-allocation-technique/"
-        },
-        {
-          "id": "os-056",
-          "title": "Non-Contiguous Allocation in Operating System",
-          "url": "https://www.geeksforgeeks.org/operating-systems/non-contiguous-allocation-in-operating-system/"
-        },
-        {
-          "id": "os-057",
-          "title": "Paging",
-          "url": "https://www.geeksforgeeks.org/operating-systems/paging-in-operating-system/"
-        },
-        {
-          "id": "os-058",
-          "title": "Segmentation",
-          "url": "https://www.geeksforgeeks.org/operating-systems/segmentation-in-operating-system/"
-        },
-        {
-          "id": "os-059",
-          "title": "Segmentation with Paging",
-          "url": "https://www.geeksforgeeks.org/operating-systems/segmentation-with-paging/"
-        },
-        {
-          "id": "os-060",
-          "title": "Overlays in Memory Management",
-          "url": "https://www.geeksforgeeks.org/operating-systems/overlays-in-memory-management/"
-        },
-        {
-          "id": "os-061",
-          "title": "Virtual Memory",
-          "url": "https://www.geeksforgeeks.org/operating-systems/virtual-memory-in-operating-system/"
-        },
-        {
-          "id": "os-062",
-          "title": "Demand Paging",
-          "url": "https://www.geeksforgeeks.org/operating-systems/what-is-demand-paging-in-operating-system/"
-        },
-        {
-          "id": "os-063",
-          "title": "Swap Space",
-          "url": "https://www.geeksforgeeks.org/operating-systems/swap-space-in-operating-system/"
-        },
-        {
-          "id": "os-064",
-          "title": "Techniques to handle Thrashing",
-          "url": "https://www.geeksforgeeks.org/operating-systems/techniques-to-handle-thrashing/"
-        },
-        {
-          "id": "os-065",
-          "title": "Working Set in Paging",
-          "url": "https://www.geeksforgeeks.org/operating-systems/working-set-in-paging/"
-        },
-        {
-          "id": "os-066",
-          "title": "Allocating kernel memory (buddy system and slab system)",
-          "url": "https://www.geeksforgeeks.org/operating-systems/operating-system-allocating-kernel-memory-buddy-system-slab-system/"
-        },
-        {
-          "id": "os-067",
-          "title": "Memory Interleaving",
-          "url": "https://www.geeksforgeeks.org/computer-organization-architecture/memory-interleaving/"
-        },
-        {
-          "id": "os-068",
-          "title": "Operating system based Virtualization",
-          "url": "https://www.geeksforgeeks.org/computer-networks/operating-system-based-virtualization/"
-        },
-        {
-          "id": "os-069",
+          "id": "os-049",
           "title": "Memory Management",
           "url": "https://www.geeksforgeeks.org/quizzes/memory-management-gq/"
         },
         {
-          "id": "os-070",
+          "id": "os-050",
           "title": "File Systems",
           "url": "https://www.geeksforgeeks.org/operating-systems/file-systems-in-operating-system/"
         },
         {
-          "id": "os-071",
+          "id": "os-051",
           "title": "Unix File System",
           "url": "https://www.geeksforgeeks.org/operating-systems/unix-file-system/"
         },
         {
-          "id": "os-072",
+          "id": "os-052",
           "title": "File Directory | Path Name",
           "url": "https://www.geeksforgeeks.org/operating-systems/path-name-in-file-directory/"
         },
         {
-          "id": "os-073",
+          "id": "os-053",
           "title": "Structures of Directory",
           "url": "https://www.geeksforgeeks.org/operating-systems/structures-of-directory-in-operating-system/"
         },
         {
-          "id": "os-074",
+          "id": "os-054",
           "title": "File Allocation Methods",
           "url": "https://www.geeksforgeeks.org/operating-systems/file-allocation-methods/"
         },
         {
-          "id": "os-075",
+          "id": "os-055",
           "title": "File Access Methods",
           "url": "https://www.geeksforgeeks.org/operating-systems/file-access-methods-in-operating-system/"
         },
         {
-          "id": "os-076",
+          "id": "os-056",
           "title": "Secondary memory",
           "url": "https://www.geeksforgeeks.org/computer-science-fundamentals/secondary-memory/"
         },
         {
-          "id": "os-077",
+          "id": "os-057",
           "title": "Secondary memory – Hard disk drive",
           "url": "https://www.geeksforgeeks.org/computer-organization-architecture/hard-disk-drive-hdd-secondary-memory/"
         },
         {
-          "id": "os-078",
+          "id": "os-058",
           "title": "Disk Scheduling Algorithms",
           "url": "https://www.geeksforgeeks.org/operating-systems/disk-scheduling-algorithms/"
         },
         {
-          "id": "os-079",
+          "id": "os-059",
           "title": "Program for SSTF disk scheduling algorithm",
           "url": "https://www.geeksforgeeks.org/operating-systems/program-for-sstf-disk-scheduling-algorithm/"
         },
         {
-          "id": "os-080",
+          "id": "os-060",
           "title": "What exactly Spooling is all about?",
-          "url": "https://www.geeksforgeeks.org/operating-systems/what-exactly-spooling-is-all-about/"
+          "url": "https://www.geeksforgeeks.org/operating-systems/spooling-in-operating-system/"
         },
         {
-          "id": "os-081",
+          "id": "os-061",
           "title": "Spooling vs Buffering",
           "url": "https://www.geeksforgeeks.org/operating-systems/difference-between-spooling-and-buffering/"
         },
         {
-          "id": "os-082",
+          "id": "os-062",
           "title": "Free space management",
           "url": "https://www.geeksforgeeks.org/operating-systems/free-space-management-in-operating-system/"
         },
         {
-          "id": "os-083",
+          "id": "os-063",
           "title": "Input Output Systems",
           "url": "https://www.geeksforgeeks.org/quizzes/iinput-output-systems-gq/"
         },
         {
-          "id": "os-084",
+          "id": "os-064",
           "title": "Last Minute Notes (LMNs) | Operating Systems",
           "url": "https://www.geeksforgeeks.org/operating-systems/last-minute-notes-operating-systems/"
         },
         {
-          "id": "os-085",
+          "id": "os-065",
           "title": "Commonly Asked Operating Systems Interview Questions",
           "url": "https://www.geeksforgeeks.org/operating-systems/operating-systems-interview-questions/"
         },
         {
-          "id": "os-086",
+          "id": "os-066",
           "title": "GATE CSE Previous Year Questions",
           "url": "https://www.geeksforgeeks.org/operating-systems/operating-systems-gate-questions/"
         },
         {
-          "id": "os-087",
+          "id": "os-067",
           "title": "Multithreading4 min read",
           "url": "https://www.geeksforgeeks.org/operating-systems/multithreading-in-operating-system/"
         },
         {
-          "id": "os-088",
+          "id": "os-068",
+          "title": "Memory & Memory Units2 min read",
+          "url": "https://www.geeksforgeeks.org/computer-organization-architecture/introduction-to-memory-and-memory-units/"
+        },
+        {
+          "id": "os-069",
+          "title": "Buddy System5 min read",
+          "url": "https://www.geeksforgeeks.org/operating-systems/buddy-system-memory-allocation-technique/"
+        },
+        {
+          "id": "os-070",
+          "title": "Overlays4 min read",
+          "url": "https://www.geeksforgeeks.org/operating-systems/overlays-in-memory-management/"
+        },
+        {
+          "id": "os-071",
+          "title": "Virtual Memory7 min read",
+          "url": "https://www.geeksforgeeks.org/operating-systems/virtual-memory-in-operating-system/"
+        },
+        {
+          "id": "os-072",
+          "title": "OS based Virtualization5 min read",
+          "url": "https://www.geeksforgeeks.org/computer-networks/operating-system-based-virtualization/"
+        },
+        {
+          "id": "os-073",
           "title": "Directory Management3 min read",
           "url": "https://www.geeksforgeeks.org/linux-unix/implementing-directory-management-using-shell-script/"
         },
         {
-          "id": "os-089",
+          "id": "os-074",
           "title": "Placement 360 Course2 min read",
           "url": "https://www.geeksforgeeks.org/courses/placement-360-cip-complete-tech-interview"
         }
@@ -8288,7 +8213,7 @@
         },
         {
           "id": "devops-101",
-          "title": "What is Dockerfile Syntax?5 min read",
+          "title": "What is Dockerfile Syntax?4 min read",
           "url": "https://www.geeksforgeeks.org/devops/what-is-dockerfile-syntax/"
         },
         {
@@ -9001,7 +8926,7 @@
         {
           "id": "ml-ai-130",
           "title": "MLOps",
-          "url": "https://www.geeksforgeeks.org/machine-learning/mlops-everything-you-need-to-know/"
+          "url": "https://www.geeksforgeeks.org/machine-learning/what-is-mlops/"
         },
         {
           "id": "ml-ai-131",
@@ -9690,12 +9615,12 @@
         {
           "id": "distributed-systems-001",
           "title": "Goals of Distributed System",
-          "url": "https://www.geeksforgeeks.org/operating-systems/goals-of-distributed-system/"
+          "url": "https://www.geeksforgeeks.org/distributed-systems/goals-of-distributed-system/"
         },
         {
           "id": "distributed-systems-002",
           "title": "Types of Transparency in a Distributed System",
-          "url": "https://www.geeksforgeeks.org/computer-networks/types-of-transparency-in-distributed-system/"
+          "url": "https://www.geeksforgeeks.org/distributed-systems/types-of-transparency-in-distributed-system/"
         },
         {
           "id": "distributed-systems-003",
@@ -9725,12 +9650,12 @@
         {
           "id": "distributed-systems-008",
           "title": "What is Scalable System?",
-          "url": "https://www.geeksforgeeks.org/computer-networks/what-is-scalable-system-in-distributed-system/"
+          "url": "https://www.geeksforgeeks.org/distributed-systems/what-is-scalable-system-in-distributed-system/"
         },
         {
           "id": "distributed-systems-009",
           "title": "Role of Middleware in a distributed system",
-          "url": "https://www.geeksforgeeks.org/operating-systems/role-of-middleware-in-distributed-system/"
+          "url": "https://www.geeksforgeeks.org/distributed-systems/role-of-middleware-in-distributed-system/"
         },
         {
           "id": "distributed-systems-010",
@@ -9745,22 +9670,22 @@
         {
           "id": "distributed-systems-012",
           "title": "Interprocess Communication",
-          "url": "https://www.geeksforgeeks.org/operating-systems/interprocess-communication-in-distributed-systems/"
+          "url": "https://www.geeksforgeeks.org/distributed-systems/interprocess-communication-in-distributed-systems/"
         },
         {
           "id": "distributed-systems-013",
           "title": "gRPC Communication",
-          "url": "https://www.geeksforgeeks.org/cloud-computing/grpc-communication-in-distributed-systems/"
+          "url": "https://www.geeksforgeeks.org/distributed-systems/grpc-communication-in-distributed-systems/"
         },
         {
           "id": "distributed-systems-014",
           "title": "Gossip Protocol",
-          "url": "https://www.geeksforgeeks.org/system-design/gossip-protocol-in-disrtibuted-systems/"
+          "url": "https://www.geeksforgeeks.org/distributed-systems/gossip-protocol-in-disrtibuted-systems/"
         },
         {
           "id": "distributed-systems-015",
           "title": "Introduction of Message Passing",
-          "url": "https://www.geeksforgeeks.org/operating-systems/message-passing-in-distributed-system/"
+          "url": "https://www.geeksforgeeks.org/distributed-systems/message-passing-in-distributed-system/"
         },
         {
           "id": "distributed-systems-016",
@@ -9820,17 +9745,17 @@
         {
           "id": "distributed-systems-027",
           "title": "Synchronization",
-          "url": "https://www.geeksforgeeks.org/computer-networks/synchronization-in-distributed-systems/"
+          "url": "https://www.geeksforgeeks.org/distributed-systems/synchronization-in-distributed-systems/"
         },
         {
           "id": "distributed-systems-028",
           "title": "Clock Synchronization",
-          "url": "https://www.geeksforgeeks.org/macroeconomics/clock-synchronization-in-distributed-system/"
+          "url": "https://www.geeksforgeeks.org/distributed-systems/clock-synchronization-in-distributed-system/"
         },
         {
           "id": "distributed-systems-029",
           "title": "Logical clock",
-          "url": "https://www.geeksforgeeks.org/computer-networks/logical-clock-in-distributed-system/"
+          "url": "https://www.geeksforgeeks.org/distributed-systems/logical-clock-in-distributed-system/"
         },
         {
           "id": "distributed-systems-030",
@@ -9919,321 +9844,246 @@
         },
         {
           "id": "distributed-systems-047",
-          "title": "DFS",
-          "url": "https://www.geeksforgeeks.org/computer-networks/what-is-dfsdistributed-file-system/"
+          "title": "DFS and Shared Memory",
+          "url": "https://www.geeksforgeeks.org/distributed-systems/what-is-dfsdistributed-file-system/"
         },
         {
           "id": "distributed-systems-048",
-          "title": "Network file system architecture",
-          "url": "https://www.geeksforgeeks.org/operating-systems/network-file-system-nfs/"
-        },
-        {
-          "id": "distributed-systems-049",
-          "title": "Andrew file system",
-          "url": "https://www.geeksforgeeks.org/operating-systems/andrew-file-system/"
-        },
-        {
-          "id": "distributed-systems-050",
-          "title": "File Service Architecture",
-          "url": "https://www.geeksforgeeks.org/computer-networks/file-service-architecture-in-distributed-system/"
-        },
-        {
-          "id": "distributed-systems-051",
-          "title": "File Models",
-          "url": "https://www.geeksforgeeks.org/computer-networks/file-models-in-distributed-system/"
-        },
-        {
-          "id": "distributed-systems-052",
-          "title": "File-Accessing Models",
-          "url": "https://www.geeksforgeeks.org/computer-networks/file-accessing-models-in-distributed-system/"
-        },
-        {
-          "id": "distributed-systems-053",
-          "title": "File-Sharing Semantics",
-          "url": "https://www.geeksforgeeks.org/operating-systems/file-sharing-semantics-in-distributed-systems/"
-        },
-        {
-          "id": "distributed-systems-054",
-          "title": "File-Caching Schemes",
-          "url": "https://www.geeksforgeeks.org/operating-systems/file-caching-in-distrubuted-file-systems/"
-        },
-        {
-          "id": "distributed-systems-055",
-          "title": "What is Replication",
-          "url": "https://www.geeksforgeeks.org/operating-systems/what-is-replication-in-distributed-system/"
-        },
-        {
-          "id": "distributed-systems-056",
-          "title": "Atomic commit protocol",
-          "url": "https://www.geeksforgeeks.org/computer-networks/atomic-commit-protocol-in-distributed-system/"
-        },
-        {
-          "id": "distributed-systems-057",
-          "title": "Design Principles of DFS",
-          "url": "https://www.geeksforgeeks.org/operating-systems/design-principles-of-distributed-file-system/"
-        },
-        {
-          "id": "distributed-systems-058",
-          "title": "The architecture of Distributed shared memory",
-          "url": "https://www.geeksforgeeks.org/operating-systems/architecture-of-distributed-shared-memorydsm/"
-        },
-        {
-          "id": "distributed-systems-059",
-          "title": "Uniform Memory Access (UMA) vs Non-uniform Memory Access (NUMA)",
-          "url": "https://www.geeksforgeeks.org/computer-organization-architecture/difference-between-uniform-memory-access-uma-and-non-uniform-memory-access-numa/"
-        },
-        {
-          "id": "distributed-systems-060",
-          "title": "Design and implementation issue of distributed shared memory.",
-          "url": "https://www.geeksforgeeks.org/computer-networks/design-and-implementation-issue-of-distributed-shared-memory/"
-        },
-        {
-          "id": "distributed-systems-061",
-          "title": "Algorithm for implementing DSM",
-          "url": "https://www.geeksforgeeks.org/operating-systems/algorithm-for-implementing-distributed-shared-memory/"
-        },
-        {
-          "id": "distributed-systems-062",
-          "title": "Consistency models",
-          "url": "https://www.geeksforgeeks.org/operating-systems/consistency-model-in-distributed-system/"
-        },
-        {
-          "id": "distributed-systems-063",
-          "title": "Thrashing in Distributed shared memory",
-          "url": "https://www.geeksforgeeks.org/operating-systems/distributed-system-thrashing-in-distributed-shared-memory/"
-        },
-        {
-          "id": "distributed-systems-064",
           "title": "Issues related to Load balancing in DS",
           "url": "https://www.geeksforgeeks.org/operating-systems/issues-related-to-load-balancing-in-distributed-system/"
         },
         {
-          "id": "distributed-systems-065",
+          "id": "distributed-systems-049",
           "title": "Components of load distribution",
           "url": "https://www.geeksforgeeks.org/operating-systems/components-of-load-distributing-algorithm-distributed-systems/"
         },
         {
-          "id": "distributed-systems-066",
+          "id": "distributed-systems-050",
           "title": "Phantom deadlock",
           "url": "https://www.geeksforgeeks.org/operating-systems/phantom-deadlock-in-distributed-system/"
         },
         {
-          "id": "distributed-systems-067",
+          "id": "distributed-systems-051",
           "title": "Deadlock",
           "url": "https://www.geeksforgeeks.org/operating-systems/distributed-system-types-of-distributed-deadlock/"
         },
         {
-          "id": "distributed-systems-068",
+          "id": "distributed-systems-052",
           "title": "Deadlock Detection",
           "url": "https://www.geeksforgeeks.org/operating-systems/deadlock-detection-in-distributed-systems-2/"
         },
         {
-          "id": "distributed-systems-069",
+          "id": "distributed-systems-053",
           "title": "A necessary condition for deadlock",
           "url": "https://www.geeksforgeeks.org/computer-networks/conditions-for-deadlock-in-distributed-system/"
         },
         {
-          "id": "distributed-systems-070",
+          "id": "distributed-systems-054",
           "title": "Deadlock handling strategies",
           "url": "https://www.geeksforgeeks.org/computer-networks/deadlock-handling-strategies-in-distributed-system/"
         },
         {
-          "id": "distributed-systems-071",
+          "id": "distributed-systems-055",
           "title": "Banker's algorithm",
           "url": "https://www.geeksforgeeks.org/operating-systems/bankers-algorithm-in-operating-system-2/"
         },
         {
-          "id": "distributed-systems-072",
+          "id": "distributed-systems-056",
           "title": "Deadlock prevention policies",
           "url": "https://www.geeksforgeeks.org/operating-systems/deadlock-prevention-policies-in-distributed-system/"
         },
         {
-          "id": "distributed-systems-073",
+          "id": "distributed-systems-057",
           "title": "A WFG-based distributed algorithm for deadlock detection",
           "url": "https://www.geeksforgeeks.org/operating-systems/wfg-based-distributed-algorithm-for-deadlock-detection/"
         },
         {
-          "id": "distributed-systems-074",
+          "id": "distributed-systems-058",
           "title": "Chandy-Misra-Haas's distributed deadlock detection algorithm",
           "url": "https://www.geeksforgeeks.org/operating-systems/chandy-misra-haass-distributed-deadlock-detection-algorithm/"
         },
         {
-          "id": "distributed-systems-075",
+          "id": "distributed-systems-059",
           "title": "Hierarchical deadlock detection",
           "url": "https://www.geeksforgeeks.org/operating-systems/hierarchical-deadlock-detection-in-distributed-system/"
         },
         {
-          "id": "distributed-systems-076",
+          "id": "distributed-systems-060",
           "title": "What is security?",
           "url": "https://www.geeksforgeeks.org/ethical-hacking/security-in-distributed-system/"
         },
         {
-          "id": "distributed-systems-077",
+          "id": "distributed-systems-061",
           "title": "Types of Cyberattacks",
-          "url": "https://www.geeksforgeeks.org/computer-networks/types-of-cyber-attacks/"
+          "url": "https://www.geeksforgeeks.org/cybersecurity/types-of-cyber-attacks/"
         },
         {
-          "id": "distributed-systems-078",
+          "id": "distributed-systems-062",
           "title": "Cryptography",
           "url": "https://www.geeksforgeeks.org/computer-networks/cryptography-and-its-types/"
         },
         {
-          "id": "distributed-systems-079",
+          "id": "distributed-systems-063",
           "title": "Authentication",
           "url": "https://www.geeksforgeeks.org/ethical-hacking/what-is-user-authentication-and-why-is-it-important/"
         },
         {
-          "id": "distributed-systems-080",
+          "id": "distributed-systems-064",
           "title": "Implementation of Access Matrix",
           "url": "https://www.geeksforgeeks.org/operating-systems/implementation-of-access-matrix-in-distributed-os/"
         },
         {
-          "id": "distributed-systems-081",
+          "id": "distributed-systems-065",
           "title": "Digital Signatures and Certificates",
           "url": "https://www.geeksforgeeks.org/computer-networks/digital-signatures-certificates/"
         },
         {
-          "id": "distributed-systems-082",
+          "id": "distributed-systems-066",
           "title": "Design Principles of Security",
           "url": "https://www.geeksforgeeks.org/computer-networks/design-principles-of-security-in-distributed-system/"
         },
         {
-          "id": "distributed-systems-083",
+          "id": "distributed-systems-067",
           "title": "What is Distributed DBMS?",
           "url": "https://www.geeksforgeeks.org/dbms/distributed-database-system/"
         },
         {
-          "id": "distributed-systems-084",
+          "id": "distributed-systems-068",
           "title": "Functions of DDBMS",
           "url": "https://www.geeksforgeeks.org/dbms/functions-of-distributed-database-system/"
         },
         {
-          "id": "distributed-systems-085",
+          "id": "distributed-systems-069",
           "title": "Types of DBMS",
           "url": "https://www.geeksforgeeks.org/dbms/types-of-database-management-systems/"
         },
         {
-          "id": "distributed-systems-086",
+          "id": "distributed-systems-070",
           "title": "Comparison of Homogeneous and Heterogeneous databases",
           "url": "https://www.geeksforgeeks.org/dbms/comparison-of-homogeneous-and-heterogeneous-databases/"
         },
         {
-          "id": "distributed-systems-087",
+          "id": "distributed-systems-071",
           "title": "What are distributed multimedia system and its characteristics",
           "url": "https://www.geeksforgeeks.org/computer-networks/distributed-multimedia-systems/"
         },
         {
-          "id": "distributed-systems-088",
+          "id": "distributed-systems-072",
           "title": "Multimedia database",
           "url": "https://www.geeksforgeeks.org/dbms/multimedia-database/"
         },
         {
-          "id": "distributed-systems-089",
+          "id": "distributed-systems-073",
           "title": "Destination based routing",
           "url": "https://www.geeksforgeeks.org/computer-networks/what-is-destination-based-routing/"
         },
         {
-          "id": "distributed-systems-090",
+          "id": "distributed-systems-074",
           "title": "Deadlock-free packet switching",
           "url": "https://www.geeksforgeeks.org/computer-networks/deadlock-free-packet-switching/"
         },
         {
-          "id": "distributed-systems-091",
+          "id": "distributed-systems-075",
           "title": "Wave and traversal algorithm",
           "url": "https://www.geeksforgeeks.org/computer-networks/wave-and-traversal-algorithm-in-distributed-system/"
         },
         {
-          "id": "distributed-systems-092",
+          "id": "distributed-systems-076",
           "title": "Election algorithm (Bully algorithm, Ring algorithm)",
           "url": "https://www.geeksforgeeks.org/dsa/election-algorithm-and-distributed-processing/"
         },
         {
-          "id": "distributed-systems-093",
+          "id": "distributed-systems-077",
           "title": "Comparison between Ring and Bully algorithm",
           "url": "https://www.geeksforgeeks.org/dsa/difference-between-ring-and-bully-algorithm/"
         },
         {
-          "id": "distributed-systems-094",
+          "id": "distributed-systems-078",
           "title": "CORBA (Object model, CORBA services)",
           "url": "https://www.geeksforgeeks.org/software-engineering/client-server-software-development-introduction-to-common-object-request-broker-architecture-corba/"
         },
         {
-          "id": "distributed-systems-095",
+          "id": "distributed-systems-079",
           "title": "Difference between CORBA and DCOM",
           "url": "https://www.geeksforgeeks.org/computer-networks/difference-between-corba-and-dcom/"
         },
         {
-          "id": "distributed-systems-096",
+          "id": "distributed-systems-080",
           "title": "COM vs DCOM",
           "url": "https://www.geeksforgeeks.org/computer-networks/difference-between-com-and-dcom/"
         },
         {
-          "id": "distributed-systems-097",
+          "id": "distributed-systems-081",
           "title": "Lifecycle of COM",
           "url": "https://www.geeksforgeeks.org/software-engineering/life-cycle-of-component-object-model-com-object/"
         },
         {
-          "id": "distributed-systems-098",
+          "id": "distributed-systems-082",
           "title": "Distributed Component Object Model (DCOM)",
           "url": "https://www.geeksforgeeks.org/computer-networks/distributed-component-object-model-dcom/"
         },
         {
-          "id": "distributed-systems-099",
+          "id": "distributed-systems-083",
           "title": "What is a Distributed Transaction?",
           "url": "https://www.geeksforgeeks.org/operating-systems/what-is-a-distributed-transaction/"
         },
         {
-          "id": "distributed-systems-100",
+          "id": "distributed-systems-084",
           "title": "Nested transactions and Flat transactions",
           "url": "https://www.geeksforgeeks.org/dbms/flat-nested-distributed-transactions/"
         },
         {
-          "id": "distributed-systems-101",
+          "id": "distributed-systems-085",
           "title": "Concurrency Control in Distributed Transactions",
           "url": "https://www.geeksforgeeks.org/operating-systems/concurrency-control-in-distributed-transactions/"
         },
         {
-          "id": "distributed-systems-102",
+          "id": "distributed-systems-086",
           "title": "Transaction Recovery",
           "url": "https://www.geeksforgeeks.org/operating-systems/transaction-recovery-in-distributed-system/"
         },
         {
-          "id": "distributed-systems-103",
+          "id": "distributed-systems-087",
+          "title": "Introduction to Replication",
+          "url": "https://www.geeksforgeeks.org/operating-systems/what-is-replication-in-distributed-system/"
+        },
+        {
+          "id": "distributed-systems-088",
           "title": "The mechanism for building",
           "url": "https://www.geeksforgeeks.org/operating-systems/mechanism-for-building-distributed-file-system/"
         },
         {
-          "id": "distributed-systems-104",
+          "id": "distributed-systems-089",
           "title": "Two-phase commit protocol",
           "url": "https://www.geeksforgeeks.org/dbms/two-phase-commit-protocol-distributed-transaction-management/"
         },
         {
-          "id": "distributed-systems-105",
+          "id": "distributed-systems-090",
           "title": "DSA Tutorial10 min read",
           "url": "https://www.geeksforgeeks.org/dsa/dsa-tutorial-learn-data-structures-and-algorithms/"
         },
         {
-          "id": "distributed-systems-106",
+          "id": "distributed-systems-091",
           "title": "System Design Tutorial4 min read",
           "url": "https://www.geeksforgeeks.org/system-design/system-design-tutorial/"
         },
         {
-          "id": "distributed-systems-107",
+          "id": "distributed-systems-092",
           "title": "Aptitude Questions and Answers3 min read",
           "url": "https://www.geeksforgeeks.org/aptitude/aptitude-questions-and-answers/"
         },
         {
-          "id": "distributed-systems-108",
+          "id": "distributed-systems-093",
           "title": "Web Development Technologies5 min read",
           "url": "https://www.geeksforgeeks.org/web-tech/web-technology/"
         },
         {
-          "id": "distributed-systems-109",
+          "id": "distributed-systems-094",
           "title": "AI, ML and Data Science Tutorial3 min read",
           "url": "https://www.geeksforgeeks.org/machine-learning/ai-ml-and-data-science-tutorial-learn-ai-ml-and-data-science/"
         },
         {
-          "id": "distributed-systems-110",
+          "id": "distributed-systems-095",
           "title": "DevOps Tutorial3 min read",
           "url": "https://www.geeksforgeeks.org/devops/devops-tutorial/"
         }

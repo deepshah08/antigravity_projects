@@ -1,6 +1,6 @@
 # Access Modifiers in Java - GeeksforGeeks
 
-Access modifiers in Java are used to control the visibility and accessibility of classes, methods, and variables. They help enforce encapsulation by restricting access to different parts of a program. Java provides four types of access modifiers to define scope and protection levels.Public modifier: Accessible from anywhere in the programProtected modifier: Accessible within the same package and by subclassesPrivate modifier: Accessible only within the same classDefault modifier: Accessible only within the same packageReal-World Example :In a banking app, private is used for balance (hidden), default for internal helpers, protected for methods used in subclasses, and public for actions like deposit or view details.Types of Access Modifiers There are 4 types of access modifiers available in Java: Access Modifiers in Java1. Private Access ModifierThe private access modifier is specified using the keyword private. The methods or data members declared as private are accessible only within the class in which they are declared. Provides the highest level of restriction.Commonly used to protect fields and implementation details.
+Access modifiers in Java are used to control the visibility and accessibility of classes, methods, and variables. They help enforce encapsulation by restricting access to different parts of a program. Java provides four types of access modifiers to define scope and protection levels.Public modifier: Accessible from anywhere in the programProtected modifier: Accessible within the same package and by subclassesPrivate modifier: Accessible only within the same classDefault modifier: Accessible only within the same packageReal-World Example: In a banking app, private is used for balance (hidden), default for internal helpers, protected for methods used in subclasses, and public for actions like deposit or view details.Types of Access Modifiers There are 4 types of access modifiers available in Java: Access Modifiers in Java1. Private Access ModifierThe private access modifier is specified using the keyword private. The methods or data members declared as private are accessible only within the class in which they are declared. Provides the highest level of restriction.Commonly used to protect fields and implementation details.
             Java
 
     class Person {
@@ -83,11 +83,10 @@ class GeekNew {
     } 
 }
 
-Explanation: In this example, the program will show the compile-time error when we try to access a default modifier class from a different package.3. Protected Access ModifierThe protected access modifier is specified using the keyword protected. The methods or data members declared as protected are accessible within the same package or subclasses in different packages. Provides the least restrictive access.Commonly used for methods or classes intended to be accessed externally.
+Explanation: In this example, the program will show the compile-time error when we try to access a default modifier class from a different package.3. Protected Access ModifierThe protected access modifier is specified using the keyword protected. The methods or data members declared as protected are accessible within the same package or subclasses in different packages. Provides more access than private and default access, but less access than public.Commonly used for methods or classes intended to be accessed externally.
             Java
 
-    // File: Vehicle.java in package p1
-package p1;
+    package p1;
 public class Vehicle {
     protected int speed;
 }
@@ -113,7 +112,7 @@ public class Test {
         Vehicle v = new Vehicle();
         // System.out.println(v.speed); // ERROR: cannot access protected outside package & non-subclass
     }
-}
+} 
 
 OutputAccess via subclass method: 100
 0

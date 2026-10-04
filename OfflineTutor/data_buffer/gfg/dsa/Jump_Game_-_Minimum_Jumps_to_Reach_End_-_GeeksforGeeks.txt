@@ -39,37 +39,35 @@ int main() {
 
             Java
 
-    import java.util.List;
-import java.util.Arrays;
+    class GFG {
 
-class GFG {
+// Returns minimum jumps needed from index i to reach end
+static int minJumpsRecur(int i, int[] arr) {
+    if (i >= arr.length - 1)
+        return 0;
 
-    // Returns minimum jumps needed from index i to reach end
-    static int minJumpsRecur(int i, List<Integer> arr) {
-        if (i >= arr.size() - 1)
-            return 0;
+    int ans = Integer.MAX_VALUE;
 
-        int ans = Integer.MAX_VALUE;
-
-        // Try all reachable positions from i
-        for (int j = i + 1; j <= i + arr.get(i) && j < arr.size(); j++) {
-            int val = minJumpsRecur(j, arr);
-            if (val != Integer.MAX_VALUE)
-                ans = Math.min(ans, 1 + val);
-        }
-
-        return ans;
+    // Try all reachable positions from i
+    for (int j = i + 1; j <= i + arr[i] && j < arr.length; j++) {
+        int val = minJumpsRecur(j, arr);
+        if (val != Integer.MAX_VALUE)
+            ans = Math.min(ans, 1 + val);
     }
 
-    static int minJumps(List<Integer> arr) {
-        int ans = minJumpsRecur(0, arr);
-        return (ans == Integer.MAX_VALUE) ? -1 : ans; 
-    }
+    return ans;
+}
 
-    public static void main(String[] args) {
-        List<Integer> arr = Arrays.asList(1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9);
-        System.out.println(minJumps(arr));
-    }
+static int minJumps(int[] arr) {
+    int ans = minJumpsRecur(0, arr);
+    return (ans == Integer.MAX_VALUE) ? -1 : ans;
+}
+
+public static void main(String[] args) {
+    int[] arr = {1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9};
+    System.out.println(minJumps(arr));
+}
+
 }
 
 
@@ -104,40 +102,48 @@ if __name__ == "__main__":
             C#
 
     using System;
-using System.Collections.Generic;
 
 class GFG
 {
-    // Returns minimum jumps needed from index i to reach end
-    static int minJumpsRecur(int i, List<int> arr)
+// Returns minimum jumps needed from index i to reach end
+static int minJumpsRecur(int i, int[] arr, int[] dp)
+{
+if (i >= arr.Length - 1)
+return 0;
+
+    if (dp[i] != -1)
+        return dp[i];
+
+    int ans = int.MaxValue;
+
+    // Try all reachable positions from i
+    for (int j = i + 1; j <= i + arr[i] && j < arr.Length; j++)
     {
-        if (i >= arr.Count - 1)
-            return 0;
+        int val = minJumpsRecur(j, arr, dp);
 
-        int ans = int.MaxValue;
-
-        // Try all reachable positions from i
-        for (int j = i + 1; j <= i + arr[i] && j < arr.Count; j++)
-        {
-            int val = minJumpsRecur(j, arr);
-            if (val != int.MaxValue)
-                ans = Math.Min(ans, 1 + val);
-        }
-
-        return ans;
+        if (val != int.MaxValue)
+            ans = Math.Min(ans, 1 + val);
     }
 
-    static int minJumps(List<int> arr)
-    {
-        int ans = minJumpsRecur(0, arr);
-        return (ans == int.MaxValue) ? -1 : ans; 
-    }
+    return dp[i] = ans;
+}
 
-    static void Main()
-    {
-        List<int> arr = new List<int> {1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9};
-        Console.WriteLine(minJumps(arr));
-    }
+static int minJumps(int[] arr)
+{
+    if (arr.Length <= 1)
+        return 0;
+
+    int[] dp = new int[arr.Length];
+    Array.Fill(dp, -1);
+
+    int ans = minJumpsRecur(0, arr, dp);
+
+    return (ans == int.MaxValue) ? -1 : ans;
+}
+public static void Main() {
+    int[] arr = {1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9};
+    Console.WriteLine(minJumps(arr));
+}
 }
 
 
@@ -204,34 +210,37 @@ int main() {
 
             Java
 
-    import java.util.List;
-import java.util.Arrays;
+    import java.util.Arrays;
 
 class GFG {
 
-    // Returns minimum jumps needed to reach end
-    static int minJumps(List<Integer> arr) {
-        int n = arr.size();
-        int[] dp = new int[n];
-        Arrays.fill(dp, Integer.MAX_VALUE);
+// Returns minimum jumps needed to reach end
+static int minJumps(int[] arr) {
+    int n = arr.length;
 
-        dp[n - 1] = 0;
+    if (n == 0)
+        return -1;
 
-        for (int i = n - 2; i >= 0; i--) {
-            // Try all reachable positions from i
-            for (int j = i + 1; j <= i + arr.get(i) && j < n; j++) {
-                if (dp[j] != Integer.MAX_VALUE)
-                    dp[i] = Math.min(dp[i], 1 + dp[j]);
-            }
+    int[] dp = new int[n];
+    Arrays.fill(dp, Integer.MAX_VALUE);
+
+    dp[n - 1] = 0;
+
+    for (int i = n - 2; i >= 0; i--) {
+        // Try all reachable positions from i
+        for (int j = i + 1; j <= i + arr[i] && j < n; j++) {
+            if (dp[j] != Integer.MAX_VALUE)
+                dp[i] = Math.min(dp[i], 1 + dp[j]);
         }
-
-        return (dp[0] == Integer.MAX_VALUE) ? -1 : dp[0];
     }
 
-    public static void main(String[] args) {
-        List<Integer> arr = Arrays.asList(1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9);
-        System.out.println(minJumps(arr));
-    }
+    return (dp[0] == Integer.MAX_VALUE) ? -1 : dp[0];
+}
+public static void main(String[] args) {
+    int[] arr = {1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9};
+    System.out.println(minJumps(arr));
+}
+
 }
 
 
@@ -262,14 +271,17 @@ if __name__ == "__main__":
             C#
 
     using System;
-using System.Collections.Generic;
 
-class GFG
-{
+class GFG {
+
     // Returns minimum jumps needed to reach end
-    static int minJumps(List<int> arr)
+    static int minJumps(int[] arr)
     {
-        int n = arr.Count;
+        int n = arr.Length;
+
+        if (n == 0)
+            return -1;
+
         int[] dp = new int[n];
 
         for (int i = 0; i < n; i++)
@@ -277,11 +289,10 @@ class GFG
 
         dp[n - 1] = 0;
 
-        for (int i = n - 2; i >= 0; i--)
-        {
+        for (int i = n - 2; i >= 0; i--) {
             // Try all reachable positions from i
-            for (int j = i + 1; j <= i + arr[i] && j < n; j++)
-            {
+            for (int j = i + 1; j <= i + arr[i] && j < n;
+                 j++) {
                 if (dp[j] != int.MaxValue)
                     dp[i] = Math.Min(dp[i], 1 + dp[j]);
             }
@@ -289,10 +300,9 @@ class GFG
 
         return (dp[0] == int.MaxValue) ? -1 : dp[0];
     }
-
-    static void Main()
+    public static void Main()
     {
-        List<int> arr = new List<int> {1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9};
+        int[] arr = { 1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9 };
         Console.WriteLine(minJumps(arr));
     }
 }

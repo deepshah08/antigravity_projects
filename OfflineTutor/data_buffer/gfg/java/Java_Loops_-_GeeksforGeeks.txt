@@ -86,9 +86,7 @@ class Geeks {
 Output0 1 2 3 4 5 6 7 8 9 10 Syntaxdo {    // code to be executed} while (condition);The below image demonstrates the flow chart of a do-while loop:Flowchart of do-while loopdo while loop starts with the execution of the statement. There is no checking of any condition for the first time.After the execution of the statements, and update of the variable value, the condition is checked for true or false value. If it is evaluated to true, next iteration of loop starts.When the condition becomes false, the loop terminates which marks the end of its life cycle.It is important to note that the do-while loop will execute its statements a tleast once before any condition is checked, and therefore is an example of exit control loop.Common Loop Mistakes and How to Avoid themIf loops are not used correctly, they can introduce pitfalls and bugs that affect code performance, readability, and functionality. Below are some common pitfalls of loops:1. Infinite LoopsThis is one of the most common mistakes while implementing any sort of looping is that it may not ever exit, that is the loop runs for infinite time. This happens when the condition fails for some reason.Types of Infinite Loops:infinite for Loopinfinite while LoopExample: Here, both the examples demonstrates the infinite loops.
             Infinite For Loop
 
-    // Java program to demonstrate 
-// the infinite for loop
-import java.io.*;
+    import java.io.*;
 
 class Geeks {
     public static void main(String[] args)
@@ -104,9 +102,7 @@ class Geeks {
 
             Infinite While Loop
 
-    // Java Program to demonstrate 
-// the infinite while loop
-import java.io.*;
+    import java.io.*;
 
 class Geeks {
     public static void main(String[] args)
@@ -119,7 +115,7 @@ class Geeks {
     }
 }
 
-Output: When you run both the above codes you will get TLE (Time Limit Exceeded) error.2. Off-by-One ErrorsOff-by-One Errors are caused when the loop runs one more or one fewer time than you wanted. It basically happens when the loop condition is not set correctly.Example: The below Java program demonstrates an Off-by-One Error, where the loop runs 6 times and we expected it to run 5 times.
+Output:  Both programs continue running indefinitely until they are manually stopped or terminated. On an online coding platform, they may eventually result in a Time Limit Exceeded (TLE) error. Off-by-One Errors are caused when the loop runs one more or one fewer time than you wanted. It basically happens when the loop condition is not set correctly.Example: The below Java program demonstrates an Off-by-One Error, where the loop runs 6 times and we expected it to run 5 times.
             Java
 
     import java.io.*;
@@ -133,7 +129,7 @@ class Geeks {
     }
 }
 
-3. Modifying Loop Variables Inside the LoopWhen we change the loop condition (like i) inside the loop, it can cause the loop to skip certain iterations or behave in ways that we did not expected. This might leads to errors or unexpected behavior.Example: The below Java program demonstrates modifying the loop variable inside the loop, which cause the loop to skip certain iterations and behave unexpected.
+3. Modifying Loop Variables Inside the LoopWhen we change the loop condition (like i) inside the loop, it can cause the loop to skip certain iterations or behave in ways that we did not expected. This might lead to errors or unexpected behavior.Example: The below Java program demonstrates modifying the loop variable inside the loop, which cause the loop to skip certain iterations and behave unexpected.
             Java
 
     import java.io.*;

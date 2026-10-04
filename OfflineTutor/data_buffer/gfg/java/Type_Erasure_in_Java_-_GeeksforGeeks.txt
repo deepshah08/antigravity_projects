@@ -1,6 +1,6 @@
 # Type Erasure in Java - GeeksforGeeks
 
-Type Erasure is the process by which the Java compiler removes all generic type information and replaces type parameters with their upper bounds (or Object if unbounded).During compilation, the compiler performs:Replacing type parameters with their upper bound or Object.Inserting casts where needed to maintain type safety.Generating bridge methods to preserve method overriding in generic hierarchies.Note: After compilation, no generic type exists in the bytecode. Only raw types remain.How Type Erasure WorksNow, we are going to discuss how Type Erasure works in Java1. Unbounded Type Example
+Type Erasure is the process used by the Java compiler to translate generic code by removing or replacing type parameters. During compilation, type parameters are replaced with their upper bounds, or with Object when no explicit bound is specified.During type erasure, the compiler:Replaces unbounded type parameters with Object.Replaces bounded type parameters with their upper bound.Inserts type casts where required to preserve type correctness.Generates bridge methods when necessary to preserve polymorphism in generic class hierarchies.Note: Generic type parameters are erased from ordinary runtime object representations. However, some generic type information may still be stored in class-file metadata and can be available through reflection.How Type Erasure WorksNow, we are going to discuss how Type Erasure works in Java1. Unbounded Type Example
             JAVA
 
     // Here, T is unbounded (default bound: Object)
@@ -69,7 +69,7 @@ After Type Erasure
     }
 }
 
-Here, T is bounded by String, so it is replaced with String.Viewing Erased BytecodeAfter compiling the classes, you can inspect their contents using:javap GFGjavap GeeksThese will show that the type parameters no longer exist at runtime.Type Erasure in ActionNow, we will see example to understand ow type erasure affects code during runtime.Example 1: Using Generics
+Here, T is bounded by String, so it is replaced with String.Viewing Erased BytecodeAfter compiling the classes, you can inspect their contents using:javap GFGjavap GeeksThese will show that the type parameters no longer exist at runtime.Type Erasure in ActionNow, we will see example to understand how type erasure affects code during runtime.Example 1: Using Generics
             Java
 
     import java.util.ArrayList;
@@ -95,21 +95,25 @@ OutputHello
 Explanation:Compiler checks type safety -> OK (String list)At runtime, the generic type (String) does not exist.Type casts inserted by compiler ensure safety.Example 2: Raw Types
             JAVA
 
-    import java.util.*;
+    class Box<T extends Number> {
+    private T value;
 
-public class Geeks{
+    Box(T value) { this.value = value; }
 
-    public static void main(String args[]){
-        
-        List list = new ArrayList();   // Raw type
-        list.add("Hello");
+    T getValue() { return value; }
+}
 
-        String s;
-        for (Iterator iter = list.iterator(); iter.hasNext(); ) {
-            s = (String) iter.next();
-            System.out.println(s);
-        }
+public class Geeks {
+    public static void main(String[] args)
+    {
+        Box<Integer> intBox = new Box<>(10);
+        Box<Double> doubleBox = new Box<>(5.5);
+
+        System.out.println(intBox.getValue());
+        System.out.println(doubleBox.getValue());
     }
 }
 
-Output: ./Geeks.java uses unchecked or unsafe operations.Recompile with -Xlint:unchecked for details.Explanation: In the above example, we are using raw types, it simply means we are not specifying the type if datat the the list will hold. In this case, the compiler will throw a warning GenericsErasure.java uses unchecked or unsafe operations. The reason for the warning is that raw types don not carry any type information. Issues Caused by Type ErasureThe issues caused by Type Erasure is listed below:The JVM loses information of the generic type at runtime, that's why we can not use instanceof or create new instances of generic types.When we work with raw types, the compiler will give warning.We can not create array of generic types directly.
+Output10
+5.5
+Explanation: T extends Number restricts T to Number and its subclasses. Therefore, types such as Integer and Double can be used, making the purpose of a bounded type parameter clear.Issues Caused by Type ErasureThe issues caused by Type Erasure is listed below:The JVM loses information of the generic type at runtime, that's why we can not use instanceof or create new instances of generic types.When we work with raw types, the compiler will give warning.We can not create array of generic types directly.

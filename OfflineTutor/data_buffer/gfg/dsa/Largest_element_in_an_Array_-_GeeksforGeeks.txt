@@ -76,38 +76,40 @@ int main() {
 
             Python
 
-    def largest(arr, n):
+    # Function to find the largest element
+def largest(arr):
     mx = arr[0]
 
     # Traverse array elements from second
     # and compare every element with
     # current max
-    for i in range(1, n):
+    for i in range(1, len(arr)):
         if arr[i] > mx:
             mx = arr[i]
 
     return mx
 
 if __name__ == '__main__':
-    arr = [20, 10, 20, 4, 100]
-    n = len(arr)
-    
-    ans = largest(arr, n)
-    
+    arr = [8, 4, 1]
+
+    ans = largest(arr)
+
     print(ans)
 
 
             C#
 
     using System;
+using System.Collections.Generic;
 
-class GfG {
-    static int Largest(int[] arr) {
+class GFG {
+    // Function to find the largest element
+    public int largest(List<int> arr) {
         int max = arr[0];
 
         // Traverse from second and compare
         // every element with current max
-        for (int i = 1; i < arr.Length; i++)
+        for (int i = 1; i < arr.Count; i++)
             if (arr[i] > max)
                 max = arr[i];
 
@@ -115,8 +117,9 @@ class GfG {
     }
 
     static void Main() {
-        int[] arr = {20, 10, 20, 4, 100};
-        Console.WriteLine(Largest(arr));
+        List<int> arr = new List<int> { 8, 4, 1 };
+        GFG obj = new GFG();
+        Console.WriteLine(obj.largest(arr));
     }
 }
 
@@ -257,12 +260,13 @@ if __name__ == '__main__':
             C#
 
     using System;
+using System.Collections.Generic;
 
-class GfG {
-    static int FindMax(int[] arr, int i) {
-      
+class Solution {
+    static int FindMax(List<int> arr, int i) {
+
         // Last index returns the element
-        if (i == arr.Length - 1) {
+        if (i == arr.Count - 1) {
             return arr[i];
         }
 
@@ -273,13 +277,15 @@ class GfG {
         return Math.Max(recMax, arr[i]);
     }
 
-    static int Largest(int[] arr) {
+    public int largest(List<int> arr) {
         return FindMax(arr, 0);
     }
 
-    static void Main() {
-        int[] arr = {20, 10, 20, 4, 100};
-        Console.WriteLine(Largest(arr));
+    static void Main(string[] args) {
+        List<int> arr = new List<int> { 20, 10, 20, 4, 100 };
+
+        Solution obj = new Solution();
+        Console.WriteLine(obj.largest(arr));
     }
 }
 
@@ -381,16 +387,20 @@ if __name__ == '__main__':
             C#
 
     using System;
+using System.Collections.Generic;
 using System.Linq;
 
-class GfG {
-  static int largest(int []arr) {
-          return arr.Max();
-      }
-  
-    static public void Main() {
- 		int[] arr = {20, 10, 20, 4, 100};
-        Console.WriteLine(largest(arr));
+class Solution {
+    // Function to find the largest element
+    public int largest(List<int> arr) {
+        return arr.Max();
+    }
+
+    static void Main(string[] args) {
+        List<int> arr = new List<int> { 20, 10, 20, 4, 100 };
+
+        Solution obj = new Solution();
+        Console.WriteLine(obj.largest(arr));
     }
 }
 

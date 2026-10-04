@@ -1,13 +1,13 @@
 # Toggle the Case of Each Character in a String - GeeksforGeeks
 
-Given a string s consisting of English letters (both uppercase and lowercase), convert each character to its opposite case that is, change every lowercase letter to uppercase, and every uppercase letter to lowercase.Examples: Input : s = "geeksForgEeks"Output : "GEEKSfORGeEKS"Explanation : All lower case characters are changed into upper case and vice versa.Input : s = "SMALLcase"Output : "smallCASE"Explanation : All lower case characters are changed into upper case and vice versa.Try It YourselfTable of ContentLibrary-Based Case Toggling - O(n) Time and O(n) SpaceUsing ASCII values - O(n) Time and O(1) SpaceToggle Case Using XOR on 5th Bit - O(n) Time and O(1) SpaceLibrary-Based Case Toggling - O(n) Time and O(n) SpaceThe idea involves initializing an empty string. Iterate a for loop over the given string and check each character whether is lowercase or uppercase using isupper() and islower(). If lowercase converts the character to uppercase using upper() and append to empty string, similarly with uppercase.
+Given a string s consisting of English letters (both uppercase and lowercase), convert each character to its opposite case that is, change every lowercase letter to uppercase, and every uppercase letter to lowercase.Examples: Input : s = "geeksForgEeks"Output : "GEEKSfORGeEKS"Explanation : All lower case characters are changed into upper case and vice versa.Input : s = "SMALLcase"Output : "smallCASE"Explanation : All lower case characters are changed into upper case and vice versa.Try It YourselfTable of ContentLibrary-Based Case Toggling - O(n) Time and O(n) SpaceUsing ASCII values - O(n) Time and O(1) SpaceToggle Case Using XOR on 5th Bit - O(n) Time and O(1) SpaceLibrary-Based Case Toggling - O(n) Time and O(n) SpaceThe idea involves initializing an empty string. Iterate a for loop over the given string and check each character whether is lowercase or uppercase. If lowercase converts the character to uppercase using upper() and append to empty string, similarly with uppercase.
             C++
 
     #include <iostream>
 #include <cctype>
 using namespace std;
 
-string toggleChar(string& str) {
+string toggleCase(string& str) {
     string result = "";
     
     // Iterate over the original string
@@ -26,7 +26,7 @@ string toggleChar(string& str) {
 
 int main() {
     string str = "GeEkSfOrGeEkS";
-    string x = toggleChar(str);
+    string x = toggleCase(str);
     cout << x << endl;
     return 0;
 }
@@ -36,7 +36,7 @@ int main() {
 
     public class GFG {
 
-    public static String toggleChar(String str) {
+    public static String toggleCase(String str) {
         String result = "";
         
         // Iterate over the original string
@@ -55,7 +55,7 @@ int main() {
 
     public static void main(String[] args) {
         String str = "GeEkSfOrGeEkS";
-        String x = toggleChar(str);
+        String x = toggleCase(str);
         System.out.println(x);
     }
 }
@@ -63,7 +63,7 @@ int main() {
 
             Python
 
-    def toggleChar(str):
+    def toggleCase(str):
     result = ""
     
     # Iterate over the original string
@@ -80,7 +80,7 @@ int main() {
 
 if __name__ == "__main__":
     str = "GeEkSfOrGeEkS"
-    x = toggleChar(str)
+    x = toggleCase(str)
     print(x)
 
 
@@ -89,7 +89,7 @@ if __name__ == "__main__":
     using System;
 
 class GFG {
-    static string toggleChar(string str) {
+    static string toggleCase(string str) {
         string result = "";
         
         // Iterate over the original string
@@ -108,7 +108,7 @@ class GFG {
 
     static void Main() {
         string str = "GeEkSfOrGeEkS";
-        string x = toggleChar(str);
+        string x = toggleCase(str);
         Console.WriteLine(x);
     }
 }
@@ -116,7 +116,7 @@ class GFG {
 
             JavaScript
 
-    function toggleChar(str) {
+    function toggleCase(str) {
     let result = "";
     
     // Iterate over the original string
@@ -135,7 +135,7 @@ class GFG {
 
 // Driver Code
 const str = "GeEkSfOrGeEkS";
-const x = toggleChar(str);
+const x = toggleCase(str);
 console.log(x);
 
 OutputgEeKsFoRgEeKs
@@ -145,7 +145,7 @@ Using ASCII values - O(n) Time and O(1) SpaceIterate through each character of t
     #include <iostream>
 using namespace std;
 
-string toggleChar(string &str) {
+string toggleCase(string &str) {
     int ln = str.length();
 
     // Conversion according to ASCII values
@@ -165,7 +165,7 @@ string toggleChar(string &str) {
 int main() {
     string str = "GeEkSfOrGeEkS";
 
-    str = toggleChar(str);
+    str = toggleCase(str);
 
     cout << str;
     return 0;
@@ -176,7 +176,7 @@ int main() {
 
     public class GFG {
 
-    public static String toggleChar(String str) {
+    public static String toggleCase(String str) {
         int ln = str.length();
 
         // Conversion according to ASCII values
@@ -197,7 +197,7 @@ int main() {
     public static void main(String[] args) {
         String str = "GeEkSfOrGeEkS";
 
-        str = toggleChar(str);
+        str = toggleCase(str);
 
         System.out.println(str);
     }
@@ -206,7 +206,7 @@ int main() {
 
             Python
 
-    def toggleChar(str):
+    def toggleCase(str):
     ln = len(str)
 
     # Conversion according to ASCII values
@@ -225,7 +225,7 @@ if __name__ == "__main__":
     str = "GeEkSfOrGeEkS"
     str = list(str)
 
-    toggleChar(str)
+    toggleCase(str)
 
     str = ''.join(str)
     print(str)
@@ -238,7 +238,7 @@ using System.Text;
 
 class GFG {
     
-    static string toggleChar(string str){
+    static string toggleCase(string str){
         int ln = str.Length;
         StringBuilder result = new StringBuilder(str);
         
@@ -260,7 +260,7 @@ class GFG {
     
     public static void Main() {
         string str = "GeEkSfOrGeEkS";
-        string toggled = toggleChar(str);
+        string toggled = toggleCase(str);
         Console.WriteLine(toggled);
     }
 }
@@ -268,7 +268,7 @@ class GFG {
 
             JavaScript
 
-    function toggleChar(str) {
+    function toggleCase(str) {
   const chars = str.split('');
   const ln = chars.length;
 
@@ -291,15 +291,15 @@ class GFG {
 
 // Driver Code
 const str = "GeEkSfOrGeEkS";
-console.log(toggleChar(str));  
+console.log(toggleCase(str));  
 
-OutputgEeKsFoRgEeKsToggle Case Using XOR on 5th Bit - O(n) Time and O(1) SpaceThe core logic behind letter case toggling is based on the ASCII representation of characters. In ASCII, the difference between any lowercase and its corresponding uppercase letter is always 32 - for example, 'a' - 'A' = 32, 'b' - 'B' = 32, and so on. This means that toggling the 5th bit (i.e., 1 << 5 = 32) of an alphabetic character using XOR (ch ^= 1 << 5) effectively switches its case - converting lowercase to uppercase and vice versa in constant time.
+OutputgEeKsFoRgEeKsToggle Case Using XOR on 5th Bit - O(n) Time and O(1) SpaceThe core logic behind letter case toggling is based on the ASCII representation of characters. In ASCII, the difference between any lowercase and its corresponding uppercase letter is always 32 - for example, 'a' - 'A' = 32, 'b' - 'B' = 32, and so on. Toggling the 5th bit (i.e., 1 << 5 = 32) of an alphabetic character using XOR (ch ^= 1 << 5) effectively switches its case - converting lowercase to uppercase and vice versa in constant time.
             C++
 
     #include <iostream>
 using namespace std;
 
-string toggleChar(string S) {
+string toggleCase(string S) {
     for (auto &ch : S) {
         
         // Toggle the 5th bit to flip case
@@ -310,7 +310,7 @@ string toggleChar(string S) {
 
 int main() {
     string S = "GeEkSfOrGeEkS";
-    cout << toggleChar(S);
+    cout << toggleCase(S);
     return 0;
 }
 
@@ -319,7 +319,7 @@ int main() {
 
     class GFG {
 
-    static String toggleChar(String input) {
+    static String toggleCase(String input) {
         
          // Convert string to char array
         char[] chars = input.toCharArray(); 
@@ -338,7 +338,7 @@ int main() {
 
     public static void main(String[] args) {
         String S = "GeEkSfOrGeEkS";
-        String toggled = toggleChar(S);  
+        String toggled = toggleCase(S);  
         System.out.println(toggled);
     }
 }
@@ -346,7 +346,7 @@ int main() {
 
             Python
 
-    def toggleChar(s):
+    def toggleCase(s):
     ans = ""
     
     # Iterate over the string in order to flip the 5th bit.
@@ -359,7 +359,7 @@ int main() {
 
 if __name__ == "__main__":
     s = "GeEkSfOrGeEkS"
-    result = toggleChar(s)
+    result = toggleCase(s)
     print(result)
 
 
@@ -368,7 +368,7 @@ if __name__ == "__main__":
     using System;
 
 class GFG {
-    static string toggleChar(string input){
+    static string toggleCase(string input){
         
         // Iterate over the string in order to flip the 5th bit.
         char[] chars = input.ToCharArray();
@@ -384,7 +384,7 @@ class GFG {
 
     public static void Main(string[] args){
         string S = "GeEkSfOrGeEkS";
-        string toggled = toggleChar(S);
+        string toggled = toggleCase(S);
         Console.WriteLine(toggled);
     }
 }
@@ -392,7 +392,7 @@ class GFG {
 
             JavaScript
 
-    function toggleChar(str) {
+    function toggleCase(str) {
   const chars = str.split('');
 
   for (let i = 0; i < chars.length; i++) {
@@ -412,6 +412,6 @@ class GFG {
 
 // Driver code
 const s = "GeEkSfOrGeEkS";
-console.log(toggleChar(s));  
+console.log(toggleCase(s));  
 
 OutputgEeKsFoRgEeKs

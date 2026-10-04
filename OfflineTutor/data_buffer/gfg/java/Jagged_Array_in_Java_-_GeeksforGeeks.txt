@@ -1,27 +1,32 @@
 # Jagged Array in Java - GeeksforGeeks
 
-In Java, a Jagged array is a multidimensional array where each row can have a different number of columns. When we work with a jagged array, one thing to keep in mind is that the inner array can be of different lengths. It is like a 2D array, but each row can have a different number of elements.
+A Jagged Array in Java is a multidimensional array in which each row can have a different number of elements. Unlike a regular 2D array, where rows usually have the same number of columns, a jagged array allows each row to have its own length.Each row is stored as a separate array.Different rows can contain different numbers of elements.It is useful when the amount of data varies from one row to another.For example:Row 0 → 10 20 30Row 1 → 40 50Row 2 → 60 70 80 90Here, the rows contain 3, 2, and 4 elements respectively, making it a jagged array.Jagged Array Representation in JavaCreating a Jagged ArrayFirst, create the outer array by specifying only the number of rows. Then, allocate a different size to each row.
             Java
 
     class Geeks {
-    public static void main(String[] args){
-      
-        // Declaring 2-D array with 2 rows
-        int arr[][] = new int[2][];
+    public static void main(String[] args) {
 
-        // Making the above array Jagged
+        // Declare a jagged array with 2 rows
+        int[][] arr = new int[2][];
+
+        // Allocate different sizes to each row
         arr[0] = new int[3];
         arr[1] = new int[2];
 
-        // Initializing array
+        // Initialize the array
         int count = 0;
-        for (int i = 0; i < arr.length; i++)
-            for (int j = 0; j < arr[i].length; j++)
-                arr[i][j] = count++;
 
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++)
+            for (int j = 0; j < arr[i].length; j++) {
+                arr[i][j] = count++;
+            }
+        }
+
+        // Display the jagged array
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
                 System.out.print(arr[i][j] + " ");
+            }
             System.out.println();
         }
     }
@@ -29,87 +34,102 @@ In Java, a Jagged array is a multidimensional array where each row can have a di
 
 Output0 1 2 
 3 4 
-The image below demonstrates a Jagged array, where each row in a 2D array can have a different number of elements.Jagged Array representationDeclaration and Initialization of Jagged ArrayThe declaration of Jagged array is:data_type array_name[][] = new data_type[n][];     // n= no. of rowsarray_name[0] = new data_type[n1]        //n1= no. of columns in row-1array_name[1] = new data_type[n2]       //n2= no. of columns in row-2array_name[2] = new data_type[n3]       //n3= no. of columns in row-3                                   .                                   .                                   .and so onThe Alternative ways to initialize a Jagged array is listed below:// Method 1int arr_name[][] = new int[][]  {                                   new int[] {10, 20, 30 ,40},                                   new int[] {50, 60, 70, 80, 90, 100},                                   new int[] {110, 120}                              };                                        // Method 2                                                                    int[][] arr_name = {                                 new int[] {10, 20, 30 ,40},                                 new int[] {50, 60, 70, 80, 90, 100},                                 new int[] {110, 120}                             };                                // Method 3                              int[][] arr_name = {                                  {10, 20, 30 ,40},                                  {50, 60, 70, 80, 90, 100},                                  {110, 120}                              };More Examples of Jagged Array Example 1: Here row i has i + 1 columns.
+Explanation: In this example, arr[0] contains 3 elements, whereas arr[1] contains only 2 elements.Declaration and Initialization of Jagged ArrayA jagged array can be declared by specifying the number of rows while leaving the column size unspecified.SyntaxdataType[][] arrayName = new dataType[numberOfRows][];Different Ways to Initialize a Jagged ArrayMethod 1: Using new for Each RowIn this method, both the outer array and each inner array are explicitly created using the new keyword.int[][] arr = new int[][] {    new int[] {10, 20, 30, 40},    new int[] {50, 60, 70, 80, 90, 100},    new int[] {110, 120}};Method 2: Omitting new int[][]Here, Java automatically determines the outer array structure from the provided inner arrays, so new int[][] can be omitted.int[][] arr = {    new int[] {10, 20, 30, 40},    new int[] {50, 60, 70, 80, 90, 100},    new int[] {110, 120}};Method 3: Using Array Initializer SyntaxThis is the simplest and most concise approach, where both the outer and inner arrays are initialized directly using values.int[][] arr = {    {10, 20, 30, 40},    {50, 60, 70, 80, 90, 100},    {110, 120}};Note: All three approaches create a jagged array containing rows of different lengths.Example 1: Jagged Array with Increasing Row SizeIn this example, row i contains i + 1 elements.
             Java
 
     class Geeks {
-    public static void main(String[] args) {
-        int r = 5;
+    public static void main(String[] args)
+    {
 
-        // Declaring 2-D array with 5 rows
-        int arr[][] = new int[r][];
+        int rows = 5;
 
-        // Creating a 2D array such that first row has 1 element, second row has two elements and so on
-        for (int i = 0; i < arr.length; i++)
-            arr[i] = new int[i + 1];
+        // Declare a jagged array
+        int[][] arr = new int[rows][];
 
-        // Initializing array
-        int count = 0;
-        for (int i = 0; i < arr.length; i++)
-            for (int j = 0; j < arr[i].length; j++)
-                arr[i][j] = count++;
-
-        // Displaying the values of 2D Jagged array
-        System.out.println("Contents of 2D Jagged Array");
-      
+        // Allocate different sizes to rows
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++)
+            arr[i] = new int[i + 1];
+        }
+
+        // Initialize the array
+        int count = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                arr[i][j] = count++;
+            }
+        }
+
+        // Display the array
+        System.out.println("Contents of 2D Jagged Array:");
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
                 System.out.print(arr[i][j] + " ");
+            }
             System.out.println();
         }
     }
 }
 
-OutputContents of 2D Jagged Array
+OutputContents of 2D Jagged Array:
 0 
 1 2 
 3 4 5 
 6 7 8 9 
 10 11 12 13 14 
-Explanation: In the above example, we are creating a jagged array where each row will get one more element than the previous one, suppose the first row has one element then the second row has two element and then the third row has three element and so on. It fills the array with numbers starting from 0 and then prints themExample 2: User Input Jagged Array
+Explanation: The first row contains one element, the second row contains two elements, and so on. Each row is allocated independently using new int[i + 1].Example 2: Jagged Array Using User InputThe size and elements of each row can also be provided at runtime.
             Java
 
     import java.util.Scanner;
 
-public class Geeks {
-    public static void main(String[] args) {
-      
+class Geeks {
+    public static void main(String[] args)
+    {
+
         Scanner scan = new Scanner(System.in);
-        
-      	System.out.print("Enter the number of sub-arrays: ");
+
+        System.out.print(
+            "Enter the number of sub-arrays: ");
         int numberOfArrays = scan.nextInt();
-        
+
         // Declare the jagged array
         int[][] jaggedArray = new int[numberOfArrays][];
-        
-        // Allocate memory to each sub-array
+
+        // Allocate memory for each row
         for (int i = 0; i < numberOfArrays; i++) {
-            System.out.print("Enter the size of sub-array " + (i + 1) + ": ");
-            int sizeOfSubArray = scan.nextInt();
-            jaggedArray[i] = new int[sizeOfSubArray];
+            System.out.print("Enter the size of sub-array "
+                             + (i + 1) + ": ");
+
+            int size = scan.nextInt();
+            jaggedArray[i] = new int[size];
         }
-        
-        // Initialize the elements of each sub-array
+
+        // Read elements
         for (int i = 0; i < numberOfArrays; i++) {
-            System.out.println("Enter the elements of sub-array " + (i + 1) + ":");
-          
-            for (int j = 0; j < jaggedArray[i].length; j++) {
+            System.out.println(
+                "Enter the elements of sub-array " + (i + 1)
+                + ":");
+
+            for (int j = 0; j < jaggedArray[i].length;
+                 j++) {
                 jaggedArray[i][j] = scan.nextInt();
             }
         }
-        
-        // Print the elements of the jagged array
+
+        // Display the jagged array
         System.out.println("The jagged array is:");
-        for (int i = 0; i < numberOfArrays; i++) {
-            
-          	for (int j = 0; j < jaggedArray[i].length; j++) {
+
+        for (int i = 0; i < jaggedArray.length; i++) {
+            for (int j = 0; j < jaggedArray[i].length;
+                 j++) {
                 System.out.print(jaggedArray[i][j] + " ");
             }
             System.out.println();
         }
-        
+
         scan.close();
     }
 }
 
- Input:Enter the number of sub-arrays: 4Enter the size of sub-array 1: 3Enter the size of sub-array 2: 4Enter the size of sub-array 3: 2Enter the size of sub-array 4: 4Enter the elements of sub-array 1:1 2 3Enter the elements of sub-array 2:5 6 7 8 Enter the elements of sub-array 3:6 7Enter the elements of sub-array 4:1 2 3 4Output:The jagged array is:1 2 3 5 6 7 8 6 7 1 2 3 4 Advantages The advantages of using a jagged array is listed below:With jagged array we can decide the size at runtime.Jagged array saves memory because we only create space for what we actually needed.Sometimes we have to work with data that has rows of different lengths, in that case we prefer using jagged array.Jagged arrays are faster because we only store what we needed and that why accessing the data becomes faster.Note:  Jagged arrays can make the code a bit harder to write and read, so it’s best to use them only when really needed.
+Output: The jagged array is:1 2 35 6 7 86 71 2 3 4Explanation: The number of rows and the size of every row are entered at runtime. Since each row is allocated separately, different rows can contain different numbers of elements.Advantages of Jagged ArraysFlexible row sizes: Each row can contain a different number of elements.Efficient memory usage: Memory is allocated according to the number of elements required in each row.Runtime allocation: The size of individual rows can be determined dynamically.Suitable for irregular data: Useful when data naturally contains groups of different sizes.Limitations of Jagged ArraysCode can be slightly more complex than with a regular rectangular array.Developers must use the length of each individual row while traversing the array.Assuming every row has the same length can cause ArrayIndexOutOfBoundsException.Note: Jagged arrays are useful when rows naturally require different sizes. They should not be described as inherently faster than regular 2D arrays; their primary benefits are flexibility and potentially more efficient memory usage.

@@ -1,6 +1,22 @@
 # Synchronization in Java - GeeksforGeeks
 
-Synchronization is used to control the execution of multiple processes or threads so that shared resources are accessed in a proper and orderly manner. It helps avoid conflicts and ensures correct results when many tasks run at the same time.It controls the access of shared resources. It avoids data inconsistency. It ensures proper execution of processes.Ways to Achieve SynchronizationThere are three main ways to achieve synchronization.1. Synchronized MethodsSynchronized methods are used to lock an entire method so that only one thread can execute it at a time for a particular object. This ensures safe access to shared data but may reduce performance due to full method locking.Locks the whole method, not just a part of it. Uses the object-level lock (instance lock).
+Synchronization in Java controls access to shared resources when multiple threads execute concurrently. It helps prevent race conditions and maintains consistent shared data by coordinating access to critical sections.Controls concurrent access to shared mutable resources.Helps maintain data consistency when multiple threads modify the same state.Example: Two ATMs Accessing the Same Bank AccountSuppose a bank account has ₹10,000, and two people try to withdraw money from the same account at the same time:Account Balance = ₹10,000ATM 1 -> Withdraw ₹6,000ATM 2 -> Withdraw ₹5,000Without synchronization, both threads may check the ₹10,000 balance simultaneously and proceed with their withdrawals, causing incorrect account data.With synchronization, only one thread can execute the withdrawal operation at a time:ATM 1 -> Locks Account               Checks Balance = ₹10,000               Withdraws ₹6,000              New Balance = ₹4,000             Unlocks AccountATM 2 -> Locks Account                Checks Balance = ₹4,000               Withdrawal of ₹5,000 rejected              Unlocks Account
+            Java
+
+    class BankAccount {
+    private int balance = 10000;
+
+    public synchronized void withdraw(int amount) {
+        if (balance >= amount) {
+            balance -= amount;
+            System.out.println("Withdrawn: " + amount);
+        } else {
+            System.out.println("Insufficient balance");
+        }
+    }
+}
+
+Here, the synchronized keyword ensures that only one thread at a time can execute withdraw() on the same BankAccount object.Why Synchronization is NeededWhen multiple threads access and modify the same shared resource simultaneously, their operations may interfere with each other and produce inconsistent results. This situation is known as a race condition.Prevents multiple threads from modifying critical shared data at the same time.Helps maintain data consistency and predictable program behavior.Protects critical sections that access shared mutable resources.Ways to Achieve SynchronizationThere are three main ways to achieve synchronization. 1. Synchronized MethodsSynchronized methods are used to lock an entire method so that only one thread can execute it at a time for a particular object. This ensures safe access to shared data but may reduce performance due to full method locking.Locks the whole method, not just a part of it. Uses the object-level lock (instance lock).
             Java
 
     class Counter{
@@ -343,7 +359,7 @@ Booked 3 tickets, Remaining tickets: 5
 Booked 3 tickets, Remaining tickets: 2
 Booked 2 tickets, Remaining tickets: 0
 Final Available Tickets: 0
-Explanation: The synchronized bookTicket() method ensures that only one thread books tickets at a time, preventing overbooking and ensuring correct availability.Volatile KeywordThe volatile keyword in Java ensures that all threads have a consistent view of a variable's value. It prevents caching of the variable's value by threads, ensuring that updates to the variable are immediately visible to other threads.Working of Volatile Modifier: It applies only to variables. volatile guarantees visibility i.e. any write to a volatile variable is immediately visible to other threads. It does not guarantee atomicity, meaning operations like count++ (read-modify-write operations) can still result in inconsistent values
+Explanation: The synchronized bookTicket() method ensures that only one thread books tickets at a time, preventing overbooking and ensuring correct availability.Volatile KeywordThe volatile keyword in Java ensures that all threads have a consistent view of a variable's value. It prevents caching of the variable's value by threads, ensuring that updates to the variable are immediately visible to other threads.Working of Volatile ModifierIt applies only to variables. volatile guarantees visibility i.e. any write to a volatile variable is immediately visible to other threads. It does not guarantee atomicity, meaning operations like count++ (read-modify-write operations) can still result in inconsistent values
             Java
 
     class Counter {
@@ -382,4 +398,4 @@ OutputRunning...
 Running...
 Running...
 Stopped.
-Explanation: The volatile variable running ensures that updates made by one thread (in stop()) are visible to the thread running the loop in start().Volatile vs SynchronizedvolatilesynchronizedEnsures visibility of changes across threadsEnsures visibility along with mutual exclusionDoes not use any lockingUses intrinsic locking mechanismNot thread-safe for complex operationsFully thread-safeDoes not guarantee atomicityGuarantees atomic operationsLightweight and fasterHeavyweight and slower due to lockingUsed for simple flags or variablesUsed for critical sections like counters or transactions
+Explanation: The volatile variable running ensures that updates made by one thread (in stop()) are visible to the thread running the loop in start().volatile vs synchronizedvolatilesynchronizedProvides visibility of reads and writes to a variable across threads.Provides mutual exclusion and establishes visibility guarantees around the synchronized region.Does not use an intrinsic lock for accessing the variable.Uses an object's intrinsic monitor lock.Does not make compound operations such as count++ atomic.Can protect compound operations when all accesses to the shared state follow the same synchronization strategy.Applied to variables.Applied to methods or blocks.Does not prevent multiple threads from accessing the variable simultaneously.Allows only one thread at a time to execute code guarded by the same monitor.Suitable for simple state flags where atomic compound updates are not required.Suitable for critical sections that require coordinated access to shared mutable state.

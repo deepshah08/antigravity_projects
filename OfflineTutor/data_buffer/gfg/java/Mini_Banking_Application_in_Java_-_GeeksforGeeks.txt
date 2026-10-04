@@ -1,6 +1,6 @@
 # Mini Banking Application in Java - GeeksforGeeks
 
-This mini banking application uses JDBC to connect and interact with a database for managing user accounts and transactions. JDBC enables executing SQL operations and handling transactions reliably.In JDBC, a transaction is treated as a single unit of work. By setting setAutoCommit(false), multiple SQL statements can be grouped and changes are only saved with commit(). If any statement fails, a rollback ensures data consistency.The application provides a menu-driven console interface allowing users to:Create an accountLog inView balanceTransfer money to another customerPrerequisiteMySQLEclipseMySQL JDBC Connector (JAR)Step-by-Step ImplementationStep 1: Eclipse Project Setup1. Create Java Project:Open Eclipse.File -> New -> Java Project ->Name it MiniBankingApp.2. Create PackageRight-click src-> New ->Package ->Name it: banking.3. Create Java ClassesInside banking package, create:bank.javabankManagement.javaconnection.javaProject structure:4. Add MySQL JDBC ConnectorDownload MySQL JDBC Connector .jar file.Create a folder lib in your project.Copy .jar into lib.Right-click project -> Build Path ->Configure Build Path -> Libraries -> Add External JARs >->select the connector.Step 2: Database Setup (MySQL)Create Database name bankCREATE DATABASE BANK; Create Table name customer
+A Mini Banking Application in Java is a console-based project that demonstrates how Java applications can interact with a MySQL database using JDBC (Java Database Connectivity). It performs basic banking operations while using database transactions to maintain data consistency during money transfers.Allows users to create an account and log in.Enables users to view their current account balance.Supports money transfers between customer accounts.Uses JDBC transaction management with commit() and rollback() to ensure reliable transactions.PrerequisiteMySQLEclipseMySQL JDBC Connector (JAR)Java Development  Kit(JDK 17 or later)Step-by-Step ImplementationStep 1: Eclipse Project Setup1. Create Java Project:Open Eclipse.File -> New -> Java Project ->Name it MiniBankingApp.2. Create PackageRight-click src-> New ->Package ->Name it: banking.3. Create Java ClassesInside banking package, create:Bank.javaBankManagement.javaDatabaseConnection.javaProject structure:4. Add MySQL JDBC ConnectorDownload MySQL JDBC Connector .jar file.Create a folder lib in your project.Copy .jar into lib.Right-click project -> Build Path ->Configure Build Path -> Libraries -> Add External JARs >->select the connector.Step 2: Database Setup (MySQL)Create Database name bankCREATE DATABASE BANK; Create Table name customer
             Java
 
     CREATE DATABASE BANK;
@@ -15,7 +15,7 @@ CREATE TABLE customer (
     PRIMARY KEY (ac_no)
 );
 
-outputStep 3: Create DataBase Connection ClassThis class is used to load the JDBC driver and establish DB connection.And It use DriverManager.getConnection() with MySQL credentials.connection.java
+outputStep 3: Create DataBase Connection ClassThis class is used to load the JDBC driver and establish DB connection.And It use DriverManager.getConnection() with MySQL credentials.DatabaseConnection.java
             Java
 
     package banking;
@@ -23,21 +23,24 @@ outputStep 3: Create DataBase Connection ClassThis class is used to load the JDB
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class Connection{
-    static Connection con;
+public class DatabaseConnection {
+
+    private static Connection con;
 
     public static Connection getConnection() {
         try {
-            String mysqlJDBCDriver = "com.mysql.cj.jdbc.Driver"; 
-            String url = "jdbc:mysql://localhost:3306/BANK"; 
-            String user = "root";        
-            String pass = "your_mysql_password";  
+            String url = "jdbc:mysql://localhost:3306/BANK";
+            String user = "root";
+            String pass = "your_mysql_password";
 
-            Class.forName(mysqlJDBCDriver);
             con = DriverManager.getConnection(url, user, pass);
-        } catch (Exception e) {
-            System.out.println("Connection Failed! " + e.getMessage());
         }
+        catch (Exception e) {
+            System.out.println(
+                "Connection Failed! " + e.getMessage()
+            );
+        }
+
         return con;
     }
 }
@@ -54,56 +57,71 @@ import java.sql.*;
 public class BankManagement {
 
     private static final int NULL = 0;
-    static Connection con = Connection.getConnection();
-
+    static Connection con
+        = DatabaseConnection.getConnection();
     // Create Account
-    public static boolean createAccount(String name, int passCode) {
+    public static boolean createAccount(String name,
+                                        int passCode)
+    {
         if (name.isEmpty() || passCode == NULL) {
             System.out.println("All fields are required!");
             return false;
         }
 
         try {
-            String sql = "INSERT INTO customer(cname, balance, pass_code) VALUES (?, 1000, ?)";
-            PreparedStatement ps = con.prepareStatement(sql);
+            String sql
+                = "INSERT INTO customer(cname, balance, pass_code) VALUES (?, 1000, ?)";
+            PreparedStatement ps
+                = con.prepareStatement(sql);
             ps.setString(1, name);
             ps.setInt(2, passCode);
 
             int rows = ps.executeUpdate();
             if (rows == 1) {
-                System.out.println("Account created successfully! You can now login.");
+                System.out.println(
+                    "Account created successfully! You can now login.");
                 return true;
             }
-        } catch (SQLIntegrityConstraintViolationException e) {
-            System.out.println("Username already exists! Try another one.");
-        } catch (Exception e) {
+        }
+        catch (SQLIntegrityConstraintViolationException e) {
+            System.out.println(
+                "Username already exists! Try another one.");
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
         return false;
     }
 
     // Login Account
-    public static boolean loginAccount(String name, int passCode) {
+    public static boolean loginAccount(String name,
+                                       int passCode)
+    {
         if (name.isEmpty() || passCode == NULL) {
             System.out.println("All fields are required!");
             return false;
         }
 
         try {
-            String sql = "SELECT * FROM customer WHERE cname = ? AND pass_code = ?";
-            PreparedStatement ps = con.prepareStatement(sql);
+            String sql
+                = "SELECT * FROM customer WHERE cname = ? AND pass_code = ?";
+            PreparedStatement ps
+                = con.prepareStatement(sql);
             ps.setString(1, name);
             ps.setInt(2, passCode);
             ResultSet rs = ps.executeQuery();
 
-            BufferedReader sc = new BufferedReader(new InputStreamReader(System.in));
+            BufferedReader sc = new BufferedReader(
+                new InputStreamReader(System.in));
 
             if (rs.next()) {
                 int senderAc = rs.getInt("ac_no");
                 int ch;
 
                 while (true) {
-                    System.out.println("\n Hello, " + rs.getString("cname") + "! What would you like to do?");
+                    System.out.println(
+                        "\n Hello, " + rs.getString("cname")
+                        + "! What would you like to do?");
                     System.out.println("1) Transfer Money");
                     System.out.println("2) View Balance");
                     System.out.println("3) Logout");
@@ -111,62 +129,88 @@ public class BankManagement {
                     ch = Integer.parseInt(sc.readLine());
 
                     if (ch == 1) {
-                        System.out.print("Enter Receiver A/c No: ");
-                        int receiverAc = Integer.parseInt(sc.readLine());
+                        System.out.print(
+                            "Enter Receiver A/c No: ");
+                        int receiverAc = Integer.parseInt(
+                            sc.readLine());
                         System.out.print("Enter Amount: ");
-                        int amt = Integer.parseInt(sc.readLine());
+                        int amt = Integer.parseInt(
+                            sc.readLine());
 
-                        if (transferMoney(senderAc, receiverAc, amt)) {
-                            System.out.println("Transaction successful!");
-                        } else {
-                            System.out.println("Transaction failed! Please try again.");
+                        if (transferMoney(senderAc,
+                                          receiverAc,
+                                          amt)) {
+                            System.out.println(
+                                "Transaction successful!");
                         }
-                    } else if (ch == 2) {
+                        else {
+                            System.out.println(
+                                "Transaction failed! Please try again.");
+                        }
+                    }
+                    else if (ch == 2) {
                         getBalance(senderAc);
-                    } else if (ch == 3) {
-                        System.out.println("Logged out successfully. Returning to main menu.");
+                    }
+                    else if (ch == 3) {
+                        System.out.println(
+                            "Logged out successfully. Returning to main menu.");
                         break;
-                    } else {
-                        System.out.println("Invalid choice! Try again.");
+                    }
+                    else {
+                        System.out.println(
+                            "Invalid choice! Try again.");
                     }
                 }
                 return true;
-            } else {
-                System.out.println("Invalid username or password!");
+            }
+            else {
+                System.out.println(
+                    "Invalid username or password!");
                 return false;
             }
-
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
         return false;
     }
 
     // Get Balance
-    public static void getBalance(int acNo) {
+    public static void getBalance(int acNo)
+    {
         try {
-            String sql = "SELECT * FROM customer WHERE ac_no = ?";
-            PreparedStatement ps = con.prepareStatement(sql);
+            String sql
+                = "SELECT * FROM customer WHERE ac_no = ?";
+            PreparedStatement ps
+                = con.prepareStatement(sql);
             ps.setInt(1, acNo);
             ResultSet rs = ps.executeQuery();
 
-            System.out.println("\n-------------------------------------------------");
-            System.out.printf("%12s %15s %10s\n", "Account No", "Customer Name", "Balance");
+            System.out.println(
+                "\n-------------------------------------------------");
+            System.out.printf("%12s %15s %10s\n",
+                              "Account No", "Customer Name",
+                              "Balance");
 
             while (rs.next()) {
                 System.out.printf("%12d %15s %10d.00\n",
-                        rs.getInt("ac_no"),
-                        rs.getString("cname"),
-                        rs.getInt("balance"));
+                                  rs.getInt("ac_no"),
+                                  rs.getString("cname"),
+                                  rs.getInt("balance"));
             }
-            System.out.println("-------------------------------------------------");
-        } catch (Exception e) {
+            System.out.println(
+                "-------------------------------------------------");
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     // Transfer Money
-    public static boolean transferMoney(int sender_ac, int receiver_ac, int amount) {
+    public static boolean transferMoney(int sender_ac,
+                                        int receiver_ac,
+                                        int amount)
+    {
         if (receiver_ac == NULL || amount == NULL) {
             System.out.println("All fields are required!");
             return false;
@@ -175,35 +219,43 @@ public class BankManagement {
         try {
             con.setAutoCommit(false);
 
-            String checkBalance = "SELECT balance FROM customer WHERE ac_no = ?";
-            PreparedStatement ps = con.prepareStatement(checkBalance);
+            String checkBalance
+                = "SELECT balance FROM customer WHERE ac_no = ?";
+            PreparedStatement ps
+                = con.prepareStatement(checkBalance);
             ps.setInt(1, sender_ac);
             ResultSet rs = ps.executeQuery();
 
-            if (rs.next() && rs.getInt("balance") < amount) {
+            if (rs.next()
+                && rs.getInt("balance") < amount) {
                 System.out.println("Insufficient Balance!");
                 return false;
             }
 
-            String debit = "UPDATE customer SET balance = balance - ? WHERE ac_no = ?";
-            PreparedStatement psDebit = con.prepareStatement(debit);
+            String debit
+                = "UPDATE customer SET balance = balance - ? WHERE ac_no = ?";
+            PreparedStatement psDebit
+                = con.prepareStatement(debit);
             psDebit.setInt(1, amount);
             psDebit.setInt(2, sender_ac);
             psDebit.executeUpdate();
 
-            String credit = "UPDATE customer SET balance = balance + ? WHERE ac_no = ?";
-            PreparedStatement psCredit = con.prepareStatement(credit);
+            String credit
+                = "UPDATE customer SET balance = balance + ? WHERE ac_no = ?";
+            PreparedStatement psCredit
+                = con.prepareStatement(credit);
             psCredit.setInt(1, amount);
             psCredit.setInt(2, receiver_ac);
             psCredit.executeUpdate();
 
             con.commit();
             return true;
-
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             try {
                 con.rollback();
-            } catch (SQLException ex) {
+            }
+            catch (SQLException ex) {
                 ex.printStackTrace();
             }
             e.printStackTrace();

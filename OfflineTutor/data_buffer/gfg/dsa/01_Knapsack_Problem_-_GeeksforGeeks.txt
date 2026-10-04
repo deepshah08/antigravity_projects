@@ -1,6 +1,6 @@
 # 0/1 Knapsack Problem - GeeksforGeeks
 
-Given two arrays, val[] and wt[], where each element represents the value and weight of an item respectively, also given an integer W representing the maximum capacity of the knapsack (the total weight it can hold).Put the items into the knapsack such that the sum of values associated with them is the maximum possible, without exceeding the capacity W.Note: We can either include an item completely or exclude it entirely - we cannot include a fraction of an item.Examples:Input:  W = 4, val[] = [1, 2, 3], wt[] = [4, 5, 1]Output: 3Explanation: There are two items with weight less than or equal to 4. If we select the item with weight 4, the possible value is 1, and if we select the item with weight 1, the possible value is 3. Hence, the maximum possible value is 3. We cannot put both items with weights 4 and 1 together because the capacity of the bag is 4.Input: W = 3, val[] = [1, 2, 3], wt[] = [4, 5, 6]Output: 0 Explanation: All the item weights are greater than the knapsack capacity.Try It YourselfTable of Content[Naive Approach] Using Recursion - O(2^n) Time and O(n) Space[Better Approach - 1] Using Top-Down DP (Memoization)- O(n x W) Time and O(n x W) Space[Better Approach - 2] Using Bottom-Up DP (Tabulation) - O(n x W) Time and O(n x W) Space[Expected Approach] Using Bottom-Up DP (Space-Optimized) - O(n x W) Time and O(W) Space[Naive Approach] Using Recursion - O(2^n) Time and O(n) SpaceThe idea is to use recursion to explore all possible combinations of items. For each item, there are two choices: either include the item in the knapsack or skip it, depending on whether its weight allows it to fit within the remaining capacity.Pick the item: If the weight of the current item is less than or equal to the remaining capacity of the knapsack, include it and reduce the remaining capacity accordingly.Do not pick the item: Skip the current item and move to the next one while keeping the remaining capacity unchanged.For every item, compute the maximum value obtained from these two choices and return the larger one as the result. 
+Given two arrays, val[] and wt[], where each element represents the value and weight of an item respectively, also given an integer W representing the maximum capacity of the knapsack (the total weight it can hold).Put the items into the knapsack such that the sum of values associated with them is the maximum possible, without exceeding the capacity W.Note: We can either include an item completely or exclude it entirely - we cannot include a fraction of an item.Examples:Input:  W = 4, val[] = [1, 2, 3], wt[] = [4, 5, 1]Output: 3Explanation: There are two items with weight less than or equal to 4. If we select the item with weight 4, the possible value is 1, and if we select the item with weight 1, the possible value is 3. Hence, the maximum possible value is 3. We cannot put both items with weights 4 and 1 together because the capacity of the bag is 4.Input: W = 3, val[] = [1, 2, 3], wt[] = [4, 5, 6]Output: 0 Explanation: All the item weights are greater than the knapsack capacity.Try It YourselfTable of Content[Naive Approach] Recursion - O(2^n) Time and O(n) Space[Better Approach - 1] Top-Down DP or Memoization- O(n x W) Time and O(n x W) Space[Better Approach - 2] Bottom-Up DP or Tabulation - O(n x W) Time and O(n x W) Space[Expected Approach] Using Bottom-Up DP (Space-Optimized) - O(n x W) Time and O(W) Space[Naive Approach] Recursion - O(2^n) Time and O(n) SpaceThe idea is to use recursion to explore all possible combinations of items. For each item, there are two choices: either include the item in the knapsack or skip it, depending on whether its weight allows it to fit within the remaining capacity.Pick the item: If the weight of the current item is less than or equal to the remaining capacity of the knapsack, include it and reduce the remaining capacity accordingly.Do not pick the item: Skip the current item and move to the next one while keeping the remaining capacity unchanged.For every item, compute the maximum value obtained from these two choices and return the larger one as the result. 
             C++
 
     //Driver Code Starts
@@ -115,15 +115,12 @@ def knapsack(W, val, wt):
     n = len(val)
     return knapsackRec(W, val, wt, n)
 
-
 if __name__ == "__main__":
-//Driver Code Starts
     val = [1, 2, 3]
     wt = [4, 5, 1]
     W = 4
 
     print(knapsack(W, val, wt))
-//Driver Code Ends
 
 
             C#
@@ -214,7 +211,7 @@ console.log(knapsack(W, val, wt));
 //Driver Code Ends
 
 Output3
-[Better Approach - 1] Using Top-Down DP (Memoization)- O(n x W) Time and O(n x W) Space Note: The above function using recursion computes the same subproblems again and again. See the following recursion tree, K(1, 1) is being evaluated twice. As there are repetitions of the same subproblem again and again we can implement the following idea to solve the problem.If we get a subproblem the first time, we can solve this problem by creating a 2-D array that can store a particular state. Now if we come across the same state again instead of calculating it i again we can directly return its result stored in the table in constant time.
+[Better Approach - 1] Top-Down DP or Memoization- O(n x W) Time and O(n x W) Space Note: The above function using recursion computes the same subproblems again and again. See the following recursion tree, K(1, 1) is being evaluated twice. As there are repetitions of the same subproblem again and again we can implement the following idea to solve the problem.If we get a subproblem the first time, we can solve this problem by creating a 2-D array that can store a particular state. Now if we come across the same state again instead of calculating it i again we can directly return its result stored in the table in constant time.
             C++
 
     //Driver Code Starts
@@ -334,7 +331,6 @@ int main() {
     # Returns the maximum value that
 # can be put in a knapsack of capacity W
 def knapsackRec(W, val, wt, n, memo):
-
     # Base Case
     if n == 0 or W == 0:
         return 0
@@ -348,31 +344,30 @@ def knapsackRec(W, val, wt, n, memo):
     # Pick nth item if it does not exceed the capacity of knapsack
     if wt[n - 1] <= W:
         pick = val[n - 1] + knapsackRec(W - wt[n - 1], val, wt, n - 1, memo)
-
+    
     # Don't pick the nth item
     notPick = knapsackRec(W, val, wt, n - 1, memo)
-
+    
     # Store the result in memo[n][W] and return it
     memo[n][W] = max(pick, notPick)
     return memo[n][W]
 
 def knapsack(W, val, wt):
     n = len(val)
-
+    
     # Memoization table to store the results
-    memo = [[-1] * (W + 1) for _ in range(n + 1)]
-
+    memo = [[-1 for _ in range(W + 1)] for _ in range(n + 1)]
+    
     return knapsackRec(W, val, wt, n, memo)
 
-
 if __name__ == "__main__":
-#Driver Code Starts
+
     val = [1, 2, 3]
+#Driver Code Starts
     wt = [4, 5, 1]
     W = 4
 
     print(knapsack(W, val, wt))
-
 #Driver Code Ends
 
 
@@ -491,7 +486,7 @@ console.log(knapsack(W, val, wt));
 //Driver Code Ends
 
 Output3
-[Better Approach - 2] Using Bottom-Up DP (Tabulation) - O(n x W) Time and O(n x W) SpaceIn the recursive solution, two parameters change: the number of items and the knapsack capacity. These parameters range from 0 to n and 0 to W, respectively. Therefore, we create a 2D array dp[][] of size (n+1) × (W+1), where dp[i][j] stores the maximum value that can be obtained using the first i items with a knapsack capacity of j. The table is first initialized for the base cases when i = 0 or j = 0. After that, the remaining entries are filled using the recursive formula.For each item i and knapsack capacity j, we decide whether to pick the item or not. If we don't pick the item: dp[i][j] remains same as the previous item, that is dp[i - 1][j]. If we pick the item: dp[i][j] is updated to val[i] + dp[i - 1][j - wt[i]].
+[Better Approach - 2] Bottom-Up DP or Tabulation - O(n x W) Time and O(n x W) SpaceIn the recursive solution, two parameters change: the number of items and the knapsack capacity. Recursion parameters range from 0 to n and 0 to W, respectively. Therefore, we create a 2D array dp[][] of size (n+1) × (W+1),dp[i][j] stores the maximum value that can be obtained using the first i items with a knapsack capacity of j. The table is first initialized for the base cases when i = 0 or j = 0. Remaining entries are filled using the recursive formula.For each item i and knapsack capacity j, we decide whether to pick the item or not. If we don't pick the item: dp[i][j] remains same as the previous item, that is dp[i - 1][j]. If we pick the item: dp[i][j] is updated to val[i] + dp[i - 1][j - wt[i]].
             C++
 
     //Driver Code Starts

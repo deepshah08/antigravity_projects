@@ -1,62 +1,31 @@
 # Java this Keyword - GeeksforGeeks
 
-The this keyword in Java is a reference that refers to the current object of a class. It is available in instance methods, constructors, and instance initializer blocks, and it is commonly used to access the current object's instance members. Return the current object from a method.Pass the current object as an argument to a method or constructor.
+The this keyword in Java is a reference variable that refers to the current object of a class. It is commonly used to distinguish instance variables from local variables when they have the same name.Refers to the current class object.Used to access current class instance variables and methods.Used to invoke another constructor of the same class using this().
             Java
 
-    public class Person {
-
-    // Fields Declared
+    class Student {
+    int id;
     String name;
-    int age;
 
-    // Constructor
-    Person(String name, int age)
-    {
-        this.name = name;
-        this.age = age;
-    }
-
-    // Getter for name
-    public String get_name() { return name; }
-
-    // Setter for name
-    public void change_name(String name)
-    {
+    Student(int id, String name) {
+        this.id = id;
         this.name = name;
     }
 
-    // Method to Print the Details of the person
-    public void printDetails()
-    {
+    void display() {
+        System.out.println("ID: " + this.id);
         System.out.println("Name: " + this.name);
-        System.out.println("Age: " + this.age);
-        System.out.println();
     }
 
-    // main function
-    public static void main(String[] args)
-    {
-        // Objects Declared
-        Person first = new Person("ABC", 18);
-        Person second = new Person("XYZ", 22);
-
-        first.printDetails();
-        second.printDetails();
-
-        first.change_name("PQR");
-        System.out.println("Name has been changed to: "
-                           + first.get_name());
+    public static void main(String[] args) {
+        Student s = new Student(101, "Geeks");
+        s.display();
     }
 }
 
-OutputName: ABC
-Age: 18
-
-Name: XYZ
-Age: 22
-
-Name has been changed to: PQR
-Explanation:  The constructor uses this.name and this.age to refer to the instance variables of the current object. When first.printDetails() is called, this refers to the first object; when second.printDetails() is called, this refers to the second object. Thus, each object accesses its own instance data.Uses of this Keyword in Java1. To Refer to Current Class Instance VariablesThe this keyword is commonly used when a constructor or method parameter has the same name as an instance variable.
+OutputID: 101
+Name: Geeks
+Explanation:  Here, this.id and this.name refer to the instance variables of the current Student object, while id and name refer to the constructor parameters. Uses of this Keyword in Java1. To Refer to Current Class Instance VariablesThe this keyword is commonly used when a constructor or method parameter has the same name as an instance variable.
             Java
 
     class Geeks {
@@ -249,4 +218,4 @@ class B {
 }
 
 OutputValue of x in Class B : 5
-Explanation: In class B, the constructor passes this to new A(this), sending the current B object to class A. Class A stores this reference and calls obj.display(), which prints the value of x from the same B instance.Advantages of Using "this" ReferenceThere are many advantages of using "this" reference in Java as mentioned below:It helps to distinguish between instance variables and local variables with the same name.It can be used to pass the current object as an argument to another method.It can be used to return the current object from a method.It can be used to invoke a constructor from another overloaded constructor in the same class.Disadvantages of Using "this" ReferenceAlthough "this" reference comes with many advantages there are disadvantages of also:Overuse of this can make the code harder to read and understand.Using this unnecessarily can add unnecessary overhead to the program.Using this in a static context results in a compile-time error.Overall, this keyword is a useful tool for working with objects in Java, but it should be used judiciously and only when necessary.
+Explanation: In class B, the constructor passes this to new A(this), sending the current B object to class A. Class A stores this reference and calls obj.display(), which prints the value of x from the same B instance.

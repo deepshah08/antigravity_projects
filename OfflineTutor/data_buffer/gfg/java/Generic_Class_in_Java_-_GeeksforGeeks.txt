@@ -1,63 +1,142 @@
 # Generic Class in Java - GeeksforGeeks
 
-In Java, Generics provide type-safe, reusable code by allowing parameterized types. They enable classes, interfaces and methods to work with any data type (e.g., Integer, String or custom types) while ensuring compile-time type checking and reducing runtime errors. Using type parameters like <T>, generics promote cleaner, more flexible and stable code.1. Generic Class with Single Type ParameterA generic class can be reused with any data type by replacing T with specific types like Integer, String or custom classes. It is declared like a regular class but includes a type parameter (e.g., <T>) after the class name.
+A generic class in Java is a class that uses type parameters to work with different data types while maintaining compile-time type safety. The actual type is specified when an object of the generic class is created.The same class can work with types such as Integer, String, or custom classes.Generic type parameters use reference types and cannot directly use primitive types such as int or double.
             Java
 
-    class Solution<T> {
-    T data;
+    class Box<T> {
+    private T data;
 
-    // Generic method inside a generic class (corrected)
-    public T getData() {
-        return data;
+    public void setData(T data) { this.data = data; }
+
+    public T getData() { return data; }
+}
+
+public class Geeks {
+    public static void main(String[] args)
+    {
+
+        Box<Integer> intBox = new Box<>();
+        intBox.setData(10);
+
+        Box<String> stringBox = new Box<>();
+        stringBox.setData("GeeksforGeeks");
+
+        System.out.println(intBox.getData());
+        System.out.println(stringBox.getData());
     }
 }
 
-2. Generic Class with Multiple Type ParametersYou can define multiple type parameters in a generic class using commas (e.g., <K, V>).
+Output10
+GeeksforGeeks
+Explanation:Box<T> declares T as a type parameter.Box<Integer> creates a Box that works with Integer values.Box<String> creates another Box that works with String values.The compiler checks that only values compatible with the specified type are used.Syntax The general syntax of a generic class is:class ClassName<T> {   T variable;    T methodName() {        return variable;   }}Here:T represents a type parameter.The type parameter is declared after the class name using < >.T can be used for fields, method parameters, and return types within the class.Generic Class with Single Type ParameterA generic class can define a single type parameter, such as T, which acts as a placeholder for an actual data type. The type is specified when an object of the generic class is created, allowing the same class to work with different types.Syntax: class ClassName<T> {    T data;}
             Java
 
-    public class Pair<K, V> {
+    class Box<T> {
+    private T data;
 
+    public void setData(T data) { this.data = data; }
+
+    public T getData() { return data; }
+}
+
+public class Geeks {
+    public static void main(String[] args)
+    {
+        Box<Integer> intBox = new Box<>();
+        Box<String> stringBox = new Box<>();
+
+        intBox.setData(100);
+        stringBox.setData("Java");
+
+        System.out.println(intBox.getData());
+        System.out.println(stringBox.getData());
+    }
+}
+
+Output100
+Java
+Explanation: The Box<T> class uses T as a type parameter. When Box<Integer> is created, T represents Integer, while in Box<String>, T represents String, allowing the same class to store different types safely.Generic Class with Multiple Type ParametersA generic class can also define multiple type parameters when it needs to work with more than one type. The type parameters are declared inside angle brackets and separated by commas, such as <K, V>.Syntax:class ClassName<T, U> {    T first;    U second;}
+            Java
+
+    class Pair<K, V> {
     private K key;
     private V value;
 
-    public Pair(K key, V value) {
-    this.key = key;
-    this.value = value;
+    public Pair(K key, V value)
+    {
+        this.key = key;
+        this.value = value;
     }
 
-    public K getKey()    { return key; }
+    public K getKey() { return key; }
+
     public V getValue() { return value; }
 }
 
-Key Points About Generic ClassesA generic class can be reused with any data type.Declared with a type parameter (e.g., <T>) after the class name.Multiple type parameters can be used (e.g., <T, U>).Type parameters must be reference types (not primitives like int, float, etc.). Generic Methods in JavaA generic method is a method that declares its own type parameters. It can be called with arguments of different types and the compiler infers the correct type during the method call.Rules for Generic MethodsDeclare type parameters in angle brackets < > before the return type.Multiple type parameters can be separated by commas.Type parameters can only be reference types (not primitives).They can be used in return types and method parameters.Method body is defined like a regular method.Advantages of Java Generics1.  Type-Safety: One can hold only a single type of objects in generics.2.  Type Casting Is Not Required: There is no need to typecast.Example:3. Compile -Time Checking: It checks all the errors of datatype related to generics at the time of compile-time so the issue will not occurat the time of runtime.List<String> list = new ArrayList<String>();     list.add("hello");   list.add(32);   //Compile Time Error  For an example of Generic classBaseType <Type> object = new BaseType <Type>();Note: In parameter Type, we cannot use primitives like int, char, float, etc.Example:
-            Java
-
-    public class Area<T> {
-
-    private T t;
-
-    public void add(T t)
-    {
-        this.t = t;
-    }
-
-    public T get() { return t; }
-
-    public void getArea() {}
-
+public class Geeks {
     public static void main(String[] args)
     {
-        // Object of generic class Area with parameter Type as Integer
-        Area<Integer> rectangle = new Area<Integer>();
-        
-        // Object of generic class Area with parameter Type as Double
-        Area<Double> circle = new Area<Double>();
-        rectangle.add(10);
-        circle.add(2.5);
-        System.out.println(rectangle.get());
-        System.out.println(circle.get());
+        Pair<Integer, String> pair = new Pair<>(101, "Java");
+
+        System.out.println("Key: " + pair.getKey());
+        System.out.println("Value: " + pair.getValue());
     }
 }
 
-Try It YourselfOutput10
-2.5
+OutputKey: 101
+Value: Java
+Explanation: The Pair<K, V> class declares two type parameters. In Pair<Integer, String>, K represents Integer and V represents String, allowing the object to store values of two different types.Generic Classes with Custom TypesGeneric classes are not limited to built-in classes such as Integer and String. A custom class can also be used as a type argument.
+            Java
+
+    class Student {
+    String name;
+
+    Student(String name) { this.name = name; }
+}
+
+class Box<T> {
+    private T data;
+
+    public void setData(T data) { this.data = data; }
+
+    public T getData() { return data; }
+}
+
+public class Geeks {
+    public static void main(String[] args)
+    {
+        Box<Student> studentBox = new Box<>();
+
+        studentBox.setData(new Student("Akshat"));
+
+        Student student = studentBox.getData();
+        System.out.println(student.name);
+    }
+}
+
+OutputAkshat
+Explanation: Box<Student> specifies Student as the type argument. Therefore, the Box object stores and returns Student objects while maintaining compile-time type checking.Generic Classes and Primitive TypesJava generics work with reference types, so primitive types such as int, double, and char cannot be directly used as generic type arguments.For example, this is invalid:Box<int> box = new Box<>();   // InvalidInstead, use the corresponding wrapper class:Box<Integer> box = new Box<>();   // ValidSome common primitive and wrapper combinations are:Primitive TypeWrapper ClassintIntegerdoubleDoublecharCharacterbooleanBooleanlongLongBounded Type Parameters in Generic ClassesSometimes, a generic class should accept only a particular category of types. Bounded type parameters allow us to restrict the types that can be used.Syntax:class ClassName<T extends Type> {    // Class body}
+            Java
+
+    class NumberBox<T extends Number> {
+    private T number;
+
+    NumberBox(T number) { this.number = number; }
+
+    public T getNumber() { return number; }
+}
+
+public class Geeks {
+    public static void main(String[] args)
+    {
+        NumberBox<Integer> obj1 = new NumberBox<>(100);
+        NumberBox<Double> obj2 = new NumberBox<>(25.5);
+
+        System.out.println(obj1.getNumber());
+        System.out.println(obj2.getNumber());
+    }
+}
+
+Try It YourselfOutput100
+25.5
+Explanation: T extends Number restricts the type parameter to Number or its subclasses. Therefore, types such as Integer and Double are allowed, while String is not.

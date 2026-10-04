@@ -1,14 +1,11 @@
 # Rotten Oranges - Minimum Time to Rot All - GeeksforGeeks
 
-Given a matrix mat[][], where each cell in the matrix can have values 0, 1 or 2 which has the following meaning:  0: Empty cell1: Cells have fresh oranges2: Cells have rotten orangesFind the minimum time required so that all the oranges become rotten. A rotten orange at index (i,j) can rot other fresh oranges which are its neighbours (up, down, left, and right). Each rotten orange takes 1 unit of time to rot all its adjacent fresh oranges.Note : If it is impossible to rot every orange then simply return -1.Examples: Input:  mat[][] = [[2, 1, 0, 2, 1], [1, 0, 1, 2, 1], [1, 0, 0, 2, 1]]Output: 2Explanation: Input:  mat[][] = [[2, 1, 0, 2, 1], [0, 0, 1, 2, 1], [1, 0, 0, 2, 1]]Output: -1Explanation: Try It YourselfTable of Content[Naive Approach] - Using Iteration - O((n x m) ^ 2) Time and O(1) Space[Better Approach] - Using Depth First Search - O(n x m) Time and O(1) Space[Expected Approach] - Using Breadth First Search - O(n x m) Time and O(n x m) Space[Naive Approach] - Using Iteration - O((n x m) ^ 2) Time and O(1) SpaceWe know that at each time unit, every rotten orange (2) can rot its adjacent fresh oranges (1). So, we start by traversing the matrix and at time = 0, for every rotten orange, we rot its adjacent fresh oranges.However, we must ensure that freshly rotted oranges do not rot others within the same time unit, otherwise it will cause incorrect overlapping updates.To handle this properly: Whenever a rotten orange at cell (i, j) rots a fresh orange, we update that fresh orange’s value to mat[i][j] + 1. This way, oranges that become rotten at time t will have a value t + 2, meaning at the next time step (t + 1), they can start infecting their neighbors.This process continues as long as at least one fresh orange is rotted in a given iteration.The moment no more oranges can be rotted, the last time value we used indicates the minimum time required to rot all oranges.Finally, we perform a check to see if any fresh oranges (1s) are still left in the grid:If yes - it means not all oranges could rot, so we return -1.Otherwise - return the last computed time as the result.
+Given a matrix mat[][], where each cell in the matrix can have values 0, 1 or 2 which has the following meaning:  0: Empty cell1: Cells have fresh oranges2: Cells have rotten orangesFind the minimum time required so that all the oranges become rotten. A rotten orange at index (i,j) can rot other fresh oranges which are its neighbours (up, down, left, and right). Each rotten orange takes 1 unit of time to rot all its adjacent fresh oranges.Note : If it is impossible to rot every orange then simply return -1.Examples: Input:  mat[][] = [[2, 1, 0, 2, 1], [1, 0, 1, 2, 1], [1, 0, 0, 2, 1]]Output: 2Explanation: Input:  mat[][] = [[2, 1, 0, 2, 1], [0, 0, 1, 2, 1], [1, 0, 0, 2, 1]]Output: -1Explanation: Try It YourselfTable of Content[Naive Approach] - Iterative Simulation - O((n x m) ^ 2) Time and O(1) Space[Better Approach] - Depth First Search - O(n x m) Time and O(1) Space[Expected Approach] - Breadth First Search - O(n x m) Time and O(n x m) Space[Naive Approach] - Iterative Simulation - O((n x m) ^ 2) Time and O(1) SpaceWe know that at each time unit, every rotten orange (2) can rot its adjacent fresh oranges (1). So, we start by traversing the matrix and at time = 0, for every rotten orange, we rot its adjacent fresh oranges.However, we must ensure that freshly rotted oranges do not rot others within the same time unit, otherwise it will cause incorrect overlapping updates.To handle this properly: Whenever a rotten orange at cell (i, j) rots a fresh orange, we update that fresh orange’s value to mat[i][j] + 1. This way, oranges that become rotten at time t will have a value t + 2, meaning at the next time step (t + 1), they can start infecting their neighbors.This process continues as long as at least one fresh orange is rotted in a given iteration.The moment no more oranges can be rotted, the last time value we used indicates the minimum time required to rot all oranges.Finally, we perform a check to see if any fresh oranges (1s) are still left in the grid:If yes - it means not all oranges could rot, so we return -1.Otherwise - return the last computed time as the result.
             C++
 
-    //Driver Code Starts
-#include <iostream>
+    #include <iostream>
 #include<vector>
 using namespace std;
-
-//Driver Code Ends
 
 bool isSafe(int i, int j, int n, int m) {
     return 0 <= i && i < n && 0 <= j && j < m;
@@ -72,24 +69,17 @@ int orangesRot(vector<vector<int>>& mat) {
     return elapsedTime;
 }
 
-//Driver Code Starts
-
 int main() {
     vector<vector<int>> mat = {{2, 1, 0, 2, 1}, {1, 0, 1, 2, 1}, {1, 0, 0, 2, 1}};
     cout << orangesRot(mat) << endl;
     return 0;
 }
-//Driver Code Ends
 
 
             Java
 
-    //Driver Code Starts
-
-public class GfG {
+    public class GfG {
    
-//Driver Code Ends
-
     private boolean isSafe(int i, int j, int n, int m) {
         return 0 <= i && i < n && 0 <= j && j < m;
     }
@@ -152,15 +142,12 @@ public class GfG {
         return elapsedTime;
     }
 
-//Driver Code Starts
-
     public static void main(String[] args) {
         int[][] mat = {{2, 1, 0, 2, 1}, {1, 0, 1, 2, 1}, {1, 0, 0, 2, 1}};
         GfG sol = new GfG();
         System.out.println(sol.orangesRot(mat));
     }
 }
-//Driver Code Ends
 
 
             Python
@@ -216,25 +203,18 @@ def orangesRot(mat):
 
     return elapsedTime
 
-
-#Driver Code Starts
 if __name__ == "__main__":
     mat =  [ [2, 1, 0, 2, 1], [1, 0, 1, 2, 1], [1, 0, 0, 2, 1] ]
     
     print(orangesRot(mat))
 
-#Driver Code Ends
-
 
             C#
 
-    //Driver Code Starts
-using System;
+    using System;
 using System.Collections.Generic;
 
 class GfG {
-//Driver Code Ends
-
     static bool isSafe(int i, int j, int n, int m) {
         return (i >= 0 && i < n && j >= 0 && j < m);
     }
@@ -297,8 +277,6 @@ class GfG {
         return elapsedTime;
     }
 
-//Driver Code Starts
-
     static void Main(string[] args) {
         int[,] mat = {
             {2, 1, 0, 2, 1},
@@ -309,8 +287,6 @@ class GfG {
         Console.WriteLine(orangesRot(mat));
     }
 }
-
-//Driver Code Ends
 
 
             JavaScript
@@ -374,8 +350,6 @@ function orangesRot(mat) {
     return elapsedTime;
 }
 
-
-//Driver Code Starts
 // Driver Code
 const mat = [
     [2, 1, 0, 2, 1], [1, 0, 1, 2, 1], [1, 0, 0, 2, 1] 
@@ -383,18 +357,13 @@ const mat = [
 
 console.log(orangesRot(mat));
 
-//Driver Code Ends
-
 Output2
-[Better Approach] - Using Depth First Search - O(n x m) Time and O(1) SpaceThe idea is to use DFS (Depth-First Search) because DFS explores deeply in one direction before backtracking. This property helps us simulate how the rot spreads from one orange to another over time.We start by iterating through the entire matrix, and whenever we find a rotten orange (2), we begin a DFS from that cell. During the DFS, we go to all its adjacent cells and record the time when each orange becomes rotten.If a neighboring cell contains a fresh orange (1), that means it can now become rotten, so we recursively call DFS for that cell with the time current_time + 1.If a cell was already rotten earlier but now can rot in less time, we update its time and continue DFS from that cell again.In this way, DFS helps us spread the rot recursively throughout the grid while keeping track of the minimum time taken for each orange to rot. After all DFS calls are complete, we iterate through the entire matrix once again.If we find any fresh orange still left, it means it was unreachable, so we return -1.Otherwise, we take the maximum recorded time — which represents the minimum time required to rot all the oranges.
+[Better Approach] - Depth First Search - O(n x m) Time and O(1) SpaceThe idea is to use DFS (Depth-First Search) because DFS explores deeply in one direction before backtracking. This property helps us simulate how the rot spreads from one orange to another over time.We start by iterating through the entire matrix, and whenever we find a rotten orange (2), we begin a DFS from that cell. During the DFS, we go to all its adjacent cells and record the time when each orange becomes rotten.If a neighboring cell contains a fresh orange (1), that means it can now become rotten, so we recursively call DFS for that cell with the time current_time + 1.If a cell was already rotten earlier but now can rot in less time, we update its time and continue DFS from that cell again.In this way, DFS helps us spread the rot recursively throughout the grid while keeping track of the minimum time taken for each orange to rot. After all DFS calls are complete, we iterate through the entire matrix once again.If we find any fresh orange still left, it means it was unreachable, so we return -1.Otherwise, we take the maximum recorded time — which represents the minimum time required to rot all the oranges.
             C++
 
-    //Driver Code Starts
-#include <iostream>
+    #include <iostream>
 #include<vector>
 using namespace std;
-
-//Driver Code Ends
 
 bool isSafe(int i, int j, int n, int m)
 {
@@ -466,24 +435,17 @@ int orangesRot(vector<vector<int>> &mat)
     return elapsedTime;
 }
 
-//Driver Code Starts
-
 int main()
 {   
     vector<vector<int>> mat = {{2, 1, 0, 2, 1}, {1, 0, 1, 2, 1}, {1, 0, 0, 2, 1}};
     cout << orangesRot(mat);
     return 0;
 }
-//Driver Code Ends
 
 
             Java
 
-    //Driver Code Starts
-
-class GfG {
-
-//Driver Code Ends
+    class GfG {
 
     static boolean isSafe(int i, int j, int n, int m)
     {
@@ -553,8 +515,6 @@ class GfG {
         return elapsedTime;
     }
 
-//Driver Code Starts
-
     public static void main(String[] args)
     {
         int[][] mat
@@ -562,7 +522,6 @@ class GfG {
         System.out.println(orangesRot(mat));
     }
 }
-//Driver Code Ends
 
 
             Python
@@ -621,25 +580,19 @@ def orangesRot(mat):
     return    elapsedTime
 
 
-#Driver Code Starts
-
 if __name__ == "__main__":
     mat = [[2, 1, 0, 2, 1],
           [1, 0, 1, 2, 1],
           [1, 0, 0, 2, 1]]
 
     print(orangesRot(mat))
-#Driver Code Ends
 
 
             C#
 
-    //Driver Code Starts
-using System;
+    using System;
 
 class GfG {
-
-//Driver Code Ends
 
     static bool isSafe(int i, int j, int n, int m)
     {
@@ -712,8 +665,6 @@ class GfG {
         return elapsedTime;
     }
 
-//Driver Code Starts
-
     static void Main(string[] args)
     {
         int[,] mat = {
@@ -725,8 +676,6 @@ class GfG {
         Console.WriteLine(orangesRot(mat));
     }
 }
-
-//Driver Code Ends
 
 
             JavaScript
@@ -798,26 +747,20 @@ function orangesRot(mat)
     return elapsedTime;
 }
 
-
-//Driver Code Starts
 // Driver Code
 const mat = [
     [2, 1, 0, 2, 1], [1, 0, 1, 2, 1], [1, 0, 0, 2, 1]
 ];
 
 console.log(orangesRot(mat));
-//Driver Code Ends
 
-Output2[Expected Approach] - Using Breadth First Search - O(n x m) Time and O(n x m) SpaceThe idea is to use BFS (Breadth-First Search) because BFS explores the grid level by level. In DFS, we can not say that a fresh orange getting rotten from another rotten orange represents its minimum time to rot because DFS explores deeply in one direction. However, in BFS ensuring that when a fresh orange becomes rotten, it is always at the earliest possible time.To apply this idea, we first add all the initially rotten oranges to a queue. Then, we process them one by one from the queue. For each rotten orange, we check its four neighboring cells. If a neighbor is a fresh orange (1), it becomes rotten, and we push it into the queue. As BFS moves level by level, we also keep track of a variable to record the time taken — this value increases with each level processed.Once the queue becomes empty, it means all possible oranges have been processed. Finally, we check the grid again — if any fresh orange is still left, it means it couldn’t be reached, so we return -1. Otherwise, the maximum time recorded gives us the minimum time required to rot all the oranges.
+Output2[Expected Approach] - Breadth First Search - O(n x m) Time and O(n x m) SpaceThe idea is to use BFS (Breadth-First Search) because BFS explores the grid level by level. In DFS, we can not say that a fresh orange getting rotten from another rotten orange represents its minimum time to rot because DFS explores deeply in one direction. However, in BFS ensuring that when a fresh orange becomes rotten, it is always at the earliest possible time.To apply this idea, we first add all the initially rotten oranges to a queue. Then, we process them one by one from the queue. For each rotten orange, we check its four neighboring cells. If a neighbor is a fresh orange (1), it becomes rotten, and we push it into the queue. As BFS moves level by level, we also keep track of a variable to record the time taken — this value increases with each level processed.Once the queue becomes empty, it means all possible oranges have been processed. Finally, we check the grid again — if any fresh orange is still left, it means it couldn’t be reached, so we return -1. Otherwise, the maximum time recorded gives us the minimum time required to rot all the oranges.
             C++
 
-    //Driver Code Starts
-#include <iostream>
+    #include <iostream>
 #include <vector>
 #include <queue>
 using namespace std;
-//Driver Code Ends
-
 
 bool isSafe(int i, int j, int n, int m)
 {
@@ -898,8 +841,6 @@ int orangesRot(vector<vector<int>> &mat)
     return elapsedTime;
 }
 
-
-//Driver Code Starts
 int main()
 {
     vector<vector<int>> mat = {{2, 1, 0, 2, 1},
@@ -909,19 +850,14 @@ int main()
     return 0;
 }
 
-//Driver Code Ends
-
 
             Java
 
-    //Driver Code Starts
-import java.util.Arrays;
+    import java.util.Arrays;
 import java.util.Queue;
 import java.util.LinkedList;
 
 class GFG {
-//Driver Code Ends
-
     static boolean isSafe(int i, int j, int n, int m) {
         return (i >= 0 && i < n && j >= 0 && j < m);
     }
@@ -991,8 +927,6 @@ class GFG {
         return elapsedTime;
     }
 
-
-//Driver Code Starts
     public static void main(String[] args) {
         int[][] mat = {{2, 1, 0, 2, 1},
                        {1, 0, 1, 2, 1},
@@ -1001,15 +935,10 @@ class GFG {
     }
 }
 
-//Driver Code Ends
-
 
             Python
 
-    #Driver Code Starts
-from collections import deque
-#Driver Code Ends
-
+    from collections import deque
 
 def isSafe(i, j, n, m):
     return 0 <= i < n and 0 <= j < m
@@ -1066,8 +995,6 @@ def orangesRot(mat):
 
     return elapsedTime
 
-
-#Driver Code Starts
 if __name__ == "__main__":
     mat = [[2, 1, 0, 2, 1],
            [1, 0, 1, 2, 1],
@@ -1075,19 +1002,14 @@ if __name__ == "__main__":
     
     print(orangesRot(mat))
 
-#Driver Code Ends
-
 
             C#
 
-    //Driver Code Starts
-using System;
+    using System;
 using System.Collections.Generic;
 
 class GFG
 {
-//Driver Code Ends
-
     static bool isSafe(int i, int j, int n, int m)
     {
         return (i >= 0 && i < n && j >= 0 && j < m);
@@ -1164,8 +1086,6 @@ class GFG
         return elapsedTime;
     }
 
-
-//Driver Code Starts
     static void Main()
     {
         int[,] mat = { { 2, 1, 0, 2, 1 },
@@ -1175,8 +1095,6 @@ class GFG
         Console.WriteLine(orangesRot(mat));
     }
 }
-
-//Driver Code Ends
 
 
             JavaScript
@@ -1245,16 +1163,12 @@ function orangesRot(mat) {
 
     return elapsedTime;
 }
-
 //Driver Code
-//Driver Code Starts
 const mat = [
     [2, 1, 0, 2, 1],
     [1, 0, 1, 2, 1],
     [1, 0, 0, 2, 1]
 ];
 console.log(orangesRot(mat));
-
-//Driver Code Ends
 
 Output2

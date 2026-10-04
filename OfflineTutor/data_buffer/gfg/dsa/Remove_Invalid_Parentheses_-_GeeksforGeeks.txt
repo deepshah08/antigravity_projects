@@ -1,81 +1,93 @@
 # Remove Invalid Parentheses - GeeksforGeeks
 
-Given a string str consisting only of lowercase letters and the characters '(' and ')'. Your task is to delete minimum parentheses so that the resulting string is balanced, i.e., every opening parenthesis has a matching closing parenthesis in the correct order, and no extra closing parentheses appear. Return all distinct strings you can obtain by performing the minimum number of removals.Examples:Input: str = "()())()"Output: "()()()"  "(())()"Explanation: We can remove the closing bracket at index 3 to obtain the balanced string "()()()". Similarly, we can remove the closing bracket at index 1 to obtain the balanced string "(())()".Input: str = "(v)())()"Output: "(v)()()"  "(v())()"Explanation: The given string is the modified version of first string containing a letter 'v' . As the letters do not differ the parentheses, the solution remains the same. Input: S = ")("Output: ""Try It YourselfTable of ContentUsing Breadth First Search (BFS) - O(2 ^ n) Time and O(2 ^ n) SpaceUsing Depth First Search (DFS) - O(2 ^ n) Time and O(2 ^ n) SpaceUsing Breadth First Search (BFS) - O(2 ^ n) Time and O(2 ^ n) SpaceThe idea is to remove brackets one by one and check for balance. To remove brackets in a systematic way, we use BFS order.  We remove one bracket at a time, check for balance, then remove more brackets and again check in BFS manner.  We stop when we find a balanced string.One important observation about this problem is, we can check the balancing by simply counting opening and closing brackets because we have only one type of brackets. We do not need to use stack to check.
+Given a string s consisting of lowercase letters and parentheses '(' and ')'.A string is considered valid if:Every opening parenthesis '(' has a corresponding closing parenthesis ')'.Parentheses are properly nested.Remove the minimum number of invalid parentheses from s so that the resulting string becomes valid.  Return all the possible distinct valid strings in lexicographically sorted order.Examples:Input: s = "()())()"Output: ["(())()", "()()()"]Explanation: The string "()())()" has one extra ')', making it invalid. By removing one ')', we can make it valid in two ways:Remove the 1st index ')' -> "(())()"Remove the 4th index ')' -> "()()()"Both are valid and require the minimum removals.Input: s = "(a)())()"Output: ["(a())()", "(a)()()"]Explanation: We remove one ')' (minimum removals) to make it valid. Possible valid results:Remove a ')' -> "(a())()"Remove another ')' -> "(a)()()"Input: s = ")("Output: [""]Explanation: The string ")(" is invalid. Removing both parentheses (minimum removals) gives an empty string "", which is valid.Try It YourselfTable of ContentBreadth First Search (BFS) - O(2 ^ n) Time and O(2 ^ n) SpaceDepth First Search (DFS) - O(2 ^ n) Time and O(2 ^ n) SpaceBreadth First Search (BFS) - O(2 ^ n) Time and O(2 ^ n) SpaceThe idea is to remove parentheses one by one and check whether the string is valid. BFS helps find the valid strings with the minimum removals.Process strings level by level using a queue.  At each level, we have one less character compared to the previous level.Stop when a valid string is found and store all valid strings at that level.Use a visited set to avoid duplicate strings.
             C++
 
     #include <bits/stdc++.h>
 using namespace std;
 
-// Function to check if a given string has valid parentheses
+// Check whether the given string has valid parentheses.
 bool isValid(string s)
 {
     int count = 0;
 
+    // Traverse the string.
     for (char c : s)
     {
-        // Increment for opening bracket
+
+        // Increment for an opening parenthesis.
         if (c == '(')
             count++;
 
-        // Decrement for closing bracket
+        // Decrement for a closing parenthesis.
         else if (c == ')')
         {
             count--;
 
-            // If at any point count becomes negative,
-            // more ')' than '(' means invalid string
+            // More closing parentheses than opening ones.
             if (count < 0)
                 return false;
         }
     }
 
-    // Valid only if all '(' are matched
+    // Valid only when all opening parentheses are matched.
     return count == 0;
 }
 
-// Function to generate all valid strings by removing minimum parentheses
-vector<string> validParenthesis(string s)
+// Remove the minimum number of invalid parentheses.
+vector<string> validParenthesis(string &s)
 {
 
+    // Store strings that have already been visited.
     unordered_set<string> visited;
-    queue<string> q;
-    vector<string> result;
 
+    // Queue for BFS.
+    queue<string> q;
+
+    // Store all valid strings.
+    vector<string> res;
+
+    // Push the original string.
     q.push(s);
+
+    // Mark the original string as visited.
     visited.insert(s);
 
+    // Indicates that a valid string has been found.
     bool found = false;
 
+    // Perform BFS.
     while (!q.empty())
     {
 
+        // Get the current string.
         string curr = q.front();
         q.pop();
 
-        // Check if current string is valid
+        // Check whether the current string is valid.
         if (isValid(curr))
         {
-            result.push_back(curr);
+            res.push_back(curr);
             found = true;
         }
 
-        // If valid string found at this level,
-        // do not generate next level this ensures minimum removals
+        // Do not generate the next level after
+        // finding a valid string.
         if (found)
             continue;
 
-        // Generate all possible strings by removing one parenthesis
+        // Try removing each parenthesis.
         for (int i = 0; i < curr.length(); i++)
         {
 
-            // Skip non-parenthesis characters
+            // Skip normal characters.
             if (curr[i] != '(' && curr[i] != ')')
                 continue;
 
-            // Remove character at index i
+            // Remove the parenthesis at index i.
             string next = curr.substr(0, i) + curr.substr(i + 1);
 
-            // Add new string if not already visited
+            // Process only unvisited strings.
             if (visited.find(next) == visited.end())
             {
                 visited.insert(next);
@@ -84,20 +96,31 @@ vector<string> validParenthesis(string s)
         }
     }
 
-    return result;
+    // Sort the valid strings lexicographically.
+    sort(res.begin(), res.end());
+
+    return res;
 }
 
 int main()
 {
 
-    string s = "())(()";
+    string s = "(a)())()";
 
-    // Get all valid strings
     vector<string> res = validParenthesis(s);
 
-    // Print result
-    for (auto &str : res)
-        cout << str << endl;
+    cout << "[";
+
+    for (int i = 0; i < res.size(); i++)
+    {
+
+        if (i > 0)
+            cout << ", ";
+
+        cout << "\"" << res[i] << "\"";
+    }
+
+    cout << "]";
 
     return 0;
 }
@@ -107,79 +130,87 @@ int main()
 
     import java.util.*;
 
+// Check whether the given string has valid parentheses.
 public class GFG {
-
-    // Function to check if a given string has valid
-    // parentheses
     public static boolean isValid(String s)
     {
         int count = 0;
 
+        // Traverse the string.
         for (char c : s.toCharArray()) {
 
-            // Increment for opening bracket
+            // Increment for an opening parenthesis.
             if (c == '(')
                 count++;
 
-            // Decrement for closing bracket
+            // Decrement for a closing parenthesis.
             else if (c == ')') {
                 count--;
 
-                // If at any point count becomes negative,
-                // more ')' than '(' means invalid string
+                // More closing parentheses than opening
+                // ones.
                 if (count < 0)
                     return false;
             }
         }
 
-        // Valid only if all '(' are matched
+        // Valid only when all opening parentheses are
+        // matched.
         return count == 0;
     }
 
-    // Function to generate all valid strings by removing
-    // minimum parentheses
+    // Remove the minimum number of invalid parentheses.
     public static List<String> validParenthesis(String s)
     {
 
+        // Store strings that have already been visited.
         Set<String> visited = new HashSet<>();
-        Queue<String> q = new LinkedList<>();
-        List<String> result = new ArrayList<>();
 
+        // Queue for BFS.
+        Queue<String> q = new LinkedList<>();
+
+        // Store all valid strings.
+        List<String> res = new ArrayList<>();
+
+        // Push the original string.
         q.add(s);
+
+        // Mark the original string as visited.
         visited.add(s);
 
+        // Indicates that a valid string has been found.
         boolean found = false;
 
+        // Perform BFS.
         while (!q.isEmpty()) {
 
+            // Get the current string.
             String curr = q.poll();
 
-            // Check if current string is valid
+            // Check whether the current string is valid.
             if (isValid(curr)) {
-                result.add(curr);
+                res.add(curr);
                 found = true;
             }
 
-            // If valid string found at this level,
-            // do not generate next level this ensures
-            // minimum removals
+            // Do not generate the next level after
+            // finding a valid string.
             if (found)
                 continue;
 
-            // Generate all possible strings by removing one
-            // parenthesis
+            // Try removing each parenthesis.
             for (int i = 0; i < curr.length(); i++) {
 
-                // Skip non-parenthesis characters
+                // Skip normal characters.
                 if (curr.charAt(i) != '('
                     && curr.charAt(i) != ')')
                     continue;
 
-                // Remove character at index i
+                // Remove the parenthesis at index i.
                 String next = curr.substring(0, i)
                               + curr.substring(i + 1);
 
-                // Add new string if not already visited
+                // Process only unvisited strings.
                 if (!visited.contains(next)) {
                     visited.add(next);
                     q.add(next);
@@ -187,106 +218,119 @@ public class GFG {
             }
         }
 
-        return result;
+        // Sort the valid strings lexicographically.
+        Collections.sort(res);
+        return res;
     }
 
     public static void main(String[] args)
     {
-
-        String s = "()())()";
-
-        // Get all valid strings
+        String s = "(a)())()";
         List<String> res = validParenthesis(s);
 
-        // Print result
-        for (String str : res)
-            System.out.println(str);
+        System.out.print("[");
+
+        for (int i = 0; i < res.size(); i++) {
+            if (i > 0)
+                System.out.print(", ");
+            System.out.print("\"" + res.get(i) + "\"");
+        }
+
+        System.out.print("]");
     }
 }
 
 
             Python
 
-    from collections import deque
-
-# Function to check if a given string has valid parentheses
-
-
-def isValid(s):
+    def isValid(s):
     count = 0
 
+    # Traverse the string.
     for c in s:
 
-        # Increment for opening bracket
+        # Increment for an opening parenthesis.
         if c == '(':
             count += 1
 
-        # Decrement for closing bracket
+        # Decrement for a closing parenthesis.
         elif c == ')':
             count -= 1
 
-            # If at any point count becomes negative,
-            # more ')' than '(' means invalid string
+            # More closing parentheses than opening ones.
             if count < 0:
                 return False
 
-    # Valid only if all '(' are matched
+    # Valid only when all opening parentheses are matched.
     return count == 0
 
 
-# Function to generate all valid strings by removing minimum parentheses
+# Remove the minimum number of invalid parentheses.
 def validParenthesis(s):
 
+    # Store strings that have already been visited.
     visited = set()
-    q = deque()
-    result = []
 
-    q.append(s)
+    # Queue for BFS.
+    q = [s]
+
+    # Store all valid strings.
+    res = []
+
+    # Push the original string.
     visited.add(s)
 
+    # Indicates that a valid string has been found.
     found = False
 
+    # Perform BFS.
     while q:
 
-        curr = q.popleft()
+        # Get the current string.
+        curr = q.pop(0)
 
-        # Check if current string is valid
+        # Check whether the current string is valid.
         if isValid(curr):
-            result.append(curr)
+            res.append(curr)
             found = True
 
-        # If valid string found at this level,
-        # do not generate next level this ensures minimum removals
+        # Do not generate the next level after
+        # finding a valid string.
         if found:
             continue
 
-        # Generate all possible strings by removing one parenthesis
+        # Try removing each parenthesis.
         for i in range(len(curr)):
 
-            # Skip non-parenthesis characters
+            # Skip normal characters.
             if curr[i] != '(' and curr[i] != ')':
                 continue
 
-            # Remove character at index i
+            # Remove the parenthesis at index i.
             next_str = curr[:i] + curr[i + 1:]
 
-            # Add new string if not already visited
+            # Process only unvisited strings.
             if next_str not in visited:
                 visited.add(next_str)
                 q.append(next_str)
 
-    return result
+    # Sort the valid strings lexicographically.
+    res.sort()
+    return res
 
 
-if __name__ == "__main__":
-    s = "()())()"
-
-    # Get all valid strings
+if __name__ == '__main__':
+    s = '(a)())()'
     res = validParenthesis(s)
 
-    # Print result
-    for string in res:
-        print(string)
+    print('[', end='')
+
+    for i in range(len(res)):
+        if i > 0:
+            print(', ', end='')
+        print('"' + res[i] + '"', end='')
+
+    print(']')
 
 
             C#
@@ -295,73 +339,82 @@ if __name__ == "__main__":
 using System.Collections.Generic;
 
 class GFG {
-    // Function to check if a given string has valid
-    // parentheses
+    // Check whether the given string has valid parentheses.
     public bool IsValid(string s)
     {
         int count = 0;
 
+        // Traverse the string.
         foreach(char c in s)
         {
-            // Increment for opening bracket
+            // Increment for an opening parenthesis.
             if (c == '(')
                 count++;
 
-            // Decrement for closing bracket
+            // Decrement for a closing parenthesis.
             else if (c == ')') {
                 count--;
 
-                // If at any point count becomes negative,
-                // more ')' than '(' means invalid string
+                // More closing parentheses than opening
+                // ones.
                 if (count < 0)
                     return false;
             }
         }
 
-        // Valid only if all '(' are matched
+        // Valid only when all opening parentheses are
+        // matched.
         return count == 0;
     }
 
-    // Function to generate all valid strings by removing
-    // minimum parentheses
+    // Remove the minimum number of invalid parentheses.
     public List<string> validParenthesis(string s)
     {
+        // Store strings that have already been visited.
         HashSet<string> visited = new HashSet<string>();
-        Queue<string> q = new Queue<string>();
-        List<string> result = new List<string>();
 
+        // Queue for BFS.
+        Queue<string> q = new Queue<string>();
+
+        // Store all valid strings.
+        List<string> res = new List<string>();
+
+        // Push the original string.
         q.Enqueue(s);
+
+        // Mark the original string as visited.
         visited.Add(s);
 
+        // Indicates that a valid string has been found.
         bool found = false;
 
+        // Perform BFS.
         while (q.Count > 0) {
+            // Get the current string.
             string curr = q.Dequeue();
 
-            // Check if current string is valid
+            // Check whether the current string is valid.
             if (IsValid(curr)) {
-                result.Add(curr);
+                res.Add(curr);
                 found = true;
             }
 
-            // If valid string found at this level,
-            // do not generate next level this ensures
-            // minimum removals
+            // Do not generate the next level after
+            // finding a valid string.
             if (found)
                 continue;
 
-            // Generate all possible strings by removing one
-            // parenthesis
+            // Try removing each parenthesis.
             for (int i = 0; i < curr.Length; i++) {
-                // Skip non-parenthesis characters
+                // Skip normal characters.
                 if (curr[i] != '(' && curr[i] != ')')
                     continue;
 
-                // Remove character at index i
+                // Remove the parenthesis at index i.
                 string next = curr.Substring(0, i)
                               + curr.Substring(i + 1);
 
-                // Add new string if not already visited
+                // Process only unvisited strings.
                 if (!visited.Contains(next)) {
                     visited.Add(next);
                     q.Enqueue(next);
@@ -369,92 +422,116 @@ class GFG {
             }
         }
 
-        return result;
+        // Sort the valid strings lexicographically.
+        res.Sort();
+
+        return res;
     }
 
-    public static void Main()
+    static void Main()
     {
-        string s = "()())()";
+        GFG obj = new GFG();
 
-        // Get all valid strings
-        List<string> res = validParenthesis(s);
+        string s = "(a)())()";
 
-        // Print result
-        foreach(string str in res) Console.WriteLine(str);
+        // Get all valid strings.
+        List<string> res = obj.validParenthesis(s);
+
+        // Print the result.
+        Console.Write("[");
+
+        for (int i = 0; i < res.Count; i++) {
+            // Print comma between strings.
+            if (i > 0)
+                Console.Write(", ");
+
+            Console.Write("\"" + res[i] + "\"");
+        }
+
+        Console.WriteLine("]");
     }
 }
 
 
             JavaScript
 
-    // Function to check if a given string has valid parentheses
+    // Check whether the given string has valid parentheses.
 function isValid(s)
 {
     let count = 0;
 
+    // Traverse the string.
     for (let c of s) {
 
-        // Increment for opening bracket
+        // Increment for an opening parenthesis.
         if (c === "(")
             count++;
 
-        // Decrement for closing bracket
+        // Decrement for a closing parenthesis.
         else if (c === ")") {
             count--;
 
-            // If at any point count becomes negative,
-            // more ')' than '(' means invalid string
+            // More closing parentheses than opening ones.
             if (count < 0)
                 return false;
         }
     }
 
-    // Valid only if all '(' are matched
+    // Valid only when all opening parentheses are matched.
     return count === 0;
 }
 
-// Function to generate all valid strings by removing
-// minimum parentheses
+// Remove the minimum number of invalid parentheses.
 function validParenthesis(s)
 {
 
+    // Store strings that have already been visited.
     let visited = new Set();
-    let q = [];
-    let result = [];
 
+    // Queue for BFS.
+    let q = [];
+
+    // Store all valid strings.
+    let res = [];
+
+    // Push the original string.
     q.push(s);
+
+    // Mark the original string as visited.
     visited.add(s);
 
+    // Indicates that a valid string has been found.
     let found = false;
 
+    // Perform BFS.
     while (q.length > 0) {
 
+        // Get the current string.
         let curr = q.shift();
 
-        // Check if current string is valid
+        // Check whether the current string is valid.
         if (isValid(curr)) {
-            result.push(curr);
+            res.push(curr);
             found = true;
         }
 
-        // If valid string found at this level,
-        // do not generate next level this ensures minimum
-        // removals
+        // Do not generate the next level after
+        // finding a valid string.
         if (found)
             continue;
 
-        // Generate all possible strings by removing one
-        // parenthesis
+        // Try removing each parenthesis.
         for (let i = 0; i < curr.length; i++) {
 
-            // Skip non-parenthesis characters
+            // Skip normal characters.
             if (curr[i] !== "(" && curr[i] !== ")")
                 continue;
 
-            // Remove character at index i
-            let next = curr.slice(0, i) + curr.slice(i + 1);
+            // Remove the parenthesis at index i.
+            let next = curr.substring(0, i)
+                       + curr.substring(i + 1);
 
-            // Add new string if not already visited
+            // Process only unvisited strings.
             if (!visited.has(next)) {
                 visited.add(next);
                 q.push(next);
@@ -462,83 +539,91 @@ function validParenthesis(s)
         }
     }
 
-    return result;
+    // Sort the valid strings lexicographically.
+    res.sort();
+
+    return res;
 }
 
-// Driver code
-let s = "()())()";
+// Driver Code
+let s = "(a)())()";
 
-// Get all valid strings
 let res = validParenthesis(s);
 
-// Print result
-for (let str of res)
-    console.log(str);
+console.log("[");
 
-Output(())()
-()()()
-Using Depth First Search (DFS) - O(2 ^ n) Time and O(2 ^ n) SpaceWe first determine how many opening ( and closing ) parentheses are invalid and need to be removed. Then, use a recursive function to explore all ways of removing these parentheses while maintaining balance between open and close brackets. At each step, either skip a parenthesis (if it's invalid) or include it in the current string (if it helps form a valid expression), and continue building the string. Only strings that end with no unmatched parentheses are collected as valid results.Step-by-step approach to process '())(':Count invalid parentheses in '())(' gives invalid open = 1 and invalid close = 1Start recursion at index 0 with open = 1, close = 1, pair = 0 and cur = ""At index 0 '(' choose skip making open = 0 or include making pair = 1 and cur = "("From skip path at index 1 ')' choose skip making close = 0, cannot include since pair = 0Continue to index 2 ')' cannot include and skip not allowed so this path is discardedFrom include path at index 0 go to index 1 ')' choose include making pair = 0 and cur = "()" or skip making close = 0From include case go to index 2 ')' cannot include since pair = 0 so skip making close = 0Move to index 3 '(' choose skip making open = 0 or include making pair = 1From skip case reach end with open = 0, close = 0, pair = 0 so add "()" to resultFrom include case reach end with pair = 1 so discardFinal result is ["()"]
+for (let i = 0; i < res.length; i++) {
+
+    if (i > 0)
+        console.log(", ");
+
+    console.log("\"" + res[i] + "\"");
+}
+
+console.log("]");
+
+Output["(a())()", "(a)()()"]Depth First Search (DFS) - O(2 ^ n) Time and O(2 ^ n) SpaceThe idea is to first find how many ( and ) need to be removed. Then use DFS to try keeping or removing parentheses while maintaining a valid balance.Find the number of invalid ( and ) to remove.Use recursion to keep or remove each parenthesis and maintain the balance.Store the strings that end with balance 0 and use a set to avoid duplicates.Let us understand with an example:Input: s = "(a)())()"Count invalid parentheses: open = 0, close = 1.Start recursion with index = 0, open = 0, close = 1, pair = 0, cur = "".At index = 0, keep ( -> pair = 1, cur = "(".At index = 1, keep a -> cur = "(a".At index = 2, keep ) -> pair = 0, cur = "(a)".At index = 3, keep ( -> pair = 1, cur = "(a)(".At index = 4, keep ) -> pair = 0, cur = "(a)()".At index = 5, ) cannot be kept because pair = 0, so remove it.Continue with the remaining (), keeping both parentheses -> cur = "(a)()()".In another recursion path, remove the ) at index = 2 and keep the remaining parentheses -> cur = "(a())()".At the end, strings are added only when open = 0, close = 0, and pair = 0.Therefore, the distinct valid results are: ["(a())()", "(a)()()"].
             C++
 
     #include <bits/stdc++.h>
 using namespace std;
 
-// recursive function to find all valid strings
+// Recursive function to find all valid strings.
 void findValid(string str, int index, int open, int close, int pair, string cur, vector<string> &res,
                unordered_set<string> &st)
 {
-    // base case, if end of string is reached
+    // If the end of the string is reached.
     if (index == str.size())
     {
-
-        // check if all open and closed invalid
-        // parenthesis are removed and no pair is left
+        // Check if all invalid parentheses are removed
+        // and no unmatched opening parenthesis is left.
         if (open == 0 && close == 0 && pair == 0)
         {
-            // check if cur is present in the set
+            // Add only distinct strings.
             if (st.find(cur) == st.end())
             {
                 res.push_back(cur);
                 st.insert(cur);
             }
         }
+
         return;
     }
 
-    // if the current character is not a parenthesis
+    // If the current character is not a parenthesis.
     if (str[index] != '(' && str[index] != ')')
     {
-        // add the character to the current string
+        // Keep the character.
         findValid(str, index + 1, open, close, pair, cur + str[index], res, st);
     }
     else
     {
-        // if the current character is an open bracket
+        // If the current character is an opening parenthesis.
         if (str[index] == '(')
         {
-            // reduce open count by 1,
-            // and skip current character
+            // Remove the current parenthesis.
             if (open > 0)
             {
                 findValid(str, index + 1, open - 1, close, pair, cur, res, st);
             }
 
-            // add the current character to the string
+            // Keep the current parenthesis.
             findValid(str, index + 1, open, close, pair + 1, cur + str[index], res, st);
         }
-
-        // else if the current character is a closed bracket
         else
         {
-            // skip current character and
-            // reduce closed count by 1
+            // Remove the current parenthesis.
             if (close > 0)
+            {
                 findValid(str, index + 1, open, close - 1, pair, cur, res, st);
+            }
 
-            // if there is an open pair, reduce
-            // it and add the current character
+            // Keep the current parenthesis if it has
+            // a matching opening parenthesis.
             if (pair > 0)
+            {
                 findValid(str, index + 1, open, close, pair - 1, cur + str[index], res, st);
+            }
         }
     }
 }
@@ -548,46 +633,53 @@ vector<string> validParenthesis(string &str)
     vector<string> result;
     unordered_set<string> st;
 
-    // to store count of invalid
-    // open and closed paraenthesis
+    // Count invalid opening and closing parentheses.
     int open = 0, close = 0;
 
-    for (auto c : str)
+    // Find the minimum parentheses to remove.
+    for (char c : str)
     {
-        // if open bracket, increase
-        // open invalid count by 1
+        // Count opening parentheses.
         if (c == '(')
             open++;
 
-        if (c == ')')
+        // Match a closing parenthesis with an opening one.
+        else if (c == ')')
         {
-            // decrement invalid open
-            // count by 1 if open is not 0
             if (open != 0)
                 open--;
-
-            // else increment invalid close
-            // bracket count by 1
             else
                 close++;
         }
     }
 
-    // recursive function to find all valid strings
+    // Generate all valid strings.
     findValid(str, 0, open, close, 0, "", result, st);
 
-    vector<string> res(result.begin(), result.end());
-    return res;
+    // Sort the result lexicographically.
+    sort(result.begin(), result.end());
+
+    return result;
 }
 
 int main()
 {
-    string str = "()())()";
+
+    string str = "(a)())()";
 
     vector<string> res = validParenthesis(str);
 
-    for (auto &s : res)
-        cout << s << endl;
+    cout << "[";
+
+    for (int i = 0; i < res.size(); i++)
+    {
+        if (i > 0)
+            cout << ", ";
+
+        cout << "\"" << res[i] << "\"";
+    }
+
+    cout << "]";
 
     return 0;
 }
@@ -598,438 +690,429 @@ int main()
     import java.util.*;
 
 class GFG {
-
-    // recursive function to find all valid strings
-    static void findValid(String str, int index, int open,
-                          int close, int pair, String cur,
-                          List<String> res, Set<String> st)
+    // Recursive function to find all valid strings.
+    void findValid(String str, int index, int open,
+                   int close, int pair, String cur,
+                   List<String> res, Set<String> st)
     {
-        // base case, if end of string is reached
+        // If the end of the string is reached.
         if (index == str.length()) {
-
-            // check if all open and closed invalid
-            // parenthesis are removed and no pair is left
+            // Check if all invalid parentheses are removed
+            // and no unmatched opening parenthesis is left.
             if (open == 0 && close == 0 && pair == 0) {
-
-                // check if cur is present in the set
+                // Add only distinct strings.
                 if (!st.contains(cur)) {
                     res.add(cur);
                     st.add(cur);
                 }
             }
+
             return;
         }
 
-        // if the current character is not a parenthesis
+        // If the current character is not a parenthesis.
         if (str.charAt(index) != '('
             && str.charAt(index) != ')') {
-
-            // add the character to the current string
+            // Keep the character.
             findValid(str, index + 1, open, close, pair,
                       cur + str.charAt(index), res, st);
         }
         else {
-
-            // if the current character is an open bracket
+            // If the current character is an opening
+            // parenthesis.
             if (str.charAt(index) == '(') {
-
-                // reduce open count by 1,
-                // and skip current character
+                // Remove the current parenthesis.
                 if (open > 0) {
                     findValid(str, index + 1, open - 1,
                               close, pair, cur, res, st);
                 }
 
-                // add the current character to the string
+                // Keep the current parenthesis.
                 findValid(str, index + 1, open, close,
                           pair + 1, cur + str.charAt(index),
                           res, st);
             }
-
-            // else if the current character is a closed
-            // bracket
             else {
-
-                // skip current character and
-                // reduce closed count by 1
-                if (close > 0)
+                // Remove the current parenthesis.
+                if (close > 0) {
                     findValid(str, index + 1, open,
                               close - 1, pair, cur, res,
                               st);
+                }
 
-                // if there is an open pair, reduce
-                // it and add the current character
-                if (pair > 0)
+                // Keep the current parenthesis if it has
+                // a matching opening parenthesis.
+                if (pair > 0) {
                     findValid(str, index + 1, open, close,
                               pair - 1,
                               cur + str.charAt(index), res,
                               st);
+                }
             }
         }
     }
 
-    static List<String> validParenthesis(String str)
+    List<String> validParenthesis(String str)
     {
-
         List<String> result = new ArrayList<>();
         Set<String> st = new HashSet<>();
 
-        // to store count of invalid
-        // open and closed paraenthesis
+        // Count invalid opening and closing parentheses.
         int open = 0, close = 0;
-        
+
+        // Find the minimum parentheses to remove.
         for (char c : str.toCharArray()) {
-            
-            // if open bracket, increase
-            // open invalid count by 1
+            // Count opening parentheses.
             if (c == '(')
                 open++;
+
+            // Match a closing parenthesis with an opening
+            // one.
             else if (c == ')') {
-                
-                // decrement invalid open
-                // count by 1 if open is not 0
                 if (open != 0)
                     open--;
-                    
-                // else increment invalid close
-                // bracket count by 1
                 else
                     close++;
             }
         }
 
-        // recursive function to find all valid strings
+        // Generate all valid strings.
         findValid(str, 0, open, close, 0, "", result, st);
+
+        // Sort the result lexicographically.
+        Collections.sort(result);
+
         return result;
     }
 
     public static void main(String[] args)
     {
-        String str = "()())()";
-        List<String> res = validParenthesis(str);
+        GFG sol = new GFG();
+        String str = "(a)())()";
+        List<String> res = sol.validParenthesis(str);
 
-        for (String s : res)
-            System.out.println(s);
+        System.out.print("[");
+
+        for (int i = 0; i < res.size(); i++) {
+            if (i > 0)
+                System.out.print(", ");
+
+            System.out.print("\"" + res.get(i) + "\"");
+        }
+
+        System.out.print("]");
     }
 }
 
 
             Python
 
-    # recursive function to find all valid strings
-def findValid(str_, index, open_, close, pair, cur, res, st):
+    from collections import deque
 
-    # base case, if end of string is reached
-    if index == len(str_):
+# Recursive function to find all valid strings.
 
-        # check if all open and closed invalid
-        # parenthesis are removed and no pair is left
-        if open_ == 0 and close == 0 and pair == 0:
 
-            # check if cur is present in the set
+def findValid(str, index, open, close, pair, cur, res, st):
+    # If the end of the string is reached.
+    if index == len(str):
+        # Check if all invalid parentheses are removed
+        # and no unmatched opening parenthesis is left.
+        if open == 0 and close == 0 and pair == 0:
+            # Add only distinct strings.
             if cur not in st:
                 res.append(cur)
                 st.add(cur)
         return
 
-    # if the current character is not a parenthesis
-    if str_[index] not in '()':
-        
-        # add the character to the current string
-        findValid(str_, index + 1, open_, close, pair,
-                  cur + str_[index], res, st)
-
+    # If the current character is not a parenthesis.
+    if str[index] != '(' and str[index] != ')':
+        # Keep the character.
+        findValid(str, index + 1, open, close, pair, cur + str[index], res, st)
     else:
-        
-        # if the current character is an open bracket
-        if str_[index] == '(':
-
-            # reduce open count by 1,
-            # and skip current character
-            if open_ > 0:
-                findValid(str_, index + 1, open_ - 1,
-                          close, pair, cur, res, st)
-
-            # add the current character to the string
-            findValid(str_, index + 1, open_, close, pair + 1,
-                      cur + str_[index], res, st)
-
-        # else if the current character is a closed bracket
+        # If the current character is an opening parenthesis.
+        if str[index] == '(':
+            # Remove the current parenthesis.
+            if open > 0:
+                findValid(str, index + 1, open - 1, close, pair, cur, res, st)
+            # Keep the current parenthesis.
+            findValid(str, index + 1, open, close,
+                      pair + 1, cur + str[index], res, st)
         else:
-            
-            # skip current character and
-            # reduce closed count by 1
+            # Remove the current parenthesis.
             if close > 0:
-                findValid(str_, index + 1, open_,
-                          close - 1, pair, cur, res, st)
-
-            # if there is an open pair, reduce
-            # it and add the current character
+                findValid(str, index + 1, open, close - 1, pair, cur, res, st)
+            # Keep the current parenthesis if it has
+            # a matching opening parenthesis.
             if pair > 0:
-                findValid(str_, index + 1, open_, close, pair - 1,
-                          cur + str_[index], res, st)
+                findValid(str, index + 1, open, close,
+                          pair - 1, cur + str[index], res, st)
 
 
-def validParenthesis(str_):
-    res = []
+def validParenthesis(str):
+    result = []
     st = set()
 
-    # to store count of invalid
-    # open and closed paraenthesis
-    open_ = close = 0
+    # Count invalid opening and closing parentheses.
+    open = 0
+    close = 0
 
-    for c in str_:
-        
-        # if open bracket, increase
-        # open invalid count by 1
+    # Find the minimum parentheses to remove.
+    for c in str:
+        # Count opening parentheses.
         if c == '(':
-            open_ += 1
+            open += 1
+        # Match a closing parenthesis with an opening one.
         elif c == ')':
-            
-            # decrement invalid open
-            # count by 1 if open is not 0
-            if open_ != 0:
-                open_ -= 1
-                
-            # else increment invalid close
-            # bracket count by 1
+            if open != 0:
+                open -= 1
             else:
                 close += 1
 
-    # recursive function to find all valid strings
-    findValid(str_, 0, open_, close, 0, "", res, st)
-    return res
+    # Generate all valid strings.
+    findValid(str, 0, open, close, 0, "", result, st)
+
+    # Sort the result lexicographically.
+    result.sort()
+
+    return result
 
 
-if __name__ == "__main__":
-    s = "()())()"
-    res = validParenthesis(s)
-    
-    for string in res:
-        print(string)
+if __name__ == '__main__':
+    str = "(a)())()"
+    res = validParenthesis(str)
+
+    print('[', end='')
+    for i, val in enumerate(res):
+        if i > 0:
+            print(', ', end='')
+        print(f'"{val}"', end='')
+    print(']')
 
 
             C#
 
     using System;
 using System.Collections.Generic;
+using System.Linq;
 
-class GFG {
-    // recursive function to find all valid strings
-    public void findValid(string str, int index, int open,
-                          int close, int pair, string cur,
-                          List<string> res,
-                          HashSet<string> st)
+class GFG
+{
+    // Recursive function to find all valid strings.
+    static void findValid(string str, int index, int open, int close, 
+    int pair, string cur, List<string> res, HashSet<string> st)
     {
-        // base case, if end of string is reached
-        if (index == str.Length) {
-            
-            // check if all open and closed invalid
-            // parenthesis are removed and no pair is left
-            if (open == 0 && close == 0 && pair == 0) {
-                
-                // check if cur is present in the set
-                if (!st.Contains(cur)) {
+        // If the end of the string is reached.
+        if (index == str.Length)
+        {
+            // Check if all invalid parentheses are removed
+            // and no unmatched opening parenthesis is left.
+            if (open == 0 && close == 0 && pair == 0)
+            {
+                // Add only distinct strings.
+                if (!st.Contains(cur))
+                {
                     res.Add(cur);
                     st.Add(cur);
                 }
             }
+
             return;
         }
 
-        // if the current character is not a parenthesis
-        if (str[index] != '(' && str[index] != ')') {
-            
-            // add the character to the current string
-            findValid(str, index + 1, open, close, pair,
-                      cur + str[index], res, st);
+        // If the current character is not a parenthesis.
+        if (str[index]!= '(' && str[index]!= ')')
+        {
+            // Keep the character.
+            findValid(str, index + 1, open, close, pair, cur + str[index], res, st);
         }
-        else {
-            
-            // if the current character is an open bracket
-            if (str[index] == '(') {
-                
-                // reduce open count by 1,
-                // and skip current character
+        else
+        {
+            // If the current character is an opening parenthesis.
+            if (str[index] == '(')
+            {
+                // Remove the current parenthesis.
                 if (open > 0)
-                    findValid(str, index + 1, open - 1,
-                              close, pair, cur, res, st);
+                {
+                    findValid(str, index + 1, open - 1, 
+                    close, pair, cur, res, st);
+                }
 
-                // add the current character to the string
-                findValid(str, index + 1, open, close,
-                          pair + 1, cur + str[index], res,
-                          st);
+                // Keep the current parenthesis.
+                findValid(str, index + 1, open, close, pair + 1, 
+                cur + str[index], res, st);
             }
-            
-            // else if the current character is a closed bracket
-            else {
-                
-                // skip current character and
-                // reduce closed count by 1
+            else
+            {
+                // Remove the current parenthesis.
                 if (close > 0)
-                    findValid(str, index + 1, open,
-                              close - 1, pair, cur, res,
-                              st);
-                
-                // if there is an open pair, reduce
-                // it and add the current character
+                {
+                    findValid(str, index + 1, open, close - 1, 
+                    pair, cur, res, st);
+                }
+
+                // Keep the current parenthesis if it has
+                // a matching opening parenthesis.
                 if (pair > 0)
-                    findValid(str, index + 1, open, close,
-                              pair - 1, cur + str[index],
-                              res, st);
+                {
+                    findValid(str, index + 1, open, close, pair - 1,
+                    cur + str[index], res, st);
+                }
             }
         }
     }
 
-    public List<string> validParenthesis(string str)
+    static List<string> validParenthesis(string str)
     {
         List<string> result = new List<string>();
         HashSet<string> st = new HashSet<string>();
 
-        // to store count of invalid
-        // open and closed paraenthesis
+        // Count invalid opening and closing parentheses.
         int open = 0, close = 0;
 
-        foreach(char c in str)
+        // Find the minimum parentheses to remove.
+        foreach (char c in str)
         {
-            // if open bracket, increase
-            // open invalid count by 1
+            // Count opening parentheses.
             if (c == '(')
                 open++;
-            else if (c == ')') {
-                
-                // decrement invalid open
-                // count by 1 if open is not 0
-                if (open != 0)
+
+            // Match a closing parenthesis with an opening one.
+            else if (c == ')')
+            {
+                if (open!= 0)
                     open--;
-                    
-                // else increment invalid close
-                // bracket count by 1
                 else
                     close++;
             }
         }
 
-        // recursive function to find all valid strings
+        // Generate all valid strings.
         findValid(str, 0, open, close, 0, "", result, st);
+
+        // Sort the result lexicographically.
+        result.Sort();
+
         return result;
     }
 
-    public static void Main()
+    static void Main(string[] args)
     {
-        string str = "()())()";
-        GFG obj = new GFG();
-        var res = obj.validParenthesis(str);
+        string str = "(a)())()";
 
-        foreach(var s in res) Console.WriteLine(s);
+        List<string> res = validParenthesis(str);
+
+        Console.Write("[");
+
+        for (int i = 0; i < res.Count; i++)
+        {
+            if (i > 0)
+                Console.Write(", ");
+
+            Console.Write("\"" + res[i] + "\"");
+        }
+
+        Console.Write("]");
     }
 }
 
 
             JavaScript
 
-    // recursive function to find all valid strings
-function findValid(str, index, open, close, pair, cur, res,
+    function findValid(str, index, open, close, pair, cur, res,
                    st)
 {
-    // base case, if end of string is reached
+    // If the end of the string is reached.
     if (index === str.length) {
-
-        // check if all open and closed invalid
-        // parenthesis are removed and no pair is left
+        // Check if all invalid parentheses are removed
+        // and no unmatched opening parenthesis is left.
         if (open === 0 && close === 0 && pair === 0) {
-            
-            // check if cur is present in the set
+            // Add only distinct strings.
             if (!st.has(cur)) {
                 res.push(cur);
                 st.add(cur);
             }
         }
+
         return;
     }
 
-    // if the current character is not a parenthesis
+    // If the current character is not a parenthesis.
     if (str[index] !== "(" && str[index] !== ")") {
-        
-        // add the character to the current string
+        // Keep the character.
         findValid(str, index + 1, open, close, pair,
                   cur + str[index], res, st);
     }
     else {
-        
-        // if the current character is an open bracket
+        // If the current character is an opening
+        // parenthesis.
         if (str[index] === "(") {
-
-            // reduce open count by 1,
-            // and skip current character
-            if (open > 0)
+            // Remove the current parenthesis.
+            if (open > 0) {
                 findValid(str, index + 1, open - 1, close,
                           pair, cur, res, st);
+            }
 
-            // add the current character to the string
+            // Keep the current parenthesis.
             findValid(str, index + 1, open, close, pair + 1,
                       cur + str[index], res, st);
         }
-        
-        // else if the current character is a closed bracket
         else {
-
-            // skip current character and
-            // reduce closed count by 1
-            if (close > 0)
+            // Remove the current parenthesis.
+            if (close > 0) {
                 findValid(str, index + 1, open, close - 1,
                           pair, cur, res, st);
-            
-            // if there is an open pair, reduce
-            // it and add the current character
-            if (pair > 0)
+            }
+
+            // Keep the current parenthesis if it has
+            // a matching opening parenthesis.
+            if (pair > 0) {
                 findValid(str, index + 1, open, close,
                           pair - 1, cur + str[index], res,
                           st);
+            }
         }
     }
 }
 
 function validParenthesis(str)
 {
-    let res = [];
+    let result = [];
     let st = new Set();
 
-    // to store count of invalid
-    // open and closed paraenthesis
+    // Count invalid opening and closing parentheses.
     let open = 0, close = 0;
 
+    // Find the minimum parentheses to remove.
     for (let c of str) {
-        
-        // if open bracket, increase
-        // open invalid count by 1
-        if (c === "(")
+        // Count opening parentheses.
+        if (c === "(") {
             open++;
+            // Match a closing parenthesis with an opening
+            // one.
+        }
         else if (c === ")") {
-            
-            // decrement invalid open
-            // count by 1 if open is not 0
-            if (open !== 0)
+            if (open !== 0) {
                 open--;
-                
-            // else increment invalid close
-            // bracket count by 1
-            else
+            }
+            else {
                 close++;
+            }
         }
     }
 
-    // recursive function to find all valid strings
-    findValid(str, 0, open, close, 0, "", res, st);
-    return res;
+    // Generate all valid strings.
+    findValid(str, 0, open, close, 0, "", result, st);
+
+    // Sort the result lexicographically.
+    result.sort();
+
+    return result;
 }
 
-// Driver code
-let s = "()())()";
-let result = validParenthesis(s);
+// Driver Code
+let str = "(a)())()";
+let res = validParenthesis(str);
+console.log("[" + res.map(s => "\"" + s + "\"").join(", ")
+            + "]");
 
-for (let str of result)
-    console.log(str);
-
-Output(())()
-()()()
+Output["(a())()", "(a)()()"]

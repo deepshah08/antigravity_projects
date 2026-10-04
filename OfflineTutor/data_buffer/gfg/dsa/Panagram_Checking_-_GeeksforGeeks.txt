@@ -1,6 +1,6 @@
 # Panagram Checking - GeeksforGeeks
 
-Given a string s, check if it is a Pangram or not.  A Pangram is a sentence containing every letter in the English Alphabet either in lowercase or Uppercase.Examples: Input: s = "The quick brown fox jumps over the lazy dog" Output: trueExplanation: The input string contains all characters from 'a' to 'z'.Input: s = "The quick brown fox jumps over the dog"Output: falseExplanation: The input string does not contain all characters from 'a' to 'z', as 'l', 'z', 'y' are missingTry It YourselfTable of Content[Naive Approach] By Searching for each Character - O(26 * n) Time and O(1) Space[Expected Approach] Using Visited Array - O(n) Time and O(26) Space[Naive Approach] By Searching for each Character - O(26 * n) Time and O(1) SpaceThe idea is to iterate over all characters from 'a' to 'z' and for each character, check if it is present in the input string or not. If any character is not present in the input string, return false. Otherwise, return true. Also, we need to ignore the case while searching for a character('a' and 'A' are considered same).
+Given a string s, check if it is a Pangram or not.  A Pangram is a sentence containing every letter in the English Alphabet either in lowercase or Uppercase.Examples: Input: s = "The quick brown fox jumps over the lazy dog" Output: trueExplanation: The input string contains all characters from 'a' to 'z'.Input: s = "The quick brown fox jumps over the dog"Output: falseExplanation: The input string does not contain all characters from 'a' to 'z', as 'l', 'z', 'y' are missingTry It YourselfTable of Content[Naive Approach] By Searching for each Character - O(26 * n) Time and O(1) Space[Expected Approach] Using Visited Array - O(n) Time and O(26) Space[Naive Approach] By Searching for each Character - O(26 * n) Time and O(1) SpaceThe idea is to check each letter from 'a' to 'z' in the given string.For every letter, traverse the string and check whether it is present. Uppercase and lowercase letters are treated as the same, so 'a' and 'A' are considered equal.If any letter is not found, return false. If all 26 letters are found, return true.
             C++
 
     #include <iostream>
@@ -38,6 +38,48 @@ int main() {
         cout << "true";
     else
         cout << "false";
+
+    return 0;
+}
+
+
+            C
+
+    #include <stdio.h>
+#include <stdbool.h>
+#include <ctype.h>
+
+bool checkPangram(char s[]) {
+
+    // Check every lowercase letter
+    for (char ch = 'a'; ch <= 'z'; ch++) {
+        bool found = false;
+
+        // Search for the current letter in the string
+        for (int i = 0; s[i] != '\0'; i++) {
+            if (ch == tolower(s[i])) {
+                found = true;
+                break;
+            }
+        }
+
+        // If any letter is missing, it is not a pangram
+        if (!found)
+            return false;
+    }
+
+    // All letters are present
+    return true;
+}
+
+int main() {
+
+    char s[] = "The quick brown fox jumps over the lazy dog";
+
+    if (checkPangram(s))
+        printf("true");
+    else
+        printf("false");
 
     return 0;
 }
@@ -189,7 +231,7 @@ if (checkPangram(s))
 else
     console.log("false");
 
-Outputtrue[Expected Approach] Using Visited Array - O(n) Time and O(26) SpaceThe idea is to create a visited array of size 26 to mark whether a character is present in the string or not. Now, iterate through all the characters of the string and mark them as visited. Lowercase and Uppercase are considered the same. So 'A' and 'a' are marked at index 0 and similarly 'Z' and 'z' are marked at index 25.After iterating through all the characters, check whether all the characters are marked in visited array or not. If not then return false else return true.
+Outputtrue[Expected Approach] Using Visited Array - O(n) Time and O(26) SpaceThe idea is to create a visited array of size 26 to keep track of the letters present in the string.Traverse the string and mark each letter in the visited array. Uppercase and lowercase letters are treated as the same letter, so A and a are mapped to index 0, while Z and z are mapped to index 25.After traversing the string, check all 26 positions of the visited array. If any position is not marked, return false. Otherwise, return true.Consider the string: "The quick brown fox jumps over the lazy dog"Create a Boolean array vis[26], initially all set to false.Now, traverse the string character by character:'T' is uppercase, so mark vis['T' - 'A'], which is vis[19].'h' is lowercase, so mark vis['h' - 'a'], which is vis[7].Continue this process for all characters in the string.Spaces and other non-alphabetic characters are ignored.After traversing the complete string, all 26 positions in vis[] are marked true.Since every letter from 'a' to 'z' is present, the function returns true.
             C++
 
     #include <iostream>
@@ -234,11 +276,52 @@ int main() {
 }
 
 
+            C
+
+    #include <stdio.h>
+#include <stdbool.h>
+
+bool checkPangram(char s[]) {
+
+    // Mark the letters present in the string
+    bool vis[26] = {false};
+
+    for (int i = 0; s[i] != '\0'; i++) {
+
+        // Mark uppercase letters
+        if ('A' <= s[i] && s[i] <= 'Z')
+            vis[s[i] - 'A'] = true;
+
+        // Mark lowercase letters
+        else if ('a' <= s[i] && s[i] <= 'z')
+            vis[s[i] - 'a'] = true;
+    }
+
+    // Check if all letters are present
+    for (int i = 0; i < 26; i++) {
+        if (!vis[i])
+            return false;
+    }
+
+    return true;
+}
+
+int main() {
+
+    char s[] = "The quick brown fox jumps over the lazy dog";
+
+    if (checkPangram(s))
+        printf("true");
+    else
+        printf("false");
+
+    return 0;
+}
+
+
             Java
 
-    import java.util.*;
-
-class GFG {
+    class GFG {
 
     public static boolean checkPangram(String s) {
 

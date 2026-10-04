@@ -1,48 +1,52 @@
 # Check if a string is substring of another - GeeksforGeeks
 
-Given two strings txt and pat, the task is to find if pat is a substring of txt. If yes, return the index of the first occurrence, else return -1.Examples : Input: txt = "geeksforgeeks", pat = "eks"Output: 2Explanation: String "eks" is present at index 2 and 10, so 2 is the smallest index.Input: txt = "geeksforgeeks", pat = "xyz"Output: -1.Explanation: There is no occurrence of "xyz" in "geeksforgeeks"Try It YourselfTable of ContentUsing nested loops - O(m*n) Time and O(1) SpaceUsing Pattern Searching AlgorithmsUsing in-built library functionsUsing nested loops - O(m*n) Time and O(1) SpaceThe basic idea is to iterate through a loop in the string txt and for every index in the string txt, check whether we can match pat starting from this index. This can be done by running a nested loop for traversing the string pat and checking for each character of pat matches with txt or not. If all character of pat matches then return the starting index of such substring.
+Given two strings txt and pat, return the 0-based index of the first occurrence of the substring pat in txt. If pat is not found, return -1.Examples: Input: txt = "GeeksForGeeks", pat = "Fr"Output: -1Explanation: "Fr" is not present in the string "GeeksForGeeks" as substring.Input: txt = "GeeksForGeeks", pat = "For"Output: 5Explanation: "For" is present as substring in "GeeksForGeeks" from index 5 (0 based indexing).Input: txt = "GeeksForGeeks", pat = "gr"Output: -1Explanation: "gr" is not present in the string "GeeksForGeeks" as substring.Try It YourselfTable of ContentNested loops - O(n * m) Time and O(1) SpacePattern Searching Algorithms - O(n + m) TimeIn-built library functionsNested loops - O(n * m) Time and O(1) SpaceThe basic idea is to traverse the string txt and check whether pat matches starting from each index. For every index, use a nested loop to compare the characters of pat with the corresponding characters of txt.If all characters of pat match, return the starting index.If a mismatch occurs, move to the next index of txt.Return -1 if pat is not found in txt.
             C++
 
-    // C++ program to check if a string is substring of other
-// using nested loops
-
-#include <iostream>
+    #include <iostream>
 using namespace std;
 
 // Function to find if pat is a substring of txt
-int findSubstring(string &txt, string &pat) {
+int firstOccurence(string &txt, string &pat)
+{
     int n = txt.length();
     int m = pat.length();
 
     // Iterate through txt
-    for (int i = 0; i <= n - m; i++) {
+    for (int i = 0; i <= n - m; i++)
+    {
 
         // Check for substring match
         int j;
-        for (j = 0; j < m; j++) {
+        for (j = 0; j < m; j++)
+        {
 
             // Mismatch found
-            if (txt[i + j] != pat[j]) {
+            if (txt[i + j] != pat[j])
+            {
                 break;
             }
         }
 
         // If we completed the inner loop, we found a match
-        if (j == m) {
+        if (j == m)
+        {
 
             // Return starting index
             return i;
         }
     }
-    
+
     // No match found
     return -1;
 }
 
-int main() {
-    string txt = "geeksforgeeks";
-    string pat = "eks";
-    cout << findSubstring(txt, pat);
+int main()
+{
+    string txt = "GeeksForGeeks";
+    string pat = "For";
+
+    cout << firstOccurence(txt, pat);
 
     return 0;
 }
@@ -50,46 +54,49 @@ int main() {
 
             C
 
-    // C program to check if a string is substring of other
-// using nested loops
-
-#include <stdio.h>
+    #include <stdio.h>
 #include <string.h>
 
 // Function to find if pat is a substring of txt
-int findSubstring(char *txt, char *pat) {
+int firstOccurence(char *txt, char *pat)
+{
     int n = strlen(txt);
     int m = strlen(pat);
 
     // Iterate through txt
-    for (int i = 0; i <= n - m; i++) {
+    for (int i = 0; i <= n - m; i++)
+    {
 
         // Check for substring match
         int j;
-        for (j = 0; j < m; j++) {
+        for (j = 0; j < m; j++)
+        {
 
             // Mismatch found
-            if (txt[i + j] != pat[j]) {
+            if (txt[i + j] != pat[j])
+            {
                 break;
             }
         }
 
         // If we completed the inner loop, we found a match
-        if (j == m) {
+        if (j == m)
+        {
 
             // Return starting index
             return i;
         }
     }
-    
+
     // No match found
     return -1;
 }
 
-int main() {
+int main()
+{
     char txt[] = "geeksforgeeks";
     char pat[] = "eks";
-    printf("%d", findSubstring(txt, pat));
+    printf("%d", firstOccurence(txt, pat));
 
     return 0;
 }
@@ -97,13 +104,11 @@ int main() {
 
             Java
 
-    // Java program to check if a string is substring of other
-// using nested loops
+    class GFG {
 
-class GfG {
-    
     // Function to find if pat is a substring of txt
-    static int findSubstring(String txt, String pat) {
+    static int firstOccurence(String txt, String pat)
+    {
         int n = txt.length();
         int m = pat.length();
 
@@ -120,7 +125,8 @@ class GfG {
                 }
             }
 
-            // If we completed the inner loop, we found a match
+            // If we completed the inner loop, we found a
+            // match
             if (j == m) {
 
                 // Return starting index
@@ -132,22 +138,18 @@ class GfG {
         return -1;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         String txt = "geeksforgeeks";
         String pat = "eks";
-        System.out.println(findSubstring(txt, pat));
-
+        System.out.println(firstOccurence(txt, pat));
     }
 }
 
 
             Python
 
-    # Python program to check if a string is a substring of another
-# using nested loops
-
-# Function to find if pat is a substring of txt
-def findSubstring(txt, pat):
+    def firstOccurence(txt, pat):
     n = len(txt)
     m = len(pat)
 
@@ -169,39 +171,38 @@ def findSubstring(txt, pat):
 if __name__ == "__main__":
     txt = "geeksforgeeks"
     pat = "eks"
-    print(findSubstring(txt, pat))
+    print(firstOccurence(txt, pat))
 
 
             C#
 
-    // C# program to check if a string is substring of other
-// using nested loops
+    using System;
 
-using System;
+class GFG {
 
-class GfG {
-  
     // Function to find if pat is a substring of txt
-    static int findSubstring(string txt, string pat) {
+    static int firstOccurence(string txt, string pat)
+    {
         int n = txt.Length;
         int m = pat.Length;
 
         // Iterate through txt
         for (int i = 0; i <= n - m; i++) {
-          
+
             // Check for substring match
             int j;
             for (j = 0; j < m; j++) {
-              
+
                 // Mismatch found
                 if (txt[i + j] != pat[j]) {
                     break;
                 }
             }
 
-            // If we completed the inner loop, we found a match
+            // If we completed the inner loop, we found a
+            // match
             if (j == m) {
-                
+
                 // Return starting index
                 return i;
             }
@@ -211,21 +212,19 @@ class GfG {
         return -1;
     }
 
-    static void Main() {
+    static void Main()
+    {
         string txt = "geeksforgeeks";
         string pat = "eks";
-        Console.WriteLine(findSubstring(txt, pat));
+        Console.WriteLine(firstOccurence(txt, pat));
     }
 }
 
 
             JavaScript
 
-    // JavaScript program to check if a string is a substring of another
-// using nested loops
-
-// Function to find if pat is a substring of txt
-function findSubstring(txt, pat) {
+    function firstOccurence(txt, pat)
+{
     const n = txt.length;
     const m = pat.length;
 
@@ -257,30 +256,32 @@ function findSubstring(txt, pat) {
 // Driver code
 const txt = "geeksforgeeks";
 const pat = "eks";
-console.log(findSubstring(txt, pat));
+console.log(firstOccurence(txt, pat));
 
-Output2Time complexity: O(m * n) where m and n are lengths of txt and pat respectively. Auxiliary Space: O(1), as no extra space is required.Using Pattern Searching AlgorithmsThere are several Pattern Searching Algorithms like KMP Algorithm, Rabin-Karp Algorithm, Aho-Corasick Algorithm, etc. Please refer to Introduction to Pattern Searching to learn more about them.Using in-built library functionsThis approach uses a built-in function to quickly check if pattern is part of text or not. This makes the process simple and efficient.
+Output5Pattern Searching Algorithms - O(n + m) TimeThere are several pattern searching algorithms, such as:KMP Algorithm,Rabin-Karp Algorithm, Aho-Corasick Algorithm,Please refer to Introduction to Pattern Searching to learn more about them.In-built library functionsThis approach uses a built-in function to find the first occurrence of pat in txt.Most programming languages provide built-in functions to find the first occurrence of a substring. The commonly used functions are:C: strstr()C++: string::find()Java: String.indexOf()Python: str.find()C#: String.IndexOf()JavaScript: String.indexOf()
             C++
 
-    // C++ program to check if a string is substring of other
-// using in-built functions
-
-#include <iostream>
+    #include <iostream>
 using namespace std;
 
-int main() {
-    string txt = "geeksforgeeks";
-    string pat = "eks";
-    
-    // If pat is found, returns the index of first
-    // occurrence of pat. Otherwise, returns a special
-    // constant value std::string::npos
+int firstOccurence(string &txt, string &pat)
+{
+    // Find the first occurrence of pat in txt.
     size_t idx = txt.find(pat);
-  
-    if(idx != string::npos)
-        cout << idx;
-    else
-        cout << -1;
+
+    // Return the index if pat is found, otherwise return -1.
+    if (idx != string::npos)
+        return idx;
+
+    return -1;
+}
+
+int main()
+{
+    string txt = "GeeksForGeeks";
+    string pat = "For";
+
+    cout << firstOccurence(txt, pat);
 
     return 0;
 }
@@ -288,107 +289,125 @@ int main() {
 
             C
 
-    // C program to check if a string is substring of other
-// using in-built functions
-
-#include <stdio.h>
+    #include <stdio.h>
 #include <string.h>
 
-int main() {
-    const char *txt = "geeksforgeeks";
-    const char *pat = "eks";
-    
-    // If pat is found, strstr returns a pointer to the first
-    // occurrence of pat in txt. Otherwise, it returns NULL.
-    const char *idx = strstr(txt, pat);
-    
-    if (idx != NULL) {
-      
-        // Calculate index by subtracting the base address 
-        // of txt from result
-        printf("%ld", idx - txt);
-    }
-    else {
-        printf("-1");
-    }
-  
+int firstOccurence(char *txt, char *pat)
+{
+    // Find the first occurrence of pat in txt.
+    char *idx = strstr(txt, pat);
+
+    // Return the index if pat is found, otherwise return -1.
+    if (idx != NULL)
+        return (int)(idx - txt);
+
+    return -1;
+}
+
+int main()
+{
+    char txt[] = "GeeksForGeeks";
+    char pat[] = "For";
+
+    printf("%d", firstOccurence(txt, pat));
+
     return 0;
 }
 
 
             Java
 
-    // Java program to check if a string is substring of other
-// using in-built functions
-
-class GfG {
-    public static void main(String[] args) {
-        String txt = "geeksforgeeks";
-        String pat = "eks";
-        
-        // If pat is found, returns the index of first
-        // occurrence of pat. Otherwise, returns -1
+    public class GFG {
+    public static int firstOccurence(String txt, String pat)
+    {
+        // Find the first occurrence of pat in txt.
         int idx = txt.indexOf(pat);
-      
+
+        // Return the index if pat is found, otherwise
+        // return -1.
         if (idx != -1)
-            System.out.println(idx);
-        else
-            System.out.println(-1);
+            return idx;
+
+        return -1;
+    }
+
+    public static void main(String[] args)
+    {
+        String txt = "GeeksForGeeks";
+        String pat = "For";
+
+        System.out.println(firstOccurence(txt, pat));
     }
 }
 
 
             Python
 
-    # Python program to check if a string is substring of other
-# using in-built functions
-
-if __name__ == "__main__":
-    txt = "geeksforgeeks"
-    pat = "eks"
-
-    # If pat is found, returns the index of first
-    # occurrence of pat. Otherwise, returns a special
-    # constant value -1
+    def firstOccurence(txt, pat):
+    # Find the first occurrence of pat in txt.
     idx = txt.find(pat)
 
-    print(idx)
+    # Return the index if pat is found, otherwise return -1.
+    if idx != -1:
+        return idx
+
+    return -1
+
+
+if __name__ == "__main__":
+    txt = "GeeksForGeeks"
+    pat = "For"
+
+    print(firstOccurence(txt, pat))
 
 
             C#
 
-    // C# program to check if a string is substring of other
-// using in-built functions
+    using System;
 
-using System;
-
-class GfG {
-    static void Main() {
-        string txt = "geeksforgeeks";
-        string pat = "eks";
-        
-        // If pat is found, returns the index of first
-        // occurrence of pat. Otherwise, returns a special
-        // constant value -1
+class GFG {
+    static int firstOccurence(string txt, string pat)
+    {
+        // Find the first occurrence of pat in txt.
         int idx = txt.IndexOf(pat);
-  
-        Console.WriteLine(idx);
+
+        // Return the index if pat is found, otherwise
+        // return -1.
+        if (idx != -1)
+            return idx;
+
+        return -1;
+    }
+
+    static void Main()
+    {
+        string txt = "GeeksForGeeks";
+        string pat = "For";
+
+        Console.WriteLine(firstOccurence(txt, pat));
     }
 }
 
 
             JavaScript
 
-    // JavaScript program to check if a string is substring of other
-// using in-built functions
+    function firstOccurence(txt, pat)
+{
+    // Find the first occurrence of pat in txt.
+    let idx = txt.indexOf(pat);
 
-let txt = "geeksforgeeks";
-let pat = "eks";
+    // Return the index if pat is found, otherwise return
+    // -1.
+    if (idx !== -1)
+        return idx;
 
-// If pat is found, returns the index of first
-// occurrence of pat. Otherwise, returns -1
-let idx = txt.indexOf(pat);
+    return -1;
+}
 
-console.log(idx);
+// Driver Code
+let txt = "GeeksForGeeks";
+let pat = "For";
 
-Output2Note: The time complexity of in-built functions can differ across different languages.
+console.log(firstOccurence(txt, pat));
+
+Output5Note: The time and space complexity of in-built functions may vary across different languages and implementations.

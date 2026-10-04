@@ -1,6 +1,6 @@
 # Wrapper Classes in Java - GeeksforGeeks
 
-In Java, wrapper classes allow primitive data types to be represented as objects. This enables primitives to be used in object-oriented features such as collections, generics, and APIs that require objects.Each wrapper class encapsulates a corresponding primitive value inside an object (e.g., Integer for int, Double for double).Java provides wrapper classes for all eight primitive data types to support object-based operations.Example: Converting Primitive to Wrapper (Autoboxing)
+Wrapper classes in Java provide object representations of primitive data types. They are useful when working with Java features that require objects, such as collections and generics.Each wrapper class encapsulates a corresponding primitive value inside an object (e.g., Integer for int, Double for double).Java provides wrapper classes for all eight primitive data types to support object-based operations.Example: Converting Primitive to Wrapper (Autoboxing)
             Java
 
     class Geeks {
@@ -18,7 +18,7 @@ In Java, wrapper classes allow primitive data types to be represented as objects
 
 OutputThe primitive int b is: 357
 The Integer object a is: 357
-Explanation: Here, the primitive int value is automatically converted into an Integer object by Java. This automatic conversion is called autoboxing.Why Wrapper Classes Are NeededWrapper classes are required in Java for the following reasons:Java collections (ArrayList, HashMap, etc.) store only objects, not primitives.Wrapper objects allow primitives to be used in object-oriented features like methods, synchronization, and serialization.Objects support null values, while primitives do not.Wrapper classes provide utility methods such as compareTo(), equals(), and toString().Autoboxing and Unboxing1. AutoboxingThe automatic conversion of primitive types to the object of their corresponding wrapper classes is known as autoboxing. For example: conversion of int to Integer, long to Long, double to Double, etc. Java program to demonstrate the automatic conversion of primitive to wrapper class (Autoboxing).
+Explanation: Here, the primitive int value is automatically converted into an Integer object by Java. This automatic conversion is called autoboxing.Need Of Wrapper ClassesWrapper classes are required in Java for the following reasons:Java collections (ArrayList, HashMap, etc.) store only objects, not primitives.Wrapper objects allow primitives to be used in object-oriented features like methods, synchronization, and serialization.Objects support null values, while primitives do not.Wrapper classes provide utility methods such as compareTo(), equals(), and toString().Autoboxing and Unboxing1. AutoboxingThe automatic conversion of primitive types to the object of their corresponding wrapper classes is known as autoboxing. For example: conversion of int to Integer, long to Long, double to Double, etc. 
             Java
 
     import java.util.ArrayList;

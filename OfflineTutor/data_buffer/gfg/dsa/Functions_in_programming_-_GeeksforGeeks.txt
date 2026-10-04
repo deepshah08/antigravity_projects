@@ -1,6 +1,6 @@
 # Functions in programming - GeeksforGeeks
 
-A function is a block of code that performs a specific task and can be reused whenever needed.Avoids writing the same code again and again.Makes programs simple and easy to understand by breaking into smaller parts.Accepts input (parameters) and gives output.Finding and fixing errors become easier. Built-in functionsThese predefined functions provided by programming languages or libraries to perform common tasks such as mathematical calculations, input/output, or string operations.For example, the sqrt() function from the C++ <cmath> library calculates the square root of a number.
+A function is a block of code that performs a specific task and can be reused whenever needed.Avoids writing the same code again and again.Makes programs simple and easy to understand by breaking into smaller parts.Accepts input (parameters) and gives output.Finding and fixing errors become easier. Built-in functionsThese are predefined functions provided by programming languages or libraries to perform common tasks such as mathematical calculations, input/output, or string operations.For example, the sqrt() function from the C++ <cmath> library calculates the square root of a number.
             C++
 
     #include <iostream>
@@ -15,8 +15,66 @@ int main() {
     return 0;
 }
 
+
+            C
+
+    #include <math.h>
+#include <stdio.h>
+
+int main()
+{
+    // built-in function
+    double result = sqrt(25.0);
+    printf("Square Root: %.2lf\n", result);
+    return 0;
+}
+
+
+            Java
+
+    import java.lang.Math;
+
+public class GFG {
+    public static void main(String[] args)
+    {
+        // built-in function
+        double result = Math.sqrt(25.0);
+        System.out.println("Square Root: " + result);
+    }
+}
+
+
+            Python
+
+    import math
+
+# built-in function
+result = math.sqrt(25.0)
+print("Square Root:", result)
+
+
+            C#
+
+    using System;
+
+class GFG {
+    static void Main()
+    {
+        // built-in function
+        double result = Math.Sqrt(25.0);
+        Console.WriteLine("Square Root: " + result);
+    }
+}
+
+
+            JavaScript
+
+    // built-in function
+let result = Math.sqrt(25.0);
+console.log("Square Root: " + result);
+
 OutputSquare Root: 5
-User-definedThese functions are functions written by programmers to perform specific tasks required in a program. They help organize code and allow reuse of logic whenever needed.
+User-defined functionsThese functions are functions written by programmers to perform specific tasks required in a program. They help organize code and allow reuse of logic whenever needed.
             C++
 
     #include <iostream>
@@ -30,6 +88,74 @@ int main() {
     greet();  // calling user-defined function
     return 0;
 }
+
+
+            C
+
+    #include <stdio.h>
+
+void greet()
+{
+    printf("Hello, World!\n");
+}
+
+int main()
+{
+    greet(); // calling user-defined function
+    return 0;
+}
+
+
+            Java
+
+    public class GFG {
+    public static void greet()
+    {
+        System.out.println("Hello, World!");
+    }
+
+    public static void main(String[] args)
+    {
+        greet(); // calling user-defined function
+    }
+}
+
+
+            Python
+
+    def greet():
+    print("Hello, World!")
+
+if __name__ == "__main__":
+    # Calling user-defined function.
+    greet()
+
+
+            C#
+
+    using System;
+
+class GFG {
+    static void greet()
+    {
+        Console.WriteLine("Hello, World!");
+    }
+
+    static void Main()
+    {
+        greet(); // calling user-defined function
+    }
+}
+
+
+            JavaScript
+
+    function greet() {
+    console.log('Hello, World!');
+}
+
+// calling user-defined function
+greet();
 
 OutputHello, World!
 Function Visualizer

@@ -36,6 +36,45 @@ int main() {
 }
 
 
+            C
+
+    #include <stdio.h>
+#include <stdbool.h>
+
+bool matSearch(int n, int m,int mat[][m], int x) {
+    
+    // Iterate over all the elements to find x
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (mat[i][j] == x)
+                return true;
+        }
+    }
+    
+    // If x was not found, return false
+    return false;
+}
+
+int main() {
+    int n = 3, m = 3;
+
+    int mat[3][3] = {
+        {3, 30, 38},
+        {20, 52, 54},
+        {35, 60, 69}
+    };
+
+    int x = 35;
+
+    if (matSearch(n, m, mat, x))
+        printf("true");
+    else
+        printf("false");
+
+    return 0;
+}
+
+
             Java
 
     class GFG {
@@ -156,7 +195,7 @@ if (matSearch(mat, x))
 else
     console.log("false");
 
-Outputtrue[Better Approach] Binary Search - O(n*logm) Time and O(1) SpaceTo optimize the above approach we are going to use the Binary Search algorithm.The problem specifies that each row in the given matrix is sorted in ascending order. Instead of searching each column sequentially, we can efficiently apply Binary Search on each row to determine if the target is present. 
+Outputtrue[Better Approach] Binary Search - O(n*logm) Time and O(1) SpaceInstead of checking every element, use Binary Search on each row because the elements in every row are sorted.For every row: Start with low at the first index and high at the last index.  Find the middle index mid.  If mat[mid] is equal to x, return true.  If mat[mid] is smaller than x, continue searching in the right half.  Otherwise, continue searching in the left half.  If x is not found in the row, move to the next row.  If all rows are searched and x is not found, return false.
             C++
 
     #include <iostream>
@@ -217,9 +256,72 @@ int main() {
 }
 
 
+            C
+
+    #include <stdio.h>
+#include <stdbool.h>
+
+bool binarySearch(int mat[], int n, int target) {
+    int low = 0, high = n - 1;
+
+    // Standard binary search algorithm
+    while (low <= high) {
+        int mid = (low + high) / 2;
+
+        // Element found
+        if (mat[mid] == target)
+            return true;
+
+        // Search in the right half
+        else if (target > mat[mid])
+            low = mid + 1;
+
+        // Search in the left half
+        else
+            high = mid - 1;
+    }
+
+    // Element not found
+    return false;
+}
+
+bool matSearch(int n, int m, int mat[n][m], int x) {
+
+    // Iterate over each row and perform binary search
+    for (int i = 0; i < n; i++) {
+        if (binarySearch(mat[i], m, x))
+
+            // Element found in one of the rows
+            return true;
+    }
+
+    // Element not found in any row
+    return false;
+}
+
+int main() {
+    int n = 3, m = 3;
+
+    int mat[3][3] = {
+        {3, 30, 38},
+        {20, 52, 54},
+        {35, 60, 69}
+    };
+
+    int x = 35;
+
+    if (matSearch(n, m, mat, x))
+        printf("true");
+    else
+        printf("false");
+
+    return 0;
+}
+
+
             Java
 
-    public class Main {
+    public class GFG {
     public static boolean binarySearch(int[] mat,
                                        int target)
     {
@@ -335,7 +437,7 @@ if __name__ == "__main__":
 
     using System;
 
-public class MainClass {
+public class GFG {
     public static bool binarySearch(int[,] mat, int row, int target)
     {
         int n = mat.GetLength(1);
@@ -445,7 +547,7 @@ if (matSearch(mat, x))
 else
     console.log("false");
 
-Outputtrue[Expected Approach] Eliminating rows or columns - O(n + m) Time and O(1) SpaceThe idea is to remove a row or column in each comparison until an element is found. Start searching from the top-right corner of the matrix. There are 3 possible cases:x is greater than the current element: This ensures that all the elements in the current row are smaller than the given number as the pointer is already at the right-most element and the row is sorted. Thus, the entire row gets eliminated and continues the search from the next row. x is smaller than the current element: This ensures that all the elements in the current column are greater than the given number. Thus, the entire column gets eliminated and continues the search from the previous column, i.e. the column on the immediate left.The given number is equal to the current number: This will end the search.
+Outputtrue[Expected Approach] Eliminating rows or columns - O(n + m) Time and O(1) SpaceSince the matrix is sorted both row-wise and column-wise, the search space can be reduced after each comparison.Start from the top-right corner and compare the current element with x.If x > mat[i][j], all elements to the left are smaller than x. So, the current row can be skipped, and move down to the next row.If x < mat[i][j], all elements below are greater than x. So, the current column can be skipped, and move left to the previous column.If x == mat[i][j], the element is found, so return true.Continue this process until x is found or the search moves outside the matrix. If x is not found, return false.
             C++
 
     #include <iostream>
@@ -496,11 +598,63 @@ int main() {
 }
 
 
+            C
+
+    #include <stdio.h>
+#include <stdbool.h>
+
+bool matSearch(int n, int m, int mat[n][m], int x) {
+    int i = 0, j = m - 1;
+
+    while (i < n && j >= 0) {
+
+        // If x > mat[i][j], then x will be greater
+        // than all elements to the left of mat[i][j]
+        // in row i, so move to the next row
+        if (x > mat[i][j]) {
+            i++;
+        }
+
+        // If x < mat[i][j], then x will be smaller
+        // than all elements below mat[i][j]
+        // in column j, so move to the previous column
+        else if (x < mat[i][j]) {
+            j--;
+        }
+
+        // If x == mat[i][j], return true
+        else {
+            return true;
+        }
+    }
+
+    // If x was not found, return false
+    return false;
+}
+
+int main() {
+    int n = 3, m = 3;
+
+    int mat[3][3] = {
+        {3, 30, 38},
+        {20, 52, 54},
+        {35, 60, 69}
+    };
+
+    int x = 35;
+
+    if (matSearch(n, m, mat, x))
+        printf("true");
+    else
+        printf("false");
+
+    return 0;
+}
+
+
             Java
 
-    import java.util.*;
-
-class GFG {
+    class GFG {
     static boolean matSearch(int[][] mat, int x)
     {
         int n = mat.length, m = mat[0].length;

@@ -1,6 +1,6 @@
 # Java Class vs Interfaces - GeeksforGeeks
 
-In Java, classes and interfaces are used to define the structure and behavior of programs. While they might seem similar, since both can hold methods and variables, they have very different purposes.class-vs-InterfaceA class can extend another class and implement an interface, while an interface can only extend another interface, not implement a class.Class in JavaA class is a blueprint for creating objects. It encapsulates fields (state) and methods (behavior) that are common to all objects of that type.
+In Java, classes and interfaces are fundamental components used to design and organize programs. A class represents objects by defining their data and operations, whereas an interface specifies a contract for implementing common behavior. Choosing between them depends on how the functionality needs to be defined and shared.Classes support object creation, constructors, and state management.Interfaces promote abstraction and allow a class to implement multiple behavioral contracts.class-vs-InterfaceA class can extend another class and implement an interface, while an interface can only extend another interface, not implement a class.ClassA class is a blueprint for creating objects. It encapsulates fields (state) and methods (behavior) that are common to all objects of that type.
             Java
 
     class Student{
@@ -22,7 +22,7 @@ In Java, classes and interfaces are used to define the structure and behavior of
 
 Output0
 null
-Explanation: Above code defines a Student class with two instance variables, id and name, and creates an object to demonstrate default values. It shows that objects of a class can hold state and access its fields.Interface in JavaAn interface in Java is a blueprint of a class. Interface variables are implicitly public static final. Before Java 8, interface methods were implicitly public abstract. From Java 8 onward, interfaces can also contain default and static methods, and from Java 9 onward, private methods are allowed.
+Explanation: Above code defines a Student class with two instance variables, id and name, and creates an object to demonstrate default values. It shows that objects of a class can hold state and access its fields.InterfaceAn interface in Java defines a contract that classes can implement to provide specific behavior. Interface variables are implicitly public, static, and final, while abstract methods are implicitly public and abstract. Since Java 8, interfaces can also contain default and static methods, and since Java 9, they can contain private methods.
             Java
 
     import java.io.*;

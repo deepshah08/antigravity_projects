@@ -1,6 +1,6 @@
 # Middle Node in a Linked List - GeeksforGeeks
 
-Given the head of singly linked list, find middle node of the linked list.If the number of nodes is odd, return the middle node.If the number of nodes is even, there are two middle nodes, so return the second middle node.Example:Input:  Output: 3 Explanation: There are 5 nodes in the linked list and there is one middle node whose value is 3.Input: Output: 40Explanation: There are 6 nodes in the linked list, so we have two middle nodes: 30 and 40, but we will return the second middle node which is 40.Try It YourselfTable of Content[Naive Approach] Two Passes - O(n) Time and O(1) Space[Expected Approach] Hare and Tortoise Algorithm - O(n) Time and O(1) Space[Naive Approach] Two Passes - O(n) Time and O(1) SpaceThe idea is to traverse the entire linked list once to count the total number of nodes. After determining the total count, traverse the list again and stop at the (count/2)th node to return its value. This method requires two passes through the linked list to find the middle element.
+Given the head of singly linked list, find middle node of the linked list.If the number of nodes is odd, return the middle node.If the number of nodes is even, there are two middle nodes, so return the second middle node.Example:Input:  Output: 3 Explanation: There are 5 nodes in the linked list and there is one middle node whose value is 3.Input: Output: 40Explanation: There are 6 nodes in the linked list, so we have two middle nodes: 30 and 40, but we will return the second middle node which is 40.Try It YourselfTable of Content[Naive Approach] Two Passes - O(n) Time and O(1) Space[Expected Approach] Hare and Tortoise Algorithm - O(n) Time and O(1) Space[Naive Approach] Two Passes - O(n) Time and O(1) SpaceThis method requires two passes through the linked list.Traverse the entire linked list once to count the total number of nodes. After computing count, traverse the list again and stop at the (count/2)th node to return its value. 
             C++
 
     #include <iostream>
@@ -317,7 +317,7 @@ head.next.next.next.next.next = new Node(60);
 
 console.log(getMiddle(head));
 
-Output40[Expected Approach] Hare and Tortoise Algorithm - O(n) Time and O(1) SpaceWe can use the Tortoise and Hare algorithm to find the middle of the linked list. Initialize both slow and fast pointers at the head.Move slow by one step and fast by two steps each iteration.When fast reaches the end (or null), slow will be at the middle.For even nodes, slow automatically ends at the second middle.
+Output40[Expected Approach] Hare and Tortoise Algorithm - O(n) Time and O(1) SpaceWe use the Tortoise and Hare algorithm to find the middle of the linked list. Initialize both slow and fast pointers at the head.Move slow by one step and fast by two steps each iteration.When fast reaches the end (or null), slow will be at the middle.For even nodes, slow automatically ends at the second middle.
             C++
 
     #include <iostream>

@@ -1,6 +1,29 @@
 # Super Keyword in Java - GeeksforGeeks
 
-The super keyword in Java is used to refer to the immediate parent class object in an inheritance hierarchy. It allows a subclass to explicitly access parent class members when they are hidden or overridden. This keyword helps maintain clarity and control while working with inheritance.Used to call parent class constructors using super().Helps access parent class methods and variables when overridden or hidden.Ensures proper inheritance behavior and code reusability.Use of the super Keyword in JavaSuper keywords are mainly used in the following contexts, which are listed below:1. Use of super with VariablesThis scenario occurs when a derived class and base class have the same data members. In that case, there is a possibility of ambiguity for the JVM. 
+The super keyword in Java is used to refer to the immediate parent class object in an inheritance hierarchy. It allows a subclass to explicitly access parent class members when they are hidden or overridden. This keyword helps maintain clarity and control while working with inheritance.Used to call parent class constructors using super().Helps access parent class methods and variables when overridden or hidden.Ensures proper inheritance behavior and code reusability.
+            Java
+
+    class Person {
+    String name = "Geeks";
+}
+
+class Student extends Person {
+    String name = "Student";
+
+    void display() {
+        System.out.println("Child Name: " + this.name);
+        System.out.println("Parent Name: " + super.name);
+    }
+
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.display();
+    }
+}
+
+OutputChild Name: Student
+Parent Name: Geeks
+Here, this.name refers to the name variable of the current Student object, while super.name accesses the name variable inherited from the parent Person class.Use of the super Keyword Super keywords are mainly used in the following contexts, which are listed below:1. Use of super with VariablesThis scenario occurs when a subclass and its superclass have a variable with the same name. The super keyword is used in the subclass to explicitly access the variable defined in the superclass.
             Java
 
     // Base class vehicle
@@ -31,7 +54,7 @@ class Test {
 }
 
 OutputMaximum Speed: 120
-Explanation: In the above example, both the base class and subclass have a member maxSpeed. We could access the maxSpeed of the base class in subclass using super keyword.2. Use of super with MethodsThis is used when we want to call the parent class method. So, whenever a parent and child class have the same-named methods then to resolve ambiguity we use the super keyword.
+Explanation: In the above example, both the base class and subclass have a member maxSpeed. We could access the maxSpeed of the base class in subclass using super keyword.2. Use of super with MethodsThis is used when we want to call the parent class method. So, When a subclass overrides a method of its superclass, super.methodName() can be used to explicitly invoke the superclass version of that method.
             Java
 
     // superclass Person
@@ -138,4 +161,4 @@ public class Main {
 }
 
 Outputfalse
-Explanation: In the above example, the child class changes the behavior of the parent class isTrue() method. It calls the parent's method using super keyword and changes the result, that's why the result is false.Advantages of Using Java Super KeywordThe advantages of super keyword are listed below:With the help of super keyword, subclasses can inherit the functionality from their parent classes.Subclasses can override methods and can access fields and methods from their parent class with the help of super keyword, because of this the code becomes more flexible.With the help of super keyword we can easily access the methods and fields from the parent class without recreating it in the subclass. With the help of super keyword we can achieve abstraction and encapsulation. Subclass can focus on their specified tasks and the parent class take care of the general functionality.
+Explanation: In the above example, the child class changes the behavior of the parent class isTrue() method. It calls the parent's method using super keyword and changes the result, that's why the result is false.

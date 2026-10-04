@@ -1,6 +1,6 @@
 # Check Even or Odd - GeeksforGeeks
 
-Given a number n, check whether it is even or odd. Return true for even and false for odd.Examples: Input: n = 15Output: falseExplanation: 15 % 2 = 1, so 15 is odd .Input: n = 44Output: trueExplanation: 44 % 2 = 0, so 44 is even.Try It YourselfTable of Content[Naive Approach] By Finding the Remainder  -  O(1) Time and O(1) Space[Efficient Approach] Using Bitwise AND Operator -  O(1) Time and O(1) Space[Naive Approach] By Finding the Remainder  -  O(1) Time and O(1) SpaceWe can check the remainder when divided by 2. If the remainder is 0, the number is even, otherwise it is odd. For example, when we divide 13 by 2, we get remainder as 1 and when we divide 14 by 2, we get remainder as 0.
+Given a number n, check whether it is even or odd. Return true for even and false for odd.Examples: Input: n = 15Output: falseExplanation: 15 % 2 = 1, so 15 is odd .Input: n = 44Output: trueExplanation: 44 % 2 = 0, so 44 is even.Try It YourselfTable of Content[Naive Approach] Finding the Remainder  -  O(1) Time and O(1) Space[Efficient Approach] Bitwise AND Operator -  O(1) Time and O(1) Space[Naive Approach] Finding the Remainder  -  O(1) Time and O(1) SpaceWe check the remainder when divided by 2. If the remainder is 0, the number is even, Otherwise it is odd. For example, when we divide 13 by 2, we get remainder as 1 and when we divide 14 by 2, we get remainder as 0.
             C++
 
     #include <iostream>
@@ -152,7 +152,7 @@ else {
     console.log("false");
 }
 
-Outputfalse[Efficient Approach] Using Bitwise AND Operator -  O(1) Time and O(1) SpaceThe last bit of all odd numbers is always 1, while for even numbers it’s 0. So, when performing bitwise AND operation with 1, odd numbers give 1, and even numbers give 0.Note: Bitwise operators are extremely fast and efficient because they operate directly at the binary level, making them significantly faster than arithmetic or logical operations.Examples:15  ->               1 1 1 1                    &  0 0 0 1                       -------                       0 0 0 1 , so this we can say it is an odd number.44 ->        1 0 1 1 0 0            &  0 0 0 0 0 1                 ----------                0 0 0 0 0 0 , so this we can say it is an even number.
+Outputfalse[Efficient Approach] Bitwise AND Operator -  O(1) Time and O(1) SpaceThe last bit of all odd numbers is always 1, while for even numbers it’s 0. Perform bitwise AND operation with 1, odd numbers give 1, and even numbers give 0 as result.Note: Bitwise operators are extremely fast and efficient because they operate directly at the binary level, making them significantly faster than arithmetic or logical operations.Examples:15  ->               1 1 1 1                    &  0 0 0 1                       -------                       0 0 0 1 , so this we can say it is an odd number.44 ->        1 0 1 1 0 0            &  0 0 0 0 0 1                 ----------                0 0 0 0 0 0 , so this we can say it is an even number.
             C++
 
     #include <iostream>

@@ -1,6 +1,6 @@
 # Final Arrays in Java - GeeksforGeeks
 
-In Java, the final keyword makes a variable's reference constant, not its contents. When an array is declared as final, you cannot reassign it to point to a new array. However, you can still modify the elements within the array.A final array must be initialized once and cannot be reassigned later.Helps maintain a fixed reference, improving code safety and predictability.Final Array meansIf an array is final, it means we can not make it point to a new array, but we can change the elements inside it.Sample Example: final int[] arr = {10, 20, 30};Array object in heapModifying elements inside the array is allowedarr[2] = 99;Modify array valuesReassigning the array reference is NOT allowedarr = new int[]{600, 700, 800};  // Compilation errorExplanation: Here we have declared an array arr as final, which means we can not point arr to a different array, but we can change the value inside the array.Examples of Final Arrays in JavaLet's now see some examples for better understanding.Example 1: Modifying Elements of a Final Array
+The final keyword makes a variable's reference constant, not its contents. When an array is declared as final, you cannot reassign it to point to a new array. However, you can still modify the elements within the array.A final array must be initialized once and cannot be reassigned later.Helps maintain a fixed reference, improving code safety and predictability.Final Array meansIf an array is final, it means we can not make it point to a new array, but we can change the elements inside it.Example: final int[] arr = {10, 20, 30};Array object in heapModifying elements inside the array is allowedarr[2] = 99;Modify array valuesReassigning the array reference is NOT allowedarr = new int[]{600, 700, 800};  // Compilation errorExplanation: Here we have declared an array arr as final, which means we can not point arr to a different array, but we can change the value inside the array.Examples of Final Arrays in JavaLet's now see some examples for better understanding.Example 1: Modifying Elements of a Final Array
             Java
 
     import java.util.*;
@@ -34,30 +34,7 @@ Output10 20 99 Explanation: The above example shows that we can change the value
 }
 
 Output30
-Explanation: The above example shows that we can change values inside a final object, but  can not replace the object itself.Example 3: Compilation Error When Reassigning Final ReferenceHere is Java program to illustrate final arrays where compilation error is thrown
-            Java
-
-    // Main class
-class Geeks {
-
-    int p = 20;
-
-    // Main driver method
-    public static void main(String args[])
-    {
-
-        // Creating objects of above class
-        final Geeks t1 = new Geeks();
-        Geeks t2 = new Geeks();
-
-        // Assigning values into other objects
-        t1 = t2;
-
-        System.out.println(t1.p);
-    }
-}
-
-Output: Explanation: Above program compiles without any error and program 2 fails in compilation. Let us discuss why the error occurred. So a final array means that the array variable which is actually a reference to an object, cannot be changed to refer to anything else, but the members of the array can be modified. Let us propose an example below justifying the same.Note: We cannot assign a value to final variable t1.Example 4: Final Array Reference and Reassignment.Here is Java Program to Illustrate Reassignment Error in Final Array
+Explanation: The above example shows that we can change values inside a final object, but  can not replace the object itself.Example 3: Final Array Reference and Reassignment.Here is Java Program to Illustrate Reassignment Error in Final Array
             Java
 
     // Main class
@@ -84,7 +61,7 @@ class Geeks {
     }
 }
 
-Output:Explanation: In the above example, we are trying to change a final array that why we are getting an error.Example 5:  Modifying Elements in a Final Array and Attempting ReassignmentHere is demonstrating how to change value inside a final array
+Output:Explanation: In the above example, we are trying to change a final array that why we are getting an error.Example 4:  Modifying Elements in a Final Array and Attempting ReassignmentHere is demonstrating how to change value inside a final array
             Java
 
     // Import Arrays class for toString() method

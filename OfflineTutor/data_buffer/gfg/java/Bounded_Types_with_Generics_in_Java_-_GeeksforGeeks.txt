@@ -1,6 +1,6 @@
 # Bounded Types with Generics in Java - GeeksforGeeks
 
-Sometimes, you may want to restrict the types used in generics. For example, if a method should only work with numbers, you can use a bounded type like <T extends Number> to allow only Number and its subclasses.If you don’t want to make the entire class generic, you can define generic methods instead.Constructors, being special types of methods, can also use generic type parameters.Sometimes, you may want to allow only types that implement the Comparable interface (e.g., when comparing two objects).To do this, you use bounded types like <T extends Comparable <T>>.If a non-Comparable type is passed, the compiler throws a compile-time error, ensuring safe and correct usage.How to Declare a Bounded Type Parameter in Java? List the type parameter's name,Along with the extends keywordAnd by its upper bound. (which in the below example c is A.)Syntax<T extends superClassName>Note: In generics, extends means that T can be any subclass of the specified type or the type itself. It sets an inclusive upper bound for the type parameter.Example: Let’s take understand how to implement bounded types (extend superclass) with generics.
+Bounded type parameters in Java Generics restrict the types that can be used as arguments for a type parameter. They are useful when generic code needs to operate only on a specific type or its subtypes.Bounds are specified using the extends keyword.A type parameter can have a single bound or multiple bounds.Declaration of Bounded Type ParameterList the type parameter's name,Along with the extends keywordAnd by its upper bound. (which in the below example c is A.)Syntax<T extends superClassName>Note: In generics, extends means that T can be any subclass of the specified type or the type itself. It sets an inclusive upper bound for the type parameter.Example: Let’s take understand how to implement bounded types (extend superclass) with generics.
             Java
 
     class Bound<T extends A>
@@ -118,7 +118,7 @@ public class BoundedClass
     }
 }
 
-Output :error: type argument String is not within bounds of type-variable TMultiple BoundsMultiple Bounds can restrict a type to inherit from one class and implement multiple interfaces.The class must come first.You can’t use more than one class in the bounds.Example: <T extends ClassName & Interface1 & Interface2>Syntax:<T extends superClassName & Interface>Example:  Bound Type Parameters using multiple bounds in Generics (T extends A & B)
+Output :error: type argument String is not within bounds of type-variable TMultiple BoundsMultiple bounds restrict a type parameter to a class and one or more interfaces. The bounds are separated using the & operator.Syntax:<T extends ClassName & Interface1 & Interface2>Note: Only one class can be specified in multiple bounds, and it must appear before any interface bounds.Example:  Bound Type Parameters using multiple bounds in Generics (T extends A & B)
             Java
 
     class Bound<T extends A & B>

@@ -1,6 +1,6 @@
 # Java 8 Stream Tutorial - GeeksforGeeks
 
-Java 8 introduced the Stream API to simplify data processing using a functional programming approach. It provides a clean and concise way to perform operations on collections, making code more readable and easier to maintain.It supports operations like filtering, mapping, sorting, reducing, and collecting elements.Stream operations can be chained together to create efficient and expressive data-processing pipelines.Streams can process data sequentially or in parallel to improve performance for suitable workloads.A Stream is a sequence of elements that supports functional-style operations. Unlike Collections, a Stream does not store data it only processes it.StreamFeatures of StreamsJava Streams offer several powerful features that make collection processing easier and more efficient.Declarative Programming: Write concise and expressive code instead of explicit loops. Lazy Evaluation: Intermediate operations execute only when a terminal operation is invoked. Pipeline Processing: Multiple operations can be chained together. Parallel Processing: Supports multi-core processors using parallel streams. No Data Storage: Streams process data without storing it. Functional Programming: Supports lambda expressions and method references.Internal Working of a StreamEvery stream follows a three-step processing pipeline.Step 1: Create a StreamCreate a stream from a collection, array, file, or other data source.Step 2: Apply Intermediate OperationsTransform or filter the data using operations such as:filter()map()sorted()These operations are lazy, meaning they are not executed immediately.Step 3: Apply a Terminal OperationThe terminal operation triggers the execution of the pipeline and produces the final result.Examples include:collect()forEach()count()Creation of StreamsStreams Creation can be done by multiple ways:From a Collection: Create a stream directly from a List, Set or any Collection using stream()From an Array: Use Arrays.stream(array) to convert an array into a stream.Using Stream.of(): Create a stream from a fixed set of values using Stream.of().Infinite Stream: Generate an unbounded sequence using Stream.iterate() or Stream.generate()Example 
+Java 8 introduced the Stream API to simplify data processing using a functional programming approach. It provides a clean and concise way to perform operations on collections, making code more readable and easier to maintain.It supports operations like filtering, mapping, sorting, reducing, and collecting elements.Stream operations can be chained together to create efficient and expressive data-processing pipelines.Streams can process data sequentially or in parallel to improve performance for suitable workloads.Note: A Stream is a sequence of elements that supports functional-style operations. Unlike Collections, a Stream does not store data it only processes it.StreamCreation of StreamsStreams Creation can be done by multiple ways:From a Collection: Create a stream directly from a List, Set or any Collection using stream()From an Array: Use Arrays.stream(array) to convert an array into a stream.Using Stream.of(): Create a stream from a fixed set of values using Stream.of().Infinite Stream: Generate an unbounded sequence using Stream.iterate() or Stream.generate()Example 
             Java
 
     import java.util.*;
@@ -30,57 +30,31 @@ Output1
 3
 4
 5
-Stream PipelineA Stream Pipeline is a sequence of operations performed on a stream to process data efficiently. It consists of a data source, one or more intermediate operations, and a terminal operation that produces the final result.Intermediate operations (such as filter(), map(), and sorted()) are lazy and execute only when a terminal operation is invoked.A pipeline processes elements in a streamlined manner, allowing multiple operations to be combined into a single flow.A Stream Pipeline defines how data flows through different stages. It has three parts:1. SourceThe source provides the data for the stream. It can be a collection, array, file or even an infinite generator.Example:List<Integer> numbers = Arrays.asList(10, 20, 30, 40);Stream<Integer> stream = numbers.stream(); // Source2. Intermediate OperationsIntermediate operations transform a stream into another stream. Some common intermediate operations include:filter(): Filters elements based on a specified condition.map(): Transforms each element in a stream to another value.Sorted(): Sorts the elements of a stream.Distinct(): Remove duplicates.Skip(): Skip first n elements.Example:
+Features of StreamsJava Streams provide a flexible way to process sequences of data using functional-style operations. They simplify data transformations without modifying the original data source.Declarative Processing: Focuses on what operation to perform rather than writing explicit iteration logic.Lazy Evaluation: Delays intermediate operations until a terminal operation starts processing.Operation Chaining: Combines multiple operations into a single processing pipeline.Parallel Execution: Can divide suitable workloads across multiple threads using parallel streams.Non-Storage: Processes elements from a source without acting as a data structure itself.Functional Style: Works naturally with lambda expressions and method references.Stream PipelineA Stream Pipeline is a sequence of operations performed on a stream to process data efficiently. It consists of a data source, one or more intermediate operations, and a terminal operation that produces the final result.Intermediate operations (such as filter(), map(), and sorted()) are lazy and execute only when a terminal operation is invoked.A pipeline processes elements in a streamlined manner, allowing multiple operations to be combined into a single flow. How Stream Pipeline Works1. SourceThe source provides data to the stream. It can be a collection, array, file, or another supported data source.Example:List<Integer> numbers = Arrays.asList(10, 20, 30, 40);
+Stream<Integer> stream = numbers.stream();2. Intermediate OperationsIntermediate operations transform a stream into another stream. They are lazy, meaning processing generally begins only when a terminal operation is invoked.Common intermediate operations include:filter() –> Selects elements that satisfy a condition.map() –> Transforms elements into another form.sorted() –> Sorts stream elements.distinct() – Removes duplicate elements.skip() –> Skips a specified number of elements.Example:
             Java
 
     import java.util.*;
-import java.util.stream.*;
 
 public class StreamIntermediate {
-    public static void main(String[] args) {
-        List<Integer> numbers = Arrays.asList(5, 10, 20, 10, 30, 40);
+    public static void main(String[] args)
+    {
+        List<Integer> numbers
+            = Arrays.asList(5, 10, 20, 10, 30, 40);
 
         numbers.stream()
-               .filter(n -> n > 10)   // keep > 10
-               .map(n -> n * 2)       // double them
-               .distinct()            // remove duplicates
-               .sorted()              // sort ascending
-               .forEach(System.out::println);
+            .filter(n -> n > 10)
+            .map(n -> n * 2)
+            .distinct()
+            .sorted()
+            .forEach(System.out::println);
     }
 }
 
 Output40
 60
 80
- 3. Terminal Operations Terminal Operations are the operations that on execution return a final result as an absolute value.ForEach(): It iterates all the elements in a stream.collect(Collectors.toList()): It collects stream elements into a list (or other collections like set/map).Reduce(): It reduces stream elements into a single aggregated result.count(): It returns the total number of elements in a stream.anyMatch() / allMatch() / noneMatch(): They check whether elements match a given condition.findFirst() / findAny(): They return the first or any element from a stream.Example:
-            Java
-
-    import java.util.*;
-import java.util.stream.*;
-
-public class StreamTerminal {
-    public static void main(String[] args)
-    {
-        List<String> names = Arrays.asList("Amit", "Riya", "Rohan", "Amit");
-
-        // Collect into Set (removes duplicates)
-        Set<String> uniqueNames = names.stream().collect(Collectors.toSet());
-        System.out.println(uniqueNames);
-
-        // Count names starting with 'R'
-        long count = names.stream().filter(n -> n.startsWith("R")).count();
-        System.out.println("Names starting with R: " + count);
-
-        // Reduce (concatenate names)
-        String result = names.stream().reduce("", (a, b) -> a + b + " ");
-        System.out.println(result);
-    }
-}
-
-Output[Amit, Riya, Rohan]
-Names starting with R: 2
-Amit Riya Rohan Amit 
-Types of StreamsStreams can be categorized into different types based on their nature and usage.1. Sequential StreamProcesses elements one by one in a single thread.Created by default when you call stream().Example:
+3. Terminal OperationsTerminal operations trigger the processing of the stream pipeline and complete the stream. They may produce a result or perform an action without returning a result.Common terminal operations include:forEach() -> Performs an action for each element and returns no result.collect() -> Accumulates stream elements into a collection or another result container.reduce() -> Combines stream elements to produce a result.count() -> Returns the number of elements.anyMatch(), allMatch(), noneMatch() -> Check whether elements satisfy a condition.findFirst() and findAny() -> Return an element wrapped in an Optional.Types of StreamsStreams can be categorized into different types based on their nature and usage.1. Sequential StreamA Sequential Stream executes a stream pipeline in sequence, making it suitable for straightforward data-processing tasks where parallel execution is unnecessary.Maintains a simple execution model with no parallel processing.Suitable for smaller datasets or operations where parallelization provides little benefit.Example:
             Java
 
     import java.util.*;
@@ -150,7 +124,7 @@ Output1
 2
 3
 4
-Stream vs Collection differenceCollection stores data in memory and represents a data structure (e.g., List, Set, Map).Stream does not store data; it processes data from a source (like a collection) in a functional, declarative way.To know more about Stream vs Collection refer-> Stream vs CollectionJava Stream: File OperationIn this section, we see how to utilize Java stream in file I/O operation. 1. File Read OperationLet's understand file read operation through the given example
+Stream Vs CollectionCollection stores data in memory and represents a data structure (e.g., List, Set, Map).Stream does not store data; it processes data from a source (like a collection) in a functional, declarative way.To know more about Stream vs Collection refer-> Stream vs CollectionJava Stream: File OperationIn this section, we see how to utilize Java stream in file I/O operation. 1. File Read OperationLet's understand file read operation through the given example
             Java
 
     import java.io.IOException;

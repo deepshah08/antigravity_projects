@@ -1,12 +1,12 @@
 # First non-repeating character of given string - GeeksforGeeks
 
-Given a string s of lowercase English letters, the task is to find the first non-repeating character. If there is no such character, return '$'.Examples: Input: s = "geeksforgeeks"Output: 'f'Explanation: 'f' is the first character in the string which does not repeat.Input: s = "racecar"Output: 'e'Explanation: 'e' is the only character in the string which does not repeat.Input: "aabbccc"Output: '$'Explanation: All the characters in the given string are repeating.Try It YourselfTable of Content[Naive Approach] Using Nested Loop – O(n^2) Time and O(1) Space[Efficient Approach 1] Using Frequency Array (Two Traversal) – O(2*n) Time and O(MAX_CHAR ) Space[Efficient Approach 2] By Storing Indices (Single Traversal) – O(n) Time and O(MAX_CHAR ) Space[Naive Approach] Using Nested Loop – O(n^2) Time and O(1) SpaceThe idea is to use two nested loops, the outer loop for picking an element and the inner loop for finding another occurrence of the picked character in the string. As soon as we find a character which has only one occurrence in the input string, return it. If all characters have multiple occurrences, return '$'.
+Given a string s of lowercase English letters, find the first non-repeating character. If there is no such character, return '$'.Examples: Input: s = "geeksforgeeks"Output: 'f'Explanation: 'f' is the first character in the string which does not repeat.Input: s = "racecar"Output: 'e'Explanation: 'e' is the only character in the string which does not repeat.Input: "aabbccc"Output: '$'Explanation: All the characters in the given string are repeating.Try It YourselfTable of Content[Naive Approach] Nested Loop – O(n^2) Time and O(1) Space[Expected Approach 1] Frequency Array  - Two Traversals – O(2*n) Time and O(MAX_CHAR ) Space[Expected Approach 2] Storing Indices - Single Traversal – O(n) Time and O(MAX_CHAR ) Space[Naive Approach] Nested Loop – O(n^2) Time and O(1) SpaceThe idea is to use two nested loops, Outer loop for picking an element Inner loop for finding another occurrence of the picked character in the string. As soon as we find a character which has only one occurrence in the input string, return it.  If all characters have multiple occurrences, return '$'.
             C++
 
-    #include <bits/stdc++.h>
+    #include <iostream>
 using namespace std;
 
-char nonRep(string &s) {
+char nonRepeatingChar(string &s) {
     int n = s.length();
     for (int i = 0; i < n; ++i) {
         bool found = false;
@@ -26,7 +26,7 @@ char nonRep(string &s) {
 
 int main() {
     string s = "racecar";
-    cout << nonRep(s);
+    cout << nonRepeatingChar(s);
     return 0;
 }
 
@@ -35,7 +35,7 @@ int main() {
 
     public class GFG {
 
-    public static char nonRep(String s) {
+    public static char nonRepeatingChar(String s) {
         int n = s.length();
         for (int i = 0; i < n; ++i) {
             boolean found = false;
@@ -55,14 +55,14 @@ int main() {
 
     public static void main(String[] args) {
         String s = "racecar";
-        System.out.println(nonRep(s));
+        System.out.println(nonRepeatingChar(s));
     }
 }
 
 
             Python
 
-    def nonRep(s):
+    def nonRepeatingChar(s):
     n = len(s)
     for i in range(n):
         found = False
@@ -75,8 +75,13 @@ int main() {
     return '$'
 
 
-s = "racecar"
-print(nonRep(s))
+def main():
+    s = "racecar"
+    print(nonRepeatingChar(s))
+
+
+if __name__ == "__main__":
+    main()
 
 
             C#
@@ -85,7 +90,7 @@ print(nonRep(s))
 
 class GFG {
 
-    public static char nonRep(string s) {
+    public static char nonRepeatingChar(string s) {
         int n = s.Length;
         for (int i = 0; i < n; ++i) {
             bool found = false;
@@ -105,14 +110,14 @@ class GFG {
 
     static void Main(string[] args) {
         string s = "racecar";
-        Console.WriteLine(nonRep(s));
+        Console.WriteLine(nonRepeatingChar(s));
     }
 }
 
 
             JavaScript
 
-    function nonRep(s) {
+    function nonRepeatingChar(s) {
     let n = s.length;
     for (let i = 0; i < n; ++i) {
         let found = false;
@@ -127,17 +132,18 @@ class GFG {
     return '$';
 }
 
+//Driver Code
 let s = "racecar";
-console.log(nonRep(s));
+console.log(nonRepeatingChar(s));
 
-Outpute[Efficient Approach 1] Using Frequency Array (Two Traversal) – O(2*n) Time and O(MAX_CHAR ) SpaceThe efficient approach is to either use an array of size MAX_CHAR  to store the frequencies of each character. Traverse the input string twice:First traversal is to count the frequency of each character.  Second traversal to find the first character in string with a frequency of one.
+Outpute[Expected Approach 1] Frequency Array  - Two Traversals – O(2*n) Time and O(MAX_CHAR ) SpaceThe idea is to use an array of size MAX_CHAR  to store the frequencies of each character. Traverse the input string twice:First traversal is to count the frequency of each character.  Second traversal to find the first character in string with a frequency of one.
             C++
 
-    #include <bits/stdc++.h>
+    #include <iostream>
 using namespace std;
 const int MAX_CHAR = 26;  
 
-char nonRep(const string &s) {
+char nonRepeatingChar(const string &s) {
     vector<int> freq(MAX_CHAR, 0);
     for (char c : s) {
         freq[c - 'a']++;
@@ -154,7 +160,7 @@ char nonRep(const string &s) {
 
 int main() {
     string s = "geeksforgeeks";
-    cout << nonRep(s) << endl;
+    cout << nonRepeatingChar(s) << endl;
     return 0;
 }
 
@@ -166,7 +172,7 @@ int main() {
 public class GFG {
     private static final int MAX_CHAR = 26;  
 
-    public static char nonRep(String s) {
+    public static char nonRepeatingChar(String s) {
         int[] freq = new int[MAX_CHAR];
 
         for (char c : s.toCharArray()) {
@@ -184,16 +190,16 @@ public class GFG {
 
     public static void main(String[] args) {
         String s = "geeksforgeeks";
-        System.out.println(nonRep(s));
+        System.out.println(nonRepeatingChar(s));
     }
 }
 
 
             Python
 
+    def nonRepeatingChar(s):
     MAX_CHAR = 26  
-
-def nonRep(s):
+    
     freq = [0] * MAX_CHAR
 
     for c in s:
@@ -206,8 +212,14 @@ def nonRep(s):
 
     return '$'
 
-s = "geeksforgeeks"
-print(nonRep(s))
+
+def main():
+    s = "geeksforgeeks"
+    print(nonRepeatingChar(s))
+
+
+if __name__ == "__main__":
+    main()
 
 
             C#
@@ -217,7 +229,7 @@ print(nonRep(s))
 class GFG {
     const int MAX_CHAR = 26;  
 
-    static char nonRep(string s) {
+    static char nonRepeatingChar(string s) {
         int[] freq = new int[MAX_CHAR];
 
         foreach (char c in s) {
@@ -235,16 +247,15 @@ class GFG {
 
     static void Main() {
         string s = "geeksforgeeks";
-        Console.WriteLine(nonRep(s));
+        Console.WriteLine(nonRepeatingChar(s));
     }
 }
 
 
             JavaScript
 
+    function nonRepeatingChar(s) {
     const MAX_CHAR = 26;  
-
-function nonRep(s) {
     const freq = new Array(MAX_CHAR).fill(0);
     for (let c of s) {
         freq[c.charCodeAt(0) - 'a'.charCodeAt(0)]++;
@@ -259,19 +270,20 @@ function nonRep(s) {
     return '$';
 }
 
+//Driver Code
 let s = "geeksforgeeks";
-console.log(nonRep(s));
+console.log(nonRepeatingChar(s));
 
 Outputf
-[Efficient Approach 2] By Storing Indices (Single Traversal) – O(n) Time and O(MAX_CHAR ) SpaceThe above approach can be optimized using a single traversal of the string. The idea is to maintain a visited array of size MAX_CHAR initialized to -1, indicating no characters have been seen yet. Now, we iterate through the string:If a character is seen for the first time, its index is stored in the array. If the character is found again then its array value is set to -2 to represent this character is now repeating. After the string traversal, traverse the visited array and check if value in the array is not equal to -1 or -2 (means, this character is not repeating). We then find the smallest positive index from these values to find the first non-repeating character. If no such index is found, return '$'.
+[Expected Approach 2] Storing Indices - Single Traversal – O(n) Time and O(MAX_CHAR ) SpaceThe above approach can be optimized using a single traversal of the string. The idea is to maintain a visited array of size MAX_CHAR initialized to -1, indicating no characters have been seen yet. Now, we iterate through the string:If a character is seen for the first time, its index is stored in the array. If the character is found again then its array value is set to -2 to represent this character is now repeating. After the string traversal, traverse the visited array and check if value in the array is not equal to -1 or -2 (means, this character is not repeating). We then find the smallest positive index from these values to find the first non-repeating character. If no such index is found, return '$'.
             C++
 
-    #include <bits/stdc++.h>
+    #include <iostream>
 using namespace std;
 
 const int MAX_CHAR = 26;  
 
-char nonRep(const string& s) {
+char nonRepeatingChar(const string& s) {
     vector<int> vis(MAX_CHAR, -1);
     for (int i = 0; i < s.length(); ++i) {
         int index = s[i] - 'a';
@@ -299,7 +311,7 @@ char nonRep(const string& s) {
 
 int main() {
     string s = "aabbccc";
-    cout << nonRep(s) << endl;
+    cout << nonRepeatingChar(s) << endl;
     return 0;
 }
 
@@ -308,10 +320,10 @@ int main() {
 
     import java.util.*;
 
-public class Main {
+public class Gfg {
     static final int MAX_CHAR = 26;
 
-    public static char nonRep(String s) {
+    public static char nonRepeatingChar(String s) {
         int[] vis = new int[MAX_CHAR];
         Arrays.fill(vis, -1);
 
@@ -342,14 +354,14 @@ public class Main {
 
     public static void main(String[] args) {
         String s = "aabbccc";
-        System.out.println(nonRep(s));
+        System.out.println(nonRepeatingChar(s));
     }
 }
 
 
             Python
 
-    def nonRep(s):
+    def nonRepeatingChar(s):
     MAX_CHAR = 26
     vis = [-1] * MAX_CHAR
 
@@ -374,8 +386,13 @@ public class Main {
     return '$' if idx == -1 else s[vis[idx]]
 
 
-s = "aabbccc"
-print(nonRep(s))
+def main():
+    s = "aabbccc"
+    print(nonRepeatingChar(s))
+
+
+if __name__ == "__main__":
+    main()
 
 
             C#
@@ -385,7 +402,7 @@ class GFG
 {
     const int MAX_CHAR = 26;
 
-    static char nonRep(string s)
+    static char nonRepeatingChar(string s)
     {
         int[] vis = new int[MAX_CHAR];
         Array.Fill(vis, -1);
@@ -422,14 +439,14 @@ class GFG
     static void Main()
     {
         string s = "aabbccc";
-        Console.WriteLine(nonRep(s));
+        Console.WriteLine(nonRepeatingChar(s));
     }
 }
 
 
             JavaScript
 
-    function nonRep(s) {
+    function nonRepeatingChar(s) {
     const MAX_CHAR = 26;
     let vis = new Array(MAX_CHAR).fill(-1);
 
@@ -456,7 +473,8 @@ class GFG
     return idx === -1 ? '$' : s[vis[idx]];
 }
 
+//Driver Code
 let s = "aabbccc";
-console.log(nonRep(s));
+console.log(nonRepeatingChar(s));
 
 Output$

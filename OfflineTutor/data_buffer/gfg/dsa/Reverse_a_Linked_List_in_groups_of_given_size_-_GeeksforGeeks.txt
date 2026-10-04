@@ -563,7 +563,7 @@ void printList(Node *head) {
     Node *curr = head;
     while (curr != nullptr) {
         cout << curr->data;
-        if(curr->next != NULL){
+        if(curr->next != nullptr){
             cout << " -> ";
         }
         curr = curr->next;

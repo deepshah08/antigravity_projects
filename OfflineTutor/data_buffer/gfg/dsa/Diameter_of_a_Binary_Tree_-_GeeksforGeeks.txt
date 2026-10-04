@@ -1,6 +1,6 @@
 # Diameter of a Binary Tree - GeeksforGeeks
 
-Given the root of a binary tree, find its diameter. The diameter of a tree is defined as the number of edges in the longest path between any two nodes.Examples:Input: The binary tree for this example is shown in the image below.Output: 2Explanation: The longest path has 2 edges ( the path  2 -> 1 -> 3 ).Input: The binary tree for this example is shown in the image below.Output: 4Explanation: The longest path has 4 edges ( the path 5 -> 3 -> 2 -> 4 -> 6 ).Try It YourselfTable of Content[Naive Approach] By Calculating Height For Each Node - O(n^2) Time and O(h) Space[Expected Approach] Using Single Traversal - O(n) Time and O(h) Space[Naive Approach] By Calculating Height For Each Node - O(n2) Time and O(h) SpaceThe core idea involves recursively traversing the tree. At each node, we determine the heights of its left and right subtrees and update the maximum diameter by calculating the sum of these heights.
+Given the root of a binary tree, find its diameter. The diameter of a tree is defined as the number of edges in the longest path between any two nodes.Examples:Input: The binary tree for this example is shown in the image below. Output: 2Explanation: The longest path has 2 edges ( the path  2 -> 1 -> 3 ).Input: The binary tree for this example is shown in the image below. Output: 4Explanation: The longest path has 4 edges ( the path 5 -> 3 -> 2 -> 4 -> 6 ).Try It YourselfTable of Content[Naive Approach] Calculate Height of Each Node - O(n2) Time and O(h) Space[Expected Approach] Single Traversal - O(n) Time and O(h) Space[Naive Approach] Calculate Height of Each Node - O(n2) Time and O(h) SpaceThe core idea involves recursively traversing the tree. At each node, Find the heights of its left and right subtrees Update the maximum diameter if the sum of these heights is more than current maximum.
             C++
 
     #include <iostream>
@@ -344,7 +344,7 @@ root.right.right.right = new Node(6);
 console.log(diameter(root));
 
 Output4
-[Expected Approach] Using Single Traversal - O(n) Time and O(h) SpaceThe core idea is to efficiently calculate the diameter, avoiding redundant height calculations. We use recursion to find both height and diameter in a single traversal. For each node, the longest path through it is the sum of its left and right subtree heights. By tracking the maximum diameter, we find the longest path.
+[Expected Approach] Single Traversal - O(n) Time and O(h) SpaceThe core idea is to efficiently calculate the diameter, avoiding redundant height calculations. For each node, we track two things simultaneously in recursion, Height of current node (returned from recursion) Maximum sum of left and right heights (or diameter). We track this using a shared variable among recursive calls.We compare the maximum sum for current node with current maximum and update the result if needed.Since both height and diameter are tracked in a single recursion, we get diameter using one traversal.
             C++
 
     #include <iostream>
@@ -681,4 +681,3 @@ root.right.right.right = new Node(6);
 console.log(diameter(root));
 
 Output4
-Related article:Diameter of an N-ary tree

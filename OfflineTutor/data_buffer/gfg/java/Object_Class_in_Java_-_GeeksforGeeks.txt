@@ -1,6 +1,6 @@
 # Object Class in Java - GeeksforGeeks
 
-Object class (in Java.lang) is the root of the Java class hierarchy. Every class in Java either directly or indirectly extends Object. It provides essential methods like toString(), equals(), hashCode(), clone() and several others that support object comparison, hashing, debugging, cloning and synchronization.Acts as the root of all Java classesDefines essential methods shared by all objectsSupports thread communication (wait(), notify(), notifyAll())Example: Using toString() and hashCode()
+The Object class is the root class of the Java class hierarchy. Every Java class directly or indirectly inherits from the Object class.Belongs to the java.lang package and is automatically available in every Java program.Provides common methods such as toString(), equals(), hashCode(), and getClass().Allows objects of different classes to share a common base type.Example: Using toString() and hashCode()
             Java
 
     class Person{
@@ -76,34 +76,43 @@ Explanation: Overridden toString() prints a custom readable string for the objec
 }
 
 Output3131
-Explanation: hashCode() returns an integer value used in hashing-based collections like HashMap. If two objects are equal, they must produce the same hash code.3. equals(Object obj) Methodequals() method compares the given object with the current object. It is recommended to override this method to define custom equality conditions. 
+Explanation: hashCode() returns an integer value used in hashing-based collections like HashMap. If two objects are equal, they must produce the same hash code.3. equals(Object obj) MethodThe equals(Object obj) method compares the current object with another object for equality. By default, Object.equals() compares object references, but it can be overridden to define equality based on object data.
             Java
 
-    class Book{
-    
+    class Book {
+
     String title;
 
-    Book(String title) {
-        this.title = title;
-    }
+    Book(String title) { this.title = title; }
 
-    @Override
-    public boolean equals(Object obj){
-        
-        Book b = (Book) obj;
+    @Override public boolean equals(Object obj)
+    {
+
+        // Same object reference
+        if (this == obj) {
+            return true;
+        }
+
+        // Check for null and incompatible type
+        if (!(obj instanceof Book)) {
+            return false;
+        }
+
+        Book b = (Book)obj;
         return this.title.equals(b.title);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         Book b1 = new Book("Java");
         Book b2 = new Book("Java");
 
-        System.out.println(b1.equals(b2)); // true
+        System.out.println(b1.equals(b2));
     }
 }
 
 Outputtrue
-Explanation: equals() compares objects based on content rather than reference. Must be overridden when custom comparison logic is needed.4. getClass() methodgetClass() method returns the class object of "this" object and is used to get the actual runtime class of the object.
+Explanation: The overridden equals() method first checks whether both references point to the same object and then verifies that obj is a Book before casting. It compares the title values to determine whether the two Book objects are equal.4. getClass() methodgetClass() method returns the class object of "this" object and is used to get the actual runtime class of the object.
             Java
 
     public class Geeks{
@@ -170,106 +179,68 @@ Explanation: The finalize() method is called just before the object is garbage c
 
 OutputVishnu
 Vishnu
-Explanation: clone() creates a copy of the current object (shallow copy by default). Class must implement Cloneable or else it throws CloneNotSupportedException.7. Concurrency Methods: wait(), notify() and notifyAll()These methods are related to thread Communication in Java. They are used to make threads wait or notify others in concurrent programming.
+Explanation: clone() creates a copy of the current object (shallow copy by default). Class must implement Cloneable or else it throws CloneNotSupportedException.7. Concurrency Methods: wait(), notify(), and notifyAll()The Object class provides wait(), notify(), and notifyAll() methods for coordination between threads that use the same object's monitor.wait(): Causes the current thread to wait until it is notified, interrupted, or otherwise resumes according to the method variant used.notify(): Wakes up one thread waiting on the same object's monitor.notifyAll(): Wakes up all threads waiting on the same object's monitor.These methods must be used while the current thread owns the object's monitor, typically inside a synchronized block or method.
             Java
 
-    import java.io.*;
+    class SharedResource {
 
-public class Book implements Cloneable {
-    private String t;   // title
-    private String a;   // author
-    private int y;      // year
+    private boolean available = false;
 
-    public Book(String t, String a, int y)
-    {
-        this.t = t;
-        this.a = a;
-        this.y = y;
-    }
-
-    // Override the toString method
-    @Override public String toString()
-    {
-        return t + " by " + a + " (" + y + ")";
-    }
-
-    // Override the equals method
-    @Override public boolean equals(Object o)
-    {
-        if (o == null || !(o instanceof Book)) {
-            return false;
-        }
-        Book other = (Book)o;
-        return this.t.equals(other.getTitle())
-            && this.a.equals(other.getAuthor())
-            && this.y == other.getYear();
-    }
-
-    // Override the hashCode method
-    @Override public int hashCode()
-    {
-        int res = 17;
-        res = 31 * res + t.hashCode();
-        res = 31 * res + a.hashCode();
-        res = 31 * res + y;
-        return res;
-    }
-
-    // Override the clone method
-    @Override public Book clone()
-    {
+    synchronized void waitForResource() {
         try {
-            return (Book)super.clone();
+            while (!available) {
+                System.out.println(Thread.currentThread().getName()+ " is waiting...");
+                wait();
+            }
+
+            System.out.println(Thread.currentThread().getName()+ " resumed.");
         }
-        catch (CloneNotSupportedException e) {
-            throw new AssertionError();
+        catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
     }
 
-    // Override the finalize method
-    @Override protected void finalize() throws Throwable
-    {
-        System.out.println("Finalizing " + this);
+    synchronized void makeResourceAvailable() { 
+        available = true;
+
+        System.out.println("Resource is available.");
+
+        // Wakes up one waiting thread
+        notify();
     }
 
-    public String getTitle() { return t; }
+    synchronized void wakeAllThreads() {
 
-    public String getAuthor() { return a; }
-
-    public int getYear() { return y; }
-    public static void main(String[] args)
-    {
-        // Create a Book object and print its details
-        Book b1 = new Book(
-            "The Hitchhiker's Guide to the Galaxy",
-            "Douglas Adams", 1979);
-        System.out.println(b1);
-
-        // Create a clone of the Book object and print its
-        // details
-        Book b2 = b1.clone();
-        System.out.println(b2);
-
-        // Check if the two objects are equal
-        System.out.println("b1 equals b2: "
-                           + b1.equals(b2));
-
-        // Get the hash code of the two objects
-        System.out.println("b1 hash code: "
-                           + b1.hashCode());
-        System.out.println("b2 hash code: "
-                           + b2.hashCode());
-
-        // Set book1 to null to trigger garbage collection
-        // and finalize method
-        b1 = null;
-        System.gc();
+        // Wakes up all waiting threads
+        notifyAll();
     }
 }
 
-OutputThe Hitchhiker's Guide to the Galaxy by Douglas Adams (1979)
-The Hitchhiker's Guide to the Galaxy by Douglas Adams (1979)
-b1 equals b2: true
-b1 hash code: 1840214527
-b2 hash code: 1840214527
-Explanation: The above example demonstrates the use of toString(), equals(), hashCode() and clone() methods in the Book class.
+public class Geeks {
+
+    public static void main(String[] args)
+        throws InterruptedException
+    {
+
+        SharedResource resource = new SharedResource();
+
+        Thread t1 = new Thread(resource::waitForResource,"Thread-1");
+
+        t1.start();
+
+        // Ensure Thread-1 starts waiting
+        Thread.sleep(500);
+
+        resource.makeResourceAvailable();
+
+        t1.join();
+
+        // Demonstrates notifyAll()
+        resource.wakeAllThreads();
+    }
+}
+
+OutputThread-1 is waiting...
+Resource is available.
+Thread-1 resumed.
+Explanation: wait() causes Thread-1 to wait and releases the object's monitor. The notify() method wakes one thread waiting on the same monitor. The notifyAll() method wakes all waiting threads; in this example, no threads remain waiting when it is called.
