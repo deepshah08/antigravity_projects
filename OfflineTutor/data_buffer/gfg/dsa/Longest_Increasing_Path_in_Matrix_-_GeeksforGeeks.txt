@@ -1,36 +1,39 @@
 # Longest Increasing Path in Matrix - GeeksforGeeks
 
-Given a matrix with n rows and m columns. The task is to find the length of the longest increasing path in the matrix, here increasing path means that the value in the specified path increases. For example, if a path of length k has values a1, a2, a3, .... ak, then for every i from [2,k] this condition must hold ai > ai-1.  No cell should be revisited in the path.From each cell, we can either move in four directions: left, right, up, or down. We are not allowed to move diagonally or move outside the boundary.Examples: Input: matrix[][] = [[1 2 3],                                [4 5 6],                               [7 8 9]]Output: 5Explanation: One such path is 1 → 2 → 3 → 6 → 9, where each number is strictly greater than the previous and movement is allowed in four directions (up, down, left, right). Input: matrix[][] = [[3 4 5],                                 [6 2 6],                                [2 2 1]]Output: 4Explanation: The longest increasing path is 3→4→5 →6, where each number is strictly greater than the previous and movement is allowed in four directions (up, down, left, right). Try It YourselfTable of Content[Naive Approach] Using Recursion - O(4^(m*n)) Time and O(m*n) Space[Expected Approach 1] Using Top-Down DP (Memoization) - O(m*n) Time and O(m*n) Space[Expected Approach 2] Using Kahn's algorithm - O(m*n) Time and O(n*m) Space[Naive Approach] Using Recursion - O(4^(m*n)) Time and O(m*n) SpaceThe idea is to recursively check the longest paths from each cell. For each cell, initialize the answer to 1. Recursively process all the four directions (first check if the cells are valid and then check that their value is greater than current cell value) and set answer to the maximum of the four directions. Return the calculated answer.
+Given a matrix with n rows and m columns, find the length of the longest path such that:The path can start and end at any cell.A cell cannot be visited more than once.The values in path are strictly increasing. From each cell, you can move left, right, up, or down.Diagonal moves and moves outside the matrix are not allowed.Examples: Input: n = 3, m = 3, matrix[][] = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]Output: 5Explanation: One such path is 1 -> 2 -> 3 -> 6 -> 9, where each number is strictly greater than the previous. Input: n = 3, m = 3, matrix[][] = [[3, 4, 5], [6, 2, 6], [2, 2, 1]]Output: 4Explanation: One of the longest increasing paths is 3 -> 4 -> 5 -> 6. Input: n = 2, m = 2, matrix[][] = [[1, 1], [1, 1]]Output: 1Explanation: There can at most one vertex as all vertices are same.Try It YourselfTable of Content[Naive Approach] Using Recursion - O(4^(m * n)) Time and O(m * n) Space[Expected Approach - 1] Using Memoization(DP) - O(m * n) Time and O(m * n) Space[Expected Approach - 2] Using Kahn's algorithm - O(m * n) Time and O(m * n) Space[Naive Approach] Using Recursion - O(4^(m * n)) Time and O(m * n) SpaceThe idea is to start a path from every cell and recursively explore all four directions. We move only to a neighboring cell whose value is greater than the current cell, and keep track of the maximum path length found.Traverse every cell and consider it as the starting point.Recursively check all four possible directions from the current cell.Move to a neighboring cell only if it is within bounds and has a greater value.Compute the longest increasing path starting from each valid neighboring cell.Add the current cell to the path and update the maximum length.Return the maximum path length obtained from all cells.
             C++
 
-    // Recursive c++ program to find
-// longest incresing path in matrix
-#include <bits/stdc++.h>
+    #include <bits/stdc++.h>
 using namespace std;
 
-// Function which checks if the cell is valid
-// and its value is greater than previous cell.
-bool validCell(int i, int j, vector<vector<int>> &matrix, 
-               int n, int m, int prev) {
-    if (i >= 0 && i < n && j >= 0 && j < m && matrix[i][j] > prev)
-        return true;
-    return false;
+// Function to check whether the cell is valid and
+// its value is greater than the previous cell.
+bool validCell(int i, int j, vector<vector<int>> &matrix, int n, int m, int prev)
+{
+    return (i >= 0 && i < n && j >= 0 && j < m && matrix[i][j] > prev);
 }
 
-int pathRecur(int i, int j, vector<vector<int>> &matrix, 
-              int n, int m) {
-
-    // include current cell in answer
+// Recursive function to find the longest increasing path
+// starting from the cell (i, j).
+int pathRecur(int i, int j, vector<vector<int>> &matrix, int n, int m)
+{
+    // Include the current cell in the path.
     int ans = 1;
 
-    // direction vector to move in 4 directions
-    vector<vector<int>> dir = 
-    {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+    // Directions for moving down, up, right and left.
+    vector<vector<int>> dir = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 
-    for (auto d : dir) {
-        int x = i + d[0], y = j + d[1];
+    // Try moving in all four directions.
+    for (auto d : dir)
+    {
+        int x = i + d[0];
+        int y = j + d[1];
 
-        if (validCell(x, y, matrix, n, m, matrix[i][j])) {
+        // Move only if the next cell is valid and
+        // has a greater value than the current cell.
+        if (validCell(x, y, matrix, n, m, matrix[i][j]))
+        {
+            // Find the longest path from the next cell.
             ans = max(ans, 1 + pathRecur(x, y, matrix, n, m));
         }
     }
@@ -38,16 +41,19 @@ int pathRecur(int i, int j, vector<vector<int>> &matrix,
     return ans;
 }
 
-int longIncPath(vector<vector<int>> &matrix){
-    
-    int n = matrix.size();
-    int m = matrix[0].size();
+// Function to find the length of the longest
+// strictly increasing path in the matrix.
+int longIncPath(vector<vector<int>> &matrix, int n, int m)
+{
     int ans = 0;
 
-    // Check longest increasing path
-    // for each cell.
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
+    // Start a path from every cell.
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            // Find the longest increasing path starting
+            // from the current cell.
             ans = max(ans, pathRecur(i, j, matrix, n, m));
         }
     }
@@ -55,314 +61,12 @@ int longIncPath(vector<vector<int>> &matrix){
     return ans;
 }
 
-int main() {
- 
-    vector<vector<int>> matrix = 
-    {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-
-    cout << longIncPath(matrix) << endl;
-
-    return 0;
-}
-
-
-            Java
-
-    // Java program to find
-// longest increasing path in matrix
-
-import java.util.*;
-
-class GfG {
-
-    // Function which checks if the cell is valid
-    // and its value is greater than previous cell.
-    static boolean validCell(int i, int j, int[][] matrix,
-                             int n, int m, int prev) {
-        return (i >= 0 && i < n && j >= 0 && j < m
-                && matrix[i][j] > prev);
-    }
-
-    static int pathRecur(int i, int j, int[][] matrix,
-                         int n, int m) {
-
-        // include current cell in answer
-        int ans = 1;
-
-        // direction vectors to move in 4 directions
-        int[][] dir
-            = { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } };
-
-        for (int[] d : dir) {
-            int x = i + d[0], y = j + d[1];
-
-            // Check if the cell is valid
-            if (validCell(x, y, matrix, n, m,
-                          matrix[i][j])) {
-                ans = Math.max(
-                    ans, 1 + pathRecur(x, y, matrix, n, m));
-            }
-        }
-
-        return ans;
-    }
-
-    static int longIncPath(int[][] matrix) {
-        int ans = 0;
-        int n = matrix.length;
-        int m = matrix[0].length;
-        // Check longest increasing path
-        // for each cell.
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                ans = Math.max(
-                    ans, pathRecur(i, j, matrix, n, m));
-            }
-        }
-
-        return ans;
-    }
-
-    public static void main(String[] args) {
-        int[][] matrix
-            = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-
-        System.out.println(longIncPath(matrix));
-    }
-}
-
-
-            Python
-
-    # Python program to find
-# longest increasing path in matrix
-
-def validCell(i, j, matrix, n, m, prev):
-    return i >= 0 and i < n and j >= 0 and j < m \
-  	and matrix[i][j] > prev
-
-
-def pathRecur(i, j, matrix, n, m):
-
-    # include current cell in answer
-    ans = 1
-
-    # direction vectors to move in 4 directions
-    dir = [(1, 0), (-1, 0), (0, 1), (0, -1)]
-
-    for d in dir:
-        x, y = i + d[0], j + d[1]
-
-        # Check if the cell is valid
-        if validCell(x, y, matrix, n, m, matrix[i][j]):
-            ans = max(ans, 1 + pathRecur(x, y, matrix, n, m))
-
-    return ans
-
-
-def longIncPath(matrix):
-    ans = 0
-    n = len(matrix)
-    m = len(matrix[0])
-    # Check longest increasing path
-    # for each cell.
-    for i in range(n):
-        for j in range(m):
-            ans = max(ans, pathRecur(i, j, matrix, n, m))
-
-    return ans
-
-if __name__ == "__main__":
-  
-    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-
-    print(longIncPath(matrix))
-
-
-            C#
-
-    // C# program to find
-// longest increasing path in matrix
-
-using System;
-
-class GfG {
-
-    // Function which checks if the cell is valid
-    // and its value is greater than previous cell.
-    static bool validCell(int i, int j, int[, ] matrix,
-                          int n, int m, int prev) {
-        return (i >= 0 && i < n && j >= 0 && j < m
-                && matrix[i, j] > prev);
-    }
-
-    static int pathRecur(int i, int j, int[, ] matrix,
-                         int n, int m) {
-
-        // include current cell in answer
-        int ans = 1;
-
-        // direction vectors to move in 4 directions
-        int[, ] dir
-            = { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } };
-
-        for (int d = 0; d < 4; d++) {
-            int x = i + dir[d, 0], y = j + dir[d, 1];
-
-            // Check if the cell is valid
-            if (validCell(x, y, matrix, n, m,
-                          matrix[i, j])) {
-                ans = Math.Max(
-                    ans, 1 + pathRecur(x, y, matrix, n, m));
-            }
-        }
-
-        return ans;
-    }
-
-    static int longIncPath(int[, ] matrix) {
-        int ans = 0;
-        int n = matrix.GetLength(0); 
-        int m = matrix.GetLength(1); 
-        // Check longest increasing path
-        // for each cell.
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                ans = Math.Max(
-                    ans, pathRecur(i, j, matrix, n, m));
-            }
-        }
-
-        return ans;
-    }
-
-    static void Main(string[] args) {
-        int[, ] matrix
-            = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-
-        Console.WriteLine(longIncPath(matrix));
-    }
-}
-
-
-            JavaScript
-
-    // JavaScript program to find
-// longest increasing path in matrix
-
-function validCell(i, j, matrix, n, m, prev) {
-    return (i >= 0 && i < n && j >= 0 && j < m
-            && matrix[i][j] > prev);
-}
-
-function pathRecur(i, j, matrix, n, m) {
-
-    // include current cell in answer
-    let ans = 1;
-
-    // direction vectors to move in
-    // 4 directions
-    const dir =
-        [ [ 1, 0 ], [ -1, 0 ], [ 0, 1 ], [ 0, -1 ] ];
-
-    for (const d of dir) {
-        const x = i + d[0], y = j + d[1];
-
-        // Check if the cell is valid
-        if (validCell(x, y, matrix, n, m, matrix[i][j])) {
-            ans = Math.max(
-                ans, 1 + pathRecur(x, y, matrix, n, m));
-        }
-    }
-
-    return ans;
-}
-
-function longIncPath(matrix) {
-    let ans = 0;
-    let n = matrix.length;
-    let m = matrix[0].length;
-    // Check longest increasing path
-    // for each cell.
-    for (let i = 0; i < n; i++) {
-        for (let j = 0; j < m; j++) {
-            ans = Math.max(ans, pathRecur(i, j, matrix, n, m));
-        }
-    }
-
-    return ans;
-}
-
-const matrix = [ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ] ];
-
-console.log(longIncPath(matrix));
-
-Output5
-[Expected Approach 1] Using Top-Down DP (Memoization) - O(m*n) Time and O(m*n) SpaceThe idea is to use Dynamic Programming in the first approach. For a given cell, store its result in the 2D array so that if this cell is again called, we can simply return the value stored in the 2D array.1. Optimal Substructure: The longest increasing path from a given cell depends on the optimal solutions of its four neighboring cells. By combining these optimal substructures, we can efficiently calculate longest increasing path starting from given cell.2. Overlapping Subproblems: We can observe that a cell can be a neighbour of multiple cells and multiple calls can be made for it.  There are two parameters: i and  j (cell indices) that changes in the recursive solution. So create a 2D array of size n*m (where n is the number of rows and m is the number of columns in the matrix).Initiate all values in the 2D array as -1 to indicate nothing is computed yet.Check the longest increasing path for each cell (i, j). If the value in array for given cell is -1, then only make the recursive calls for the neighboring cells and store the result in the array. Otherwise, simply return the value stored in the array.
-            C++
-
-    // c++ program to find
-// longest incresing path in matrix
-#include <bits/stdc++.h>
-using namespace std;
-
-// Function which checks if the cell is valid
-// and its value is greater than previous cell.
-bool validCell(int i, int j, vector<vector<int>> &matrix, int prev) {
-    if (i >= 0 && i < matrix.size() && j >= 0 && 
-        j < matrix[0].size() && matrix[i][j] > prev)
-        return true;
-    return false;
-}
-
-int pathRecur(int i, int j, vector<vector<int>> &matrix, 
-              vector<vector<int>> &memo) {
-
-    // If answer exists in memo table.
-    if (memo[i][j] != -1)
-        return memo[i][j];
-
-    // include current cell in answer
-    int ans = 1;
-
-    // direction vector to move in 4 directions
-    vector<vector<int>> dir = 
-    		{{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
-
-    for (auto d : dir) {
-        int x = i + d[0], y = j + d[1];
-
-        // Check if the cell is valid
-        if (validCell(x, y, matrix, matrix[i][j])) {
-            ans = max(ans, 1 + pathRecur(x, y, matrix, memo));
-        }
-    }
-
-    // Memoize the answer and return it.
-    return memo[i][j] = ans;
-}
-
-int longIncPath(vector<vector<int>> &matrix,
-                          int n, int m) {
-    int ans = 0;
-
-    // Initialize dp table
-    vector<vector<int>> memo(n, vector<int>(m, -1));
-
-    // Check longest increasing path
-    // for each cell.
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
-            ans = max(ans, pathRecur(i, j, matrix, memo));
-        }
-    }
-
-    return ans;
-}
-
-int main() {
-    int n = 3, m = 3;
+int main()
+{
     vector<vector<int>> matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+
+    int n = matrix.size();
+    int m = matrix[0].size();
 
     cout << longIncPath(matrix, n, m) << endl;
 
@@ -372,77 +76,78 @@ int main() {
 
             Java
 
-    // Java program to find
-// longest increasing path in matrix
+    import java.util.*;
 
-class GfG {
+class GFG {
 
-    // Function which checks if the cell is valid
-    // and its value is greater than previous cell.
+    // Function to check whether the cell is valid and
+    // its value is greater than the previous cell.
     static boolean validCell(int i, int j, int[][] matrix,
-                             int prev) {
-        return (i >= 0 && i < matrix.length && j >= 0
-                && j < matrix[0].length
+                             int n, int m, int prev)
+    {
+        return (i >= 0 && i < n && j >= 0 && j < m
                 && matrix[i][j] > prev);
     }
 
+    // Recursive function to find the longest increasing
+    // path starting from the cell (i, j).
     static int pathRecur(int i, int j, int[][] matrix,
-                         int[][] memo) {
+                         int n, int m)
+    {
 
-        // If answer exists in memo table.
-        if (memo[i][j] != -1)
-            return memo[i][j];
-
-        // include current cell in answer
+        // Include the current cell in the path.
         int ans = 1;
 
-        // direction vector to move in 4 directions
+        // Directions for moving down, up, right and left.
         int[][] dir
             = { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } };
 
+        // Try moving in all four directions.
         for (int[] d : dir) {
-            int x = i + d[0], y = j + d[1];
+            int x = i + d[0];
+            int y = j + d[1];
 
-            // Check if the cell is valid
-            if (validCell(x, y, matrix, matrix[i][j])) {
+            // Move only if the next cell is valid and
+            // has a greater value than the current cell.
+            if (validCell(x, y, matrix, n, m,
+                          matrix[i][j])) {
+
+                // Find the longest path from the next cell.
                 ans = Math.max(
-                    ans, 1 + pathRecur(x, y, matrix, memo));
+                    ans, 1 + pathRecur(x, y, matrix, n, m));
             }
         }
 
-        // Memoize the answer and return it.
-        memo[i][j] = ans;
         return ans;
     }
 
-    static int longIncPath(int[][] matrix, int n,
-                                     int m) {
+    // Function to find the length of the longest
+    // strictly increasing path in the matrix.
+    static int longIncPath(int[][] matrix, int n, int m)
+    {
         int ans = 0;
 
-        // Initialize dp table
-        int[][] memo = new int[n][m];
+        // Start a path from every cell.
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                memo[i][j] = -1;
-            }
-        }
 
-        // Check longest increasing path
-        // for each cell.
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
+                // Find the longest increasing path starting
+                // from the current cell.
                 ans = Math.max(
-                    ans, pathRecur(i, j, matrix, memo));
+                    ans, pathRecur(i, j, matrix, n, m));
             }
         }
 
         return ans;
     }
 
-    public static void main(String[] args) {
-        int n = 3, m = 3;
+    public static void main(String[] args)
+    {
         int[][] matrix
             = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+
+        int n = matrix.length;
+        int m = matrix[0].length;
 
         System.out.println(longIncPath(matrix, n, m));
     }
@@ -451,136 +156,141 @@ class GfG {
 
             Python
 
-    # Python program to find
-# longest increasing path in matrix
+    # Function to check whether the cell is valid and
+# its value is greater than the previous cell.
+def validCell(i, j, matrix, n, m, prev):
+    return (i >= 0 and i < n and j >= 0 and j < m
+            and matrix[i][j] > prev)
 
-def validCell(i, j, matrix, prev):
-    return i >= 0 and i < len(matrix) and j >= 0 and\
-  	j < len(matrix[0]) and matrix[i][j] > prev
 
+# Recursive function to find the longest increasing path
+# starting from the cell (i, j).
+def pathRecur(i, j, matrix, n, m):
 
-def pathRecur(i, j, matrix, memo):
-
-    # If answer exists in memo table.
-    if memo[i][j] != -1:
-        return memo[i][j]
-
-    # include current cell in answer
+    # Include the current cell in the path.
     ans = 1
 
-    # direction vectors to move in
-    # 4 directions
-    dir = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+    # Directions for moving down, up, right and left.
+    dir = [[1, 0], [-1, 0], [0, 1], [0, -1]]
 
+    # Try moving in all four directions.
     for d in dir:
-        x, y = i + d[0], j + d[1]
+        x = i + d[0]
+        y = j + d[1]
 
-        # Check if the cell is valid
-        if validCell(x, y, matrix, matrix[i][j]):
-            ans = max(ans, 1 + pathRecur(x, y, matrix, memo))
+        # Move only if the next cell is valid and
+        # has a greater value than the current cell.
+        if validCell(x, y, matrix, n, m, matrix[i][j]):
 
-    # Memoize the answer and return it.
-    memo[i][j] = ans
+            # Find the longest path from the next cell.
+            ans = max(ans, 1 + pathRecur(x, y, matrix, n, m))
+
     return ans
 
 
+# Function to find the length of the longest
+# strictly increasing path in the matrix.
 def longIncPath(matrix, n, m):
     ans = 0
 
-    # Initialize dp table
-    memo = [[-1] * m for _ in range(n)]
-
-    # Check longest increasing path
-    # for each cell.
+    # Start a path from every cell.
     for i in range(n):
         for j in range(m):
-            ans = max(ans, pathRecur(i, j, matrix, memo))
+
+            # Find the longest increasing path starting
+            # from the current cell.
+            ans = max(ans, pathRecur(i, j, matrix, n, m))
 
     return ans
 
 
+# Driver code
 if __name__ == "__main__":
-    n, m = 3, 3
-    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    matrix = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ]
+
+    n = len(matrix)
+    m = len(matrix[0])
 
     print(longIncPath(matrix, n, m))
 
 
             C#
 
-    // C# program to find
-// longest increasing path in matrix
+    using System;
 
-using System;
-
-class GfG {
-
-    // Function which checks if the cell is valid
-    // and its value is greater than previous cell.
-    static bool validCell(int i, int j, int[, ] matrix,
-                          int prev) {
-        return (i >= 0 && i < matrix.GetLength(0) && j >= 0
-                && j < matrix.GetLength(1)
-                && matrix[i, j] > prev);
+class GFG {
+    
+    // Function to check whether the cell is valid and
+    // its value is greater than the previous cell.
+    static bool validCell(int i, int j, int[][] matrix,
+                          int n, int m, int prev)
+    {
+        return (i >= 0 && i < n && j >= 0 && j < m
+                && matrix[i][j] > prev);
     }
 
-    static int pathRecur(int i, int j, int[, ] matrix,
-                         int[, ] memo) {
-
-        // If answer exists in memo table.
-        if (memo[i, j] != -1)
-            return memo[i, j];
-
-        // include current cell in answer
+    // Recursive function to find the longest increasing
+    // path starting from the cell (i, j).
+    static int pathRecur(int i, int j, int[][] matrix,
+                         int n, int m)
+    {
+        // Include the current cell in the path.
         int ans = 1;
 
-        // direction vectors to move in 4 directions
-        int[, ] dir
-            = { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } };
+        // Directions for moving down, up, right and left.
+        int[][] dir
+            = { new int[] { 1, 0 }, new int[] { -1, 0 },
+                new int[] { 0, 1 }, new int[] { 0, -1 } };
 
-        for (int d = 0; d < 4; d++) {
-            int x = i + dir[d, 0], y = j + dir[d, 1];
+        // Try moving in all four directions.
+        for (int k = 0; k < 4; k++) {
+            int x = i + dir[k][0];
+            int y = j + dir[k][1];
 
-            // Check if the cell is valid
-            if (validCell(x, y, matrix, matrix[i, j])) {
+            // Move only if the next cell is valid and
+            // has a greater value than the current cell.
+            if (validCell(x, y, matrix, n, m,
+                          matrix[i][j])) {
+                // Find the longest path from the next cell.
                 ans = Math.Max(
-                    ans, 1 + pathRecur(x, y, matrix, memo));
+                    ans, 1 + pathRecur(x, y, matrix, n, m));
             }
         }
 
-        // Memoize the answer
-      	// and return it.
-        memo[i, j] = ans;
         return ans;
     }
 
-    static int longIncPath(int[, ] matrix, int n, int m) {
+    // Function to find the length of the longest
+    // strictly increasing path in the matrix.
+    static int longIncPath(int[][] matrix, int n, int m)
+    {
         int ans = 0;
 
-        // Initialize dp table
-        int[, ] memo = new int[n, m];
+        // Start a path from every cell.
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                memo[i, j] = -1;
-            }
-        }
-
-        // Check longest increasing path
-        // for each cell.
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
+                // Find the longest increasing path starting
+                // from the current cell.
                 ans = Math.Max(
-                    ans, pathRecur(i, j, matrix, memo));
+                    ans, pathRecur(i, j, matrix, n, m));
             }
         }
 
         return ans;
     }
 
-    static void Main(string[] args) {
-        int n = 3, m = 3;
-        int[, ] matrix
-            = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+    static void Main()
+    {
+        int[][] matrix = { new int[] { 1, 2, 3 },
+                           new int[] { 4, 5, 6 },
+                           new int[] { 7, 8, 9 } };
+
+        int n = matrix.Length;
+        int m = matrix[0].Length;
 
         Console.WriteLine(longIncPath(matrix, n, m));
     }
@@ -589,155 +299,150 @@ class GfG {
 
             JavaScript
 
-    // JavaScript program to find
-// longest increasing path in matrix
-
-function validCell(i, j, matrix, prev) {
-    return i >= 0 && i < matrix.length && j >= 0
-           && j < matrix[0].length && matrix[i][j] > prev;
+    // Function to check whether the cell is valid and
+// its value is greater than the previous cell.
+function validCell(i, j, matrix, n, m, prev)
+{
+    return (i >= 0 && i < n && j >= 0 && j < m
+            && matrix[i][j] > prev);
 }
 
-function pathRecur(i, j, matrix, memo) {
-
-    // If answer exists in memo table.
-    if (memo[i][j] !== -1)
-        return memo[i][j];
-
-    // include current cell in answer
+// Recursive function to find the longest increasing path
+// starting from the cell (i, j).
+function pathRecur(i, j, matrix, n, m)
+{
+    // Include the current cell in the path.
     let ans = 1;
 
-    // direction vectors to move in 4 directions
+    // Directions for moving down, up, right and left.
     const dir =
         [ [ 1, 0 ], [ -1, 0 ], [ 0, 1 ], [ 0, -1 ] ];
 
+    // Try moving in all four directions.
     for (const d of dir) {
-        const x = i + d[0], y = j + d[1];
+        const x = i + d[0];
+        const y = j + d[1];
 
-        // Check if the cell is valid
-        if (validCell(x, y, matrix, matrix[i][j])) {
+        // Move only if the next cell is valid and
+        // has a greater value than the current cell.
+        if (validCell(x, y, matrix, n, m, matrix[i][j])) {
+
+            // Find the longest path from the next cell.
             ans = Math.max(
-                ans, 1 + pathRecur(x, y, matrix, memo));
+                ans, 1 + pathRecur(x, y, matrix, n, m));
         }
     }
 
-    // Memoize the answer and return it.
-    memo[i][j] = ans;
     return ans;
 }
 
-function longIncPath(matrix, n, m) {
-
+// Function to find the length of the longest
+// strictly increasing path in the matrix.
+function longIncPath(matrix, n, m)
+{
     let ans = 0;
 
-    // Initialize dp table
-    const memo
-        = Array.from({length : n}, 
-        			() => Array(m).fill(-1));
-
-    // Check longest increasing path
-    // for each cell.
+    // Start a path from every cell.
     for (let i = 0; i < n; i++) {
         for (let j = 0; j < m; j++) {
+
+            // Find the longest increasing path starting
+            // from the current cell.
             ans = Math.max(ans,
-                           pathRecur(i, j, matrix, memo));
+                           pathRecur(i, j, matrix, n, m));
         }
     }
 
     return ans;
 }
 
-const n = 3, m = 3;
+// Driver code
 const matrix = [ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ] ];
+
+const n = matrix.length;
+const m = matrix[0].length;
 
 console.log(longIncPath(matrix, n, m));
 
 Output5
-[Expected Approach 2] Using Kahn's algorithm - O(m*n) Time and O(n*m) SpaceEach cell in the matrix is treated as a node, and there's a directed edge from a cell to its neighboring cell if the neighbor has a greater value. The graph formed this way is a directed acyclic graph and this problem reduces to longest path in a directed acyclic graph. We can find the longest path using Topological Sorting. We have used Kahn's algorithm in the below implementation.To implement Kahn's algorithm, we first compute the in-degree of each cell (i.e., the number of smaller neighbors pointing into it), which helps identify the starting points of increasing paths (cells with in-degree 0). These starting cells are enqueued, and we perform a level-order traversal (BFS), where each level represents one step further in the increasing sequence. For each cell we process, we update the in-degree of its larger neighbors, and if their in-degree becomes 0, we enqueue them as they are ready to be part of the path. The number of BFS levels we process gives us the maximum path length.
+[Expected Approach - 1] Using Memoization(DP) - O(m * n) Time and O(m * n) SpaceThe idea is to use the same recursive approach, but avoid solving the longest increasing path from the same cell multiple times. In the recursive solution, different paths can reach the same cell, causing repeated calculations. To fix this, we store the answer for every cell in a memo table and reuse it whenever that cell is visited again. Thus, each cell is solved only once.Create a memo table of size n × m and initialize it with -1.Start the recursive search from every cell of the matrix.For a cell, first check the memo table; if its answer is already stored, return it.Otherwise, check all four neighboring cells and move only to a valid cell with a greater value.Recursively find the longest path from each valid neighbor and take the maximum path length.Store the calculated answer in memo[i][j] and return the maximum path length.
             C++
 
-    // C++ program to find the longest increasing path in a matrix using BFS (Topological Sort)
-#include <bits/stdc++.h>
+    #include <bits/stdc++.h>
 using namespace std;
 
-// Function to find the longest increasing path in a matrix
-int longIncPath(vector<vector<int>> &matrix) {
-    
-    int n = matrix.size();        
-    int m = matrix[0].size();     
-    
-    // Direction vectors for moving right, down, left, and up
-    vector<pair<int, int>> dir = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+// Function to check whether the cell is valid and
+// its value is greater than the previous cell.
+bool validCell(int i, int j, vector<vector<int>> &matrix, int n, int m, int prev)
+{
+    return (i >= 0 && i < n && j >= 0 && j < m && matrix[i][j] > prev);
+}
 
-    // Create an in-degree matrix (used to count number
-    // of smaller neighbors for each cell)
-    vector<vector<int>> degree(n + 1, vector<int>(m + 1, 0));
+// Recursive function to find the longest increasing path
+// starting from the cell (i, j).
+int pathRecur(int i, int j, vector<vector<int>> &matrix, int n, int m, vector<vector<int>> &memo)
+{
+    // If answer already exists in memo table.
+    if (memo[i][j] != -1)
+        return memo[i][j];
 
-    // Compute the in-degree for each cell
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
-            for (auto it : dir) {
-                int x = i + it.first;
-                int y = j + it.second;
+    // Include the current cell in the path.
+    int ans = 1;
 
-                // If neighboring cell is within bounds 
-                // and has a smaller value
-                if (x >= 0 && x < n && y >= 0 && y < m &&
-                    matrix[x][y] < matrix[i][j])
-                    degree[i][j]++;  // Increase in-degree count
-            }
+    // Directions for moving down, up, right and left.
+    vector<vector<int>> dir = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+
+    // Try moving in all four directions.
+    for (auto d : dir)
+    {
+        int x = i + d[0];
+        int y = j + d[1];
+
+        // Move only if the next cell is valid and
+        // has a greater value than the current cell.
+        if (validCell(x, y, matrix, n, m, matrix[i][j]))
+        {
+            // Find the longest path from the next cell.
+            ans = max(ans, 1 + pathRecur(x, y, matrix, n, m, memo));
         }
     }
 
-    // Add all cells with in-degree 0 to the 
-    // queue (they are starting points)
-    queue<pair<int, int>> q;
+    // Store the answer in memo table and return it.
+    return memo[i][j] = ans;
+}
+
+// Function to find the length of the longest
+// strictly increasing path in the matrix.
+int longIncPath(vector<vector<int>> &matrix, int n, int m)
+{
+    int ans = 0;
+
+    // Initialize memo table with -1.
+    vector<vector<int>> memo(n, vector<int>(m, -1));
+
+    // Start a path from every cell.
     for (int i = 0; i < n; i++)
+    {
         for (int j = 0; j < m; j++)
-            if (degree[i][j] == 0)
-                q.push({i, j});
-
-    int ans = 0;  // This will count the number
-                  // of levels processed (i.e., 
-                  // length of path)
-
-    // Perform BFS level-by-level
-    while (!q.empty()) {
-        ans++;                
-        int l = q.size();     
-        
-        for (int i = 0; i < l; i++) {
-            int x1 = q.front().first;
-            int y1 = q.front().second;
-            q.pop();
-
-            // Explore all four directions
-            for (auto it : dir) {
-                int x = x1 + it.first;
-                int y = y1 + it.second;
-
-                // If neighboring cell has greater 
-                // value (valid increasing move)
-                if (x >= 0 && x < n && y >= 0 && y < m && 
-                    matrix[x][y] > matrix[x1][y1]) {
-                    degree[x][y]--;  
-                    if (degree[x][y] == 0) {
-                        q.push({x, y});  
-                    }
-                }
-            }
+        {
+            // Find the longest increasing path starting
+            // from the current cell.
+            ans = max(ans, pathRecur(i, j, matrix, n, m, memo));
         }
     }
 
-    // Return the total number of BFS levels = length
-    // of the longest increasing path
     return ans;
 }
 
-int main() {
-    vector<vector<int>> matrix = {{1, 2, 3},
-                                  {4, 5, 6},
-                                  {7, 8, 9}};
-    cout << longIncPath(matrix) << endl;
+int main()
+{
+    vector<vector<int>> matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+
+    int n = matrix.size();
+    int m = matrix[0].size();
+
+    cout << longIncPath(matrix, n, m) << endl;
+
     return 0;
 }
 
@@ -746,79 +451,552 @@ int main() {
 
     import java.util.*;
 
-class GfG {
+class GFG {
 
-    // Function to find the longest increasing path in a matrix
-    static int longIncPath(int[][] matrix) {
-        int n = matrix.length;
-        int m = matrix[0].length;
+    // Function to check whether the cell is valid and
+    // its value is greater than the previous cell.
+    static boolean validCell(int i, int j, int[][] matrix,
+                             int n, int m, int prev)
+    {
+        return (i >= 0 && i < n && j >= 0 && j < m
+                && matrix[i][j] > prev);
+    }
 
-        // Direction vectors: right, down, left, up
-        int[][] dir = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+    // Recursive function to find the longest increasing
+    // path starting from the cell (i, j).
+    static int pathRecur(int i, int j, int[][] matrix,
+                         int n, int m, int[][] memo)
+    {
 
-        // In-degree matrix
-        int[][] degree = new int[n][m];
+        // If answer already exists in memo table.
+        if (memo[i][j] != -1)
+            return memo[i][j];
 
-        // Compute in-degrees
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                for (int[] d : dir) {
-                    int x = i + d[0];
-                    int y = j + d[1];
+        // Include the current cell in the path.
+        int ans = 1;
 
-                    if (x >= 0 && x < n && y >= 0 && y < m && matrix[x][y] < matrix[i][j]) {
-                        degree[i][j]++;
-                    }
-                }
+        // Directions for moving down, up, right and left.
+        int[][] dir
+            = { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } };
+
+        // Try moving in all four directions.
+        for (int[] d : dir) {
+            int x = i + d[0];
+            int y = j + d[1];
+
+            // Move only if the next cell is valid and
+            // has a greater value than the current cell.
+            if (validCell(x, y, matrix, n, m,
+                          matrix[i][j])) {
+
+                // Find the longest path from the next cell.
+                ans = Math.max(ans,
+                               1
+                                   + pathRecur(x, y, matrix,
+                                               n, m, memo));
             }
         }
 
-        // Enqueue all 0 in-degree cells
-        Queue<int[]> q = new LinkedList<>();
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if (degree[i][j] == 0) {
-                    q.offer(new int[]{i, j});
-                }
-            }
-        }
+        // Store the answer in memo table and return it.
+        return memo[i][j] = ans;
+    }
 
+    // Function to find the length of the longest
+    // strictly increasing path in the matrix.
+    static int longIncPath(int[][] matrix, int n, int m)
+    {
         int ans = 0;
 
-        // BFS level-by-level
-        while (!q.isEmpty()) {
-            ans++;
-            int size = q.size();
+        // Initialize memo table with -1.
+        int[][] memo = new int[n][m];
 
-            for (int i = 0; i < size; i++) {
-                int[] cell = q.poll();
-                int x1 = cell[0], y1 = cell[1];
+        for (int i = 0; i < n; i++)
+            Arrays.fill(memo[i], -1);
 
-                for (int[] d : dir) {
-                    int x = x1 + d[0];
-                    int y = y1 + d[1];
+        // Start a path from every cell.
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
 
-                    if (x >= 0 && x < n && y >= 0 && y < m && matrix[x][y] > matrix[x1][y1]) {
-                        degree[x][y]--;
-                        if (degree[x][y] == 0) {
-                            q.offer(new int[]{x, y});
-                        }
-                    }
-                }
+                // Find the longest increasing path starting
+                // from the current cell.
+                ans = Math.max(ans, pathRecur(i, j, matrix,
+                                              n, m, memo));
             }
         }
 
         return ans;
     }
 
-    public static void main(String[] args) {
-        int[][] matrix = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
-        };
+    public static void main(String[] args)
+    {
+        int[][] matrix
+            = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
 
-        System.out.println(longIncPath(matrix));
+        int n = matrix.length;
+        int m = matrix[0].length;
+
+        System.out.println(longIncPath(matrix, n, m));
+    }
+}
+
+
+            Python
+
+    # Function to check whether the cell is valid and
+# its value is greater than the previous cell.
+def validCell(i, j, matrix, n, m, prev):
+    return (i >= 0 and i < n and j >= 0 and j < m
+            and matrix[i][j] > prev)
+
+
+# Recursive function to find the longest increasing path
+# starting from the cell (i, j).
+def pathRecur(i, j, matrix, n, m, memo):
+
+    # If answer already exists in memo table.
+    if memo[i][j] != -1:
+        return memo[i][j]
+
+    # Include the current cell in the path.
+    ans = 1
+
+    # Directions for moving down, up, right and left.
+    dir = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+
+    # Try moving in all four directions.
+    for d in dir:
+        x = i + d[0]
+        y = j + d[1]
+
+        # Move only if the next cell is valid and
+        # has a greater value than the current cell.
+        if validCell(x, y, matrix, n, m, matrix[i][j]):
+
+            # Find the longest path from the next cell.
+            ans = max(ans, 1 + pathRecur(x, y, matrix, n, m, memo))
+
+    # Store the answer in memo table and return it.
+    memo[i][j] = ans
+    return memo[i][j]
+
+
+# Function to find the length of the longest
+# strictly increasing path in the matrix.
+def longIncPath(matrix, n, m):
+    ans = 0
+
+    # Initialize memo table with -1.
+    memo = [[-1] * m for _ in range(n)]
+
+    # Start a path from every cell.
+    for i in range(n):
+        for j in range(m):
+
+            # Find the longest increasing path starting
+            # from the current cell.
+            ans = max(ans, pathRecur(i, j, matrix, n, m, memo))
+
+    return ans
+
+
+# Driver Code
+if __name__ == "__main__":
+    matrix = [[1, 2, 3],
+              [4, 5, 6],
+              [7, 8, 9]]
+
+    n = len(matrix)
+    m = len(matrix[0])
+
+    print(longIncPath(matrix, n, m))
+
+
+            C#
+
+    using System;
+
+class GFG {
+    
+    // Function to check whether the cell is valid and
+    // its value is greater than the previous cell.
+    static bool validCell(int i, int j, int[][] matrix,
+                          int n, int m, int prev)
+    {
+        return (i >= 0 && i < n && j >= 0 && j < m
+                && matrix[i][j] > prev);
+    }
+
+    // Recursive function to find the longest increasing
+    // path starting from the cell (i, j).
+    static int pathRecur(int i, int j, int[][] matrix,
+                         int n, int m, int[][] memo)
+    {
+        // If answer already exists in memo table.
+        if (memo[i][j] != -1)
+            return memo[i][j];
+
+        // Include the current cell in the path.
+        int ans = 1;
+
+        // Directions for moving down, up, right and left.
+        int[][] dir
+            = { new int[] { 1, 0 }, new int[] { -1, 0 },
+                new int[] { 0, 1 }, new int[] { 0, -1 } };
+
+        // Try moving in all four directions.
+        foreach(int[] d in dir)
+        {
+            int x = i + d[0];
+            int y = j + d[1];
+
+            // Move only if the next cell is valid and
+            // has a greater value than the current cell.
+            if (validCell(x, y, matrix, n, m,
+                          matrix[i][j])) {
+                // Find the longest path from the next cell.
+                ans = Math.Max(ans,
+                               1
+                                   + pathRecur(x, y, matrix,
+                                               n, m, memo));
+            }
+        }
+
+        // Store the answer in memo table and return it.
+        memo[i][j] = ans;
+        return memo[i][j];
+    }
+
+    // Function to find the length of the longest
+    // strictly increasing path in the matrix.
+    static int longIncPath(int[][] matrix, int n, int m)
+    {
+        int ans = 0;
+
+        // Initialize memo table with -1.
+        int[][] memo = new int[n][];
+
+        for (int i = 0; i < n; i++) {
+            memo[i] = new int[m];
+
+            for (int j = 0; j < m; j++)
+                memo[i][j] = -1;
+        }
+
+        // Start a path from every cell.
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                // Find the longest increasing path starting
+                // from the current cell.
+                ans = Math.Max(ans, pathRecur(i, j, matrix,
+                                              n, m, memo));
+            }
+        }
+
+        return ans;
+    }
+
+    public static void Main()
+    {
+        int[][] matrix = { new int[] { 1, 2, 3 },
+                           new int[] { 4, 5, 6 },
+                           new int[] { 7, 8, 9 } };
+
+        int n = matrix.Length;
+        int m = matrix[0].Length;
+
+        Console.WriteLine(longIncPath(matrix, n, m));
+    }
+}
+
+
+            JavaScript
+
+    // Function to check whether the cell is valid and
+// its value is greater than the previous cell.
+function validCell(i, j, matrix, n, m, prev)
+{
+    return (i >= 0 && i < n && j >= 0 && j < m
+            && matrix[i][j] > prev);
+}
+
+// Recursive function to find the longest increasing path
+// starting from the cell (i, j).
+function pathRecur(i, j, matrix, n, m, memo)
+{
+    // If answer already exists in memo table.
+    if (memo[i][j] !== -1)
+        return memo[i][j];
+
+    // Include the current cell in the path.
+    let ans = 1;
+
+    // Directions for moving down, up, right and left.
+    let dir = [ [ 1, 0 ], [ -1, 0 ], [ 0, 1 ], [ 0, -1 ] ];
+
+    // Try moving in all four directions.
+    for (let d of dir) {
+        let x = i + d[0];
+        let y = j + d[1];
+
+        // Move only if the next cell is valid and
+        // has a greater value than the current cell.
+        if (validCell(x, y, matrix, n, m, matrix[i][j])) {
+
+            // Find the longest path from the next cell.
+            ans = Math.max(
+                ans,
+                1 + pathRecur(x, y, matrix, n, m, memo));
+        }
+    }
+
+    // Store the answer in memo table and return it.
+    memo[i][j] = ans;
+    return memo[i][j];
+}
+
+// Function to find the length of the longest
+// strictly increasing path in the matrix.
+function longIncPath(matrix, n, m)
+{
+    let ans = 0;
+
+    // Initialize memo table with -1.
+    let memo
+        = Array.from({length : n}, () => Array(m).fill(-1));
+
+    // Start a path from every cell.
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < m; j++) {
+
+            // Find the longest increasing path starting
+            // from the current cell.
+            ans = Math.max(
+                ans, pathRecur(i, j, matrix, n, m, memo));
+        }
+    }
+
+    return ans;
+}
+
+// Driver Code
+let matrix = [ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ] ];
+
+let n = matrix.length;
+let m = matrix[0].length;
+
+console.log(longIncPath(matrix, n, m));
+
+Output5
+[Expected Approach - 2] Using Kahn's algorithm - O(m * n) Time and O(m * n) SpaceEach cell in the matrix is treated as a node, and there is a directed edge from a cell to its neighboring cell if the neighbor has a greater value. Since every edge goes from a smaller value to a greater value, the graph is a DAG. Thus, the problem can be viewed as finding the longest path in a DAG using topological sorting. We use Kahn's algorithm, where cells with no smaller neighbors are processed first, and each BFS level represents one step in the increasing path.Treat every matrix cell as a node and consider an edge from a smaller cell to a greater neighboring cell.Calculate the in-degree of each cell by counting its smaller neighboring cells.Add all cells with in-degree 0 to the queue as starting points.Process the queue level by level using BFS.For every cell, visit its greater neighbors and decrease their in-degree.Add a neighbor to the queue when its in-degree becomes 0 and count the BFS levels.Return the total number of BFS levels as the length of the longest increasing path.
+            C++
+
+    #include <bits/stdc++.h>
+using namespace std;
+
+// Function to find the longest increasing path in a matrix
+int longIncPath(vector<vector<int>> &matrix, int n, int m)
+{
+    // Directions for moving right, down, left and up.
+    vector<pair<int, int>> dir = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+
+    // degree[i][j] stores the number of smaller
+    // neighboring cells for cell (i, j).
+    vector<vector<int>> degree(n, vector<int>(m, 0));
+
+    // Calculate the degree of every cell.
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            for (auto d : dir)
+            {
+                int x = i + d.first;
+                int y = j + d.second;
+
+                // Count the neighboring cells having
+                // a smaller value than the current cell.
+                if (x >= 0 && x < n && y >= 0 && y < m && matrix[x][y] < matrix[i][j])
+                {
+                    degree[i][j]++;
+                }
+            }
+        }
+    }
+
+    // Add cells with no smaller neighbor to the queue.
+    // These cells can be starting points of increasing paths.
+    queue<pair<int, int>> q;
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            if (degree[i][j] == 0)
+            {
+                q.push({i, j});
+            }
+        }
+    }
+
+    int pathLength = 0;
+
+    // Process the matrix level by level using BFS.
+    while (!q.empty())
+    {
+        // Each BFS level represents one cell in the path.
+        pathLength++;
+
+        int levelSize = q.size();
+
+        for (int k = 0; k < levelSize; k++)
+        {
+            int i = q.front().first;
+            int j = q.front().second;
+            q.pop();
+
+            // Try moving to all four neighboring cells.
+            for (auto d : dir)
+            {
+                int x = i + d.first;
+                int y = j + d.second;
+
+                // Move only to a valid neighboring cell
+                // having a greater value.
+                if (x >= 0 && x < n && y >= 0 && y < m && matrix[x][y] > matrix[i][j])
+                {
+                    // Remove the current cell as a smaller
+                    // neighbor of the next cell.
+                    degree[x][y]--;
+
+                    // If all smaller neighbors are processed,
+                    // the cell is ready to be added to the queue.
+                    if (degree[x][y] == 0)
+                    {
+                        q.push({x, y});
+                    }
+                }
+            }
+        }
+    }
+
+    // Number of BFS levels is the longest path length.
+    return pathLength;
+}
+
+int main()
+{
+    vector<vector<int>> matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    int n = matrix.size();
+    int m = matrix[0].size();
+
+    cout << longIncPath(matrix, n, m) << endl;
+
+    return 0;
+}
+
+
+            Java
+
+    import java.util.*;
+
+class GFG {
+
+    // Function to find the longest increasing path in a
+    // matrix
+    static int longIncPath(int[][] matrix, int n, int m)
+    {
+        // Directions for moving right, down, left and up.
+        int[][] dir
+            = { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } };
+
+        // degree[i][j] stores the number of smaller
+        // neighboring cells for cell (i, j).
+        int[][] degree = new int[n][m];
+
+        // Calculate the degree of every cell.
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                for (int[] d : dir) {
+                    int x = i + d[0];
+                    int y = j + d[1];
+
+                    // Count the neighboring cells having
+                    // a smaller value than the current
+                    // cell.
+                    if (x >= 0 && x < n && y >= 0 && y < m
+                        && matrix[x][y] < matrix[i][j]) {
+                        degree[i][j]++;
+                    }
+                }
+            }
+        }
+
+        // Add cells with no smaller neighbor to the queue.
+        // These cells can be starting points of increasing
+        // paths.
+        Queue<int[]> q = new LinkedList<>();
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (degree[i][j] == 0) {
+                    q.add(new int[] { i, j });
+                }
+            }
+        }
+
+        int pathLength = 0;
+
+        // Process the matrix level by level using BFS.
+        while (!q.isEmpty()) {
+            // Each BFS level represents one cell in the
+            // path.
+            pathLength++;
+
+            int levelSize = q.size();
+
+            for (int k = 0; k < levelSize; k++) {
+                int[] cell = q.poll();
+                int i = cell[0];
+                int j = cell[1];
+
+                // Try moving to all four neighboring cells.
+                for (int[] d : dir) {
+                    int x = i + d[0];
+                    int y = j + d[1];
+
+                    // Move only to a valid neighboring cell
+                    // having a greater value.
+                    if (x >= 0 && x < n && y >= 0 && y < m
+                        && matrix[x][y] > matrix[i][j]) {
+                        // Remove the current cell as a
+                        // smaller neighbor of the next
+                        // cell.
+                        degree[x][y]--;
+
+                        // If all smaller neighbors are
+                        // processed, the cell is ready to
+                        // be added to the queue.
+                        if (degree[x][y] == 0) {
+                            q.add(new int[] { x, y });
+                        }
+                    }
+                }
+            }
+        }
+
+        // Number of BFS levels is the longest path length.
+        return pathLength;
+    }
+
+    public static void main(String[] args)
+    {
+        int[][] matrix
+            = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+
+        int n = matrix.length;
+        int m = matrix[0].length;
+
+        System.out.println(longIncPath(matrix, n, m));
     }
 }
 
@@ -828,53 +1006,85 @@ class GfG {
     from collections import deque
 
 # Function to find the longest increasing path in a matrix
-def longIncPath(matrix):
-    n = len(matrix)
-    m = len(matrix[0])
+def longIncPath(matrix, n, m):
 
-    # Direction vectors: right, down, left, up
+    # Directions for moving right, down, left and up.
     dir = [(0, 1), (1, 0), (0, -1), (-1, 0)]
 
-    # In-degree matrix
-    degree = [[0 for _ in range(m)] for _ in range(n)]
+    # degree[i][j] stores the number of smaller
+    # neighboring cells for cell (i, j).
+    degree = [[0] * m for _ in range(n)]
 
-    # Compute in-degrees
+    # Calculate the degree of every cell.
     for i in range(n):
         for j in range(m):
-            for dx, dy in dir:
-                x, y = i + dx, j + dy
-                if 0 <= x < n and 0 <= y < m and matrix[x][y] < matrix[i][j]:
+            for d in dir:
+                x = i + d[0]
+                y = j + d[1]
+
+                # Count the neighboring cells having
+                # a smaller value than the current cell.
+                if (0 <= x < n and 0 <= y < m
+                        and matrix[x][y] < matrix[i][j]):
                     degree[i][j] += 1
 
-    # Enqueue all 0 in-degree cells
+    # Add cells with no smaller neighbor to the queue.
+    # These cells can be starting points of increasing paths.
     q = deque()
+
     for i in range(n):
         for j in range(m):
             if degree[i][j] == 0:
                 q.append((i, j))
 
-    # BFS level-by-level
-    ans = 0
+    pathLength = 0
+
+    # Process the matrix level by level using BFS.
     while q:
-        ans += 1
-        for _ in range(len(q)):
-            x1, y1 = q.popleft()
-            for dx, dy in dir:
-                x, y = x1 + dx, y1 + dy
-                if 0 <= x < n and 0 <= y < m and matrix[x][y] > matrix[x1][y1]:
+
+        # Each BFS level represents one cell in the path.
+        pathLength += 1
+
+        levelSize = len(q)
+
+        for _ in range(levelSize):
+            i, j = q.popleft()
+
+            # Try moving to all four neighboring cells.
+            for d in dir:
+                x = i + d[0]
+                y = j + d[1]
+
+                # Move only to a valid neighboring cell
+                # having a greater value.
+                if (0 <= x < n and 0 <= y < m
+                        and matrix[x][y] > matrix[i][j]):
+
+                    # Remove the current cell as a smaller
+                    # neighbor of the next cell.
                     degree[x][y] -= 1
+
+                    # If all smaller neighbors are processed,
+                    # the cell is ready to be added to the queue.
                     if degree[x][y] == 0:
                         q.append((x, y))
-    return ans
 
-# Example usage
-if __name__ == "__main__": 
+    # Number of BFS levels is the longest path length.
+    return pathLength
+
+
+# Driver Code
+if __name__ == "__main__":
     matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
     ]
-    print(longIncPath(matrix))
+
+    n = len(matrix)
+    m = len(matrix[0])
+
+    print(longIncPath(matrix, n, m))
 
 
             C#
@@ -882,78 +1092,111 @@ if __name__ == "__main__":
     using System;
 using System.Collections.Generic;
 
-class GfG{
+class GFG {
+    
+    // Function to find the longest increasing path in a
+    // matrix
+    static int longIncPath(int[][] matrix, int n, int m)
+    {
+        // Directions for moving right, down, left and up.
+        int[][] dir
+            = { new int[] { 0, 1 }, new int[] { 1, 0 },
+                new int[] { 0, -1 }, new int[] { -1, 0 } };
 
-    // Function to find the longest increasing path in a matrix
-    static int longIncPath(int[,] matrix) {
-        int n = matrix.GetLength(0);
-        int m = matrix.GetLength(1);
+        // degree[i][j] stores the number of smaller
+        // neighboring cells for cell (i, j).
+        int[][] degree = new int[n][];
 
-        // Direction vectors: right, down, left, up
-        int[,] dir = { {0, 1}, {1, 0}, {0, -1}, {-1, 0} };
+        for (int i = 0; i < n; i++)
+            degree[i] = new int[m];
 
-        // In-degree matrix
-        int[,] degree = new int[n, m];
-
-        // Step 1: Compute in-degrees
+        // Calculate the degree of every cell.
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                for (int d = 0; d < 4; d++) {
-                    int x = i + dir[d, 0];
-                    int y = j + dir[d, 1];
+                foreach(int[] d in dir)
+                {
+                    int x = i + d[0];
+                    int y = j + d[1];
 
-                    if (x >= 0 && x < n && y >= 0 && y < m && matrix[x, y] < matrix[i, j]) {
-                        degree[i, j]++;
+                    // Count the neighboring cells having
+                    // a smaller value than the current
+                    // cell.
+                    if (x >= 0 && x < n && y >= 0 && y < m
+                        && matrix[x][y] < matrix[i][j]) {
+                        degree[i][j]++;
                     }
                 }
             }
         }
 
-        // Step 2: Enqueue all 0 in-degree cells
-        Queue<(int, int)> q = new Queue<(int, int)>();
+        // Add cells with no smaller neighbor to the queue.
+        // These cells can be starting points of increasing
+        // paths.
+        Queue<int[]> q = new Queue<int[]>();
+
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                if (degree[i, j] == 0) {
-                    q.Enqueue((i, j));
+                if (degree[i][j] == 0) {
+                    q.Enqueue(new int[] { i, j });
                 }
             }
         }
 
-        int ans = 0;
+        int pathLength = 0;
 
-        // Step 3: BFS level-by-level
+        // Process the matrix level by level using BFS.
         while (q.Count > 0) {
-            ans++;
-            int size = q.Count;
+            // Each BFS level represents one cell in the
+            // path.
+            pathLength++;
 
-            for (int i = 0; i < size; i++) {
-                var (x1, y1) = q.Dequeue();
+            int levelSize = q.Count;
 
-                for (int d = 0; d < 4; d++) {
-                    int x = x1 + dir[d, 0];
-                    int y = y1 + dir[d, 1];
+            for (int k = 0; k < levelSize; k++) {
+                int[] cell = q.Dequeue();
+                int i = cell[0];
+                int j = cell[1];
 
-                    if (x >= 0 && x < n && y >= 0 && y < m && matrix[x, y] > matrix[x1, y1]) {
-                        degree[x, y]--;
-                        if (degree[x, y] == 0) {
-                            q.Enqueue((x, y));
+                // Try moving to all four neighboring cells.
+                foreach(int[] d in dir)
+                {
+                    int x = i + d[0];
+                    int y = j + d[1];
+
+                    // Move only to a valid neighboring cell
+                    // having a greater value.
+                    if (x >= 0 && x < n && y >= 0 && y < m
+                        && matrix[x][y] > matrix[i][j]) {
+                        // Remove the current cell as a
+                        // smaller neighbor of the next
+                        // cell.
+                        degree[x][y]--;
+
+                        // If all smaller neighbors are
+                        // processed, the cell is ready to
+                        // be added to the queue.
+                        if (degree[x][y] == 0) {
+                            q.Enqueue(new int[] { x, y });
                         }
                     }
                 }
             }
         }
 
-        return ans;
+        // Number of BFS levels is the longest path length.
+        return pathLength;
     }
 
-    static void Main() {
-        int[,] matrix = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
-        };
+    public static void Main()
+    {
+        int[][] matrix = { new int[] { 1, 2, 3 },
+                           new int[] { 4, 5, 6 },
+                           new int[] { 7, 8, 9 } };
 
-        Console.WriteLine(longIncPath(matrix));
+        int n = matrix.Length;
+        int m = matrix[0].Length;
+
+        Console.WriteLine(longIncPath(matrix, n, m));
     }
 }
 
@@ -961,68 +1204,95 @@ class GfG{
             JavaScript
 
     // Function to find the longest increasing path in a matrix
-function longIncPath(matrix) {
-    const n = matrix.length;
-    const m = matrix[0].length;
+function longIncPath(matrix, n, m)
+{
+    // Directions for moving right, down, left and up.
+    let dir = [ [ 0, 1 ], [ 1, 0 ], [ 0, -1 ], [ -1, 0 ] ];
 
-    // Direction vectors: right, down, left, up
-    const dir = [[0, 1], [1, 0], [0, -1], [-1, 0]];
+    // degree[i][j] stores the number of smaller
+    // neighboring cells for cell (i, j).
+    let degree
+        = Array.from({length : n}, () => Array(m).fill(0));
 
-    // In-degree matrix
-    const degree = Array.from({ length: n }, () => Array(m).fill(0));
-
-    // Compute in-degrees
+    // Calculate the degree of every cell.
     for (let i = 0; i < n; i++) {
         for (let j = 0; j < m; j++) {
-            for (const [dx, dy] of dir) {
-                const x = i + dx;
-                const y = j + dy;
-                if (x >= 0 && x < n && y >= 0 && y < m && matrix[x][y] < matrix[i][j]) {
+            for (let d of dir) {
+                let x = i + d[0];
+                let y = j + d[1];
+
+                // Count the neighboring cells having
+                // a smaller value than the current cell.
+                if (x >= 0 && x < n && y >= 0 && y < m
+                    && matrix[x][y] < matrix[i][j]) {
                     degree[i][j]++;
                 }
             }
         }
     }
 
-    // Enqueue all 0 in-degree cells
-    const q = [];
+    // Add cells with no smaller neighbor to the queue.
+    // These cells can be starting points of increasing
+    // paths.
+    let q = [];
+
     for (let i = 0; i < n; i++) {
         for (let j = 0; j < m; j++) {
             if (degree[i][j] === 0) {
-                q.push([i, j]);
+                q.push([ i, j ]);
             }
         }
     }
 
-    //  BFS level-by-level
-    let ans = 0;
-    while (q.length > 0) {
-        ans++;
-        const size = q.length;
-        for (let i = 0; i < size; i++) {
-            const [x1, y1] = q.shift();
-            for (const [dx, dy] of dir) {
-                const x = x1 + dx;
-                const y = y1 + dy;
-                if (x >= 0 && x < n && y >= 0 && y < m && matrix[x][y] > matrix[x1][y1]) {
+    let front = 0;
+    let pathLength = 0;
+
+    // Process the matrix level by level using BFS.
+    while (front < q.length) {
+
+        // Each BFS level represents one cell in the path.
+        pathLength++;
+
+        let levelSize = q.length - front;
+
+        for (let k = 0; k < levelSize; k++) {
+            let [i, j] = q[front++];
+
+            // Try moving to all four neighboring cells.
+            for (let d of dir) {
+                let x = i + d[0];
+                let y = j + d[1];
+
+                // Move only to a valid neighboring cell
+                // having a greater value.
+                if (x >= 0 && x < n && y >= 0 && y < m
+                    && matrix[x][y] > matrix[i][j]) {
+
+                    // Remove the current cell as a smaller
+                    // neighbor of the next cell.
                     degree[x][y]--;
+
+                    // If all smaller neighbors are
+                    // processed, the cell is ready to be
+                    // added to the queue.
                     if (degree[x][y] === 0) {
-                        q.push([x, y]);
+                        q.push([ x, y ]);
                     }
                 }
             }
         }
     }
 
-    return ans;
+    // Number of BFS levels is the longest path length.
+    return pathLength;
 }
 
 // Driver Code
-const matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-];
-console.log(longIncPath(matrix));
+let matrix = [ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ] ];
+
+let n = matrix.length;
+let m = matrix[0].length;
+
+console.log(longIncPath(matrix, n, m));
 
 Output5

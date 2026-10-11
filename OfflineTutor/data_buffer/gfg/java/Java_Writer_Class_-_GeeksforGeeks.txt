@@ -1,6 +1,6 @@
 # Java Writer Class - GeeksforGeeks
 
-The Java writer class is an abstract class in the java.io package. It is designed for writing character streams. It provides methods for writing characters, arrays of characters and strings to files, memory, or other output destinations. WriterDeclaration of the Writer Classpublic abstract class Writer implements Appendable, Closeable, FlushableSince it’s an abstract class, we can’t instantiate it directly; instead, we use concrete subclasses like FileWriter, BufferedWriter or PrintWriter.
+The Java Writer class is an abstract class in the java.io package used for writing character-based data to an output destination. It serves as the base class for character output classes such as FileWriter, BufferedWriter, and StringWriter.Supports writing characters, character arrays, and strings.Provides common operations such as write(), append(), flush(), and close().WriterDeclaration of the Writer Classpublic abstract class Writer implements Appendable, Closeable, FlushableSince it’s an abstract class, we can’t instantiate it directly; instead, we use concrete subclasses like FileWriter, BufferedWriter or PrintWriter.
             Java
 
     import java.io.FileWriter;
@@ -29,7 +29,7 @@ public class Geeks {
 }
 
 OutputMessage written
-Explanation: Creates a FileWriter object to write "Hello, World!" into example.txt. After writing, it closes the stream to ensure data is saved and resources are released.Constructors of the Writer ClassThe Writer class in Java has two protected constructors that allow for the creation of character streams with synchronization capabilities.Protected Writer(): Creates a new character stream that can itself synchronize on the writer.protected Writer(Object obj): Creates a new character stream that can itself synchronize on the given object – ‘obj’.Example 1: Writing Characters to a File
+Explanation: Creates a FileWriter object to write "Hello, World!" into example.txt. After writing, it closes the stream to ensure data is saved and resources are released.Constructors of the Writer ClassThe Writer class in Java has two protected constructors that allow for the creation of character streams with synchronization capabilities.Protected Writer(): Creates a new character stream that can itself synchronize on the writer.protected Writer(Object obj): Creates a new character stream that can itself synchronize on the given object – ‘obj’.Example: Writing Characters to a File
             Java
 
     import java.io.*;
@@ -51,7 +51,7 @@ public class GFG{
 }
 
 OutputData written successfully.
-Output File: example.txtoutputExplanation: Creates a FileWriter instance to write text data to example.txt. Writes the message "Hello, Java Writer Class!" and closes the writer to finish safely.Example 2: Using BufferedWriter for Efficiency
+Output File: example.txtoutputExplanation: Creates a FileWriter instance to write text data to example.txt. Writes the message "Hello, Java Writer Class!" and closes the writer to finish safely.Example: Using BufferedWriter for Efficiency
             Java
 
     import java.io.*;
@@ -75,7 +75,7 @@ public class GFG{
 }
 
 OutputData written using BufferedWriter.
-Output File: buffered.txtoutputExplanation: Uses BufferedWriter to improve performance by temporarily storing data before writing it. Writes two lines of text into buffered.txt and automatically closes the stream using try-with-resources.Example 3: Appending Data to a File
+Output File: buffered.txtoutputExplanation: Uses BufferedWriter to improve performance by temporarily storing data before writing it. Writes two lines of text into buffered.txt and automatically closes the stream using try-with-resources.Example: Appending Data to a File
             Java
 
     import java.io.*;
@@ -92,4 +92,4 @@ public class GFG{
 }
 
 OutputData appended successfully.
-Output File: example.txtOutputExplanation: Opens the existing file example.txt in append mode by passing true to FileWriter. Adds a new line "This line was appended later." without overwriting the previous data.Java Writer Class MethodsThere are certain methods associated with the Java Writer class as mentioned below:MethodDescriptionwrite(int char)Writes a single character to the character stream.write(String str)Writes an entire string to the character stream.write(String str, int offset, int maxlen)Writes a specific portion of the string to the character stream, starting at offset and writing maxlen characters.write(char[] carray)Writes the entire character array to the character stream.write(char[] carray, int offset, int maxlen)Writes a specific portion of the character array to the character stream, starting at offset and writing maxlen characters.close()Closes the character stream after flushing it.flush()Flushes the Writer stream; ensures that any buffered data is written to the underlying output.append(char c)Appends a single character to the Writer.append(CharSequence char_sq)Appends the specified character sequence to the Writer.append(CharSequence char_sq, int start, int end)Appends a specific subsequence of the given character sequence to the Writer.
+Output File: example.txtOutputExplanation: Opens the existing file example.txt in append mode by passing true to FileWriter. Adds a new line "This line was appended later." without overwriting the previous data.Java Writer Class MethodsThere are certain methods associated with the Java Writer class as mentioned below:MethodDescriptionwrite(int c)Writes a single character using the lower 16 bits of the integer value.write(String str)Writes the specified string to the character stream.write(String str, int offset, int len)Writes len characters from the string starting at the specified offset.write(char[] cbuf)Writes the specified character array to the character stream.write(char[] cbuf, int offset, int len)Writes len characters from the array starting at the specified offset.close()Closes the writer after flushing it.flush()Flushes buffered output to the underlying destination.append(char c)Appends the specified character to the writer.append(CharSequence csq)Appends the specified character sequence. If csq is null, the four characters "null" are appended.append(CharSequence csq, int start, int end)Appends the subsequence from start (inclusive) to end (exclusive).

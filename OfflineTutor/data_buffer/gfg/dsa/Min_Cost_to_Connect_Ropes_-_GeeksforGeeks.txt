@@ -326,94 +326,35 @@ if __name__ == "__main__":
     using System;
 using System.Collections.Generic;
 
-// Custom MinHeap class
-class MinHeap
-{
-    private List<int> heap = new List<int>();
+class Program {
+    static int minCost(int[] arr) {
+        // Create a min-priority queue (element, priority)
+        PriorityQueue<int, int> pq = new PriorityQueue<int, int>();
 
-    private void Swap(int i, int j)
-    {
-        int temp = heap[i];
-        heap[i] = heap[j];
-        heap[j] = temp;
-    }
-
-    public void Add(int val)
-    {
-        heap.Add(val);
-        int i = heap.Count - 1;
-        while (i > 0)
-        {
-            int parent = (i - 1) / 2;
-            if (heap[i] >= heap[parent]) break;
-            Swap(i, parent);
-            i = parent;
+        // Insert all elements into the priority queue
+        foreach (int x in arr) {
+            pq.Enqueue(x, x);
         }
-    }
-
-    public int Pop()
-    {
-        if (heap.Count == 0) throw new InvalidOperationException("Heap is empty");
-        int root = heap[0];
-        heap[0] = heap[heap.Count - 1];
-        heap.RemoveAt(heap.Count - 1);
-
-        int i = 0;
-        while (true)
-        {
-            int left = 2 * i + 1;
-            int right = 2 * i + 2;
-            int smallest = i;
-
-            if (left < heap.Count && heap[left] < heap[smallest])
-                smallest = left;
-            if (right < heap.Count && heap[right] < heap[smallest])
-                smallest = right;
-
-            if (smallest == i) break;
-            Swap(i, smallest);
-            i = smallest;
-        }
-
-        return root;
-    }
-
-    public int Count()
-    {
-        return heap.Count;
-    }
-}
-
-class GFG {
-    
-    static int minCost(int[] arr)
-    {
-        // Create a min priority queue
-        MinHeap pq = new MinHeap();
-        foreach (int val in arr)
-            pq.Add(val);
 
         // Initialize result
         int res = 0;
 
         // While size of priority queue is more than 1
-        while (pq.Count() > 1)
-        {
+        while (pq.Count > 1) {
             // Extract shortest two ropes from pq
-            int first = pq.Pop();
-            int second = pq.Pop();
+            int first = pq.Dequeue();
+            int second = pq.Dequeue();
 
-            // Connect the ropes: update result
-            //and insert the new rope to pq
-            res += first + second;
-            pq.Add(first + second);
+            // Connect the ropes: update result and insert back
+            int cost = first + second;
+            res += cost;
+            pq.Enqueue(cost, cost);
         }
 
         return res;
     }
 
-    static void Main()
-    {
+    static void Main() {
         int[] arr = { 4, 3, 2, 6 };
         Console.WriteLine(minCost(arr));
     }
@@ -422,130 +363,82 @@ class GFG {
 
             JavaScript
 
-    class MinHeap {
-    constructor() {
-        this.heap = [];
-    }
-
-    // Insert a value into the heap
-    push(val) {
-        this.heap.push(val);
-        this.heapifyUp();
-    }
-
-    // Remove and return the smallest element
-    pop() {
-        if (this.heap.length === 1) {
-            return this.heap.pop();
-        }
-        const root = this.heap[0];
-        this.heap[0] = this.heap.pop();
-        this.heapifyDown();
-        return root;
-    }
-
-    // Return the smallest element without removing it
-    top() {
-        return this.heap[0];
-    }
-
-    // Return the size of the heap
-    size() {
-        return this.heap.length;
-    }
-
-    // Restore the heap property upwards
-    heapifyUp() {
-        let index = this.heap.length - 1;
-        while (index > 0) {
-            const parentIndex = Math.floor(
-                (index - 1) / 2
-            );
-            if (
-                this.heap[index] >=
-                this.heap[parentIndex]
-            ) {
-                break;
-            }
-            [
-                this.heap[index],
-                this.heap[parentIndex]
-            ] = [
-                this.heap[parentIndex],
-                this.heap[index]
-            ];
-            index = parentIndex;
-        }
-    }
-
-    // Restore the heap property downwards
-    heapifyDown() {
-        let index = 0;
-        const size = this.heap.length;
-        while (true) {
-            const leftChild = 2 * index + 1;
-            const rightChild = 2 * index + 2;
-            let smallest = index;
-
-            if (
-                leftChild < size &&
-                this.heap[leftChild] <
-                this.heap[smallest]
-            ) {
-                smallest = leftChild;
-            }
-
-            if (
-                rightChild < size &&
-                this.heap[rightChild] <
-                this.heap[smallest]
-            ) {
-                smallest = rightChild;
-            }
-
-            if (smallest === index) {
-                break;
-            }
-
-            [
-                this.heap[index],
-                this.heap[smallest]
-            ] = [
-                this.heap[smallest],
-                this.heap[index]
-            ];
-            index = smallest;
+    // Min-Heap helper functions
+function heapPush(heap, val) {
+    heap.push(val);
+    let idx = heap.length - 1;
+    while (idx > 0) {
+        let parent = Math.floor((idx - 1) / 2);
+        if (heap[idx] < heap[parent]) {
+            [heap[idx], heap[parent]] = [heap[parent], heap[idx]];
+            idx = parent;
+        } else {
+            break;
         }
     }
 }
 
-function minCost(arr) {
-    
-    // Create a min-heap 
-    const pq = new MinHeap();
-    arr.forEach(num => pq.push(num));
+function heapPop(heap) {
+    if (heap.length === 0) return null;
+    if (heap.length === 1) return heap.pop();
 
-    // Initialize result
+    let top = heap[0];
+    heap[0] = heap.pop();
+    let idx = 0;
+    let n = heap.length;
+
+    while (true) {
+        let smallest = idx;
+        let left = 2 * idx + 1;
+        let right = 2 * idx + 2;
+
+        if (left < n && heap[left] < heap[smallest]) {
+            smallest = left;
+        }
+        if (right < n && heap[right] < heap[smallest]) {
+            smallest = right;
+        }
+
+        if (smallest !== idx) {
+            [heap[idx], heap[smallest]] = [heap[smallest], heap[idx]];
+            idx = smallest;
+        } else {
+            break;
+        }
+    }
+
+    return top;
+}
+
+// Function to find the minimum cost of connecting ropes
+function minCost(arr) {
+    let heap = [];
+
+    // Insert all elements into the min-heap
+    for (let i = 0; i < arr.length; i++) {
+        heapPush(heap, arr[i]);
+    }
+
     let res = 0;
 
-    // While size of priority queue is more than 1
-    while (pq.size() > 1) {
+    // While size of heap is more than 1
+    while (heap.length > 1) {
+        // Extract shortest two ropes
+        let first = heapPop(heap);
+        let second = heapPop(heap);
 
-        // Extract shortest two ropes from pq
-        const first = pq.pop();
-        const second = pq.pop();
-
-        // Connect the ropes: update result and
-        // insert the new rope to pq
-        res += first + second;
-        pq.push(first + second);
+        // Connect the ropes: update result and insert back
+        let sum = first + second;
+        res += sum;
+        heapPush(heap, sum);
     }
 
     return res;
 }
 
-// Driver Code 
-const arr = [4, 3, 2, 6];
-console.log(minCost(arr));
+// Driver code (main function)
+
+    let arr = [4, 3, 2, 6];
+    console.log(minCost(arr));
 
 Output29

@@ -1,6 +1,6 @@
 # Bottom View of a Binary Tree - GeeksforGeeks
 
-Given the root of a binary tree, find the bottom view of the tree as a list of node values in order of increasing horizontal distance(HD).The root has HD = 0.The left child decreases HD by 1, and the right child increases HD by 1.If  multiple nodes share the same HD and depth, select the node that appears later in level-order traversal.Return the values of these nodes from the leftmost to the rightmost horizontal distance.Examples:Input: Output: [4, 2, 5, 3, 6]Explanation:  Input:  Output: [5, 10, 4, 28, 25]Explanation: Here, 14 and 28 both have horizontal distance = 1 from root, but we are taking 28 in our answer as 28 appears later in the level order traversal. Try It YourselfTable of Content[Expected Approach - 1] Using DFS - O(n) Time and O(n) Space[Expected Approach - 2] Using BFS- O(n) Time and O(n) Space[Expected Approach - 1] Using DFS - O(n) Time and O(n) SpaceThe idea is to create a hashmap to store the horizontal distance and the bottom-most node having that horizontal distance wrt root node.During DFS, if we encounter a node whose horizontal distance is not present in the map, add it to the map. If we encounter a node whose horizontal distance already exists as a key in the map:Choose the node with greater depth.If both nodes have the same depth, choose the current node, because it appears later in level order traversal.
+Given the root of a binary tree, find the bottom view of the tree as a list of node values in order of increasing horizontal distance(HD).The root has HD = 0.The left child decreases HD by 1, and the right child increases HD by 1.If  multiple nodes share the same HD and depth, select the node that appears later in level-order traversal.Return the values of these nodes from the leftmost to the rightmost horizontal distance.Examples:Input: Output: [4, 2, 5, 3, 6]Explanation:  Input:  Output: [5, 10, 4, 28, 25]Explanation: Here, 14 and 28 both have horizontal distance = 1 from root, but we are taking 28 in our answer as 28 appears later in the level order traversal. Try It YourselfTable of ContentUsing DFS - O(n) Time and O(n) SpaceUsing BFS - O(n) Time and O(n) SpaceUsing DFS - O(n) Time and O(n) SpaceThe idea is to create a hashmap to store the horizontal distance and the bottom-most node having that horizontal distance wrt root node.During DFS, if we encounter a node whose horizontal distance is not present in the map, add it to the map. If we encounter a node whose horizontal distance already exists as a key in the map:Choose the node with greater depth.If both nodes have the same depth, choose the current node, because it appears later in level order traversal.
             C++
 
     #include <iostream>
@@ -99,91 +99,88 @@ int main() {
 
             Java
 
-    import java.util.List;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.HashMap;
+    import java.util.*;
 
 // Node Structure
 class Node {
     int data;
     Node left, right;
 
-    Node(int x) {
+    Node(int x)
+    {
         data = x;
         left = right = null;
     }
 }
 
 class GFG {
+
     static int minHD, maxHD;
-    
-    // DFS function to fill hdMap with bottom-most nodes at each horizontal distance
-    static void dfs(Node root, int hd, int depth, 
-                            Map<Integer, Pair> hdMap) {
-        if (root == null) return;
-        
+
+    // DFS function to fill hdMap with bottom-most
+    // nodes at each horizontal distance
+    static void dfs(Node root, int hd, int depth,
+                    HashMap<Integer, int[]> hdMap)
+    {
+
+        if (root == null)
+            return;
+
         minHD = Math.min(minHD, hd);
         maxHD = Math.max(maxHD, hd);
 
-        // If this horizontal distance is 
-        // being visited for the first time or
-        // we're at a deeper level, update it
-        if (!hdMap.containsKey(hd) 
-                  || depth >= hdMap.get(hd).depth) {
-            hdMap.put(hd, new Pair(root.data, depth));
+        // If this horizontal distance is being visited
+        // for the first time or we are at a deeper level,
+        // update it
+        if (!hdMap.containsKey(hd)
+            || depth >= hdMap.get(hd)[1]) {
+
+            hdMap.put(hd, new int[] { root.data, depth });
         }
 
         dfs(root.left, hd - 1, depth + 1, hdMap);
         dfs(root.right, hd + 1, depth + 1, hdMap);
     }
-    
+
     // Returns the bottom view of a binary tree
-    static ArrayList<Integer> bottomView(Node root) {
-        if (root == null) return new ArrayList<>();
+    static ArrayList<Integer> bottomView(Node root)
+    {
+
+        if (root == null)
+            return new ArrayList<>();
 
         minHD = 0;
         maxHD = 0;
-        
-        // Map to store the last node's data and its depth
-        // at each horizontal distance (HD)
-        Map<Integer, Pair> hdMap = new HashMap<>();
+
+        // Map to store the last node's data and
+        // its depth at each horizontal distance
+        HashMap<Integer, int[]> hdMap = new HashMap<>();
 
         dfs(root, 0, 0, hdMap);
-        
+
         ArrayList<Integer> result = new ArrayList<>();
 
         // Iterate through horizontal distances
-        // in range from min HD to max HD
-        for (int hd = minHD; hd <= maxHD; hd++ ) {
-            result.add(hdMap.get(hd).data);
+        // from min HD to max HD
+        for (int hd = minHD; hd <= maxHD; hd++) {
+            result.add(hdMap.get(hd)[0]);
         }
-        
+
         return result;
     }
 
-    // Pair class to store 
-    // node data and its depth
-    static class Pair {
-        int data, depth;
+    public static void main(String[] args)
+    {
 
-        Pair(int data, int depth) {
-            this.data = data;
-            this.depth = depth;
-        }
-    }
-
-    public static void main(String[] args) {
-      
         // Create binary tree
         //       20
         //      /  \
-        //    8     22
-        //   / \     \
-        //  5   3     25
-        //     / \    /
-        //    10 14  28
-        
+        //     8    22
+        //    / \     \
+        //   5   3     25
+        //      / \    /
+        //     10 14  28
+
         Node root = new Node(20);
         root.left = new Node(8);
         root.right = new Node(22);
@@ -195,109 +192,95 @@ class GFG {
         root.right.right = new Node(25);
         root.right.right.left = new Node(28);
 
-        minHD = 0; maxHD = 0;
-         
+        minHD = 0;
+        maxHD = 0;
+
         ArrayList<Integer> result = bottomView(root);
 
         for (int val : result) {
-          System.out.print(val + " ");
-      }
+            System.out.print(val + " ");
+        }
     }
 }
 
 
             Python
 
-    # Node Structure
+    from collections import defaultdict
+
+# Node Structure
 class Node:
-    def __init__(self, x):
-        self.data = x
+    def __init__(self, data):
+        self.data = data
         self.left = None
         self.right = None
 
-# Pair class to store 
-# node data and its depth
-class Pair:
-    def __init__(self, data, depth):
-        self.data = data
-        self.depth = depth
+minHD, maxHD = 0, 0
 
-
-minHD = 0
-maxHD = 0
-
-# DFS function to fill hdMap with bottom-most nodes
-# at each horizontal distance
+# DFS function to fill hdMap with bottom-most
+# nodes at each horizontal distance
 def dfs(root, hd, depth, hdMap):
+    if root is None: return
+
     global minHD, maxHD
-    if root is None:
-        return
-    
     minHD = min(minHD, hd)
     maxHD = max(maxHD, hd)
 
     # If this horizontal distance is 
     # being visited for the first time or
     # we're at a deeper level, update it
-    if hd not in hdMap or depth >= hdMap[hd].depth:
-        hdMap[hd] = Pair(root.data, depth)
+    if hd not in hdMap or depth >= hdMap[hd][1]:
+        hdMap[hd] = (root.data, depth)
 
     dfs(root.left, hd - 1, depth + 1, hdMap)
     dfs(root.right, hd + 1, depth + 1, hdMap)
 
 # Returns the bottom view of a binary tree
 def bottomView(root):
-    if root is None:
-        return []
-    
+    if root is None: return []
+
     global minHD, maxHD
-    minHD = 0
-    maxHD = 0
-    
+    minHD, maxHD = 0, 0
+
     # Map to store the last node's data and its depth
-    # at each horizontal distance (HD)
-    hdMap = {}
+    # at each horizontal distance
+    hdMap = defaultdict(lambda: (None, -1))
 
     dfs(root, 0, 0, hdMap)
-    
+
     result = []
 
     # Iterate through horizontal distances
     # in range from min HD to max HD
     for hd in range(minHD, maxHD + 1):
-        result.append(hdMap[hd].data)
-    
+        result.append(hdMap[hd][0])
+
     return result
 
-
-if __name__ == "__main__":
-  
+if __name__ == '__main__':
     # Create binary tree
     #       20
     #      /  \
     #    8     22
     #   / \     \
     #  5   3     25
-    #     / \    /
-    #    10 14  28
-    
+    #     / \    \
+    #    10  14   28
+
     root = Node(20)
     root.left = Node(8)
     root.right = Node(22)
     root.left.left = Node(5)
     root.left.right = Node(3)
-    root.right.left = Node(4)
+    root.right.right = Node(25)
     root.left.right.left = Node(10)
     root.left.right.right = Node(14)
-    root.right.right = Node(25)
-    root.right.right.left = Node(28)
+    root.right.right.right = Node(28)
 
-    minHD = 0
-    maxHD = 0
-         
     result = bottomView(root)
 
-    print(*result)
+    for val in result:
+        print(val, end=' ')
 
 
             C#
@@ -310,7 +293,8 @@ class Node {
     public int data;
     public Node left, right;
 
-    public Node(int x) {
+    public Node(int x)
+    {
         data = x;
         left = right = null;
     }
@@ -318,72 +302,68 @@ class Node {
 
 class GFG {
     static int minHD, maxHD;
-    
-    // DFS function to fill hdMap with bottom-most 
+
+    // DFS function to fill hdMap with bottom-most
     // nodes at each horizontal distance
-    static void dfs(Node root, int hd, int depth, Dictionary<int, Pair> hdMap) {
-        if (root == null) return;
-        
+    static void dfs(Node root, int hd, int depth,
+                    Dictionary<int, int[]> hdMap)
+    {
+        if (root == null)
+            return;
+
         minHD = Math.Min(minHD, hd);
         maxHD = Math.Max(maxHD, hd);
 
-        // If this horizontal distance is 
-        // being visited for the first time or
-        // we're at a deeper level, update it
-        if (!hdMap.ContainsKey(hd) || depth >= hdMap[hd].depth) {
-            hdMap[hd] = new Pair(root.data, depth);
+        // If this horizontal distance is being visited
+        // for the first time or we are at a deeper level,
+        // update it
+        if (!hdMap.ContainsKey(hd)
+            || depth >= hdMap[hd][1]) {
+            hdMap[hd] = new int[] { root.data, depth };
         }
 
         dfs(root.left, hd - 1, depth + 1, hdMap);
         dfs(root.right, hd + 1, depth + 1, hdMap);
     }
-    
+
     // Returns the bottom view of a binary tree
-    static List<int> bottomView(Node root) {
-        if (root == null) return new List<int>();
-        
+    static List<int> bottomView(Node root)
+    {
+        if (root == null)
+            return new List<int>();
+
         minHD = 0;
         maxHD = 0;
-        
-        // Map to store the last node's data and its depth
-        // at each horizontal distance (HD)
-        Dictionary<int, Pair> hdMap = new Dictionary<int, Pair>();
+
+        // Map to store the last node's data and
+        // its depth at each horizontal distance
+        Dictionary<int, int[]> hdMap
+            = new Dictionary<int, int[]>();
 
         dfs(root, 0, 0, hdMap);
-        
+
         List<int> result = new List<int>();
 
         // Iterate through horizontal distances
-        // in range from min HD to max HD
+        // from min HD to max HD
         for (int hd = minHD; hd <= maxHD; hd++) {
-            result.Add(hdMap[hd].data);
+            result.Add(hdMap[hd][0]);
         }
-        
+
         return result;
     }
 
-    // Pair class to store 
-    // node data and its depth
-    class Pair {
-        public int data, depth;
-
-        public Pair(int data, int depth) {
-            this.data = data;
-            this.depth = depth;
-        }
-    }
-
-    public static void Main(string[] args) {
-      
+    public static void Main()
+    {
         // Create binary tree
         //       20
         //      /  \
-        //    8     22
-        //   / \     \
-        //  5   3     25
-        //     / \    /
-        //    10 14  28
-        
+        //     8    22
+        //    / \     \
+        //   5   3     25
+        //      / \    /
+        //     10 14  28
+
         Node root = new Node(20);
         root.left = new Node(8);
         root.right = new Node(22);
@@ -395,12 +375,14 @@ class GFG {
         root.right.right = new Node(25);
         root.right.right.left = new Node(28);
 
-        minHD = 0; maxHD = 0;
-         
+        minHD = 0;
+        maxHD = 0;
+
         List<int> result = bottomView(root);
 
-        foreach (int val in result) {
-          Console.Write(val + " ");
+        foreach(int val in result)
+        {
+            Console.Write(val + " ");
         }
     }
 }
@@ -417,60 +399,53 @@ class Node {
     }
 }
 
-// Pair class to store 
-// node data and its depth
-class Pair {
-    constructor(data, depth) {
-        this.data = data;
-        this.depth = depth;
-    }
-}
-
-let minHD = 0;
-let maxHD = 0;
 
 // DFS function to fill hdMap with bottom-most
 // nodes at each horizontal distance
-function dfs(root, hd, depth, hdMap) {
+function dfs(root, hd, depth, hdMap, range) {
     if (root === null) return;
 
-    minHD = Math.min(minHD, hd);
-    maxHD = Math.max(maxHD, hd);
+    range.minHD = Math.min(range.minHD, hd);
+    range.maxHD = Math.max(range.maxHD, hd);
 
-    // If this horizontal distance is new
-    // or we're at a deeper level, update it
-    if (!hdMap.has(hd) || depth >= hdMap.get(hd).depth) {
-        hdMap.set(hd, new Pair(root.data, depth));
+    // If this horizontal distance is 
+    // being visited for the first time or
+    // we're at a deeper level, update it
+    if (!hdMap.has(hd) || depth >= hdMap.get(hd)[1]) {
+        hdMap.set(hd, [root.data, depth]);
     }
 
-    dfs(root.left, hd - 1, depth + 1, hdMap);
-    dfs(root.right, hd + 1, depth + 1, hdMap);
+    dfs(root.left, hd - 1, depth + 1, hdMap, range);
+    dfs(root.right, hd + 1, depth + 1, hdMap, range);
 }
+
 
 // Returns the bottom view of a binary tree
 function bottomView(root) {
     if (root === null) return [];
-    
-    minHD = 0;
-    maxHD = 0;
-    
+
+    let range = {
+        minHD: 0,
+        maxHD: 0
+    };
+
     // Map to store the last node's data and its depth
     // at each horizontal distance
     let hdMap = new Map();
-    dfs(root, 0, 0, hdMap);
-    
+
+    dfs(root, 0, 0, hdMap, range);
+
     let result = [];
-    
+
     // Iterate through horizontal distances
-    // in range from minHD to maxHD
-    for (let hd = minHD; hd <= maxHD; hd++) {
-        result.push(hdMap.get(hd).data);
+    // in range from min HD to max HD
+    for (let hd = range.minHD; hd <= range.maxHD; hd++) {
+        result.push(hdMap.get(hd)[0]);
     }
 
     return result;
 }
 
-// Driver code
 
 // Create binary tree
 //       20
@@ -493,9 +468,12 @@ root.right.right = new Node(25);
 root.right.right.left = new Node(28);
 
 let result = bottomView(root);
-console.log(...result);
 
-Output5 10 4 28 25 [Expected Approach - 2] Using BFS - O(n) Time and O(n) SpaceThe idea is to do BFS while maintaining a map for horizontal distance (key) and the last node (value). The value for a certain distance is updated as we progress in the level order traversal. 
+for (let val of result) {
+    process.stdout.write(val + " ");
+}
+
+Output5 10 4 28 25 Using BFS - O(n) Time and O(n) SpaceThe idea is to do BFS while maintaining a map for horizontal distance (key) and the last node (value). The value for a certain distance is updated as we progress in the level order traversal. 
             C++
 
     #include <iostream>

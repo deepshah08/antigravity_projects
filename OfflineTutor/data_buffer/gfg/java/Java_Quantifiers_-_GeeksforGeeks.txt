@@ -13,43 +13,59 @@ Java Quantifiers are special symbols in Regular Expressions (Regex) that specify
 }
 
 Outputtrue
-Explanation:0* allows zero or more occurrences of 0 . \d matches a digit. The string "0007" satisfies the patternCommon Quantifier Symbols Used in JavaThese symbols specify how many times a character, character class, or group can occur in a regular expression. They represent the basic quantifier symbols, while their matching behavior can be Greedy, Reluctant, or Possessive.X* –> Zero or more occurrences of XX? –> Zero or one occurrence of XX+ –> One or more occurrences of XX{n} –> Exactly n occurrences of XX{n,} –> At least n occurrences of XX{n,m} –> Between n and m occurrences of X (inclusive)Types of Quantifiers in Java Regex1. Greedy QuantifierGreedy quantifiers try to match as much of the input as possible while still allowing the overall pattern to match. This is the default behavior in Java Regex.
+Explanation: 0* matches zero or more occurrences of 0, while \d represents a digit. Therefore, "0007" matches the pattern.Common Quantifier Symbols Used in JavaThese symbols specify how many times a character, character class, or group can occur in a regular expression. They represent the basic quantifier symbols, while their matching behavior can be Greedy, Reluctant, or Possessive.X* –> Zero or more occurrences of XX? –> Zero or one occurrence of XX+ –> One or more occurrences of XX{n} –> Exactly n occurrences of XX{n,} –> At least n occurrences of XX{n,m} –> Between n and m occurrences of X (inclusive)Here, X can represent a character, character class, or group.For example:a{3}matches:aaaTypes of Quantifiers in Java Regex1. Greedy QuantifierGreedy quantifiers try to match as much input as possible while still allowing the complete regular expression to match. This is the default behavior of quantifiers in Java.Common greedy quantifiers include:*+?{n}{n,}{n,m}
             Java
 
-    public class GFG {
+    import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+public class GFG {
     public static void main(String[] args) {
 
-        String regex = "a+";
-        System.out.println("aaaa".matches(regex));
+        String input = "<b>Java</b><b>Regex</b>";
+
+        Pattern pattern = Pattern.compile("<b>.*</b>");
+        Matcher matcher = pattern.matcher(input);
+
+        while (matcher.find()) {
+            System.out.println(matcher.group());
+        }
     }
 }
 
-Outputtrue
-Explanation: + is greedy by defaultIt matches the maximum possible number of a characters2. Reluctant QuantifierReluctant quantifiers try to match as little of the input as possible. They are created by appending ? to a quantifier symbol.
+Output<b>Java</b><b>Regex</b>
+Explanation The .* part is greedy. It consumes as many characters as possible before allowing the final </b> in the pattern to match. Therefore, the regex matches from the first <b> to the last </b>2. Reluctant QuantifiersReluctant quantifiers, also called lazy quantifiers, try to match as little input as possible while still allowing the complete regex to match. They are created by adding ? after a quantifier.Examples include:*?+???{n}?{n,}?{n,m}?
             Java
 
-    public class GFG {
+    import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+public class GFG {
     public static void main(String[] args) {
 
-        String regex = "a+?";
-        System.out.println("aaaa".matches(regex));
+        String input = "<b>Java</b><b>Regex</b>";
+
+        Pattern pattern = Pattern.compile("<b>.*?</b>");
+        Matcher matcher = pattern.matcher(input);
+
+        while (matcher.find()) {
+            System.out.println(matcher.group());
+        }
     }
 }
 
-Outputtrue
-Explanation: +? makes the quantifier reluctantIt matches the minimum number of characters required3. Possessive QuantifierPossessive quantifiers match as much as possible and do not backtrack. They are created by appending + to a quantifier symbol.
+Output<b>Java</b>
+<b>Regex</b>
+Explanation: The .*? part is reluctant. Instead of consuming as much text as possible, it consumes only the minimum number of characters needed to reach the next </b>.So the matches are:<b>Java</b><b>Regex</b>instead of:<b>Java</b><b>Regex</b>3. Possessive QuantifierPossessive quantifiers try to match as much input as possible and do not backtrack. They are created by adding + after a quantifier.Examples include:*+++?+{n}+{n,}+{n,m}+
             Java
 
     public class GFG {
-
     public static void main(String[] args) {
 
-        String regex = "a++a";
-        System.out.println("aaaa".matches(regex));
+        System.out.println("aaaa".matches("a+a"));
+        System.out.println("aaaa".matches("a++a"));
     }
 }
 
 Outputfalse
-Explanation: In this example, a++ consumes all a characters and does not allow backtracking. As a result, the remaining a in the pattern cannot be matched, and the match fails.Greedy vs Reluctant vs Possessive QuantifiersAspectGreedy QuantifiersReluctant (Lazy) QuantifiersPossessive QuantifiersMatching BehaviourMatches as much as possible while still allowing the overall matchMatches as little as possible to satisfy the patternMatches as much as possible without giving up charactersBacktrackingAllows backtrackingAllows backtrackingDoes not allow backtrackingSyntax / UsageDefault quantifiers (*, +, {m,n})Append ? after the quantifier (*?, +?, {m,n}?)Append + after the quantifier (*+, ++, {m,n}+)Control Over MatchingLeast control (default behavior)Highest control over minimal matchingStrictest control, no backtrackingPerformanceCan be slower due to backtrackingCan be slower due to frequent backtrackingOften faster, but may cause match failureCommon Use CaseGeneral-purpose matchingPrecise or minimal matching scenariosPerformance-critical patterns where backtracking is unnecessaryAdvantages of Java QuantifiersSimplify Regular Expressions by reducing repetitive pattern definitions. Control Repetition using exact, minimum, maximum, or unlimited occurrences. Improve Pattern Matching for complex text and input formats. Support Input Validation for emails, phone numbers, passwords, and IDs. Enhance Readability by making regex patterns shorter and easier to understand. Optimize Performance with possessive quantifiers by avoiding unnecessary backtracking.
+Explanation: a+a returns true because the greedy a+ can backtrack and leave one a for the final a in the pattern. a++a returns false because the possessive a++ consumes all characters and does not allow backtracking.Greedy vs Reluctant vs Possessive QuantifiersAspectGreedy QuantifiersReluctant (Lazy) QuantifiersPossessive QuantifiersMatching BehaviourMatches as much as possible while still allowing the overall matchMatches as little as possible to satisfy the patternMatches as much as possible without giving up charactersBacktrackingAllows backtrackingAllows backtrackingDoes not allow backtrackingSyntax / UsageDefault quantifiers (*, +, {m,n})Append ? after the quantifier (*?, +?, {m,n}?)Append + after the quantifier (*+, ++, {m,n}+)Control Over MatchingLeast control (default behavior)Highest control over minimal matchingStrictest control, no backtrackingPerformanceCan be slower due to backtrackingCan be slower due to frequent backtrackingOften faster, but may cause match failureCommon Use CaseGeneral-purpose matchingPrecise or minimal matching scenariosPerformance-critical patterns where backtracking is unnecessaryAdvantages of Java QuantifiersSimplify Regular Expressions by reducing repetitive pattern definitions. Control Repetition using exact, minimum, maximum, or unlimited occurrences. Improve Pattern Matching for complex text and input formats. Support Input Validation for emails, phone numbers, passwords, and IDs. Enhance Readability by making regex patterns shorter and easier to understand. Optimize Performance with possessive quantifiers by avoiding unnecessary backtracking.

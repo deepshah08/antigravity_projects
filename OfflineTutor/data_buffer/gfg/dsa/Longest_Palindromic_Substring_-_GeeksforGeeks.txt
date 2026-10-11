@@ -1,6 +1,6 @@
 # Longest Palindromic Substring - GeeksforGeeks
 
-Given a string s, find the longest substring which is a palindrome. If there are multiple answers, then find the first appearing substring.Examples:Input: s = "forgeeksskeegfor"Output: "geeksskeeg"Explanation: The longest substring that reads the same forward and backward is "geeksskeeg". Other palindromes like "kssk" or "eeksskee" are shorter.Input: s = "Geeks"Output: "ee"Explanation: The substring "ee" is the longest palindromic part in "Geeks". All others are shorter single characters.Input: s = "abc"Output: "a"Explanation: No multi-letter palindromes exist. So the first character "a" is returned as the longest palindromic substring.Try It YourselfTable of Content[Naive Approach] Generating all sub-strings - O(n^3) time and O(1) space[Better Approach - 1] Using Dynamic Programming - O(n^2) time and O(n^2) space[Better Approach - 2] Using Expansion from center - O(n^2) time and O(1) space[Expected Approach] Using Manacher’s Algorithm - O(n) time and O(n) space[Naive Approach] Generating all sub-strings - O(n3) time and O(1) spaceGenerate all possible substrings of the given string. For each substring, check if it is a palindrome.If it is, update the result if its length is greater than the longest palindrome found so far.
+Given a string s, find the longest substring which is a palindrome. If there are multiple answers, then find the first appearing substring.Examples:Input: s = "forgeeksskeegfor"Output: "geeksskeeg"Explanation: The longest substring that reads the same forward and backward is "geeksskeeg". Other palindromes like "kssk" or "eeksskee" are shorter.Input: s = "Geeks"Output: "ee"Explanation: The substring "ee" is the longest palindromic part in "Geeks". All others are shorter single characters.Input: s = "abc"Output: "a"Explanation: No multi-letter palindromes exist. So the first character "a" is returned as the longest palindromic substring.Try It YourselfTable of Content[Naive Approach] Generating all Substrings - O(n3) time and O(1) space[Better Approach - 1] Dynamic Programming - O(n2) time and O(n2) space[Better Approach - 2] Expansion from Center - O(n2) time and O(1) space[Expected Approach] Manacher’s Algorithm - O(n) time and O(n) space[Naive Approach] Generating all Substrings - O(n3) time and O(1) spaceGenerate all possible substrings of the given string. For each substring, check if it is a palindrome.  If it is, update the result if its length is greater than the longest palindrome found so far.
             C++
 
     #include <iostream>
@@ -223,7 +223,7 @@ const s = "forgeeksskeegfor";
 console.log(getLongestPal(s));
 
 Outputgeeksskeeg
-[Better Approach - 1] Using Dynamic Programming - O(n2) time and O(n2) spaceThe idea is to use Dynamic Programming to store the status of smaller substrings and use these results to check if a longer substring forms a palindrome.The main idea behind the approach is that if we know the status (i.e., palindrome or not) of the substring ranging [i, j], we can find the status of the substring ranging [i-1, j+1] by only matching the character str[i-1] and str[j+1].If the substring from i to j is not a palindrome, then the substring from i-1 to j+1 will also not be a palindrome. Otherwise, it will be a palindrome only if str[i-1] and str[j+1] are the same.Base on this fact, we can create a 2D table (say table[][] which stores status of substring str[i . . . j] ), and check for substrings with length from 1 to n. For each length find all the substrings starting from each character i and find if it is a palindrome or not using the above idea. The longest length for which a palindrome formed will be the required answer.Note: Refer to Longest Palindromic Substring using Dynamic Programming for detailed approach.
+[Better Approach - 1] Dynamic Programming - O(n2) time and O(n2) spaceThe idea is to use Dynamic Programming to store the status of smaller substrings and use these results to check if a longer substring forms a palindrome.The main idea behind the approach is that if we know the status (i.e., palindrome or not) of the substring ranging [i, j], we can find the status of the substring ranging [i-1, j+1] by only matching the character str[i-1] and str[j+1].If the substring from i to j is not a palindrome, then the substring from i-1 to j+1 will also not be a palindrome. Otherwise, it will be a palindrome only if str[i-1] and str[j+1] are the same.Base on this fact, we can create a 2D table (say table[][] which stores status of substring str[i . . . j] ), and check for substrings with length from 1 to n. For each length find all the substrings starting from each character i and find if it is a palindrome or not using the above idea. The longest length for which a palindrome formed will be the required answer.Note: Refer to Longest Palindromic Substring using Dynamic Programming for detailed approach.
             C++
 
     #include <iostream>
@@ -480,7 +480,7 @@ let s = "forgeeksskeegfor";
 console.log(getLongestPal(s));
 
 Outputgeeksskeeg
-[Better Approach - 2] Using Expansion from center - O(n2) time and O(1) spaceThe idea is to traverse each character in the string and treat it as a potential center of a palindrome, trying to expand around it in both directions while checking if the expanded substring remains a palindrome. => For each position, we check for both odd-length palindromes (where the current character is the center) and even-length palindromes (where the current character and the next character together form the center).=> As we expand outward from each center, we keep track of the start position and length of the longest palindrome found so far, updating these values whenever we find a longer valid palindrome.Step-by-step approach:Iterate through each character in the string, treating it as the center of a potential palindrome.For each center, expand in two ways: one for odd-length palindromes (center at index i) and one for even-length palindromes (center between indices i and i+1)Use two pointers low and high to track the left and right boundaries of the current palindrome.While low and high are in bounds and s[low] == s[high], expand outward.If the current palindrome length (high - low + 1) is greater than the previous maximum, update the starting index and max length.After checking all centers, return the substring starting at start with length maxLen.
+[Better Approach - 2] Expansion from Center - O(n2) time and O(1) spaceThe idea is to traverse each character in the string and treat it as a potential center of a palindrome, trying to expand around it in both directions while checking if the expanded substring remains a palindrome. => For each position, we check for both odd-length palindromes (where the current character is the center) and even-length palindromes (where the current character and the next character together form the center).=> As we expand outward from each center, we keep track of the start position and length of the longest palindrome found so far, updating these values whenever we find a longer valid palindrome.Step-by-step approach:Iterate through each character in the string, treating it as the center of a potential palindrome.For each center, expand in two ways: one for odd-length palindromes (center at index i) and one for even-length palindromes (center between indices i and i+1)Use two pointers low and high to track the left and right boundaries of the current palindrome.While low and high are in bounds and s[low] == s[high], expand outward.If the current palindrome length (high - low + 1) is greater than the previous maximum, update the starting index and max length.After checking all centers, return the substring starting at start with length maxLen.
             C++
 
     #include <iostream>
@@ -683,204 +683,148 @@ const s = "forgeeksskeegfor";
 console.log(getLongestPal(s));
 
 Outputgeeksskeeg
-[Expected Approach] Using Manacher’s Algorithm - O(n) time and O(n) spaceThe idea is to use Manacher’s algorithm, which transforms the input string by inserting separators (#) and sentinels to handle both even and odd-length palindromes uniformly.For each position in the transformed string, we expand the longest possible palindrome centered there using mirror symmetry and previously computed values.This expansion is bounded efficiently using the rightmost known palindrome range to avoid redundant checks.Whenever a longer palindrome is found, we update its length and starting index in the original string.
+[Expected Approach] Manacher’s Algorithm - O(n) time and O(n) spaceThe idea is to use Manacher’s algorithm, which transforms the input string by inserting separators (#) and sentinels to handle both even and odd-length palindromes uniformly.For each position in the transformed string, we expand the longest possible palindrome centered there using mirror symmetry and previously computed values.This expansion is bounded efficiently using the rightmost known palindrome range to avoid redundant checks.Whenever a longer palindrome is found, we update its length and starting index in the original string.
             C++
 
     #include <iostream>
-#include <vector>
 #include <string>
+#include <vector>
 using namespace std;
 
-class manacher {
-public:
-    // p[i] stores the radius of the palindrome 
-    // centered at position i in ms
-    vector<int> p;  
-    
-    // transformed string with sentinels
-    // and separators
-    string ms;      
+string getLongestPal(string &s)
+{
+    if (s.empty())
+        return "";
 
-    manacher(string &s) {
-        
-        // left sentinel to avoid bounds check
-        ms = "@";  
-        for (char c : s) {
-            
-            // insert '#' between every character
-            ms += "#" + string(1, c);  
-        }
-        
-        // right sentinel
-        ms += "#$";  
-        runManacher();
+    // Transform the string using separators
+    // and sentinels.
+    string ms = "@";
+
+    for (char c : s)
+    {
+        ms += "#" + string(1, c);
     }
 
-    void runManacher() {
-        int n = ms.size();
-        p.assign(n, 0);
-        int l = 0, r = 0;
+    ms += "#$";
 
-        for (int i = 1; i < n - 1; ++i) {
-            // initialize p[i] based on its mirror 
-            // and current [l, r] range
-            if(r + l - i >= 0 && r + l - i < n)
-                p[i] = max(0, min(r - i, p[r + l - i]));
+    int m = ms.size();
+    vector<int> p(m, 0);
 
-            // try expanding around center i
-            while (ms[i + 1 + p[i]] == ms[i - 1 - p[i]]) {
-                ++p[i];
-            }
+    int l = 0, r = 0;
 
-            // update [l, r] if the new palindrome goes 
-            // beyond current right boundary
-            if (i + p[i] > r) {
-                l = i - p[i];
-                r = i + p[i];
-            }
+    // Manacher's algorithm
+    for (int i = 1; i < m - 1; ++i)
+    {
+
+        // Use the mirror position
+        if (i < r)
+        {
+            int mirror = l + r - i;
+            p[i] = min(r - i, p[mirror]);
+        }
+
+        // Expand around the current center
+        while (ms[i + 1 + p[i]] == ms[i - 1 - p[i]])
+        {
+            ++p[i];
+        }
+
+        // Update the current palindrome range
+        if (i + p[i] > r)
+        {
+            l = i - p[i];
+            r = i + p[i];
         }
     }
 
-    // return the radius of the longest palindrome
-    // centered at original index 'cen'
-    int getLongest(int cen, int odd) {
-        int pos = 2 * cen + 2 + !odd;
-        return p[pos];
-    }
+    int maxLen = 1;
+    int start = 0;
 
-    // checks whether the substring 
-    // s[l..r] is a palindrome
-    bool check(int l, int r) {
-        int res = getLongest((r + l) / 2, (r - l + 1) % 2);
-        return (r - l + 1) <= res;
-    }
-};
-
-// finds and returns the longest palindromic substring in s
-string getLongestPal(string &s) {
-    int n = s.size(), maxLen = 1, start = 0;
-    manacher M(s);
-
-    for (int i = 0; i < n; ++i) {
-        int oddLen = M.getLongest(i, 1);
-        if (oddLen > maxLen) {
-            // update start for odd-length palindrome
-            start = i - (oddLen - 1) / 2;  
+    // Find the longest palindrome
+    for (int i = 1; i < m - 1; ++i)
+    {
+        if (p[i] > maxLen)
+        {
+            maxLen = p[i];
+            start = (i - p[i]) / 2;
         }
-
-        int evenLen = M.getLongest(i, 0);
-        if (evenLen > maxLen) {
-            // update start for even-length palindrome
-            start = i - (evenLen - 1) / 2;  
-        }
-
-        maxLen = max(maxLen, max(oddLen, evenLen));
     }
 
     return s.substr(start, maxLen);
 }
 
-int main() {
+int main()
+{
     string s = "forgeeksskeegfor";
     cout << getLongestPal(s) << endl;
+
     return 0;
 }
 
 
             Java
 
-    class Manacher {
-    // p[i] stores the radius of the palindrome 
-    // centered at position i in ms
-    int[] p;
+    import java.util.Arrays;
 
-    // transformed string with sentinels 
-    // and separators
-    String ms;
+public class GFG {
+    public static String getLongestPal(String s)
+    {
+        if (s.isEmpty())
+            return "";
 
-    public Manacher(String s) {
-        // left sentinel to avoid bounds check
-        StringBuilder sb = new StringBuilder("@");  
+        // Transform the string using separators
+        // and sentinels.
+        StringBuilder ms = new StringBuilder("@");
+
         for (char c : s.toCharArray()) {
-            
-             // insert '#' between every character
-            sb.append("#").append(c); 
+            ms.append("#").append(c);
         }
-        // right sentinel
-        sb.append("#$");  
-        ms = sb.toString();
-        runManacher();
-    }
 
-    private void runManacher() {
-        int n = ms.length();
-        p = new int[n];
+        ms.append("#$");
+
+        int m = ms.length();
+        int[] p = new int[m];
+
         int l = 0, r = 0;
 
-        for (int i = 1; i < n - 1; ++i) {
-            int mirror = l + r - i;
-            if (mirror >= 0 && mirror < n) {
-                p[i] = Math.max(0, Math.min(r - i, p[mirror]));
-            } else {
-                p[i] = 0;
+        // Manacher's algorithm
+        for (int i = 1; i < m - 1; ++i) {
+
+            // Use the mirror position
+            if (i < r) {
+                int mirror = l + r - i;
+                p[i] = Math.min(r - i, p[mirror]);
             }
 
-            // try expanding around center i
-            while ((i + 1 + p[i]) < n && (i - 1 - p[i]) >= 0 &&
-                    ms.charAt(i + 1 + p[i]) == ms.charAt(i - 1 - p[i])) {
+            // Expand around the current center
+            while (ms.charAt(i + 1 + p[i])
+                   == ms.charAt(i - 1 - p[i])) {
                 ++p[i];
             }
 
-            // update [l, r] if the new palindrome goes 
-            // beyond current right boundary
+            // Update the current palindrome range
             if (i + p[i] > r) {
                 l = i - p[i];
                 r = i + p[i];
             }
         }
-    }
 
-    // return the radius of the longest palindrome 
-    // centered at original index 'cen'
-    public int getLongest(int cen, int odd) {
-        int pos = 2 * cen + 2 + (odd == 0 ? 1 : 0);
-        return p[pos];
-    }
+        int maxLen = 1;
+        int start = 0;
 
-    // checks whether the substring 
-    // s[l..r] is a palindrome
-    public boolean check(int l, int r) {
-        int res = getLongest((r + l) / 2, (r - l + 1) % 2);
-        return (r - l + 1) <= res;
-    }
-}
-class GfG {
-    // finds and returns the longest 
-    // palindromic substring in s
-    public static String getLongestPal(String s) {
-        int n = s.length(), maxLen = 1, start = 0;
-        Manacher M = new Manacher(s);
-
-        for (int i = 0; i < n; ++i) {
-            int oddLen = M.getLongest(i, 1);
-            if (oddLen > maxLen) {
-                // update start for odd-length palindrome
-                start = i - (oddLen - 1) / 2;
+        // Find the longest palindrome
+        for (int i = 1; i < m - 1; ++i) {
+            if (p[i] > maxLen) {
+                maxLen = p[i];
+                start = (i - p[i]) / 2;
             }
-
-            int evenLen = M.getLongest(i, 0);
-            if (evenLen > maxLen) {
-                // update start for even-length palindrome
-                start = i - (evenLen - 1) / 2;
-            }
-
-            maxLen = Math.max(maxLen, Math.max(oddLen, evenLen));
         }
 
         return s.substring(start, start + maxLen);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         String s = "forgeeksskeegfor";
         System.out.println(getLongestPal(s));
     }
@@ -889,81 +833,54 @@ class GfG {
 
             Python
 
-    class manacher:
-    # p[i] stores the radius of the palindrome 
-    # centered at position i in ms
+    def getLongestPal(s):
+    if not s:
+        return ""
 
-    def __init__(self, s):
-        # transformed string with sentinels 
-        # and separators
-        self.ms = "@"
-        for c in s:
-            self.ms += "#" + c
-        self.ms += "#$"
-        self.p = [0] * len(self.ms)
-        self.runManacher()
+    # Transform the string using separators
+    # and sentinels.
+    ms = "@"
 
-    def runManacher(self):
-        n = len(self.ms)
-        l = r = 0
+    for c in s:
+        ms += "#" + c
 
-        for i in range(1, n - 1):
+    ms += "#$"
+
+    m = len(ms)
+    p = [0] * m
+
+    l, r = 0, 0
+
+    # Manacher's algorithm
+    for i in range(1, m - 1):
+
+        # Use the mirror position
+        if i < r:
             mirror = l + r - i
-            if 0 <= mirror < n:
-                self.p[i] = max(0, min(r - i, self.p[mirror]))
-            else:
-                self.p[i] = 0
+            p[i] = min(r - i, p[mirror])
 
-            # try expanding around center i
-            while (i + 1 + self.p[i] < n and
-                   i - 1 - self.p[i] >= 0 and
-                   self.ms[i + 1 + self.p[i]] == self.ms[i - 1 - self.p[i]]):
-                self.p[i] += 1
+        # Expand around the current center
+        while i - 1 - p[i] >= 0 and i + 1 + p[i] < m and ms[i - 1 - p[i]] == ms[i + 1 + p[i]]:
+            p[i] += 1
 
-            # update [l, r] if the new palindrome goes 
-            # beyond current right boundary
-            if i + self.p[i] > r:
-                l = i - self.p[i]
-                r = i + self.p[i]
+        # Update the current palindrome range
+        if i + p[i] > r:
+            l = i - p[i]
+            r = i + p[i]
 
-    # return the radius of the longest palindrome 
-    # centered at original index 'cen'
-    def getLongest(self, cen, odd):
-        pos = 2 * cen + 2 + (0 if odd else 1)
-        return self.p[pos]
-
-    # checks whether the substring 
-    # s[l..r] is a palindrome
-    def check(self, l, r):
-        length = r - l + 1
-        return length <= self.getLongest((l + r) // 2, length % 2)
-
-
-# finds and returns the longest 
-# palindromic substring in s
-def getLongestPal(s):
-    n = len(s)
     maxLen = 1
     start = 0
-    M = manacher(s)
 
-    for i in range(n):
-        oddLen = M.getLongest(i, 1)
-        if oddLen > maxLen:
-            # update start for odd-length palindrome
-            start = i - (oddLen - 1) // 2
-
-        evenLen = M.getLongest(i, 0)
-        if evenLen > maxLen:
-            # update start for even-length palindrome
-            start = i - (evenLen - 1) // 2
-
-        maxLen = max(maxLen, max(oddLen, evenLen))
+    # Find the longest palindrome
+    for i in range(1, m - 1):
+        if p[i] > maxLen:
+            maxLen = p[i]
+            start = (i - p[i]) // 2
 
     return s[start:start + maxLen]
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     s = "forgeeksskeegfor"
     print(getLongestPal(s))
 
@@ -972,93 +889,61 @@ if __name__ == "__main__":
 
     using System;
 
-class manacher {
-    // p[i] stores the radius of the palindrome 
-    // centered at position i in ms
-    public int[] p;
+class GFG {
+    static string getLongestPal(string s)
+    {
+        if (string.IsNullOrEmpty(s))
+            return "";
 
-    // transformed string with sentinels 
-    // and separators
-    public string ms;
+        // Transform the string using separators
+        // and sentinels.
+        string ms = "@";
 
-    public manacher(string s) {
-        ms = "@";
-        foreach (char c in s) {
-            ms += "#" + c;
-        }
+        foreach(char c in s) { ms += "#" + c; }
+
         ms += "#$";
-        runManacher();
-    }
 
-    void runManacher() {
-        int n = ms.Length;
-        p = new int[n];
+        int m = ms.Length;
+        int[] p = new int[m];
+
         int l = 0, r = 0;
 
-        for (int i = 1; i < n - 1; ++i) {
-            int mirror = l + r - i;
-            if (mirror >= 0 && mirror < n)
-                p[i] = Math.Max(0, Math.Min(r - i, p[mirror]));
-            else
-                p[i] = 0;
+        // Manacher's algorithm
+        for (int i = 1; i < m - 1; ++i) {
+            // Use the mirror position
+            if (i < r) {
+                int mirror = l + r - i;
+                p[i] = Math.Min(r - i, p[mirror]);
+            }
 
-            // try expanding around center i
-            while ((i + 1 + p[i]) < n && (i - 1 - p[i]) >= 0 &&
-                   ms[i + 1 + p[i]] == ms[i - 1 - p[i]]) {
+            // Expand around the current center
+            while (ms[i + 1 + p[i]] == ms[i - 1 - p[i]]) {
                 ++p[i];
             }
 
-            // update [l, r] if the new palindrome goes 
-            // beyond current right boundary
+            // Update the current palindrome range
             if (i + p[i] > r) {
                 l = i - p[i];
                 r = i + p[i];
             }
         }
-    }
 
-    // return the radius of the longest palindrome 
-    // centered at original index 'cen'
-    public int getLongest(int cen, int odd) {
-        int pos = 2 * cen + 2 + (odd == 0 ? 1 : 0);
-        return p[pos];
-    }
+        int maxLen = 1;
+        int start = 0;
 
-    // checks whether the substring 
-    // s[l..r] is a palindrome
-    public bool check(int l, int r) {
-        int res = getLongest((l + r) / 2, (r - l + 1) % 2);
-        return (r - l + 1) <= res;
-    }
-}
-
-class GfG {
-    // finds and returns the longest 
-    // palindromic substring in s
-    public static string getLongestPal(string s) {
-        int n = s.Length, maxLen = 1, start = 0;
-        manacher M = new manacher(s);
-
-        for (int i = 0; i < n; ++i) {
-            int oddLen = M.getLongest(i, 1);
-            if (oddLen > maxLen) {
-                // update start for odd-length palindrome
-                start = i - (oddLen - 1) / 2;
+        // Find the longest palindrome
+        for (int i = 1; i < m - 1; ++i) {
+            if (p[i] > maxLen) {
+                maxLen = p[i];
+                start = (i - p[i]) / 2;
             }
-
-            int evenLen = M.getLongest(i, 0);
-            if (evenLen > maxLen) {
-                // update start for even-length palindrome
-                start = i - (evenLen - 1) / 2;
-            }
-
-            maxLen = Math.Max(maxLen, Math.Max(oddLen, evenLen));
         }
 
         return s.Substring(start, maxLen);
     }
 
-    public static void Main(string[] args) {
+    static void Main()
+    {
         string s = "forgeeksskeegfor";
         Console.WriteLine(getLongestPal(s));
     }
@@ -1067,90 +952,62 @@ class GfG {
 
             JavaScript
 
-    class Mancjher {
-    // p[i] stores the radius of the palindrome 
-    // centered at position i in ms
-    constructor(s) {
-        this.ms = "@";
-        for (let c of s) {
-            this.ms += "#" + c;
-        }
-        this.ms += "#$"; // right sentinel
-        this.p = new Array(this.ms.length).fill(0);
-        this.runManacher();
+    function getLongestPal(s)
+{
+    if (s.length === 0)
+        return "";
+
+    // Transform the string using separators
+    // and sentinels.
+    let ms = "@";
+
+    for (let c of s) {
+        ms += "#" + c;
     }
 
-    runManacher() {
-        let n = this.ms.length;
-        let l = 0, r = 0;
+    ms += "#$";
 
-        for (let i = 1; i < n - 1; ++i) {
+    let m = ms.length;
+    let p = new Array(m).fill(0);
+
+    let l = 0, r = 0;
+
+    // Manacher's algorithm
+    for (let i = 1; i < m - 1; ++i) {
+
+        // Use the mirror position
+        if (i < r) {
             let mirror = l + r - i;
-            if (mirror >= 0 && mirror < n) {
-                this.p[i] = Math.max(0, Math.min(r - i, this.p[mirror]));
-            } else {
-                this.p[i] = 0;
-            }
+            p[i] = Math.min(r - i, p[mirror]);
+        }
 
-            // try expanding around center i
-            while (
-                (i + 1 + this.p[i]) < n &&
-                (i - 1 - this.p[i]) >= 0 &&
-                this.ms[i + 1 + this.p[i]] === this.ms[i - 1 - this.p[i]]
-            ) {
-                ++this.p[i];
-            }
+        // Expand around the current center
+        while (ms[i + 1 + p[i]] === ms[i - 1 - p[i]]) {
+            ++p[i];
+        }
 
-            // update [l, r] if new palindrome goes beyond right
-            if (i + this.p[i] > r) {
-                l = i - this.p[i];
-                r = i + this.p[i];
-            }
+        // Update the current palindrome range
+        if (i + p[i] > r) {
+            l = i - p[i];
+            r = i + p[i];
         }
     }
 
-    // return the radius of the longest palindrome 
-    // centered at original index 'cen'
-    getLongest(cen, odd) {
-        let pos = 2 * cen + 2 + (odd === 0 ? 1 : 0);
-        return this.p[pos];
-    }
+    let maxLen = 1;
+    let start = 0;
 
-    // checks whether the substring 
-    // s[l..r] is a palindrome
-    check(l, r) {
-        let len = r - l + 1;
-        return len <= this.getLongest((l + r) >> 1, len % 2);
-    }
-}
-
-
-// finds and returns the longest 
-// palindromic substring in s
-function getLongestPal(s) {
-    let n = s.length, maxLen = 1, start = 0;
-    const M = new Mancjher(s);
-
-    for (let i = 0; i < n; ++i) {
-        let oddLen = M.getLongest(i, 1);
-        if (oddLen > maxLen) {
-            start = i - Math.floor((oddLen - 1) / 2);
+    // Find the longest palindrome
+    for (let i = 1; i < m - 1; ++i) {
+        if (p[i] > maxLen) {
+            maxLen = p[i];
+            start = (i - p[i]) / 2;
         }
-
-        let evenLen = M.getLongest(i, 0);
-        if (evenLen > maxLen) {
-            start = i - Math.floor((evenLen - 1) / 2);
-        }
-
-        maxLen = Math.max(maxLen, Math.max(oddLen, evenLen));
     }
 
     return s.substring(start, start + maxLen);
 }
 
-
 // Driver Code
-const s = "forgeeksskeegfor";
-console.log(getLongestPal(s)); 
+console.log(getLongestPal("forgeeksskeegfor"));
 
 Outputgeeksskeeg

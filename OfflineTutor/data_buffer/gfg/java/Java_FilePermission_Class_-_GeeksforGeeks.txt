@@ -1,6 +1,6 @@
 # Java FilePermission Class - GeeksforGeeks
 
-The FilePermission class in Java represents access control to a file or directory by specifying a path name and permitted actions. It is used by the Java security framework to enforce read, write, execute, or delete operations.Part of the java.io package and extends the Permission classSupports actions like read, write, execute, and delete
+The FilePermission class in the java.io package represents permission to access a file or directory using operations such as reading, writing, executing, deleting, and reading symbolic links. It was designed for Java's former Security Manager permission model.FilePermission is deprecated for removal since Java 25.It is now mainly useful for understanding and maintaining legacy Java applications that used the Security Manager.Note: The Security Manager is no longer supported. Therefore, FilePermission should not be used as a modern mechanism for restricting file-system access.
             Java
 
     import java.io.FilePermission;
@@ -12,7 +12,7 @@ public class Main {
     }
 }
 
-Output:readExplanation:The FilePermission object is created with the action "read".The getActions() method returns the canonical string representing the allowed actions.Since only one action is specified, it simply prints read.Supported ActionsThe FilePermission class supports the following actions:read: Grants permission to read the file.write: Grants permission to modify/write to the file.delete: Grants permission to delete the file using File.delete().readlink: Grants permission to read symbolic links.execute: Grants permission to execute the file.Class Declaration of FilePermission Classpublic final class FilePermission  extends Permission    implements SerializableConstructorCreates a new FilePermission object with the specified actions.FilePermission(String path, String actions)Parameters:path: The file or directory path.actions: Actions to be allowed (e.g., "read", "write").Methods of FilePermission Class1. equals(Object obj)Used to compare two FilePermission objects for equality. It returns true only when both the file path and the permitted actions are exactly the same.Syntax:public boolean equals(Object obj)Parameters: obj - the FilePermission object to compare.Returns: true if equal, otherwise false.
+Output:readExplanation:The FilePermission object is created with the action "read".The getActions() method returns the canonical string representing the allowed actions.Since only one action is specified, it simply prints read.FilePermissionFilePermission is a final class that extends java.security.Permission. A FilePermission object contains:A file or directory path.One or more actions associated with that path.For example:FilePermission permission = new FilePermission("GEEKS.txt", "read,write");This object represents read and write permissions for GEEKS.txt.However, these objects no longer provide a supported mechanism for enforcing file access in current Java versions because the Security Manager functionality has been discontinued. Supported ActionsA FilePermission object can represent the following file-access actions:read: Represents permission to read a file or directory.write: Represents permission to write to or modify a file.execute: Represents permission to execute a file.delete: Represents permission to delete a file or directory.readlink: Represents permission to read the target of a symbolic link.Class Declaration of FilePermission Classpublic final class FilePermission extends Permission implements SerializableConstructorCreates a new FilePermission object with the specified actions.FilePermission(String path, String actions)Parameters:path: The file or directory path.actions: Actions to be allowed (e.g., "read", "write").Methods of FilePermission ClassImportant methods provided by FilePermission include:1. equals(Object obj)Used to compare two FilePermission objects for equality. It returns true only when both the file path and the permitted actions are exactly the same.Syntax:public boolean equals(Object obj)Parameters: obj - the FilePermission object to compare.Returns: true if equal, otherwise false.
             Java
 
     import java.io.FilePermission;
@@ -53,7 +53,7 @@ public class HashCodeExample {
 }
 
 Output-989797644
-4. implies(Permission arg)Determines whether the current permission fully covers another permission. It returns true if the current object allows all actions requested by the given permission.Syntax:public boolean implies(Permission p)Parameters: p - the permission to check.Returns: true if the permission is implied, otherwise false.
+Note: The exact hash code should not be treated as a fixed value.4. implies(Permission arg)Determines whether the current permission fully covers another permission. It returns true if the current object allows all actions requested by the given permission.Syntax:public boolean implies(Permission p)Parameters:p - the permission to check.Returns:true if the permission is implied, otherwise false.
             Java
 
     import java.io.FilePermission;
@@ -69,7 +69,7 @@ public class ImpliesExample {
 }
 
 Outputtrue
-5. newPermissionCollection()Creates a container designed specifically to hold multiple FilePermission objects. This collection helps manage permissions efficiently within Java’s security framework.Syntax:public PermissionCollection newPermissionCollection()Return: A new PermissionCollection object to hold FilePermission objects.
+5. newPermissionCollection()The newPermissionCollection() method creates a PermissionCollection designed for storing FilePermission objects. It is primarily relevant to the legacy permission model associated with Java's former Security Manager architecture.Syntax:public PermissionCollection newPermissionCollection()Returns: A PermissionCollection that can store FilePermission objects.
             Java
 
     import java.io.FilePermission;

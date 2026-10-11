@@ -77,7 +77,7 @@ int main() {
 
             Java
 
-    class GfG {
+    class GFG {
     static int maxWater(int[] arr) {
         int res = 0;
 
@@ -140,7 +140,7 @@ if __name__ == "__main__":
             C#
 
     using System;
-class GfG {
+class GFG {
 
     static int maxWater(int[] arr) {
         int res = 0;
@@ -202,7 +202,7 @@ class GfG {
 let arr = [2, 1, 5, 3, 1, 0, 4];
 console.log(maxWater(arr));
 
-Output9[Better Approach] Prefix and suffix max for each index - O(n) Time and O(n) SpaceIn the previous approach, for every element we needed to calculate the highest element on the left and on the right. So, to reduce the time complexity:=> For every element we first calculate and store the highest bar on the left and on the right (say stored in arrays left[] and right[]).=> Then iterate the array and use the calculated values to find the amount of water stored in this index, which is the same as (min(left[i], right[i]) - arr[i])
+Output9[Better Approach] Prefix and suffix max for each index - O(n) Time and O(n) SpaceIn the previous approach, for every element, we calculated the highest bar on its left and right separately, resulting in O(n²) time.To reduce the time complexity:Precompute and store the highest bar on the left and right in left[] and right[].Then, use these values to calculate the water stored at each index:min(left[i], right[i]) - arr[i]This reduces the time complexity to O(n), with O(n) extra space.
             C++
 
     #include <iostream>
@@ -367,8 +367,8 @@ if __name__ == "__main__":
 
     using System;
 
-class Program {
-    static int MaxWater(int[] arr) {
+class GFG {
+    static int maxWater(int[] arr) {
         int n = arr.Length;
 
         int[] left = new int[n];
@@ -399,7 +399,7 @@ class Program {
 
     static void Main() {
         int[] arr = {2, 1, 5, 3, 1, 0, 4};
-        Console.WriteLine(MaxWater(arr));  
+        Console.WriteLine(maxWater(arr));  
     }
 }
 
@@ -439,7 +439,7 @@ class Program {
 const arr = [2, 1, 5, 3, 1, 0, 4];
 console.log(maxWater(arr));
 
-Output9[Expected Approach] Using Two Pointers - O(n) Time and O(1) SpaceThe approach is mainly based on the following facts:If we consider a subarray arr[left...right], we can decide the amount of water either for arr[left] or arr[right] if we know the left max (max element in arr[0...left-1]) and right max (max element in arr[right+1...n-1].If left max is less than the right max, then we can decide for arr[left]. Else we can decide for arr[right]If we decide for arr[left], then the amount of water would be left max - arr[left] and if we decide for arr[right], then the amount of water would be right max - arr[right].How does this work?  Let us consider the case when left max is less than the right max. For arr[left], we know left max for it and we also know that the right max for it would not be less than left max because we already have a greater value in arr[right...n-1]. So for the current bar, we can find the amount of water by finding the difference between the current bar and the left max bar.
+Output9[Expected Approach] Using Two Pointers - O(n) Time and O(1) SpaceThe approach is based on the following observations:For a subarray `arr[left...right]`, we maintain the maximum height on the left (`leftMax`) and on the right (`rightMax`).If `leftMax < rightMax`, we can determine the water trapped at `arr[left]` because the left side is the limiting boundary.Otherwise, we can determine the water trapped at `arr[right]` because the right side is the limiting boundary.How does this work?  Let us consider the case when left max is less than the right max. For arr[left], we know left max for it and we also know that the right max for it would not be less than left max because we already have a greater value in arr[right...n-1]. So for the current bar, we can find the amount of water by finding the difference between the current bar and the left max bar.
             C++
 
     #include <iostream>
@@ -546,9 +546,7 @@ int main() {
 
             Java
 
-    import java.util.*;
-
-class GfG {
+    class GFG {
     static int maxWater(int[] arr) {
         int left = 1;
         int right = arr.length - 2;
@@ -645,7 +643,7 @@ if __name__ == "__main__":
 
     using System;
 
-class GfG {
+class GFG {
     static int maxWater(int[] arr) {
         int left = 1;
         int right = arr.Length - 2;
@@ -739,7 +737,7 @@ let arr = [2, 1, 5, 3, 1, 0, 4];
 console.log(maxWater(arr));
 
 Output9
-[Alternate Approach] Using Stack - O(n) Time and O(n) SpaceThis approach involves using next greater and previous greaterelements to solve the trapping rainwater problem. By utilizing a stack and a single traversal, we can compute both the next and previous greater elements for every item. For each element, the water trapped can be determined by the minimum height between the previous and next greater elements. The water is filled between these elements, and the process continues recursively with the next greater and previous greater elements. 
+[Alternate Approach] Using Stack - O(n) Time and O(n) SpaceThis approach uses the Next Greater Element and Previous Greater Element concepts.Use a stack to find the greater element on the left and right of each bar.These greater elements act as boundaries that can hold water.The water trapped at an index is determined by the shorter boundary: min(leftGreater, rightGreater) - height[i]Repeat this process for all elements to calculate the total trapped water.Using a stack helps us find these boundaries efficiently.
             C++
 
     #include <iostream>
@@ -878,7 +876,7 @@ int main() {
 
     import java.util.Stack;
 
-class GfG {
+class GFG {
 
     static int maxWater(int[] arr) {
 
@@ -959,7 +957,7 @@ if __name__ == "__main__":
     using System;
 using System.Collections.Generic;
 
-class GfG {
+class GFG {
     static int maxWater(int[] arr) {
         Stack<int> st = new Stack<int>();
         int res = 0;

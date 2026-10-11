@@ -52,12 +52,10 @@ OutputHello, World!Handling Exceptions When Closing a FileIt's important to hand
             Python
 
     try:
-    file = open("geek.txt", "r")
-    content = file.read()
-    print(content)
+    with open("geek.txt", "r") as file:
+        content = file.read()
+        print(content)
 except FileNotFoundError as e:
     print("Error:", e)
-finally:
-    file.close()
 
-OutputHello, World!Explanation:try block contains code that may raise an error.except block handles specific errors like missing files.finally block ensures the file is always closed, even if an error occurs.
+OutputHello, World!Explanation:try block contains code that may raise an error.except block handles specific errors like missing files.

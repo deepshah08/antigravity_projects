@@ -308,7 +308,7 @@ class GFG {
         return isSortedhelper(arr, arr.Length);
     }
 
-    static public void Main(){
+    static void Main(){
         
         int[] arr = { 10, 20, 30, 40, 50 };
 
@@ -382,14 +382,18 @@ int main() {
 
             Python
 
-    def is_sorted(arr):
-    
-    # sorted() is a built-in method for python
-    return arr == sorted(arr)
+    class Solution:
+
+    def isSorted(self, arr):
+        
+        # Check whether the array is equal to its sorted version
+        return arr == sorted(arr)
+
 
 if __name__ == "__main__":
     arr = [10, 20, 30, 40, 50]
-    if is_sorted(arr):
+
+    if Solution().isSorted(arr):
         print("true")
     else:
         print("false")

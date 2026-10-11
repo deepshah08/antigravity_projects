@@ -1,58 +1,46 @@
 # How are Java Objects Stored in Memory? - GeeksforGeeks
 
-In Java, memory management is handled by the Java Virtual Machine (JVM). The breakdown of how objects are stored in memory:All Java objects are dynamically stored in the heap memory.References to these objects are stored in the stack memory.Objects are created using the "new" keyword and are allocated in the heap memory.Declaring a variable of a class type does not create an object it only creates references.To allocate memory for the object in heap, we need to use the "new" keyword.The Java Virtual Machine is responsible for memory management in Java and divides memory into several areas:Heap Memory: Stores actual objects.Stack Memory: Stores method call data, local variables, and references.Other Areas: Include method area, metaspace (from Java 8), etc.Memory Areas in JavaNow, let us go through each of the memory areas in detail.1. Heap MemoryHeap memory is a part of Java memory management. When an object is created using the new keyword, Java allocates space for that object in the heap. The amount of memory allocated depends on the fields defined in the object's class and their respective data types.Scanner sc = new Scanner(System.in)Here, the Scanner object is stored in the heap, and the reference sc is stored in the stackNote: Garbage collection in the heap area is mandatory for automatic memory management.Heap Memory is divided into several regions:Young Generation: The area within the heap where new objects are generally allocated.Old Generation: The area within the heap where long-livedmetadata Objects are stored after surviving multiple garbage collection cycles.Permanent Generation: It stores metadata about classes and methods in Java 7 and earlier versions.Starting with Java 8, the old permanent generation space was removed and replaced by metaspace. Metaspace uses native memory outside the main heap. This change helps Java to handle class metadata better and also reduces the chances of errors caused by permanent generation.When the new keyword is called, the JVM allocates memory for that object in the heap. The garbage collector automatically deletes objects that are no longer needed.Example:
+In Java, memory is managed automatically by the Java Virtual Machine (JVM). When a program creates an object, the JVM allocates memory for it and manages that memory throughout the object's lifecycle.Java objects are generally allocated in heap memory.Local variables and local object references are associated with a method's stack frame.The new keyword is commonly used to create an object and obtain a reference to it.Memory AreasThe JVM uses different runtime memory areas for executing Java programs. For understanding object storage, the most relevant areas are:Metaspace: Stores class metadata and uses native memory.1. Heap MemoryHeap memory is the runtime memory area from which memory for Java objects and arrays is generally allocated. Objects created using the new keyword are typically stored in the heap.For example:Scanner sc = new Scanner(System.in);new Scanner(System.in) creates a Scanner object that is generally allocated in heap memory.sc is a local reference variable associated with the current method's stack frame and refers to the Scanner object.Note: Heap memory is managed automatically by the JVM, and memory occupied by unreachable objects can be reclaimed through garbage collection.Heap GenerationsFor generational garbage collectors, the heap can conceptually contain regions for objects of different ages:Young Generation: Generally contains newly allocated objects.Old Generation: Generally contains objects that have survived multiple garbage collection cycles and remain reachable for a longer period.Class metadata should not be described as objects stored in the Old Generation. In modern Java, class metadata is maintained separately in Metaspace.Permanent Generation and MetaspaceIn Java 7 and earlier HotSpot JVMs, Permanent Generation (PermGen) was used for class-related metadata. Starting with Java 8, PermGen was removed and replaced by Metaspace, which uses native memory rather than the Java heap.Example
             Java
 
-    // Java program to demonstrate where the 
-// objects are stored in the memory
-import java.io.*;
-
-class Student {
+    class Student {
     String name;
     int age;
 
-    Student(String name, int age)
-    {
+    Student(String name, int age) {
         this.name = name;
         this.age = age;
     }
 }
 
 public class Geeks {
-    public static void main(String[] args)
-    {
-        // Here the student object will be stored in the
-        // heap memory and the references will be stored in
-        // the stack memory
-        Student s = new Student("bob", 20);
+    public static void main(String[] args) {
+        Student s = new Student("Bob", 20);
     }
 }
 
-Explanation: Here, the Student object is allocated in the heap memory. The reference s which points to the object is stored in the stack memory.2. Stack MemoryIn Java, Stack memory is used to store local variables, method calls and references to an object. Each time a method is called, a new stack frame is created to hold local variables and object references. The stack memory is managed automatically, when a method finishes the stack frame is removed and the space used by its local variable is also released. Note:Stack memory stores references to objects not the object themselves.Primitive data types and local variables are stored in the stack.Each thread in Java application has its own stack.
+OutputExplanation:new Student("Bob", 20) creates a Student object that is generally allocated in heap memory.s is a local reference variable associated with the main() method's stack frame and refers to that object.The instance fields name and age are part of the Student object's state.2. Stack MemoryStack memory is used to store method call frames, including local variables, parameters, and references to objects in heap memory. Each thread has its own stack, and memory is automatically released when a method completes.A stack frame can contain:Local variablesMethod parametersIntermediate computation dataReferences held in local variablesWhen the method finishes, its stack frame is removed automatically.Note: Local reference variables can refer to objects stored in the heap. The reference variable and the object it refers to are different things.Example
             Java
 
-    // Java program to demonstrate where 
-// the objects are stored in the memory
-import java.io.*;
+    public class Geeks {
 
-public class Geeks {
-
-    // method parameter 'n' is stored in the stack
     public static int calculate(int n)
     {
-        // local varaible 'ans' is stored in the stack
         int ans = n * 10;
         return ans;
     }
+
     public static void main(String[] args)
     {
-        // local variable 'n' is stored in the stack
         int n = 10;
+        int result = calculate(n);
 
-        // n is passed as an argument so its reference is
-        // stored in the stack
-        calculate(n);
+        System.out.println(result);
     }
 }
 
-Note: Local variables, primitive data types like int, double, etc. are stored in the stack when declared as local variables. However, the objects are stored in the heap and their references are stored in the stack. 3. Garbage CollectorIn Java, The garbage collector  is responsible for reclaiming memory by destroying objects that are no longer in use. When an object becomes unreachable that means no active reference points to it, it then becomes eligible for garbage collector. The garbage collector removes those objects freeing up the memory in the heap.Types of Garbage CollectorsSerial Garbage Collector: It is the simplest type of garbage collector. It uses a single thread to handle all garbage collection tasks. Parallel Garbage Collector:  It is the default garbage collector in Java 8. It uses multiple threads to perform garbage collection tasks. Concurrent Mark-Sweep Collector: It is designed to minimize pause times by doing most of its work while the application is still running. It uses multiple threads to mark and clean up unreachable objects.G1 Garbage Collector: It was introduced in JDK 7 and became the default garbage collector in Java 9. Designed for applications with large heap sizes (greater than 4GB).Z Garbage Collector: It is designed to handle large heaps with minimal pause times, typically in the range of milliseconds.Shenandoah Garbage Collector: It is another low-pause-time garbage collector introduced in Java 12.4. Memory Layout of an ObjectIn Java, an object consist of three main parts:Object header: It contains metadata like the object's class and lock information for synchronization.Instance data: It refers to the actual fields or variables that belongs to an object.Padding: It refers to the extra memory to align the object size to the word size for better performance.The object header includes:Class Pointer: This is a reference to the object's class.Lock Information: This is used for synchronization in multithreaded programs.GC-related Information: It is used by the garbage collector for managing the object lifecycle.
+Output100
+Explanation:n and result are local primitive variables in main().The parameter n and local variable ans belong to the stack frame created for calculate().When calculate() finishes, its stack frame is removed.Note: Primitive local variables store their values directly as local-variable data. Local reference variables store references to objects rather than the objects themselves.3. MetaspaceMetaspace is a memory area used by the HotSpot JVM for storing class metadata. It replaced PermGen starting with Java 8. It stores information associated with loaded classes, such as their runtime metadata.Unlike the Java heap, Metaspace uses native memory.Note: Metaspace should not be confused with the Old Generation of the heap. Old Generation is associated with long-lived objects, whereas Metaspace is used for class metadata.4. Garbage CollectionJava uses garbage collection to automatically reclaim heap memory occupied by objects that are no longer reachable by the application. When an object can no longer be reached through any live reference, it becomes eligible for garbage collection. The exact time at which its memory is reclaimed is determined by the JVM and is not guaranteed to occur immediately.5. Memory Layout of an ObjectAt the JVM implementation level, an object's in-memory representation typically includes an object header, instance data, and possibly padding. The exact layout is JVM-implementation-dependent and can vary with JVM configuration.Object HeaderThe object header contains JVM-specific information used to manage the object. Depending on the JVM implementation and configuration, this may include information related to:The object's class/typeSynchronization and lockingGarbage collection and object stateInstance DataInstance data represents the values of the instance fields declared by the object's class and inherited from its superclasses.For example:class Student {
+    int age;
+    double marks;
+}The values associated with age and marks form part of each Student object's instance data.PaddingPadding refers to extra unused bytes that the JVM may add to an object's memory layout to satisfy memory-alignment requirements. Proper alignment can help the JVM and underlying hardware access object data efficiently.Padding does not store actual application data.It may be added after the object's fields to align the total object size to a required memory boundary.The amount of padding can vary depending on the JVM implementation, object fields, and JVM configuration.Therefore, the actual memory occupied by an object can be slightly larger than the combined size of its fields and object header.How Java Objects Are Stored in MemoryThe following diagram illustrates how a Java object is stored in heap memory and accessed through a local reference variable in stack memory. Explanation: When new Student("Bob", 20) executes, the JVM allocates memory for a Student object on the heap. The constructor initializes its fields with name as "Bob" and age as 20. The diagram shows a local variable S in the main() stack frame holding a reference to this object. The reference connects the variable to the object in heap memory, allowing the program to access its fields and methods.Note: The name field stores a reference to a String object; the diagram displays "Bob" directly to simplify the illustration.

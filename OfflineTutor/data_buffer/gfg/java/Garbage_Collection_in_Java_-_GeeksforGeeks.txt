@@ -58,7 +58,7 @@ class UseEmployee {
     }
 }
 
-Output:Id=1Name=GFG1Age=56Id=2Name=GFG2Age=45Id=3Name=GFG3Age=25Next employee id will be=4Next employee id will be=4Next employee id will be=4Id=4Name=GFG4Age=23Id=5Name=GFG5Age=21Next employee id will be=6Next employee id will be=6Next employee id will be=6Note: This example demonstrates that when objects become unreachable, they are eligible for garbage collection. However, the JVM does not reclaim or reuse application-level identifiers such as employee IDs. Therefore, expecting nextId to decrease after garbage collection is incorrect.Modern Approach Using Cleaner API (Without finalize())Since finalize() and runFinalization() are deprecated, the proper way is to use the Cleaner API introduced in Java 9. Cleaner allows us to run a cleanup task automatically when the object becomes unreachable.
+Output:Id=1Name=GFG1Age=56Id=2Name=GFG2Age=45Id=3Name=GFG3Age=25Next employee id will be=4Next employee id will be=4Next employee id will be=4Id=4Name=GFG4Age=23Id=5Name=GFG5Age=21Next employee id will be=6Next employee id will be=6Next employee id will be=6Note: Garbage collection only frees memory of unreachable objects. It does not modify the static nextId counter, so collected employee IDs are not automatically reused.Modern Approach Using Cleaner API (Without finalize())Since finalize() and runFinalization() are deprecated, the proper way is to use the Cleaner API introduced in Java 9. Cleaner allows us to run a cleanup task automatically when the object becomes unreachable.
             Java
 
     import java.lang.ref.Cleaner;

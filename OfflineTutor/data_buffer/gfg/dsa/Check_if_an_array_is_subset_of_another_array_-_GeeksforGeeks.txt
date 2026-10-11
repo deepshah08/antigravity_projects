@@ -1,6 +1,6 @@
 # Check if an array is subset of another array - GeeksforGeeks
 
-Given two arrays a[] and b[] of size m and n respectively, check whether b[] is a subset of a[]. Both arrays are not sorted, and elements are distinct.Examples: Input: a[] = [11, 1, 13, 21, 3, 7], b[] = [11, 3, 7, 1] Output: trueInput: a[]= [1, 2, 3, 4, 5, 6], b = [1, 2, 4] Output: trueInput: a[] = [10, 5, 2, 23, 19], b = [19, 5, 3] Output: falseTry It YourselfTable of Content[Naive approach] Nested Loops - O(m*n) Time and O(1) Space[Better Approach] Sorting and Two Pointer - O(m log m + n log n) Time and O(1) space[Expected Approach] Hashing - O(m + n) Time and O(m) Space[Naive approach] Nested Loops - O(m*n) Time and O(1) SpaceThe idea is use two nested loops, The outer loop picks each element from b[]. Inner loop searches for this element in a[] and check for all elements in b[].
+Given two arrays a[] and b[] of size m and n respectively, check whether b[] is a subset of a[]. Both arrays are not sorted, and elements are distinct.Examples: Input: a[] = [11, 1, 13, 21, 3, 7], b[] = [11, 3, 7, 1] Output: trueInput: a[]= [1, 2, 3, 4, 5, 6], b = [1, 2, 4] Output: trueInput: a[] = [10, 5, 2, 23, 19], b = [19, 5, 3] Output: falseTry It YourselfTable of Content[Naive approach] Nested Loops - O(m*n) Time and O(1) Space[Better Approach] Two Pointer - O(m log m + n log n) Time and O(1) space[Expected Approach] Hashing - O(m + n) Time and O(m) Space[Naive approach] Nested Loops - O(m*n) Time and O(1) SpaceThe idea is use two nested loops, The outer loop picks each element from b[]. Inner loop searches for this element in a[] and check for all elements in b[].
             C++
 
     #include <iostream>
@@ -213,7 +213,7 @@ else {
 }
 
 Outputtrue
-[Better Approach] Sorting and Two Pointer - O(m log m + n log n) Time and O(1) spaceThe idea is sort both arrays and use two pointers to traverse them. If the current element of a[] is smaller, move the pointer in a. If the elements match, move both pointers. If the current element of a[] is greater than b[], then b[j] is missing in a[], so return false.
+[Better Approach] Two Pointer - O(m log m + n log n) Time and O(1) spaceThe idea is sort both arrays and use two pointers to traverse them. If the current element of a[] is smaller, move the pointer in a. If the elements match, move both pointers. If the current element of a[] is greater than b[], then b[j] is missing in a[], so return false.
             C++
 
     #include <iostream>

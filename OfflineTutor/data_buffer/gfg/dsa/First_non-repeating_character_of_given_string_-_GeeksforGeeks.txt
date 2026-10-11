@@ -1,6 +1,6 @@
 # First non-repeating character of given string - GeeksforGeeks
 
-Given a string s of lowercase English letters, find the first non-repeating character. If there is no such character, return '$'.Examples: Input: s = "geeksforgeeks"Output: 'f'Explanation: 'f' is the first character in the string which does not repeat.Input: s = "racecar"Output: 'e'Explanation: 'e' is the only character in the string which does not repeat.Input: "aabbccc"Output: '$'Explanation: All the characters in the given string are repeating.Try It YourselfTable of Content[Naive Approach] Nested Loop – O(n^2) Time and O(1) Space[Expected Approach 1] Frequency Array  - Two Traversals – O(2*n) Time and O(MAX_CHAR ) Space[Expected Approach 2] Storing Indices - Single Traversal – O(n) Time and O(MAX_CHAR ) Space[Naive Approach] Nested Loop – O(n^2) Time and O(1) SpaceThe idea is to use two nested loops, Outer loop for picking an element Inner loop for finding another occurrence of the picked character in the string. As soon as we find a character which has only one occurrence in the input string, return it.  If all characters have multiple occurrences, return '$'.
+Given a string s consisting of lowercase English Letters. return the first non-repeating character in s. If there is no non-repeating character, return '$'.Examples: Input: s = "geeksforgeeks"Output: 'f'Explanation: 'f' is the first character in the string which does not repeat.Input: s = "racecar"Output: 'e'Explanation: 'e' is the only character in the string which does not repeat.Input: "aabbccc"Output: '$'Explanation: All the characters in the given string are repeating.Try It YourselfTable of Content[Naive Approach] Nested Loop – O(n ^ 2) Time and O(1) Space[Expected Approach - 1] Frequency Array (Two Traversals) – O(2 * n) Time and O(MAX_CHAR ) Space[Expected Approach - 2] Storing Indices (Single Traversal) – O(n) Time and O(MAX_CHAR ) Space[Naive Approach] Nested Loop – O(n ^ 2) Time and O(1) SpaceThe idea is to use two nested loops, Outer loop for picking an element Inner loop for finding another occurrence of the picked character in the string. As soon as we find a character which has only one occurrence in the input string, return it.  If all characters have multiple occurrences, return '$'.
             C++
 
     #include <iostream>
@@ -136,7 +136,7 @@ class GFG {
 let s = "racecar";
 console.log(nonRepeatingChar(s));
 
-Outpute[Expected Approach 1] Frequency Array  - Two Traversals – O(2*n) Time and O(MAX_CHAR ) SpaceThe idea is to use an array of size MAX_CHAR  to store the frequencies of each character. Traverse the input string twice:First traversal is to count the frequency of each character.  Second traversal to find the first character in string with a frequency of one.
+Outpute[Expected Approach - 1] Frequency Array (Two Traversals) – O(2 * n) Time and O(MAX_CHAR ) SpaceThe idea is to use an array of size MAX_CHAR  to store the frequencies of each character. Traverse the input string twice:First traversal is to count the frequency of each character.  Second traversal to find the first character in string with a frequency of one.
             C++
 
     #include <iostream>
@@ -275,7 +275,7 @@ let s = "geeksforgeeks";
 console.log(nonRepeatingChar(s));
 
 Outputf
-[Expected Approach 2] Storing Indices - Single Traversal – O(n) Time and O(MAX_CHAR ) SpaceThe above approach can be optimized using a single traversal of the string. The idea is to maintain a visited array of size MAX_CHAR initialized to -1, indicating no characters have been seen yet. Now, we iterate through the string:If a character is seen for the first time, its index is stored in the array. If the character is found again then its array value is set to -2 to represent this character is now repeating. After the string traversal, traverse the visited array and check if value in the array is not equal to -1 or -2 (means, this character is not repeating). We then find the smallest positive index from these values to find the first non-repeating character. If no such index is found, return '$'.
+[Expected Approach - 2] Storing Indices (Single Traversal) – O(n) Time and O(MAX_CHAR ) SpaceThe above approach can be optimized using a single traversal of the string. The idea is to maintain a visited array of size MAX_CHAR initialized to -1, indicating no characters have been seen yet. Now, we iterate through the string:If a character is seen for the first time, its index is stored in the array. If the character is found again then its array value is set to -2 to represent this character is now repeating. After the string traversal, traverse the visited array and check if value in the array is not equal to -1 or -2 (means, this character is not repeating). We then find the smallest positive index from these values to find the first non-repeating character. If no such index is found, return '$'.
             C++
 
     #include <iostream>

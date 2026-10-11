@@ -1,108 +1,53 @@
 # Main thread in Java - GeeksforGeeks
 
-When a Java program starts, the Java Virtual Machine (JVM) creates a thread automatically called the main thread. This thread executes the main() method and controls the overall execution flow of the program.It is the parent thread from which all other user-defined threads are created.The default name of the main thread is "main".The default priority of the main thread is 5.It usually finishes last as it may perform cleanup and shutdown tasks. Create the Main ThreadThe main thread is created automatically when the program starts. To control it, we must first obtain a reference to it using Thread.currentThread(). This method returns a reference to the currently executing thread.
+When a Java application starts, execution typically begins on an initial thread commonly called the main thread. This thread executes the application's launchable main() method and can create additional threads during program execution.The main thread can be accessed using Thread.currentThread().Its default name in a typical Java application is main.Additional threads can be created from the main thread or from other threads. Above diagram shows how the JVM creates and manages multiple threads during program execution. The main thread starts child threads, while the JVM also runs daemon threads such as the Garbage Collector in the background.How the Main Thread WorksThe main thread is created automatically when a Java program starts. Developers do not need to create it explicitly. The currently executing thread can be obtained using:Thread.currentThread();This method returns a reference to the thread that is currently executing the code. For a normal Java application, calling it inside main() generally returns the main thread.Accessing and Modifying the Main ThreadThe following example demonstrates how to:Access the main thread.Read and change its name.Read and change its priority.Create a child thread.Observe priority inheritance.
             Java
 
-    import java.io.*;
-import java.util.*;
+    public class Test {
 
-// Class 1
-// Main class extending thread class
-public class Test extends Thread {
+    public static void main(String[] args) {
 
-    // Main driver method
-    public static void main(String[] args)
-    {
-
-        // Getting reference to Main thread
+        // Getting reference to the main thread
         Thread t = Thread.currentThread();
 
-        // Getting name of Main thread
-        System.out.println("Current thread: "
-                           + t.getName());
+        System.out.println("Current thread: " + t.getName());
 
-        // Changing the name of Main thread
+        // Changing the name of the main thread
         t.setName("Geeks");
-        System.out.println("After name change: "
-                           + t.getName());
+        System.out.println("After name change: " + t.getName());
 
-        // Getting priority of Main thread
-        System.out.println("Main thread priority: "
-                           + t.getPriority());
+        // Getting and changing main thread priority
+        System.out.println("Main thread priority: " + t.getPriority());
 
-        // Setting priority of Main thread to MAX(10)
-        t.setPriority(MAX_PRIORITY);
-
-        // Print and display the main thread priority
-        System.out.println("Main thread new priority: "
-                           + t.getPriority());
+        t.setPriority(Thread.MAX_PRIORITY);
+        System.out.println("Main thread new priority: " + t.getPriority());
 
         for (int i = 0; i < 5; i++) {
             System.out.println("Main thread");
         }
 
-        // Main thread creating a child thread
+        // Creating a child thread
         Thread ct = new Thread() {
-            // run() method of a thread
-            public void run()
-            {
-
+            @Override
+            public void run() {
                 for (int i = 0; i < 5; i++) {
                     System.out.println("Child thread");
                 }
             }
         };
 
-        // Getting priority of child thread
-        // which will be inherited from Main thread
-        // as it is created by Main thread
-        System.out.println("Child thread priority: "
-                           + ct.getPriority());
+        // Child thread initially inherits the creator's priority
+        System.out.println("Child thread priority: " + ct.getPriority());
 
-        // Setting priority of Main thread to MIN(1)
-        ct.setPriority(MIN_PRIORITY);
+        ct.setPriority(Thread.MIN_PRIORITY);
+        System.out.println("Child thread new priority: " + ct.getPriority());
 
-        System.out.println("Child thread new priority: "
-                           + ct.getPriority());
-
-        // Starting child thread
+        // Starting the child thread
         ct.start();
     }
 }
 
-// Class 2
-// Helper class extending Thread class
-// Child Thread class
-class ChildThread extends Thread {
-
-    @Override public void run()
-    {
-
-        for (int i = 0; i < 5; i++) {
-
-            // Print statement whenever child thread is
-            // called
-            System.out.println("Child thread");
-        }
-    }
-}
-
-OutputCurrent thread: main
-After name change: Geeks
-Main thread priority: 5
-Main thread new priority: 10
-Main thread
-Main thread
-Main thread
-Main thread
-Main thread
-Child thread priority: 10
-Child thread new priority: 1
-Child thread
-Child thread
-Child thread
-Child thread
-Child threadExplanation:Thread.currentThread() returns the main thread.getName() and setName() allow reading and changing the thread name.getPriority() and setPriority() allow reading and changing the thread priority.The main thread can create child threads, which by default inherit the main thread’s priority.Relationship Between main() Method and Main ThreadFor every Java program, JVM creates the main thread first.The main thread checks for the existence of the main() method, then initializes the class.Since JDK 6, the main() method is mandatory for a standalone Java application.Deadlock Using Main ThreadEven a single main thread can cause deadlock if it waits for itself.
+OutputCurrent thread: mainAfter name change: GeeksMain thread priority: 5Main thread new priority: 10Main threadMain threadMain threadMain threadMain threadChild thread priority: 10Child thread new priority: 1Child threadChild threadChild threadChild threadChild threadExplanationThread.currentThread() returns the thread currently executing the code.getName() returns the thread name.setName() changes the thread name.getPriority() returns the current thread priority.setPriority() changes the thread priority.A newly created thread normally inherits the priority of the thread that creates it.start() begins execution of the child thread and causes its run() method to execute on a separate thread.Relationship Between main() Method and Main ThreadThe main() method serves as the entry point for applications launched using the standard Java launcher. The selected initial class is loaded and initialized before its launchable main() method is invoked.The traditional entry point is public static void main(String[] args).Since Java 25, the launch protocol also supports certain instance main() methods and main() methods without parameters, so the traditional declaration is no longer the only supported form.Deadlock Using Main ThreadEven a single main thread can cause deadlock if it waits for itself.
             Java
 
     public class GFG {
@@ -132,4 +77,4 @@ Child threadExplanation:Thread.currentThread() returns the main thread.getName()
   }
 }
 
-Output: Explanation: Thread.currentThread().join() tells the main thread to wait for itself to die.The thread waits indefinitely, causing a deadlock.Any code after join() will never execute.
+Output: Explanation: Thread.currentThread().join() tells the main thread to wait for itself to die.The thread waits indefinitely, causing a deadlock.Any code after join() will never execute.Important Methods Used with the Main ThreadMethodDescriptionThread.currentThread()Returns the currently executing threadgetName()Returns the name of the threadsetName()Changes the thread namegetPriority()Returns the thread prioritysetPriority()Changes the thread prioritystart()Starts a new threadjoin()Waits for another thread to terminateisAlive()Checks whether a thread is still running

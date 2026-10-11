@@ -1,35 +1,39 @@
 # Longest Subarray With Equal Number of 0s and 1s - GeeksforGeeks
 
-Given an array arr[] containing only 0s and 1s, find the longest subarray which contains equal no of 0s and 1s.Examples: Input: arr[] = [1, 0, 1, 1, 1, 0, 0]Output: 6Explanation: arr[1 ... 6] is the longest subarray with three 0s and three 1s.Input: arr[] = [0, 0, 1, 1, 0]Output: 4Explanation: arr[0 ... 3] or  arr[1 ... 4] is the longest subarray with two 0s and two 1s.Input: arr[] = [0]Output: 0Explanation: There is no subarray with an equal number of 0s and 1s.Try It YourselfTable of Content[Naive Approach] Nested Loop - O(n^2) Time and O(1) Space[Expected Approach] Hash Map and Prefix Sum Technique - O(n) Time and O(n) Space[Naive Approach] Nested Loop - O(n^2) Time and O(1) SpaceA simple approach is to generate all possible subarrays and check whether the subarray has equal number of 0s and 1s or not.To make this process easy We find cumulative sum of the subarrays taking 0s as -1 and 1s as +1. If the cumulative sum is equal to 0 for any subarray then update the current maximum length with the maximum of length of current subarray and its own value.
+Given an array arr[] of 0s and 1s. Find and return the length of the longest subarray with equal number of 0s and 1s.Examples: Input: arr[] = [1, 0, 1, 1, 1, 0, 0]Output: 6Explanation: arr[1...6] is the longest subarray with three 0s and three 1s.Input: arr[] = [0, 0, 1, 1, 0]Output: 4Explanation: arr[0...3] or arr[1...4] is the longest subarray with two 0s and two 1s.Input: arr[] = [0]Output: 0Explanation: There is no subarray with an equal number of 0s and 1s.Try It YourselfTable of Content[Naive Approach] Nested Loop - O(n ^ 2) Time and O(1) Space[Expected Approach] Hash Map andPrefix Sum - O(n) Time and O(n) Space[Naive Approach] Nested Loop - O(n ^ 2) Time and O(1) SpaceThe idea is to generate all possible subarrays and check whether the subarray has equal number of 0s and 1s or not.Working of Approach:Iterate through every possible starting index s and consider all subarrays starting from that index.Traverse each subarray and treat 0 as -1 and 1 as +1 while maintaining their cumulative sum.If a subarray contains an equal number of 0s and 1s, its converted sum becomes 0.Whenever sum is 0, update res with the maximum length of the valid subarray found so far.After checking all possible subarrays, return res as the maximum length.
             C++
 
     #include <iostream>
 #include <vector>
 using namespace std;
 
-int maxLen(vector<int> &arr) {
+int maxLen(vector<int> &arr)
+{
     int res = 0;
 
     // Pick a starting point as 's'
-    for (int s = 0; s < arr.size(); s++) {
+    for (int s = 0; s < arr.size(); s++)
+    {
         int sum = 0;
 
         // Consider all subarrays arr[s...e]
-        for (int e = s; e < arr.size(); e++) {
-          	sum += (arr[e] == 0) ? -1 : 1;
-          
-			// Check if it's a 0-sum subarray 
-            if (sum == 0) 
-            
-              	// update max size
+        for (int e = s; e < arr.size(); e++)
+        {
+            sum += (arr[e] == 0) ? -1 : 1;
+
+            // Check if it's a 0-sum subarray
+            if (sum == 0)
+
+                // update max size
                 res = max(res, e - s + 1);
         }
     }
     return res;
 }
 
-int main() {
-    vector<int> arr = { 1, 0, 0, 1, 0, 1, 1 };
+int main()
+{
+    vector<int> arr = {1, 0, 1, 1, 1, 0, 0};
     cout << maxLen(arr);
 }
 
@@ -38,20 +42,23 @@ int main() {
 
     #include <stdio.h>
 
-int maxLen(int arr[], int n) {
+int maxLen(int arr[], int n)
+{
     int res = 0;
 
     // Pick a starting point as 's'
-    for (int s = 0; s < n; s++) {
+    for (int s = 0; s < n; s++)
+    {
         int sum = 0;
 
         // Consider all subarrays arr[s...e]
-        for (int e = s; e < n; e++) {
+        for (int e = s; e < n; e++)
+        {
             sum += (arr[e] == 0) ? -1 : 1;
 
             // Check if it's a 0-sum subarray
             if (sum == 0)
-            
+
                 // Update max size
                 res = (res > e - s + 1) ? res : (e - s + 1);
         }
@@ -60,8 +67,9 @@ int maxLen(int arr[], int n) {
     return res;
 }
 
-int main() {
-    int arr[] = {1, 0, 0, 1, 0, 1, 1};
+int main()
+{
+    int arr[] = {1, 0, 1, 1, 1, 0, 0};
     int n = sizeof(arr) / sizeof(arr[0]);
     printf("%d", maxLen(arr, n));
     return 0;
@@ -71,8 +79,10 @@ int main() {
             Java
 
     import java.util.*;
-class GfG {
-    static int maxLen(int[] arr) {
+
+class GFG {
+    static int maxLen(int[] arr)
+    {
         int res = 0;
 
         // Pick a starting point as 's'
@@ -85,7 +95,7 @@ class GfG {
 
                 // Check if it's a 0-sum subarray
                 if (sum == 0)
-                
+
                     // Update max size
                     res = Math.max(res, e - s + 1);
             }
@@ -94,8 +104,9 @@ class GfG {
         return res;
     }
 
-    public static void main(String[] args) {
-        int[] arr = {1, 0, 0, 1, 0, 1, 1};
+    public static void main(String[] args)
+    {
+        int[] arr = { 1, 0, 1, 1, 1, 0, 0};
         System.out.println(maxLen(arr));
     }
 }
@@ -116,14 +127,15 @@ class GfG {
 
             # Check if it's a 0-sum subarray
             if sum == 0:
-                
+
                 # Update max size
                 res = max(res, e - s + 1)
 
     return res
 
+
 if __name__ == "__main__":
-    array = [1, 0, 0, 1, 0, 1, 1]
+    array = [1, 0, 1, 1, 1, 0, 0]
 
     print(maxLen(array))
 
@@ -133,8 +145,9 @@ if __name__ == "__main__":
     using System;
 using System.Collections.Generic;
 
-class GfG {
-    static int maxLen(int[] arr) {
+class GFG {
+    static int maxLen(int[] arr)
+    {
         int res = 0;
 
         // Pick a starting point as 's'
@@ -147,7 +160,7 @@ class GfG {
 
                 // Check if it's a 0-sum subarray
                 if (sum == 0)
-                
+
                     // Update max size
                     res = Math.Max(res, e - s + 1);
             }
@@ -156,8 +169,9 @@ class GfG {
         return res;
     }
 
-    static void Main() {
-        int[] array = { 1, 0, 0, 1, 0, 1, 1 };
+    static void Main()
+    {
+        int[] array = { 1, 0, 1, 1, 1, 0, 0 };
 
         Console.WriteLine(maxLen(array));
     }
@@ -166,7 +180,8 @@ class GfG {
 
             JavaScript
 
-    function maxLen(arr) {
+    function maxLen(arr)
+{
     let res = 0;
 
     // Pick a starting point as 's'
@@ -188,52 +203,112 @@ class GfG {
     return res;
 }
 
-// Diver code
-let array = [1, 0, 0, 1, 0, 1, 1];
+// Driver code
+let array = [ 1, 0, 1, 1, 1, 0, 0 ];
 console.log(maxLen(array));
 
-Output6[Expected Approach] Hash Map and Prefix Sum Technique - O(n) Time and O(n) SpaceThe idea is to convert the problem into finding the longest subarray with zero sum. Replace every 0 with -1 so that a subarray with equal number of 0s and 1s results in a cumulative sum of 0.Traverse the array while maintaining a prefix sum. If the prefix sum becomes 0, the subarray from index 0 to the current index has equal 0s and 1s.  If a prefix sum repeats, the subarray between the previous index and the current index also has a zero sum.A hash map is used to store the first occurrence of each prefix sum, allowing us to compute and update the maximum subarray length efficiently.
+Output6[Expected Approach] Hash Map andPrefix Sum - O(n) Time and O(n) SpaceThe idea is to convert the problem into finding the longest subarray with zero sum.Treat every 0 as -1 and every 1 as +1.Maintain a prefix sum while traversing the array.If the prefix sum is 0 or repeats, update the maximum length.Let us understand with an example:Input: arr[] = [1, 0, 1, 1, 1, 0, 0]Start with preSum = 0, res = 0, and an empty HashMap.Treat every 0 as -1 and every 1 as +1.At index 0, the element is 1, so preSum = 1. Store 1 -> 0 in the HashMap.At index 1, the element is 0, so preSum = 0. Update res = 2 because the subarray [1, 0] contains an equal number of 0s and 1s.As we continue traversing, whenever a prefix sum repeats, the elements between its previous occurrence and the current index have a sum of 0.At index 6, preSum = 1, which was first seen at index 0. Therefore, the length of the subarray is 6 - 0 = 6, so update res = 6.After traversing the array, the maximum length obtained is 6, corresponding to the subarray [0, 1, 1, 1, 0, 0].
             C++
 
     #include <iostream>
-#include <vector>
 #include <unordered_map>
+#include <vector>
 using namespace std;
 
-int maxLen(vector<int> &arr) {
+int maxLen(vector<int> &arr)
+{
     unordered_map<int, int> mp;
 
-    int preSum = 0; 
-    int res = 0; 
-  
+    int preSum = 0;
+    int res = 0;
+
     // Traverse through the given array
-    for (int i = 0; i < arr.size(); i++) {
-      
+    for (int i = 0; i < arr.size(); i++)
+    {
         // Add current element to sum
-      	// if current element is zero, add -1
+        // if current element is zero, add -1
         preSum += (arr[i] == 0) ? -1 : 1;
 
-        // To handle sum = 0 at last index
-        if (preSum == 0) 
+        // If prefix sum is 0, the subarray from index 0 to i
+        // has an equal number of 0s and 1s
+        if (preSum == 0)
             res = i + 1;
 
-        // If this sum is seen before, then update 
-      	// result with maximum
+        // If this sum is seen before, then update
+        // result with maximum
         if (mp.find(preSum) != mp.end())
             res = max(res, i - mp[preSum]);
-        
-		// Else put this sum in hash table
-        else 
+
+        // Else put this sum in hash table
+        else
             mp[preSum] = i;
     }
 
     return res;
 }
 
-int main() {
-    vector<int> arr = {1, 0, 0, 1, 0, 1, 1};
-  
+int main()
+{
+    vector<int> arr = {1, 0, 1, 1, 1, 0, 0};
+
     cout << maxLen(arr) << endl;
+    return 0;
+}
+
+
+            C
+
+    #include <stdio.h>
+
+#define MAX_SIZE 1000
+
+int maxLen(int arr[], int n)
+{
+    int firstIndex[2 * MAX_SIZE + 1];
+
+    for (int i = 0; i <= 2 * n; i++)
+        firstIndex[i] = -1;
+
+    int preSum = 0;
+    int res = 0;
+    int offset = n;
+
+    // Traverse through the given array
+    for (int i = 0; i < n; i++)
+    {
+        // Treat 0 as -1 and 1 as +1
+        preSum += (arr[i] == 0) ? -1 : 1;
+
+        // If prefix sum is 0, subarray from 0 to i is valid
+        if (preSum == 0)
+        {
+            res = i + 1;
+        }
+
+        // If this sum is seen before, update result
+        else if (firstIndex[preSum + offset] != -1)
+        {
+            int len = i - firstIndex[preSum + offset];
+            if (len > res)
+                res = len;
+        }
+        else
+        {
+            // Store the first occurrence of the prefix sum
+            firstIndex[preSum + offset] = i;
+        }
+    }
+
+    return res;
+}
+
+int main()
+{
+    int arr[] = {1, 0, 1, 1, 1, 0, 0};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    printf("%d\n", maxLen(arr, n));
+
     return 0;
 }
 
@@ -242,8 +317,9 @@ int main() {
 
     import java.util.HashMap;
 
-class GfG {
-    static int maxLen(int[] arr) {
+class GFG {
+    static int maxLen(int[] arr)
+    {
         HashMap<Integer, Integer> mp = new HashMap<>();
 
         int preSum = 0;
@@ -260,8 +336,8 @@ class GfG {
             if (preSum == 0)
                 res = i + 1;
 
-            // If this sum is seen before, then update 
-      		// result with maximum
+            // If this sum is seen before, then update
+            // result with maximum
             if (mp.containsKey(preSum))
                 res = Math.max(res, i - mp.get(preSum));
 
@@ -273,8 +349,9 @@ class GfG {
         return res;
     }
 
-    public static void main(String[] args) {
-        int[] arr = {1, 0, 0, 1, 0, 1, 1};
+    public static void main(String[] args)
+    {
+        int[] arr = { 1, 0, 1, 1, 1, 0, 0 };
 
         System.out.println(maxLen(arr));
     }
@@ -311,8 +388,10 @@ class GfG {
 
     return res
 
+
+# Driver Code
 if __name__ == "__main__":
-    arr = [1, 0, 0, 1, 0, 1, 1]
+    arr = [1, 0, 1, 1, 1, 0, 0]
     print(maxLen(arr))
 
 
@@ -321,9 +400,11 @@ if __name__ == "__main__":
     using System;
 using System.Collections.Generic;
 
-class GfG {
-    static int MaxLen(int[] arr) {
-        Dictionary<int, int> mp = new Dictionary<int, int>();
+class GFG {
+    static int maxLen(int[] arr)
+    {
+        Dictionary<int, int> mp
+            = new Dictionary<int, int>();
 
         int preSum = 0;
         int res = 0;
@@ -338,8 +419,8 @@ class GfG {
             if (preSum == 0)
                 res = i + 1;
 
-            // If this sum is seen before, then update 
-      		// result with maximum
+            // If this sum is seen before, then update
+            // result with maximum
             if (mp.ContainsKey(preSum))
                 res = Math.Max(res, i - mp[preSum]);
 
@@ -348,19 +429,21 @@ class GfG {
                 mp[preSum] = i;
         }
 
-        return res;    
+        return res;
     }
 
-    static void Main() {
-        int[] arr = {1, 0, 0, 1, 0, 1, 1};
-        Console.WriteLine(MaxLen(arr));
+    static void Main()
+    {
+        int[] arr = { 1, 0, 1, 1, 1, 0, 0 };
+        Console.WriteLine(maxLen(arr));
     }
 }
 
 
             JavaScript
 
-    function maxLen(arr) {
+    function maxLen(arr)
+{
     let mp = new Map();
 
     let preSum = 0;
@@ -377,8 +460,8 @@ class GfG {
         if (preSum === 0)
             res = i + 1;
 
-        // If this sum is seen before, then update 
-      	// result with maximum
+        // If this sum is seen before, then update
+        // result with maximum
         if (mp.has(preSum))
             res = Math.max(res, i - mp.get(preSum));
 
@@ -391,7 +474,7 @@ class GfG {
 }
 
 // Driver Code
-const arr = [1, 0, 0, 1, 0, 1, 1];
+const arr = [ 1, 0, 1, 1, 1, 0, 0];
 console.log(maxLen(arr));
 
 Output6

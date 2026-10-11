@@ -1,6 +1,6 @@
 # Number of Islands - GeeksforGeeks
 
-Given an n × m grid[][] consisting of 'L' (land) and 'W' (water), we need to count the total number of islands present in the grid without modifying the original grid. An island is defined as a group of connected 'L' cells that are adjacent horizontally, vertically, or diagonally, and surrounded by water or the boundary of the grid.Examples:Input: grid[][] = [['L', 'L', 'W', 'W', 'W'],                            ['W', 'L', 'W', 'W', 'L'],                           ['L', 'W', 'W', 'L', 'L'],                          ['W', 'W', 'W', 'W', 'W'],                         ['L', 'W', 'L', 'L', 'W']]Output: 4Explanation: The image below shows all the 4 islands. Input: grid[][] = [['W', 'L', 'L', 'L', 'W', 'W', 'W'],                            ['W', 'W', 'L', 'L', 'W', 'L', 'W']]                         Output: 2Explanation: The image below shows all the 2 islands in the graphTwo islands in the matrixTry It YourselfTable of ContentUsing DFS with a Visited Matrix - O(n x m) Time and O(n x m) SpaceUsing Breadth First Search - O(n x m) time and O(n x m) spaceUsing Disjoint Set - O(n x m) time and O(n x m) spaceUsing DFS with a Visited Matrix - O(n x m) Time and O(n x m) SpaceTraverse the grid and whenever an unvisited 'L' is found, treat it as a new island and use DFS to visit all land cells connected to it in 8 directions. A separate visited matrix is used so that the original grid is not modified.Create a visited matrix.Traverse every cell of the grid.For each unvisited 'L', increment the island count.Run DFS and mark all connected land cells as visited.Check all 8 directions during DFS.Return the total island count.Consider the grid: Start from (0,0). It is an unvisited 'L', so islands = 1.DFS visits (0,1) and (1,1). These cells belong to the same island.Continue scanning. At (1,4), we find another unvisited 'L', so islands = 2.DFS visits (2,3) and (2,4).At (2,0), we find an unvisited 'L', so islands = 3.At (4,0), we find another unvisited 'L', so islands = 4.DFS visits (4,2) and (4,3) as part of the same island.No unvisited land cells remain.Therefore: Number of islands = 4
+Given an n × m grid[][] consisting of 'L' (land) and 'W' (water), we need to count the total number of islands present in the grid without modifying the original grid. An island is defined as a group of connected 'L' cells that are adjacent horizontally, vertically, or diagonally, and surrounded by water or the boundary of the grid.Examples:Input: grid[][] = [['L', 'L', 'W', 'W', 'W'],                            ['W', 'L', 'W', 'W', 'L'],                           ['L', 'W', 'W', 'L', 'L'],                          ['W', 'W', 'W', 'W', 'W'],                         ['L', 'W', 'L', 'L', 'W']]Output: 4Explanation: The image below shows all the 4 islands. Input: grid[][] = [['W', 'L', 'L', 'L', 'W', 'W', 'W'],                            ['W', 'W', 'L', 'L', 'W', 'L', 'W']]                         Output: 2Explanation: The image below shows all the 2 islands in the graphTwo islands in the matrixTry It YourselfTable of ContentDFS with a Visited Matrix - O(n x m) Time and O(n x m) SpaceBreadth First Search - O(n x m) time and O(n x m) spaceDisjoint Set - O(n x m) time and O(n x m) spaceDFS with a Visited Matrix - O(n x m) Time and O(n x m) SpaceTraverse the grid and whenever an unvisited 'L' is found, treat it as a new island and use DFS to visit all land cells connected to it in 8 directions. A separate visited matrix is used so that the original grid is not modified.Create a visited matrix.Traverse every cell of the grid.For each unvisited 'L', increment the island count.Run DFS and mark all connected land cells as visited.Check all 8 directions during DFS.Return the total island count.Consider the grid: Start from (0,0). It is an unvisited 'L', so islands = 1.DFS visits (0,1) and (1,1). These cells belong to the same island.Continue scanning. At (1,4), we find another unvisited 'L', so islands = 2.DFS visits (2,3) and (2,4).At (2,0), we find an unvisited 'L', so islands = 3.At (4,0), we find another unvisited 'L', so islands = 4.DFS visits (4,2) and (4,3) as part of the same island.No unvisited land cells remain.Therefore: Number of islands = 4
             C++
 
     #include <iostream>
@@ -371,7 +371,7 @@ const grid = [
 console.log(countIslands(grid));
 
 Output4
-Using Breadth First Search - O(n x m) time and O(n x m) spaceTraverse the grid and whenever an unvisited 'L' is found, treat it as a new island and use BFS to visit all land cells connected to it in all 8 directions. A separate visited matrix is used to avoid modifying the original grid.Create a visited matrix of size n × m.Traverse every cell of the grid.If an unvisited 'L' is found, increment the island count.Add the cell to a queue and mark it as visited.Remove a cell from the queue and check all 8 directions.Add every valid, unvisited land cell to the queue and mark it visited.Continue until the queue becomes empty.Repeat for the remaining cells and return the island count.Consider the grid: Start BFS from (0,0) -> islands = 1; visit (0,1) and (1,1).Start BFS from (1,4) -> islands = 2; visit (2,3) and (2,4).Start BFS from (2,0) -> islands = 3.Start BFS from (4,0) -> islands = 4.The remaining connected land cells (4,2) and (4,3) are visited in the same BFS.No unvisited land remains.Therefore: Number of islands = 4
+Breadth First Search - O(n x m) time and O(n x m) spaceTraverse the grid and whenever an unvisited 'L' is found, treat it as a new island and use BFS to visit all land cells connected to it in all 8 directions. A separate visited matrix is used to avoid modifying the original grid.Create a visited matrix of size n × m.Traverse every cell of the grid.If an unvisited 'L' is found, increment the island count.Add the cell to a queue and mark it as visited.Remove a cell from the queue and check all 8 directions.Add every valid, unvisited land cell to the queue and mark it visited.Continue until the queue becomes empty.Repeat for the remaining cells and return the island count.Consider the grid: Start BFS from (0,0) -> islands = 1; visit (0,1) and (1,1).Start BFS from (1,4) -> islands = 2; visit (2,3) and (2,4).Start BFS from (2,0) -> islands = 3.Start BFS from (4,0) -> islands = 4.The remaining connected land cells (4,2) and (4,3) are visited in the same BFS.No unvisited land remains.Therefore: Number of islands = 4
             C++
 
     #include <iostream>
@@ -764,7 +764,7 @@ const grid = [
 console.log(countIslands(grid));
 
 Output4
-Using Disjoint Set - O(n x m) time and O(n x m) spaceModel the grid as a graph where each land cell is a node. Initially, every land cell belongs to its own set. For each land cell, check all 8 directions and merge it with any connected land cell. Finally, the number of unique sets gives the number of islands.Create a DSU structure where every cell initially has itself as its parent.Convert each cell (r, c) into a unique index using r * m + c.Traverse every cell of the grid.For each land cell 'L', check all 8 neighboring cells.If a neighboring cell is also 'L', merge both cells using unite().After all cells are processed, find the parent of every land cell.Store the parents in a HashSet to remove duplicates.The size of the set is the total number of islands.
+Disjoint Set - O(n x m) time and O(n x m) spaceModel the grid as a graph where each land cell is a node. Initially, every land cell belongs to its own set. For each land cell, check all 8 directions and merge it with any connected land cell. Finally, the number of unique sets gives the number of islands.Create a DSU structure where every cell initially has itself as its parent.Convert each cell (r, c) into a unique index using r * m + c.Traverse every cell of the grid.For each land cell 'L', check all 8 neighboring cells.If a neighboring cell is also 'L', merge both cells using unite().After all cells are processed, find the parent of every land cell.Store the parents in a HashSet to remove duplicates.The size of the set is the total number of islands.
             C++
 
     #include <bits/stdc++.h>
@@ -869,98 +869,98 @@ int main() {
             Java
 
     import java.util.HashSet;
+import java.util.Set;
 
-// Find the parent of a cell
-public static int find(int x, int[] parent) {
-    if (parent[x] != x)
-        parent[x] = find(parent[x], parent);
+public class GFG {
 
-    return parent[x];
-}
-
-// Join two connected cells
-public static void unite(int x, int y, int[] parent, int[] rank) {
-    x = find(x, parent);
-    y = find(y, parent);
-
-    if (x == y)
-        return;
-
-    if (rank[x] < rank[y])
-        parent[x] = y;
-    else if (rank[x] > rank[y])
-        parent[y] = x;
-    else {
-        parent[y] = x;
-        rank[x]++;
+    // Find the parent of a cell with path compression
+    static int find(int x, int[] parent) {
+        if (parent[x] != x) {
+            parent[x] = find(parent[x], parent);
+        }
+        return parent[x];
     }
-}
 
-public static int countIslands(char[][] grid) {
-    int n = grid.length;
-    int m = grid[0].length;
+    // Join two connected cells by rank
+    static void unite(int x, int y, int[] parent, int[] rank) {
+        x = find(x, parent);
+        y = find(y, parent);
 
-    // Initially, every cell belongs to its own group
-    int[] parent = new int[n * m];
-    int[] rank = new int[n * m];
+        if (x == y) return;
 
-    for (int i = 0; i < n * m; i++)
-        parent[i] = i;
+        if (rank[x] < rank[y]) {
+            parent[x] = y;
+        } else if (rank[x] > rank[y]) {
+            parent[y] = x;
+        } else {
+            parent[y] = x;
+            rank[x]++;
+        }
+    }
 
-    // 8 possible directions
-    int[] dr = {-1, -1, -1, 0, 0, 1, 1, 1};
-    int[] dc = {-1, 0, 1, -1, 1, -1, 0, 1};
+    static int countIslands(char[][] grid) {
+        int n = grid.length;
+        if (n == 0) return 0;
+        int m = grid[0].length;
 
-    // Join connected land cells
-    for (int r = 0; r < n; r++) {
-        for (int c = 0; c < m; c++) {
+        // Initially, every cell belongs to its own group
+        int totalCells = n * m;
+        int[] parent = new int[totalCells];
+        int[] rank = new int[totalCells];
 
-            if (grid[r][c] != 'L')
-                continue;
+        for (int i = 0; i < totalCells; i++) {
+            parent[i] = i;
+        }
 
-            int current = r * m + c;
+        // 8 possible directions
+        int[] dr = {-1, -1, -1, 0, 0, 1, 1, 1};
+        int[] dc = {-1, 0, 1, -1, 1, -1, 0, 1};
 
-            for (int k = 0; k < 8; k++) {
-                int nr = r + dr[k];
-                int nc = c + dc[k];
+        // Join connected land cells
+        for (int r = 0; r < n; r++) {
+            for (int c = 0; c < m; c++) {
+                if (grid[r][c] != 'L') continue;
 
-                if (nr >= 0 && nr < n &&
-                    nc >= 0 && nc < m &&
-                    grid[nr][nc] == 'L') {
+                int current = r * m + c;
 
-                    int next = nr * m + nc;
-                    unite(current, next, parent, rank);
+                for (int k = 0; k < 8; k++) {
+                    int nr = r + dr[k];
+                    int nc = c + dc[k];
+
+                    if (nr >= 0 && nr < n && nc >= 0 && nc < m && grid[nr][nc] == 'L') {
+                        int next = nr * m + nc;
+                        unite(current, next, parent, rank);
+                    }
                 }
             }
         }
-    }
 
-    // Count unique island groups
-    HashSet<Integer> islands = new HashSet<>();
+        // Count unique island groups
+        Set<Integer> islands = new HashSet<>();
 
-    for (int r = 0; r < n; r++) {
-        for (int c = 0; c < m; c++) {
-
-            if (grid[r][c] == 'L') {
-                int cell = r * m + c;
-                islands.add(find(cell, parent));
+        for (int r = 0; r < n; r++) {
+            for (int c = 0; c < m; c++) {
+                if (grid[r][c] == 'L') {
+                    int cell = r * m + c;
+                    islands.add(find(cell, parent));
+                }
             }
         }
+
+        return islands.size();
     }
 
-    return islands.size();
-}
+    public static void main(String[] args) {
+        char[][] grid = {
+            {'L', 'L', 'W', 'W', 'W'},
+            {'W', 'L', 'W', 'W', 'L'},
+            {'L', 'W', 'W', 'L', 'L'},
+            {'W', 'W', 'W', 'W', 'W'},
+            {'L', 'W', 'L', 'L', 'W'}
+        };
 
-public static void main(String[] args) {
-    char[][] grid = {
-        {'L', 'L', 'W', 'W', 'W'},
-        {'W', 'L', 'W', 'W', 'L'},
-        {'L', 'W', 'W', 'L', 'L'},
-        {'W', 'W', 'W', 'W', 'W'},
-        {'L', 'W', 'L', 'L', 'W'}
-    };
-
-    System.out.println(countIslands(grid));
+        System.out.println(countIslands(grid));
+    }
 }
 
 

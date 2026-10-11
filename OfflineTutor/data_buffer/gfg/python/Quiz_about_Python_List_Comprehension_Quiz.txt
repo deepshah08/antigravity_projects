@@ -66,18 +66,35 @@
           transform: rotate(360deg);
         }
       }
-    CoursesTutorialsPracticeJobsDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsEarn Google BadgeDSA TutorialSystem Design TutorialAptitude Questions and AnswersWeb Development TechnologiesAI, ML and Data Science TutorialDevOps TutorialPlacement 360 CourseExplorePython List Comprehension QuizLast Updated : DiscussCommentsQuestion 1In list comprehension, what does the expression represent?AThe iterable being traversed.BThe condition for filtering elements.CThe value to be included in the new list.DThe index of the current element.Question 2In what scenarios might it be better to use traditional loops instead of list comprehension?AWhen the code needs to be more concise.BWhen the logic involves complex conditions.CIn situations where performance is critical.DList comprehension is always preferable.Question 3What will the following list comprehension output?
+    CoursesTutorialsPracticeJobsDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsEarn Google BadgeDSA TutorialSystem Design TutorialAptitude Questions and AnswersWeb Development TechnologiesAI, ML and Data Science TutorialDevOps TutorialPlacement 360 CourseExplorePython List Comprehension QuizLast Updated : DiscussCommentsQuestion 1In list comprehension, what does the expression represent?AThe iterable being traversed.BThe condition for filtering elements.CThe value to be included in the new list.DThe index of the current element.Question 2Can list comprehension be used with other data types besides lists?ANo, it can only be used with lists.BYes, it can be used with any iterable.CYes, but only with strings.DNo, it is limited to numerical data types.Question 3Explain the concept of filtering in list comprehension.AIt involves transforming elements based on a specified condition.BIt refers to the process of excluding elements based on a condition.CIt is a technique for optimizing list comprehension.DIt is not applicable to list comprehension.Question 4What will the following list comprehension output?
         Python
         
-        words = ['apple', 'banana', 'cherry']
-word_lengths = {word: len(word) for word in words if len(word) % 2 == 0}
+        squares = [x**2 for x in range(5)]
+print(squares)
 
         
-    A{'apple': 5, 'banana': 6, 'cherry': 6}B{'apple': 5, 'banana': 6}C{'apple': 5, 'cherry': 6}D{'banana': 6, 'cherry': 6}Question 4What is the significance of the order of for clauses in nested list comprehensions?AThe order has no effect on the result.BIt determines the order of elements in the resulting list.CIt is not possible to have multiple for clauses in list comprehension.DIt only affects the readability of the code.Question 5How can list comprehension be used to create a list of tuples?ABy converting a list to a tuple after using list comprehension.BBy using the tuple() constructor within the list comprehension.CList comprehension can only create lists, not tuples.DBy enclosing each element in parentheses within the list comprehension.Question 6Can list comprehension be used with other data types besides lists?ANo, it can only be used with lists.BYes, it can be used with any iterable.CYes, but only with strings.DNo, it is limited to numerical data types.Question 7What is the purpose of the following list comprehension?numbers = [1, -2, 3, -4, 5]squared_positives = [x**2 if x > 0 else 0 for x in numbers] ASquares all numbers.BSquares only positive numbers.CSquares only negative numbers.DSquares numbers greater than 3.Question 8What is the purpose of the following set comprehension?
+    A[0, 1, 4, 9, 16]B[1, 4, 9, 16, 25]C[0, 2, 4, 6, 8]D[1, 3, 5, 7, 9]Question 5What is the output of the following list comprehension?
         Python
         
-        words = ['python', 'list', 'comprehension']
-unique_starting_letters = {word[0].upper() for word in words}
+        vowels = ['a', 'e', 'i', 'o', 'u']
+upper_vowels = [vowel.upper() for vowel in vowels]
+print(upper_vowels)
 
         
-    ACreates a list of unique starting letters of words.BCreates a set of unique starting letters of words.CCreates a dictionary with starting letters as keys and words as values.DCounts the occurrences of each starting letter.Question 9Explain the concept of filtering in list comprehension.AIt involves transforming elements based on a specified condition.BIt refers to the process of excluding elements based on a condition.CIt is a technique for optimizing list comprehension.DIt is not applicable to list comprehension.Question 10Explain the term "nested list comprehension."AIt refers to using multiple conditions in a single list comprehension.BIt involves using a list comprehension inside another list comprehension.CIt is a type of list comprehension specific to nested lists.DIt is an advanced feature not related to list comprehensions.Tags:Python-QuizzesThere are 25 questions to complete.Take a part in the ongoing discussionView All Discussion
+    A['a', 'e', 'i', 'o', 'u']B['A', 'E', 'I', 'O', 'U']C['a', 'E', 'i', 'O', 'u']D['A', 'e', 'I', 'o', 'U']Question 6When using list comprehension, what happens if the iterable is empty?AIt raises a ValueError.BIt creates an empty list.CIt raises a SyntaxError.DIt results in an infinite loop.Question 7What is the purpose of the following list comprehension?
+        Python
+        
+        numbers = [1, -2, 3, -4, 5]
+squared_positives = [x**2 if x > 0 else 0 for x in numbers]
+print(squared_positives)
+
+        
+    ASquares all numbers and preserves negative results.BSquares positive numbers and replaces non-positive values with 0.CSquares only negative numbers.DKeeps only numbers greater than 3.Question 8Does list comprehension automatically remove duplicate values? Consider the following code.
+        Python
+        
+        values = [2, 2, 3, 3, 3]
+result = [x for x in values if x > 2]
+print(result)
+
+        
+    A[2, 2, 3, 3, 3]B[3]C[3, 3, 3]D[2, 3]Question 9How can list comprehension be used to create a list of tuples?ABy converting the entire resulting list into a tuple using tuple().BBy wrapping each output element in a list.CList comprehension cannot create tuple elements.DBy returning a tuple expression, such as (x, y), for each iteration.Question 10What is the significance of the order of for clauses in nested list comprehensions?AThe order has no effect on the result.BIt determines the order in which elements and combinations are generated.CIt is not possible to have multiple for clauses in list comprehension.DIt only affects the readability of the code.Tags:Python-QuizzesThere are 25 questions to complete.Take a part in the ongoing discussionView All Discussion

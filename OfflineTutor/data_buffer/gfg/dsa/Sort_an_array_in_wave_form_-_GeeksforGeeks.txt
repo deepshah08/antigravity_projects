@@ -1,6 +1,6 @@
 # Sort an array in wave form - GeeksforGeeks
 
-Given a sorted array arr[] of integers (in ascending order), rearrange the elements in-place to form a wave-like array.An array is said to be in wave form if it satisfies the following pattern: arr[0] ≥ arr[1] ≤ arr[2] ≥ arr[3] ≤ arr[4] ≥ ...In other words, every even-indexed element should be greater than or equal to its adjacent odd-indexed elements (if they exist).Note: The given array is sorted in ascending order, and modify the given array in-place without returning a new array.Input: arr[] = [1, 2, 3, 4, 5]Output: [2, 1, 4, 3, 5]Explanation: Array elements after sorting it in the waveform are 2, 1, 4, 3, 5.Input: arr[] = [2, 4, 7, 8, 9, 10]Output: [4, 2, 8, 7, 10, 9]Explanation: Array elements after sorting it in the waveform are 4, 2, 8, 7, 10, 9.Try It Yourself[Approach] Adjacent Pair Swapping MethodThe main idea of this approach is to rearrange it into a wave form by swapping adjacent elements in pairs.Since, the elements are in increasing order. Then, by swapping every pair of adjacent elements (i.e., arr[0] with arr[1], arr[2] with arr[3], and so on), we create a pattern where:Every even index i holds a value greater than or equal to its neighboring odd indices i - 1 and i + 1 (if they exist).This guarantees the wave condition: arr[0] ≥ arr[1] ≤ arr[2] ≥ arr[3] ≤ arr[4] ≥ ...The sorted array ensures the numbers are close enough to form valid wave peaks and valleys, and the pairwise swaps are what enforce the pattern.
+Given an array arr[] of integers sorted in ascending order, rearrange the array into a wave-like array such that: arr[0] ≥ arr[1] ≤ arr[2] ≥ arr[3] ≤ arr[4] ...If multiple wave-like arrangements are possible, find the lexicographically smallest arrangement.Note: The array should be modified in-place.Input: arr[] = [1, 2, 3, 4, 5]Output: [2, 1, 4, 3, 5]Explanation: Array elements after sorting it in the waveform are 2, 1, 4, 3, 5.Input: arr[] = [2, 4, 7, 8, 9, 10]Output: [4, 2, 8, 7, 10, 9]Explanation: Array elements after sorting it in the waveform are 4, 2, 8, 7, 10, 9.Try It YourselfAdjacent Pair Swapping Method - O(n) Time and O(1) O(1) Auxiliary SpaceThe main idea of this approach is to rearrange it into a wave form by swapping adjacent elements in pairs.Since, the elements are in increasing order. Then, by swapping every pair of adjacent elements (i.e., arr[0] with arr[1], arr[2] with arr[3], and so on), we create a pattern where:Every even index i holds a value greater than or equal to its neighboring odd indices i - 1 and i + 1 (if they exist).This guarantees the wave condition: arr[0] ≥ arr[1] ≤ arr[2] ≥ arr[3] ≤ arr[4] ≥ ...The sorted array ensures the numbers are close enough to form valid wave peaks and valleys, and the pairwise swaps are what enforce the pattern.The resulting array is also lexicographically smallest.For the first pair a0 ≤ a1 , the wave condition requires arr[0] ≥ arr[1].So a0 cannot be placed at arr[0]. The smallest possible value is a1 , giving [a1 , a0].The same logic applies to every adjacent pair.Thus, swapping every adjacent pair gives:  [a1, a0, a3 ,a2 , a5 , a4, ...]This arrangement satisfies the wave condition and is the lexicographically smallest valid wave array.
             C++
 
     #include<iostream>
@@ -42,6 +42,7 @@ void swap(int *x, int *y){
 }
 
 void sortInWave(int arr[], int n){
+    
     // swap adjacent elements
     for (int i=0; i<n-1; i += 2)
         swap(&arr[i], &arr[i+1]);
@@ -61,8 +62,9 @@ int main(){
             Java
 
     class GfG{
-    void sortInWave(int arr[]){
+    static void sortInWave(int arr[]){
         int n = arr.length;
+        
         // swap adjacent elements
         for (int i=0; i<n-1; i += 2){
             int temp = arr[i];
@@ -72,9 +74,8 @@ int main(){
     }
 
     public static void main(String args[]){
-        GfG ob = new GfG();
         int arr[] = {1, 2, 3, 4, 5};
-        ob.sortInWave(arr);
+        sortInWave(arr);
         for (int i : arr){
             System.out.print(i + " ");
         }
@@ -102,35 +103,27 @@ if __name__ == "__main__":
             C#
 
     using System;
-class GfG{
-    
-    // a utility method to swap two numbers
-    void swap(int[] arr, int a, int b){
-        
-        int temp = arr[a];
-        arr[a] = arr[b];
-        arr[b] = temp;
-    }
 
-    // this function sorts arr[0..n-1]
-    // in wave form
-    void sortInWave(int[] arr){
-        
+class GFG
+{
+    static void sortInWave(int[] arr)
+    {
         int n = arr.Length;
-
+        
         // swap adjacent elements
         for (int i = 0; i < n - 1; i += 2)
-            swap(arr, i, i + 1);
+        {
+            int temp = arr[i];
+            arr[i] = arr[i + 1];
+            arr[i + 1] = temp;
+        }
     }
 
-    public static void Main(){
-        GfG ob = new GfG();
-        int[] arr = {1, 2, 3, 4, 5};
-        int n = arr.Length;
-        
-        ob.sortInWave(arr);
-        for (int i = 0; i < n; i++)
-        Console.Write(arr[i] + " ");
+    static void Main()
+    {
+        int[] arr = { 1, 2, 3, 4, 5 };
+        sortInWave(arr);
+        Console.WriteLine(string.Join(" ", arr));
     }
 }
 
@@ -157,4 +150,4 @@ let arr = [1, 2, 3, 4, 5];
 sortInWave(arr);
 console.log(arr.join(" "));
 
-Output2 1 4 3 5 Time Complexity: O(n), a single pass swaps adjacent pairs.Auxiliary Space: O(1), in-place swaps use no extra storage.
+Output2 1 4 3 5

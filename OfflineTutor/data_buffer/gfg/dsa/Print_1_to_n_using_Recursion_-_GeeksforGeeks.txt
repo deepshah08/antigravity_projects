@@ -6,20 +6,24 @@ Given an integer n. Print numbers from 1 to n using recursion.Examples:Input: n
     #include <iostream>
 using namespace std;
 
-void printNos(int n){
-    
-    // base condition
+void printTillN(int n) {
+
+    // Base condition
     if (n == 0)
         return;
-        
-    // recursive call
-    printNos(n - 1);
+
+    // Print numbers from 1 to n-1 first
+    printTillN(n - 1);
+
+    // Print the current number
     cout << n << " ";
 }
 
-int main(){
+int main() {
     int n = 3;
-    printNos(n);
+
+    printTillN(n);
+
     return 0;
 }
 
@@ -28,20 +32,20 @@ int main(){
 
     #include <stdio.h>
 
-void printNos(int n){
+void printTillN(int n){
     
     // base condition
     if (n == 0)
         return;
         
     // recursive call
-    printNos(n - 1);
+    printTillN(n - 1);
     printf("%d ", n);
 }
 
 int main(){
     int n = 3;
-    printNos(n);
+    printTillN(n);
     return 0;
 }
 
@@ -49,83 +53,94 @@ int main(){
             Java
 
     class GfG {
-    static void printNos(int n){
-        
-        // base condition
+
+    static void printTillN(int n) {
+
+        // Base condition
         if (n == 0)
             return;
-    
-        // recursive call
-        printNos(n - 1);
+
+        // Print numbers from 1 to n-1 first
+        printTillN(n - 1);
+
+        // Print the current number
         System.out.print(n + " ");
     }
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
+
         int n = 3;
-        printNos(n);
+
+        printTillN(n);
     }
 }
 
 
             Python
 
-    def printNos(n):
+    def printTillN(n):
+
+    # Base condition
     if n == 0:
-        
-        # base condition
         return
-    
-    # recursive call first
-    printNos(n - 1)
-  
-    # print after recursion
+
+    # Recursive call
+    printTillN(n - 1)
+
+    # Print current number
     print(n, end=' ')
 
 
 if __name__ == "__main__":
     n = 3
-    printNos(n)
+    printTillN(n)
 
 
             C#
 
     using System;
 
-class GfG {
-    static void printNos(int n){
-        
-        // base condition
-        if (n == 0) {
+class GfG
+{
+    static void printTillN(int n)
+    {
+        // Base condition
+        if (n == 0)
+        {
             return;
         }
-        
-        // recursive call
-        printNos(n - 1);
+
+        // Recursive call
+        printTillN(n - 1);
+
+        // Print current number
         Console.Write(n + " ");
     }
 
-    static void Main(){
+    static void Main()
+    {
         int n = 3;
-        printNos(n);
+        printTillN(n);
     }
 }
 
 
             JavaScript
 
-    function printNos(n){
-    // base condition
+    function printTillN(n) {
+    // Base condition
     if (n == 0)
         return;
-        
-    // recursive call
-    printNos(n - 1);
-    
-    // print in same line with space
+
+    // Recursive call
+    printTillN(n - 1);
+
+    // Print current number
     process.stdout.write(n + " ");
 }
 
-// Driver Code
+// Driver code
 let n = 3;
-printNos(n);
+printTillN(n);
 
 Output1 2 3 Time Complexity: O(n)Auxiliary Space: O(n)

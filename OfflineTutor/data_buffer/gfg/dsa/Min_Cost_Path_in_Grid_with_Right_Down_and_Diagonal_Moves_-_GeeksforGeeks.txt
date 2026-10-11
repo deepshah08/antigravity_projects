@@ -1,14 +1,11 @@
 # Min Cost Path in Grid with Right, Down and Diagonal Moves - GeeksforGeeks
 
-Given a 2D matrix cost[][], where each cell represents the cost of traversing through that position. We need to determine the minimum cost required to reach the bottom-right cell (m-1, n-1) starting from the top-left cell (0,0).The total cost of a path is the sum of all cell values along the path, including both the starting and ending positions. From any cell (i, j), you can move in the following three direction Right (i, j+1), Down (i+1, j) and Diagonal (i+1, j+1). Find the minimum cost path from (0,0) to (m-1, n-1), ensuring that movement constraints are followed.Example:Input: cost[][] = [[1, 2, 3],                             [4, 8, 2],                             [1, 5, 3]] Output: 8Explanation: The path with minimum cost is highlighted in the following figure. The path is (0, 0) -> (0, 1) -> (1, 2) -> (2, 2). The cost of the path is 8 (1 + 2 + 2 + 3).   Try It YourselfTable of Content[Naive Approach] Using Recursion - O(3 ^ (m * n)) Time and O(1) Space[Better Approach 1] Using Dijkstra's Algorithm - O((m * n) * log(m * n)) Time and O(m * n) Space[Better Approach - 2] Using Top-Down DP (Memoization) - O(m*n) Time and O(m*n) Space[Better Approach - 3] - Using Bottom-Up DP (Tabulation) - O(m * n) Time and O(m * n) Space[Expected Approach] - Using Space Optimized DP - O(m * n) Time and O(n) Space[Naive Approach] Using Recursion - O(3 ^ (m * n)) Time and O(1) SpaceIn this problem, we need to move from the starting cell (0,0) to the last cell (m-1, n-1). From every cell, we have three choices: we can move down (i+1, j), right (i, j+1), or diagonally (i+1, j+1). Whenever a problem gives multiple choices at every step, the first natural approach that comes to mind is recursion, because recursion allows us to break the problem into smaller independent subproblems. To solve this using recursion, we start from the starting cell (0,0) and at each step we try all three possible moves. Each recursive call represents taking one of the paths, and since we want the minimum cost path, we simply try all possibilities and take the minimum among them. The base case occurs when the recursion reaches the last cell (m-1, n-1) -  at that point, we stop and return the cost of that cell because the destination is reached.
+Given a matrix cost[][] of size n x m. Each cell contains a value that represents the cost to move through that cell.You start at the top-left cell (0,0) and must reach the bottom-right cell (n-1, m-1).From any cell (i, j), you can move to (i, j+1), (i+1, j), or (i+1, j+1).Find the minimum cost required to reach the bottom-right corner. The cost of a path is the sum of all values on the path including both the start and end cells.Examples:Input: cost[][] = [[1, 2, 3], [4, 8, 2], [1, 5, 3]] Output: 8Explanation: One minimum-cost path is (0,0) -> (0,1) -> (1,2) -> (2,2), with total cost 1 + 2 + 2 + 3 = 8. Input: cost[][] = [[5, 6], [7, 2]] Output: 7 Explanation: The minimum-cost path is (0,0) -> (1,1), with total cost 5 + 2 = 7. Try It YourselfTable of Content[Naive Approach] Recursion - O(3 ^ (m * n)) Time and O(1) Space[Better Approach - 1] Dijkstra's Algorithm - O((m * n) * log(m * n)) Time and O(m * n) Space[Better Approach - 2] Top-Down DP (Memoization) - O(m * n) Time and O(m * n) Space[Better Approach - 3] Bottom-Up DP (Tabulation) - O(m * n) Time and O(m * n) Space[Expected Approach] Space Optimized DP - O(m * n) Time and O(n) Space[Naive Approach] Recursion - O(3 ^ (m * n)) Time and O(1) SpaceIn this problem, we need to move from the starting cell (0,0) to the last cell (m-1, n-1). From every cell, we have three choices: we can move down (i+1, j), right (i, j+1), or diagonally (i+1, j+1). Whenever a problem gives multiple choices at every step, the first natural approach that comes to mind is recursion, because recursion allows us to break the problem into smaller independent subproblems. To solve this using recursion, we start from the starting cell (0,0) and at each step we try all three possible moves. Each recursive call represents taking one of the paths, and since we want the minimum cost path, we simply try all possibilities and take the minimum among them. The base case occurs when the recursion reaches the last cell (m-1, n-1) -  at that point, we stop and return the cost of that cell because the destination is reached.
             C++
 
-    //Driver Code Starts
-#include <iostream>
+    #include <iostream>
 #include<vector>
 using namespace std;
-//Driver Code Ends
-
 
 // Function to return the cost of the minimum cost path
 int findMinCost(vector<vector<int>>& cost, int x, int y) {
@@ -43,8 +40,6 @@ int minCost(vector<vector<int>>& cost) {
     return findMinCost(cost, 0, 0);
 }
 
-
-//Driver Code Starts
 int main() {
   
     vector<vector<int>> cost = {
@@ -56,17 +51,12 @@ int main() {
     return 0;
 }
 
-//Driver Code Ends
-
 
             Java
 
-    //Driver Code Starts
-import java.util.Arrays;
+    import java.util.Arrays;
 
 public class GFG {
-//Driver Code Ends
-
 
     // Function to return the cost of the minimum cost path
     static int findMinCost(int[][] cost, int x, int y) {
@@ -95,8 +85,6 @@ public class GFG {
         return findMinCost(cost, 0, 0);
     }
 
-
-//Driver Code Starts
     public static void main(String[] args) {
         int[][] cost = {
             {1, 2, 3},
@@ -107,15 +95,10 @@ public class GFG {
     }
 }
 
-//Driver Code Ends
-
 
             Python
 
-    #Driver Code Starts
-import sys
-#Driver Code Ends
-
+    import sys
 
 # Function to return the cost of the minimum cost path
 def findMinCost(cost, x, y):
@@ -146,8 +129,6 @@ def minCost(cost):
 
 
 
-#Driver Code Starts
-
 if __name__ == "__main__":
     cost = [
         [1, 2, 3],
@@ -156,17 +137,12 @@ if __name__ == "__main__":
     ]
     print(minCost(cost))
 
-#Driver Code Ends
-
 
             C#
 
-    //Driver Code Starts
-using System;
+    using System;
 
 class GFG {
-
-//Driver Code Ends
 
     // Function to return the cost of the minimum cost path
     static int findMinCost(int[,] cost, int x, int y) {
@@ -195,8 +171,6 @@ class GFG {
         return findMinCost(cost, 0, 0);
     }
 
-//Driver Code Starts
-
     static void Main() {
         int[,] cost = {
             {1, 2, 3},
@@ -206,8 +180,6 @@ class GFG {
         Console.WriteLine(minCost(cost));
     }
 }
-
-//Driver Code Ends
 
 
             JavaScript
@@ -246,8 +218,6 @@ function minCost(cost) {
     return findMinCost(cost, 0, 0);
 }
 
-
-//Driver Code Starts
 // Driver Code
 let cost = [
     [1, 2, 3],
@@ -257,16 +227,11 @@ let cost = [
 
 console.log(minCost(cost)); 
 
-//Driver Code Ends
-
-Output8[Better Approach 1] Using Dijkstra's Algorithm - O((m * n) * log(m * n)) Time and O(m * n) SpaceThe idea is to apply Dijskra's Algorithm to find the minimum cost path from the top-left to the bottom-right corner of the grid.  Each cell is treated as a node and each move between adjacent cells has a cost. We use a min-heap to always expand the least costly path first.
+Output8[Better Approach - 1] Dijkstra's Algorithm - O((m * n) * log(m * n)) Time and O(m * n) SpaceThe idea is to apply Dijskra's Algorithm to find the minimum cost path from the top-left to the bottom-right corner of the grid.  Each cell is treated as a node and each move between adjacent cells has a cost. We use a min-heap to always expand the least costly path first.
             C++
 
-    //Driver Code Starts
-#include <iostream>
+    #include <iostream>
 using namespace std;
-//Driver Code Ends
-
 
 int minCost(vector<vector<int>> &cost) {
   
@@ -321,8 +286,6 @@ int minCost(vector<vector<int>> &cost) {
     return dist[m - 1][n - 1];
 }
 
-//Driver Code Starts
-
 int main() {
     vector<vector<int>> cost = {
         {1, 2, 3}, 
@@ -332,18 +295,14 @@ int main() {
     cout << minCost(cost);
     return 0;
 }
-//Driver Code Ends
 
 
             Java
 
-    //Driver Code Starts
-import java.util.Arrays;
+    import java.util.Arrays;
 import java.util.PriorityQueue;
 
 public class GFG {
-
-//Driver Code Ends
 
     public static int minCost(int[][] cost) {
 
@@ -396,8 +355,6 @@ public class GFG {
         return dist[m - 1][n - 1];
     }
 
-//Driver Code Starts
-
     public static void main(String[] args) {
 
         int[][] cost = {
@@ -410,16 +367,11 @@ public class GFG {
     }
 }
 
-//Driver Code Ends
-
 
             Python
 
-    #Driver Code Starts
-import heapq
+    import heapq
 import sys
-
-#Driver Code Ends
 
 def minCost(cost):
 
@@ -461,8 +413,6 @@ def minCost(cost):
 
     return dist[m-1][n-1]
 
-#Driver Code Starts
-
 
 if __name__ == "__main__":
     cost = [
@@ -473,18 +423,13 @@ if __name__ == "__main__":
     
     print(minCost(cost))
 
-#Driver Code Ends
-
 
             C#
 
-    //Driver Code Starts
-using System;
+    using System;
 using System.Collections.Generic;
 
 class GFG {
-
-//Driver Code Ends
 
     public static int minCost(int[,] cost) {
 
@@ -541,8 +486,6 @@ class GFG {
         return dist[m - 1, n - 1];
     }
 
-//Driver Code Starts
-
     static void Main() {
 
         int[,] cost = {
@@ -555,85 +498,75 @@ class GFG {
     }
 }
 
-//Driver Code Ends
-
 
             JavaScript
 
-    function minCost(cost) {
+    function minCost(cost)
+{
 
-    let m = cost.length;
-    let n = cost[0].length;
+    const m = cost.length;
+    const n = cost[0].length;
 
-    let directions = [[1,0], [0,1], [1,1]];
+    const directions = [ [ 1, 0 ], [ 0, 1 ], [ 1, 1 ] ];
 
     // Min-heap (priority queue) for Dijkstra's algorithm
-    class MinHeap {
-        constructor() { this.h = []; }
-        push(val) { this.h.push(val); this.h.sort((a,b)=>a[0]-b[0]); }
-        pop() { return this.h.shift(); }
-        size() { return this.h.length; }
-    }
+    const pq = [ [ cost[0][0], 0, 0 ] ];
 
-    let pq = new MinHeap();
-
-    // Distance matrix to store the minimum cost to reach each cell
-    let dist = Array.from({ length: m }, () => Array(n).fill(Infinity));
+    // Distance matrix to store the minimum
+    //  cost to reach each cell
+    const dist = Array.from(
+        {length : m},
+        () => Array(n).fill(Number.MAX_SAFE_INTEGER));
     dist[0][0] = cost[0][0];
 
-    pq.push([cost[0][0], 0, 0]);
+    pq.sort((a, b) => a[0] - b[0]);
 
-    while (pq.size()) {
+    while (pq.length > 0) {
 
-        let [currCost, x, y] = pq.pop();
+        const curr = pq.shift();
+        const x = curr[1];
+        const y = curr[2];
 
-        // If we reached the bottom-right corner, return the cost
-        if (x === m - 1 && y === n - 1)
+        // If we reached the bottom-right
+        // corner, return the cost
+        if (x === m - 1 && y === n - 1) {
             return dist[x][y];
+        }
 
-        // Explore neighbors
-        for (let [dx, dy] of directions) {
+        // Explore the neighbors
+        for (const dir of directions) {
 
-            let newX = x + dx;
-            let newY = y + dy;
+            const newX = x + dir[0];
+            const newY = y + dir[1];
 
             // Ensure the new cell is within bounds
             if (newX < m && newY < n) {
 
                 // Relaxation step
-                if (dist[newX][newY] > dist[x][y] + cost[newX][newY]) {
-                    dist[newX][newY] = dist[x][y] + cost[newX][newY];
-                    pq.push([dist[newX][newY], newX, newY]);
+                if (dist[newX][newY]
+                    > dist[x][y] + cost[newX][newY]) {
+                    dist[newX][newY]
+                        = dist[x][y] + cost[newX][newY];
+                    pq.push(
+                        [ dist[newX][newY], newX, newY ]);
+                    pq.sort((a, b) => a[0] - b[0]);
                 }
             }
         }
     }
-
-    return dist[m-1][n-1];
+    return dist[m - 1][n - 1];
 }
 
-
-//Driver Code Starts
-//Driver Code
-let cost = [
-    [1,2,3],
-    [4,8,2],
-    [1,5,3]
-];
-
+// Driver Code
+const cost = [ [ 1, 2, 3 ], [ 4, 8, 2 ], [ 1, 5, 3 ] ];
 console.log(minCost(cost));
 
-//Driver Code Ends
-
-Output8[Better Approach - 2] Using Top-Down DP (Memoization) - O(m*n) Time and O(m*n) Space If we look at the recursion tree, we notice that in recursion approach, many subproblems are solved again and again, which increases the time complexity. To handle this, we use a DP (memoization) approach. The idea is to store previously computed results in a DP table.We create a 2D DP table of size (m × n) because there are two parameters that change in the recursive approach. After computing a subproblem, we store the result in the table. Later, when we encounter the same subproblem again, we check the table first. If the result is already computed, we return it instead of solving it again. 
+Output8[Better Approach - 2] Top-Down DP (Memoization) - O(m * n) Time and O(m * n) Space If we look at the recursion tree, we notice that in recursion approach, many subproblems are solved again and again, which increases the time complexity. To handle this, we use a DP (memoization) approach. The idea is to store previously computed results in a DP table.We create a 2D DP table of size (m × n) because there are two parameters that change in the recursive approach. After computing a subproblem, we store the result in the table. Later, when we encounter the same subproblem again, we check the table first. If the result is already computed, we return it instead of solving it again. 
             C++
 
-    //Driver Code Starts
-#include <iostream>
+    #include <iostream>
 #include<vector>
 using namespace std;
-//Driver Code Ends
-
 
 // Function to return the cost of the minimum cost path
 int findMinCost(vector<vector<int>>& cost, int x, 
@@ -677,8 +610,6 @@ int minCost(vector<vector<int>>& cost) {
     return findMinCost(cost, 0, 0, dp);
 }
 
-//Driver Code Starts
-
 int main() {
     vector<vector<int>> cost = {
         { 1, 2, 3 },
@@ -689,17 +620,12 @@ int main() {
     return 0;
 }
 
-//Driver Code Ends
-
 
             Java
 
-    //Driver Code Starts
-import java.util.Arrays;
+    import java.util.Arrays;
 
 public class GFG {
-//Driver Code Ends
-
 
     // Function to return the cost of the minimum cost path
     static int findMinCost(int[][] cost, int x, int y, int[][] dp) {
@@ -737,8 +663,6 @@ public class GFG {
         return findMinCost(cost, 0, 0, dp);
     }
 
-//Driver Code Starts
-
     public static void main(String[] args) {
         int[][] cost = {
             { 1, 2, 3 },
@@ -749,15 +673,10 @@ public class GFG {
     }
 }
 
-//Driver Code Ends
-
 
             Python
 
-    #Driver Code Starts
-import sys
-#Driver Code Ends
-
+    import sys
 
 # Function to return the cost of the minimum cost path
 def findMinCost(cost, x, y, dp):
@@ -796,8 +715,6 @@ def minCost(cost):
     dp = [[-1]*n for _ in range(m)]
     return findMinCost(cost, 0, 0, dp)
 
-#Driver Code Starts
-
 
 if __name__ == "__main__":
     cost = [
@@ -807,18 +724,13 @@ if __name__ == "__main__":
     ]
     print(minCost(cost))
 
-#Driver Code Ends
-
 
             C#
 
-    //Driver Code Starts
-using System;
+    using System;
 
 class GFG
 {
-//Driver Code Ends
-
     // Function to return the cost of the minimum cost path
     static int findMinCost(int[,] cost, int x, int y, int[,] dp)
     {
@@ -859,8 +771,6 @@ class GFG
         return findMinCost(cost, 0, 0, dp);
     }
 
-//Driver Code Starts
-
     static void Main()
     {
         int[,] cost = {
@@ -871,8 +781,6 @@ class GFG
         Console.WriteLine(minCost(cost));
     }
 }
-
-//Driver Code Ends
 
 
             JavaScript
@@ -913,8 +821,6 @@ function minCost(cost) {
     return findMinCost(cost, 0, 0, dp);
 }
 
-
-//Driver Code Starts
 // Driver Code
 const cost = [
     [1, 2, 3],
@@ -923,72 +829,62 @@ const cost = [
 ];
 console.log(minCost(cost));
 
-//Driver Code Ends
-
-Output8[Better Approach - 3] - Using Bottom-Up DP (Tabulation) - O(m * n) Time and O(m * n) SpaceIn the previous approach, we used recursion along with memoization. Even though memoization helps us avoid recomputing the same subproblems, the recursive structure still makes the solution slower and harder to manage for large inputs. To make the solution more efficient, we switch to a bottom-up dynamic programming method, where we build the answer iteratively.The idea is simple: we directly fill a DP table step by step. First, we set the base case:dp[0][0] = cost[0][0], because the starting cell’s minimum cost is just its own value. First row: Since movement is only from the left, dp[0][j] = dp[0][j - 1] + cost[0][j] (for j > 0)First column: Since movement is only from above, dp[i][0] = dp[i - 1][0] + cost[i][0] (for i > 0)Once these base cases are set, the remaining table can be filled using the main DP relation. For every cell (i, j), we consider the minimum cost among the three possible ways to reach it and add the current cell’s cost to that minimum. By filling the table in this order, we ensure that all required subproblems are already solved when we need them. 
+Output8[Better Approach - 3] Bottom-Up DP (Tabulation) - O(m * n) Time and O(m * n) SpaceIn the previous approach, we used recursion along with memoization. Even though memoization helps us avoid recomputing the same subproblems, the recursive structure still makes the solution slower and harder to manage for large inputs. To make the solution more efficient, we switch to a bottom-up dynamic programming method, where we build the answer iteratively.The idea is simple: we directly fill a DP table step by step. First, we set the base case:dp[0][0] = cost[0][0], because the starting cell’s minimum cost is just its own value. First row: Since movement is only from the left, dp[0][j] = dp[0][j - 1] + cost[0][j] (for j > 0)First column: Since movement is only from above, dp[i][0] = dp[i - 1][0] + cost[i][0] (for i > 0)Once these base cases are set, the remaining table can be filled using the main DP relation. For every cell (i, j), we consider the minimum cost among the three possible ways to reach it and add the current cell’s cost to that minimum. By filling the table in this order, we ensure that all required subproblems are already solved when we need them. 
             C++
 
-    //Driver Code Starts
-#include <iostream>
+    #include <iostream>
 using namespace std;
-//Driver Code Ends
 
-
-int minCost(vector<vector<int>>& cost) {
+int minCost(vector<vector<int>> &cost)
+{
     int m = cost.size();
     int n = cost[0].size();
-    
+
     vector<vector<int>> dp(m, vector<int>(n, 0));
-    
+
     // Initialize the base cell
     dp[0][0] = cost[0][0];
 
     // Fill the first row
-    for (int j = 1; j < n; j++) {
+    for (int j = 1; j < n; j++)
+    {
         dp[0][j] = dp[0][j - 1] + cost[0][j];
     }
 
     // Fill the first column
-    for (int i = 1; i < m; i++) {
+    for (int i = 1; i < m; i++)
+    {
         dp[i][0] = dp[i - 1][0] + cost[i][0];
     }
 
     // Fill the rest of the dp table
-    for (int i = 1; i < m; i++) {
-        for (int j = 1; j < n; j++) {
-            dp[i][j] = cost[i][j] + min({dp[i - 1][j],
-                            dp[i][j - 1], dp[i - 1][j - 1]});
+    for (int i = 1; i < m; i++)
+    {
+        for (int j = 1; j < n; j++)
+        {
+            dp[i][j] = cost[i][j] + min({dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]});
         }
     }
 
     return dp[m - 1][n - 1];
 }
 
-//Driver Code Starts
+int main()
+{
 
-int main() {
-  
-    vector<vector<int>> cost = {
-        {1, 2, 3},
-        {4, 8, 2},
-        {1, 5, 3}
-    };
+    vector<vector<int>> cost = {{1, 2, 3}, {4, 8, 2}, {1, 5, 3}};
 
     cout << minCost(cost);
     return 0;
 }
 
-//Driver Code Ends
-
 
             Java
 
-    //Driver Code Starts
-class GfG {
-//Driver Code Ends
+    class GFG {
 
-
-    static int minCost(int[][] cost) {
+    static int minCost(int[][] cost)
+    {
 
         int m = cost.length;
         int n = cost[0].length;
@@ -1010,91 +906,79 @@ class GfG {
         // Fill the rest of the dp table
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {
-                dp[i][j] = cost[i][j] +
-                        Math.min(dp[i - 1][j],
-                        Math.min(dp[i][j - 1], dp[i - 1][j - 1]));
+                dp[i][j] = cost[i][j]
+                           + Math.min(
+                               dp[i - 1][j],
+                               Math.min(dp[i][j - 1],
+                                        dp[i - 1][j - 1]));
             }
         }
 
         return dp[m - 1][n - 1];
     }
 
-//Driver Code Starts
+    public static void main(String[] args)
+    {
 
-    public static void main(String[] args) {
-
-        int[][] cost = {
-            {1, 2, 3},
-            {4, 8, 2},
-            {1, 5, 3}
-        };
+        int[][] cost
+            = { { 1, 2, 3 }, { 4, 8, 2 }, { 1, 5, 3 } };
 
         System.out.println(minCost(cost));
     }
 }
 
-//Driver Code Ends
-
 
             Python
 
-    def mincost(cost):
+    from typing import List
+import sys
+
+def minCost(cost: List[List[int]]) -> int:
     m = len(cost)
     n = len(cost[0])
+    
     dp = [[0] * n for _ in range(m)]
-
+    
     # Initialize the base cell
     dp[0][0] = cost[0][0]
-
+    
     # Fill the first row
     for j in range(1, n):
         dp[0][j] = dp[0][j - 1] + cost[0][j]
-
+    
     # Fill the first column
     for i in range(1, m):
         dp[i][0] = dp[i - 1][0] + cost[i][0]
-
+    
     # Fill the rest of the dp table
     for i in range(1, m):
         for j in range(1, n):
-            dp[i][j] = cost[i][j] \
-                       + min(dp[i - 1][j], \
-                            dp[i][j - 1], dp[i - 1][j - 1])
-
-    # Minimum cost to reach the
-    # bottom-right cell
+            dp[i][j] = cost[i][j] + min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1])
+    
     return dp[m - 1][n - 1]
 
-
-//Driver Code Starts
-
 if __name__ == "__main__":
-  
     cost = [
         [1, 2, 3],
         [4, 8, 2],
         [1, 5, 3]
     ]
-    print(mincost(cost))
-
-//Driver Code Ends
+    print(minCost(cost))
 
 
             C#
 
-    //Driver Code Starts
-using System;
+    using System;
 
-class GfG {
-//Driver Code Ends
+class GFG {
 
-
-    static int MinCost(int[,] cost) {
+    static int minCost(int[, ] cost)
+    {
 
         int m = cost.GetLength(0);
         int n = cost.GetLength(1);
 
-        int[,] dp = new int[m, n];
+        int[, ] dp = new int[m, n];
 
         // Base cell
         dp[0, 0] = cost[0, 0];
@@ -1112,41 +996,37 @@ class GfG {
         // Fill the rest of the table
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {
-                dp[i, j] = cost[i, j] +
-                           Math.Min(
+                dp[i, j] = cost[i, j]
+                           + Math.Min(
                                dp[i - 1, j],
-                               Math.Min(dp[i, j - 1], dp[i - 1, j - 1])
-                           );
+                               Math.Min(dp[i, j - 1],
+                                        dp[i - 1, j - 1]));
             }
         }
 
         return dp[m - 1, n - 1];
     }
 
-//Driver Code Starts
+    static void Main()
+    {
 
-    static void Main() {
+        int[, ] cost
+            = { { 1, 2, 3 }, { 4, 8, 2 }, { 1, 5, 3 } };
 
-        int[,] cost = {
-            { 1, 2, 3 },
-            { 4, 8, 2 },
-            { 1, 5, 3 }
-        };
-
-        Console.WriteLine(MinCost(cost));
+        Console.WriteLine(minCost(cost));
     }
 }
-
-//Driver Code Ends
 
 
             JavaScript
 
-    function minCost(cost) {
+    function minCost(cost)
+{
 
     const m = cost.length;
     const n = cost[0].length;
-    const dp = Array.from({ length: m }, () => Array(n).fill(0));
+    const dp
+        = Array.from({length : m}, () => Array(n).fill(0));
 
     // Initialize the base cell
     dp[0][0] = cost[0][0];
@@ -1164,9 +1044,10 @@ class GfG {
     // Fill the rest of the dp table
     for (let i = 1; i < m; i++) {
         for (let j = 1; j < n; j++) {
-            dp[i][j] = cost[i][j] 
-                    + Math.min(dp[i - 1][j],
-                        dp[i][j - 1], dp[i - 1][j - 1]);
+            dp[i][j]
+                = cost[i][j]
+                  + Math.min(dp[i - 1][j], dp[i][j - 1],
+                             dp[i - 1][j - 1]);
         }
     }
 
@@ -1174,27 +1055,16 @@ class GfG {
     return dp[m - 1][n - 1];
 }
 
-
-//Driver Code Starts
-//Driver Code
-const cost = [
-    [1, 2, 3],
-    [4, 8, 2],
-    [1, 5, 3]
-];
+// Driver Code
+const cost = [ [ 1, 2, 3 ], [ 4, 8, 2 ], [ 1, 5, 3 ] ];
 console.log(minCost(cost));
-//Driver Code Ends
 
-Output8
-[Expected Approach] - Using Space Optimized DP - O(m * n) Time and O(n) SpaceIn the previous approach, we used a 2D dp table to store the minimum cost at each cell. However, we can optimize the space complexity by observing that for calculating the current state, we only need the values from the previous row. Therefore, there is no need to store the entire dp table, and we can optimize the space to O(n) by only keeping track of the current and previous rows.
+Output8[Expected Approach] Space Optimized DP - O(m * n) Time and O(n) SpaceIn the previous approach, we used a 2D dp table to store the minimum cost at each cell. However, we can optimize the space complexity by observing that for calculating the current state, we only need the values from the previous row. Therefore, there is no need to store the entire dp table, and we can optimize the space to O(n) by only keeping track of the current and previous rows.
             C++
 
-    //Driver Code Starts
-#include <iostream>
+    #include <iostream>
 #include<vector>
 using namespace std;
-//Driver Code Ends
-
 
 int minCost(vector<vector<int>> &cost) {
   
@@ -1232,23 +1102,17 @@ int minCost(vector<vector<int>> &cost) {
     return dp[n - 1];
 }
 
-//Driver Code Starts
-
 int main() {
     vector<vector<int>> cost = {{1, 2, 3}, {4, 8, 2}, {1, 5, 3}};
 
     cout << minCost(cost) << endl;
     return 0;
 }
-//Driver Code Ends
 
 
             Java
 
-    //Driver Code Starts
-class GFG {
-//Driver Code Ends
-
+    class GFG {
 
     static int minCost(int[][] cost) {
 
@@ -1286,8 +1150,6 @@ class GFG {
         return dp[n - 1];
     }
 
-//Driver Code Starts
-
     public static void main(String[] args) {
 
         int[][] cost = {{1,2,3},{4,8,2},{1,5,3}};
@@ -1295,8 +1157,6 @@ class GFG {
         System.out.println(minCost(cost));
     }
 }
-
-//Driver Code Ends
 
 
             Python
@@ -1334,25 +1194,18 @@ class GFG {
     return dp[n - 1]
 
 
-#Driver Code Starts
-
 if __name__ == "__main__":
     cost = [[1,2,3],[4,8,2],[1,5,3]]
     print(minCost(cost))
 
-#Driver Code Ends
-
 
             C#
 
-    //Driver Code Starts
-using System;
+    using System;
 
 class GFG {
-//Driver Code Ends
 
-
-    static int MinCost(int[,] cost) {
+    static int minCost(int[,] cost) {
 
         int m = cost.GetLength(0);
         int n = cost.GetLength(1);
@@ -1388,8 +1241,6 @@ class GFG {
         return dp[n - 1];
     }
 
-//Driver Code Starts
-
     static void Main() {
 
         int[,] cost = {
@@ -1398,11 +1249,9 @@ class GFG {
             {1,5,3}
         };
 
-        Console.WriteLine(MinCost(cost));
+        Console.WriteLine(minCost(cost));
     }
 }
-
-//Driver Code Ends
 
 
             JavaScript
@@ -1443,12 +1292,8 @@ class GFG {
     return dp[n - 1];
 }
 
-
-//Driver Code Starts
 //Driver Code
 let cost = [[1,2,3],[4,8,2],[1,5,3]];
 console.log(minCost(cost));
-
-//Driver Code Ends
 
 Output8

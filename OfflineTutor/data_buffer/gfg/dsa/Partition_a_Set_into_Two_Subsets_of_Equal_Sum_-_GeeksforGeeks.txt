@@ -1,6 +1,6 @@
 # Partition a Set into Two Subsets of Equal Sum - GeeksforGeeks
 
-Given an array arr[], check if it can be partitioned into two parts such that the sum of elements in both parts is the same.Note: Each element is present in either the first subset or the second subset, but not in both.Examples: Input: arr[] = [1, 5, 11, 5]Output: true Explanation: The array can be partitioned as [1, 5, 5] and [11] and the sum of both the subsets are equal.Input: arr[] = [1, 5, 3]  Output: falseExplanation: The array cannot be partitioned into equal sum sets.Try It YourselfTable of Content[Naive Approach] Using Recursion - O(2^n) Time and O(n) Space[Better Approach 1] Using Top-Down DP (Memoization) - O(sum*n) Time and O(sum*n) Space[Better Approach 2] Using Bottom-Up DP (Tabulation) - O(sum*n) Time and O(sum*n) Space[Expected Approach] Using Space Optimized DP - O(sum*n) Time and O(sum) Space[Naive Approach] Using Recursion - O(2^n) Time and O(n) SpaceThe idea of this approach is to try all possible ways of dividing the array into two subsets using recursion. For each element, we have two choices: either include it in the current subset or exclude it. The goal is to check whether there exists a subset whose sum is equal to half of the total array sum. If such a subset exists, the remaining elements will automatically form the second subset with equal sum.
+Given an array arr[], check if it can be partitioned into two parts such that the sum of elements in both parts is the same.Note: Each element is present in either the first subset or the second subset, but not in both.Examples: Input: arr[] = [1, 5, 11, 5]Output: true Explanation: The array can be partitioned as [1, 5, 5] and [11] and the sum of both the subsets are equal.Input: arr[] = [1, 5, 3]  Output: falseExplanation: The array cannot be partitioned into equal sum sets.Try It YourselfTable of Content[Naive Approach]Recursion - O(2^n) Time and O(n) Space[Better Approach 1] Top-Down DP - O(sum*n) Time and O(sum*n) Space[Better Approach 2] Bottom-Up DP - O(sum*n) Time and O(sum*n) Space[Expected Approach]Space Optimized DP - O(sum*n) Time and O(sum) Space[Naive Approach]Recursion - O(2^n) Time and O(n) SpaceThe idea of this approach is to try all possible subsets using recursion to find one whose sum equals half of the total array sum.Calculate the total sum of arr[]. If it is odd, return false.Set the target sum to totalSum / 2.For each element, try two choices: include it in the subset or exclude it.If the target sum becomes 0, return true because a subset with the required sum has been found.If all elements are processed without reaching the target sum, return false.
             C++
 
     #include <iostream>
@@ -235,7 +235,7 @@ if (equalPartition(arr)) {
 }
 
 OutputTrue
-[Better Approach 1] Using Top-Down DP (Memoization) - O(sum*n) Time and O(sum*n) SpaceThis approach optimizes the recursive solution by storing the results of overlapping subproblems using memoization. Instead of recomputing the same states repeatedly, a 2D memo table is used to remember whether a given sum can be achieved using the first n elements. This significantly reduces the exponential time complexity of the naive approach.
+[Better Approach 1] Top-Down DP - O(sum*n) Time and O(sum*n) SpaceThis approach optimizes the recursive solution by storing the results of overlapping subproblems using memoization. Instead of recomputing the same states repeatedly, a 2D memo table is used to remember whether a given sum can be achieved using the first n elements. This significantly reduces the exponential time complexity of the naive approach.
             C++
 
     #include <iostream>
@@ -509,7 +509,7 @@ if (equalPartition(arr)) {
 }
 
 OutputTrue
-[Better Approach 2] Using Bottom-Up DP (Tabulation) - O(sum*n) Time and O(sum*n) SpaceIn this approach, a dynamic programming table is built iteratively in a bottom-up manner. The table dp[i][j] represents whether a subset with sum j can be formed using the first i elements. By filling the table row by row, we determine whether the target sum (half of total sum) is achievable using all elements.
+[Better Approach 2] Bottom-Up DP - O(sum*n) Time and O(sum*n) SpaceIn this approach, a dynamic programming table is built iteratively in a bottom-up manner. The table dp[i][j] represents whether a subset with sum j can be formed using the first i elements. By filling the table row by row, we determine whether the target sum (half of total sum) is achievable using all elements.
             C++
 
     #include <iostream>
@@ -785,7 +785,7 @@ if (equalPartition(arr)) {
 }
 
 OutputTrue
-[Expected Approach] Using Space Optimized DP - O(sum*n) Time and O(sum) SpaceThis approach further optimizes the tabulation method by reducing space usage. Instead of maintaining a full 2D table, it uses two 1D arrays to represent the previous and current states. Since each row depends only on the previous row, this optimization preserves correctness while significantly reducing space complexity.
+[Expected Approach]Space Optimized DP - O(sum*n) Time and O(sum) SpaceThis approach further optimizes the tabulation method by reducing space usage. Instead of maintaining a full 2D table, it uses two 1D arrays to represent the previous and current states. Since each row depends only on the previous row, this optimization preserves correctness while significantly reducing space complexity.
             C++
 
     #include <iostream>

@@ -67,37 +67,43 @@ import java.time.format.DateTimeFormatter;
 
 public class Zone {
 
-// Function to get Zoned Date and Time
-public static void ZonedTimeAndDate()
-{
-    LocalDateTime date = LocalDateTime.now();
-    DateTimeFormatter format1 = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"); 
-    
-    String formattedCurrentDate = date.format(format1);
-    
-    System.out.println("formatted current Date and"+" Time : "+ formattedCurrentDate); 
-
-    // to get the current zone
-    ZonedDateTime currentZone = ZonedDateTime.now(); 
-    System.out.println("the current zone is "+
-    
-    ZoneId tokyo = ZoneId.of("Asia/Tokyo");
-
-    ZonedDateTime tokyoZone = currentZone.withZoneSameInstant(tokyo);
-                  
-    System.out.println("tokyo time zone is " + tokyoZone);
-
-    DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"); 
-    
-    String formatedDateTime = tokyoZone.format(format); 
-
-    System.out.println("formatted tokyo time zone "+ formatedDateTime);
-    
-}
-    // Driver code
-    public static void main(String[] args) 
+    // Function to display zoned date and time
+    public static void zonedTimeAndDate()
     {
-        ZonedTimeAndDate();
+
+        LocalDateTime date = LocalDateTime.now();
+        DateTimeFormatter formatter
+            = DateTimeFormatter.ofPattern(
+                "dd-MM-yyyy HH:mm:ss");
+
+        String formattedCurrentDate
+            = date.format(formatter);
+
+        System.out.println(
+            "Formatted current date and time: "
+            + formattedCurrentDate);
+
+        // Get the current time zone
+        ZonedDateTime currentZone = ZonedDateTime.now();
+        System.out.println("Current zone: " + currentZone);
+
+        // Convert to Tokyo time zone
+        ZoneId tokyo = ZoneId.of("Asia/Tokyo");
+        ZonedDateTime tokyoZone
+            = currentZone.withZoneSameInstant(tokyo);
+
+        System.out.println("Tokyo time zone: " + tokyoZone);
+
+        String formattedTokyoTime
+            = tokyoZone.format(formatter);
+
+        System.out.println("Formatted Tokyo date and time: "
+                           + formattedTokyoTime);
+    }
+
+    public static void main(String[] args)
+    {
+        zonedTimeAndDate();
     }
 }
 
@@ -249,4 +255,4 @@ Outputthe current date is 2021-07-09
 firstDayOfNextMonth : 2021-08-01
 next saturday from now is 2021-07-10
 firstDayOfMonth : 2021-07-01
-lastDayOfMonth : 2021-07-31Advantages of the Java 8 Date-Time APIImmutable and thread-safe.Easy to read and use.Provides a clean and modern API.Supports date, time, and time zone handling.Offers powerful formatting and parsing features.Simplifies date and time calculations.
+lastDayOfMonth : 2021-07-31

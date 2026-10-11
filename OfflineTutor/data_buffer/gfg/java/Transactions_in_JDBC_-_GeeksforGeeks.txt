@@ -1,6 +1,6 @@
 # Transactions in JDBC - GeeksforGeeks
 
-Transactions in JDBC are used to manage a group of SQL operations as a single unit to ensure data consistency and reliability. They help maintain data integrity by applying all changes together or rolling them back in case of failure.Groups multiple SQL operations into a single unit of execution Ensures reliable and controlled database operations Helps manage changes using commit and rollback mechanismsUnderstanding ACID PropertiesACID properties define the fundamental principles that ensure reliable and consistent transaction processing in databases.ACID PropertiesAtomicity: Ensures that all operations within a transaction are treated as a single unit—either all succeed or none do. If any part fails, the entire transaction is rolled back.Consistency: Guarantees that the database remains in a consistent state before and after the transaction.Isolation: Ensures that transactions are executed independently, without interference from other concurrent transactions.Durability: Once a transaction is committed, changes are permanent even in case of a system crash.Auto-Commit in JDBCBy default JDBC Connection is in auto-commit mode, then every SQL statement is committed to the database upon its completion. It is fine for simple applications, but there are three reasons why you may want to turn off the auto-commit and manage your own transactions To increase performance.To maintain the integrity.To use distributed transactions.Manual Transaction ManagementWe can manage transactions manually by turning off auto-commit and using commit() and rollback() methods.
+Transactions in JDBC are used to manage a group of SQL operations as a single unit to ensure data consistency and reliability. They help maintain data integrity by applying all changes together or rolling them back in case of failure.Groups multiple SQL operations into a single unit of execution Ensures reliable and controlled database operations Helps manage changes using commit and rollback mechanismsUnderstanding ACID PropertiesACID properties define the fundamental principles that ensure reliable and consistent transaction processing in databases.ACID PropertiesAtomicity: Ensures that all operations within a transaction are treated as a single unit—either all succeed or none do. If any part fails, the entire transaction is rolled back.Consistency: Guarantees that the database remains in a consistent state before and after the transaction.Isolation: Ensures that transactions are executed independently, without interference from other concurrent transactions.Durability: Once a transaction is committed, changes are permanent even in case of a system crash.Auto-Commit in JDBCBy default, a JDBC Connection operates in auto-commit mode. In this mode, each SQL statement is treated as an individual transaction and is committed when it completes successfully.For operations that must succeed or fail together, auto-commit can be disabled:conn.setAutoCommit(false);This allows the application to control when the transaction is committed or rolled back.Groups multiple SQL statements into a single transaction.Helps maintain data consistency when operations depend on each other.Allows changes to be committed using commit() or undone using rollback() if an operation fails.Note: Disabling auto-commit creates a transaction on the current JDBC connection. It does not by itself provide distributed transaction management across multiple databases or resources.Manual Transaction ManagementWe can manage transactions manually by turning off auto-commit and using commit() and rollback() methods.
             Java
 
     Connection conn = DriverManager.getConnection(url, user, password);
@@ -9,7 +9,7 @@ conn.setAutoCommit(false); // Disable auto-commit
 conn.commit();   // Commit all changes if successful
 conn.rollback(); // Rollback if any error occurs
 
-Commit and RollbackIn Java, the commit() and rollback() methods play an essential role in database transactions, ensuring atomicity, consistency, isolation, and durability (ACID properties). Commit:  commit() saves all changes made during the transaction to the database.conn.commit( );Rollback: rollback() discards all changes made since the last commit, ensuring atomicity.conn.rollback( );JDBC Transaction Example Step-by-Step ImplementationThis example demonstrates how to execute multiple updates in a single transaction, ensuring either all updates succeed or none do.Step 1: Create a data base table
+Commit and RollbackIn Java, the commit() and rollback() methods play an essential role in database transactions, ensuring atomicity, consistency, isolation, and durability (ACID properties). Commit:  commit() saves all changes made during the transaction to the database.conn.commit( );Rollback: rollback() discards all changes made since the last commit, ensuring atomicity.conn.rollback( );Steps to Implement JDBC TransactionsThis example demonstrates how to execute multiple updates in a single transaction, ensuring either all updates succeed or none do.Step 1: Create a data base table
             Java
 
     CREATE DATABASE jdbc_Transaction;
@@ -29,15 +29,15 @@ INSERT INTO employee (name, email, address) VALUES
 ('Ajay', 'Ajay@example.com', 'Gurgaon');
 
 Output table:employeeStep 2: Add MySQL JDBC Driver to Your ProjectTo interact with a database, you need to add the MySQL JDBC driver to your project. If you are using Maven, add the following dependency to your pom.xml file.
-            Java
+            XML
 
     <dependency>
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
-    <version>8.0.30</version>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <version>YOUR_CURRENT_VERSION</version>
 </dependency>
 
-Step 3. Create EmployeeTransactionDemo classEmployeeTransactionDemo describe how to perform a JDBC transaction using Java. It shows how two related updates to the employee table can be executed as a single unit of work, either both succeed, or neither does.EmployeeTransactionDemo.java:
+Note: MySQL Connector/J uses the Maven coordinates com.mysql:mysql-connector-j. Use a current stable Connector/J version compatible with your MySQL and Java environment.Step 3. Create EmployeeTransactionDemo classEmployeeTransactionDemo describe how to perform a JDBC transaction using Java. It shows how two related updates to the employee table can be executed as a single unit of work, either both succeed, or neither does.EmployeeTransactionDemo.java:
             Java
 
     import java.sql.Connection;

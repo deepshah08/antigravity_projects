@@ -1,13 +1,10 @@
 # 0/1 Knapsack Problem - GeeksforGeeks
 
-Given two arrays, val[] and wt[], where each element represents the value and weight of an item respectively, also given an integer W representing the maximum capacity of the knapsack (the total weight it can hold).Put the items into the knapsack such that the sum of values associated with them is the maximum possible, without exceeding the capacity W.Note: We can either include an item completely or exclude it entirely - we cannot include a fraction of an item.Examples:Input:  W = 4, val[] = [1, 2, 3], wt[] = [4, 5, 1]Output: 3Explanation: There are two items with weight less than or equal to 4. If we select the item with weight 4, the possible value is 1, and if we select the item with weight 1, the possible value is 3. Hence, the maximum possible value is 3. We cannot put both items with weights 4 and 1 together because the capacity of the bag is 4.Input: W = 3, val[] = [1, 2, 3], wt[] = [4, 5, 6]Output: 0 Explanation: All the item weights are greater than the knapsack capacity.Try It YourselfTable of Content[Naive Approach] Recursion - O(2^n) Time and O(n) Space[Better Approach - 1] Top-Down DP or Memoization- O(n x W) Time and O(n x W) Space[Better Approach - 2] Bottom-Up DP or Tabulation - O(n x W) Time and O(n x W) Space[Expected Approach] Using Bottom-Up DP (Space-Optimized) - O(n x W) Time and O(W) Space[Naive Approach] Recursion - O(2^n) Time and O(n) SpaceThe idea is to use recursion to explore all possible combinations of items. For each item, there are two choices: either include the item in the knapsack or skip it, depending on whether its weight allows it to fit within the remaining capacity.Pick the item: If the weight of the current item is less than or equal to the remaining capacity of the knapsack, include it and reduce the remaining capacity accordingly.Do not pick the item: Skip the current item and move to the next one while keeping the remaining capacity unchanged.For every item, compute the maximum value obtained from these two choices and return the larger one as the result. 
+Given two arrays, val[] and wt[], where val[i] represents the value and wt[i] represents the weight of the ith item, and an integer W representing the knapsack capacity, find the maximum total value that can be obtained by selecting items without exceeding the capacity W.Each item can either be selected completely or not selected at all. Fractional selection of an item is not allowed.Examples:Input:  W = 4, val[] = [1, 2, 3], wt[] = [4, 5, 1]Output: 3Explanation: There are two items with weights 4 and 1 that can fit within the knapsack capacity. Selecting the item with weight 4 gives value 1, while selecting the item with weight 1 gives value 3. Both items cannot be selected together as their total weight is 5, which exceeds the capacity. Hence, the maximum possible value is 3.Input: W = 3, val[] = [1, 2, 3], wt[] = [4, 5, 6]Output: 0 Explanation: All the item weights are greater than the knapsack capacity.Try It YourselfTable of Content[Naive Approach] Recursion - O(2^n) Time and O(n) Space[Better Approach - 1] Memoization - O(n x W) Time and O(n x W) Space[Better Approach - 2]Tabulation - O(n x W) Time, O(n x W) Space[Expected Approach] Space-Optimized DP - O(n × W) Time, O(W) Space[Naive Approach] Recursion - O(2^n) Time and O(n) SpaceThe idea is to use recursion to explore all possible combinations of items. For each item, there are two choices: either include the item in the knapsack or skip it, depending on whether its weight allows it to fit within the remaining capacity.Pick the item: If the weight of the current item is less than or equal to the remaining capacity of the knapsack, include it and reduce the remaining capacity accordingly.Do not pick the item: Skip the current item and move to the next one while keeping the remaining capacity unchanged.For every item, compute the maximum value obtained from these two choices and return the larger one as the result. 
             C++
 
-    //Driver Code Starts
-#include<vector>
+    #include<vector>
 using namespace std;
-
-//Driver Code Ends
 
 // Returns the maximum value that
 // can be put in a knapsack of capacity W
@@ -35,8 +32,6 @@ int knapsack(int W, vector<int> &val, vector<int> &wt) {
 }
 
 int main() {
-
-//Driver Code Starts
     vector<int> val = {1, 2, 3};
     vector<int> wt = {4, 5, 1};
     int W = 4;
@@ -44,7 +39,6 @@ int main() {
     cout << knapsack(W, val, wt) << endl;
     return 0;
 }
-//Driver Code Ends
 
 
             Java
@@ -76,9 +70,7 @@ int main() {
         return knapsackRec(W, val, wt, n);
     }
 
-
     public static void main(String[] args) {
-//Driver Code Starts
         int[] val = {1, 2, 3};
         int[] wt = {4, 5, 1};
         int W = 4;
@@ -86,8 +78,6 @@ int main() {
         System.out.println(knapsack(W, val, wt));
     }
 }
-
-//Driver Code Ends
 
 
             Python
@@ -125,12 +115,9 @@ if __name__ == "__main__":
 
             C#
 
-    //Driver Code Starts
-using System;
+    using System;
 
 class GfG {
-//Driver Code Ends
-
 
     // Returns the maximum value that
     // can be put in a knapsack of capacity W
@@ -157,8 +144,6 @@ class GfG {
         return knapsackRec(W, val, wt, n);
     }
 
-
-//Driver Code Starts
     static void Main() {
         int[] val = { 1, 2, 3 };
         int[] wt = { 4, 5, 1 };
@@ -167,8 +152,6 @@ class GfG {
         Console.WriteLine(knapsack(W, val, wt));
     }
 }
-
-//Driver Code Ends
 
 
             JavaScript
@@ -199,26 +182,19 @@ function knapsack(W, val, wt) {
 }
 
 
-
 // Driver Code
-//Driver Code Starts
 let val = [1, 2, 3];
 let wt = [4, 5, 1];
 let W = 4;
 
 console.log(knapsack(W, val, wt));
 
-//Driver Code Ends
-
 Output3
-[Better Approach - 1] Top-Down DP or Memoization- O(n x W) Time and O(n x W) Space Note: The above function using recursion computes the same subproblems again and again. See the following recursion tree, K(1, 1) is being evaluated twice. As there are repetitions of the same subproblem again and again we can implement the following idea to solve the problem.If we get a subproblem the first time, we can solve this problem by creating a 2-D array that can store a particular state. Now if we come across the same state again instead of calculating it i again we can directly return its result stored in the table in constant time.
+[Better Approach - 1] Memoization - O(n x W) Time and O(n x W) Space Note: The above function using recursion computes the same subproblems again and again. See the following recursion tree, K(1, 1) is being evaluated twice. As there are repetitions of the same subproblem again and again we can implement the following idea to solve the problem.If we get a subproblem the first time, we can solve this problem by creating a 2-D array that can store a particular state. Now if we come across the same state again instead of calculating it i again we can directly return its result stored in the table in constant time.
             C++
 
-    //Driver Code Starts
-#include<vector>
+    #include<vector>
 using namespace std;
-
-//Driver Code Ends
 
 // Returns the maximum value that
 // can be put in a knapsack of capacity W
@@ -256,8 +232,6 @@ int knapsack(int W, vector<int> &val, vector<int> &wt) {
 }
 
 int main() {
-
-//Driver Code Starts
     vector<int> val = {1, 2, 3};
     vector<int> wt = {4, 5, 1};
     int W = 4;
@@ -265,7 +239,6 @@ int main() {
     cout << knapsack(W, val, wt) << endl;
     return 0;
 }
-//Driver Code Ends
 
 
             Java
@@ -312,9 +285,7 @@ int main() {
         return knapsackRec(W, val, wt, n, memo);
     }
 
-
     public static void main(String[] args) {
-//Driver Code Starts
         int[] val = { 1, 2, 3 };
         int[] wt = { 4, 5, 1 };
         int W = 4;
@@ -323,62 +294,51 @@ int main() {
     }
 }
 
-//Driver Code Ends
-
 
             Python
 
     # Returns the maximum value that
 # can be put in a knapsack of capacity W
-def knapsackRec(W, val, wt, n, memo):
+def knapsackRec(W, val, wt, n):
+
     # Base Case
     if n == 0 or W == 0:
         return 0
 
-    # Check if we have previously calculated the same subproblem
-    if memo[n][W] != -1:
-        return memo[n][W]
-
+    # Pick nth item if it does not exceed
+    # the capacity of knapsack
     pick = 0
-
-    # Pick nth item if it does not exceed the capacity of knapsack
     if wt[n - 1] <= W:
-        pick = val[n - 1] + knapsackRec(W - wt[n - 1], val, wt, n - 1, memo)
-    
+        pick = val[n - 1] + knapsackRec(
+            W - wt[n - 1], val, wt, n - 1
+        )
+
     # Don't pick the nth item
-    notPick = knapsackRec(W, val, wt, n - 1, memo)
-    
-    # Store the result in memo[n][W] and return it
-    memo[n][W] = max(pick, notPick)
-    return memo[n][W]
+    notPick = knapsackRec(W, val, wt, n - 1)
+
+    # Return the maximum value
+    return max(pick, notPick)
+
 
 def knapsack(W, val, wt):
     n = len(val)
-    
-    # Memoization table to store the results
-    memo = [[-1 for _ in range(W + 1)] for _ in range(n + 1)]
-    
-    return knapsackRec(W, val, wt, n, memo)
+
+    return knapsackRec(W, val, wt, n)
+
 
 if __name__ == "__main__":
-
-    val = [1, 2, 3]
-#Driver Code Starts
-    wt = [4, 5, 1]
     W = 4
+    val = [1, 2, 3]
+    wt = [4, 5, 1]
 
     print(knapsack(W, val, wt))
-#Driver Code Ends
 
 
             C#
 
-    //Driver Code Starts
-using System;
+    using System;
 
 class GfG {
-//Driver Code Ends
-
     
     // Returns the maximum value that
     // can be put in a knapsack of capacity W
@@ -423,8 +383,6 @@ class GfG {
         return knapsackRec(W, val, wt, n, ref memo);
     }
 
-
-//Driver Code Starts
     static void Main() {
         int[] val = { 1, 2, 3 };
         int[] wt = { 4, 5, 1 };
@@ -433,8 +391,6 @@ class GfG {
         Console.WriteLine(knapsack(W, val, wt));
     }
 }
-
-//Driver Code Ends
 
 
             JavaScript
@@ -474,26 +430,19 @@ function knapsack(W, val, wt) {
     return knapsackRec(W, val, wt, n, memo);
 }
 
-
 // Driver Code
-//Driver Code Starts
 const val = [1, 2, 3];
 const wt = [4, 5, 1];
 const W = 4;
 
 console.log(knapsack(W, val, wt));
 
-//Driver Code Ends
-
 Output3
-[Better Approach - 2] Bottom-Up DP or Tabulation - O(n x W) Time and O(n x W) SpaceIn the recursive solution, two parameters change: the number of items and the knapsack capacity. Recursion parameters range from 0 to n and 0 to W, respectively. Therefore, we create a 2D array dp[][] of size (n+1) × (W+1),dp[i][j] stores the maximum value that can be obtained using the first i items with a knapsack capacity of j. The table is first initialized for the base cases when i = 0 or j = 0. Remaining entries are filled using the recursive formula.For each item i and knapsack capacity j, we decide whether to pick the item or not. If we don't pick the item: dp[i][j] remains same as the previous item, that is dp[i - 1][j]. If we pick the item: dp[i][j] is updated to val[i] + dp[i - 1][j - wt[i]].
+[Better Approach - 2]Tabulation - O(n x W) Time, O(n x W) SpaceIn the recursive solution, two parameters change: the number of items and the knapsack capacity. Recursion parameters range from 0 to n and 0 to W, respectively. Therefore, we create a 2D array dp[][] of size (n+1) × (W+1),dp[i][j] stores the maximum value that can be obtained using the first i items with a knapsack capacity of j. The table is first initialized for the base cases when i = 0 or j = 0. Remaining entries are filled using the recursive formula.For each item i and knapsack capacity j, we decide whether to pick the item or not. If we don't pick the item: dp[i][j] remains same as the previous item, that is dp[i - 1][j]. If we pick the item: dp[i][j] is updated to val[i] + dp[i - 1][j - wt[i]].
             C++
 
-    //Driver Code Starts
-#include<vector>
+    #include<vector>
 using namespace std;
-
-//Driver Code Ends
 
 int knapsack(int W, vector<int> &val, vector<int> &wt) {
     int n = wt.size();
@@ -524,8 +473,6 @@ int knapsack(int W, vector<int> &val, vector<int> &wt) {
 }
 
 int main() {
-
-//Driver Code Starts
     vector<int> val = {1, 2, 3};
     vector<int> wt = {4, 5, 1};
     int W = 4;
@@ -533,15 +480,11 @@ int main() {
     cout << knapsack(W, val, wt) << endl;
     return 0;
 }
-//Driver Code Ends
 
 
             Java
 
-    //Driver Code Starts
-class GfG {
-
-//Driver Code Ends
+    class GfG {
 
     static int knapsack(int W, int[] val, int[] wt) {
         int n = wt.length;
@@ -572,8 +515,6 @@ class GfG {
     }
 
     public static void main(String[] args) {
-
-//Driver Code Starts
         int[] val = {1, 2, 3};
         int[] wt = {4, 5, 1};
         int W = 4;
@@ -581,8 +522,6 @@ class GfG {
         System.out.println(knapsack(W, val, wt));
     }
 }
-
-//Driver Code Ends
 
 
             Python
@@ -612,27 +551,20 @@ class GfG {
 
     return dp[n][W]
 
-
 if __name__ == "__main__":
-#Driver Code Starts
     val = [1, 2, 3]
     wt = [4, 5, 1]
     W = 4
     
     print(knapsack(W, val, wt))
 
-#Driver Code Ends
-
 
             C#
 
-    //Driver Code Starts
-using System;
+    using System;
 using System.Linq;
 
 class GfG {
-//Driver Code Ends
-
 
     static int knapsack(int W, int[] val, int[] wt)
     {
@@ -666,8 +598,6 @@ class GfG {
         return dp[n, W];
     }
 
-//Driver Code Starts
-
     static void Main()
     {
         int[] val = { 1, 2, 3 };
@@ -677,7 +607,6 @@ class GfG {
         Console.WriteLine(knapsack(W, val, wt));
     }
 }
-//Driver Code Ends
 
 
             JavaScript
@@ -711,25 +640,18 @@ class GfG {
 }
 
 // Driver code
-
 let val = [1, 2, 3];
-//Driver Code Starts
 let wt = [4, 5, 1];
 let W = 4;
 
 console.log(knapsack(W, val, wt));
 
-//Driver Code Ends
-
 Output3
-[Expected Approach] Using Bottom-Up DP (Space-Optimized) - O(n x W) Time and O(W) SpaceTo compute the current row of the dp[] array, we only need values from the previous row. Therefore, instead of maintaining the entire 2D dp table, we can optimize space by using just a single 1D array. By traversing the array from right to left, we ensure that previously computed values are not overwritten before they are used.
+[Expected Approach] Space-Optimized DP - O(n × W) Time, O(W) SpaceTo compute the current row of the dp[] array, we only need values from the previous row. Therefore, instead of maintaining the entire 2D dp table, we can optimize space by using just a single 1D array. By traversing the array from right to left, we ensure that previously computed values are not overwritten before they are used.
             C++
 
-    //Driver Code Starts
-#include<vector>
+    #include<vector>
 using namespace std;
-
-//Driver Code Ends
 
 int knapsack(int W, vector<int> &val, vector<int> &wt) {
 
@@ -749,8 +671,6 @@ int knapsack(int W, vector<int> &val, vector<int> &wt) {
 }
 
 int main() {
-
-//Driver Code Starts
     vector<int> val = {1, 2, 3};
     vector<int> wt = {4, 5, 1};
     int W = 4;
@@ -758,15 +678,11 @@ int main() {
     cout << knapsack(W, val, wt) << endl;
     return 0;
 }
-//Driver Code Ends
 
 
             Java
 
-    //Driver Code Starts
-class GfG {
-//Driver Code Ends
-
+    class GfG {
     
     static int knapsack(int W, int[] val, int[] wt) {
         
@@ -785,8 +701,6 @@ class GfG {
         return dp[W];
     }
 
-
-//Driver Code Starts
     public static void main(String[] args) {
         int[] val = {1, 2, 3};
         int[] wt = {4, 5, 1};
@@ -795,8 +709,6 @@ class GfG {
         System.out.println(knapsack(W, val, wt));
     }
 }
-
-//Driver Code Ends
 
 
             Python
@@ -816,26 +728,19 @@ class GfG {
     
     return dp[W]
 
-
 if __name__ == "__main__":
-#Driver Code Starts
     val = [1, 2, 3]
     wt = [4, 5, 1]
     W = 4
 
     print(knapsack(W, val, wt))
 
-#Driver Code Ends
-
 
             C#
 
-    //Driver Code Starts
-using System;
+    using System;
 
 class GfG {
-//Driver Code Ends
-
     
     static int knapsack(int W, int[] val, int[] wt) {
         
@@ -854,8 +759,6 @@ class GfG {
         return dp[W];
     }
 
-
-//Driver Code Starts
     static void Main() {
         int[] val = { 1, 2, 3 };
         int[] wt = { 4, 5, 1 };
@@ -864,8 +767,6 @@ class GfG {
         Console.WriteLine(knapsack(W, val, wt));
     }
 }
-
-//Driver Code Ends
 
 
             JavaScript
@@ -888,14 +789,10 @@ class GfG {
 }
 
 // Driver Code
-
-//Driver Code Starts
 let val = [1, 2, 3];
 let wt = [4, 5, 1];
 let W = 4;
 
 console.log(knapsack(W, val, wt));
-
-//Driver Code Ends
 
 Output3
