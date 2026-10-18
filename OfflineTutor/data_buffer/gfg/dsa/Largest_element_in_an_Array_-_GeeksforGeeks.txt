@@ -1,6 +1,6 @@
 # Largest element in an Array - GeeksforGeeks
 
-Given an arr[] of elements of size n, return the largest element given in the array.Examples:Input: arr[] = [10, 20, 4]Output: 20Explanation: Among 10, 20 and 4, 20 is the largest. Input: arr[] = [20, 10, 20, 4, 100]Output: 100Try It YourselfTable of ContentIterative Approach - O(n) Time and O(1) SpaceRecursive Approach - O(n) Time and O(n) SpaceUsing Library Methods - O(n) Time and O(1) SpaceIterative Approach - O(n) Time and O(1) SpaceTraverse the entire array and keep track of the largest element encountered. Update the maximum value whenever a larger element is found, and after scanning all elements, the stored value represents the largest element in the array.
+Given an arr[] of elements of size n, return the largest element given in the array.Examples:Input: arr[] = [10, 20, 4]Output: 20Explanation: Among 10, 20 and 4, 20 is the largest. Input: arr[] = [20, 10, 20, 4, 100]Output: 100Try It YourselfTable of ContentIterative Approach - O(n) Time and O(1) SpaceRecursive Approach - O(n) Time and O(n) SpaceLibrary Methods - O(n) Time and O(1) SpaceIterative Approach - O(n) Time and O(1) SpaceTraverse the entire array and keep track of the largest element encountered. Update the maximum value whenever a larger element is found. After scanning all elements, the stored value represents the largest element in the array.
             C++
 
     #include <iostream>
@@ -142,7 +142,7 @@ class GFG {
 const arr = [20, 10, 20, 4, 100];
 console.log(largest(arr));
 
-Output100Recursive Approach - O(n) Time and O(n) SpaceThe idea is similar to the iterative approach. Here the traversal of the array is done recursively instead of an iterative loop. 
+Output100Recursive Approach - O(n) Time and O(n) SpaceThe idea is to recursively compute the sum from second element onward and add the sum to the first element. We stop the recursion when there is a single element left. 
             C++
 
     #include <iostream>
@@ -313,7 +313,7 @@ function largest(arr) {
 const arr = [20, 10, 20, 4, 100];
 console.log(largest(arr));
 
-Output100Using Library Methods - O(n) Time and O(1) SpaceMost of the languages have a relevant max() type in-built function to find the maximum element, such as  std::max_element in C++. We can use this function to directly find the maximum element.  
+Output100Library Methods - O(n) Time and O(1) SpaceMost of the languages have a relevant max() type in-built function to find the maximum element, such as  std::max_element in C++. We can use this function to directly find the maximum element.  
             C++
 
     #include <iostream>

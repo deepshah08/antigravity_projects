@@ -1,13 +1,9 @@
 # Sum of nodes on the longest path from root to leaf node - GeeksforGeeks
 
-Given a binary tree containing n nodes. The task is to find the sum of all nodes on the longest path from root to leaf node. If two or more paths compete for the longest path, then the path having the maximum sum of nodes is considered.Examples: Input: root[] = [4, 2, 5, 1, 3]Output: 13Explanation: The highlighted nodes (4, 2, 3) above are part of the longest root to leaf path having sum = (4 + 2 + 3) = 9Input: root[] = [4, 2, 5, 7, 1, 2, 3, N, N, 6, N]Output: 13Explanation:The highlighted nodes (4, 2, 1, 6) above are part of the longest root to leaf path having sum = (4 + 2 + 1 + 6) = 13Try It YourselfTable of Content[Better Approach] Using level order traversal - O(n) Time and O(n) Space[Expected Approach] Using Recursive - O(n) Time and O(h) Space[Better Approach] Using level order traversal - O(n) Time and O(n) SpaceThe idea is to initialize maxSum and maxLen to 0, use a queue for level order traversal starting with the root, and while the queue is not empty, dequeue nodes and update maxLen and maxSum for leaf nodes, and enqueue their children with updated sums and lengths, finally returning maxSum.
+Given a binary tree containing n nodes. The task is to find the sum of all nodes on the longest path from root to leaf node. If two or more paths compete for the longest path, then the path having the maximum sum of nodes is considered.Examples: Input: root[] = [4, 2, 5, 1, 3]Output: 13Explanation:The highlighted nodes (4, 2, 3) above are part of the longest root to leaf path having sum = (4 + 2 + 3) = 9Input: root[] = [4, 2, 5, 7, 1, 2, 3, N, N, 6, N]Output: 13Explanation:The highlighted nodes (4, 2, 1, 6) above are part of the longest root to leaf path having sum = (4 + 2 + 1 + 6) = 13Try It YourselfTable of ContentLevel Order Traversal - O(n) Time and O(n) SpaceRecursive Traversal - O(n) Time and O(h) SpaceLevel Order Traversal - O(n) Time and O(n) SpaceThe idea is to do a queue based level order traversal starting with the root. While traversing, maintain  maxSum and maxLen. Both of these variables are initialized as 0.Do the following while the queueis not empty, Remove a node from queue and update maxLen and maxSum for leaf nodesEnqueue children of the removed node with updated sums and lengthsFinally return maxSum.
             C++
 
-    // C++ implementation to find the sum of nodes
-// on the longest path from root to leaf node 
-// using level order traversal
-
-#include <bits/stdc++.h>
+    #include <bits/stdc++.h>
 using namespace std;
 
 struct Node {
@@ -93,11 +89,7 @@ int main() {
 
             Java
 
-    // Java implementation to find the sum of nodes
-// on the longest path from root to leaf node 
-// using level order traversal
-
-import java.util.LinkedList;
+    import java.util.LinkedList;
 import java.util.Queue;
 
 class Node {
@@ -180,11 +172,7 @@ class GfG {
 
             Python
 
-    # Python implementation to find the sum of nodes
-# on the longest path from root to leaf node 
-# using level order traversal
-
-class Node:
+    class Node:
     def __init__(self, x):
         self.data = x
         self.left = None
@@ -244,11 +232,7 @@ if __name__ == "__main__":
 
             C#
 
-    // C# implementation to find the sum of nodes
-// on the longest path from root to leaf node 
-// using level order traversal
-
-using System;
+    using System;
 using System.Collections.Generic;
 
 class Node {
@@ -331,11 +315,7 @@ class GfG {
 
             JavaScript
 
-    // JavaScript implementation to find the sum of nodes
-// on the longest path from root to leaf node
-// using level order traversal
-
-class Node {
+    class Node {
     constructor(x) {
         this.data = x;
         this.left = null;
@@ -344,24 +324,22 @@ class Node {
 }
 
 function sumOfLongRootToLeafPath(root) {
+    // Base case: empty tree
+    if (root === null)
+        return 0;
 
-    // Base case: if the tree is empty
-    if (!root) return 0;
-
-    // Initialize variables to store 
-    // maximum length and sum
     let maxSum = 0;
     let maxLen = 0;
 
     // Queue for level order traversal
-    const queue = [[root, root.data, 1]]; 
+    let queue = [[root, root.data, 1]];
+    let front = 0;
 
-    while (queue.length) {
-        const [node, sum, length] = queue.shift();
+    while (front < queue.length) {
+        let [node, sum, length] = queue[front++];
 
-        // If it's a leaf node, check if we need to 
-        // update maxLen and maxSum
-        if (!node.left && !node.right) {
+        // Check leaf node
+        if (node.left === null && node.right === null) {
             if (length > maxLen) {
                 maxLen = length;
                 maxSum = sum;
@@ -370,26 +348,29 @@ function sumOfLongRootToLeafPath(root) {
             }
         }
 
-        // Push left and right children into the queue
-        if (node.left) {
-            queue.push
-            ([node.left, sum + node.left.data, length + 1]);
+        // Add left and right children
+        if (node.left !== null) {
+            queue.push([
+                node.left,
+                sum + node.left.data,
+                length + 1
+            ]);
         }
-        if (node.right) {
-            queue.push
-            ([node.right, sum + node.right.data, length + 1]);
+
+        if (node.right !== null) {
+            queue.push([
+                node.right,
+                sum + node.right.data,
+                length + 1
+            ]);
         }
     }
-    
+
     return maxSum;
 }
 
-//        4
-//       / \ 
-//      2   5
-//     / \ 
-//    1  3 
-const root = new Node(4);
+// Driver code
+let root = new Node(4);
 root.left = new Node(2);
 root.right = new Node(5);
 root.left.left = new Node(1);
@@ -397,7 +378,7 @@ root.left.right = new Node(3);
 
 console.log(sumOfLongRootToLeafPath(root));
 
-Output9[Expected Approach] Using Recursive - O(n) Time and O(h) SpaceThe idea is to initializes two variables to track the maximum path length and sum in a binary tree, recursively traverses the tree, adding node values to a running sum and incrementing the path length. When a null node is reached, function checks if the current path length is greater than the stored maximum. if so, function updates both the length and sum. If the lengths are equal, function updates the sum if the current sum is greater. Finally, function returns the maximum sum of the longest path from the root to a leaf.Illustration:
+Output9Recursive Traversal - O(n) Time and O(h) SpaceThe idea is to recursively traverses the tree and do the following during the traversalMaintain two variables: maximum path length and maximum path sum.For each node, add its value to the current sum and increase the path length by 1.When a null node is reached, compare the current path with the stored longest path.If the current path is longer, update both the maximum length and sum.If both paths have the same length, keep the one with the greater sum.Finally, return the sum of the longest root-to-leaf path.
             C++
 
     // C++ implementation to find the sum of nodes

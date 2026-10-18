@@ -1,6 +1,6 @@
 # Longest Subarray With Sum Divisible By K - GeeksforGeeks
 
-Given an arr[] of integers and a positive integer k, find the longest subarray's length with the sum of the elements divisible by k.Examples:Input: arr[] = [2, 7, 6, 1, 4, 5], k = 3Output: 4Explanation: The subarray [7, 6, 1, 4] has sum = 18, which is divisible by 3.Input: arr[] = [-2, 2, -5, 12, -11, -1, 7], k = 3Output: 5Explanation: The subarray [2, -5, 12, -11, -1], has sum = -3, which is divisible by 3.Input: arr[] = [1, 2, -2], k = 5Output: 2Explanation: The subarray is [2, -2] with sum = 0, which is divisible by 5.Try It YourselfTable of Content[Naive Approach] - Iterating over all subarrays - O(n^2) Time and O(1) Space[Expected Approach] - Using Prefix Sum modulo k -  O(n) Time and O(min(n, k)) Space[Naive Approach] - Iterating over all subarrays - O(n^2) Time and O(1) SpaceConsider all the subarray sums using two nested for loops and return the length of the longest subarray with a sum divisible by k. To avoid overflow while computing the sum of the subarray, we can keep track of (subarray sum % k) and if (subarray sum % k) results to 0, we can use its length to find the longest subarray divisible by k.
+Given an arr[] of integers and a positive integer k, find the longest subarray's length with the sum of the elements divisible by k.Examples:Input: arr[] = [2, 7, 6, 1, 4, 5], k = 3Output: 4Explanation: The subarray [7, 6, 1, 4] has sum = 18, which is divisible by 3.Input: arr[] = [-2, 2, -5, 12, -11, -1, 7], k = 3Output: 5Explanation: The subarray [2, -5, 12, -11, -1], has sum = -3, which is divisible by 3.Input: arr[] = [1, 2, -2], k = 5Output: 2Explanation: The subarray is [2, -2] with sum = 0, which is divisible by 5.Try It YourselfTable of Content[Naive Approach] Iterating over all subarrays - O(n^2) Time and O(1) Space[Expected Approach] Prefix Sum modulo k -  O(n) Time and O(min(n, k)) Space[Naive Approach] Iterating over all subarrays - O(n^2) Time and O(1) SpaceConsider all the subarray sums using two nested for loops and return the length of the longest subarray with a sum divisible by k. To avoid overflow while computing the sum of the subarray, we can keep track of (subarray sum % k) and if (subarray sum % k) results to 0, we can use its length to find the longest subarray divisible by k.
             C++
 
     #include <iostream>
@@ -101,7 +101,7 @@ class GfG {
 
             Python
 
-     def longestSubarrayDivK(arr, k):
+     def longestSubarrayDivK(self, arr, k):
     res = 0
     for i in range(len(arr)):
         
@@ -126,32 +126,36 @@ if __name__ == "__main__":
 
             C#
 
-     using System;
+    using System;
 
-class GfG {
+class GFG {
     static int longestSubarrayDivK(int[] arr, int k) {
+         int n = arr.Length;
         int res = 0;
-        for (int i = 0; i < arr.Length; i++) {
-            
+
+        for (int i = 0; i < n; i++) {
+
             // Initialize sum for the current subarray
             int sum = 0;
-            for (int j = i; j < arr.Length; j++) {
-                
-                // Add the current element to the subarray sum
-                sum = (sum + arr[j]) % k; 
 
-                // Update max length if sum is divisible by k
+            for (int j = i; j < n; j++) {
+
+                // Add the current element to the subarray sum
+                sum = (sum + arr[j]) % k;
+
+                // Update maximum length if sum is divisible by k
                 if (sum == 0)
                     res = Math.Max(res, j - i + 1);
             }
         }
+
         return res;
     }
 
-    static void Main(string[] args) {
-        int[] arr = {2, 7, 6, 1, 4, 5};
+    static void Main() {
+        int[] arr = { 2, 7, 6, 1, 4, 5 };
         int k = 3;
-
+       
         Console.WriteLine(longestSubarrayDivK(arr, k));
     }
 }
@@ -184,7 +188,7 @@ const k = 3;
 
 console.log(longestSubarrayDivK(arr, k));
 
-Output4[Expected Approach] - Using Prefix Sum modulo k -  O(n) Time and O(min(n, k)) SpaceThe idea is to use Prefix Sum Technique along with Hashing. On observing carefully, we can say that if a subarray arr[i…j] has sum divisible by k, then (prefix sum[i] % k) will be equal to the (prefix sum[j] % k). So, we can iterate over arr[] while maintaining a hash map or dictionary to keep track of the first occurrence of of (prefix sum % k) at each index. For each index i, the longest subarray ending at i and having sum divisible by k will be equal to i - first occurrence of (prefix sum[i] % k).
+Output4[Expected Approach] Prefix Sum modulo k -  O(n) Time and O(min(n, k)) SpaceThe idea is to use Prefix Sum Technique along with Hashing. On observing carefully, we can say that if a subarray arr[i…j] has sum divisible by k, then (prefix sum[i] % k) will be equal to the (prefix sum[j] % k). So, we can iterate over arr[] while maintaining a hash map or dictionary to keep track of the first occurrence of of (prefix sum % k) at each index. For each index i, the longest subarray ending at i and having sum divisible by k will be equal to i - first occurrence of (prefix sum[i] % k).
             C++
 
     #include <iostream>
@@ -314,24 +318,23 @@ if __name__ == "__main__":
     using System;
 using System.Collections.Generic;
 
-class GfG {
-    static int LongestSubarrayDivK(int[] arr, int k) {
+class GFG {
+    static int longestSubarrayDivK(int[] arr, int k) {
         int n = arr.Length, res = 0;
         Dictionary<int, int> prefIdx = new Dictionary<int, int>();
         int sum = 0;
 
         // Iterate over all ending points
         for (int i = 0; i < n; i++) {
-          
-            // prefix sum mod k (handling negative prefix sum)
+
+            // Prefix sum modulo k (handling negative values)
             sum = ((sum + arr[i]) % k + k) % k;
 
-            // If sum == 0, then update result with the
-            // length of subarray arr[0...i]
+            // If sum is 0, update the length of arr[0...i]
             if (sum == 0)
                 res = i + 1;
 
-            // Update max length for repeating sum
+            // Update maximum length for repeating sum
             else if (prefIdx.ContainsKey(sum)) {
                 res = Math.Max(res, i - prefIdx[sum]);
             }
@@ -341,14 +344,15 @@ class GfG {
                 prefIdx[sum] = i;
             }
         }
+
         return res;
     }
 
     static void Main() {
-        int[] arr = {2, 7, 6, 1, 4, 5};
+        int[] arr = { 2, 7, 6, 1, 4, 5 };
         int k = 3;
 
-        Console.WriteLine(LongestSubarrayDivK(arr, k));
+        Console.WriteLine(longestSubarrayDivK(arr, k));
     }
 }
 

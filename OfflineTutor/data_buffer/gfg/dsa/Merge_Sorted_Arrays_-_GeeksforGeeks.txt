@@ -1,6 +1,6 @@
 # Merge Sorted Arrays - GeeksforGeeks
 
-Given a 2D matrix, mat[][] of size n x m consisting of sorted arrays, where each row is sorted in non-decreasing order, find a single sorted array that contains all the elements from the matrix.Examples:Input: mat[][] = [[1, 3, 5, 7], [2, 4, 6, 8], [0, 9, 10, 11]] Output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]Explanation: Merging all elements from the 3 sorted arrays and sorting them results in: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].Input: mat[][] = [[1, 2, 3, 4], [2, 2, 3, 4], [5, 5, 6, 6], [7, 8, 9, 9]] Output: [1, 2, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 8, 9, 9] Explanation: Merging all elements from the 4 sorted arrays and sorting them results in:[1, 2, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 8, 9, 9] .Try It YourselfTable of Content[Naive Approach] Merge All Elements and Sort - O(n × m log(n × m))[Expected Approach] Using Merge Sort - Works Better for Equal Sized Arrays - O(n × m log n) Time and O(n × m) Space[Alternative Approach] Using Min-Heap - Works better for Different Sized Arrays - O(n × m log n) Time and O(n × m) Space[Naive Approach] Merge All Elements and Sort - O(n × m log(n × m))The idea is to merges sorted arrays by first flattening all the arrays into a single one-dimensional vector. Then sorts this combined vector using the standard sorting algorithm (sort() from the STL). This ensures the final result is a fully sorted array containing all elements from the input arrays.
+Given a 2D matrix, mat[][] of size n x m consisting of sorted arrays, where each row is sorted in non-decreasing order, find a single sorted array that contains all the elements from the matrix.Examples:Input: mat[][] = [[1, 3, 5, 7], [2, 4, 6, 8], [0, 9, 10, 11]] Output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]Explanation: Merging all elements from the 3 sorted arrays and sorting them results in: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].Input: mat[][] = [[1, 2, 3, 4], [2, 2, 3, 4], [5, 5, 6, 6], [7, 8, 9, 9]] Output: [1, 2, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 8, 9, 9] Explanation: Merging all elements from the 4 sorted arrays and sorting them results in:[1, 2, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 8, 9, 9] .Try It YourselfTable of Content[Naive Approach] Merge All and Sort - O(n × m log(n × m))[Expected Approach] Merge Sort - Better for Equal Sized - O(n × m log n) Time and O(n × m) Space[Alternative Approach] Min-Heap - Better for Different Sized  - O(n × m log n) Time and O(n × m) Space[Naive Approach] Merge All and Sort - O(n × m log(n × m))Flatten all the arrays into a single one-dimensional vector. Sort the combined vector using the standard sorting algorithm 
             C++
 
     #include <iostream>
@@ -169,7 +169,7 @@ let mat = [
 let res = mergeArrays(mat);
 console.log(res.join(" "));
 
-Output0 1 2 3 4 5 6 7 8 9 10 11 [Expected Approach] Using Merge Sort - Works Better for Equal Sized Arrays - O(n × m log n) Time and O(n × m) SpaceThe idea is to use the Divide and Conquer approach, similar to Merge Sort. We keep dividing the given sorted arrays into smaller groups until we are left with single array. Then, we start merging these single arrays upward in sorted order, gradually combining them until one fully sorted array remains.
+Output0 1 2 3 4 5 6 7 8 9 10 11 [Expected Approach] Merge Sort - Better for Equal Sized - O(n × m log n) Time and O(n × m) SpaceThe idea is to use the Divide and Conquer approach, similar to Merge Sort. Keep dividing the given sorted arrays into smaller groups until we are left with single array. Then start merging these single arrays upward in sorted order,  combining them until one fully sorted array remains.
             C++
 
     #include <iostream>
@@ -577,7 +577,7 @@ let res = mergeArrays(mat);
 console.log(res.join(' '));
 
 Output0 1 2 3 4 5 6 7 8 9 10 11 
-[Alternative Approach] Using Min-Heap - Works better for Different Sized Arrays - O(n × m log n) Time and O(n × m) SpaceThe idea is to merge sorted arrays using a Min Heap. We start by inserting the first element of each array into the heap. The smallest element is always at the top, so we remove it and add it to the output array. Then we insert the next element from the same array into the heap. We repeat this process until the heap is empty. This ensures that we always pick the smallest available element, producing a fully sorted merged array efficiently.
+[Alternative Approach] Min-Heap - Better for Different Sized  - O(n × m log n) Time and O(n × m) SpaceInsert the first element of each array into a min heap. The smallest element is always at the top, so we remove it and add it to the output array. Then we insert the next element from the same array into the heap. We repeat this process until the heap is empty. This ensures that we always pick the smallest available element, producing a fully sorted merged array efficiently.
             C++
 
     #include <iostream>
@@ -744,137 +744,144 @@ if __name__ == "__main__":
     using System;
 using System.Collections.Generic;
 
-// Custom Min-Heap Priority Queue
-class MinHeap {
-    private List<(int val, int arrIdx, int elemIdx)> heap;
-
-    public MinHeap()
+class GFG
+{
+    class MinHeap
     {
-        heap = new List<(int, int, int)>();
-    }
+        private List<int[]> heap = new List<int[]>();
 
-    private void Swap(int i, int j)
-    {
-        var temp = heap[i];
-        heap[i] = heap[j];
-        heap[j] = temp;
-    }
-
-    private void HeapifyUp(int index)
-    {
-        while (index > 0)
+        private void Swap(int i, int j)
         {
-            int parent = (index - 1) / 2;
-            if (heap[index].val < heap[parent].val)
+            int[] temp = heap[i];
+            heap[i] = heap[j];
+            heap[j] = temp;
+        }
+
+        private void HeapifyUp(int index)
+        {
+            while (index > 0)
             {
-                Swap(index, parent);
-                index = parent;
+                int parent = (index - 1) / 2;
+
+                if (heap[index][0] < heap[parent][0])
+                {
+                    Swap(index, parent);
+                    index = parent;
+                }
+                else
+                {
+                    break;
+                }
             }
-            else
-                break;
+        }
+
+        private void HeapifyDown(int index)
+        {
+            int last = heap.Count - 1;
+
+            while (true)
+            {
+                int left = 2 * index + 1;
+                int right = 2 * index + 2;
+                int smallest = index;
+
+                if (left <= last &&
+                    heap[left][0] < heap[smallest][0])
+                {
+                    smallest = left;
+                }
+
+                if (right <= last &&
+                    heap[right][0] < heap[smallest][0])
+                {
+                    smallest = right;
+                }
+
+                if (smallest != index)
+                {
+                    Swap(index, smallest);
+                    index = smallest;
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+
+        public void Add(int[] item)
+        {
+            heap.Add(item);
+            HeapifyUp(heap.Count - 1);
+        }
+
+        public int[] Pop()
+        {
+            int[] top = heap[0];
+
+            heap[0] = heap[heap.Count - 1];
+            heap.RemoveAt(heap.Count - 1);
+
+            if (heap.Count > 0)
+                HeapifyDown(0);
+
+            return top;
+        }
+
+        public int Count()
+        {
+            return heap.Count;
         }
     }
 
-    private void HeapifyDown(int index)
+    public List<int> mergeArrays(int[,] mat)
     {
-        int last = heap.Count - 1;
-        while (true)
-        {
-            int left = 2 * index + 1;
-            int right = 2 * index + 2;
-            int smallest = index;
-
-            if (left <= last && heap[left].val < heap[smallest].val)
-                smallest = left;
-            if (right <= last && heap[right].val < heap[smallest].val)
-                smallest = right;
-
-            if (smallest != index)
-            {
-                Swap(index, smallest);
-                index = smallest;
-            }
-            else break;
-        }
-    }
-
-    public void Add((int val, int arrIdx, int elemIdx) item)
-    {
-        heap.Add(item);
-        HeapifyUp(heap.Count - 1);
-    }
-
-    public (int val, int arrIdx, int elemIdx) Pop() {
-        var top = heap[0];
-        heap[0] = heap[heap.Count - 1];
-        heap.RemoveAt(heap.Count - 1);
-        HeapifyDown(0);
-        return top;
-    }
-
-    public int Count()
-    {
-        return heap.Count;
-    }
-}
-
-
-class GFG {
-    
-    static List<int> mergeArrays(int[,] mat) {
         int k = mat.GetLength(0);
         int nCols = mat.GetLength(1);
+
         List<int> res = new List<int>();
 
-        // Min-heap: {value, array index, element index}
         MinHeap minHeap = new MinHeap();
 
         // Push first element of each array
         for (int i = 0; i < k; i++)
         {
             if (nCols > 0)
-                minHeap.Add((mat[i, 0], i, 0));
+            {
+                minHeap.Add(
+                    new int[] { mat[i, 0], i, 0 }
+                );
+            }
         }
 
         // Merge all elements
         while (minHeap.Count() > 0)
         {
-            var top = minHeap.Pop();
-            int val = top.val;
-            int i = top.arrIdx;
-            int j = top.elemIdx;
+            int[] top = minHeap.Pop();
+
+            int val = top[0];
+            int i = top[1];
+            int j = top[2];
 
             res.Add(val);
 
             // Push next element from same array
             if (j + 1 < nCols)
-                minHeap.Add((mat[i, j + 1], i, j + 1));
+            {
+                minHeap.Add(
+                    new int[] { mat[i, j + 1], i, j + 1 }
+                );
+            }
         }
 
         return res;
-    }
-
-    static void Main()
-    {
-        int[,] mat = new int[,]
-        {
-            {1, 3, 5, 7},
-            {2, 4, 6, 8},
-            {0, 9, 10, 11}
-        };
-
-        List<int> result = mergeArrays(mat);
-        foreach (int x in result)
-            Console.Write(x + " ");
-        Console.WriteLine();
     }
 }
 
 
             JavaScript
 
-    // Custom Min-Heap Priority Queue
-class MinHeap {
+    class MinHeap {
     constructor() {
         this.heap = [];
     }
@@ -883,32 +890,41 @@ class MinHeap {
         [this.heap[i], this.heap[j]] = [this.heap[j], this.heap[i]];
     }
 
-    heapifyUp(index) {
-        while (index > 0) {
-            let parent = Math.floor((index - 1) / 2);
-            if (this.heap[index][0] < this.heap[parent][0]) {
-                this.swap(index, parent);
-                index = parent;
-            } else break;
+    heapifyUp(i) {
+        while (i > 0) {
+            let parent = Math.floor((i - 1) / 2);
+
+            if (this.heap[i][0] < this.heap[parent][0]) {
+                this.swap(i, parent);
+                i = parent;
+            } else {
+                break;
+            }
         }
     }
 
-    heapifyDown(index) {
-        let last = this.heap.length - 1;
+    heapifyDown(i) {
+        let n = this.heap.length;
+
         while (true) {
-            let left = 2 * index + 1;
-            let right = 2 * index + 2;
-            let smallest = index;
+            let left = 2 * i + 1;
+            let right = 2 * i + 2;
+            let smallest = i;
 
-            if (left <= last && this.heap[left][0] < this.heap[smallest][0])
+            if (left < n && this.heap[left][0] < this.heap[smallest][0]) {
                 smallest = left;
-            if (right <= last && this.heap[right][0] < this.heap[smallest][0])
-                smallest = right;
+            }
 
-            if (smallest !== index) {
-                this.swap(index, smallest);
-                index = smallest;
-            } else break;
+            if (right < n && this.heap[right][0] < this.heap[smallest][0]) {
+                smallest = right;
+            }
+
+            if (smallest !== i) {
+                this.swap(i, smallest);
+                i = smallest;
+            } else {
+                break;
+            }
         }
     }
 
@@ -918,10 +934,15 @@ class MinHeap {
     }
 
     pop() {
-        const top = this.heap[0];
+        let top = this.heap[0];
+
         this.heap[0] = this.heap[this.heap.length - 1];
         this.heap.pop();
-        this.heapifyDown(0);
+
+        if (this.heap.length > 0) {
+            this.heapifyDown(0);
+        }
+
         return top;
     }
 
@@ -930,42 +951,30 @@ class MinHeap {
     }
 }
 
-function mergeArrays(mat) {
-    let k = mat.length;
-    let res = [];
+class Solution {
+    mergeArrays(mat) {
+        let k = mat.length;
+        let res = [];
+        let minHeap = new MinHeap();
 
-    // Min-heap: [value, array index, element index]
-    const minHeap = new MinHeap();
-
-    // Push first element of each array
-    for (let i = 0; i < k; i++) {
-        if (mat[i].length > 0) {
-            minHeap.add([mat[i][0], i, 0]);
+        for (let i = 0; i < k; i++) {
+            if (mat[i].length > 0) {
+                minHeap.add([mat[i][0], i, 0]);
+            }
         }
-    }
 
-    // Merge all elements
-    while (minHeap.size() > 0) {
-        let [val, i, j] = minHeap.pop();
-        res.push(val);
+        while (minHeap.size() > 0) {
+            let [val, i, j] = minHeap.pop();
 
-        // Push next element from same array
-        if (j + 1 < mat[i].length) {
-            minHeap.add([mat[i][j + 1], i, j + 1]);
+            res.push(val);
+
+            if (j + 1 < mat[i].length) {
+                minHeap.add([mat[i][j + 1], i, j + 1]);
+            }
         }
-    }
 
-    return res;
+        return res;
+    }
 }
-
-// Driver code
-let mat = [
-    [1, 3, 5, 7],
-    [2, 4, 6, 8],
-    [0, 9, 10, 11]
-];
-
-let result = mergeArrays(mat);
-console.log(result.join(' '));
 
 Output0 1 2 3 4 5 6 7 8 9 10 11

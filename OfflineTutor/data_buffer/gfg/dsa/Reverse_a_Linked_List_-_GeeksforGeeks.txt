@@ -1,6 +1,6 @@
 # Reverse a Linked List - GeeksforGeeks
 
-Given the head of a linked list, reverse the list and return the new head.Examples: Input: Output: 5 -> 4 -> 3 -> 2 -> 1Try It YourselfTable of Content[Approach] Using Iterative Method - O(n) Time and O(1) Space[Alternate Approach 1] Using Recursion Method- O(n) Time and O(n) Space[Alternate Approach 2] Using Stack - O(n) Time and O(n) Space[Approach] Using Iterative Method - O(n) Time and O(1) SpaceThe idea is to reverse the linked list by changing the direction of links using three pointers: prev, curr, and next. At each step, point the current node to its previous node and then move all three pointers forward until the list is fully reversed.
+Given the head of a linked list, reverse the list and return the new head.Example: Input:  Output: 5 -> 4 -> 3 -> 2 -> 1Explanation: After reversing the linked list  Try It YourselfTable of ContentIterative Method - O(n) Time and O(1) SpaceRecursion Method- O(n) Time and O(n) SpaceStack - O(n) Time and O(n) SpaceIterative Method - O(n) Time and O(1) SpaceThe idea is to reverse the linked list by changing the direction of links using three pointers: prev, curr, and next. At each step, Point the current node to its previous node Then move all three pointers (prev, curr and next) forward until the list is fully reversed.At the end, prev becomes new head
             C++
 
     #include <iostream>
@@ -137,7 +137,7 @@ int main() {
     }
 }
 
-class GfG {
+class GFG {
     static Node reverseList(Node head) {
 
         Node curr = head, prev = null, next;
@@ -235,18 +235,18 @@ if __name__ == "__main__":
     using System;
 
 class Node {
-    public int Data;
-    public Node Next;
+    public int data;
+    public Node next;
 
     public Node(int newData)
     {
-        Data = newData;
-        Next = null;
+        data = newData;
+        next = null;
     }
 }
 
-class GfG {
-    static Node ReverseList(Node head) {
+class GFG {
+    static Node reverseList(Node head) {
 
         Node curr = head;
         Node prev = null;
@@ -256,10 +256,10 @@ class GfG {
         while (curr != null) {
 
             // store next
-            next = curr.Next;
+            next = curr.next;
 
             // reverse current node's next pointer
-            curr.Next = prev;
+            curr.next = prev;
 
             // move pointers one position ahead
             prev = curr;
@@ -271,10 +271,10 @@ class GfG {
 
     static void printList(Node node) {
         while (node != null) {
-            Console.Write("" + node.Data);
-            if (node.Next != null)
+            Console.Write("" + node.data);
+            if (node.next != null)
                 Console.Write(" -> ");
-            node = node.Next;
+            node = node.next;
         }
         Console.WriteLine();
     }
@@ -282,11 +282,11 @@ class GfG {
     static void Main() {
 
         Node head = new Node(1);
-        head.Next = new Node(2);
-        head.Next.Next = new Node(3);
-        head.Next.Next.Next = new Node(4);
-        head.Next.Next.Next.Next = new Node(5);
-        head = ReverseList(head);
+        head.next = new Node(2);
+        head.next.next = new Node(3);
+        head.next.next.next = new Node(4);
+        head.next.next.next.next = new Node(5);
+        head = reverseList(head);
         printList(head);
     }
 }
@@ -343,7 +343,7 @@ head.next.next.next.next = new Node(5);
 head = reverseList(head);
 printList(head);
 
-Output5 -> 4 -> 3 -> 2 -> 1[Alternate Approach 1] Using Recursion Method- O(n) Time and O(n) SpaceThe idea is to use recursion to reach the last node of the list, which becomes the new head after reversal. As the recursion starts returning, each node makes its next node point back to itself, effectively reversing the links one by one until the entire list is reversed.
+Output5 -> 4 -> 3 -> 2 -> 1Recursion Method- O(n) Time and O(n) SpaceThe idea is to reach the last node of the linked list using recursion then start reversing the linked list.Divide the list in two parts - first node and rest of the linked list. Recursively call reverse for the rest of the linked list. Link the rest linked list to first by making next of next of head to point to itself. Fix next of head node to NULL to make it last.
             C++
 
     #include <iostream>
@@ -361,7 +361,7 @@ class Node {
 };
 
 Node *reverseList(Node *head) {
-    if (head == NULL || head->next == NULL)
+    if (head == nullptr || head->next == nullptr)
         return head;
 
     // reverse the rest of linked list and put
@@ -373,7 +373,7 @@ Node *reverseList(Node *head) {
     head->next->next = head;
 
     // Update next of current head to NULL
-    head->next = NULL;
+    head->next = nullptr;
 
     return rest;
 }
@@ -473,7 +473,7 @@ int main() {
     }
 }
 
-class GfG {
+class GFG {
     static Node reverseList(Node head) {
         
         if (head == null || head.next == null)
@@ -552,8 +552,6 @@ def printList(node):
 
 if __name__ == "__main__":
 
-    # Create a hard-coded linked list:
-    # 1 -> 2 -> 3 -> 4 -> 5
     head = Node(1)
     head.next = Node(2)
     head.next.next = Node(3)
@@ -569,54 +567,54 @@ if __name__ == "__main__":
     using System;
 
 class Node {
-    public int Data;
-    public Node Next;
+    public int data;
+    public Node next;
 
     public Node(int newData) {
-        Data = newData;
-        Next = null;
+        data = newData;
+        next = null;
     }
 }
 
-class GfG {
-    static Node ReverseList(Node head) {
-        
-        if (head == null || head.Next == null)
+class GFG {
+    static Node reverseList(Node head) {
+
+        if (head == null || head.next == null)
             return head;
 
-        // reverse the rest of linked list and
+        // Reverse the rest of the linked list and
         // put the first element at the end
-        Node rest = ReverseList(head.Next);
+        Node rest = reverseList(head.next);
 
-        // make the current head as last node
-        // of remaining linked list
-        head.Next.Next = head;
+        // Make the current head as the last node
+        // of the remaining linked list
+        head.next.next = head;
 
-        // update next of current head to null
-        head.Next = null;
+        // Update next of current head to null
+        head.next = null;
 
         return rest;
     }
 
-    static void PrintList(Node node) {
+    static void printList(Node node) {
         while (node != null) {
-            Console.Write("" + node.Data);
-            if (node.Next != null)
+            Console.Write(node.data);
+            if (node.next != null)
                 Console.Write(" -> ");
-            node = node.Next;
+            node = node.next;
         }
         Console.WriteLine();
     }
 
     static void Main() {
         Node head = new Node(1);
-        head.Next = new Node(2);
-        head.Next.Next = new Node(3);
-        head.Next.Next.Next = new Node(4);
-        head.Next.Next.Next.Next = new Node(5);
+        head.next = new Node(2);
+        head.next.next = new Node(3);
+        head.next.next.next = new Node(4);
+        head.next.next.next.next = new Node(5);
 
-        head = ReverseList(head);
-        PrintList(head);
+        head = reverseList(head);
+        printList(head);
     }
 }
 
@@ -666,7 +664,7 @@ head.next.next.next.next = new Node(5);
 head = reverseList(head);
 printList(head);
 
-Output5 -> 4 -> 3 -> 2 -> 1[Alternate Approach 2] Using Stack - O(n) Time and O(n) SpaceThe idea is to traverse the linked list and push all nodes except the last node into the stack. Make the last node as the new headof the reversed linked list. Now, start popping the element and append each node to the reversed Linked List. Finally, return the head of the reversed linked list.
+Output5 -> 4 -> 3 -> 2 -> 1Stack - O(n) Time and O(n) SpaceThe idea is to traverse the linked list and push all nodes except the last node into the stack. Make the last node as the new head of the reversed linked list. Now, start popping the element and append each node to the reversed Linked List. Finally, return the head of the reversed linked list.
             C++
 
     #include <iostream>
@@ -690,7 +688,7 @@ Node *reverseList(Node *head) {
     Node *temp = head;
 
     // push all nodes except the last node into stack
-    while (temp->next != NULL) {
+    while (temp->next != nullptr) {
         s.push(temp);
         temp = temp->next;
     }
@@ -710,7 +708,7 @@ Node *reverseList(Node *head) {
     }
 
     // update the next pointer of last node of stack to null
-    temp->next = NULL;
+    temp->next = nullptr;
 
     return head;
 }
@@ -826,7 +824,7 @@ class Node {
     }
 }
 
-class GfG {
+class GFG {
     static Node reverseList(Node head) {
         Stack<Node> stack = new Stack<>();
         Node temp = head;
@@ -925,8 +923,6 @@ def printList(node):
     print()
 
 if __name__ == "__main__":
-    # create a hard-coded linked list:
-    # 1 -> 2 -> 3 -> 4 -> 5
     head = Node(1)
     head.next = Node(2)
     head.next.next = Node(3)
@@ -943,41 +939,39 @@ if __name__ == "__main__":
 using System.Collections.Generic;
 
 class Node {
-    public int Data;
-    public Node Next;
+    public int data;
+    public Node next;
 
     public Node(int newData) {
-        Data = newData;
-        Next = null;
+        data = newData;
+        next = null;
     }
 }
 
-class GfG {
-    static Node ReverseList(Node head) {
-        
+class GFG {
+    static Node reverseList(Node head) {
+
         Stack<Node> stack = new Stack<Node>();
         Node temp = head;
 
-        // push all nodes into stack
+        // Push all nodes into the stack
         while (temp != null) {
             stack.Push(temp);
-            temp = temp.Next;
+            temp = temp.next;
         }
 
-        // make the last node as new head of the linked list
+        // Make the last node as the new head of the linked list
         if (stack.Count > 0) {
             head = stack.Pop();
             temp = head;
 
-            // pop all the nodes and append to the linked list
+            // Pop all the nodes and append them to the linked list
             while (stack.Count > 0) {
-                
-                temp.Next = stack.Pop();
-
-                temp = temp.Next;
+                temp.next = stack.Pop();
+                temp = temp.next;
             }
 
-            temp.Next = null;
+            temp.next = null;
         }
 
         return head;
@@ -985,22 +979,22 @@ class GfG {
 
     static void printList(Node node) {
         while (node != null) {
-            Console.Write("" + node.Data);
-            if (node.Next != null)
+            Console.Write(node.data);
+            if (node.next != null)
                 Console.Write(" -> ");
-            node = node.Next;
+            node = node.next;
         }
         Console.WriteLine();
     }
 
     static void Main() {
         Node head = new Node(1);
-        head.Next = new Node(2);
-        head.Next.Next = new Node(3);
-        head.Next.Next.Next = new Node(4);
-        head.Next.Next.Next.Next = new Node(5);
+        head.next = new Node(2);
+        head.next.next = new Node(3);
+        head.next.next.next = new Node(4);
+        head.next.next.next.next = new Node(5);
 
-        head = ReverseList(head);
+        head = reverseList(head);
         printList(head);
     }
 }
@@ -1053,7 +1047,7 @@ function printList(node) {
     console.log(result.join(" -> "));
 }
  
-// driver code
+// Driver code
  
 let head = new Node(1);
 head.next = new Node(2);

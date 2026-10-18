@@ -1,63 +1,62 @@
 # Maximum Path Sum in a Binary Tree - GeeksforGeeks
 
-Given the root of the binary tree, Find the maximum path sum. The path may start and end at any node in the tree.Example: Input:  Output: 42Explanation: Max path sum is represented using green color nodes in the above binary tree. Input:  Output: 31Explanation: Max path sum is represented using green color nodes in the above binary tree. Try It Yourself[Approach] Using Recursion - O(n) Time and O(h) Recursive SpaceThe idea is to use postorder traversal. At each node, calculate left and right path sums, and update a global maximum with (left + node + right). Return the node’s value plus the larger side upward. The global maximum at the end gives the answer.Why this works:Any maximum path in a binary tree must pass through some "highest" node (its root in that path). By considering every node as a possible highest point and updating the maximum with left + node + right, we guarantee that the best path is captured. Returning only one side ensures valid extension toward the parent without breaking the path structure.
+Given the root of a binary tree, find the maximum path sum. The path may start and end at any node in the tree.Examples: Input: root[] = [10, 2, 10, 20, 1, N, -25, N, N, N, N, 3, 4]Output: 42Explanation: Max path sum is represented using green colored nodes in the above binary tree. Input: root[] = [-17, 11, 4, 20, -2, 10] Output: 31Explanation: Max path sum is represented using green colored nodes in the above binary tree.Try It YourselfTable of Content[Naive Approach] Downward Paths for Every Node - O(n ^ 2) Time and O(h) Space[Expected Approach] Single Postorder DFS - O(n) Time and O(h) Space[Naive Approach] Downward Paths for Every Node - O(n ^ 2) Time and O(h) SpaceThe idea is to treat every node as the turning point of the path and compute the best downward path from its left and right subtrees. The maximum answer is the largest path found among all nodes.Working of Approach:Visit each node and find the maximum downward sum from its left and right subtrees using maxDown().Ignore negative sums by taking max(0, sum) before using them.Calculate the path passing through the current node and compare it with the best answers from the left and right subtrees.Return the maximum path found among the current node, left subtree, and right subtree.
             C++
 
     #include <iostream>
 using namespace std;
 
-class Node {
-public:
+class Node
+{
+  public:
     int data;
-    Node *left, *right;
+    Node *left;
+    Node *right;
 
-    // Constructor to initialize a new node
-    Node(int value) {
-        data = value;
-        left = nullptr;
-        right = nullptr;
+    Node(int val)
+    {
+        data = val;
+        left = right = nullptr;
     }
 };
 
-// Returns the maximum path 
-// sum in the subtree with the current node as an endpoint. 
-int findMaxSumRec(Node* root, int& res) {
-  
-    if (root == NULL)
+// Returns the maximum sum from root to any descendant.
+int maxDown(Node *root)
+{
+    if (root == nullptr)
         return 0;
 
-    // Calculate maximum path sums for left and right subtrees
-    int l = max(0, findMaxSumRec(root->left, res));
-    int r = max(0, findMaxSumRec(root->right, res));
+    int left = max(0, maxDown(root->left));
+    int right = max(0, maxDown(root->right));
 
-    // Update 'res' with the maximum path
-    // sum passing through the current node
-    res = max(res, l + r + root->data);
-
-    return root->data + max(l, r);
+    return root->data + max(left, right);
 }
 
-// Returns maximum path sum in tree with given root
-int findMaxSum(Node* root) {
-    int res = root->data;
-	
-  	// Compute maximum path sum and store it in 'res'
-    findMaxSumRec(root, res);
-  
-    return res;
+int findMaxSum(Node *root)
+{
+    if (root == nullptr)
+        return INT_MIN;
+
+    int left = max(0, maxDown(root->left));
+    int right = max(0, maxDown(root->right));
+
+    int throughRoot = root->data + left + right;
+
+    return max({throughRoot, findMaxSum(root->left), findMaxSum(root->right)});
 }
 
-int main() {
-  	
-	// Representation of input binary tree:
+int main()
+{
+
+    // Representation of input binary tree:
     //            10
     //           /  \
     //          2    10
     //         / \     \  
     //        20  1    -25
-  	//                 /  \
+    //                 /  \
   	//				  3	   4
-    Node* root = new Node(10);
+    Node *root = new Node(10);
     root->left = new Node(2);
     root->right = new Node(10);
     root->left->left = new Node(20);
@@ -73,29 +72,355 @@ int main() {
 
             Java
 
-    class Node {
-    int data;
-    Node left, right;
+    import java.util.Arrays;
 
-    // Constructor to initialize a new node
-    Node(int value) {
-        data = value;
-        left = null;
-        right = null;
+class Node {
+    public int data;
+    public Node left;
+    public Node right;
+
+    public Node(int val)
+    {
+        data = val;
+        left = right = null;
     }
 }
 
-class GFG {
-    static int findMaxSumRec(Node root, int[] res) {
-      
+public class GFG {
+    // Returns the maximum sum from root to any descendant.
+    public static int maxDown(Node root)
+    {
         if (root == null)
             return 0;
 
-        // Calculate maximum path sums for left and right subtrees
+        int left = Math.max(0, maxDown(root.left));
+        int right = Math.max(0, maxDown(root.right));
+
+        return root.data + Math.max(left, right);
+    }
+
+    public static int findMaxSum(Node root)
+    {
+        if (root == null)
+            return Integer.MIN_VALUE;
+
+        int left = Math.max(0, maxDown(root.left));
+        int right = Math.max(0, maxDown(root.right));
+
+        int throughRoot = root.data + left + right;
+
+        return Math.max(throughRoot,
+                        Math.max(findMaxSum(root.left),
+                                 findMaxSum(root.right)));
+    }
+
+    public static void main(String[] args)
+    {
+        // Representation of input binary tree:
+        //            10
+        //           /  \
+        //          2    10
+        //         / \    \
+        //        20  1    -25
+        //                 /  \
+        //                3    4
+        Node root = new Node(10);
+        root.left = new Node(2);
+        root.right = new Node(10);
+        root.left.left = new Node(20);
+        root.left.right = new Node(1);
+        root.right.right = new Node(-25);
+        root.right.right.left = new Node(3);
+        root.right.right.right = new Node(4);
+
+        System.out.println(findMaxSum(root));
+    }
+}
+
+
+            Python
+
+    class Node:
+    def __init__(self, val):
+        self.data = val
+        self.left = None
+        self.right = None
+
+# Returns the maximum sum from root to any descendant.
+def maxDown(root):
+    if root is None:
+        return 0
+
+    left = max(0, maxDown(root.left))
+    right = max(0, maxDown(root.right))
+
+    return root.data + max(left, right)
+
+
+def findMaxSum(root):
+    if root is None:
+        return float('-inf')
+
+    left = max(0, maxDown(root.left))
+    right = max(0, maxDown(root.right))
+
+    throughRoot = root.data + left + right
+
+    return max(throughRoot, findMaxSum(root.left), findMaxSum(root.right))
+
+
+if __name__ == "__main__":
+    # Representation of input binary tree:
+    #            10
+    #           /  \
+    #          2    10
+    #         / \     \
+    #        20  1    -25
+    #                 /  \
+    #                3    4
+    root = Node(10)
+    root.left = Node(2)
+    root.right = Node(10)
+    root.left.left = Node(20)
+    root.left.right = Node(1)
+    root.right.right = Node(-25)
+    root.right.right.left = Node(3)
+    root.right.right.right = Node(4)
+
+    print(findMaxSum(root))
+
+
+            C#
+
+    using System;
+
+public class Node {
+    public int data;
+    public Node left;
+    public Node right;
+
+    public Node(int val)
+    {
+        data = val;
+        left = right = null;
+    }
+}
+
+public class GFG {
+    // Returns the maximum sum from root to any descendant.
+    public static int MaxDown(Node root)
+    {
+        if (root == null)
+            return 0;
+
+        int left = Math.Max(0, MaxDown(root.left));
+        int right = Math.Max(0, MaxDown(root.right));
+
+        return root.data + Math.Max(left, right);
+    }
+
+    public static int findMaxSum(Node root)
+    {
+        if (root == null)
+            return int.MinValue;
+
+        int left = Math.Max(0, MaxDown(root.left));
+        int right = Math.Max(0, MaxDown(root.right));
+
+        int throughRoot = root.data + left + right;
+
+        return Math.Max(throughRoot,
+                        Math.Max(findMaxSum(root.left),
+                                 findMaxSum(root.right)));
+    }
+
+    public static void Main()
+    {
+        // Representation of input binary tree:
+        //            10
+        //           /  \
+        //          2    10
+        //         / \    \
+        //        20  1    -25
+        //                 /  \
+        //                3    4
+        Node root = new Node(10);
+        root.left = new Node(2);
+        root.right = new Node(10);
+        root.left.left = new Node(20);
+        root.left.right = new Node(1);
+        root.right.right = new Node(-25);
+        root.right.right.left = new Node(3);
+        root.right.right.right = new Node(4);
+
+        Console.WriteLine(findMaxSum(root));
+    }
+}
+
+
+            JavaScript
+
+    class Node {
+    constructor(val)
+    {
+        this.data = val;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+// Returns the maximum sum from root to any descendant.
+function maxDown(root)
+{
+    if (root === null)
+        return 0;
+
+    const left = Math.max(0, maxDown(root.left));
+    const right = Math.max(0, maxDown(root.right));
+
+    return root.data + Math.max(left, right);
+}
+
+function findMaxSum(root)
+{
+    if (root === null)
+        return Number.NEGATIVE_INFINITY;
+
+    const left = Math.max(0, maxDown(root.left));
+    const right = Math.max(0, maxDown(root.right));
+
+    const throughRoot = root.data + left + right;
+
+    return Math.max(throughRoot, findMaxSum(root.left),
+                    findMaxSum(root.right));
+}
+
+// Driver Code
+// Representation of input binary tree:
+//            10
+//           /  \
+//          2    10
+//         / \    \
+//        20  1    -25
+//                 /  \
+//                3    4
+const root = new Node(10);
+root.left = new Node(2);
+root.right = new Node(10);
+root.left.left = new Node(20);
+root.left.right = new Node(1);
+root.right.right = new Node(-25);
+root.right.right.left = new Node(3);
+root.right.right.right = new Node(4);
+
+console.log(findMaxSum(root));
+
+Output42Note: This approach recomputes the maximum downward path for the same subtrees multiple times. As a result, it takes O(n ^ 2) time in the worst case (especially for skewed trees) and may lead to TLE for large inputs.[Expected Approach] Single Postorder DFS - O(n) Time and O(h) SpaceThe idea is to use postorder traversal. At each node, calculate left and right path sums, and update a global maximum with (left + node + right). Return the node’s value plus the larger side upward. The global maximum at the end gives the answer.Why This Works?The maximum path in the tree must pass through some node as its highest (turning) point. During the traversal, each node is treated as this turning point and the path sum through it is computed. The answer is updated whenever a larger path is found, while only the best downward path is returned to the parent so that the path remains continuous.Working of Approach:Traverse the binary tree using postorder recursion so that the left and right subtree results are available before processing the current node.For every node, compute the maximum downward path sum from its left and right child, ignoring negative contributions using max(0, pathSum).Update res with the maximum path sum passing through the current node as left + right + root->data.Return root->data + max(left, right) so that only one branch can be extended to the parent.After the traversal completes, res stores the maximum path sum between any two nodes in the binary tree.Let us understand with an example:Input: root[] = [10, 2, 10, 20, 1, N, -25, N, N, N, N, 3, 4]Start the postorder traversal from the root and first process the left and right subtrees recursively.At node 2, the left contribution is 20 and the right contribution is 1, so res becomes 20 + 2 + 1 = 23, and 22 is returned to its parent.At node -25, the best downward contributions are 3 and 4, so the path sum is 3 + (-25) + 4 = -18. The value -21 is returned upward.At the root 10, the left contribution is 22 and the right contribution is 10, giving the path sum 22 + 10 + 10 = 42. Update res = 42.After the traversal completes, res = 42, which is the maximum path sum in the binary tree. 
+            C++
+
+    #include <iostream>
+using namespace std;
+
+class Node
+{
+  public:
+    int data;
+    Node *left, *right;
+
+    // Constructor to initialize a new node
+    Node(int value)
+    {
+        data = value;
+        left = right = nullptr;
+    }
+};
+
+// Returns the maximum path
+// sum in the subtree with the current node as an endpoint.
+int findMaxSumRec(Node *root, int &res)
+{
+
+    if (root == NULL)
+        return 0;
+
+    // Calculate maximum path sums for left and right subtrees
+    int l = max(0, findMaxSumRec(root->left, res));
+    int r = max(0, findMaxSumRec(root->right, res));
+
+    // Update 'res' with the maximum path
+    // sum passing through the current node
+    res = max(res, l + r + root->data);
+
+    return root->data + max(l, r);
+}
+
+// Returns maximum path sum in tree with given root
+int findMaxSum(Node *root)
+{
+    int res = root->data;
+
+    // Compute maximum path sum and store it in 'res'
+    findMaxSumRec(root, res);
+
+    return res;
+}
+
+int main()
+{
+
+    // Representation of input binary tree:
+    //            10
+    //           /  \
+    //          2    10
+    //         / \     \  
+    //        20  1    -25
+    //                 /  \
+  	//				  3	   4
+    Node *root = new Node(10);
+    root->left = new Node(2);
+    root->right = new Node(10);
+    root->left->left = new Node(20);
+    root->left->right = new Node(1);
+    root->right->right = new Node(-25);
+    root->right->right->left = new Node(3);
+    root->right->right->right = new Node(4);
+
+    cout << findMaxSum(root);
+    return 0;
+}
+
+
+            Java
+
+    import java.util.*;
+
+class Node {
+    public int data;
+    public Node left, right;
+
+    // Constructor to initialize a new node
+    Node(int value)
+    {
+        data = value;
+        left = right = null;
+    }
+}
+
+public class GFG {
+    // Returns the maximum path
+    // sum in the subtree with the current node as an
+    // endpoint.
+    static int findMaxSumRec(Node root, int[] res)
+    {
+        if (root == null)
+            return 0;
+
+        // Calculate maximum path sums for left and right
+        // subtrees
         int l = Math.max(0, findMaxSumRec(root.left, res));
         int r = Math.max(0, findMaxSumRec(root.right, res));
 
-        // Update 'res' with the maximum path
+        // Update'res' with the maximum path
         // sum passing through the current node
         res[0] = Math.max(res[0], l + r + root.data);
 
@@ -103,25 +428,26 @@ class GFG {
     }
 
     // Returns maximum path sum in tree with given root
-    static int findMaxSum(Node root) {
-        int[] res = {root.data};
-        
+    static int findMaxSum(Node root)
+    {
+        int[] res = { root.data };
+
         // Compute maximum path sum and store it in 'res'
         findMaxSumRec(root, res);
-      
+
         return res[0];
     }
 
-    public static void main(String[] args) {
-        
+    public static void main(String[] args)
+    {
         // Representation of input binary tree:
         //            10
         //           /  \
         //          2    10
-        //         / \     \  
+        //         / \    \
         //        20  1    -25
         //                 /  \
-        //                3     4
+        //                3    4
         Node root = new Node(10);
         root.left = new Node(2);
         root.right = new Node(10);
@@ -144,11 +470,12 @@ class GFG {
         self.left = None
         self.right = None
 
-# Returns the maximum path 
-#sum in the subtree with the current node as an endpoint. 
+# Returns the maximum path
+# sum in the subtree with the current node as an endpoint.
+
+
 def findMaxSumRec(root, res):
-  
-    if root is None:
+    if not root:
         return 0
 
     # Calculate maximum path sums for left and right subtrees
@@ -156,30 +483,32 @@ def findMaxSumRec(root, res):
     r = max(0, findMaxSumRec(root.right, res))
 
     # Update 'res' with the maximum path
-    #sum passing through the current node
+    # sum passing through the current node
     res[0] = max(res[0], l + r + root.data)
 
     return root.data + max(l, r)
 
 # Returns maximum path sum in tree with given root
+
+
 def findMaxSum(root):
     res = [root.data]
-    
-    # Compute maximum path sum and store it in 'res'
+
+    # Compute maximum path sum and store it in'res'
     findMaxSumRec(root, res)
-  
+
     return res[0]
 
-if __name__ == "__main__":
-    
+
+if __name__ == '__main__':
     # Representation of input binary tree:
     #            10
     #           /  \
     #          2    10
-    #         / \     \  
+    #         / \    \
     #        20  1    -25
     #                 /  \
-    #                3     4
+    #                3    4
     root = Node(10)
     root.left = Node(2)
     root.right = Node(10)
@@ -196,58 +525,62 @@ if __name__ == "__main__":
 
     using System;
 
-class Node {
+public class Node {
     public int data;
     public Node left, right;
 
     // Constructor to initialize a new node
-    public Node(int value) {
+    public Node(int value)
+    {
         data = value;
-        left = null;
-        right = null;
+        left = right = null;
     }
 }
 
-class GFG {
-  
-    // Returns the maximum path 
-    //sum in the subtree with the current node as an endpoint. 
-    static int findMaxSumRec(Node root, ref int res) {
-      
+public class GFG {
+    // Returns the maximum path
+    // sum in the subtree with the current node as an
+    // endpoint.
+    static int FindMaxSumRec(Node root, ref int res)
+    {
         if (root == null)
             return 0;
 
-        // Calculate maximum path sums for left and right subtrees
-        int l = Math.Max(0, findMaxSumRec(root.left, ref res));
-        int r = Math.Max(0, findMaxSumRec(root.right, ref res));
+        // Calculate maximum path sums for left and right
+        // subtrees
+        int l = Math.Max(0,
+                         FindMaxSumRec(root.left, ref res));
+        int r = Math.Max(
+            0, FindMaxSumRec(root.right, ref res));
 
-        // Update 'res' with the maximum path
-        //sum passing through the current node
+        // Update'res' with the maximum path
+        // sum passing through the current node
         res = Math.Max(res, l + r + root.data);
 
         return root.data + Math.Max(l, r);
     }
 
     // Returns maximum path sum in tree with given root
-    static int findMaxSum(Node root) {
+    static int findMaxSum(Node root)
+    {
         int res = root.data;
-        
-        // Compute maximum path sum and store it in 'res'
-        findMaxSumRec(root, ref res);
-      
+
+        // Compute maximum path sum and store it in'res'
+        FindMaxSumRec(root, ref res);
+
         return res;
     }
 
-    static void Main(string[] args) {
-        
+    public static void Main()
+    {
         // Representation of input binary tree:
         //            10
         //           /  \
         //          2    10
-        //         / \     \  
+        //         / \    \
         //        20  1    -25
         //                 /  \
-        //                3     4
+        //                3    4
         Node root = new Node(10);
         root.left = new Node(2);
         root.right = new Node(10);
@@ -265,49 +598,53 @@ class GFG {
             JavaScript
 
     class Node {
-    constructor(value) {
+    constructor(value)
+    {
         this.data = value;
         this.left = null;
         this.right = null;
     }
 }
 
-// Returns the maximum path 
-//sum in the subtree with the current node as an endpoint. 
-function findMaxSumRec(root, res) {
-  
-    if (root === null)
+// Returns the maximum path
+// sum in the subtree with the current node as an endpoint.
+function findMaxSumRec(root, res)
+{
+    if (!root)
         return 0;
 
-    // Calculate maximum path sums for left and right subtrees
+    // Calculate maximum path sums for left and right
+    // subtrees
     let l = Math.max(0, findMaxSumRec(root.left, res));
     let r = Math.max(0, findMaxSumRec(root.right, res));
 
-    // Update 'res' with the maximum path
-    //sum passing through the current node
-    res.val = Math.max(res.val, l + r + root.data);
+    // Update'res' with the maximum path
+    // sum passing through the current node
+    res[0] = Math.max(res[0], l + r + root.data);
 
     return root.data + Math.max(l, r);
 }
 
 // Returns maximum path sum in tree with given root
-function findMaxSum(root) {
-    let res = { val: root.data };
-    
-    // Compute maximum path sum and store it in 'res'
+function findMaxSum(root)
+{
+    let res = [ root.data ];
+
+    // Compute maximum path sum and store it in'res'
     findMaxSumRec(root, res);
-  
-    return res.val;
+
+    return res[0];
 }
 
+// Driver Code
 // Representation of input binary tree:
 //            10
 //           /  \
 //          2    10
-//         / \     \  
+//         / \    \
 //        20  1    -25
 //                 /  \
-//                3     4
+//                3    4
 let root = new Node(10);
 root.left = new Node(2);
 root.right = new Node(10);

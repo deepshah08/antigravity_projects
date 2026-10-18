@@ -1,6 +1,6 @@
 # K maximum sum combinations from two arrays - GeeksforGeeks
 
-Given two integer arrays a[] and b[] of the same length, and an positive integer k, the goal is to find the top k maximum sum combinations, where each combination is formed by adding one element from a and one from b. Each index from both arrays can be used at most once in a pair. Return the k largest sums in descending order.Examples:Input: a[] = [3, 2], b[] = [1, 4], k = 2Output: [7, 6]Explanation: Possible sums: 3 + 1 = 4, 3 + 4 = 7, 2 + 1 = 3, 2 + 4 = 6, Top 2 sums are 7 and 6.Input: a[] = [1, 4, 2, 3], b[] = [2, 5, 1, 6], k = 3Output: [10, 9, 9]Explanation: The top 3 maximum possible sums are : 4 + 6 = 10, 3 + 6 = 9, and 4 + 5 = 9.Try It YourselfTable of Content[Naive Approach]  Generate All Combinations - O(n^2 × log (n^2)) Time and O(n^2) Space[Better Approach]  Heap-Based Top-K Pair Sum Approach - O(n^2 × log k) Time and O(k) Space[Expected Approach] Max Heap with Index Tracking - O(k × log k) Time and O(k) Space[Naive Approach]  Generate All Combinations - O(n2 × log (n2)) Time and O(n2) SpaceThe idea is to compute all possible sum combinations by pairing each element from array a[] with every element from array b[]. Since each element in a can form a pair with every element in b, we use a nested loop to generate all such sums. After generating these sums, we sort them in descending order and collect the top k values as the final result.
+Given two integer arrays a[] and b[] of the same length, and an positive integer k, the goal is to find the top k maximum sum combinations, where each combination is formed by adding one element from a and one from b. Each index from both arrays can be used at most once in a pair. Return the k largest sums in descending order.Examples:Input: a[] = [3, 2], b[] = [1, 4], k = 2Output: [7, 6]Explanation: Possible sums: 3 + 1 = 4, 3 + 4 = 7, 2 + 1 = 3, 2 + 4 = 6, Top 2 sums are 7 and 6.Input: a[] = [1, 4, 2, 3], b[] = [2, 5, 1, 6], k = 3Output: [10, 9, 9]Explanation: The top 3 maximum possible sums are : 4 + 6 = 10, 3 + 6 = 9, and 4 + 5 = 9.Try It YourselfTable of Content[Naive Approach]  Generate All Combinations - O(n^2 × log (n^ 2)) Time and O(n^2) Space[Better Approach]  Heap-Based Top-K Pair Sum Approach - O(n^2 × log k) Time and O(k) Space[Expected Approach] Max Heap with Index Tracking - O(n × log n) Time and O(k) Space[Naive Approach]  Generate All Combinations - O(n^2 × log (n^ 2)) Time and O(n^2) SpaceThe idea is to compute all possible sum combinations by pairing each element from array a[] with every element from array b[]. Since each element in a can form a pair with every element in b, we use a nested loop to generate all such sums. After generating pair sums, we sort them in descending order and collect the top k values as the final result.
             C++
 
     #include <iostream>
@@ -145,44 +145,49 @@ if __name__ == "__main__":
     using System;
 using System.Collections.Generic;
 
-class GfG {
-    public static List<int> topKSumPairs(int[] a, int[] b, int k) {
-
+class GfG
+{
+    public static List<int> topKSumPairs(int[] a, int[] b, int k)
+    {
         int n = a.Length;
 
-        // store all possible pair sums
+        // Store all possible pair sums
         List<int> allpossible = new List<int>();
 
-        // generate all possible sums by pairing every
-        // element of 'a' with every element of 'b'
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+        // Generate all possible sums
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
                 int currSum = a[i] + b[j];
                 allpossible.Add(currSum);
             }
         }
 
-        // sort the sums in descending order to
-        // get the largest ones first
+        // Sort in descending order
         allpossible.Sort((x, y) => y.CompareTo(x));
 
-        // extract the top 'k' largest sums
+        // Extract top k sums
         List<int> res = new List<int>();
-        for (int i = 0; i < k; i++) {
+
+        for (int i = 0; i < k; i++)
+        {
             res.Add(allpossible[i]);
         }
 
         return res;
     }
 
-    public static void Main() {
-        
-        int[] a = {1, 4, 2, 3};
-        int[] b = {2, 5, 1, 6};
+    public static void Main()
+    {
+        int[] a = { 1, 4, 2, 3 };
+        int[] b = { 2, 5, 1, 6 };
         int k = 3;
 
         List<int> res = topKSumPairs(a, b, k);
-        foreach (int sum in res) {
+
+        foreach (int sum in res)
+        {
             Console.Write(sum + " ");
         }
     }
@@ -227,7 +232,7 @@ let k = 3;
 let res = topKSumPairs(a, b, k);
 console.log(res.join(" "));
 
-Output10 9 9 [Better Approach]  Heap-Based Top-K Pair Sum Approach - O(n2 × log k) Time and O(k) SpaceThe idea is to generate all possible pair sums by adding each element from array a[] to each element from array b[]. A min-heap of size k is used to maintain the top k maximum sums. For every new pair sum, we insert it into the heap if it’s among the largest k seen so far. Finally, we extract and reverse the heap to return the top k sums in descending order.
+Output10 9 9 [Better Approach]  Heap-Based Top-K Pair Sum Approach - O(n^2 × log k) Time and O(k) SpaceGenerate all possible pair sums by adding each element from array a[] to each element from array b[]. A min-heap of size k is used to maintain the top k maximum sums. For every new pair sum, we insert it into the heap if it’s among the largest k seen so far. We extract and reverse the heap to return the top k sums in descending order.
             C++
 
     #include <iostream>
@@ -477,8 +482,7 @@ const k = 3;
 const res = topKSumPairs(a, b, k);
 console.log(res.join(" "));
 
-Output7 6 
-[Expected Approach] Max Heap with Index Tracking - O(n × log n) Time and O(k) SpaceThe idea is to combine the largest elements from both arrays to form the highest possible sums. By sorting the arrays in descending order, we ensure that the sum at indices (0, 0) is the maximum. From this point, the next potential largest sums lie at positions (i+1, j) and (i, j+1) because of the sorted order. By exploring these candidates using a max heap and tracking visited index pairs, we efficiently gather the top k combinations without redundantly computing all n2 possibilities.Steps by step approach:Sort both arrays a[] and b[] in descending order to ensure the largest sums are considered first.Initialize a max heap and insert the sum of the first elements (a[0] + b[0]) along with their indices (0, 0).Use a set to track visited index pairs to prevent reprocessing the same combinations.Repeat the following for k iterations to extract the top k sums:Pop the current largest sum from the heap and add it to the result.Push the next two possible combinations: (i+1, j) and (i, j+1) into the heap if within bounds and not visited.
+Output10 9 9 [Expected Approach] Max Heap with Index Tracking - O(n × log n) Time and O(k) SpaceThe idea is to combine the largest elements from both arrays to form the highest possible sums. Sort the arrays in descending order to ensure that the sum at indices (0, 0) is the maximum. From this point, the next potential largest sums lie at positions (i+1, j) and (i, j+1) because of the sorted order. By exploring these candidates using a max heap and tracking visited index pairs, we efficiently gather the top k.Steps by step approach:Sort both arrays a[] and b[] in descending order to ensure the largest sums are considered first.Initialize a max heap and insert the sum of the first elements (a[0] + b[0]) along with their indices (0, 0).Use a set to track visited index pairs to prevent reprocessing the same combinations.Repeat for k iterations by popping the largest sum from the heap and adding it to the result. Then, insert the next possible combinations (i+1, j) and (i, j+1) into the heap if they are within bounds and have not been visited.
             C++
 
     //Driver Code Starts
@@ -772,6 +776,7 @@ class MaxHeap {
 
     push(element) {
         this.heap.push(element);
+        
         // Sort the heap to maintain max-heap property (descending order)
         this.heap.sort((a, b) => b[0] - a[0]);
     }
@@ -789,6 +794,7 @@ class MaxHeap {
 function topKSumPairs(a, b, k) {
     
     let n = a.length;
+    
     // Sort both arrays in descending order
     a.sort((x, y) => y - x);
     b.sort((x, y) => y - x);
@@ -800,10 +806,10 @@ function topKSumPairs(a, b, k) {
     heap.push([a[0] + b[0], 0, 0]);
     used.add(`0,0`);
 
-    const res = [];
-
 
 //Driver Code Starts
+    const res = [];
+
     // Extract top k combinations
     while (res.length < k) {
         const [sum, i, j] = heap.pop();

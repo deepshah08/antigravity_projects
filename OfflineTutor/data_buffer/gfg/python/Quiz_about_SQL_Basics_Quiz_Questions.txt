@@ -1,0 +1,69 @@
+# Quiz about SQL Basics Quiz Questions
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesTutorialsPracticeJobsDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsEarn Google BadgeBasicsSQLData TypesOperatorsCommandsDatabase OperationsCREATE TABLEQueries & OperationsSELECT QueryINSERT INTOUPDATEDELETEWHEREAliasesJoins & FunctionsJoinsCROSS JOINDate FunctionsString functionsData Constraints & Aggregate FunctionsNOT NULL ConstraintPRIMARY KEYCount()SUM()MAX()AVG()Advanced SQL TopicsSubqueryWindow FunctionsStored ProceduresTriggersPerformance TuningTRANSACTIONSDatabase Design & SecurityER ModelNormalizationKeys in Relational ModelSQL InjectionData EncryptionSQL BackupORM in DBMSCoursesPlacement 360 CourseData Science 360 CourseMERN Full Stack CoursePlacement 360 CourseExploreSQL Basics Quiz QuestionsLast Updated : DiscussCommentsQuestion 1What does SQL stand for?AStructure Query LanguageBSequential Query LanguageCSystematic Query LanguageDStructured Question LanguageQuestion 2Which SQL keyword is used to retrieve data from a database?AFETCHBEXTRACTCSELECTDRECOVERQuestion 3What is the purpose of the WHERE clause in SQL?ATo specify which columns to selectBTo specify which table to select fromCTo filter rows based on a specified conditionDTo order the resultsQuestion 4Which SQL statement is used to update data in a database?AMODIFYBUPDATECALTERDCHANGEQuestion 5What does the SQL keyword "GROUP BY" do?AOrders the result set in ascending orderBGroup rows that have the same values into summary rowsCFilters rows based on a specified conditionDJoins two or more tablesQuestion 6Which SQL operator is used to combine two or more conditions in a WHERE clause?AANDBORCNOTDLIKEQuestion 7What does the SQL keyword "ORDER BY" do?AFilters rows based on a specified conditionBGroup rows that have the same values into summary rowsCOrders the result set based on specified columnsDJoins two or more tablesQuestion 8Which SQL statement is used to delete data from a database?ATRUNCATEBDELETECDROPDREMOVEQuestion 9What does the SQL keyword "DISTINCT" do?AFilters duplicate rows from the result setBOrders the result set in ascending orderCGroup rows that have the same values into summary rowsDJoins two or more tablesQuestion 10Which SQL statement is used to add a new column to an existing table?AMODIFYBINSERTCALTERDADDTags:SQLSQL QuizDatabasesThere are 10 questions to complete.Take a part in the ongoing discussionView All Discussion

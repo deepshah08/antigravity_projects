@@ -1,6 +1,6 @@
 # Print n to 1  using Recursion - GeeksforGeeks
 
-Given an integer n. Print numbers from n to 1 using recursion.Examples:Input: n = 3Output: [3, 2, 1]Explanation: Print numbers in reverse order from n down to 1.Input: n = 10Output: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]Explanation: Print numbers in reverse order from n down to 1.Try It YourselfApproach:The idea is to use recursion to print numbers in decreasing order. We first check the base case: if n becomes 0, we stop further recursive calls. Otherwise, we first print the current number n and then make a recursive function call with n-1. This way, the function keeps reducing the problem size until it reaches the base case.
+Given an integer n. Print numbers from n to 1 using recursion.Examples:Input: n = 3Output: [3, 2, 1]Explanation: Print numbers in reverse order from n down to 1.Input: n = 10Output: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]Explanation: Print numbers in reverse order from n down to 1.Try It YourselfThe idea is to use recursion to print numbers in decreasing order.First check the base case: if n becomes 0, we stop further recursive calls. Otherwise, print the current number n and then make a recursive function call with n-1. The function keeps reducing the problem size until it reaches the base case.
             C++
 
     #include <iostream>

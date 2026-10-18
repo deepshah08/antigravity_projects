@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T03:33:58.782Z",
+  "generatedAt": "2026-10-18T02:43:26.637Z",
   "topics": [
     {
       "id": "dsa",
@@ -2980,596 +2980,661 @@
         },
         {
           "id": "python-011",
-          "title": "Functions",
-          "url": "https://www.geeksforgeeks.org/python/python-functions/"
-        },
-        {
-          "id": "python-012",
-          "title": "Pass in Functions",
-          "url": "https://www.geeksforgeeks.org/python/python-pass-statement/"
-        },
-        {
-          "id": "python-013",
-          "title": "Global and Local Variables",
-          "url": "https://www.geeksforgeeks.org/python/global-local-variables-python/"
-        },
-        {
-          "id": "python-014",
-          "title": "Recursion",
-          "url": "https://www.geeksforgeeks.org/python/recursion-in-python/"
-        },
-        {
-          "id": "python-015",
-          "title": "*args and **kwargs in Function",
-          "url": "https://www.geeksforgeeks.org/python/args-kwargs-python/"
-        },
-        {
-          "id": "python-016",
-          "title": "First Class Function",
-          "url": "https://www.geeksforgeeks.org/python/first-class-functions-python/"
-        },
-        {
-          "id": "python-017",
-          "title": "Lambda Function",
-          "url": "https://www.geeksforgeeks.org/python/python-lambda-anonymous-functions-filter-map-reduce/"
-        },
-        {
-          "id": "python-018",
-          "title": "Map",
-          "url": "https://www.geeksforgeeks.org/python/python-map-function/"
-        },
-        {
-          "id": "python-019",
-          "title": "Reduce",
-          "url": "https://www.geeksforgeeks.org/python/reduce-in-python/"
-        },
-        {
-          "id": "python-020",
-          "title": "Filter Function",
-          "url": "https://www.geeksforgeeks.org/python/filter-in-python/"
-        },
-        {
-          "id": "python-021",
-          "title": "Inner Function",
-          "url": "https://www.geeksforgeeks.org/python/python-inner-functions/"
-        },
-        {
-          "id": "python-022",
-          "title": "Decorators",
-          "url": "https://www.geeksforgeeks.org/python/decorators-in-python/"
-        },
-        {
-          "id": "python-023",
-          "title": "Number Guessing Game",
-          "url": "https://www.geeksforgeeks.org/python/number-guessing-game-in-python/"
-        },
-        {
-          "id": "python-024",
-          "title": "Strings",
-          "url": "https://www.geeksforgeeks.org/python/python-string/"
-        },
-        {
-          "id": "python-025",
-          "title": "List",
-          "url": "https://www.geeksforgeeks.org/python/python-lists/"
-        },
-        {
-          "id": "python-026",
-          "title": "Tuples",
-          "url": "https://www.geeksforgeeks.org/python/python-tuples/"
-        },
-        {
-          "id": "python-027",
-          "title": "Dictionary",
-          "url": "https://www.geeksforgeeks.org/python/python-dictionary/"
-        },
-        {
-          "id": "python-028",
-          "title": "Sets",
-          "url": "https://www.geeksforgeeks.org/python/sets-in-python/"
-        },
-        {
-          "id": "python-029",
-          "title": "Arrays",
-          "url": "https://www.geeksforgeeks.org/python/python-arrays/"
-        },
-        {
-          "id": "python-030",
-          "title": "List Comprehension",
-          "url": "https://www.geeksforgeeks.org/python/python-list-comprehension/"
-        },
-        {
-          "id": "python-031",
-          "title": "Tic Tac Toe Game",
-          "url": "https://www.geeksforgeeks.org/python/python-implementation-automatic-tic-tac-toe-game-using-random-number/"
-        },
-        {
-          "id": "python-032",
-          "title": "Counters",
-          "url": "https://www.geeksforgeeks.org/python/counters-in-python-set-1/"
-        },
-        {
-          "id": "python-033",
-          "title": "Heapq",
-          "url": "https://www.geeksforgeeks.org/python/heap-queue-or-heapq-in-python/"
-        },
-        {
-          "id": "python-034",
-          "title": "Deque",
-          "url": "https://www.geeksforgeeks.org/python/deque-in-python/"
-        },
-        {
-          "id": "python-035",
-          "title": "OrderedDict",
-          "url": "https://www.geeksforgeeks.org/python/ordereddict-in-python/"
-        },
-        {
-          "id": "python-036",
-          "title": "Defaultdict",
-          "url": "https://www.geeksforgeeks.org/python/defaultdict-in-python/"
-        },
-        {
-          "id": "python-037",
-          "title": "DSA with Python",
-          "url": "https://www.geeksforgeeks.org/dsa/python-data-structures-and-algorithms/"
-        },
-        {
-          "id": "python-038",
-          "title": "Python OOP",
-          "url": "https://www.geeksforgeeks.org/python/python-oops-concepts/"
-        },
-        {
-          "id": "python-039",
-          "title": "Classes and Objects",
-          "url": "https://www.geeksforgeeks.org/python/python-classes-and-objects/"
-        },
-        {
-          "id": "python-040",
-          "title": "Constructors",
-          "url": "https://www.geeksforgeeks.org/python/constructors-in-python/"
-        },
-        {
-          "id": "python-041",
-          "title": "‘Self’ as Default Argument",
-          "url": "https://www.geeksforgeeks.org/python/why-python-uses-self-as-default-argument/"
-        },
-        {
-          "id": "python-042",
-          "title": "Polymorphism",
-          "url": "https://www.geeksforgeeks.org/python/polymorphism-in-python/"
-        },
-        {
-          "id": "python-043",
-          "title": "Inheritance",
-          "url": "https://www.geeksforgeeks.org/python/inheritance-in-python/"
-        },
-        {
-          "id": "python-044",
-          "title": "Abstraction",
-          "url": "https://www.geeksforgeeks.org/python/data-abstraction-in-python/"
-        },
-        {
-          "id": "python-045",
-          "title": "Encapsulation",
-          "url": "https://www.geeksforgeeks.org/python/encapsulation-in-python/"
-        },
-        {
-          "id": "python-046",
-          "title": "Iterators",
-          "url": "https://www.geeksforgeeks.org/python/iterators-in-python/"
-        },
-        {
-          "id": "python-047",
-          "title": "Banking System",
-          "url": "https://www.geeksforgeeks.org/python/python-program-to-create-bankaccount-class-with-deposit-withdraw-function/"
-        },
-        {
-          "id": "python-048",
-          "title": "Exception Handling",
-          "url": "https://www.geeksforgeeks.org/python/python-exception-handling/"
-        },
-        {
-          "id": "python-049",
-          "title": "Built-in Exception",
-          "url": "https://www.geeksforgeeks.org/python/built-exceptions-python/"
-        },
-        {
-          "id": "python-050",
-          "title": "User defined Exception",
-          "url": "https://www.geeksforgeeks.org/python/user-defined-exceptions-python-examples/"
-        },
-        {
-          "id": "python-051",
-          "title": "File Handling",
-          "url": "https://www.geeksforgeeks.org/python/file-handling-python/"
-        },
-        {
-          "id": "python-052",
-          "title": "Read Files",
-          "url": "https://www.geeksforgeeks.org/python/how-to-read-from-a-file-in-python/"
-        },
-        {
-          "id": "python-053",
-          "title": "Write/Create Files",
-          "url": "https://www.geeksforgeeks.org/python/writing-to-file-in-python/"
-        },
-        {
-          "id": "python-054",
-          "title": "OS Module",
-          "url": "https://www.geeksforgeeks.org/python/os-module-python-examples/"
-        },
-        {
-          "id": "python-055",
-          "title": "pathlib Module",
-          "url": "https://www.geeksforgeeks.org/python/pathlib-module-in-python/"
-        },
-        {
-          "id": "python-056",
-          "title": "Directory Management",
-          "url": "https://www.geeksforgeeks.org/python/python-directory-management/"
-        },
-        {
-          "id": "python-057",
-          "title": "MongoDB Introduction",
-          "url": "https://www.geeksforgeeks.org/python/mongodb-and-python/"
-        },
-        {
-          "id": "python-058",
-          "title": "MySQL Introduction",
-          "url": "https://www.geeksforgeeks.org/python/python-mysql/"
-        },
-        {
-          "id": "python-059",
-          "title": "Management System",
-          "url": "https://www.geeksforgeeks.org/python/bank-management-system-using-python-mysql-connectivity/"
-        },
-        {
-          "id": "python-060",
-          "title": "Packages",
-          "url": "https://www.geeksforgeeks.org/python/python-packages/"
-        },
-        {
-          "id": "python-061",
-          "title": "Built-in Modules",
-          "url": "https://www.geeksforgeeks.org/python/python-modules/"
-        },
-        {
-          "id": "python-062",
-          "title": "DSA Libraries",
-          "url": "https://www.geeksforgeeks.org/python/python-dsa-libraries/"
-        },
-        {
-          "id": "python-063",
-          "title": "GUI Libraries",
-          "url": "https://www.geeksforgeeks.org/python/python3-gui-application-overview/"
-        },
-        {
-          "id": "python-064",
-          "title": "Screen Recorder",
-          "url": "https://www.geeksforgeeks.org/python/create-a-screen-recorder-using-python/"
-        },
-        {
-          "id": "python-065",
-          "title": "NumPy",
-          "url": "https://www.geeksforgeeks.org/python/introduction-to-numpy/"
-        },
-        {
-          "id": "python-066",
-          "title": "Pandas",
-          "url": "https://www.geeksforgeeks.org/pandas/introduction-to-pandas-in-python/"
-        },
-        {
-          "id": "python-067",
-          "title": "Matplotlib",
-          "url": "https://www.geeksforgeeks.org/python/python-introduction-matplotlib/"
-        },
-        {
-          "id": "python-068",
-          "title": "Seaborn",
-          "url": "https://www.geeksforgeeks.org/python/introduction-to-seaborn-python/"
-        },
-        {
-          "id": "python-069",
-          "title": "Statsmodel",
-          "url": "https://www.geeksforgeeks.org/data-science/statsmodel-library-tutorial/"
-        },
-        {
-          "id": "python-070",
-          "title": "Scikit-learn",
-          "url": "https://www.geeksforgeeks.org/machine-learning/learning-model-building-scikit-learn-python-machine-learning-library/"
-        },
-        {
-          "id": "python-071",
-          "title": "XGBoost",
-          "url": "https://www.geeksforgeeks.org/machine-learning/xgboost/"
-        },
-        {
-          "id": "python-072",
-          "title": "LightGBM",
-          "url": "https://www.geeksforgeeks.org/machine-learning/train-a-model-using-lightgbm/"
-        },
-        {
-          "id": "python-073",
-          "title": "TensorFlow",
-          "url": "https://www.geeksforgeeks.org/python/introduction-to-tensorflow/"
-        },
-        {
-          "id": "python-074",
-          "title": "Keras",
-          "url": "https://www.geeksforgeeks.org/deep-learning/what-is-keras/"
-        },
-        {
-          "id": "python-075",
-          "title": "PyTorch",
-          "url": "https://www.geeksforgeeks.org/deep-learning/getting-started-with-pytorch/"
-        },
-        {
-          "id": "python-076",
-          "title": "Data Science",
-          "url": "https://www.geeksforgeeks.org/data-science/data-science-with-python-tutorial/"
-        },
-        {
-          "id": "python-077",
-          "title": "Sentiment Analysis",
-          "url": "https://www.geeksforgeeks.org/nlp/sentiment-analysis-using-lstm/"
-        },
-        {
-          "id": "python-078",
-          "title": "Flask",
-          "url": "https://www.geeksforgeeks.org/python/python-introduction-to-web-development-using-flask/"
-        },
-        {
-          "id": "python-079",
-          "title": "Django",
-          "url": "https://www.geeksforgeeks.org/python/python-web-development-django/"
-        },
-        {
-          "id": "python-080",
-          "title": "SQLite",
-          "url": "https://www.geeksforgeeks.org/python/python-sqlite-connecting-to-database/"
-        },
-        {
-          "id": "python-081",
-          "title": "SQLAlchemy",
-          "url": "https://www.geeksforgeeks.org/python/connecting-to-sql-database-using-sqlalchemy-in-python/"
-        },
-        {
-          "id": "python-082",
-          "title": "MySQL",
-          "url": "https://www.geeksforgeeks.org/python/how-to-integrate-mysql-database-with-django/"
-        },
-        {
-          "id": "python-083",
-          "title": "Jinja2 (Flask)",
-          "url": "https://www.geeksforgeeks.org/python/templating-with-jinja2-in-flask/"
-        },
-        {
-          "id": "python-084",
-          "title": "Django Templates",
-          "url": "https://www.geeksforgeeks.org/python/django-templates/"
-        },
-        {
-          "id": "python-085",
-          "title": "Flask-RESTful",
-          "url": "https://www.geeksforgeeks.org/python/python-build-a-rest-api-using-flask/"
-        },
-        {
-          "id": "python-086",
-          "title": "Django REST Framework (DRF)",
-          "url": "https://www.geeksforgeeks.org/python/how-to-create-a-basic-api-using-django-rest-framework/"
-        },
-        {
-          "id": "python-087",
-          "title": "Web Development",
-          "url": "https://www.geeksforgeeks.org/python/python-web-development/"
-        },
-        {
-          "id": "python-088",
-          "title": "ToDo webapp",
-          "url": "https://www.geeksforgeeks.org/python/python-todo-webapp-using-django/"
-        },
-        {
-          "id": "python-089",
           "title": "Basics",
           "url": "https://www.geeksforgeeks.org/quizzes/python-fundamentals/"
         },
         {
-          "id": "python-090",
-          "title": "Input and Output",
+          "id": "python-012",
+          "title": "I/O",
           "url": "https://www.geeksforgeeks.org/quizzes/python-input-output/"
         },
         {
-          "id": "python-091",
+          "id": "python-013",
           "title": "Data Types",
           "url": "https://www.geeksforgeeks.org/quizzes/data-type-gq/"
         },
         {
-          "id": "python-092",
-          "title": "Numbers",
-          "url": "https://www.geeksforgeeks.org/quizzes/python-numbers-1/"
-        },
-        {
-          "id": "python-093",
-          "title": "Boolean",
-          "url": "https://www.geeksforgeeks.org/quizzes/python-boolean-1/"
-        },
-        {
-          "id": "python-094",
+          "id": "python-014",
           "title": "Control Flow",
           "url": "https://www.geeksforgeeks.org/quizzes/python-control-flow-conditional-logic-quiz/"
         },
         {
-          "id": "python-095",
+          "id": "python-015",
           "title": "Loops",
           "url": "https://www.geeksforgeeks.org/quizzes/python-loops/"
         },
         {
-          "id": "python-096",
+          "id": "python-016",
+          "title": "Printing",
+          "url": "https://www.geeksforgeeks.org//problems/multi-printing--153452/1?selectedLang=python3"
+        },
+        {
+          "id": "python-017",
+          "title": "Else Statement",
+          "url": "https://www.geeksforgeeks.org//problems/the-else-statement--115735/1?selectedLang=python3"
+        },
+        {
+          "id": "python-018",
+          "title": "Multiplication Table",
+          "url": "https://www.geeksforgeeks.org/problems/for-loop-python/1?selectedLang=python3"
+        },
+        {
+          "id": "python-019",
+          "title": "Functions",
+          "url": "https://www.geeksforgeeks.org/python/python-functions/"
+        },
+        {
+          "id": "python-020",
+          "title": "Pass",
+          "url": "https://www.geeksforgeeks.org/python/python-pass-statement/"
+        },
+        {
+          "id": "python-021",
+          "title": "Global and Local Variables",
+          "url": "https://www.geeksforgeeks.org/python/global-local-variables-python/"
+        },
+        {
+          "id": "python-022",
+          "title": "Recursion",
+          "url": "https://www.geeksforgeeks.org/python/recursion-in-python/"
+        },
+        {
+          "id": "python-023",
+          "title": "*args and **kwargs in Function",
+          "url": "https://www.geeksforgeeks.org/python/args-kwargs-python/"
+        },
+        {
+          "id": "python-024",
+          "title": "First Class",
+          "url": "https://www.geeksforgeeks.org/python/first-class-functions-python/"
+        },
+        {
+          "id": "python-025",
+          "title": "Lambda Function",
+          "url": "https://www.geeksforgeeks.org/python/python-lambda-anonymous-functions-filter-map-reduce/"
+        },
+        {
+          "id": "python-026",
+          "title": "Map",
+          "url": "https://www.geeksforgeeks.org/python/python-map-function/"
+        },
+        {
+          "id": "python-027",
+          "title": "Reduce",
+          "url": "https://www.geeksforgeeks.org/python/reduce-in-python/"
+        },
+        {
+          "id": "python-028",
+          "title": "Filter Function",
+          "url": "https://www.geeksforgeeks.org/python/filter-in-python/"
+        },
+        {
+          "id": "python-029",
+          "title": "Inner Function",
+          "url": "https://www.geeksforgeeks.org/python/python-inner-functions/"
+        },
+        {
+          "id": "python-030",
+          "title": "Decorators",
+          "url": "https://www.geeksforgeeks.org/python/decorators-in-python/"
+        },
+        {
+          "id": "python-031",
+          "title": "Number Guessing Game",
+          "url": "https://www.geeksforgeeks.org/python/number-guessing-game-in-python/"
+        },
+        {
+          "id": "python-032",
           "title": "Functions",
           "url": "https://www.geeksforgeeks.org/quizzes/functions-python-gq/"
         },
         {
-          "id": "python-097",
+          "id": "python-033",
+          "title": "Return Value",
+          "url": "https://www.geeksforgeeks.org/problems/function-with-return-value/1?selectedLang=python3"
+        },
+        {
+          "id": "python-034",
+          "title": "No Arguments",
+          "url": "https://www.geeksforgeeks.org/problems/function-with-no-arguments-1605703188/1?selectedLang=python3"
+        },
+        {
+          "id": "python-035",
+          "title": "Strings",
+          "url": "https://www.geeksforgeeks.org/python/python-string/"
+        },
+        {
+          "id": "python-036",
+          "title": "List",
+          "url": "https://www.geeksforgeeks.org/python/python-lists/"
+        },
+        {
+          "id": "python-037",
+          "title": "Tuples",
+          "url": "https://www.geeksforgeeks.org/python/python-tuples/"
+        },
+        {
+          "id": "python-038",
+          "title": "Dictionary",
+          "url": "https://www.geeksforgeeks.org/python/python-dictionary/"
+        },
+        {
+          "id": "python-039",
+          "title": "Sets",
+          "url": "https://www.geeksforgeeks.org/python/sets-in-python/"
+        },
+        {
+          "id": "python-040",
+          "title": "Arrays",
+          "url": "https://www.geeksforgeeks.org/python/python-arrays/"
+        },
+        {
+          "id": "python-041",
+          "title": "List Comprehension",
+          "url": "https://www.geeksforgeeks.org/python/python-list-comprehension/"
+        },
+        {
+          "id": "python-042",
+          "title": "Tic Tac Toe Game",
+          "url": "https://www.geeksforgeeks.org/python/python-implementation-automatic-tic-tac-toe-game-using-random-number/"
+        },
+        {
+          "id": "python-043",
           "title": "String",
           "url": "https://www.geeksforgeeks.org/quizzes/python-string-quiz/"
         },
         {
-          "id": "python-098",
+          "id": "python-044",
           "title": "List",
           "url": "https://www.geeksforgeeks.org/quizzes/python-list-quiz/"
         },
         {
-          "id": "python-099",
+          "id": "python-045",
           "title": "Tuples",
           "url": "https://www.geeksforgeeks.org/quizzes/python-tuples-quiz/"
         },
         {
-          "id": "python-100",
+          "id": "python-046",
           "title": "Dictionary",
           "url": "https://www.geeksforgeeks.org/quizzes/python-dictionary-quiz/"
         },
         {
-          "id": "python-101",
+          "id": "python-047",
           "title": "Sets",
           "url": "https://www.geeksforgeeks.org/quizzes/python-sets-quiz/"
         },
         {
-          "id": "python-102",
-          "title": "Arrays",
-          "url": "https://www.geeksforgeeks.org/quizzes/python-arrays-1/"
-        },
-        {
-          "id": "python-103",
+          "id": "python-048",
           "title": "List Comprehension",
           "url": "https://www.geeksforgeeks.org/quizzes/python-list-comprehension-quiz/"
         },
         {
-          "id": "python-104",
+          "id": "python-049",
+          "title": "Reverse String",
+          "url": "https://www.geeksforgeeks.org//problems/reverse-string--141628/1?selectedLang=python3"
+        },
+        {
+          "id": "python-050",
+          "title": "Sum of the List",
+          "url": "https://www.geeksforgeeks.org//problems/sum-the-list/1?selectedLang=python3"
+        },
+        {
+          "id": "python-051",
+          "title": "First Repeating Element",
+          "url": "https://www.geeksforgeeks.org/problems/first-repeating-element4018/1?selectedLang=python3"
+        },
+        {
+          "id": "python-052",
+          "title": "Counters",
+          "url": "https://www.geeksforgeeks.org/python/counters-in-python-set-1/"
+        },
+        {
+          "id": "python-053",
+          "title": "Heapq",
+          "url": "https://www.geeksforgeeks.org/python/heap-queue-or-heapq-in-python/"
+        },
+        {
+          "id": "python-054",
+          "title": "Deque",
+          "url": "https://www.geeksforgeeks.org/python/deque-in-python/"
+        },
+        {
+          "id": "python-055",
+          "title": "OrderedDict",
+          "url": "https://www.geeksforgeeks.org/python/ordereddict-in-python/"
+        },
+        {
+          "id": "python-056",
+          "title": "Defaultdict",
+          "url": "https://www.geeksforgeeks.org/python/defaultdict-in-python/"
+        },
+        {
+          "id": "python-057",
           "title": "Counters",
           "url": "https://www.geeksforgeeks.org/quizzes/python-collection-counters/"
         },
         {
-          "id": "python-105",
+          "id": "python-058",
           "title": "Heapq",
           "url": "https://www.geeksforgeeks.org/quizzes/python-heapq/"
         },
         {
-          "id": "python-106",
+          "id": "python-059",
           "title": "Deque",
           "url": "https://www.geeksforgeeks.org/quizzes/python-deque/"
         },
         {
-          "id": "python-107",
+          "id": "python-060",
           "title": "OrderedDict",
           "url": "https://www.geeksforgeeks.org/quizzes/python-ordereddict/"
         },
         {
-          "id": "python-108",
+          "id": "python-061",
+          "title": "DSA with Python",
+          "url": "https://www.geeksforgeeks.org/dsa/python-data-structures-and-algorithms/"
+        },
+        {
+          "id": "python-062",
+          "title": "Classes and Objects",
+          "url": "https://www.geeksforgeeks.org/python/python-classes-and-objects/"
+        },
+        {
+          "id": "python-063",
+          "title": "Constructors",
+          "url": "https://www.geeksforgeeks.org/python/constructors-in-python/"
+        },
+        {
+          "id": "python-064",
+          "title": "‘Self’ as Default Argument",
+          "url": "https://www.geeksforgeeks.org/python/why-python-uses-self-as-default-argument/"
+        },
+        {
+          "id": "python-065",
+          "title": "Polymorphism",
+          "url": "https://www.geeksforgeeks.org/python/polymorphism-in-python/"
+        },
+        {
+          "id": "python-066",
+          "title": "Inheritance",
+          "url": "https://www.geeksforgeeks.org/python/inheritance-in-python/"
+        },
+        {
+          "id": "python-067",
+          "title": "Abstraction",
+          "url": "https://www.geeksforgeeks.org/python/data-abstraction-in-python/"
+        },
+        {
+          "id": "python-068",
+          "title": "Encapsulation",
+          "url": "https://www.geeksforgeeks.org/python/encapsulation-in-python/"
+        },
+        {
+          "id": "python-069",
+          "title": "Iterators",
+          "url": "https://www.geeksforgeeks.org/python/iterators-in-python/"
+        },
+        {
+          "id": "python-070",
+          "title": "Banking System",
+          "url": "https://www.geeksforgeeks.org/python/python-program-to-create-bankaccount-class-with-deposit-withdraw-function/"
+        },
+        {
+          "id": "python-071",
           "title": "OOP Concepts",
           "url": "https://www.geeksforgeeks.org/quizzes/python-oops-quiz/"
         },
         {
-          "id": "python-109",
+          "id": "python-072",
+          "title": "Design a class",
+          "url": "https://www.geeksforgeeks.org//problems/design-a-class/1?selectedLang=python3"
+        },
+        {
+          "id": "python-073",
+          "title": "Constructor",
+          "url": "https://www.geeksforgeeks.org//problems/constructor/1?selectedLang=python3"
+        },
+        {
+          "id": "python-074",
+          "title": "Encapsulation",
+          "url": "https://www.geeksforgeeks.org//problems/encapsulation-in-python/1?selectedLang=python3"
+        },
+        {
+          "id": "python-075",
+          "title": "Abstraction",
+          "url": "https://www.geeksforgeeks.org//problems/abstraction-in-python/1?selectedLang=python3"
+        },
+        {
+          "id": "python-076",
+          "title": "Exception Handling",
+          "url": "https://www.geeksforgeeks.org/python/python-exception-handling/"
+        },
+        {
+          "id": "python-077",
+          "title": "Built-in Exception",
+          "url": "https://www.geeksforgeeks.org/python/built-exceptions-python/"
+        },
+        {
+          "id": "python-078",
+          "title": "User defined Exception",
+          "url": "https://www.geeksforgeeks.org/python/user-defined-exceptions-python-examples/"
+        },
+        {
+          "id": "python-079",
+          "title": "Exception Practice",
+          "url": "https://www.geeksforgeeks.org/problems/exception-handling-in-python/1"
+        },
+        {
+          "id": "python-080",
           "title": "Exception Handling",
           "url": "https://www.geeksforgeeks.org/quizzes/python-exception-handling-quiz/"
         },
         {
-          "id": "python-110",
+          "id": "python-081",
+          "title": "File Handling",
+          "url": "https://www.geeksforgeeks.org/python/file-handling-python/"
+        },
+        {
+          "id": "python-082",
+          "title": "Read Files",
+          "url": "https://www.geeksforgeeks.org/python/how-to-read-from-a-file-in-python/"
+        },
+        {
+          "id": "python-083",
+          "title": "Write/Create Files",
+          "url": "https://www.geeksforgeeks.org/python/writing-to-file-in-python/"
+        },
+        {
+          "id": "python-084",
+          "title": "OS Module",
+          "url": "https://www.geeksforgeeks.org/python/os-module-python-examples/"
+        },
+        {
+          "id": "python-085",
+          "title": "pathlib Module",
+          "url": "https://www.geeksforgeeks.org/python/pathlib-module-in-python/"
+        },
+        {
+          "id": "python-086",
+          "title": "Directory Management",
+          "url": "https://www.geeksforgeeks.org/python/python-directory-management/"
+        },
+        {
+          "id": "python-087",
           "title": "File Handling",
           "url": "https://www.geeksforgeeks.org/quizzes/python-file-handling-quiz/"
         },
         {
+          "id": "python-088",
+          "title": "MongoDB Introduction",
+          "url": "https://www.geeksforgeeks.org/python/mongodb-and-python/"
+        },
+        {
+          "id": "python-089",
+          "title": "MySQL Introduction",
+          "url": "https://www.geeksforgeeks.org/python/python-mysql/"
+        },
+        {
+          "id": "python-090",
+          "title": "Management System",
+          "url": "https://www.geeksforgeeks.org/python/bank-management-system-using-python-mysql-connectivity/"
+        },
+        {
+          "id": "python-091",
+          "title": "MySQL",
+          "url": "https://www.geeksforgeeks.org/quizzes/sql-basics-quiz-questions/"
+        },
+        {
+          "id": "python-092",
+          "title": "MongoDB",
+          "url": "https://www.geeksforgeeks.org/quizzes/mongodb-quiz/"
+        },
+        {
+          "id": "python-093",
+          "title": "SQL",
+          "url": "https://www.geeksforgeeks.org/sql/sql-exercises/"
+        },
+        {
+          "id": "python-094",
+          "title": "Packages",
+          "url": "https://www.geeksforgeeks.org/python/python-packages/"
+        },
+        {
+          "id": "python-095",
+          "title": "Built-in Modules",
+          "url": "https://www.geeksforgeeks.org/python/python-modules/"
+        },
+        {
+          "id": "python-096",
+          "title": "DSA Libraries",
+          "url": "https://www.geeksforgeeks.org/python/python-dsa-libraries/"
+        },
+        {
+          "id": "python-097",
+          "title": "GUI Libraries",
+          "url": "https://www.geeksforgeeks.org/python/python3-gui-application-overview/"
+        },
+        {
+          "id": "python-098",
+          "title": "Screen Recorder",
+          "url": "https://www.geeksforgeeks.org/python/create-a-screen-recorder-using-python/"
+        },
+        {
+          "id": "python-099",
+          "title": "NumPy",
+          "url": "https://www.geeksforgeeks.org/python/introduction-to-numpy/"
+        },
+        {
+          "id": "python-100",
+          "title": "Pandas",
+          "url": "https://www.geeksforgeeks.org/pandas/introduction-to-pandas-in-python/"
+        },
+        {
+          "id": "python-101",
+          "title": "Matplotlib",
+          "url": "https://www.geeksforgeeks.org/python/python-introduction-matplotlib/"
+        },
+        {
+          "id": "python-102",
+          "title": "Seaborn",
+          "url": "https://www.geeksforgeeks.org/python/introduction-to-seaborn-python/"
+        },
+        {
+          "id": "python-103",
+          "title": "Statsmodel",
+          "url": "https://www.geeksforgeeks.org/data-science/statsmodel-library-tutorial/"
+        },
+        {
+          "id": "python-104",
+          "title": "Scikit-learn",
+          "url": "https://www.geeksforgeeks.org/machine-learning/learning-model-building-scikit-learn-python-machine-learning-library/"
+        },
+        {
+          "id": "python-105",
+          "title": "XGBoost",
+          "url": "https://www.geeksforgeeks.org/machine-learning/xgboost/"
+        },
+        {
+          "id": "python-106",
+          "title": "LightGBM",
+          "url": "https://www.geeksforgeeks.org/machine-learning/train-a-model-using-lightgbm/"
+        },
+        {
+          "id": "python-107",
+          "title": "TensorFlow",
+          "url": "https://www.geeksforgeeks.org/python/introduction-to-tensorflow/"
+        },
+        {
+          "id": "python-108",
+          "title": "Keras",
+          "url": "https://www.geeksforgeeks.org/deep-learning/what-is-keras/"
+        },
+        {
+          "id": "python-109",
+          "title": "PyTorch",
+          "url": "https://www.geeksforgeeks.org/deep-learning/getting-started-with-pytorch/"
+        },
+        {
+          "id": "python-110",
+          "title": "Sentiment Analysis",
+          "url": "https://www.geeksforgeeks.org/nlp/sentiment-analysis-using-lstm/"
+        },
+        {
           "id": "python-111",
+          "title": "Data Science",
+          "url": "https://www.geeksforgeeks.org/data-science/data-science-with-python-tutorial/"
+        },
+        {
+          "id": "python-112",
+          "title": "Flask",
+          "url": "https://www.geeksforgeeks.org/python/python-introduction-to-web-development-using-flask/"
+        },
+        {
+          "id": "python-113",
+          "title": "Django",
+          "url": "https://www.geeksforgeeks.org/python/python-web-development-django/"
+        },
+        {
+          "id": "python-114",
+          "title": "SQLite",
+          "url": "https://www.geeksforgeeks.org/python/python-sqlite-connecting-to-database/"
+        },
+        {
+          "id": "python-115",
+          "title": "SQLAlchemy",
+          "url": "https://www.geeksforgeeks.org/python/connecting-to-sql-database-using-sqlalchemy-in-python/"
+        },
+        {
+          "id": "python-116",
+          "title": "MySQL",
+          "url": "https://www.geeksforgeeks.org/python/how-to-integrate-mysql-database-with-django/"
+        },
+        {
+          "id": "python-117",
+          "title": "Jinja2 (Flask)",
+          "url": "https://www.geeksforgeeks.org/python/templating-with-jinja2-in-flask/"
+        },
+        {
+          "id": "python-118",
+          "title": "Django Templates",
+          "url": "https://www.geeksforgeeks.org/python/django-templates/"
+        },
+        {
+          "id": "python-119",
+          "title": "Flask-RESTful",
+          "url": "https://www.geeksforgeeks.org/python/python-build-a-rest-api-using-flask/"
+        },
+        {
+          "id": "python-120",
+          "title": "Django REST Framework (DRF)",
+          "url": "https://www.geeksforgeeks.org/python/how-to-create-a-basic-api-using-django-rest-framework/"
+        },
+        {
+          "id": "python-121",
+          "title": "ToDo webapp",
+          "url": "https://www.geeksforgeeks.org/python/python-todo-webapp-using-django/"
+        },
+        {
+          "id": "python-122",
+          "title": "Web Development",
+          "url": "https://www.geeksforgeeks.org/python/python-web-development/"
+        },
+        {
+          "id": "python-123",
           "title": "Interview Questions and Answers",
           "url": "https://www.geeksforgeeks.org/python/python-interview-questions/"
         },
         {
-          "id": "python-112",
+          "id": "python-124",
           "title": "Coding Problems",
           "url": "https://www.geeksforgeeks.org/python/python-exercises-practice-questions-and-solutions/"
         },
         {
-          "id": "python-113",
+          "id": "python-125",
           "title": "Set2 min read",
           "url": "https://www.geeksforgeeks.org/python/python-sets/"
         },
         {
-          "id": "python-114",
+          "id": "python-126",
+          "title": "OOP Concepts3 min read",
+          "url": "https://www.geeksforgeeks.org/python/python-oops-concepts/"
+        },
+        {
+          "id": "python-127",
           "title": "Python Database2 min read",
           "url": "https://www.geeksforgeeks.org/python/python-database-tutorial/"
         },
         {
-          "id": "python-115",
+          "id": "python-128",
           "title": "MongoDB3 min read",
           "url": "https://www.geeksforgeeks.org/python/python-mongodb-tutorial/"
         },
         {
-          "id": "python-116",
+          "id": "python-129",
           "title": "Numpy3 min read",
           "url": "https://www.geeksforgeeks.org/python/numpy-tutorial/"
         },
         {
-          "id": "python-117",
+          "id": "python-130",
           "title": "Pandas4 min read",
           "url": "https://www.geeksforgeeks.org/pandas/pandas-tutorial/"
         },
         {
-          "id": "python-118",
+          "id": "python-131",
           "title": "Matplotlib3 min read",
           "url": "https://www.geeksforgeeks.org/python/matplotlib-tutorial/"
         },
         {
-          "id": "python-119",
+          "id": "python-132",
           "title": "Seaborn3 min read",
           "url": "https://www.geeksforgeeks.org/python/python-seaborn-tutorial/"
         },
         {
-          "id": "python-120",
+          "id": "python-133",
           "title": "TensorFlow2 min read",
           "url": "https://www.geeksforgeeks.org/deep-learning/tensorflow/"
         },
         {
-          "id": "python-121",
+          "id": "python-134",
           "title": "PyTorch5 min read",
           "url": "https://www.geeksforgeeks.org/deep-learning/pytorch-tutorial-2/"
         },
         {
-          "id": "python-122",
+          "id": "python-135",
           "title": "Flask3 min read",
           "url": "https://www.geeksforgeeks.org/python/flask-tutorial/"
         },
         {
-          "id": "python-123",
+          "id": "python-136",
           "title": "Django5 min read",
           "url": "https://www.geeksforgeeks.org/python/django-tutorial/"
         },
         {
-          "id": "python-124",
+          "id": "python-137",
           "title": "Django ORM4 min read",
           "url": "https://www.geeksforgeeks.org/python/django-orm-inserting-updating-deleting-data/"
         },
         {
-          "id": "python-125",
+          "id": "python-138",
           "title": "Quiz1 min read",
           "url": "https://www.geeksforgeeks.org/python/python-quizzes/"
         },
         {
-          "id": "python-126",
+          "id": "python-139",
           "title": "Practice Problems2 min read",
           "url": "https://www.geeksforgeeks.org/python/python-coding-practice-problems/"
         },
         {
-          "id": "python-127",
+          "id": "python-140",
           "title": "Placement 360 Course2 min read",
           "url": "https://www.geeksforgeeks.org/courses/placement-360-cip-complete-tech-interview"
         },
         {
-          "id": "python-128",
+          "id": "python-141",
           "title": "Data Science 360 Course2 min read",
           "url": "https://www.geeksforgeeks.org/courses/complete-data-science-course-with-machine-learning"
         },
         {
-          "id": "python-129",
+          "id": "python-142",
           "title": "AI Engg Course2 min read",
           "url": "https://www.geeksforgeeks.org/courses/generative-ai-training-program"
         }
@@ -8258,7 +8323,7 @@
         },
         {
           "id": "devops-110",
-          "title": "DevOps Best Practices for Kubernetes11 min read",
+          "title": "DevOps Best Practices for Kubernetes2 min read",
           "url": "https://www.geeksforgeeks.org/devops/devops-best-practices-for-kubernetes/"
         },
         {

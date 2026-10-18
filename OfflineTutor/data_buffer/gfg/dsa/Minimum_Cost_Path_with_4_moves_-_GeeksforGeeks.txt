@@ -1,0 +1,405 @@
+# Minimum Cost Path with 4 moves - GeeksforGeeks
+
+Given a 2D grid of size n*n, where each cell represents the cost to traverse through that cell, the task is to find the minimum cost to move from the top left cell to the bottom right cell. From a given cell, we can move in 4 directions: left, right, up, down.Note: It is assumed that negative cost cycles do not exist in input matrix.Example:Input: grid = {{9, 4, 9, 9},                        {6, 7, 6, 4},                       {8, 3, 3, 7},                      {7, 4, 9, 10}}Output: 43Explanation: The minimum cost path is 9 + 4 + 7 + 3 + 3 + 7 + 10.Try It YourselfDijkstra’s Algorithm -O(n^2 log(n^2)) Time and O(n^2 log(n^2))The idea is to use Dijkstra's algorithm to find the minimum cost path through the grid. Treats the grid as a graph where each cell is a nodeDynamically explores by always expanding the lowest-cost paths first.Step by step approach:Use a min-heap to always process the lowest-cost path first and push the top left cell into it.Initialize a cost matrix with maximum values, setting the start cell's cost to its grid value.For each cell, check all 4 neighboring cells. If a lower cost path is found, then update the cost of cell and push it into heap.Return the minimum cost to reach the bottom-right cell.Below is the implementation of the above approach:
+            C++
+
+    #include <iostream>
+#include <vector>
+#include <queue>
+#include <climits>
+using namespace std;
+
+bool isValidCell(int i, int j, int n) {
+    return i >= 0 && i < n && j >= 0 && j < n;
+}
+
+int minimumCostPath(vector<vector<int>>& grid) {
+    int n = grid.size();
+
+    // Min heap to implement Dijkstra
+    priority_queue<pair<int, pair<int, int>>,
+                   vector<pair<int, pair<int, int>>>,
+                   greater<pair<int, pair<int, int>>>> pq;
+
+    vector<vector<int>> cost(n, vector<int>(n, INT_MAX));
+    cost[0][0] = grid[0][0];
+
+    // Four possible directions
+    int dir[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
+    pq.push({grid[0][0], {0, 0}});
+
+    while (!pq.empty()) {
+        auto top = pq.top();
+        pq.pop();
+
+        int currCost = top.first;
+        int i = top.second.first;
+        int j = top.second.second;
+
+        // Skip outdated entries
+        if (currCost != cost[i][j])
+            continue;
+
+        // Check all four neighbours
+        for (int d = 0; d < 4; d++) {
+            int x = i + dir[d][0];
+            int y = j + dir[d][1];
+
+            if (isValidCell(x, y, n) &&
+                cost[i][j] + grid[x][y] < cost[x][y]) {
+
+                cost[x][y] = cost[i][j] + grid[x][y];
+                pq.push({cost[x][y], {x, y}});
+            }
+        }
+    }
+
+    return cost[n - 1][n - 1];
+}
+
+int main() {
+    vector<vector<int>> grid = {
+        {9, 4, 9, 9},
+        {6, 7, 6, 4},
+        {8, 3, 3, 7},
+        {7, 4, 9, 10}
+    };
+
+    cout << minimumCostPath(grid);
+
+    return 0;
+}
+
+
+            Java
+
+    import java.util.PriorityQueue;
+
+class GFG {
+
+    static class Cell implements Comparable<Cell> {
+        int cost, x, y;
+
+        Cell(int cost, int x, int y) {
+            this.cost = cost;
+            this.x = x;
+            this.y = y;
+        }
+
+        public int compareTo(Cell other) {
+            return Integer.compare(this.cost, other.cost);
+        }
+    }
+
+    static boolean isValidCell(int i, int j, int n) {
+        return i >= 0 && i < n && j >= 0 && j < n;
+    }
+
+    static int minimumCostPath(int[][] grid) {
+        int n = grid.length;
+
+        // Min heap to implement Dijkstra
+        PriorityQueue<Cell> pq = new PriorityQueue<>();
+
+        int[][] cost = new int[n][n];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++)
+                cost[i][j] = Integer.MAX_VALUE;
+        }
+
+        cost[0][0] = grid[0][0];
+
+        // Four possible directions
+        int[][] dir = {
+            {-1, 0}, {1, 0},
+            {0, -1}, {0, 1}
+        };
+
+        pq.add(new Cell(grid[0][0], 0, 0));
+
+        while (!pq.isEmpty()) {
+            Cell top = pq.poll();
+
+            // Skip outdated entries
+            if (top.cost != cost[top.x][top.y])
+                continue;
+
+            // Check all four neighbours
+            for (int d = 0; d < 4; d++) {
+                int x = top.x + dir[d][0];
+                int y = top.y + dir[d][1];
+
+                if (isValidCell(x, y, n) &&
+                    cost[top.x][top.y] + grid[x][y] < cost[x][y]) {
+
+                    cost[x][y] = cost[top.x][top.y] + grid[x][y];
+                    pq.add(new Cell(cost[x][y], x, y));
+                }
+            }
+        }
+
+        return cost[n - 1][n - 1];
+    }
+
+    public static void main(String[] args) {
+        int[][] grid = {
+            {9, 4, 9, 9},
+            {6, 7, 6, 4},
+            {8, 3, 3, 7},
+            {7, 4, 9, 10}
+        };
+
+        System.out.println(minimumCostPath(grid));
+    }
+}
+
+
+            Python
+
+    import heapq
+
+def isValidCell(i, j, n):
+    return 0 <= i < n and 0 <= j < n
+
+def minimumCostPath(grid):
+    n = len(grid)
+
+    # Min heap to implement Dijkstra
+    pq = [(grid[0][0], 0, 0)]
+
+    cost = [[float('inf')] * n for _ in range(n)]
+    cost[0][0] = grid[0][0]
+
+    # Four possible directions
+    directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+
+    while pq:
+        currCost, i, j = heapq.heappop(pq)
+
+        # Skip outdated entries
+        if currCost != cost[i][j]:
+            continue
+
+        # Check all four neighbours
+        for di, dj in directions:
+            x = i + di
+            y = j + dj
+
+            if (isValidCell(x, y, n) and
+                    cost[i][j] + grid[x][y] < cost[x][y]):
+
+                cost[x][y] = cost[i][j] + grid[x][y]
+                heapq.heappush(pq, (cost[x][y], x, y))
+
+    return cost[n - 1][n - 1]
+
+
+if __name__ == "__main__":
+    grid = [
+        [9, 4, 9, 9],
+        [6, 7, 6, 4],
+        [8, 3, 3, 7],
+        [7, 4, 9, 10]
+    ]
+
+    print(minimumCostPath(grid))
+
+
+            C#
+
+    using System;
+using System.Collections.Generic;
+
+class GfG
+{
+    static bool isValidCell(int i, int j, int n)
+    {
+        return i >= 0 && i < n && j >= 0 && j < n;
+    }
+
+    static int minimumCostPath(int[,] grid)
+    {
+        int n = grid.GetLength(0);
+
+        // Min heap using SortedSet
+        var pq = new SortedSet<(int cost, int x, int y)>();
+
+        // Store minimum cost to reach each cell
+        int[,] cost = new int[n, n];
+
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                cost[i, j] = int.MaxValue;
+
+        cost[0, 0] = grid[0, 0];
+
+        // Four possible directions
+        int[,] dir = {
+            {-1, 0},
+            {1, 0},
+            {0, -1},
+            {0, 1}
+        };
+
+        pq.Add((grid[0, 0], 0, 0));
+
+        while (pq.Count > 0)
+        {
+            var top = pq.Min;
+            pq.Remove(top);
+
+            int i = top.x;
+            int j = top.y;
+
+            // Check all four neighbours
+            for (int d = 0; d < 4; d++)
+            {
+                int x = i + dir[d, 0];
+                int y = j + dir[d, 1];
+
+                if (isValidCell(x, y, n) &&
+                    cost[i, j] + grid[x, y] < cost[x, y])
+                {
+                    cost[x, y] = cost[i, j] + grid[x, y];
+                    pq.Add((cost[x, y], x, y));
+                }
+            }
+        }
+
+        return cost[n - 1, n - 1];
+    }
+
+    static void Main()
+    {
+        int[,] grid = {
+            {9, 4, 9, 9},
+            {6, 7, 6, 4},
+            {8, 3, 3, 7},
+            {7, 4, 9, 10}
+        };
+
+        Console.WriteLine(minimumCostPath(grid));
+    }
+}
+
+
+            JavaScript
+
+    function comparator(a, b) {
+    return a[0] - b[0];
+}
+
+class PriorityQueue {
+    constructor(compare) {
+        this.heap = [];
+        this.compare = compare;
+    }
+
+    enqueue(value) {
+        this.heap.push(value);
+        this.bubbleUp();
+    }
+
+    bubbleUp() {
+        let index = this.heap.length - 1;
+
+        while (index > 0) {
+            let parent = Math.floor((index - 1) / 2);
+
+            if (this.compare(this.heap[index], this.heap[parent]) >= 0)
+                break;
+
+            [this.heap[index], this.heap[parent]] =
+                [this.heap[parent], this.heap[index]];
+
+            index = parent;
+        }
+    }
+
+    dequeue() {
+        let top = this.heap[0];
+        let last = this.heap.pop();
+
+        if (this.heap.length > 0) {
+            this.heap[0] = last;
+            this.sinkDown(0);
+        }
+
+        return top;
+    }
+
+    sinkDown(index) {
+        let left = 2 * index + 1;
+        let right = 2 * index + 2;
+        let smallest = index;
+
+        if (left < this.heap.length &&
+            this.compare(this.heap[left], this.heap[smallest]) < 0) {
+            smallest = left;
+        }
+
+        if (right < this.heap.length &&
+            this.compare(this.heap[right], this.heap[smallest]) < 0) {
+            smallest = right;
+        }
+
+        if (smallest !== index) {
+            [this.heap[index], this.heap[smallest]] =
+                [this.heap[smallest], this.heap[index]];
+
+            this.sinkDown(smallest);
+        }
+    }
+
+    isEmpty() {
+        return this.heap.length === 0;
+    }
+}
+
+class Solution {
+    minimumCostPath(grid, n) {
+        let cost = Array.from(
+            { length: n },
+            () => Array(n).fill(Infinity)
+        );
+
+        cost[0][0] = grid[0][0];
+
+        // Four possible directions
+        let dir = [
+            [-1, 0],
+            [1, 0],
+            [0, -1],
+            [0, 1]
+        ];
+
+        let pq = new PriorityQueue(comparator);
+        pq.enqueue([grid[0][0], 0, 0]);
+
+        while (!pq.isEmpty()) {
+            let [currCost, i, j] = pq.dequeue();
+
+            // Skip outdated entries
+            if (currCost !== cost[i][j])
+                continue;
+
+            for (let d of dir) {
+                let x = i + d[0];
+                let y = j + d[1];
+
+                if (x >= 0 && x < n && y >= 0 && y < n &&
+                    cost[i][j] + grid[x][y] < cost[x][y]) {
+
+                    cost[x][y] = cost[i][j] + grid[x][y];
+                    pq.enqueue([cost[x][y], x, y]);
+                }
+            }
+        }
+
+        return cost[n - 1][n - 1];
+    }
+}
+
+Output43Why dynamic programming cannot be used?Dynamic programming solution discussed in Min Cost Path with 3 Moves fails here because allowing movement in all four directions creates cycles where cells can be revisited, breaking the optimal substructure assumption. This means the cost to reach a cell from a given cell isn't fixed but depends on the entire path.

@@ -1,6 +1,6 @@
 # Diameter of a Binary Tree - GeeksforGeeks
 
-Given the root of a binary tree, find its diameter. The diameter of a tree is defined as the number of edges in the longest path between any two nodes.Examples:Input: The binary tree for this example is shown in the image below. Output: 2Explanation: The longest path has 2 edges ( the path  2 -> 1 -> 3 ).Input: The binary tree for this example is shown in the image below. Output: 4Explanation: The longest path has 4 edges ( the path 5 -> 3 -> 2 -> 4 -> 6 ).Try It YourselfTable of Content[Naive Approach] Calculate Height of Each Node - O(n2) Time and O(h) Space[Expected Approach] Single Traversal - O(n) Time and O(h) Space[Naive Approach] Calculate Height of Each Node - O(n2) Time and O(h) SpaceThe core idea involves recursively traversing the tree. At each node, Find the heights of its left and right subtrees Update the maximum diameter if the sum of these heights is more than current maximum.
+Given the root of a binary tree, find its diameter. The diameter of a tree is defined as the number of edges in the longest path between any two nodes.Examples:Input: root = [1, 2, N, 3, 4] Output: 2Explanation: The longest path has 2 edges (node 3 -> node 2 -> node 4). Input: root = [5, 8, 6, 3, 7, 9, N] Output: 4Explanation: The longest path has 4 edges (node 3 -> node 8 -> node 5 -> node 6 -> node 9). Try It YourselfTable of Content[Naive Approach] Calculate Height of Each Node - O(n^2) Time and O(h) Space[Expected Approach] Single Traversal - O(n) Time and O(h) Space[Naive Approach] Calculate Height of Each Node - O(n^2) Time and O(h) SpaceThe core idea involves recursively traversing the tree. At each node, Find the heights of its left and right subtrees Update the maximum diameter if the sum of these heights is more than current maximum.
             C++
 
     #include <iostream>
@@ -48,13 +48,12 @@ int diameter(Node* root) {
 }
 
 int main() {
-
+    
     Node* root = new Node(1);
-    root->right = new Node(2);
-    root->right->left = new Node(3);
-    root->right->right = new Node(4);
-  	root->right->left->left = new Node(5);
-  	root->right->right->right = new Node(6);
+    root->left = new Node(2);
+    root->left->left = new Node(3);
+    root->left->right = new Node(4);
+
     cout << diameter(root) << endl;
 
     return 0;
@@ -120,13 +119,11 @@ struct Node* createNode(int x) {
 }
 
 int main() {
-    
     struct Node* root = createNode(1);
-    root->right = createNode(2);
-    root->right->left = createNode(3);
-    root->right->right = createNode(4);
-  	root->right->left->left = createNode(5);
-  	root->right->right->right = createNode(6);
+    root->left = createNode(2);
+    root->left->left = createNode(3);
+    root->left->right = createNode(4);
+
     printf("%d\n", diameter(root));
 
     return 0;
@@ -177,19 +174,17 @@ class GFG {
         return Math.max(lheight + rheight, 
                         Math.max(ldiameter, rdiameter));
     }
-
+    
     public static void main(String[] args) {
-        
+
         Node root = new Node(1);
-        root.right = new Node(2);
-        root.right.left = new Node(3);
-        root.right.right = new Node(4);
-      	root.right.left.left = new Node(5);
-      	root.right.right.right = new Node(6);
+        root.left = new Node(2);
+        root.left.left = new Node(3);
+        root.left.right = new Node(4);
 
         System.out.println(diameter(root));
     }
-}
+} 
 
 
             Python
@@ -226,13 +221,11 @@ def diameter(root):
     return max(lheight + rheight, ldiameter, rdiameter)
 
 if __name__ == "__main__":
-    
+
     root = Node(1)
-    root.right = Node(2)
-    root.right.left = Node(3)
-    root.right.right = Node(4)
-    root.right.left.left = Node(5)
-    root.right.right.right = Node(6)
+    root.left = Node(2)
+    root.left.left = Node(3)
+    root.left.right = Node(4)
 
     print(diameter(root))
 
@@ -247,7 +240,8 @@ class Node {
     public int data;
     public Node left, right;
 
-    public Node(int x) {
+    public Node(int x)
+    {
         data = x;
         left = null;
         right = null;
@@ -257,17 +251,22 @@ class Node {
 class GFG {
 
     // Function to compute the height of a tree
-    static int height(Node root) {
-        
+    static int height(Node root)
+    {
+
         if (root == null)
             return 0;
 
-        // If tree is not empty then height = 1 + max of left height and right heights
-        return 1 + Math.Max(height(root.left), height(root.right));
+        // If tree is not empty then height = 1 + max of
+        // left height and right heights
+        return 1
+            + Math.Max(height(root.left),
+                       height(root.right));
     }
 
     // Function to get diameter of a binary tree
-    static int diameter(Node root) {
+    static int diameter(Node root)
+    {
         if (root == null)
             return 0;
 
@@ -283,14 +282,13 @@ class GFG {
                         Math.Max(ldiameter, rdiameter));
     }
 
-    static void Main(string[] args) {
-        
+    static void Main(string[] args)
+    {
+
         Node root = new Node(1);
-        root.right = new Node(2);
-        root.right.left = new Node(3);
-        root.right.right = new Node(4);
-      	root.right.left.left = new Node(5);
-      	root.right.right.right = new Node(6);
+        root.left = new Node(2);
+        root.left.left = new Node(3);
+        root.left.right = new Node(4);
 
         Console.WriteLine(diameter(root));
     }
@@ -335,16 +333,14 @@ function diameter(root) {
 }
 
 let root = new Node(1);
-root.right = new Node(2);
-root.right.left = new Node(3);
-root.right.right = new Node(4);
-root.right.left.left = new Node(5);
-root.right.right.right = new Node(6);
+root.left = new Node(2);
+root.left.left = new Node(3);
+root.left.right = new Node(4);
 
 console.log(diameter(root));
 
-Output4
-[Expected Approach] Single Traversal - O(n) Time and O(h) SpaceThe core idea is to efficiently calculate the diameter, avoiding redundant height calculations. For each node, we track two things simultaneously in recursion, Height of current node (returned from recursion) Maximum sum of left and right heights (or diameter). We track this using a shared variable among recursive calls.We compare the maximum sum for current node with current maximum and update the result if needed.Since both height and diameter are tracked in a single recursion, we get diameter using one traversal.
+Output2
+[Expected Approach] Single Traversal - O(n) Time and O(h) SpaceThe core idea is to avoid redundant height calculations. For each node, we track two things simultaneously in recursion, Height of current node (returned from recursion) Maximum sum of left and right heights (or diameter). We track this using a shared variable among recursive calls.We compare the maximum sum for current node with current maximum and update the result if needed.Since both height and diameter are tracked in a single recursion, we get diameter using one traversal.
             C++
 
     #include <iostream>
@@ -391,13 +387,11 @@ int diameter(Node* root) {
 }
 
 int main() {
-    
+
     Node* root = new Node(1);
-    root->right = new Node(2);
-    root->right->left = new Node(3);
-    root->right->right = new Node(4);
-  	root->right->left->left = new Node(5);
-  	root->right->right->right = new Node(6);
+    root->left = new Node(2);
+    root->left->left = new Node(3);
+    root->left->right = new Node(4);
 
     cout << diameter(root) << endl;
 
@@ -411,29 +405,33 @@ int main() {
 #include <stdlib.h>
 
 // Node Structure
-struct Node {
+struct Node
+{
     int data;
-    struct Node* left;
-    struct Node* right;
+    struct Node *left;
+    struct Node *right;
 };
 
 // Function to create a new Node
-struct Node* createNode(int x) {
-    struct Node* node = (struct Node*)malloc(sizeof(struct Node));
+struct Node *createNode(int x)
+{
+    struct Node *node = (struct Node *)malloc(sizeof(struct Node));
     node->data = x;
     node->left = NULL;
     node->right = NULL;
     return node;
 }
 
-int max(int a, int b) {
+int max(int a, int b)
+{
     return a > b ? a : b;
 }
 
 // Global variable to store the maximum diameter
 int maxDiameter = 0;
 
-int diameterRecur(struct Node* root) {
+int diameterRecur(struct Node *root)
+{
     if (root == NULL)
         return 0;
 
@@ -450,20 +448,20 @@ int diameterRecur(struct Node* root) {
 }
 
 // Function to get diameter of a binary tree
-int diameter(struct Node* root) {
-    maxDiameter = 0; 
+int diameter(struct Node *root)
+{
+    maxDiameter = 0;
     diameterRecur(root);
     return maxDiameter;
 }
 
-int main() {
-    
-    struct Node* root = createNode(1);
-    root->right = createNode(2);
-    root->right->left = createNode(3);
-    root->right->right = createNode(4);
-  	root->right->left->left = createNode(5);
-  	root->right->right->right = createNode(6);
+int main()
+{
+
+    struct Node *root = createNode(1);
+    root->left = createNode(2);
+    root->left->left = createNode(3);
+    root->left->right = createNode(4);
 
     printf("%d\n", diameter(root));
 
@@ -478,7 +476,8 @@ class Node {
     int data;
     Node left, right;
 
-    Node(int x) {
+    Node(int x)
+    {
         data = x;
         left = null;
         right = null;
@@ -486,12 +485,14 @@ class Node {
 }
 
 class GFG {
-    
+
     // Static variable to store maximum diameter
     static int maxDiameter = 0;
 
-    // Recursive function to calculate height and update diameter
-    static int diameterRecur(Node root) {
+    // Recursive function to calculate height and update
+    // diameter
+    static int diameterRecur(Node root)
+    {
         if (root == null)
             return 0;
 
@@ -499,7 +500,8 @@ class GFG {
         int lHeight = diameterRecur(root.left);
         int rHeight = diameterRecur(root.right);
 
-        // Update the global max diameter if this node gives a longer path
+        // Update the global max diameter if this node gives
+        // a longer path
         if (lHeight + rHeight > maxDiameter)
             maxDiameter = lHeight + rHeight;
 
@@ -508,20 +510,20 @@ class GFG {
     }
 
     // Function to get diameter of a binary tree
-    static int diameter(Node root) {
-        maxDiameter = 0; 
+    static int diameter(Node root)
+    {
+        maxDiameter = 0;
         diameterRecur(root);
         return maxDiameter;
     }
 
-    public static void main(String[] args) {
-        
+    public static void main(String[] args)
+    {
+
         Node root = new Node(1);
-        root.right = new Node(2);
-        root.right.left = new Node(3);
-        root.right.right = new Node(4);
-      	root.right.left.left = new Node(5);
-      	root.right.right.right = new Node(6);
+        root.left = new Node(2);
+        root.left.left = new Node(3);
+        root.left.right = new Node(4);
 
         System.out.println(diameter(root));
     }
@@ -568,11 +570,10 @@ def diameter(root):
 
 if __name__ == "__main__":
     root = Node(1)
-    root.right = Node(2)
-    root.right.left = Node(3)
-    root.right.right = Node(4)
-    root.right.left.left = Node(5)
-    root.right.right.right = Node(6)
+    root.left = Node(2)
+    root.left.left = Node(3)
+    root.left.right = Node(4)
+
     print(diameter(root))
 
 
@@ -585,7 +586,8 @@ class Node {
     public int data;
     public Node left, right;
 
-    public Node(int x) {
+    public Node(int x)
+    {
         data = x;
         left = null;
         right = null;
@@ -597,8 +599,10 @@ class GFG {
     // global variable to store maximum diameter
     static int maxDiameter = 0;
 
-    // Recursive function which finds the diameter of the tree.
-    static int diameterRecur(Node root) {
+    // Recursive function which finds the diameter of the
+    // tree.
+    static int diameterRecur(Node root)
+    {
         if (root == null)
             return 0;
 
@@ -606,28 +610,30 @@ class GFG {
         int lHeight = diameterRecur(root.left);
         int rHeight = diameterRecur(root.right);
 
-        // Check if diameter of root is greater than maxDiameter.
-        maxDiameter = Math.Max(maxDiameter, lHeight + rHeight);
+        // Check if diameter of root is greater than
+        // maxDiameter.
+        maxDiameter
+            = Math.Max(maxDiameter, lHeight + rHeight);
 
         // return the height of current subtree.
         return 1 + Math.Max(lHeight, rHeight);
     }
 
     // Function to get diameter of a binary tree
-    static int diameter(Node root) {
-        maxDiameter = 0; 
+    static int diameter(Node root)
+    {
+        maxDiameter = 0;
         diameterRecur(root);
         return maxDiameter;
     }
 
-    static void Main(string[] args) {
-        
+    static void Main(string[] args)
+    {
+
         Node root = new Node(1);
-        root.right = new Node(2);
-        root.right.left = new Node(3);
-        root.right.right = new Node(4);
-      	root.right.left.left = new Node(5);
-      	root.right.right.right = new Node(6);
+        root.left = new Node(2);
+        root.left.left = new Node(3);
+        root.left.right = new Node(4);
 
         Console.WriteLine(diameter(root));
     }
@@ -645,39 +651,43 @@ class Node {
     }
 }
 
-// global variable to store the maximum diameter
-let maxDiameter = 0;
-
-// Recursive function which finds the diameter of the tree.
-function diameterRecur(root) {
-    if (root === null)
+// Recursive function which finds the diameter of the tree
+function diameterRecur(root, result) {
+    if (root === null) {
         return 0;
+    }
 
-    // find the height of left and right subtree
-    let lHeight = diameterRecur(root.left);
-    let rHeight = diameterRecur(root.right);
+    // Find the height of left and right subtree
+    let lHeight = diameterRecur(root.left, result);
+    let rHeight = diameterRecur(root.right, result);
 
-    // Check if diameter of root is greater than maxDiameter.
-    maxDiameter = Math.max(maxDiameter, lHeight + rHeight);
+    // Check if diameter through current node is greater
+    // than the current maximum diameter
+    result.maxDiameter = Math.max(
+        result.maxDiameter,
+        lHeight + rHeight
+    );
 
-    // return the height of current subtree.
+    // Return the height of current subtree
     return 1 + Math.max(lHeight, rHeight);
 }
 
 // Function to get diameter of a binary tree
 function diameter(root) {
-    maxDiameter = 0; 
-    diameterRecur(root);
-    return maxDiameter;
+    let result = {
+        maxDiameter: 0
+    };
+
+    diameterRecur(root, result);
+
+    return result.maxDiameter;
 }
 
 let root = new Node(1);
-root.right = new Node(2);
-root.right.left = new Node(3);
-root.right.right = new Node(4);
-root.right.left.left = new Node(5);
-root.right.right.right = new Node(6);
+root.left = new Node(2);
+root.left.left = new Node(3);
+root.left.right = new Node(4);
 
 console.log(diameter(root));
 
-Output4
+Output2

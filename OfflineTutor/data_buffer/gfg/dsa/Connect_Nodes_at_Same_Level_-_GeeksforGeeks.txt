@@ -1,0 +1,981 @@
+# Connect Nodes at Same Level - GeeksforGeeks
+
+Given a binary tree, connect each node to its immediate right neighbor at the same level using the nextRight pointer. If no such neighbor exists, set the nextRight pointer to NULL.Examples: Input: root = [1, 2, 3, 4, 5, N, 6] Output: [1, #, 2, 3, #, 4, 5, 6, #]Explanation: The connected tree is: Table of Content[Naive Approach] Level Order Traversal - O(n) Time and O(n) Space[Expected Approach] Using Set Next Rights - O(n) Time and O(1) Space [Naive Approach] Level Order Traversal - O(n) Time and O(n) SpaceThe idea is to traverse the binary tree level by level using a queue and connect adjacent nodes using their nextRight pointers.Insert the root node into the queue.Store the queue size in nodeCount to identify the number of nodes at the current level.Process exactly nodeCount nodes, removing each node from the queue.Set each node's nextRight to the next node at the same level using q.front(). If it is the last node at that level, set nextRight to NULL.Add the left and right children of each node to the queue, if they exist.Repeat until the queue becomes empty.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+class Node {
+public:
+    int data;
+    Node *left;
+    Node *right;
+    Node *nextRight;
+
+    Node(int key) {
+        data = key;
+        left = nullptr;
+        right = nullptr;
+        nextRight = nullptr;
+    }
+};
+
+// Connect nodes using node count (level size)
+Node* connect(Node *root) {
+    if (!root) return root;
+
+    queue<Node*> q;
+    q.push(root);
+
+    while (!q.empty()) {
+        int nodeCount = q.size();
+
+        for (int i = 0; i < nodeCount; i++) {
+            Node* node = q.front();
+            q.pop();
+
+            // Set nextRight
+            if (i == nodeCount - 1)
+                node->nextRight = nullptr;
+            else
+                node->nextRight = q.front();
+
+            // Push children
+            if (node->left) q.push(node->left);
+            if (node->right) q.push(node->right);
+        }
+    }
+
+    return root;
+}
+
+// Print level order using nextRight pointers
+void printLevels(Node* root) {
+    Node* levelStart = root;
+
+    while (levelStart != nullptr) {
+        Node* curr = levelStart;
+
+        while (curr != nullptr) {
+            cout << curr->data << " ";
+            curr = curr->nextRight;
+        }
+
+        cout << "# ";
+
+        // Find the first node of the next level
+        if (levelStart->left != nullptr)
+            levelStart = levelStart->left;
+        else if (levelStart->right != nullptr)
+            levelStart = levelStart->right;
+        else
+            break;
+    }
+}
+int main() {
+
+    // Constructed binary tree
+    //       10
+    //      /  \
+    //    8     2
+    //   /     /      
+    //  3     4     
+
+    Node *root = new Node(10);
+    root->left = new Node(8);
+    root->right = new Node(2);
+    root->left->left = new Node(3);
+    root->right->left = new Node(4);
+
+    connect(root);
+    printLevels(root);
+
+    return 0;
+}
+
+
+            Java
+
+    import java.util.LinkedList;
+import java.util.Queue;
+
+class Node {
+    int data;
+    Node left, right, nextRight;
+
+    Node(int key)
+    {
+        data = key;
+        left = right = nextRight = null;
+    }
+}
+
+class GFG {
+
+    // Connect nodes using node count (level size)
+    static Node connect(Node root)
+    {
+        if (root == null)
+            return root;
+
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+
+        while (!q.isEmpty()) {
+            int nodeCount = q.size();
+
+            for (int i = 0; i < nodeCount; i++) {
+                Node node = q.poll();
+
+                // Set nextRight
+                if (i == nodeCount - 1)
+                    node.nextRight = null;
+                else
+                    node.nextRight = q.peek();
+
+                // Push children
+                if (node.left != null)
+                    q.add(node.left);
+                if (node.right != null)
+                    q.add(node.right);
+            }
+        }
+
+        return root;
+    }
+
+    // Print level order using nextRight pointers
+    static void printLevels(Node root)
+    {
+        Node levelStart = root;
+
+        while (levelStart != null) {
+            Node curr = levelStart;
+
+            while (curr != null) {
+                System.out.print(curr.data + " ");
+                curr = curr.nextRight;
+            }
+
+            System.out.print("# ");
+
+            // Find the first node of the next level
+            if (levelStart.left != null)
+                levelStart = levelStart.left;
+            else if (levelStart.right != null)
+                levelStart = levelStart.right;
+            else
+                break;
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        // Constructed binary tree
+        //       10
+        //      /  \
+        //    8     2
+        //   /     /
+        //  3     4
+
+        Node root = new Node(10);
+        root.left = new Node(8);
+        root.right = new Node(2);
+        root.left.left = new Node(3);
+        root.right.left = new Node(4);
+
+        connect(root);
+        printLevels(root);
+    }
+}
+
+
+            Python
+
+    from collections import deque
+
+class Node:
+    def __init__(self, key):
+        self.data = key
+        self.left = None
+        self.right = None
+        self.nextRight = None
+
+# Connect nodes using node count (level size)
+
+def connect(root):
+    if not root:
+        return root
+
+    q = deque([root])
+
+    while q:
+        nodeCount = len(q)
+
+        for i in range(nodeCount):
+            node = q.popleft()
+
+            # Set nextRight
+            if i == nodeCount - 1:
+                node.nextRight = None
+            else:
+                node.nextRight = q[0]
+
+            # Push children
+            if node.left:
+                q.append(node.left)
+            if node.right:
+                q.append(node.right)
+
+    return root
+
+# Print level order using nextRight pointers
+
+
+def printLevels(root):
+    levelStart = root
+
+    while levelStart is not None:
+        curr = levelStart
+
+        while curr is not None:
+            print(curr.data, end=" ")
+            curr = curr.nextRight
+
+        print("#", end=" ")
+
+        # Find the first node of the next level
+        if levelStart.left is not None:
+            levelStart = levelStart.left
+        elif levelStart.right is not None:
+            levelStart = levelStart.right
+        else:
+            break
+# Constructed binary tree
+#      10
+#     /  \
+#    8     2
+#   /     /
+#  3     4
+
+
+if __name__ == "__main__":
+    root = Node(10)
+    root.left = Node(8)
+    root.right = Node(2)
+    root.left.left = Node(3)
+    root.right.left = Node(4)
+
+    connect(root)
+    printLevels(root)
+
+
+            C#
+
+    using System;
+using System.Collections.Generic;
+
+public class Node {
+    public int data;
+    public Node left, right, nextRight;
+
+    public Node(int key)
+    {
+        data = key;
+        left = right = nextRight = null;
+    }
+}
+
+class GFG {
+
+    // Connect nodes using node count (level size)
+    public static Node connect(Node root)
+    {
+        if (root == null)
+            return root;
+
+        Queue<Node> q = new Queue<Node>();
+        q.Enqueue(root);
+
+        while (q.Count > 0) {
+            int nodeCount = q.Count;
+
+            for (int i = 0; i < nodeCount; i++) {
+                Node node = q.Dequeue();
+
+                // Set nextRight
+                if (i == nodeCount - 1)
+                    node.nextRight = null;
+                else
+                    node.nextRight = q.Peek();
+
+                // Push children
+                if (node.left != null)
+                    q.Enqueue(node.left);
+                if (node.right != null)
+                    q.Enqueue(node.right);
+            }
+        }
+
+        return root;
+    }
+
+    // Print level order using nextRight pointers
+    static void printLevels(Node root)
+    {
+        Node levelStart = root;
+
+        while (levelStart != null) {
+            Node curr = levelStart;
+
+            while (curr != null) {
+                Console.Write(curr.data + " ");
+                curr = curr.nextRight;
+            }
+
+            Console.Write("# ");
+
+            // Find the first node of the next level
+            if (levelStart.left != null)
+                levelStart = levelStart.left;
+            else if (levelStart.right != null)
+                levelStart = levelStart.right;
+            else
+                break;
+        }
+    }
+
+    public static void Main()
+    {
+        // Constructed binary tree
+        //       10
+        //      /  \
+        //    8     2
+        //   /     /
+        //  3     4
+
+        Node root = new Node(10);
+        root.left = new Node(8);
+        root.right = new Node(2);
+        root.left.left = new Node(3);
+        root.right.left = new Node(4);
+
+        connect(root);
+        printLevels(root);
+    }
+}
+
+
+            JavaScript
+
+    class Node {
+    constructor(key) {
+        this.data = key;
+        this.left = null;
+        this.right = null;
+        this.nextRight = null;
+    }
+}
+
+// Connect nodes using node count (level size)
+function connect(root) {
+    if (!root) return root;
+
+    let q = [root];
+
+    while (q.length > 0) {
+        let nodeCount = q.length;
+
+        for (let i = 0; i < nodeCount; i++) {
+            let node = q.shift();
+
+            // Set nextRight
+            if (i === nodeCount - 1)
+                node.nextRight = null;
+            else
+                node.nextRight = q[0];
+
+            // Push children
+            if (node.left) q.push(node.left);
+            if (node.right) q.push(node.right);
+        }
+    }
+
+    return root;
+}
+// Print level order using nextRight pointers
+function printLevels(root) {
+    let levelStart = root;
+
+    while (levelStart !== null) {
+        let curr = levelStart;
+
+        while (curr !== null) {
+            console.log; // No operation
+            process.stdout.write(curr.data + " ");
+            curr = curr.nextRight;
+        }
+
+        process.stdout.write("# ");
+
+        // Find the first node of the next level
+        if (levelStart.left !== null)
+            levelStart = levelStart.left;
+        else if (levelStart.right !== null)
+            levelStart = levelStart.right;
+        else
+            break;
+    }
+}
+
+// Driver code
+
+// Constructed binary tree
+//       10
+//      /  \
+//    8     2
+//   /     /      
+//  3     4    
+
+// Driver Code
+let root = new Node(10);
+root.left = new Node(8);
+root.right = new Node(2);
+root.left.left = new Node(3);
+root.right.left = new Node(4);
+
+connect(root);
+printLevels(root)
+
+Output10 # 8 2 # 3 4 # [Expected Approach] Using Set Next Rights - O(n) Time and O(1) Space The idea is to use the previously set nextRight pointers to traverse each level and connect the children of its nodes to form the next level, without using a queue.Set the root's nextRight pointer to NULL, as it has no node to its right.Traverse the current level using the nextRight pointers.For each node, connect its left child to its right child if both children exist.If a child has no sibling to its right, use getNextRight() to find the next available child among the nodes to its right at the current level.After processing the current level, move to the leftmost available node at the next level and repeat until all levels are connected.The getNextRight() function searches the remaining nodes of the current level and returns the leftmost child it finds. If no such child exists, it returns NULL.Consider Binary Tree: Initially, all nextRight pointers are NULL.Step 1: Node 10 has children 8 and 2. Connect them by setting 8.nextRight = 2.Step 2: Move to node 8. Its left child is 3, but it has no right child. The getNextRight(8) function finds node 4, the left child of node 2. Connect 3.nextRight = 4.Node 2 has no node to its right, so set 4.nextRight = NULL.Step 3: Move to node 3. Nodes 3 and 4 have no children, so the process ends.The final nextRight connections are: 
+            C++
+
+    #include <iostream>
+using namespace std;
+
+class Node {
+public:
+    int data;
+    Node *left, *right, *nextRight;
+    Node(int val) {
+        data = val;
+        left = right = nextRight = nullptr;
+    }
+};
+
+// Return the first node on the right
+// side of q and at the next level
+Node *getNextRight(Node *p) {
+
+    Node *temp = p->nextRight;
+
+    // Keep moving to next sibling until
+    // you find a sibling that has at least
+    // one children
+    while (temp != nullptr) {
+        if (temp->left != nullptr)
+            return temp->left;
+        if (temp->right != nullptr)
+            return temp->right;
+        temp = temp->nextRight;
+    }
+
+    return nullptr;
+}
+
+// Function to connect nodes at the same level
+Node* connect(Node *root) {
+
+    Node *temp;
+    if (!root)
+        return nullptr ;
+
+    root->nextRight = nullptr;
+    
+    while (root != nullptr) {
+        Node *q = root;
+
+        // Traverse all nodes at the current level
+        while (q != nullptr) {
+            if (q->left) {
+
+                if (q->right)
+                    q->left->nextRight = q->right;
+                else
+                    q->left->nextRight = getNextRight(q);
+            }
+
+            if (q->right)
+                q->right->nextRight = getNextRight(q);
+            q = q->nextRight;
+        }
+
+        // Move to the next level starting with the leftmost node
+        if (root->left)
+            root = root->left;
+        else if (root->right)
+            root = root->right;
+        else
+            root = getNextRight(root);
+    }
+    
+    return root;
+}
+
+// Print level order using nextRight pointers
+void printLevels(Node* root) {
+    Node* levelStart = root;
+
+    while (levelStart != nullptr) {
+        Node* curr = levelStart;
+
+        while (curr != nullptr) {
+            cout << curr->data << " ";
+            curr = curr->nextRight;
+        }
+
+        cout << "# ";
+
+        // Find the first node of the next level
+        if (levelStart->left != nullptr)
+            levelStart = levelStart->left;
+        else if (levelStart->right != nullptr)
+            levelStart = levelStart->right;
+        else
+            break;
+    }
+}
+
+int main() {
+
+    // Constructed binary tree
+    //       10
+    //      /  \
+    //    8     2
+    //   /     /      
+    //  3     4     
+
+    Node *root = new Node(10);
+    root->left = new Node(8);
+    root->right = new Node(2);
+    root->left->left = new Node(3);
+    root->right->left = new Node(4);
+
+    connect(root);
+    printLevels(root);
+    return 0;
+}
+
+
+            Java
+
+    class Node {
+    public int data;
+    public Node left, right, nextRight;
+
+    public Node(int val)
+    {
+        data = val;
+        left = right = nextRight = null;
+    }
+}
+
+public class GFG {
+
+    // Return the first node on the right
+    // side of q and at the next level
+    static Node getNextRight(Node p)
+    {
+        Node temp = p.nextRight;
+
+        // Keep moving to next sibling until
+        // you find a sibling that has at least
+        // one children
+        while (temp != null) {
+            if (temp.left != null)
+                return temp.left;
+            if (temp.right != null)
+                return temp.right;
+            temp = temp.nextRight;
+        }
+        return null;
+    }
+
+    // Function to connect nodes at the same level
+    static Node connect(Node root)
+    {
+        Node temp;
+        if (root == null)
+            return null;
+
+        root.nextRight = null;
+        while (root != null) {
+            Node q = root;
+            // Traverse all nodes at the current level
+            while (q != null) {
+                if (q.left != null) {
+                    if (q.right != null)
+                        q.left.nextRight = q.right;
+                    else
+                        q.left.nextRight = getNextRight(q);
+                }
+                if (q.right != null)
+                    q.right.nextRight = getNextRight(q);
+                q = q.nextRight;
+            }
+            // Move to the next level starting with the
+            // leftmost node
+            if (root.left != null)
+                root = root.left;
+            else if (root.right != null)
+                root = root.right;
+            else
+                root = getNextRight(root);
+        }
+        return root;
+    }
+
+    // Print level order using nextRight pointers
+    static void printLevels(Node root)
+    {
+        Node levelStart = root;
+
+        while (levelStart != null) {
+            Node curr = levelStart;
+
+            while (curr != null) {
+                System.out.print(curr.data + " ");
+                curr = curr.nextRight;
+            }
+
+            System.out.print("# ");
+
+            // Find the first node of the next level
+            if (levelStart.left != null)
+                levelStart = levelStart.left;
+            else if (levelStart.right != null)
+                levelStart = levelStart.right;
+            else
+                break;
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        // Constructed binary tree
+        //       10
+        //      /  \
+        //    8     2
+        //   /     /
+        //  3     4
+        Node root = new Node(10);
+        root.left = new Node(8);
+        root.right = new Node(2);
+        root.left.left = new Node(3);
+        root.right.left = new Node(4);
+        connect(root);
+        printLevels(root);
+    }
+}
+
+
+            Python
+
+    class Node:
+    def __init__(self, val):
+        self.data = val
+        self.left = self.right = self.nextRight = None
+
+# Return the first node on the right
+# side of q and at the next level
+def get_next_right(p):
+    temp = p.nextRight
+    while temp is not None:
+        if temp.left is not None:
+            return temp.left
+        if temp.right is not None:
+            return temp.right
+        temp = temp.nextRight
+    return None
+
+# Function to connect nodes at the same level
+def connect(root):
+    if root is None:
+        return None
+    root.nextRight = None
+    while root is not None:
+        q = root
+        while q is not None:
+            if q.left is not None:
+                if q.right is not None:
+                    q.left.nextRight = q.right
+                else:
+                    q.left.nextRight = get_next_right(q)
+            if q.right is not None:
+                q.right.nextRight = get_next_right(q)
+            q = q.nextRight
+        if root.left is not None:
+            root = root.left
+        elif root.right is not None:
+            root = root.right
+        else:
+            root = get_next_right(root)
+    return root
+
+# Print level order using nextRight pointers
+def printLevels(root):
+    levelStart = root
+
+    while levelStart is not None:
+        curr = levelStart
+
+        while curr is not None:
+            print(curr.data, end=" ")
+            curr = curr.nextRight
+
+        print("#", end=" ")
+
+        # Find the first node of the next level
+        if levelStart.left is not None:
+            levelStart = levelStart.left
+        elif levelStart.right is not None:
+            levelStart = levelStart.right
+        else:
+            break
+
+
+if __name__ == '__main__':
+    # Constructed binary tree
+    #       10
+    #      /  \
+    #    8     2
+    #   /     /
+    #  3     4
+    root = Node(10)
+    root.left = Node(8)
+    root.right = Node(2)
+    root.left.left = Node(3)
+    root.right.left = Node(4)
+    connect(root)
+    printLevels(root)
+
+
+            C#
+
+    using System;
+
+class Node {
+    public int data;
+    public Node left, right, nextRight;
+
+    public Node(int val)
+    {
+        data = val;
+        left = right = nextRight = null;
+    }
+}
+
+class GFG {
+
+    // Return the first child on the right of p, at the next
+    // level
+    static Node getNextRight(Node p)
+    {
+        Node temp = p.nextRight;
+
+        // Move to the next sibling until one has at least
+        // one child
+        while (temp != null) {
+            if (temp.left != null)
+                return temp.left;
+            if (temp.right != null)
+                return temp.right;
+            temp = temp.nextRight;
+        }
+        return null;
+    }
+
+    // Connect nodes at the same level
+    static Node connect(Node root)
+    {
+        if (root == null)
+            return null;
+
+        // Save the head, as root moves down the levels
+        Node head = root;
+        root.nextRight = null;
+
+        while (root != null) {
+            Node q = root;
+
+            // Traverse all nodes at the current level
+            while (q != null) {
+                if (q.left != null) {
+
+                    // Connect left child to right child,
+                    // else to the next available child
+                    if (q.right != null)
+                        q.left.nextRight = q.right;
+                    else
+                        q.left.nextRight = getNextRight(q);
+                }
+
+                // Connect right child to the next available
+                // child
+                if (q.right != null)
+                    q.right.nextRight = getNextRight(q);
+
+                q = q.nextRight;
+            }
+
+            // Move to the first node of the next level
+            if (root.left != null)
+                root = root.left;
+            else if (root.right != null)
+                root = root.right;
+            else
+                root = getNextRight(root);
+        }
+        return head;
+    }
+    
+    // Print level order using nextRight pointers
+    static void printLevels(Node root)
+    {
+        Node levelStart = root;
+
+        while (levelStart != null) {
+            Node curr = levelStart;
+
+            while (curr != null) {
+                Console.Write(curr.data + " ");
+                curr = curr.nextRight;
+            }
+
+            Console.Write("# ");
+
+            // Find the first node of the next level
+            if (levelStart.left != null)
+                levelStart = levelStart.left;
+            else if (levelStart.right != null)
+                levelStart = levelStart.right;
+            else
+                break;
+        }
+    }
+
+    static void Main()
+    {
+
+        // Constructed binary tree
+        //       10
+        //      /  \
+        //     8    2
+        //    /    /
+        //   3    4
+        Node root = new Node(10);
+        root.left = new Node(8);
+        root.right = new Node(2);
+        root.left.left = new Node(3);
+        root.right.left = new Node(4);
+
+        connect(root);
+        printLevels(root);
+    }
+}
+
+
+            JavaScript
+
+    class Node {
+    constructor(val) {
+        this.data = val;
+        this.left = this.right = this.nextRight = null;
+    }
+}
+
+// Return the first node on the right
+// side of q and at the next level
+function getNextRight(p) {
+    let temp = p.nextRight;
+    while (temp!== null) {
+        if (temp.left!== null)
+            return temp.left;
+        if (temp.right!== null)
+            return temp.right;
+        temp = temp.nextRight;
+    }
+    return null;
+}
+
+// Function to connect nodes at the same level
+function connect(root) {
+    if (root === null)
+        return null;
+    root.nextRight = null;
+    while (root!== null) {
+        let q = root;
+        while (q!== null) {
+            if (q.left!== null) {
+                if (q.right!== null)
+                    q.left.nextRight = q.right;
+                else
+                    q.left.nextRight = getNextRight(q);
+            }
+            if (q.right!== null)
+                q.right.nextRight = getNextRight(q);
+            q = q.nextRight;
+        }
+        if (root.left!== null)
+            root = root.left;
+        else if (root.right!== null)
+            root = root.right;
+        else
+            root = getNextRight(root);
+    }
+    return root;
+}
+
+// Print level order using nextRight pointers
+function printLevels(root) {
+    let levelStart = root;
+
+    while (levelStart !== null) {
+        let curr = levelStart;
+
+        while (curr !== null) {
+            console.log; // No operation
+            process.stdout.write(curr.data + " ");
+            curr = curr.nextRight;
+        }
+
+        process.stdout.write("# ");
+
+        // Find the first node of the next level
+        if (levelStart.left !== null)
+            levelStart = levelStart.left;
+        else if (levelStart.right !== null)
+            levelStart = levelStart.right;
+        else
+            break;
+    }
+}
+
+// Driver code
+
+    // Constructed binary tree
+    //       10
+    //      /  \
+    //    8     2
+    //   /     /      
+    //  3     4      
+    let root = new Node(10);
+    root.left = new Node(8);
+    root.right = new Node(2);
+    root.left.left = new Node(3);
+    root.right.left = new Node(4);
+    connect(root);
+    printLevels(root)
+
+Output10 # 8 2 # 3 4 #

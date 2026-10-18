@@ -1,34 +1,36 @@
 # Serialize and Deserialize a Binary Tree - GeeksforGeeks
 
-Given the root of a binary tree, Complete the functions:serialize(): Traverse the tree, store node values in an array, and insert -1 wherever a node is null. Returns the array representing the tree.deSerialize(): Read the values of the array arr[] to reconstruct the tree. An element arr[i] == -1 represents a missing (null) child.Note: Multiple nodes can have the same data and the node values are always positive.Table of Content[Approach 1] Using Preorder Traversal (Recursive) - O(n) Time and O(n) Space[Approach 2] Using Level Order Traversal - O(n) Time and O(n) Space[Approach 1] Using Preorder Traversal (Recursive) - O(n) Time and O(n) SpaceThe idea is to use preorder traversal for serialization. While traversing, if a node is not null, store its value else store -1 as a marker.Try It YourselfSerialization: Perform preorder traversal, store node values and insert -1 wherever a node is null.Deserialization: Rebuild the tree by reading values in preorder order. If the value is -1, return null. Otherwise, create a node and recursively build its left and right children.Pseudo-code Idea (Deserialization)If current value = -1 → return NULLElse Create a new node with the current valueRecursively call to build node->left and node->rightReturn the node
+Given the root of a binary tree, Complete the functions:serialize(): Traverse the tree, store node values in an array, and insert -1 wherever a node is null. Returns the array representing the tree.deSerialize(): Read the values of the array arr[] to reconstruct the tree. An element arr[i] == -1 represents a missing (null) child.Note: Multiple nodes can have the same data and the node values are always positive.Examples:Input: root = [1, 2, 3]      Output: [1, 2, 3]Input: root = [10, 20, 30, 40, 60, N, N]  Output: [10, 20, 30, 40, 60]Try It YourselfTable of ContentPreorder Traversal (Recursive) - O(n) Time and O(n) SpaceLevel Order Traversal - O(n) Time and O(n) SpacePreorder Traversal (Recursive) - O(n) Time and O(n) SpaceThe idea is to use preorder traversal for serialization. While traversing, if a node is not null, store its value else store -1 as a marker.Serialization: Perform preorder traversal, store node values and insert -1 wherever a node is null.Deserialization: Rebuild the tree by reading values in preorder order. If the value is -1, return null. Otherwise, create a node and recursively build its left and right children.Pseudo-code Idea (Deserialization):If current value = -1 -> return NULLElse Create a new node with the current valueRecursively call to build node->left and node->rightReturn the node
             C++
 
     #include <iostream>
-#include<vector>
-#include<queue>
+#include <queue>
+#include <vector>
 using namespace std;
 
-// Node Structure
-class Node {
-public:
+class Node
+{
+  public:
     int data;
-    Node* left, *right;
-    Node (int x) {
+    Node *left, *right;
+    Node(int x)
+    {
         data = x;
-        left = nullptr;
-        right = nullptr;
+        left = right = nullptr;
     }
 };
 
 // Function to store the preorder
-void serializePreOrder(Node* root, vector<int> &arr) {
-    
+void serializePreOrder(Node *root, vector<int> &arr)
+{
+
     // Push -1 if root is null.
-    if (root == nullptr) {
+    if (root == nullptr)
+    {
         arr.push_back(-1);
         return;
     }
-    
+
     // Push the root into result.
     arr.push_back(root->data);
     serializePreOrder(root->left, arr);
@@ -36,138 +38,218 @@ void serializePreOrder(Node* root, vector<int> &arr) {
 }
 
 // Main function to serialize a tree.
-vector<int> serialize(Node *root) {
+vector<int> serialize(Node *root)
+{
     vector<int> arr;
     serializePreOrder(root, arr);
     return arr;
 }
 
 // Function to restore the array from preorder
-Node* deserializePreOrder(int &i, vector<int> &arr) {
-    
+Node *deserializePreOrder(int &i, vector<int> &arr)
+{
+
     // if element is -1 return null
-    if (arr[i] == -1){
+    if (arr[i] == -1)
+    {
         i++;
         return nullptr;
     }
-    
+
     // Create the root node.
-    Node* root = new Node(arr[i]);
+    Node *root = new Node(arr[i]);
     i++;
-    
+
     // Create the left and right subtree.
     root->left = deserializePreOrder(i, arr);
     root->right = deserializePreOrder(i, arr);
-    
+
     return root;
 }
 
-
-Node * deSerialize(vector<int> &arr) {
-   int i = 0;
-   return deserializePreOrder(i, arr);
+Node *deSerialize(vector<int> &arr)
+{
+    int i = 0;
+    return deserializePreOrder(i, arr);
 }
 
-int main() {
+// Function to print preorder traversal
+void preorder(Node *root)
+{
+    if (root == nullptr)
+        return;
 
+    cout << root->data << " ";
+    preorder(root->left);
+    preorder(root->right);
+}
+
+int main()
+{
     //       10
     //     /    \
     //    20    30
     //  /   \
-    // 40  60
-    Node* root = new Node(10);        
-    root->left = new Node(20);        
-    root->right = new Node(30);       
+    // 40   60
+
+    Node *root = new Node(10);
+    root->left = new Node(20);
+    root->right = new Node(30);
     root->left->left = new Node(40);
-    root->left->right = new Node(60); 
-    
+    root->left->right = new Node(60);
+
+    // Serialize the original tree
     vector<int> arr = serialize(root);
-    Node* res = deSerialize(arr);
+
+    // Deserialize the tree
+    Node *res = deSerialize(arr);
+
+    // Print the deserialized tree in level order
+    cout << "[";
+    queue<Node *> q;
+    q.push(res);
+    bool first = true;
+
+    while (!q.empty())
+    {
+        Node *curr = q.front();
+        q.pop();
+
+        if (curr == nullptr)
+            continue;
+
+        if (!first)
+            cout << ", ";
+
+        cout << curr->data;
+        first = false;
+
+        q.push(curr->left);
+        q.push(curr->right);
+    }
+
+    cout << "]" << endl;
+
+    return 0;
 }
 
 
             Java
 
-    import java.util.ArrayList;
-import java.util.Queue;
-import java.util.LinkedList;
+    import java.util.*;
 
-// Node Structure
 class Node {
     int data;
     Node left, right;
-    Node (int x) {
+
+    Node(int x)
+    {
         data = x;
-        left = null;
-        right = null;
+        left = right = null;
     }
 }
 
 class GFG {
-    
+
     // Function to store the preorder
-    static void serializePreOrder(Node root, ArrayList<Integer> arr) {
-        
+    void serializePreOrder(Node root,
+                           ArrayList<Integer> arr)
+    {
+
         // Push -1 if root is null.
         if (root == null) {
             arr.add(-1);
             return;
         }
-        
+
         // Push the root into result.
         arr.add(root.data);
         serializePreOrder(root.left, arr);
         serializePreOrder(root.right, arr);
     }
 
-    //  function to serialize a tree.
-    static ArrayList<Integer> serialize(Node root) {
+    // Main function to serialize a tree.
+    ArrayList<Integer> serialize(Node root)
+    {
         ArrayList<Integer> arr = new ArrayList<>();
         serializePreOrder(root, arr);
         return arr;
     }
 
-    // Function to restore the tree from preorder
-    static Node deserializePreOrder(int[] i, ArrayList<Integer> arr) {
-        
-        // if elemnt is -1 return null
+    // Function to restore the array from preorder
+    Node deserializePreOrder(int[] i,
+                             ArrayList<Integer> arr)
+    {
+
+        // If element is -1, return null.
         if (arr.get(i[0]) == -1) {
             i[0]++;
             return null;
         }
-        
+
         // Create the root node.
         Node root = new Node(arr.get(i[0]));
         i[0]++;
-        
+
         // Create the left and right subtree.
         root.left = deserializePreOrder(i, arr);
         root.right = deserializePreOrder(i, arr);
-        
+
         return root;
     }
 
-    // function to deserialize a tree.
-    static Node deSerialize(ArrayList<Integer> arr) {
-       int[] i = {0};
-       return deserializePreOrder(i, arr);
+    Node deSerialize(ArrayList<Integer> arr)
+    {
+        int[] i = { 0 };
+        return deserializePreOrder(i, arr);
     }
-    
-    public static void main(String[] args) {
+
+    public static void main(String[] args)
+    {
 
         //       10
         //     /    \
         //    20    30
         //  /   \
-        // 40  60
-        Node root = new Node(10);        
-        root.left = new Node(20);        
-        root.right = new Node(30);       
+        // 40   60
+
+        Node root = new Node(10);
+        root.left = new Node(20);
+        root.right = new Node(30);
         root.left.left = new Node(40);
-        root.left.right = new Node(60); 
-        
-        ArrayList<Integer> arr = serialize(root);
-        Node res = deSerialize(arr);
+        root.left.right = new Node(60);
+
+        GFG sol = new GFG();
+
+        // Serialize the original tree
+        ArrayList<Integer> arr = sol.serialize(root);
+
+        // Deserialize the tree
+        Node res = sol.deSerialize(arr);
+
+        // Print the deserialized tree in level order
+        System.out.print("[");
+        Queue<Node> q = new LinkedList<>();
+        q.add(res);
+        boolean first = true;
+
+        while (!q.isEmpty()) {
+            Node curr = q.poll();
+
+            if (curr == null)
+                continue;
+
+            if (!first)
+                System.out.print(", ");
+
+            System.out.print(curr.data);
+            first = false;
+
+            q.add(curr.left);
+            q.add(curr.right);
+        }
+
+        System.out.println("]");
     }
 }
 
@@ -176,71 +258,93 @@ class GFG {
 
     from collections import deque
 
-# Node Structure
 class Node:
-    def __init__(self, x):
-        self.data = x
+    def __init__(self, data):
+        self.data = data
         self.left = None
         self.right = None
 
-# Function to store preorder
+# Function to store the preorder
 def serializePreOrder(root, arr):
-    
     # Push -1 if root is null.
     if root is None:
         arr.append(-1)
         return
-    
+
     # Push the root into result.
     arr.append(root.data)
     serializePreOrder(root.left, arr)
     serializePreOrder(root.right, arr)
 
-#  function to serialize a tree.
+# Main function to serialize a tree.
 def serialize(root):
     arr = []
     serializePreOrder(root, arr)
     return arr
 
-# Function to restore the tree from preorder
-def deserializePreOrder(i, arr):
-    
-    # if element is -1 return null
-    if arr[i[0]] == -1:
-        i[0] += 1
+# Function to restore the array from preorder
+def deserializePreOrder(index, arr):
+    # If element is -1, return null.
+    if arr[index[0]] == -1:
+        index[0] += 1
         return None
-    
+
     # Create the root node.
-    root = Node(arr[i[0]])
-    i[0] += 1
-    
+    root = Node(arr[index[0]])
+    index[0] += 1
+
     # Create the left and right subtree.
-    root.left = deserializePreOrder(i, arr)
-    root.right = deserializePreOrder(i, arr)
-    
+    root.left = deserializePreOrder(index, arr)
+    root.right = deserializePreOrder(index, arr)
+
     return root
 
-# function to deserialize a tree.
+
 def deSerialize(arr):
-    i = [0]
-    return deserializePreOrder(i, arr)
+    index = [0]
+    return deserializePreOrder(index, arr)
+
+# Function to print level-order traversal
+def levelOrder(root):
+    if root is None:
+        return []
+
+    result = []
+    q = deque([root])
+
+    while q:
+        curr = q.popleft()
+        result.append(curr.data)
+
+        if curr.left is not None:
+            q.append(curr.left)
+        if curr.right is not None:
+            q.append(curr.right)
+
+    return result
 
 
 if __name__ == "__main__":
-
     #       10
     #     /    \
     #    20    30
     #  /   \
-    # 40  60
-    root = Node(10)        
-    root.left = Node(20)        
-    root.right = Node(30)       
+    # 40   60
+
+    root = Node(10)
+    root.left = Node(20)
+    root.right = Node(30)
     root.left.left = Node(40)
-    root.left.right = Node(60) 
-    
+    root.left.right = Node(60)
+
+    # Serialize the original tree
     arr = serialize(root)
+
+    # Deserialize the tree
     res = deSerialize(arr)
+
+    # Print the deserialized tree in level order
+    print(levelOrder(res))
 
 
             C#
@@ -248,23 +352,21 @@ if __name__ == "__main__":
     using System;
 using System.Collections.Generic;
 
-// Node Structure
-class Node {
+public class Node {
     public int data;
     public Node left, right;
+
     public Node(int x)
     {
         data = x;
-        left = null;
-        right = null;
+        left = right = null;
     }
 }
 
-class GFG {
-
+public class GFG {
     // Function to store the preorder
-    static void serializePreOrder(Node root, List<int> arr) {
-
+    void serializePreOrder(Node root, List<int> arr)
+    {
         // Push -1 if root is null.
         if (root == null) {
             arr.Add(-1);
@@ -277,19 +379,18 @@ class GFG {
         serializePreOrder(root.right, arr);
     }
 
-    //  function to serialize a tree.
-    static List<int> serialize(Node root)
+    // Main function to serialize a tree.
+    public List<int> serialize(Node root)
     {
         List<int> arr = new List<int>();
         serializePreOrder(root, arr);
         return arr;
     }
 
-    // Function to restore the tree from preorder
-    static Node deserializePreOrder(ref int i,
-                                    List<int> arr) {
-
-        // if element is -1 return null
+    // Function to restore the array from preorder
+    Node deserializePreOrder(ref int i, List<int> arr)
+    {
+        // If element is -1, return null.
         if (arr[i] == -1) {
             i++;
             return null;
@@ -306,238 +407,331 @@ class GFG {
         return root;
     }
 
-    //  function to deserialize a tree.
-    static Node deSerialize(List<int> arr) {
+    public Node deSerialize(List<int> arr)
+    {
         int i = 0;
         return deserializePreOrder(ref i, arr);
     }
 
-    static void Main() {
-
+    public static void Main()
+    {
         //       10
         //     /    \
         //    20    30
         //  /   \
-        // 40  60
+        // 40   60
+
         Node root = new Node(10);
         root.left = new Node(20);
         root.right = new Node(30);
         root.left.left = new Node(40);
         root.left.right = new Node(60);
 
-        List<int> arr = serialize(root);
+        GFG sol = new GFG();
 
-        // Variable assigned but never used
-        #pragma warning disable CS0219
-        Node res = deSerialize(arr);
-        #pragma warning restore CS0219
+        // Serialize the original tree
+        List<int> arr = sol.serialize(root);
+
+        // Deserialize the tree
+        Node res = sol.deSerialize(arr);
+
+        // Print the deserialized tree in level order
+        Console.Write("[");
+        Queue<Node> q = new Queue<Node>();
+        q.Enqueue(res);
+        bool first = true;
+
+        while (q.Count > 0) {
+            Node curr = q.Dequeue();
+
+            if (curr == null)
+                continue;
+
+            if (!first)
+                Console.Write(", ");
+
+            Console.Write(curr.data);
+            first = false;
+
+            q.Enqueue(curr.left);
+            q.Enqueue(curr.right);
+        }
+
+        Console.WriteLine("]");
     }
 }
 
 
             JavaScript
 
-    // Node Structure
-class Node {
-    constructor(x) {
-        this.data = x;
+    class Node {
+    constructor(data)
+    {
+        this.data = data;
         this.left = null;
         this.right = null;
     }
 }
 
 // Function to store the preorder
-function serializePreOrder(root, arr) {
-    
-    // Push -1 if root is null.
+function serializePreOrder(root, arr)
+{
     if (root === null) {
         arr.push(-1);
         return;
     }
-    
-    // Push the root into result.
+
     arr.push(root.data);
     serializePreOrder(root.left, arr);
     serializePreOrder(root.right, arr);
 }
 
-// function to serialize a tree.
-function serialize(root) {
-    const arr = [];
+// Main function to serialize a tree
+function serialize(root)
+{
+    let arr = [];
     serializePreOrder(root, arr);
     return arr;
 }
 
 // Function to restore the tree from preorder
-function deserializePreOrder(i, arr) {
-    
-    // if element is -1 return null
+function deserializePreOrder(i, arr)
+{
     if (arr[i[0]] === -1) {
         i[0]++;
         return null;
     }
-    
-    // Create the root node.
-    const root = new Node(arr[i[0]]);
+
+    let root = new Node(arr[i[0]]);
     i[0]++;
-    
-    // Create the left and right subtree.
+
     root.left = deserializePreOrder(i, arr);
     root.right = deserializePreOrder(i, arr);
-    
+
     return root;
 }
 
-//  function to deserialize a tree.
-function deserialize(arr) {
-    const i = [0];
+function deSerialize(arr)
+{
+    let i = [ 0 ];
     return deserializePreOrder(i, arr);
 }
 
-// Driver Code
+// Function to print level-order traversal
+function levelOrder(root)
+{
+    if (root === null)
+        return [];
 
+    let result = [];
+    let q = [ root ];
+
+    while (q.length > 0) {
+        let curr = q.shift();
+        result.push(curr.data);
+
+        if (curr.left !== null)
+            q.push(curr.left);
+
+        if (curr.right !== null)
+            q.push(curr.right);
+    }
+
+    return result;
+}
+
+// Driver code
 //       10
 //     /    \
 //    20    30
 //  /   \
-// 40  60
-const root = new Node(10);
+// 40   60
+
+let root = new Node(10);
 root.left = new Node(20);
 root.right = new Node(30);
 root.left.left = new Node(40);
 root.left.right = new Node(60);
 
-const arr = serialize(root);
-const res = deserialize(arr);
+// Serialize the original tree
+let arr = serialize(root);
 
-[Approach 2] Using Level Order Traversal - O(n) Time and O(n) SpaceThe idea is to use level-order traversal for serialization. Push the root into a queue and traverse the tree level by level. For each node, if it exists, store its value and push its left and right children into the queue; if it’s null, store -1 to mark null. For deserialization, create the root from the first element and push it into a queue. Then, for each element in the array, pop a node from the queue and link its left and right children if the element is -1, the child is null; otherwise, create the node and push it into the queue. This ensures the tree structure is fully preserved.
+// Deserialize the tree
+let res = deSerialize(arr);
+
+// Print the deserialized tree in level order
+console.log("[" + levelOrder(res).join(", ") + "]");
+
+Output[10, 20, 30, 40, 60]
+Level Order Traversal - O(n) Time and O(n) SpaceThe idea is to use level-order traversal for serialization. Push the root into a queue and traverse the tree level by level. For each node, if it exists, store its value and push its left and right children into the queue; if it’s null, store -1 to mark null. For deserialization, create the root from the first element and push it into a queue. Then, for each element in the array, pop a node from the queue and link its left and right children if the element is -1, the child is null; otherwise, create the node and push it into the queue. Serialization: Traverse the tree level by level, storing node values and using -1 for null nodes.Deserialization: Reconstruct the tree using the stored values and a queue to connect the left and right children.Let us understand with an example:Input: root = [10, 20, 30, 40, 60, N, N]  The original tree has root 10, children 20 and 30, and children 40 and 60 under node 20.Serialization visits nodes level by level and stores -1 for null children.Deserialization uses a queue to restore each node's left and right children.Serializing the reconstructed tree produces the same serialized array as the original tree.After removing the -1 markers, the displayed output is [10, 20, 30, 40, 60].
             C++
 
     #include <iostream>
-#include <vector>
 #include <queue>
+#include <vector>
 using namespace std;
 
-// Node Structure
-class Node {
-public:
+class Node
+{
+  public:
     int data;
-    Node* left, *right;
-    Node (int x) {
+    Node *left, *right;
+    Node(int x)
+    {
         data = x;
-        left = nullptr;
-        right = nullptr;
+        left = right = nullptr;
     }
 };
 
 // function to serialize a tree.
-vector<int> serialize(Node *root) {
+vector<int> serialize(Node *root)
+{
     vector<int> arr;
-    
-    queue<Node*> q;
+
+    queue<Node *> q;
     q.push(root);
-    
-    while (!q.empty()) {
-        Node* curr = q.front();
+
+    while (!q.empty())
+    {
+        Node *curr = q.front();
         q.pop();
-        
+
         // If curr node is null,
         // append -1 to result.
-        if (curr == nullptr) {
+        if (curr == nullptr)
+        {
             arr.push_back(-1);
             continue;
         }
-        
+
         // else push its value into
         // result and push left and right
         // child nodes into queue.
         arr.push_back(curr->data);
-        
+
         q.push(curr->left);
         q.push(curr->right);
     }
-    
+
     return arr;
 }
 
-
 //  function to deserialize a tree.
-Node * deSerialize(vector<int> &arr) {
-   
-   if (arr[0]==-1) return nullptr;
-   
-   // create root node and push 
-   // it into queue
-   Node* root = new Node(arr[0]);
-   queue<Node*> q;
-   q.push(root);
-   
-   int i = 1;
-   while (!q.empty()) {
-       Node* curr = q.front();
-       q.pop();
-       
-       // If left node is not null
-       if (arr[i]!=-1) {
-           Node* left = new Node(arr[i]);
-           curr->left = left;
-           q.push(left);
-       }
-       i++;
-       
-       // If right node is not null
-       if (arr[i]!=-1) {
-           Node* right = new Node(arr[i]);
-           curr->right = right;
-           q.push(right);
-       }
-       i++;
-   }
-   
-   return root;
+Node *deSerialize(vector<int> &arr)
+{
+
+    if (arr[0] == -1)
+        return nullptr;
+
+    // create root node and push
+    // it into queue
+    Node *root = new Node(arr[0]);
+    queue<Node *> q;
+    q.push(root);
+
+    int i = 1;
+    while (!q.empty())
+    {
+        Node *curr = q.front();
+        q.pop();
+
+        // If left node is not null
+        if (arr[i] != -1)
+        {
+            Node *left = new Node(arr[i]);
+            curr->left = left;
+            q.push(left);
+        }
+        i++;
+
+        // If right node is not null
+        if (arr[i] != -1)
+        {
+            Node *right = new Node(arr[i]);
+            curr->right = right;
+            q.push(right);
+        }
+        i++;
+    }
+
+    return root;
 }
 
+// Function to print preorder traversal
+void preorder(Node *root)
+{
+    if (root == nullptr)
+        return;
 
-int main() {
+    cout << root->data << " ";
+    preorder(root->left);
+    preorder(root->right);
+}
 
-    // Create a hard coded tree
+int main()
+{
     //       10
     //     /    \
     //    20    30
     //  /   \
     // 40  60
-    Node* root = new Node(10);        
-    root->left = new Node(20);        
-    root->right = new Node(30);       
+
+    Node *root = new Node(10);
+    root->left = new Node(20);
+    root->right = new Node(30);
     root->left->left = new Node(40);
-    root->left->right = new Node(60); 
-    
+    root->left->right = new Node(60);
+
+    // Serialize the original tree
     vector<int> arr = serialize(root);
-    Node* res = deSerialize(arr);
+
+    // Deserialize the tree
+    Node *res = deSerialize(arr);
+
+    // Serialize the deserialized tree
+    vector<int> arr2 = serialize(res);
+
+    cout << "[";
+    bool first = true;
+
+    for (int x : arr2)
+    {
+        if (x == -1)
+            continue;
+
+        if (!first)
+            cout << ", ";
+
+        cout << x;
+        first = false;
+    }
+
+    cout << "]" << endl;
+
+    return 0;
 }
 
 
             Java
 
-    import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
+    import java.util.*;
 
-// Node Structure
 class Node {
     int data;
     Node left, right;
-    Node(int x) {
+
+    Node(int x)
+    {
         data = x;
-        left = null;
-        right = null;
+        left = right = null;
     }
 }
 
 class GFG {
-    
-    // Main function to serialize a tree.
-    static ArrayList<Integer> serialize(Node root) {
+
+    // Function to serialize a tree.
+    ArrayList<Integer> serialize(Node root)
+    {
         ArrayList<Integer> arr = new ArrayList<>();
         Queue<Node> q = new LinkedList<>();
         q.add(root);
@@ -545,16 +739,13 @@ class GFG {
         while (!q.isEmpty()) {
             Node curr = q.poll();
 
-            // If curr node is null,
-            // append -1 to result.
+            // If curr node is null, append -1.
             if (curr == null) {
                 arr.add(-1);
                 continue;
             }
 
-            // else push its value into
-            // result and push left and right
-            // child nodes into queue.
+            // Store the node value and add its children.
             arr.add(curr.data);
             q.add(curr.left);
             q.add(curr.right);
@@ -563,23 +754,23 @@ class GFG {
         return arr;
     }
 
-    // Main function to deserialize a tree.
-    static Node deSerialize(ArrayList<Integer> arr) {
+    // Function to deserialize a tree.
+    Node deSerialize(ArrayList<Integer> arr)
+    {
+        if (arr.get(0) == -1)
+            return null;
 
-        // base case
-        if (arr.get(0) == -1) return null;
-
-        // create root node and push 
-        // it into queue
+        // Create root node and push it into the queue.
         Node root = new Node(arr.get(0));
         Queue<Node> q = new LinkedList<>();
         q.add(root);
 
         int i = 1;
+
         while (!q.isEmpty()) {
             Node curr = q.poll();
 
-            // If left node is not null
+            // Create the left child if it is not null.
             if (arr.get(i) != -1) {
                 Node left = new Node(arr.get(i));
                 curr.left = left;
@@ -587,7 +778,7 @@ class GFG {
             }
             i++;
 
-            // If right node is not null
+            // Create the right child if it is not null.
             if (arr.get(i) != -1) {
                 Node right = new Node(arr.get(i));
                 curr.right = right;
@@ -599,22 +790,46 @@ class GFG {
         return root;
     }
 
-
-    public static void main(String[] args) {
-
+    public static void main(String[] args)
+    {
         //       10
         //     /    \
         //    20    30
         //  /   \
         // 40  60
+
         Node root = new Node(10);
         root.left = new Node(20);
         root.right = new Node(30);
         root.left.left = new Node(40);
         root.left.right = new Node(60);
 
-        ArrayList<Integer> arr = serialize(root);
-        Node res = deSerialize(arr);
+        GFG sol = new GFG();
+
+        // Serialize the original tree.
+        ArrayList<Integer> arr = sol.serialize(root);
+
+        // Deserialize the tree.
+        Node res = sol.deSerialize(arr);
+
+        // Serialize the deserialized tree.
+        ArrayList<Integer> arr2 = sol.serialize(res);
+
+        System.out.print("[");
+        boolean first = true;
+
+        for (int x : arr2) {
+            if (x == -1)
+                continue;
+
+            if (!first)
+                System.out.print(", ");
+
+            System.out.print(x);
+            first = false;
+        }
+
+        System.out.println("]");
     }
 }
 
@@ -623,85 +838,110 @@ class GFG {
 
     from collections import deque
 
-
-# Node Structure
 class Node:
-    def __init__(self, x):
-        self.data = x
+    def __init__(self, data):
+        self.data = data
         self.left = None
         self.right = None
 
-#  function to serialize a tree.
+# function to serialize a tree.
 def serialize(root):
     arr = []
     q = deque([root])
-    
+
     while q:
         curr = q.popleft()
 
         # If curr node is null,
         # append -1 to result.
-        if not curr:
+        if curr is None:
             arr.append(-1)
             continue
-        
+
         # else push its value into
         # result and push left and right
         # child nodes into queue.
         arr.append(curr.data)
         q.append(curr.left)
         q.append(curr.right)
-    
+
     return arr
 
 #  function to deserialize a tree.
 def deSerialize(arr):
-
-    # base case
     if arr[0] == -1:
         return None
-    
-    # create root node and push 
+
+    # create root node and push
     # it into queue
     root = Node(arr[0])
     q = deque([root])
-    
+
     i = 1
     while q:
         curr = q.popleft()
 
         # If left node is not null
-        if arr[i] != -1:
+        if arr[i]!= -1:
             left = Node(arr[i])
             curr.left = left
             q.append(left)
         i += 1
 
         # If right node is not null
-        if arr[i] != -1:
+        if arr[i]!= -1:
             right = Node(arr[i])
             curr.right = right
             q.append(right)
         i += 1
-    
+
     return root
 
-if __name__ == "__main__":
+# Function to print preorder traversal
+def preorder(root):
+    if root is None:
+        return
 
-    
+    print(root.data, end=" ")
+    preorder(root.left)
+    preorder(root.right)
+
+if __name__ == "__main__":
     #       10
     #     /    \
     #    20    30
     #  /   \
     # 40  60
+
     root = Node(10)
     root.left = Node(20)
     root.right = Node(30)
     root.left.left = Node(40)
     root.left.right = Node(60)
-    
+
+    # Serialize the original tree
     arr = serialize(root)
+
+    # Deserialize the tree
     res = deSerialize(arr)
+
+    # Serialize the deserialized tree
+    arr2 = serialize(res)
+
+    print('[', end="")
+    first = True
+
+    for x in arr2:
+        if x == -1:
+            continue
+
+        if not first:
+            print(", ", end="")
+
+        print(x, end="")
+        first = False
+
+    print(']')
 
 
             C#
@@ -709,73 +949,68 @@ if __name__ == "__main__":
     using System;
 using System.Collections.Generic;
 
-// Node Structure
-class Node {
+public class Node {
     public int data;
     public Node left, right;
-    public Node(int x) {
+
+    public Node(int x)
+    {
         data = x;
-        left = null;
-        right = null;
+        left = right = null;
     }
 }
 
-class GFG {
-    
-    //  function to serialize a tree.
-    static List<int> serialize(Node root) {
+public class GFG {
+    // Function to serialize a tree.
+    public List<int> serialize(Node root)
+    {
         List<int> arr = new List<int>();
-        
         Queue<Node> q = new Queue<Node>();
         q.Enqueue(root);
-        
+
         while (q.Count > 0) {
             Node curr = q.Dequeue();
-            
-            // If curr node is null,
-            // append -1 to result.
+
+            // If curr node is null, append -1.
             if (curr == null) {
                 arr.Add(-1);
                 continue;
             }
-            
-            // else push its value into
-            // result and push left and right
-            // child nodes into queue.
+
+            // Store the node value and add its children.
             arr.Add(curr.data);
-            
             q.Enqueue(curr.left);
             q.Enqueue(curr.right);
         }
-        
+
         return arr;
     }
 
-    //  function to deserialize a tree.
-    static Node deSerialize(List<int> arr) {
-        
-        // base case
-        if (arr[0] == -1) return null;
-        
-        // create root node and push 
-        // it into queue
+    // Function to deserialize a tree.
+    public Node deSerialize(List<int> arr)
+    {
+        if (arr[0] == -1)
+            return null;
+
+        // Create root node and push it into the queue.
         Node root = new Node(arr[0]);
         Queue<Node> q = new Queue<Node>();
         q.Enqueue(root);
-        
+
         int i = 1;
+
         while (q.Count > 0) {
             Node curr = q.Dequeue();
-            
-            // If left node is not null
+
+            // Create the left child if it is not null.
             if (arr[i] != -1) {
                 Node left = new Node(arr[i]);
                 curr.left = left;
                 q.Enqueue(left);
             }
             i++;
-            
-            // If right node is not null
+
+            // Create the right child if it is not null.
             if (arr[i] != -1) {
                 Node right = new Node(arr[i]);
                 curr.right = right;
@@ -783,96 +1018,74 @@ class GFG {
             }
             i++;
         }
-        
+
         return root;
     }
 
-    static void Main(string[] args) {
-
+    public static void Main()
+    {
         //       10
         //     /    \
         //    20    30
         //  /   \
-        // 40   60
-        Node root = new Node(10);        
-        root.left = new Node(20);        
-        root.right = new Node(30);       
+        // 40  60
+
+        Node root = new Node(10);
+        root.left = new Node(20);
+        root.right = new Node(30);
         root.left.left = new Node(40);
-        root.left.right = new Node(60); 
-        
-        List<int> arr = serialize(root);
-       
-        // Variable assigned but never used
-        #pragma warning disable CS0219
-        Node res = deSerialize(arr);
-        #pragma warning restore CS0219
+        root.left.right = new Node(60);
+
+        GFG sol = new GFG();
+
+        // Serialize the original tree.
+        List<int> arr = sol.serialize(root);
+
+        // Deserialize the tree.
+        Node res = sol.deSerialize(arr);
+
+        // Serialize the deserialized tree.
+        List<int> arr2 = sol.serialize(res);
+
+        Console.Write("[");
+        bool first = true;
+
+        foreach(int x in arr2)
+        {
+            if (x == -1)
+                continue;
+
+            if (!first)
+                Console.Write(", ");
+
+            Console.Write(x);
+            first = false;
+        }
+
+        Console.WriteLine("]");
     }
 }
 
 
             JavaScript
 
-    // Queue node
-class QNode {
-    constructor(data) {
+    class Node {
+    constructor(data)
+    {
         this.data = data;
-        this.next = null;
-    }
-}
-
-// Custom Queue implementation
-class Queue {
-    constructor() {
-        this.front = null;
-        this.rear = null;
-    }
-
-    isEmpty() {
-        return this.front === null;
-    }
-
-    enqueue(x) {
-        let newNode = new QNode(x);
-        if (this.rear === null) {
-            this.front = this.rear = newNode;
-            return;
-        }
-        this.rear.next = newNode;
-        this.rear = newNode;
-    }
-
-    dequeue() {
-        if (this.front === null)
-            return null;
-
-        let temp = this.front;
-        this.front = this.front.next;
-
-        if (this.front === null)
-            this.rear = null;
-
-        return temp.data;
-    }
-}
-
-// Node Structure
-class Node {
-    constructor(x) {
-        this.data = x;
         this.left = null;
         this.right = null;
     }
 }
 
 // function to serialize a tree.
-function serialize(root) {
-    const arr = [];
-    const q = new Queue();
+function serialize(root)
+{
+    let arr = [];
+    let q = [ root ];
 
-    q.enqueue(root);
-
-    while (!q.isEmpty()) {
-        const curr = q.dequeue();
+    while (q.length > 0) {
+        let curr = q.shift();
 
         // If curr node is null,
         // append -1 to result.
@@ -881,42 +1094,46 @@ function serialize(root) {
             continue;
         }
 
-        // else push its value into result
+        // else push its value into
+        // result and push left and right
+        // child nodes into queue.
         arr.push(curr.data);
-
-        // enqueue children
-        q.enqueue(curr.left);
-        q.enqueue(curr.right);
+        q.push(curr.left);
+        q.push(curr.right);
     }
 
     return arr;
 }
 
 // function to deserialize a tree.
-function deserialize(arr) {
-    if (arr[0] === -1) return null;
+function deSerialize(arr)
+{
+    if (arr[0] === -1) {
+        return null;
+    }
 
-    const root = new Node(arr[0]);
-    const q = new Queue();
-    q.enqueue(root);
+    // create root node and push
+    // it into queue
+    let root = new Node(arr[0]);
+    let q = [ root ];
 
     let i = 1;
-    while (!q.isEmpty()) {
-        const curr = q.dequeue();
+    while (q.length > 0) {
+        let curr = q.shift();
 
-        // Left child
+        // If left node is not null
         if (arr[i] !== -1) {
-            const left = new Node(arr[i]);
+            let left = new Node(arr[i]);
             curr.left = left;
-            q.enqueue(left);
+            q.push(left);
         }
         i++;
 
-        // Right child
+        // If right node is not null
         if (arr[i] !== -1) {
-            const right = new Node(arr[i]);
+            let right = new Node(arr[i]);
             curr.right = right;
-            q.enqueue(right);
+            q.push(right);
         }
         i++;
     }
@@ -924,20 +1141,56 @@ function deserialize(arr) {
     return root;
 }
 
+// Function to print preorder traversal
+function preorder(root)
+{
+    if (root === null) {
+        return;
+    }
+
+    console.log(root.data + " ");
+    preorder(root.left);
+    preorder(root.right);
+}
+
 // Driver Code
+//        10
+//      /    \
+//     20    30
+//   /   \
+//  40  60
 
-//       10
-//     /    \
-//    20    30
-//  /   \
-// 40  60
-
-const root = new Node(10);
+let root = new Node(10);
 root.left = new Node(20);
 root.right = new Node(30);
 root.left.left = new Node(40);
 root.left.right = new Node(60);
 
-const arr = serialize(root);
+// Serialize the original tree
+let arr = serialize(root);
 
-const res = deserialize(arr);
+// Deserialize the tree
+let res = deSerialize(arr);
+
+// Serialize the deserialized tree
+let arr2 = serialize(res);
+
+console.log("[");
+let first = true;
+
+for (let x of arr2) {
+    if (x === -1) {
+        continue;
+    }
+
+    if (!first) {
+        console.log(", ");
+    }
+
+    console.log(x);
+    first = false;
+}
+
+console.log("]");
+
+Output[10, 20, 30, 40, 60]

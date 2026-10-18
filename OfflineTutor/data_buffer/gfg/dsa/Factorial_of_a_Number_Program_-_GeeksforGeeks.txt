@@ -1,6 +1,6 @@
 # Factorial of a Number Program - GeeksforGeeks
 
-Given a non-negative integers n, compute the factorial of the given number. Factorial of n is defined as n * (n -1) * (n - 2) * ... * 1. For n = 0, the factorial is defined as 1.Examples:Input: n = 5Output: 120Explanation: 5! = 5 * 4 * 3 * 2 * 1 = 120Input: n = 4Output: 24Explanation: 4! = 4 * 3 * 2 * 1 = 24Input: n = 0Output: 1Input: n = 1Output: 1Try It YourselfTable of ContentIterative Solution - O(n) Time and O(1) SpaceRecursive Solution - O(n) Time and O(n) Space Iterative Solution - O(n) Time and O(1) SpaceFactorial is computed by multiplying all integers from 1 to n using a loop. We initialize a variable ans as 1 and update it in each iteration by multiplying with the current number. This approach avoids recursion and uses constant extra space.Step-by-step execution:For n = 4Initialize : ans = 1i = 1, ans = 1 * 1 = 1i = 2, ans = 1 * 2 = 2i = 3, ans = 2 * 3 = 6i = 4, ans = 6 * 4 = 24Final factorial = 24
+Given a non-negative integers n, compute the factorial of the given number. Factorial of n is defined as n * (n -1) * (n - 2) * ... * 1. For n = 0, the factorial is defined as 1.Examples:Input: n = 5Output: 120Explanation: 5! = 5 * 4 * 3 * 2 * 1 = 120Input: n = 4Output: 24Explanation: 4! = 4 * 3 * 2 * 1 = 24Input: n = 0Output: 1Input: n = 1Output: 1Try It YourselfTable of ContentIterative Solution - O(n) Time and O(1) SpaceRecursive Solution - O(n) Time and O(n) Space Iterative Solution - O(n) Time and O(1) SpaceFactorial is computed by multiplying all integers from 1 to n using a loop. Initialize a variable ans as 1 Update ans in a loop by multiplying it with the current iteration number. Step-by-step execution:For n = 4Initialize : ans = 1i = 1, ans = 1 * 1 = 1i = 2, ans = 1 * 2 = 2i = 3, ans = 2 * 3 = 6i = 4, ans = 6 * 4 = 24Final factorial = 24
             C++
 
     #include <iostream>
@@ -126,7 +126,7 @@ let num = 5;
 console.log(factorial(5));
 
 Output120
-Recursive Solution - O(n) Time and O(n) Space Factorial is defined recursively as n! = n × (n - 1)!. We define a base case where if n equals 0 or 1, the function returns 1. Otherwise, the function calls itself with n minus 1, breaking the problem into smaller subproblems until reaching the base case.Function Call for Factorial of 5
+Recursive Solution - O(n) Time and O(n) Space Factorial is defined recursively as n! = n × (n - 1)!. Define a base case where if n equals 0 or 1, the function returns 1. If not base case, the function calls itself with n minus 1, breaking the problem into smaller subproblems until reaching the base case.Function Call for Factorial of 5
             C++
 
     #include <iostream>

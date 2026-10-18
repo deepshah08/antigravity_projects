@@ -155,59 +155,59 @@ if __name__ == "__main__":
 
     //Driver Code Starts
 using System;
-using System.Collections.Generic;
 
 class GFG {
-
+    static void floydWarshall(int[, ] dist)
+    {
 //Driver Code Ends
 
-    public static void floydWarshall(List<List<int>> dist) {
-        int V = dist.Count;
+        int V = dist.GetLength(0);
         int INF = 100000000;
 
         // for each intermediate vertex
         for (int k = 0; k < V; k++) {
-
+            
             // Pick all vertices as source one by one
             for (int i = 0; i < V; i++) {
-
+                
                 // Pick all vertices as destination
                 // for the above picked source
                 for (int j = 0; j < V; j++) {
-
-                    // shortest path from i to j 
-                    if (dist[i][k] != INF && dist[k][j] != INF)
-                        dist[i][j] = Math.Min(dist[i][j],
-                                              dist[i][k] + dist[k][j]);
+                    
+                    // shortest path from i to j
+                    if (dist[i, k] != INF
+                        && dist[k, j] != INF) {
+                        dist[i, j] = Math.Min(
+                            dist[i, j],
+                            dist[i, k] + dist[k, j]);
+                    }
                 }
             }
+
+//Driver Code Starts
         }
     }
 
-//Driver Code Starts
-
-    public static void Main() {
+    static void Main()
+    {
         int INF = 100000000;
-
-        List<List<int>> dist = new List<List<int>>() {
-            new List<int>{0, 4, INF, 5, INF},
-            new List<int>{INF, 0, 1, INF, 6},
-            new List<int>{2, INF, 0, 3, INF},
-            new List<int>{INF, INF, 1, 0, 2},
-            new List<int>{1, INF, INF, 4, 0}
-        };
+        int[, ] dist = { { 0, 4, INF, 5, INF },
+                         { INF, 0, 1, INF, 6 },
+                         { 2, INF, 0, 3, INF },
+                         { INF, INF, 1, 0, 2 },
+                         { 1, INF, INF, 4, 0 } };
 
         floydWarshall(dist);
 
-        for (int i = 0; i < dist.Count; i++) {
-            for (int j = 0; j < dist.Count; j++) {
-                Console.Write(dist[i][j] + " ");
+        int n = dist.GetLength(0);
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                Console.Write(dist[i, j] + " ");
             }
             Console.WriteLine();
         }
     }
 }
-
 //Driver Code Ends
 
 

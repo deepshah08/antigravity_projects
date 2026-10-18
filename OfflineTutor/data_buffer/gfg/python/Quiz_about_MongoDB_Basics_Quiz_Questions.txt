@@ -1,0 +1,69 @@
+# Quiz about MongoDB Basics Quiz Questions
+
+#nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #29D;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29D;
+        border-left-color: #29D;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    CoursesTutorialsPracticeJobsDSAPractice ProblemsC C++JavaPythonJavaScriptData ScienceMachine LearningCoursesLinuxDevOpsEarn Google BadgeIntroductionHow do Document Databases Work?Working of MongoDBMongoDB IntroductionMongoDB: Getting StartedMongoDB - Working and FeaturesDifference between RDBMS and MongoDBMongoDB Vs MySQLInstallationInstallation and Configuration of MongoDB in UbuntuInstallation of MongoDB on MacOSInstall MongoDB on WindowsBasics of MongoDBMongoDB - Database, Collection, and DocumentMongoDB CursorData Types in MongoDBObjectId in MongoDBMongoDB QueryMongoDB - Create Database using Mongo ShellMongoDB Database Deletion Using MongoShellMongoDB CRUD OperationsMongoDB MethodsMongoDB - Insert() MethodMongoDB insertOne() MethodMongoDB insertMany() MethodMongoDB - Bulk.insert() MethodMongoDB - bulkWrite() MethodMongoDB - Update() MethodMongoDB  updateOne() MethodMongoDB updateMany() MethodMongoDB - find() MethodMongoDB findAndModify() MethodMongoDB - findOne() MethodMongoDB findOneAndDelete() MethodMongoDB findOneAndReplace() MethodMongoDB - db.collection.findOneAndUpdate() MethodMongoDB - sort() MethodMongoDB - copyTo() MethodMongoDB Count() MethodMongoDB - countDocuments() MethodMongoDB Drop CollectionMongoDB Remove() Method - db.Collection.remove()MongoDB deleteOne() MethodMongoDB - Distinct() MethodMongoDB - limit() MethodMongoDB - skip() MethodMongoDB | ObjectID() FunctionMongoDB CreateIndex() MethodcreateIndexes() Method in MongoDBMongoDB getIndexes() MethodMongoDB  dropIndex() MethodMongoDB - dropIndexes() MethodComparison OperatorsMongoDB Comparison Query OperatorsMongoDB $cmp OperatorMongoDB $gt OperatorMongoDB $lt OperatorMongoDB $eq OperatorMongoDB -  $lte OperatorMongoDB - $gte OperatorMongoDB - $ne OperatorMongoDB $in OperatorMongoDB - $nin OperatorLogical OperatorsMongoDB Logical Query OperatorsMongoDB AND operator ( $and )MongoDB OR operator ( $or )MongoDB NOT operator ( $not )MongoDB NOR Operator ( $nor )Arithmetic OperatorsMongoDB $add OperatorMongoDB $subtract OperatorMongoDB $multiply OperatorMongoDB $divide OperatorMongoDB $abs operatorMongoDB $floor OperatorMongoDB $ceil OperatorMongoDB $mod OperatorMongoDB $sqrt OperatorMongoDB $pow OperatorMongoDB $exp OperatorMongoDB $log OperatorMongoDB $log10  OperatorMongoDB $ln OperatorField Update OperatorsMongoDB Field Update OperatorsMongoDB - $max OperatorMongoDB $min OperatorMongoDB $inc OperatorMongoDB - $mul OperatorMongoDB $rename OperatorMongoDB - Current Date Operator ($currentDate)MongoDB - $setOnInsert OperatorMongoDB Bitwise Update OperatorArray Expression OperatorsMongoDB - $isArray OperatorMongoDB -$size OperatorMongoDB -$arrayElemAt OperatorMongoDB $concatArrays OperatorMongoDB $reverseArray OperatorArray Update OperatorsMongoDB $pull OperatorMongoDB - $pop OperatorMongoDB - $pullAll OperatorMongoDB $push OperatorMongoDB Positional Operator ($)MongoDB All Positional Operator ($[])MongoDB -  $position ModifierMongoDB  $addToSet OperatorMongoDB - $each ModifierMongoDB - $sort ModifierMongoDB - $slice ModifierString Expression OperatorsMongoDB - $concat OperatorMongoDB $strcasecmp  OperatorMongoDB $toUpper OperatorMongoDB $toLower OperatorMongoDB $substrCP OperatorWorking with Documents and CollectionsDefining, Creating and Dropping a MongoDB collectionAdding and Querying the Data in MongoDBCreating Database and Collection in MongoDBMongoDB - Query Documents using Mongo ShellMongoDB - Insert Single Document Using MongoShellMongoDB - Insert Multiple Document Using MongoShellMongoDB - Update Single Document Using MongoShellMongoDB - Update Multiple Documents Using MongoShellMongoDB - Replace Documents Using MongoShellMongoDB deleteOne() MethodMongoDB deleteMany() MethodHow to Check Field Existence in MongoDB?Sorting Documents in MongoDBCapped Collections in MongoDBCreating Relationships in MongoDBMongoDB Text SearchMongoDB  Map-ReduceUpsert in MongoDBIndexing in MongoDBIndexing in MongoDBTypes of Indexes in MongoDBMongoDB Compound IndexesMongoDB Text IndexesMongoDB  Multikey IndexesMongoDB AdvanceExport Data from MongoDBImport data to MongoDBMongoDB - RegexMongoDB ProjectionEmbedded Documents in MongoDBMongoDB Query Embedded Documents Using Mongo ShellAggregation in MongoDBEnabling Authentication in MongoDBCreate User and Add Role in MongoDBMongoDB - Replication and ShardingMongoDB - Backup and RestorationMongoDB Applications and ProjectsConnecting MongoDB with a Node.js Application using MongooseJSSignup Form Using Node.js and MongoDBLogin form Using NodeJS and MongoDBConnect Django Project to MongoDBCoursesPlacement 360 CourseMERN Full Stack CourseData Science 360 CourseFull Stack Dev CourseExploreMongoDB Basics Quiz QuestionsLast Updated : DiscussCommentsQuestion 1Which of the following is NOT a type of NoSQL database?ADocument-basedBKey-ValueCGraph-basedDRelationalQuestion 2What format does MongoDB use to store data?AXMLBBSONCCSVDJSONQuestion 3Which of the following commands is used to check the list of databases in MongoDB shell?Ashow databasesBlist dbsCdisplay databasesDdb.list()Question 4What is the default port for MongoDB server?A27017B8080C5432D3306Question 5In MongoDB, what is the equivalent of a "table" in relational databases?AFieldBDocumentCCollectionDIndexQuestion 6How can you install MongoDB on Windows?AUsing pip install mongodbBUsing MongoDB MSI InstallerCRunning npm install mongodbDInstalling via apt-get install mongodbQuestion 7Which MongoDB tool provides a graphical interface for managing databases?AMongoDB ShellBMongoDB CompassCMongoDB CLIDMongoDB StudioQuestion 8What is the purpose of an ObjectId in MongoDB?AIt ensures unique identifiers for documentsBIt acts as a primary key in collectionsCIt contains timestamp informationDAll of the aboveQuestion 9What is the primary function of MongoDB Atlas?ATo provide a cloud-based MongoDB database serviceBTo visualize query execution plansCTo act as an alternative to MongoDB CompassDTo perform offline backups of local databasesQuestion 10What is BSON in MongoDB?AA text-based format similar to JSONBA relational database formatCA binary representation of JSONDA compressed SQL formatTags:MongoDBThere are 10 questions to complete.Take a part in the ongoing discussionView All Discussion

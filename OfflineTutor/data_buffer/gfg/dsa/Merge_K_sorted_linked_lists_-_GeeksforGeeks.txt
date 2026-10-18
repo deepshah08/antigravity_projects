@@ -1,1049 +1,6 @@
 # Merge K sorted linked lists - GeeksforGeeks
 
-Given k sorted linked lists of different sizes, we need to merge them into a single list while maintaining their sorted order.Examples: Input: Output: Explanation: Merged lists in a sorted order where every element is greater than the previous element.Input:  Output:  Try It YourselfTable of Content[Naive Approach - 1] - By Merging List One by One[Naive Approach - 2] - By repeatedly selecting the minimum node[Expected Approach - 1] - Using Min Heap (Works better for unequal sized lists)[Expected Approach - 2] - Using Divide and Conquer (Works better for equal sized lists)[Naive Approach - 1] - By Merging List One by OneThe idea is to initialize the result as empty. Now one by one merge every linked list into the resultant list using the idea of merging two sorted linked lists. We always consider the result as first list and other list as second. At the end, we return result.
-            C++
-
-    #include <iostream>
-#include<vector>
-using namespace std;
-
-class Node {
-public:
-    int data;
-    Node* next;
-    Node(int x) {
-        data = x;
-        next = nullptr;
-    }
-};
-
-// Function to merge only 2 lists
-Node* mergeTwo(Node* head1, Node* head2) {
-    
-    // Create a dummy node to simplify 
-    // the merging process
-    Node* dummy = new Node(-1);
-    Node* curr = dummy;
-
-    // Iterate through both linked lists
-    while (head1 != nullptr && head2 != nullptr) {
-      
-        // Add the smaller node to the merged list
-        if (head1->data <= head2->data) {
-            curr->next = head1;
-            head1 = head1->next;
-        } else {
-            curr->next = head2;
-            head2 = head2->next;
-        }
-        curr = curr->next;
-    }
-
-    // If any list is left, append it to
-    // the merged list
-    if (head1 != nullptr) {
-        curr->next = head1;
-    } else {
-        curr->next = head2;
-    }
-
-    // Return the merged list starting
-    // from the next of dummy node
-    return dummy->next;
-}
-
-// Function to merge K sorted linked lists
-Node* mergeKLists(vector<Node*>& arr) {
-  
-    // Initialize result as empty
-    Node *res = nullptr;
-    
-    // One by one merge all lists with 
-    // res and keep updating res
-    for (Node *node : arr) 
-        res = mergeTwo(res, node);
-        
-    return res;
-}
-
-void printList(Node* node) {
-    while (node != nullptr) {
-        cout << node->data;
-        if(node->next)
-        cout<<" -> ";
-        node = node->next;
-    }
-}
-
-int main() {
-    int k = 3; 
-  
-    vector<Node*> arr(k);
-
-    arr[0] = new Node(1);
-    arr[0]->next = new Node(3);
-    arr[0]->next->next = new Node(5);
-    arr[0]->next->next->next = new Node(7);
-
-    arr[1] = new Node(2);
-    arr[1]->next = new Node(4);
-    arr[1]->next->next = new Node(6);
-    arr[1]->next->next->next = new Node(8);
-
-    arr[2] = new Node(0);
-    arr[2]->next = new Node(9);
-    arr[2]->next->next = new Node(10);
-    arr[2]->next->next->next = new Node(11);
-    
-    Node* head = mergeKLists(arr);
-
-    printList(head);
-
-    return 0;
-}
-
-
-            C
-
-    #include <stdio.h>
-#include <stdlib.h>
-
-struct Node {
-    int data;
-    struct Node* next;
-};
-
-struct Node* createNode(int data);
-
-// Function to merge only 2 lists
-struct Node* mergeTwo(struct Node* head1, struct Node* head2) {
-    
-    // Create a dummy node to simplify 
-    // the merging process
-    struct Node* dummy = createNode(-1);
-    struct Node* curr = dummy;
-
-    // Iterate through both linked lists
-    while (head1 != NULL && head2 != NULL) {
-      
-        // Add the smaller node to the merged list
-        if (head1->data <= head2->data) {
-            curr->next = head1;
-            head1 = head1->next;
-        } else {
-            curr->next = head2;
-            head2 = head2->next;
-        }
-        curr = curr->next;
-    }
-
-    // If any list is left, append it to
-    // the merged list
-    if (head1 != NULL) {
-        curr->next = head1;
-    } else {
-        curr->next = head2;
-    }
-
-    // Return the merged list starting
-    // from the next of dummy node
-    struct Node* merged = dummy->next;
-    free(dummy);
-    return merged;
-}
-
-// Function to merge K sorted linked lists
-struct Node* mergeKLists(struct Node** arr, int k) {
-  
-    // Initialize result as empty
-    struct Node* res = NULL;
-    
-    // One by one merge all lists with 
-    // res and keep updating res
-    for (int i = 0; i < k; i++) 
-        res = mergeTwo(res, arr[i]);
-        
-    return res;
-}
-
-void printList(struct Node* node) {
-    while (node != NULL) {
-        printf("%d", node->data);
-        if(node->next)
-        printf(" -> ");
-        node = node->next;
-    }
-}
-
-struct Node* createNode(int data) {
-    struct Node* newNode = 
-    (struct Node*)malloc(sizeof(struct Node));
-    newNode->data = data;
-    newNode->next = NULL;
-    return newNode;
-}
-
-int main() {
-    int k = 3; 
-    struct Node* arr[k];
-
-    arr[0] = createNode(1);
-    arr[0]->next = createNode(3);
-    arr[0]->next->next = createNode(5);
-    arr[0]->next->next->next = createNode(7);
-
-    arr[1] = createNode(2);
-    arr[1]->next = createNode(4);
-    arr[1]->next->next = createNode(6);
-    arr[1]->next->next->next = createNode(8);
-
-    arr[2] = createNode(0);
-    arr[2]->next = createNode(9);
-    arr[2]->next->next = createNode(10);
-    arr[2]->next->next->next = createNode(11);
-    
-    struct Node* head = mergeKLists(arr, k);
-
-    printList(head);
-
-    return 0;
-}
-
-
-            Java
-
-    import java.util.List;
-import java.util.ArrayList;
-
-class Node {
-    int data;
-    Node next;
-
-    Node(int x) {
-        data = x;
-        next = null;
-    }
-}
-
-class GfG {
-    
-    // Function to merge only 2 lists
-    static Node mergeTwo(Node head1, Node head2) {
-        
-        // Create a dummy node to simplify 
-        // the merging process
-        Node dummy = new Node(-1);
-        Node curr = dummy;
-
-        // Iterate through both linked lists
-        while (head1 != null && head2 != null) {
-          
-            // Add the smaller node to the merged list
-            if (head1.data <= head2.data) {
-                curr.next = head1;
-                head1 = head1.next;
-            } else {
-                curr.next = head2;
-                head2 = head2.next;
-            }
-            curr = curr.next;
-        }
-
-        // If any list is left, append it to
-        // the merged list
-        if (head1 != null) {
-            curr.next = head1;
-        } else {
-            curr.next = head2;
-        }
-
-        // Return the merged list starting
-        // from the next of dummy node
-        return dummy.next;
-    }
-
-    // Function to merge K sorted linked lists
-    static Node mergeKLists(List<Node> arr) {
-      
-        // Initialize result as empty
-        Node res = null;
-        
-        // One by one merge all lists with 
-        // res and keep updating res
-        for (Node node : arr) 
-            res = mergeTwo(res, node);
-            
-        return res;
-    }
-
-    static void printList(Node node) {
-        while (node != null) {
-            System.out.print(node.data);
-            if(node.next!=null)
-            System.out.print(" -> ");
-            node = node.next;
-        }
-    }
-
-    public static void main(String[] args) {
-        List<Node> arr = new ArrayList<>();
-
-        arr.add(new Node(1));
-        arr.get(0).next = new Node(3);
-        arr.get(0).next.next = new Node(5);
-        arr.get(0).next.next.next = new Node(7);
-
-        arr.add(new Node(2));
-        arr.get(1).next = new Node(4);
-        arr.get(1).next.next = new Node(6);
-        arr.get(1).next.next.next = new Node(8);
-
-        arr.add(new Node(0));
-        arr.get(2).next = new Node(9);
-        arr.get(2).next.next = new Node(10);
-        arr.get(2).next.next.next = new Node(11);
-
-        Node head = mergeKLists(arr);
-
-        printList(head);
-    }
-}
-
-
-            Python
-
-    class Node:
-    def __init__(self, x):
-        self.data = x
-        self.next = None
-
-# Function to merge only 2 lists
-def mergeTwo(head1, head2):
-    
-    # Create a dummy node to simplify 
-    # the merging process
-    dummy = Node(-1)
-    curr = dummy
-
-    # Iterate through both linked lists
-    while head1 is not None and head2 is not None:
-      
-        # Add the smaller node to the merged list
-        if head1.data <= head2.data:
-            curr.next = head1
-            head1 = head1.next
-        else:
-            curr.next = head2
-            head2 = head2.next
-        curr = curr.next
-
-    # If any list is left, append it to
-    # the merged list
-    if head1 is not None:
-        curr.next = head1
-    else:
-        curr.next = head2
-
-    # Return the merged list starting
-    # from the next of dummy node
-    return dummy.next
-
-# Function to merge K sorted linked lists
-def mergeKLists(arr):
-    
-    # Initialize result as empty
-    res = None
-    
-    # One by one merge all lists with 
-    # res and keep updating res
-    for node in arr:
-        res = mergeTwo(res, node)
-        
-    return res
-
-def printList(node):
-    while node is not None:
-        print(f"{node.data}", end="")
-        if node.next is not None:
-            print(" -> ", end="")
-        node = node.next
-    print()
-
-if __name__ == "__main__":
-    arr = []
-
-    node1 = Node(1)
-    node1.next = Node(3)
-    node1.next.next = Node(5)
-    node1.next.next.next = Node(7)
-    arr.append(node1)
-
-    node2 = Node(2)
-    node2.next = Node(4)
-    node2.next.next = Node(6)
-    node2.next.next.next = Node(8)
-    arr.append(node2)
-
-    node3 = Node(0)
-    node3.next = Node(9)
-    node3.next.next = Node(10)
-    node3.next.next.next = Node(11)
-    arr.append(node3)
-
-    head = mergeKLists(arr)
-    printList(head)
-
-
-            C#
-
-    using System;
-using System.Collections.Generic;
-
-class Node {
-    public int data;
-    public Node next;
-
-    public Node(int x) {
-        data = x;
-        next = null;
-    }
-}
-
-class GfG {
-    static Node mergeTwo(Node head1, Node head2) {
-        
-        // Create a dummy node to simplify 
-        // the merging process
-        Node dummy = new Node(-1);
-        Node curr = dummy;
-
-        // Iterate through both linked lists
-        while (head1 != null && head2 != null) {
-          
-            // Add the smaller node to the merged list
-            if (head1.data <= head2.data) {
-                curr.next = head1;
-                head1 = head1.next;
-            } else {
-                curr.next = head2;
-                head2 = head2.next;
-            }
-            curr = curr.next;
-        }
-
-        // If any list is left, append it to
-        // the merged list
-        if (head1 != null) {
-            curr.next = head1;
-        } else {
-            curr.next = head2;
-        }
-
-        // Return the merged list starting
-        // from the next of dummy node
-        return dummy.next;
-    }
-
-    static Node mergeKLists(List<Node> arr) {
-        
-        // Initialize result as empty
-        Node res = null;
-        
-        // One by one merge all lists with 
-        // res and keep updating res
-        foreach (Node node in arr)
-            res = mergeTwo(res, node);
-            
-        return res;
-    }
-
-   static void printList(Node head) {
-        Node temp = head;
-        while (temp != null) {
-            Console.Write(temp.data + "");
-            if(temp.next!=null)
-            Console.Write(" -> ");
-            temp = temp.next;
-        }
-        Console.WriteLine();
-    } 
-
-    static void Main(string[] args) {
-        List<Node> arr = new List<Node>();
-
-        Node node1 = new Node(1);
-        node1.next = new Node(3);
-        node1.next.next = new Node(5);
-        node1.next.next.next = new Node(7);
-        arr.Add(node1);
-
-        Node node2 = new Node(2);
-        node2.next = new Node(4);
-        node2.next.next = new Node(6);
-        node2.next.next.next = new Node(8);
-        arr.Add(node2);
-
-        Node node3 = new Node(0);
-        node3.next = new Node(9);
-        node3.next.next = new Node(10);
-        node3.next.next.next = new Node(11);
-        arr.Add(node3);
-
-        Node head = mergeKLists(arr);
-        printList(head);
-    }
-}
-
-
-            JavaScript
-
-    class Node {
-    constructor(x) {
-        this.data = x;
-        this.next = null;
-    }
-}
-
-// Function to merge only 2 lists
-function mergeTwo(head1, head2) {
-    
-    // Create a dummy node to simplify 
-    // the merging process
-    let dummy = new Node(-1);
-    let curr = dummy;
-
-    // Iterate through both linked lists
-    while (head1 !== null && head2 !== null) {
-      
-        // Add the smaller node to the merged list
-        if (head1.data <= head2.data) {
-            curr.next = head1;
-            head1 = head1.next;
-        } else {
-            curr.next = head2;
-            head2 = head2.next;
-        }
-        curr = curr.next;
-    }
-
-    // If any list is left, append it to
-    // the merged list
-    if (head1 !== null) {
-        curr.next = head1;
-    } else {
-        curr.next = head2;
-    }
-
-    // Return the merged list starting
-    // from the next of dummy node
-    return dummy.next;
-}
-
-// Function to merge K sorted linked lists
-function mergeKLists(arr) {
-    
-    // Initialize result as empty
-    let res = null;
-    
-    // One by one merge all lists with 
-    // res and keep updating res
-    for (let node of arr) 
-        res = mergeTwo(res, node);
-        
-    return res;
-}
-
-function printList(node) {
-    while (node !== null) {
-        console.log(node.data + " ");
-        node = node.next;
-    }
-}
-// Driver Code
-let arr = [];
-
-let node1 = new Node(1);
-node1.next = new Node(3);
-node1.next.next = new Node(5);
-node1.next.next.next = new Node(7);
-arr.push(node1);
-
-let node2 = new Node(2);
-node2.next = new Node(4);
-node2.next.next = new Node(6);
-node2.next.next.next = new Node(8);
-arr.push(node2);
-
-let node3 = new Node(0);
-node3.next = new Node(9);
-node3.next.next = new Node(10);
-node3.next.next.next = new Node(11);
-arr.push(node3);
-
-let head = mergeKLists(arr);
-printList(head);
-
-Output0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11Time complexity: O(n*k*k), For simplicity, let us assume that every list is of equal size n. In the worst case. we take n + 2n + 3n ..... + k * n time. The sum of this series is n * k * (k + 1) / 2 which is O(n * k * k).Auxiliary Space: O(1).[Naive Approach - 2] - By repeatedly selecting the minimum nodeThe idea is to iterate through all the k head nodes and append the head node with minimum value to the resultant list. Increment the head to next node. Repeat this process until all nodes are processed.Step by step approach:Initialize a dummy head for the resultant list.Find the node with the smallest value in all the k lists.Increment the current pointer to the next node of the list where the smallest node is found.Append the node with smallest value to the resultant list.Repeat these steps till all nodes have been used.
-            C++
-
-    #include <iostream>
-#include<vector>
-using namespace std;
-
-class Node {
-public:
-    int data;
-    Node* next;
-    Node(int x) {
-        data = x;
-        next = nullptr;
-    }
-};
-
-// Function to get node with minimum value
-Node* getMinNode(vector<Node*> &arr) {
-    
-    Node* mini = nullptr;
-    int index = -1;
-    
-    for (int i=0; i<arr.size(); i++) {
-        
-        // If current list is processed
-        if (arr[i]==nullptr) continue;
-        
-        // If min node is not set or 
-        // current head has smaller value.
-        if (mini==nullptr || arr[i]->data<mini->data) {
-            index = i;
-            mini = arr[i];
-        }
-    }
-    
-    // Increment the head node 
-    if (index!=-1) arr[index] = arr[index]->next;
-    
-    return mini;
-}
-
-// Function to merge K sorted linked lists
-Node* mergeKLists(vector<Node*>& arr) {
-  
-    // Create a dummy node to simplify 
-    // the merging process
-    Node* dummy = new Node(-1);
-    Node* tail = dummy;
-    
-    Node* mini = getMinNode(arr);
-    
-    // Process all nodes.
-    while (mini != nullptr) {
-        
-        // Append min node to the result.
-        tail->next = mini;
-        tail = mini;
-        
-        // Find the next min node 
-        mini = getMinNode(arr);
-    }
-
-    // Return the merged list starting
-    // from the next of dummy node
-    return dummy->next;
-}
-
-void printList(Node* node) {
-    while (node != nullptr) {
-        cout << node->data;
-        if(node->next)
-        cout<<" -> ";
-        node = node->next;
-    }
-}
-
-int main() {
-    int k = 3; 
-  
-    vector<Node*> arr(k);
-
-    arr[0] = new Node(1);
-    arr[0]->next = new Node(3);
-    arr[0]->next->next = new Node(5);
-    arr[0]->next->next->next = new Node(7);
-
-    arr[1] = new Node(2);
-    arr[1]->next = new Node(4);
-    arr[1]->next->next = new Node(6);
-    arr[1]->next->next->next = new Node(8);
-
-    arr[2] = new Node(0);
-    arr[2]->next = new Node(9);
-    arr[2]->next->next = new Node(10);
-    arr[2]->next->next->next = new Node(11);
-    
-    Node* head = mergeKLists(arr);
-
-    printList(head);
-
-    return 0;
-}
-
-
-            Java
-
-    import java.util.List;
-import java.util.ArrayList;
-
-class Node {
-    int data;
-    Node next;
-
-    Node(int x) {
-        data = x;
-        next = null;
-    }
-}
-
-class GfG {
-    
-    // Function to get node with minimum value
-    static Node getMinNode(List<Node> arr) {
-        Node mini = null;
-        int index = -1;
-        
-        for (int i = 0; i < arr.size(); i++) {
-            
-            // If current list is processed
-            if (arr.get(i) == null) continue;
-            
-            // If min node is not set or 
-            // current head has smaller value.
-            if (mini == null || arr.get(i).data < mini.data) {
-                index = i;
-                mini = arr.get(i);
-            }
-        }
-        
-        // Increment the head node 
-        if (index != -1) arr.set(index, arr.get(index).next);
-        
-        return mini;
-    }
-    
-    // Function to merge K sorted linked lists
-    static Node mergeKLists(List<Node> arr) {
-        Node dummy = new Node(-1);
-        Node tail = dummy;
-    
-        Node mini = getMinNode(arr);
-        
-        // Process all nodes.
-        while (mini != null) {
-            
-            // Append min node to the result.
-            tail.next = mini;
-            tail = mini;
-            
-            // Find the next min node 
-            mini = getMinNode(arr);
-        }
-    
-        return dummy.next;
-    }
-    
-    static void printList(Node node) {
-        while (node != null) {
-            System.out.print(node.data);
-            if(node.next!=null)
-            {
-                System.out.print(" -> ");
-            }
-            node = node.next;
-        }
-    }
-    
-    public static void main(String[] args) {
-        List<Node> arr = new ArrayList<>();
-        arr.add(new Node(1));
-        arr.get(0).next = new Node(3);
-        arr.get(0).next.next = new Node(5);
-        arr.get(0).next.next.next = new Node(7);
-    
-        arr.add(new Node(2));
-        arr.get(1).next = new Node(4);
-        arr.get(1).next.next = new Node(6);
-        arr.get(1).next.next.next = new Node(8);
-    
-        arr.add(new Node(0));
-        arr.get(2).next = new Node(9);
-        arr.get(2).next.next = new Node(10);
-        arr.get(2).next.next.next = new Node(11);
-    
-        Node head = mergeKLists(arr);
-        printList(head);
-    }
-}
-
-
-            Python
-
-    class Node:
-    def __init__(self, x):
-        self.data = x
-        self.next = None
-
-# Function to get node with minimum value
-def getMinNode(arr):
-    mini = None
-    index = -1
-
-    for i in range(len(arr)):
-      
-        # If current list is processed
-        if arr[i] is None:
-            continue
-
-        # If min node is not set or 
-        # current head has smaller value.
-        if mini is None or arr[i].data < mini.data:
-            index = i
-            mini = arr[i]
-
-    # Increment the head node
-    if index != -1:
-        arr[index] = arr[index].next
-
-    return mini
-
-# Function to merge K sorted linked lists
-def mergeKLists(arr):
-    dummy = Node(-1)
-    tail = dummy
-
-    mini = getMinNode(arr)
-
-    # Process all nodes.
-    while mini:
-        
-        # Append min node to the result.
-        tail.next = mini
-        tail = mini
-
-        # Find the next min node
-        mini = getMinNode(arr)
-
-    return dummy.next
-
-def printList(node):
-    while node is not None:
-        print(f"{node.data}", end="")
-        if node.next is not None:
-            print(" -> ", end="")
-        node = node.next
-    print()
-
-if __name__ == "__main__":
-    arr = [None] * 3
-
-    arr[0] = Node(1)
-    arr[0].next = Node(3)
-    arr[0].next.next = Node(5)
-    arr[0].next.next.next = Node(7)
-
-    arr[1] = Node(2)
-    arr[1].next = Node(4)
-    arr[1].next.next = Node(6)
-    arr[1].next.next.next = Node(8)
-
-    arr[2] = Node(0)
-    arr[2].next = Node(9)
-    arr[2].next.next = Node(10)
-    arr[2].next.next.next = Node(11)
-
-    head = mergeKLists(arr)
-    printList(head)
-
-
-            C#
-
-    using System;
-using System.Collections.Generic;
-
-class Node {
-    public int data;
-    public Node next;
-
-    public Node(int x) {
-        data = x;
-        next = null;
-    }
-}
-
-class GfG {
-    
-    // Function to get node with minimum value
-    static Node getMinNode(List<Node> arr) {
-        Node mini = null;
-        int index = -1;
-
-        for (int i = 0; i < arr.Count; i++) {
-            // If current list is processed
-            if (arr[i] == null) continue;
-
-            // If min node is not set or 
-            // current head has smaller value.
-            if (mini == null || arr[i].data < mini.data) {
-                index = i;
-                mini = arr[i];
-            }
-        }
-
-        // Increment the head node
-        if (index != -1) arr[index] = arr[index].next;
-
-        return mini;
-    }
-
-    // Function to merge K sorted linked lists
-    static Node mergeKLists(List<Node> arr) {
-        Node dummy = new Node(-1);
-        Node tail = dummy;
-
-        Node mini = getMinNode(arr);
-
-        // Process all nodes.
-        while (mini != null) {
-            
-            // Append min node to the result.
-            tail.next = mini;
-            tail = mini;
-
-            // Find the next min node
-            mini = getMinNode(arr);
-        }
-
-        return dummy.next;
-    }
-
-    static void printList(Node head) {
-        Node temp = head;
-        while (temp != null) {
-            Console.Write(temp.data + "");
-            if(temp.next!=null)
-            Console.Write(" -> ");
-            temp = temp.next;
-        }
-        Console.WriteLine();
-    }
-
-    static void Main() {
-        List<Node> arr = new List<Node>();
-
-        arr.Add(new Node(1));
-        arr[0].next = new Node(3);
-        arr[0].next.next = new Node(5);
-        arr[0].next.next.next = new Node(7);
-
-        arr.Add(new Node(2));
-        arr[1].next = new Node(4);
-        arr[1].next.next = new Node(6);
-        arr[1].next.next.next = new Node(8);
-
-        arr.Add(new Node(0));
-        arr[2].next = new Node(9);
-        arr[2].next.next = new Node(10);
-        arr[2].next.next.next = new Node(11);
-
-        Node head = mergeKLists(arr);
-        printList(head);
-    }
-}
-
-
-            JavaScript
-
-    class Node {
-    constructor(x) {
-        this.data = x;
-        this.next = null;
-    }
-}
-
-// Function to get node with minimum value
-function getMinNode(arr) {
-    let mini = null;
-    let index = -1;
-
-    for (let i = 0; i < arr.length; i++) {
-        
-        // If current list is processed
-        if (arr[i] === null) continue;
-
-        // If min node is not set or 
-        // current head has smaller value.
-        if (mini === null || arr[i].data < mini.data) {
-            index = i;
-            mini = arr[i];
-        }
-    }
-
-    // Increment the head node
-    if (index !== -1) arr[index] = arr[index].next;
-
-    return mini;
-}
-
-// Function to merge K sorted linked lists
-function mergeKLists(arr) {
-    let dummy = new Node(-1);
-    let tail = dummy;
-
-    let mini = getMinNode(arr);
-
-    // Process all nodes.
-    while (mini !== null) {
-        
-        // Append min node to the result.
-        tail.next = mini;
-        tail = mini;
-
-        // Find the next min node
-        mini = getMinNode(arr);
-    }
-
-    return dummy.next;
-}
-
-function printList(node) {
-    while (node !== null) {
-        process.stdout.write(node.data.toString());
-        if (node.next !== null) {
-            process.stdout.write(" -> ");
-        }
-        node = node.next;
-    }
-}
-
-let arr = [];
-
-arr.push(new Node(1));
-arr[0].next = new Node(3);
-arr[0].next.next = new Node(5);
-arr[0].next.next.next = new Node(7);
-
-arr.push(new Node(2));
-arr[1].next = new Node(4);
-arr[1].next.next = new Node(6);
-arr[1].next.next.next = new Node(8);
-
-arr.push(new Node(0));
-arr[2].next = new Node(9);
-arr[2].next.next = new Node(10);
-arr[2].next.next.next = new Node(11);
-
-let head = mergeKLists(arr);
-printList(head);
-
-Output0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11Time complexity: O(n * k2), There are n*k nodes in total (assuming every list has O(n) nodes) and to find the smallest node it takes k times so for the n*k nodes it will take n*k*k time.Auxiliary Space: O(1)[Expected Approach - 1] - Using Min Heap (Works better for unequal sized lists)This solution is mainly an optimization over the previous approach. Instead of linearly traversing the array to find the minimum, we use min heap data structure and reduce the time complexity of this operation to O(Log k). For a more detailed solution and code, refer to article Merge k sorted linked lists Using Min Heap.Time Complexity: O(n * k * log k) if we have k lists of size O(n) each. We can also say O(n * Log k) where n is the total number of nodes.Auxiliary Space: O(k) [Expected Approach - 2] - Using Divide and Conquer (Works better for equal sized lists)The idea is to use divide and conquer by recursively splitting the k lists into two halves until we have pairs of lists to merge, then merge these pairs using a two-way merge procedure (similar to merge sort's merge step), and continue this process back up through the recursion tree until all lists are merged into a single sorted list.Step by step approach:Split k lists into two parts: lists[0...mid] and lists[mid+1...end].Recursively merge the left half of lists to get first sorted list.Recursively merge the right half of lists to get second sorted list.Merge the above two sorted lists using two-pointer approach.Return the final merged sorted list.
+Given k sorted linked lists of different sizes, we need to merge them into a single list while maintaining their sorted order.Examples: Input: Output: Explanation: Merged lists in a sorted order where every element is greater than the previous element.Input:  Output:  Try It YourselfTable of Content[Naive Approach] Repeatedly Select the Min - O(n*k) Time and O(1) Space[Expected Approach - 1] Min Heap - Better for Unequal Sized - O(n log k) Time and O(k) Space[Expected Approach - 2] Divide and Conquer - Better for Equal Size- O(n log k) Time and O(log k) Space[Naive Approach] Repeatedly Select the Min - O(n*k) Time and O(1) SpaceThe idea is to iterate through all the k head nodes and append the head node with minimum value to the resultant list. Increment the head to next node. Repeat this process until all nodes are processed.Step by step approach:Initialize a dummy head for the resultant list.Find the node with the smallest value in all the k lists.Increment the current pointer to the next node of the list where the smallest node is found.Append the node with smallest value to the resultant list.Repeat these steps till all nodes have been used.
             C++
 
     #include <iostream>
@@ -1054,81 +11,394 @@ class Node {
 public:
     int data;
     Node* next;
+
     Node(int x) {
         data = x;
         next = nullptr;
     }
 };
 
-// Function to merge two sorted lists.
-Node* mergeTwo(Node* head1, Node* head2) {
-  
-    // Create a dummy node to simplify 
-    // the merging process
-    Node* dummy = new Node(-1);
-    Node* curr = dummy;
+Node* mergeKLists(vector<Node*>& lists) {
+    Node dummy(0);
+    Node* tail = &dummy;
 
-    // Iterate through both linked lists
-    while (head1 != nullptr && head2 != nullptr) {
-      
-        // Add the smaller node to the merged list
-        if (head1->data <= head2->data) {
-            curr->next = head1;
-            head1 = head1->next;
-        } else {
-            curr->next = head2;
-            head2 = head2->next;
+    while (true) {
+        int minIndex = -1;
+
+        // Find the minimum current node
+        for (int i = 0; i < lists.size(); i++) {
+            if (lists[i] != nullptr &&
+                (minIndex == -1 ||
+                 lists[i]->data < lists[minIndex]->data)) {
+                minIndex = i;
+            }
         }
-        curr = curr->next;
+
+        if (minIndex == -1)
+            break;
+
+        tail->next = lists[minIndex];
+        tail = tail->next;
+
+        lists[minIndex] = lists[minIndex]->next;
     }
 
-    // If any list is left, append it to
-    // the merged list
-    if (head1 != nullptr) {
-        curr->next = head1;
-    } else {
-        curr->next = head2;
+    return dummy.next;
+}
+
+int main() {
+    vector<Node*> lists(3);
+
+    lists[0] = new Node(1);
+    lists[0]->next = new Node(4);
+    lists[0]->next->next = new Node(7);
+
+    lists[1] = new Node(2);
+    lists[1]->next = new Node(8);
+
+    lists[2] = new Node(3);
+    lists[2]->next = new Node(9);
+
+    Node* result = mergeKLists(lists);
+
+    while (result) {
+        cout << result->data;
+        if (result->next)
+            cout << " -> ";
+        result = result->next;
     }
 
-    // Return the merged list starting
-    // from the next of dummy node
-    return dummy->next;
+    return 0;
 }
 
-Node* mergeListsRecur(int i, int j, vector<Node*> &arr) {
-    
-    // If single list is left
-    if (i == j) return arr[i];
-    
-    // Find the middle of lists
-    int mid = i + (j-i)/2;
-    
-    // Merge lists from i to mid 
-    Node* head1 = mergeListsRecur(i, mid, arr);
-    
-    // Merge lists from mid+1 to j 
-    Node* head2 = mergeListsRecur(mid+1, j, arr);
-    
-    // Merge the above 2 lists 
-    Node* head = mergeTwo(head1, head2);
-    
-    return head;
+
+            Java
+
+    class Node {
+    int data;
+    Node next;
+
+    Node(int x) {
+        data = x;
+        next = null;
+    }
 }
+
+public class GFG {
+
+    static Node mergeKLists(Node[] lists) {
+        Node dummy = new Node(0);
+        Node tail = dummy;
+
+        while (true) {
+            int minIndex = -1;
+
+            // Find the minimum current node
+            for (int i = 0; i < lists.length; i++) {
+                if (lists[i] != null &&
+                    (minIndex == -1 ||
+                     lists[i].data < lists[minIndex].data)) {
+                    minIndex = i;
+                }
+            }
+
+            if (minIndex == -1)
+                break;
+
+            tail.next = lists[minIndex];
+            tail = tail.next;
+
+            lists[minIndex] = lists[minIndex].next;
+        }
+
+        return dummy.next;
+    }
+
+    public static void main(String[] args) {
+        Node[] lists = new Node[3];
+
+        lists[0] = new Node(1);
+        lists[0].next = new Node(4);
+        lists[0].next.next = new Node(7);
+
+        lists[1] = new Node(2);
+        lists[1].next = new Node(8);
+
+        lists[2] = new Node(3);
+        lists[2].next = new Node(9);
+
+        Node result = mergeKLists(lists);
+
+        while (result != null) {
+            System.out.print(result.data);
+            if (result.next != null)
+                System.out.print(" -> ");
+            result = result.next;
+        }
+    }
+}
+
+
+            Python
+
+    class Node:
+    def __init__(self, x):
+        self.data = x
+        self.next = None
+
+
+def mergeKLists(lists):
+    dummy = Node(0)
+    tail = dummy
+
+    while True:
+        min_index = -1
+
+        # Find the minimum current node
+        for i in range(len(lists)):
+            if lists[i] is not None and (
+                min_index == -1 or
+                lists[i].data < lists[min_index].data
+            ):
+                min_index = i
+
+        if min_index == -1:
+            break
+
+        tail.next = lists[min_index]
+        tail = tail.next
+
+        lists[min_index] = lists[min_index].next
+
+    return dummy.next
+
+
+if __name__ == "__main__":
+    lists = [None] * 3
+
+    lists[0] = Node(1)
+    lists[0].next = Node(4)
+    lists[0].next.next = Node(7)
+
+    lists[1] = Node(2)
+    lists[1].next = Node(8)
+
+    lists[2] = Node(3)
+    lists[2].next = Node(9)
+
+    result = mergeKLists(lists)
+
+    while result:
+        print(result.data, end="")
+        if result.next:
+            print(" -> ", end="")
+        result = result.next
+
+
+            C#
+
+    using System;
+
+public class Node
+{
+    public int data;
+    public Node next;
+
+    public Node(int x)
+    {
+        data = x;
+        next = null;
+    }
+}
+
+public class GFG
+{
+    static Node mergeKLists(Node[] lists)
+    {
+        Node dummy = new Node(0);
+        Node tail = dummy;
+
+        while (true)
+        {
+            int minIndex = -1;
+
+            // Find the minimum current node
+            for (int i = 0; i < lists.Length; i++)
+            {
+                if (lists[i] != null &&
+                    (minIndex == -1 ||
+                     lists[i].data < lists[minIndex].data))
+                {
+                    minIndex = i;
+                }
+            }
+
+            if (minIndex == -1)
+                break;
+
+            tail.next = lists[minIndex];
+            tail = tail.next;
+
+            lists[minIndex] = lists[minIndex].next;
+        }
+
+        return dummy.next;
+    }
+
+    public static void Main()
+    {
+        Node[] lists = new Node[3];
+
+        lists[0] = new Node(1);
+        lists[0].next = new Node(4);
+        lists[0].next.next = new Node(7);
+
+        lists[1] = new Node(2);
+        lists[1].next = new Node(8);
+
+        lists[2] = new Node(3);
+        lists[2].next = new Node(9);
+
+        Node result = mergeKLists(lists);
+
+        while (result != null)
+        {
+            Console.Write(result.data);
+            if (result.next != null)
+                Console.Write(" -> ");
+            result = result.next;
+        }
+    }
+}
+
+
+            JavaScript
+
+    class Node {
+    constructor(x) {
+        this.data = x;
+        this.next = null;
+    }
+}
+
+function mergeKLists(lists) {
+    let dummy = new Node(0);
+    let tail = dummy;
+
+    while (true) {
+        let minIndex = -1;
+
+        // Find the minimum current node
+        for (let i = 0; i < lists.length; i++) {
+            if (lists[i] !== null &&
+                (minIndex === -1 ||
+                 lists[i].data < lists[minIndex].data)) {
+                minIndex = i;
+            }
+        }
+
+        if (minIndex === -1)
+            break;
+
+        tail.next = lists[minIndex];
+        tail = tail.next;
+
+        lists[minIndex] = lists[minIndex].next;
+    }
+
+    return dummy.next;
+}
+
+// Driver code
+let lists = new Array(3);
+
+lists[0] = new Node(1);
+lists[0].next = new Node(4);
+lists[0].next.next = new Node(7);
+
+lists[1] = new Node(2);
+lists[1].next = new Node(8);
+
+lists[2] = new Node(3);
+lists[2].next = new Node(9);
+
+let result = mergeKLists(lists);
+
+let output = "";
+
+while (result) {
+    output += result.data;
+    if (result.next)
+        output += " -> ";
+    result = result.next;
+}
+
+console.log(output);
+
+Output1 -> 2 -> 3 -> 4 -> 7 -> 8 -> 9[Expected Approach - 1] Min Heap - Better for Unequal Sized - O(n log k) Time and O(k) SpaceThis solution is mainly an optimization over the previous approach. Instead of linearly traversing the array to find the minimum, we use min heap data structure and reduce the time complexity of this operation to O(log k). This one works better for unequal size lists.
+            C++
+
+    #include <iostream>
+#include <vector>
+#include <queue>
+using namespace std;
+
+class Node {
+public:
+    int data;
+    Node* next;
+    Node(int x) {
+        data = x;
+        next = nullptr;
+    }
+};
+
+// Custom class for min heap
+class Compare {
+public:
+    bool operator()(Node* a, Node* b) {
+        return a->data > b->data;
+    }
+};
 
 // Function to merge K sorted linked lists
 Node* mergeKLists(vector<Node*>& arr) {
     
-    // Base case for 0 lists 
-    if (arr.size()==0) return nullptr;
-  
-    return mergeListsRecur(0, arr.size()-1, arr);
+    priority_queue<Node*, vector<Node*>, Compare> pq;
+    
+    // Insert the head nodes of k lists 
+    for (Node* head: arr) {
+        if (head != nullptr) pq.push(head);
+    }
+    
+    // Initialize a dummy head 
+    Node* dummy = new Node(-1);
+    Node* tail = dummy;
+    
+    while (!pq.empty()) {
+        
+        // Pop the min node 
+        Node* top = pq.top();
+        pq.pop();
+        
+        // Append the node into list 
+        tail->next = top;
+        tail = top;
+        
+        // If top node has next node,
+        // add it to the heap.
+        if (top->next!=nullptr) {
+            pq.push(top->next);
+        }
+    }
+    
+    return dummy->next;
 }
 
 void printList(Node* node) {
     while (node != nullptr) {
         cout << node->data;
-        if(node->next)
-        cout<<" -> ";
+        if(node->next) cout << "->";
         node = node->next;
     }
 }
@@ -1163,7 +433,7 @@ int main() {
 
             Java
 
-    import java.util.List;
+    import java.util.PriorityQueue;
 
 class Node {
     int data;
@@ -1177,76 +447,43 @@ class Node {
 
 class GfG {
 
-    // Function to merge two sorted lists.
-    static Node mergeTwo(Node head1, Node head2) {
+    // Function to merge K sorted linked lists
+    static Node mergeKLists(Node[] arr) {
+        PriorityQueue<Node> pq = new PriorityQueue<>((a, b) -> a.data - b.data);
 
-        // Create a dummy node to simplify 
-        // the merging process
+        // Insert the head nodes of k lists 
+        for (Node head : arr) {
+            if (head!= null) pq.add(head);
+        }
+
+        // Initialize a dummy head 
         Node dummy = new Node(-1);
-        Node curr = dummy;
+        Node tail = dummy;
 
-        // Iterate through both linked lists
-        while (head1 != null && head2 != null) {
+        while (!pq.isEmpty()) {
 
-            // Add the smaller node to the merged list
-            if (head1.data <= head2.data) {
-                curr.next = head1;
-                head1 = head1.next;
-            } else {
-                curr.next = head2;
-                head2 = head2.next;
+            // Pop the min node 
+            Node top = pq.poll();
+
+            // Append the node into list 
+            tail.next = top;
+            tail = top;
+
+            // If top node has next node,
+            // add it to the heap.
+            if (top.next!= null) {
+                pq.add(top.next);
             }
-            curr = curr.next;
         }
 
-        // If any list is left, append it to
-        // the merged list
-        if (head1 != null) {
-            curr.next = head1;
-        } else {
-            curr.next = head2;
-        }
-
-        // Return the merged list starting
-        // from the next of dummy node
         return dummy.next;
     }
 
-    static Node mergeListsRecur(int i, int j, List<Node> arr) {
-
-        // If single list is left
-        if (i == j) return arr.get(i);
-
-        // Find the middle of lists
-        int mid = i + (j - i) / 2;
-
-        // Merge lists from i to mid 
-        Node head1 = mergeListsRecur(i, mid, arr);
-
-        // Merge lists from mid+1 to j 
-        Node head2 = mergeListsRecur(mid + 1, j, arr);
-
-        // Merge the above 2 lists 
-        Node head = mergeTwo(head1, head2);
-
-        return head;
-    }
-
-    // Function to merge K sorted linked lists
-    static Node mergeKLists(List<Node> arr) {
-
-        // Base case for 0 lists 
-        if (arr.size() == 0) return null;
-
-        return mergeListsRecur(0, arr.size() - 1, arr);
-    }
-
     static void printList(Node node) {
-        while (node != null) {
+        while (node!= null) {
             System.out.print(node.data);
-            if(node.next!=null)
-            {
-                System.out.print(" -> ");
+            if(node.next!= null){
+                System.out.print("->");
             }
             node = node.next;
         }
@@ -1255,22 +492,22 @@ class GfG {
     public static void main(String[] args) {
         int k = 3;
 
-        List<Node> arr = new java.util.ArrayList<>();
+        Node[] arr = new Node[k];
 
-        arr.add(new Node(1));
-        arr.get(0).next = new Node(3);
-        arr.get(0).next.next = new Node(5);
-        arr.get(0).next.next.next = new Node(7);
+        arr[0] = new Node(1);
+        arr[0].next = new Node(3);
+        arr[0].next.next = new Node(5);
+        arr[0].next.next.next = new Node(7);
 
-        arr.add(new Node(2));
-        arr.get(1).next = new Node(4);
-        arr.get(1).next.next = new Node(6);
-        arr.get(1).next.next.next = new Node(8);
+        arr[1] = new Node(2);
+        arr[1].next = new Node(4);
+        arr[1].next.next = new Node(6);
+        arr[1].next.next.next = new Node(8);
 
-        arr.add(new Node(0));
-        arr.get(2).next = new Node(9);
-        arr.get(2).next.next = new Node(10);
-        arr.get(2).next.next.next = new Node(11);
+        arr[2] = new Node(0);
+        arr[2].next = new Node(9);
+        arr[2].next.next = new Node(10);
+        arr[2].next.next.next = new Node(11);
 
         Node head = mergeKLists(arr);
 
@@ -1281,76 +518,48 @@ class GfG {
 
             Python
 
-    class Node:
+    import heapq
+
+class Node:
     def __init__(self, x):
         self.data = x
         self.next = None
 
-# Function to merge two sorted lists.
-def mergeTwo(head1, head2):
-    
-    # Create a dummy node to simplify 
-    # the merging process
-    dummy = Node(-1)
-    curr = dummy
-
-    # Iterate through both linked lists
-    while head1 is not None and head2 is not None:
-      
-        # Add the smaller node to the merged list
-        if head1.data <= head2.data:
-            curr.next = head1
-            head1 = head1.next
-        else:
-            curr.next = head2
-            head2 = head2.next
-        curr = curr.next
-
-    # If any list is left, append it to
-    # the merged list
-    if head1 is not None:
-        curr.next = head1
-    else:
-        curr.next = head2
-
-    # Return the merged list starting
-    # from the next of dummy node
-    return dummy.next
-
-def mergeListsRecur(i, j, arr):
-    
-    # If single list is left
-    if i == j:
-        return arr[i]
-
-    # Find the middle of lists
-    mid = i + (j - i) // 2
-
-    # Merge lists from i to mid 
-    head1 = mergeListsRecur(i, mid, arr)
-
-    # Merge lists from mid+1 to j 
-    head2 = mergeListsRecur(mid + 1, j, arr)
-
-    # Merge the above 2 lists 
-    head = mergeTwo(head1, head2)
-
-    return head
-
 # Function to merge K sorted linked lists
 def mergeKLists(arr):
+    pq = []
     
-    # Base case for 0 lists 
-    if len(arr) == 0:
-        return None
+    # Insert the head nodes of k lists 
+    for i in range(0, len(arr)):
+        head = arr[i]
+        if head is not None:
+            heapq.heappush(pq, (head.data, i, head))
+    
+    # Initialize a dummy head
+    dummy = Node(-1)
+    tail = dummy
 
-    return mergeListsRecur(0, len(arr) - 1, arr)
+    while pq:
+        
+        # Pop the min node
+        _, index, top = heapq.heappop(pq)
+        
+        # Append the node into list
+        tail.next = top
+        tail = top
+        
+        # If top node has next node,
+        # add it to the heap.
+        if top.next is not None:
+            heapq.heappush(pq, (top.next.data, index, top.next))
+
+    return dummy.next
 
 def printList(node):
     while node is not None:
-        print(f"{node.data}", end="")
+        print(node.data, end="")
         if node.next is not None:
-            print(" -> ", end="")
+            print("->", end="")
         node = node.next
     print()
 
@@ -1382,7 +591,6 @@ if __name__ == "__main__":
             C#
 
     using System;
-using System.Collections.Generic;
 
 class Node {
     public int data;
@@ -1394,98 +602,76 @@ class Node {
     }
 }
 
+// Custom comparator class for min heap
+class NodeComparer : IComparer<Node> {
+    public int Compare(Node a, Node b) {
+        if (a.data > b.data)
+            return 1;
+        else if (a.data < b.data)
+            return -1;
+        return 0;
+    }
+}
+
 class GfG {
 
-    // Function to merge two sorted lists.
-    static Node mergeTwo(Node head1, Node head2) {
+    // Function to merge K sorted linked lists
+    static Node mergeKLists(Node[] arr) {
+        PriorityQueue<Node> pq = new PriorityQueue<Node>(new NodeComparer());
 
-        // Create a dummy node to simplify 
-        // the merging process
+        // Insert the head nodes of k lists 
+        for (int i = 0; i < arr.Length; i++) {
+            Node head = arr[i];
+            if (head!= null) pq.Enqueue(head);
+        }
+
         Node dummy = new Node(-1);
-        Node curr = dummy;
+        Node tail = dummy;
 
-        // Iterate through both linked lists
-        while (head1 != null && head2 != null) {
+        while (pq.Count > 0) {
 
-            // Add the smaller node to the merged list
-            if (head1.data <= head2.data) {
-                curr.next = head1;
-                head1 = head1.next;
-            } else {
-                curr.next = head2;
-                head2 = head2.next;
+            // Pop the min node 
+            Node top = pq.Dequeue();
+
+            // Append the node into list 
+            tail.next = top;
+            tail = top;
+
+            // If top node has next node,
+            // add it to the heap.
+            if (top.next!= null) {
+                pq.Enqueue(top.next);
             }
-            curr = curr.next;
         }
 
-        // If any list is left, append it to
-        // the merged list
-        if (head1 != null) {
-            curr.next = head1;
-        } else {
-            curr.next = head2;
-        }
-
-        // Return the merged list starting
-        // from the next of dummy node
         return dummy.next;
     }
 
-    static Node mergeListsRecur(int i, int j, List<Node> arr) {
-
-        // If single list is left
-        if (i == j) return arr[i];
-
-        // Find the middle of lists
-        int mid = i + (j - i) / 2;
-
-        // Merge lists from i to mid 
-        Node head1 = mergeListsRecur(i, mid, arr);
-
-        // Merge lists from mid+1 to j 
-        Node head2 = mergeListsRecur(mid + 1, j, arr);
-
-        // Merge the above 2 lists 
-        Node head = mergeTwo(head1, head2);
-
-        return head;
-    }
-
-    // Function to merge K sorted linked lists
-    static Node mergeKLists(List<Node> arr) {
-
-        // Base case for 0 lists 
-        if (arr.Count == 0) return null;
-
-        return mergeListsRecur(0, arr.Count - 1, arr);
-    }
-
-  static void printList(Node head) {
-        Node temp = head;
-        while (temp != null) {
-            Console.Write(temp.data + "");
-            if(temp.next!=null)
-            Console.Write(" -> ");
-            temp = temp.next;
+    static void printList(Node node) {
+        while (node!= null) {
+            Console.Write(node.data);
+            if(node.next!= null){
+                Console.Write("->");
+            }
+            node = node.next;
         }
-        Console.WriteLine();
     }
 
     static void Main(string[] args) {
 
-        List<Node> arr = new List<Node>();
+        Node[] arr = new Node[3];
 
-        arr.Add(new Node(1));
+        arr[0] = new Node(1);
         arr[0].next = new Node(3);
         arr[0].next.next = new Node(5);
         arr[0].next.next.next = new Node(7);
 
-        arr.Add(new Node(2));
+        arr[1] = new Node(2);
         arr[1].next = new Node(4);
         arr[1].next.next = new Node(6);
         arr[1].next.next.next = new Node(8);
 
-        arr.Add(new Node(0));
+        arr[2] = new Node(0);
         arr[2].next = new Node(9);
         arr[2].next.next = new Node(10);
         arr[2].next.next.next = new Node(11);
@@ -1493,6 +679,65 @@ class GfG {
         Node head = mergeKLists(arr);
 
         printList(head);
+    }
+}
+
+// Custom Priority queue 
+class PriorityQueue<T> {
+    private List<T> heap;
+    private IComparer<T> comparer;
+
+    public PriorityQueue(IComparer<T> comparer = null) {
+        this.heap = new List<T>();
+        this.comparer = comparer?? Comparer<T>.Default;
+    }
+
+    public int Count => heap.Count;
+
+    // Enqueue operation
+    public void Enqueue(T item) {
+        heap.Add(item);
+        int i = heap.Count - 1;
+        while (i > 0) {
+            int parent = (i - 1) / 2;
+            if (comparer.Compare(heap[parent], heap[i]) <= 0)
+                break;
+            Swap(parent, i);
+            i = parent;
+        }
+    }
+
+    // Dequeue operation
+    public T Dequeue() {
+        if (heap.Count == 0)
+            throw new InvalidOperationException("Priority queue is empty.");
+        T result = heap[0];
+        int last = heap.Count - 1;
+        heap[0] = heap[last];
+        heap.RemoveAt(last);
+        last--;
+        int i = 0;
+        while (true) {
+            int left = 2 * i + 1;
+            if (left > last)
+                break;
+            int right = left + 1;
+            int minChild = left;
+            if (right <= last && comparer.Compare(heap[right], heap[left]) < 0)
+                minChild = right;
+            if (comparer.Compare(heap[i], heap[minChild]) <= 0)
+                break;
+            Swap(i, minChild);
+            i = minChild;
+        }
+        return result;
+    }
+
+    // Swap two elements in the heap
+    private void Swap(int i, int j) {
+        T temp = heap[i];
+        heap[i] = heap[j];
+        heap[j] = temp;
     }
 }
 
@@ -1506,79 +751,122 @@ class GfG {
     }
 }
 
-// Function to merge two sorted lists.
-function mergeTwo(head1, head2) {
-
-    // Create a dummy node to simplify 
-    // the merging process
-    let dummy = new Node(-1);
-    let curr = dummy;
-
-    // Iterate through both linked lists
-    while (head1 !== null && head2 !== null) {
-
-        // Add the smaller node to the merged list
-        if (head1.data <= head2.data) {
-            curr.next = head1;
-            head1 = head1.next;
-        } else {
-            curr.next = head2;
-            head2 = head2.next;
-        }
-        curr = curr.next;
-    }
-
-    // If any list is left, append it to
-    // the merged list
-    if (head1 !== null) {
-        curr.next = head1;
-    } else {
-        curr.next = head2;
-    }
-
-    // Return the merged list starting
-    // from the next of dummy node
-    return dummy.next;
+// Comparator function to compare Node data
+function nodeComparator(k1, k2) {
+  if (k1.data > k2.data) return -1;
+  if (k1.data < k2.data) return 1;
+  return 0;
 }
 
-function mergeListsRecur(i, j, arr) {
+class PriorityQueue {
+  constructor(compare) {
+    this.heap = [];
+    this.compare = compare;
+  }
 
-    // If single list is left
-    if (i === j) return arr[i];
+  enqueue(value) {
+    this.heap.push(value);
+    this.bubbleUp();
+  }
 
-    // Find the middle of lists
-    let mid = i + Math.floor((j - i) / 2);
+  bubbleUp() {
+    let index = this.heap.length - 1;
+    while (index > 0) {
+      let element = this.heap[index],
+        parentIndex = Math.floor((index - 1) / 2),
+        parent = this.heap[parentIndex];
+      if (this.compare(element, parent) < 0) break;
+      this.heap[index] = parent;
+      this.heap[parentIndex] = element;
+      index = parentIndex;
+    }
+  }
 
-    // Merge lists from i to mid 
-    let head1 = mergeListsRecur(i, mid, arr);
+  dequeue() {
+    let max = this.heap[0];
+    let end = this.heap.pop();
+    if (this.heap.length > 0) {
+      this.heap[0] = end;
+      this.sinkDown(0);
+    }
+    return max;
+  }
 
-    // Merge lists from mid+1 to j 
-    let head2 = mergeListsRecur(mid + 1, j, arr);
+  sinkDown(index) {
+    let left = 2 * index + 1,
+      right = 2 * index + 2,
+      largest = index;
 
-    // Merge the above 2 lists 
-    return mergeTwo(head1, head2);
+    if (
+      left < this.heap.length &&
+      this.compare(this.heap[left], this.heap[largest]) > 0
+    ) {
+      largest = left;
+    }
+
+    if (
+      right < this.heap.length &&
+      this.compare(this.heap[right], this.heap[largest]) > 0
+    ) {
+      largest = right;
+    }
+
+    if (largest !== index) {
+      [this.heap[largest], this.heap[index]] = [
+        this.heap[index],
+        this.heap[largest],
+      ];
+      this.sinkDown(largest);
+    }
+  }
+
+  isEmpty() {
+    return this.heap.length === 0;
+  }
 }
 
 // Function to merge K sorted linked lists
 function mergeKLists(arr) {
+    const pq = new PriorityQueue(nodeComparator);
 
-    // Base case for 0 lists 
-    if (arr.length === 0) return null;
+    // Insert the head nodes of k lists 
+    for (let head of arr) {
+        if (head !== null) pq.enqueue(head);
+    }
 
-    return mergeListsRecur(0, arr.length - 1, arr);
+    let dummy = new Node(-1);
+    let tail = dummy;
+
+    while (!pq.isEmpty()) {
+
+        // Pop the min node 
+        let top = pq.dequeue();
+
+        // Append the node into list 
+        tail.next = top;
+        tail = top;
+
+        // If top node has next node,
+        // add it to the heap.
+        if (top.next !== null) {
+            pq.enqueue(top.next);
+        }
+    }
+
+    return dummy.next;
 }
 
 function printList(node) {
     while (node !== null) {
         process.stdout.write(node.data.toString());
         if (node.next !== null) {
-            process.stdout.write(" -> ");
+            process.stdout.write("->");
         }
         node = node.next;
     }
+    console.log(); 
 }
 
-// Driver Code
 let k = 3;
 
 let arr = [];
@@ -1602,4 +890,432 @@ let head = mergeKLists(arr);
 
 printList(head);
 
-Output0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11Time Complexity: O(n * k * log k), where n is the number of nodes in the longest list.Auxiliary Space: O(log k), used for recursion.
+[Expected Approach - 2] Divide and Conquer - Better for Equal Size- O(n log k) Time and O(log k) SpaceThe idea is to use divide and conquer Recursively split the k lists into two halves until we have pairs of lists to mergeThen merge these pairs using a two-way merge procedure (similar to merge sort's merge step), and continue this process back up through the recursion tree until all lists are merged into a single sorted list. Step by step approach:Split k lists into two parts: lists[0...mid] and lists[mid+1...end].Recursively merge the left half of lists to get first sorted list.Recursively merge the right half of lists to get second sorted list.Merge the above two sorted lists using two-pointer approach.Return the final merged sorted list.
+            C++
+
+    #include <iostream>
+#include <vector>
+using namespace std;
+
+class Node {
+public:
+    int data;
+    Node* next;
+
+    Node(int x) {
+        data = x;
+        next = nullptr;
+    }
+};
+
+Node* mergeTwoLists(Node* a, Node* b) {
+    Node dummy(0);
+    Node* tail = &dummy;
+
+    while (a && b) {
+        if (a->data <= b->data) {
+            tail->next = a;
+            a = a->next;
+        } else {
+            tail->next = b;
+            b = b->next;
+        }
+
+        tail = tail->next;
+    }
+
+    if (a)
+        tail->next = a;
+    else
+        tail->next = b;
+
+    return dummy.next;
+}
+
+Node* mergeRange(vector<Node*>& lists, int left, int right) {
+    if (left > right)
+        return nullptr;
+
+    if (left == right)
+        return lists[left];
+
+    int mid = left + (right - left) / 2;
+
+    Node* first = mergeRange(lists, left, mid);
+    Node* second = mergeRange(lists, mid + 1, right);
+
+    return mergeTwoLists(first, second);
+}
+
+Node* mergeKLists(vector<Node*>& lists) {
+    if (lists.empty())
+        return nullptr;
+
+    return mergeRange(lists, 0, lists.size() - 1);
+}
+
+int main() {
+    vector<Node*> lists(3);
+
+    lists[0] = new Node(1);
+    lists[0]->next = new Node(4);
+    lists[0]->next->next = new Node(7);
+
+    lists[1] = new Node(2);
+    lists[1]->next = new Node(8);
+
+    lists[2] = new Node(3);
+    lists[2]->next = new Node(9);
+
+    Node* result = mergeKLists(lists);
+
+    while (result) {
+        cout << result->data;
+        if (result->next)
+            cout << " -> ";
+        result = result->next;
+    }
+
+    return 0;
+}
+
+
+            Java
+
+    class Node {
+    int data;
+    Node next;
+
+    Node(int x) {
+        data = x;
+        next = null;
+    }
+}
+
+public class GFG {
+
+    static Node mergeTwoLists(Node a, Node b) {
+        Node dummy = new Node(0);
+        Node tail = dummy;
+
+        while (a != null && b != null) {
+            if (a.data <= b.data) {
+                tail.next = a;
+                a = a.next;
+            } else {
+                tail.next = b;
+                b = b.next;
+            }
+
+            tail = tail.next;
+        }
+
+        if (a != null)
+            tail.next = a;
+        else
+            tail.next = b;
+
+        return dummy.next;
+    }
+
+    static Node mergeRange(Node[] lists, int left, int right) {
+        if (left > right)
+            return null;
+
+        if (left == right)
+            return lists[left];
+
+        int mid = left + (right - left) / 2;
+
+        Node first = mergeRange(lists, left, mid);
+        Node second = mergeRange(lists, mid + 1, right);
+
+        return mergeTwoLists(first, second);
+    }
+
+    static Node mergeKLists(Node[] lists) {
+        if (lists.length == 0)
+            return null;
+
+        return mergeRange(lists, 0, lists.length - 1);
+    }
+
+    public static void main(String[] args) {
+        Node[] lists = new Node[3];
+
+        lists[0] = new Node(1);
+        lists[0].next = new Node(4);
+        lists[0].next.next = new Node(7);
+
+        lists[1] = new Node(2);
+        lists[1].next = new Node(8);
+
+        lists[2] = new Node(3);
+        lists[2].next = new Node(9);
+
+        Node result = mergeKLists(lists);
+
+        while (result != null) {
+            System.out.print(result.data);
+            if (result.next != null)
+                System.out.print(" -> ");
+            result = result.next;
+        }
+    }
+}
+
+
+            Python
+
+    class Node:
+    def __init__(self, x):
+        self.data = x
+        self.next = None
+
+
+def mergeTwoLists(a, b):
+    dummy = Node(0)
+    tail = dummy
+
+    while a and b:
+        if a.data <= b.data:
+            tail.next = a
+            a = a.next
+        else:
+            tail.next = b
+            b = b.next
+
+        tail = tail.next
+
+    if a:
+        tail.next = a
+    else:
+        tail.next = b
+
+    return dummy.next
+
+
+def mergeRange(lists, left, right):
+    if left > right:
+        return None
+
+    if left == right:
+        return lists[left]
+
+    mid = left + (right - left) // 2
+
+    first = mergeRange(lists, left, mid)
+    second = mergeRange(lists, mid + 1, right)
+
+    return mergeTwoLists(first, second)
+
+
+def mergeKLists(lists):
+    if not lists:
+        return None
+
+    return mergeRange(lists, 0, len(lists) - 1)
+
+
+if __name__ == "__main__":
+    lists = [None] * 3
+
+    lists[0] = Node(1)
+    lists[0].next = Node(4)
+    lists[0].next.next = Node(7)
+
+    lists[1] = Node(2)
+    lists[1].next = Node(8)
+
+    lists[2] = Node(3)
+    lists[2].next = Node(9)
+
+    result = mergeKLists(lists)
+
+    while result:
+        print(result.data, end="")
+        if result.next:
+            print(" -> ", end="")
+        result = result.next
+
+
+            C#
+
+    using System;
+
+public class Node
+{
+    public int data;
+    public Node next;
+
+    public Node(int x)
+    {
+        data = x;
+        next = null;
+    }
+}
+
+public class GFG
+{
+    static Node mergeTwoLists(Node a, Node b)
+    {
+        Node dummy = new Node(0);
+        Node tail = dummy;
+
+        while (a != null && b != null)
+        {
+            if (a.data <= b.data)
+            {
+                tail.next = a;
+                a = a.next;
+            }
+            else
+            {
+                tail.next = b;
+                b = b.next;
+            }
+
+            tail = tail.next;
+        }
+
+        if (a != null)
+            tail.next = a;
+        else
+            tail.next = b;
+
+        return dummy.next;
+    }
+
+    static Node mergeRange(Node[] lists, int left, int right)
+    {
+        if (left > right)
+            return null;
+
+        if (left == right)
+            return lists[left];
+
+        int mid = left + (right - left) / 2;
+
+        Node first = mergeRange(lists, left, mid);
+        Node second = mergeRange(lists, mid + 1, right);
+
+        return mergeTwoLists(first, second);
+    }
+
+    static Node mergeKLists(Node[] lists)
+    {
+        if (lists.Length == 0)
+            return null;
+
+        return mergeRange(lists, 0, lists.Length - 1);
+    }
+
+    public static void Main()
+    {
+        Node[] lists = new Node[3];
+
+        lists[0] = new Node(1);
+        lists[0].next = new Node(4);
+        lists[0].next.next = new Node(7);
+
+        lists[1] = new Node(2);
+        lists[1].next = new Node(8);
+
+        lists[2] = new Node(3);
+        lists[2].next = new Node(9);
+
+        Node result = mergeKLists(lists);
+
+        while (result != null)
+        {
+            Console.Write(result.data);
+            if (result.next != null)
+                Console.Write(" -> ");
+            result = result.next;
+        }
+    }
+}
+
+
+            JavaScript
+
+    class Node {
+    constructor(x) {
+        this.data = x;
+        this.next = null;
+    }
+}
+
+function mergeTwoLists(a, b) {
+    let dummy = new Node(0);
+    let tail = dummy;
+
+    while (a && b) {
+        if (a.data <= b.data) {
+            tail.next = a;
+            a = a.next;
+        } else {
+            tail.next = b;
+            b = b.next;
+        }
+
+        tail = tail.next;
+    }
+
+    if (a)
+        tail.next = a;
+    else
+        tail.next = b;
+
+    return dummy.next;
+}
+
+function mergeRange(lists, left, right) {
+    if (left > right)
+        return null;
+
+    if (left === right)
+        return lists[left];
+
+    let mid = left + Math.floor((right - left) / 2);
+
+    let first = mergeRange(lists, left, mid);
+    let second = mergeRange(lists, mid + 1, right);
+
+    return mergeTwoLists(first, second);
+}
+
+function mergeKLists(lists) {
+    if (lists.length === 0)
+        return null;
+
+    return mergeRange(lists, 0, lists.length - 1);
+}
+
+// Driver code
+let lists = new Array(3);
+
+lists[0] = new Node(1);
+lists[0].next = new Node(4);
+lists[0].next.next = new Node(7);
+
+lists[1] = new Node(2);
+lists[1].next = new Node(8);
+
+lists[2] = new Node(3);
+lists[2].next = new Node(9);
+
+let result = mergeKLists(lists);
+
+let output = "";
+
+while (result) {
+    output += result.data;
+    if (result.next)
+        output += " -> ";
+    result = result.next;
+}
+
+console.log(output);
+
+Output1 -> 2 -> 3 -> 4 -> 7 -> 8 -> 9

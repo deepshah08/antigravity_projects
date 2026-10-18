@@ -1,0 +1,2083 @@
+# Add Two Numbers Represented as a Linked List - GeeksforGeeks
+
+Given two non-negative integers represented as linked lists with heads head1 and head2, where each node contains a single digit, return a new linked list representing their sum.Note: The input lists may contain leading zeros, but the resulting sum list must not contain any leading zeros.Examples:Input:  Explanation: Sum of 123 and 999 is 1122. Input:  Output: 7 -> 0Explanation: Sum of 63 and 7 is 70. Try It YourselfTable of ContentCreate a New Linked List - O(m + n) Time and O(max(m, n)) SpaceRecursion - O(m + n) Time and O(max(m, n)) SpaceReuse the Longer List - O(m + n) Time and O(1) Auxiliary SpaceCreate a New Linked List - O(m + n) Time and O(max(m, n)) SpaceReverse both linked lists to add digits from right to left, and store the sum in a new linked list.Reverse both linked lists to start adding from the least significant digit.Create an empty result list and initialize carry = 0.Traverse both lists, calculating sum = digit1 + digit2 + carry. If a list is exhausted, use 0 for its digit.copCreate a new node with sum % 10 and update carry = sum / 10.Append each new node to the result list.If a carry remains, append a node for it.Reverse the result list and remove leading zeros.
+            C++
+
+    #include <iostream>
+using namespace std;
+
+class Node {
+  public:
+    int data;
+    Node *next;
+    Node(int val) {
+        data = val;
+        next = nullptr;
+    }
+};
+
+// Function to reverse the linked list
+Node *reverse(Node *head) {
+    Node *prev = nullptr, *curr = head, *next;
+
+    while (curr != nullptr) {
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+    }
+    return prev;
+}
+
+// Function to trim leading zeros in linked list
+Node *trimLeadingZeros(Node* head) {
+	while(head->next != nullptr && head->data == 0)
+    	head = head->next;
+	return head;
+}
+
+// Function to add two numbers represented by linked list
+Node *addTwoLists(Node *num1, Node *num2) {
+    Node *res = nullptr, *curr = nullptr;
+    int carry = 0;
+
+	num1 = trimLeadingZeros(num1);
+	num2 = trimLeadingZeros(num2);
+  
+    num1 = reverse(num1);
+    num2 = reverse(num2);
+
+    // Iterate till either num1 is not empty or num2 is
+    // not empty or carry is greater than 0
+    while (num1 != nullptr || num2 != nullptr || carry != 0) {
+        int sum = carry;
+
+        if (num1 != nullptr) {
+            sum += num1->data;
+            num1 = num1->next;
+        }
+
+        if (num2 != nullptr) {
+            sum += num2->data;
+            num2 = num2->next;
+        }
+      
+        Node* newNode = new Node(sum % 10);
+
+        carry = sum / 10;
+
+      	// If this is the first node, then make this node
+      	// as the head of the resultant linked list
+      	if(res == nullptr) {
+        	res = newNode;
+          	curr = newNode;
+        }
+      	else {
+          	
+          	// Append new node to resultant linked list
+          	// and move to the next node
+        	curr->next = newNode;
+        	curr = curr->next;
+        }
+    }
+
+    return reverse(res);
+}
+void printList(Node* head) {
+    while (head != nullptr) {
+        cout << head->data;
+        if (head->next != nullptr)
+            cout << " -> ";
+        head = head->next;
+    }
+    cout << '\n';
+}
+int main() {
+
+    Node *head1 = new Node(1);
+    head1->next = new Node(2);
+    head1->next->next = new Node(3);
+
+    Node *head2 = new Node(9);
+    head2->next = new Node(9);
+    head2->next->next = new Node(9);
+
+    Node* result = addTwoLists(head1, head2);
+    printList(result);
+
+    return 0;
+}
+
+
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Node {
+    int data;
+    struct Node *next;
+} Node;
+
+Node* createNode(int val) {
+    Node* node = (Node*)malloc(sizeof(Node));
+    node->data = val;
+    node->next = NULL;
+    return node;
+}
+
+// Function to reverse the linked list
+Node *reverse(Node *head) {
+    Node *prev = NULL, *curr = head, *next;
+
+    while (curr != NULL) {
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+    }
+    return prev;
+}
+
+// Function to trim leading zeros in linked list
+Node *trimLeadingZeros(Node* head) {
+    while (head->next != NULL && head->data == 0)
+        head = head->next;
+    return head;
+}
+
+// Function to add two numbers represented by linked list
+Node *addTwoLists(Node *num1, Node *num2) {
+    Node *res = NULL, *curr = NULL;
+    int carry = 0;
+
+    num1 = trimLeadingZeros(num1);
+    num2 = trimLeadingZeros(num2);
+
+    num1 = reverse(num1);
+    num2 = reverse(num2);
+
+    // Iterate till either num1 is not empty or num2 is
+    // not empty or carry is greater than 0
+    while (num1 != NULL || num2 != NULL || carry != 0) {
+        int sum = carry;
+
+        if (num1 != NULL) {
+            sum += num1->data;
+            num1 = num1->next;
+        }
+
+        if (num2 != NULL) {
+            sum += num2->data;
+            num2 = num2->next;
+        }
+
+        Node* newNode = createNode(sum % 10);
+
+        carry = sum / 10;
+
+        // If this is the first node, then make this node
+        // as the head of the resultant linked list
+        if (res == NULL) {
+            res = newNode;
+            curr = newNode;
+        }
+        else {
+            // Append new node to resultant linked list
+            // and move to the next node
+            curr->next = newNode;
+            curr = curr->next;
+        }
+    }
+
+    return reverse(res);
+}
+
+void printList(Node* head) {
+    while (head != NULL) {
+        printf("%d", head->data);
+        if (head->next != NULL)
+            printf(" -> ");
+        head = head->next;
+    }
+    printf("\n");
+}
+
+int main() {
+    Node *head1 = createNode(1);
+    head1->next = createNode(2);
+    head1->next->next = createNode(3);
+
+    Node *head2 = createNode(9);
+    head2->next = createNode(9);
+    head2->next->next = createNode(9);
+
+    Node* result = addTwoLists(head1, head2);
+    printList(result);
+
+    return 0;
+}
+
+
+            Java
+
+    class Node {
+    int data;
+    Node next;
+
+    Node(int val) {
+        data = val;
+        next = null;
+    }
+}
+
+class GFG {
+
+    // Function to reverse the linked list
+    static Node reverse(Node head) {
+        Node prev = null, curr = head, next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
+
+    // Function to trim leading zeros in linked list
+    static Node trimLeadingZeros(Node head) {
+        while (head.next != null && head.data == 0)
+            head = head.next;
+        return head;
+    }
+
+    // Function to add two numbers represented by linked list
+    static Node addTwoLists(Node num1, Node num2) {
+        Node res = null, curr = null;
+        int carry = 0;
+
+        num1 = trimLeadingZeros(num1);
+        num2 = trimLeadingZeros(num2);
+
+        num1 = reverse(num1);
+        num2 = reverse(num2);
+
+        // Iterate till either num1 is not empty or num2 is
+        // not empty or carry is greater than 0
+        while (num1 != null || num2 != null || carry != 0) {
+            int sum = carry;
+
+            if (num1 != null) {
+                sum += num1.data;
+                num1 = num1.next;
+            }
+
+            if (num2 != null) {
+                sum += num2.data;
+                num2 = num2.next;
+            }
+
+            Node newNode = new Node(sum % 10);
+
+            carry = sum / 10;
+
+            // If this is the first node, then make this node
+            // as the head of the resultant linked list
+            if (res == null) {
+                res = newNode;
+                curr = newNode;
+            } else {
+                // Append new node to resultant linked list
+                // and move to the next node
+                curr.next = newNode;
+                curr = curr.next;
+            }
+        }
+
+        return reverse(res);
+    }
+
+    static void printList(Node head) {
+        while (head != null) {
+            System.out.print(head.data);
+            if (head.next != null)
+                System.out.print(" -> ");
+            head = head.next;
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Node head1 = new Node(1);
+        head1.next = new Node(2);
+        head1.next.next = new Node(3);
+
+        Node head2 = new Node(9);
+        head2.next = new Node(9);
+        head2.next.next = new Node(9);
+
+        Node result = addTwoLists(head1, head2);
+        printList(result);
+    }
+}
+
+
+            Python
+
+    class Node:
+    def __init__(self, val):
+        self.data = val
+        self.next = None
+
+
+# Function to reverse the linked list
+def reverse(head):
+    prev = None
+    curr = head
+
+    while curr is not None:
+        nextNode = curr.next
+        curr.next = prev
+        prev = curr
+        curr = nextNode
+
+    return prev
+
+
+# Function to trim leading zeros in linked list
+def trimLeadingZeros(head):
+    while head and head.data == 0:
+        head = head.next
+    return head
+
+
+# Function to add two numbers represented by linked list
+def addTwoLists(num1, num2):
+
+    num1 = trimLeadingZeros(num1)
+    num2 = trimLeadingZeros(num2)
+
+    # If both numbers are zero
+    if num1 is None and num2 is None:
+        return Node(0)
+
+    num1 = reverse(num1)
+    num2 = reverse(num2)
+
+    res = None
+    curr = None
+    carry = 0
+
+    # Iterate till either num1 is not empty or num2 is
+    # not empty or carry is greater than 0
+    while num1 is not None or num2 is not None or carry != 0:
+        sumValue = carry
+
+        if num1 is not None:
+            sumValue += num1.data
+            num1 = num1.next
+
+        if num2 is not None:
+            sumValue += num2.data
+            num2 = num2.next
+
+        newNode = Node(sumValue % 10)
+
+        carry = sumValue // 10
+
+        # If this is the first node, make it the head
+        # of the resultant linked list
+        if res is None:
+            res = newNode
+            curr = newNode
+        else:
+            curr.next = newNode
+            curr = curr.next
+
+    return reverse(res)
+
+def printList(head):
+    while head is not None:
+        print(head.data, end="")
+        if head.next is not None:
+            print(" -> ", end="")
+        head = head.next
+    print()
+
+
+if __name__ == "__main__":
+
+    num1 = Node(1)
+    num1.next = Node(2)
+    num1.next.next = Node(3)
+
+    num2 = Node(9)
+    num2.next = Node(9)
+    num2.next.next = Node(9)
+
+    sumList = addTwoLists(num1, num2)
+
+    printList(sumList)
+
+
+            C#
+
+    using System;
+
+class Node {
+    public int data;
+    public Node next;
+
+    public Node(int val) {
+        data = val;
+        next = null;
+    }
+}
+
+class GFG {
+
+    // Function to reverse the linked list
+    static Node reverse(Node head) {
+        Node prev = null;
+        Node curr = head;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        return prev;
+    }
+
+    // Function to trim leading zeros in linked list
+    static Node trimLeadingZeros(Node head) {
+        while (head != null && head.data == 0) {
+            head = head.next;
+        }
+
+        return head;
+    }
+
+    // Function to add two numbers represented by linked list
+    static Node addTwoLists(Node num1, Node num2) {
+
+        Node res = null;
+        Node curr = null;
+        int carry = 0;
+
+        num1 = trimLeadingZeros(num1);
+        num2 = trimLeadingZeros(num2);
+
+        // If both numbers are zero
+        if (num1 == null && num2 == null) {
+            return new Node(0);
+        }
+
+        num1 = reverse(num1);
+        num2 = reverse(num2);
+
+        // Iterate till either num1 is not empty or num2 is
+        // not empty or carry is greater than 0
+        while (num1 != null || num2 != null || carry != 0) {
+
+            int sum = carry;
+
+            if (num1 != null) {
+                sum += num1.data;
+                num1 = num1.next;
+            }
+
+            if (num2 != null) {
+                sum += num2.data;
+                num2 = num2.next;
+            }
+
+            Node newNode = new Node(sum % 10);
+
+            carry = sum / 10;
+
+            // If this is the first node, then make this node
+            // as the head of the resultant linked list
+            if (res == null) {
+                res = newNode;
+                curr = newNode;
+            }
+            else {
+
+                // Append new node to resultant linked list
+                // and move to the next node
+                curr.next = newNode;
+                curr = curr.next;
+            }
+        }
+
+        return reverse(res);
+    }
+
+    
+    static void printList(Node head) {
+        while (head != null) {
+            Console.Write(head.data);
+            if (head.next != null)
+                Console.Write(" -> ");
+            head = head.next;
+        }
+        Console.WriteLine();
+    }
+
+    static void Main() {
+
+        Node num1 = new Node(1);
+        num1.next = new Node(2);
+        num1.next.next = new Node(3);
+
+        Node num2 = new Node(9);
+        num2.next = new Node(9);
+        num2.next.next = new Node(9);
+
+        Node sum = addTwoLists(num1, num2);
+
+        printList(sum);
+    }
+}
+
+
+            JavaScript
+
+    class Node {
+    constructor(val)
+    {
+        this.data = val;
+        this.next = null;
+    }
+}
+
+// Function to reverse the linked list
+function reverse(head)
+{
+    let prev = null;
+    let curr = head;
+    let next;
+
+    while (curr !== null) {
+        next = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = next;
+    }
+
+    return prev;
+}
+
+// Function to trim leading zeros in linked list
+function trimLeadingZeros(head)
+{
+    while (head !== null && head.data === 0) {
+        head = head.next;
+    }
+
+    return head;
+}
+
+// Function to add two numbers represented by linked list
+function addTwoLists(num1, num2)
+{
+    let res = null;
+    let curr = null;
+    let carry = 0;
+
+    num1 = trimLeadingZeros(num1);
+    num2 = trimLeadingZeros(num2);
+
+    // If both numbers are zero
+    if (num1 === null && num2 === null) {
+        return new Node(0);
+    }
+
+    num1 = reverse(num1);
+    num2 = reverse(num2);
+
+    // Iterate till either num1 is not empty or num2 is
+    // not empty or carry is greater than 0
+    while (num1 !== null || num2 !== null || carry !== 0) {
+
+        let sum = carry;
+
+        if (num1 !== null) {
+            sum += num1.data;
+            num1 = num1.next;
+        }
+
+        if (num2 !== null) {
+            sum += num2.data;
+            num2 = num2.next;
+        }
+
+        let newNode = new Node(sum % 10);
+
+        carry = Math.floor(sum / 10);
+
+        // If this is the first node, then make this node
+        // as the head of the resultant linked list
+        if (res === null) {
+            res = newNode;
+            curr = newNode;
+        }
+        else {
+            // Append new node to resultant linked list
+            // and move to the next node
+            curr.next = newNode;
+            curr = curr.next;
+        }
+    }
+
+    return reverse(res);
+}
+
+function printList(head) {
+    let output = "";
+
+    while (head !== null) {
+        output += head.data;
+        if (head.next !== null)
+            output += " -> ";
+        head = head.next;
+    }
+
+    console.log(output);
+}
+
+// Driver Code
+let num1 = new Node(1);
+num1.next = new Node(2);
+num1.next.next = new Node(3);
+
+let num2 = new Node(9);
+num2.next = new Node(9);
+num2.next.next = new Node(9);
+
+let sum = addTwoLists(num1, num2);
+printList(sum);
+
+Output1 -> 1 -> 2 -> 2
+Recursion - O(m + n) Time and O(max(m, n)) SpaceThis approach adds two linked lists without reversing them.Pad the shorter list with leading zeros to make both lists equal in length.Recursively reach the end of both lists and add corresponding digits while backtracking.Create new nodes to store the sum and link them to form the result list.If a carry remains after recursion, add a new node at the beginning of the result.Consider the input: Step 1: Pad num2 with two leading zeros to make both lists equal in length.num1 = 0 -> 0 -> 6 -> 3num2 = 0 -> 0 -> 0 -> 7Step 2: Recursion reaches the end of both lists, then adds corresponding digits while returning.3 + 7 + 0 = 10: Store 0, carry 1.6 + 0 + 1 = 7: Store 7, carry 0.0 + 0 + 0 = 0: Store 0, carry 0.0 + 0 + 0 = 0: Store 0, carry 0.The result list is 0 -> 0 -> 7 -> 0.Step 3: Remove the leading zeros from the result list.Output: 7 -> 0
+            C++
+
+    #include <iostream>
+using namespace std;
+
+class Node
+{
+  public:
+    int data;
+    Node *next;
+    Node(int val)
+    {
+        data = val;
+        next = nullptr;
+    }
+};
+
+// Function to get length of linked list
+int getLength(Node *head)
+{
+    int len = 0;
+    while (head)
+    {
+        len++;
+        head = head->next;
+    }
+    return len;
+}
+
+// Function to trim leading zeros in linked list
+Node *trimLeadingZeros(Node* head) {
+	while(head->next != nullptr && head->data == 0)
+    	head = head->next;
+	return head;
+}
+
+// Function to pad shorter list with zeros at front
+Node *padList(Node *head, int diff)
+{
+    while (diff--)
+    {
+        Node *newNode = new Node(0);
+        newNode->next = head;
+        head = newNode;
+    }
+    return head;
+}
+
+// Recursive function to add lists
+Node *addListRec(Node *num1, Node *num2, int &carry)
+{
+
+    if (num1 == nullptr && num2 == nullptr)
+        return nullptr;
+
+    // Recurse to the end
+    Node *nextNode = addListRec(num1->next, num2->next, carry);
+
+    int sum = num1->data + num2->data + carry;
+
+    Node *curr = new Node(sum % 10);
+    carry = sum / 10;
+
+    curr->next = nextNode;
+
+    return curr;
+}
+
+// Main function to add two lists
+Node *addTwoLists(Node *num1, Node *num2)
+{
+
+    int len1 = getLength(num1);
+    int len2 = getLength(num2);
+
+    // Pad shorter list
+    if (len1 < len2)
+        num1 = padList(num1, len2 - len1);
+    else
+        num2 = padList(num2, len1 - len2);
+
+    int carry = 0;
+    Node *result = addListRec(num1, num2, carry);
+
+    // If carry remains, add new node at front
+    if (carry)
+    {
+        Node *newNode = new Node(carry);
+        newNode->next = result;
+        result = newNode;
+    }
+
+    return trimLeadingZeros(result);
+}
+
+// Print the linked list
+void printList(Node* head) {
+    while (head != nullptr) {
+        cout << head->data;
+        if (head->next != nullptr)
+            cout << " -> ";
+        head = head->next;
+    }
+    cout << '\n';
+}
+
+int main() {
+
+    Node *head1 = new Node(0);
+    head1->next = new Node(0);
+    head1->next->next = new Node(6);
+    head1->next->next->next = new Node(3);
+
+    Node *head2 = new Node(0);
+    head2->next = new Node(7);
+
+    Node* result = addTwoLists(head1, head2);
+
+    printList(result);
+
+    return 0;
+}
+
+
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Node {
+    int data;
+    struct Node *next;
+} Node;
+
+Node* createNode(int val) {
+    Node* node = (Node*)malloc(sizeof(Node));
+    node->data = val;
+    node->next = NULL;
+    return node;
+}
+
+// Function to get length of linked list
+int getLength(Node *head) {
+    int len = 0;
+    while (head) {
+        len++;
+        head = head->next;
+    }
+    return len;
+}
+
+// Function to trim leading zeros in linked list
+Node *trimLeadingZeros(Node* head) {
+    while (head->next != NULL && head->data == 0)
+        head = head->next;
+    return head;
+}
+
+// Function to pad shorter list with zeros at front
+Node *padList(Node *head, int diff) {
+    while (diff--) {
+        Node *newNode = createNode(0);
+        newNode->next = head;
+        head = newNode;
+    }
+    return head;
+}
+
+// Recursive function to add lists
+Node *addListRec(Node *num1, Node *num2, int *carry) {
+    if (num1 == NULL && num2 == NULL)
+        return NULL;
+
+    // Recurse to the end
+    Node *nextNode = addListRec(num1->next, num2->next, carry);
+
+    int sum = num1->data + num2->data + *carry;
+
+    Node *curr = createNode(sum % 10);
+    *carry = sum / 10;
+
+    curr->next = nextNode;
+
+    return curr;
+}
+
+// Main function to add two lists
+Node *addTwoLists(Node *num1, Node *num2) {
+    int len1 = getLength(num1);
+    int len2 = getLength(num2);
+
+    // Pad shorter list
+    if (len1 < len2)
+        num1 = padList(num1, len2 - len1);
+    else
+        num2 = padList(num2, len1 - len2);
+
+    int carry = 0;
+    Node *result = addListRec(num1, num2, &carry);
+
+    // If carry remains, add new node at front
+    if (carry) {
+        Node *newNode = createNode(carry);
+        newNode->next = result;
+        result = newNode;
+    }
+
+    return trimLeadingZeros(result);
+}
+
+// Print the linked list
+void printList(Node* head) {
+    while (head != NULL) {
+        printf("%d", head->data);
+        if (head->next != NULL)
+            printf(" -> ");
+        head = head->next;
+    }
+    printf("\n");
+}
+
+int main() {
+    Node *head1 = createNode(0);
+    head1->next = createNode(0);
+    head1->next->next = createNode(6);
+    head1->next->next->next = createNode(3);
+
+    Node *head2 = createNode(0);
+    head2->next = createNode(7);
+
+    Node* result = addTwoLists(head1, head2);
+
+    printList(result);
+
+    return 0;
+}
+
+
+            Java
+
+    class Node {
+    int data;
+    Node next;
+
+    Node(int val) {
+        data = val;
+        next = null;
+    }
+}
+
+class GFG {
+
+    // Function to get length of linked list
+    static int getLength(Node head) {
+        int len = 0;
+        while (head != null) {
+            len++;
+            head = head.next;
+        }
+        return len;
+    }
+
+    // Function to trim leading zeros in linked list
+    static Node trimLeadingZeros(Node head) {
+        while (head.next != null && head.data == 0)
+            head = head.next;
+        return head;
+    }
+
+    // Function to pad shorter list with zeros at front
+    static Node padList(Node head, int diff) {
+        while (diff-- > 0) {
+            Node newNode = new Node(0);
+            newNode.next = head;
+            head = newNode;
+        }
+        return head;
+    }
+
+    // Recursive function to add lists
+    static Node addListRec(Node num1, Node num2, int[] carry) {
+        if (num1 == null && num2 == null)
+            return null;
+
+        // Recurse to the end
+        Node nextNode = addListRec(num1.next, num2.next, carry);
+
+        int sum = num1.data + num2.data + carry[0];
+
+        Node curr = new Node(sum % 10);
+        carry[0] = sum / 10;
+
+        curr.next = nextNode;
+
+        return curr;
+    }
+
+    // Main function to add two lists
+    static Node addTwoLists(Node num1, Node num2) {
+        int len1 = getLength(num1);
+        int len2 = getLength(num2);
+
+        // Pad shorter list
+        if (len1 < len2)
+            num1 = padList(num1, len2 - len1);
+        else
+            num2 = padList(num2, len1 - len2);
+
+        int[] carry = {0};
+        Node result = addListRec(num1, num2, carry);
+
+        // If carry remains, add new node at front
+        if (carry[0] != 0) {
+            Node newNode = new Node(carry[0]);
+            newNode.next = result;
+            result = newNode;
+        }
+
+        return trimLeadingZeros(result);
+    }
+
+    // Print the linked list
+    static void printList(Node head) {
+        while (head != null) {
+            System.out.print(head.data);
+            if (head.next != null)
+                System.out.print(" -> ");
+            head = head.next;
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Node head1 = new Node(0);
+        head1.next = new Node(0);
+        head1.next.next = new Node(6);
+        head1.next.next.next = new Node(3);
+
+        Node head2 = new Node(0);
+        head2.next = new Node(7);
+
+        Node result = addTwoLists(head1, head2);
+
+        printList(result);
+    }
+}
+
+
+            Python
+
+    class Node:
+    def __init__(self, val):
+        self.data = val
+        self.next = None
+
+
+# Function to get length of linked list
+def getLength(head):
+    len = 0
+    while head:
+        len += 1
+        head = head.next
+    return len
+
+
+# Function to trim leading zeros in linked list
+def trimLeadingZeros(head):
+    while head.next is not None and head.data == 0:
+        head = head.next
+    return head
+
+
+# Function to pad shorter list with zeros at front
+def padList(head, diff):
+    while diff > 0:
+        newNode = Node(0)
+        newNode.next = head
+        head = newNode
+        diff -= 1
+    return head
+
+
+# Recursive function to add lists
+def addListRec(num1, num2, carry):
+    if num1 is None and num2 is None:
+        return None
+
+    # Recurse to the end
+    nextNode = addListRec(num1.next, num2.next, carry)
+
+    sum = num1.data + num2.data + carry[0]
+
+    curr = Node(sum % 10)
+    carry[0] = sum // 10
+
+    curr.next = nextNode
+
+    return curr
+
+
+# Main function to add two lists
+def addTwoLists(num1, num2):
+    len1 = getLength(num1)
+    len2 = getLength(num2)
+
+    # Pad shorter list
+    if len1 < len2:
+        num1 = padList(num1, len2 - len1)
+    else:
+        num2 = padList(num2, len1 - len2)
+
+    carry = [0]
+    result = addListRec(num1, num2, carry)
+
+    # If carry remains, add new node at front
+    if carry[0] != 0:
+        newNode = Node(carry[0])
+        newNode.next = result
+        result = newNode
+
+    return trimLeadingZeros(result)
+
+
+# Print the linked list
+def printList(head):
+    while head is not None:
+        print(head.data, end="")
+        if head.next is not None:
+            print(" -> ", end="")
+        head = head.next
+    print()
+
+
+if __name__ == "__main__":
+    head1 = Node(0)
+    head1.next = Node(0)
+    head1.next.next = Node(6)
+    head1.next.next.next = Node(3)
+
+    head2 = Node(0)
+    head2.next = Node(7)
+
+    result = addTwoLists(head1, head2)
+
+    printList(result)
+
+
+            C#
+
+    using System;
+
+class Node {
+    public int data;
+    public Node next;
+
+    public Node(int val) {
+        data = val;
+        next = null;
+    }
+}
+
+class GFG {
+
+    // Function to get length of linked list
+    static int getLength(Node head) {
+        int len = 0;
+        while (head != null) {
+            len++;
+            head = head.next;
+        }
+        return len;
+    }
+
+    // Function to trim leading zeros in linked list
+    static Node trimLeadingZeros(Node head) {
+        while (head.next != null && head.data == 0)
+            head = head.next;
+        return head;
+    }
+
+    // Function to pad shorter list with zeros at front
+    static Node padList(Node head, int diff) {
+        while (diff-- > 0) {
+            Node newNode = new Node(0);
+            newNode.next = head;
+            head = newNode;
+        }
+        return head;
+    }
+
+    // Recursive function to add lists
+    static Node addListRec(Node num1, Node num2, ref int carry) {
+        if (num1 == null && num2 == null)
+            return null;
+
+        // Recurse to the end
+        Node nextNode = addListRec(num1.next, num2.next, ref carry);
+
+        int sum = num1.data + num2.data + carry;
+
+        Node curr = new Node(sum % 10);
+        carry = sum / 10;
+
+        curr.next = nextNode;
+
+        return curr;
+    }
+
+    // Main function to add two lists
+    static Node addTwoLists(Node num1, Node num2) {
+        int len1 = getLength(num1);
+        int len2 = getLength(num2);
+
+        // Pad shorter list
+        if (len1 < len2)
+            num1 = padList(num1, len2 - len1);
+        else
+            num2 = padList(num2, len1 - len2);
+
+        int carry = 0;
+        Node result = addListRec(num1, num2, ref carry);
+
+        // If carry remains, add new node at front
+        if (carry != 0) {
+            Node newNode = new Node(carry);
+            newNode.next = result;
+            result = newNode;
+        }
+
+        return trimLeadingZeros(result);
+    }
+
+    // Print the linked list
+    static void printList(Node head) {
+        while (head != null) {
+            Console.Write(head.data);
+            if (head.next != null)
+                Console.Write(" -> ");
+            head = head.next;
+        }
+        Console.WriteLine();
+    }
+
+    static void Main() {
+        Node head1 = new Node(0);
+        head1.next = new Node(0);
+        head1.next.next = new Node(6);
+        head1.next.next.next = new Node(3);
+
+        Node head2 = new Node(0);
+        head2.next = new Node(7);
+
+        Node result = addTwoLists(head1, head2);
+
+        printList(result);
+    }
+}
+
+
+            JavaScript
+
+    class Node {
+    constructor(val) {
+        this.data = val;
+        this.next = null;
+    }
+}
+
+// Function to get length of linked list
+function getLength(head) {
+    let len = 0;
+    while (head !== null) {
+        len++;
+        head = head.next;
+    }
+    return len;
+}
+
+// Function to trim leading zeros in linked list
+function trimLeadingZeros(head) {
+    while (head.next !== null && head.data === 0)
+        head = head.next;
+    return head;
+}
+
+// Function to pad shorter list with zeros at front
+function padList(head, diff) {
+    while (diff-- > 0) {
+        let newNode = new Node(0);
+        newNode.next = head;
+        head = newNode;
+    }
+    return head;
+}
+
+// Recursive function to add lists
+function addListRec(num1, num2, carry) {
+    if (num1 === null && num2 === null)
+        return null;
+
+    // Recurse to the end
+    let nextNode = addListRec(num1.next, num2.next, carry);
+
+    let sum = num1.data + num2.data + carry.value;
+
+    let curr = new Node(sum % 10);
+    carry.value = Math.floor(sum / 10);
+
+    curr.next = nextNode;
+
+    return curr;
+}
+
+// Main function to add two lists
+function addTwoLists(num1, num2) {
+    let len1 = getLength(num1);
+    let len2 = getLength(num2);
+
+    // Pad shorter list
+    if (len1 < len2)
+        num1 = padList(num1, len2 - len1);
+    else
+        num2 = padList(num2, len1 - len2);
+
+    let carry = { value: 0 };
+    let result = addListRec(num1, num2, carry);
+
+    // If carry remains, add new node at front
+    if (carry.value !== 0) {
+        let newNode = new Node(carry.value);
+        newNode.next = result;
+        result = newNode;
+    }
+
+    return trimLeadingZeros(result);
+}
+
+// Print the linked list
+function printList(head) {
+    let output = "";
+
+    while (head !== null) {
+        output += head.data;
+        if (head.next !== null)
+            output += " -> ";
+        head = head.next;
+    }
+
+    console.log(output);
+}
+
+// Driver code
+
+    let head1 = new Node(0);
+    head1.next = new Node(0);
+    head1.next.next = new Node(6);
+    head1.next.next.next = new Node(3);
+
+    let head2 = new Node(0);
+    head2.next = new Node(7);
+
+    let result = addTwoLists(head1, head2);
+
+    printList(result);
+
+Output7 -> 0
+Reuse the Longer List - O(m + n) Time and O(1) Auxiliary SpaceReuse the nodes of the longer linked list to store the sum instead of creating a separate result list. Since the sum can have at most one more digit than the longer number, at most one extra node is needed to store a final carry.Remove leading zeros from both linked lists.Find the longer list, which will store the result.Reverse both lists to start addition from the least significant digit.Add corresponding digits along with the carry. Store the last digit of each sum in the corresponding node of the longer list and update the carry.If the shorter list ends first, continue adding the remaining digits of the longer list along with the carry.If a carry remains after all digits are processed, create one extra node to store it.Reverse the modified longer list to restore the correct digit order and return it.Consider the input: Step 1: After removing the leading zeros, the lists become:head1 = 6 -> 3 (represents 63)head2 = 7 (represents 7)Step 2: Identify the longer listThe first list has 2 nodes, while the second list has 1 node. Therefore, the first list is used to store the result.Step 3: Reverse both listshead1 = 3 -> 6head2 = 7Step 4: Add corresponding digitsAdd 3 + 7 + 0 = 10. Store 0 in the first node and set carry = 1.Add 6 + 1 = 7. Store 7 in the second node and set carry = 0.The reversed result is 0 -> 7.Step 5: Restore the digit orderReverse the result to obtain 7 -> 0.No leading zeros need to be removed.Output: 7 -> 0
+            C++
+
+    #include <iostream>
+using namespace std;
+
+class Node {
+  public:
+    int data;
+    Node* next;
+
+    Node(int x) {
+        data = x;
+        next = nullptr;
+    }
+};
+
+// Reverse the linked list
+Node* reverseList(Node* head) {
+    Node* prev = nullptr;
+    Node* curr = head;
+
+    while (curr != nullptr) {
+        Node* nextNode = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = nextNode;
+    }
+
+    return prev;
+}
+
+// Remove leading zeros
+Node* removeLeadingZeros(Node* head) {
+    while (head != nullptr && head->data == 0 &&
+           head->next != nullptr) {
+        head = head->next;
+    }
+
+    return head;
+}
+
+// Add two numbers using the longer list
+Node* addTwoLists(Node* head1, Node* head2) {
+    head1 = removeLeadingZeros(head1);
+    head2 = removeLeadingZeros(head2);
+
+    // Find the lengths of both lists
+    int len1 = 0, len2 = 0;
+
+    for (Node* temp = head1; temp != nullptr;
+         temp = temp->next)
+        len1++;
+
+    for (Node* temp = head2; temp != nullptr;
+         temp = temp->next)
+        len2++;
+
+    // Ensure head1 points to the longer list
+    if (len1 < len2) {
+        Node* temp = head1;
+        head1 = head2;
+        head2 = temp;
+    }
+
+    // Reverse both lists
+    head1 = reverseList(head1);
+    head2 = reverseList(head2);
+
+    Node* curr1 = head1;
+    Node* curr2 = head2;
+    int carry = 0;
+
+    // Store the sum in the longer list
+    while (curr1 != nullptr) {
+        int sum = curr1->data + carry;
+
+        if (curr2 != nullptr) {
+            sum += curr2->data;
+            curr2 = curr2->next;
+        }
+
+        curr1->data = sum % 10;
+        carry = sum / 10;
+
+        // Add a node if a carry remains
+        if (curr1->next == nullptr && carry > 0) {
+            curr1->next = new Node(carry);
+            carry = 0;
+        }
+
+        curr1 = curr1->next;
+    }
+
+    // Reverse the result to restore digit order
+    head1 = reverseList(head1);
+
+    // Remove leading zeros from the result
+    return removeLeadingZeros(head1);
+}
+
+// Print the linked list
+void printList(Node* head) {
+    while (head != nullptr) {
+        cout << head->data;
+        if (head->next != nullptr)
+            cout << " -> ";
+        head = head->next;
+    }
+    cout << '\n';
+}
+
+int main() {
+
+     Node *head1 = new Node(0);
+    head1->next = new Node(0);
+    head1->next->next = new Node(6);
+    head1->next->next->next = new Node(3);
+
+    Node *head2 = new Node(0);
+    head2->next = new Node(7);
+
+    Node* result = addTwoLists(head1, head2);
+
+    printList(result);
+
+    return 0;
+}
+
+
+            C
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+// Node structure
+typedef struct Node {
+    int data;
+    struct Node* next;
+} Node;
+
+// Create a new node
+Node* newNode(int x) {
+    Node* node = (Node*)malloc(sizeof(Node));
+    node->data = x;
+    node->next = NULL;
+    return node;
+}
+
+// Reverse the linked list
+Node* reverseList(Node* head) {
+    Node* prev = NULL;
+    Node* curr = head;
+
+    while (curr != NULL) {
+        Node* nextNode = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = nextNode;
+    }
+
+    return prev;
+}
+
+// Remove leading zeros
+Node* removeLeadingZeros(Node* head) {
+    while (head != NULL && head->data == 0 &&
+           head->next != NULL) {
+        head = head->next;
+    }
+
+    return head;
+}
+
+// Add two numbers using the longer list
+Node* addTwoLists(Node* head1, Node* head2) {
+    head1 = removeLeadingZeros(head1);
+    head2 = removeLeadingZeros(head2);
+
+    // Find the lengths of both lists
+    int len1 = 0, len2 = 0;
+
+    for (Node* temp = head1; temp != NULL;
+         temp = temp->next)
+        len1++;
+
+    for (Node* temp = head2; temp != NULL;
+         temp = temp->next)
+        len2++;
+
+    // Ensure head1 points to the longer list
+    if (len1 < len2) {
+        Node* temp = head1;
+        head1 = head2;
+        head2 = temp;
+    }
+
+    // Reverse both lists
+    head1 = reverseList(head1);
+    head2 = reverseList(head2);
+
+    Node* curr1 = head1;
+    Node* curr2 = head2;
+    int carry = 0;
+
+    // Store the sum in the longer list
+    while (curr1 != NULL) {
+        int sum = curr1->data + carry;
+
+        if (curr2 != NULL) {
+            sum += curr2->data;
+            curr2 = curr2->next;
+        }
+
+        curr1->data = sum % 10;
+        carry = sum / 10;
+
+        // Add a node if a carry remains
+        if (curr1->next == NULL && carry > 0) {
+            curr1->next = newNode(carry);
+            carry = 0;
+        }
+
+        curr1 = curr1->next;
+    }
+
+    // Reverse the result to restore digit order
+    head1 = reverseList(head1);
+
+    // Remove leading zeros from the result
+    return removeLeadingZeros(head1);
+}
+
+// Print the linked list
+void printList(Node* head) {
+    while (head != NULL) {
+        printf("%d", head->data);
+        if (head->next != NULL)
+            printf(" -> ");
+        head = head->next;
+    }
+    printf("\n");
+}
+
+int main() {
+    Node* head1 = newNode(0);
+    head1->next = newNode(0);
+    head1->next->next = newNode(6);
+    head1->next->next->next = newNode(3);
+
+    Node* head2 = newNode(0);
+    head2->next = newNode(7);
+
+    Node* result = addTwoLists(head1, head2);
+
+    printList(result);
+
+    return 0;
+}
+
+
+            Java
+
+    class Node {
+    int data;
+    Node next;
+
+    Node(int x) {
+        data = x;
+        next = null;
+    }
+}
+
+class GFG {
+
+    // Reverse the linked list
+    static Node reverseList(Node head) {
+        Node prev = null;
+        Node curr = head;
+
+        while (curr != null) {
+            Node nextNode = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextNode;
+        }
+
+        return prev;
+    }
+
+    // Remove leading zeros
+    static Node removeLeadingZeros(Node head) {
+        while (head != null && head.data == 0 &&
+               head.next != null) {
+            head = head.next;
+        }
+
+        return head;
+    }
+
+    // Add two numbers using the longer list
+    static Node addTwoLists(Node head1, Node head2) {
+        head1 = removeLeadingZeros(head1);
+        head2 = removeLeadingZeros(head2);
+
+        // Find the lengths of both lists
+        int len1 = 0, len2 = 0;
+
+        for (Node temp = head1; temp != null;
+             temp = temp.next)
+            len1++;
+
+        for (Node temp = head2; temp != null;
+             temp = temp.next)
+            len2++;
+
+        // Ensure head1 points to the longer list
+        if (len1 < len2) {
+            Node temp = head1;
+            head1 = head2;
+            head2 = temp;
+        }
+
+        // Reverse both lists
+        head1 = reverseList(head1);
+        head2 = reverseList(head2);
+
+        Node curr1 = head1;
+        Node curr2 = head2;
+        int carry = 0;
+
+        // Store the sum in the longer list
+        while (curr1 != null) {
+            int sum = curr1.data + carry;
+
+            if (curr2 != null) {
+                sum += curr2.data;
+                curr2 = curr2.next;
+            }
+
+            curr1.data = sum % 10;
+            carry = sum / 10;
+
+            // Add a node if a carry remains
+            if (curr1.next == null && carry > 0) {
+                curr1.next = new Node(carry);
+                carry = 0;
+            }
+
+            curr1 = curr1.next;
+        }
+
+        // Reverse the result to restore digit order
+        head1 = reverseList(head1);
+
+        // Remove leading zeros from the result
+        return removeLeadingZeros(head1);
+    }
+
+    // Print the linked list
+    static void printList(Node head) {
+        while (head != null) {
+            System.out.print(head.data);
+            if (head.next != null)
+                System.out.print(" -> ");
+            head = head.next;
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Node head1 = new Node(0);
+        head1.next = new Node(0);
+        head1.next.next = new Node(6);
+        head1.next.next.next = new Node(3);
+
+        Node head2 = new Node(0);
+        head2.next = new Node(7);
+
+        Node result = addTwoLists(head1, head2);
+
+        printList(result);
+    }
+}
+
+
+            Python
+
+    class Node:
+    def __init__(self, x):
+        self.data = x
+        self.next = None
+
+
+# Reverse the linked list
+def reverseList(head):
+    prev = None
+    curr = head
+
+    while curr is not None:
+        nextNode = curr.next
+        curr.next = prev
+        prev = curr
+        curr = nextNode
+
+    return prev
+
+
+# Remove leading zeros
+def removeLeadingZeros(head):
+    while head is not None and head.data == 0 and head.next is not None:
+        head = head.next
+
+    return head
+
+
+# Add two numbers using the longer list
+def addTwoLists(head1, head2):
+    head1 = removeLeadingZeros(head1)
+    head2 = removeLeadingZeros(head2)
+
+    # Find the lengths of both lists
+    len1 = 0
+    len2 = 0
+
+    temp = head1
+    while temp is not None:
+        len1 += 1
+        temp = temp.next
+
+    temp = head2
+    while temp is not None:
+        len2 += 1
+        temp = temp.next
+
+    # Ensure head1 points to the longer list
+    if len1 < len2:
+        temp = head1
+        head1 = head2
+        head2 = temp
+
+    # Reverse both lists
+    head1 = reverseList(head1)
+    head2 = reverseList(head2)
+
+    curr1 = head1
+    curr2 = head2
+    carry = 0
+
+    # Store the sum in the longer list
+    while curr1 is not None:
+        sum = curr1.data + carry
+
+        if curr2 is not None:
+            sum += curr2.data
+            curr2 = curr2.next
+
+        curr1.data = sum % 10
+        carry = sum // 10
+
+        # Add a node if a carry remains
+        if curr1.next is None and carry > 0:
+            curr1.next = Node(carry)
+            carry = 0
+
+        curr1 = curr1.next
+
+    # Reverse the result to restore digit order
+    head1 = reverseList(head1)
+
+    # Remove leading zeros from the result
+    return removeLeadingZeros(head1)
+
+
+# Print the linked list
+def printList(head):
+    while head is not None:
+        print(head.data, end="")
+        if head.next is not None:
+            print(" -> ", end="")
+        head = head.next
+    print()
+
+
+if __name__ == "__main__":
+    head1 = Node(0)
+    head1.next = Node(0)
+    head1.next.next = Node(6)
+    head1.next.next.next = Node(3)
+
+    head2 = Node(0)
+    head2.next = Node(7)
+
+    result = addTwoLists(head1, head2)
+
+    printList(result)
+
+
+            C#
+
+    using System;
+
+class Node {
+    public int data;
+    public Node next;
+
+    public Node(int x) {
+        data = x;
+        next = null;
+    }
+}
+
+class GFG {
+
+    // Reverse the linked list
+    static Node reverseList(Node head) {
+        Node prev = null;
+        Node curr = head;
+
+        while (curr != null) {
+            Node nextNode = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextNode;
+        }
+
+        return prev;
+    }
+
+    // Remove leading zeros
+    static Node removeLeadingZeros(Node head) {
+        while (head != null && head.data == 0 &&
+               head.next != null) {
+            head = head.next;
+        }
+
+        return head;
+    }
+
+    // Add two numbers using the longer list
+    static Node addTwoLists(Node head1, Node head2) {
+        head1 = removeLeadingZeros(head1);
+        head2 = removeLeadingZeros(head2);
+
+        // Find the lengths of both lists
+        int len1 = 0, len2 = 0;
+
+        for (Node temp = head1; temp != null;
+             temp = temp.next)
+            len1++;
+
+        for (Node temp = head2; temp != null;
+             temp = temp.next)
+            len2++;
+
+        // Ensure head1 points to the longer list
+        if (len1 < len2) {
+            Node temp = head1;
+            head1 = head2;
+            head2 = temp;
+        }
+
+        // Reverse both lists
+        head1 = reverseList(head1);
+        head2 = reverseList(head2);
+
+        Node curr1 = head1;
+        Node curr2 = head2;
+        int carry = 0;
+
+        // Store the sum in the longer list
+        while (curr1 != null) {
+            int sum = curr1.data + carry;
+
+            if (curr2 != null) {
+                sum += curr2.data;
+                curr2 = curr2.next;
+            }
+
+            curr1.data = sum % 10;
+            carry = sum / 10;
+
+            // Add a node if a carry remains
+            if (curr1.next == null && carry > 0) {
+                curr1.next = new Node(carry);
+                carry = 0;
+            }
+
+            curr1 = curr1.next;
+        }
+
+        // Reverse the result to restore digit order
+        head1 = reverseList(head1);
+
+        // Remove leading zeros from the result
+        return removeLeadingZeros(head1);
+    }
+
+    // Print the linked list
+    static void printList(Node head) {
+        while (head != null) {
+            Console.Write(head.data);
+            if (head.next != null)
+                Console.Write(" -> ");
+            head = head.next;
+        }
+        Console.WriteLine();
+    }
+
+    static void Main() {
+        Node head1 = new Node(0);
+        head1.next = new Node(0);
+        head1.next.next = new Node(6);
+        head1.next.next.next = new Node(3);
+
+        Node head2 = new Node(0);
+        head2.next = new Node(7);
+
+        Node result = addTwoLists(head1, head2);
+
+        printList(result);
+    }
+}
+
+
+            JavaScript
+
+    class Node {
+    constructor(x)
+    {
+        this.data = x;
+        this.next = null;
+    }
+}
+
+// Reverse the linked list
+function reverseList(head)
+{
+    let prev = null;
+    let curr = head;
+
+    while (curr !== null) {
+        let nextNode = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = nextNode;
+    }
+
+    return prev;
+}
+
+// Remove leading zeros
+function removeLeadingZeros(head)
+{
+    while (head !== null && head.data === 0
+           && head.next !== null) {
+        head = head.next;
+    }
+
+    return head;
+}
+
+// Add two numbers using the longer list
+function addTwoLists(head1, head2)
+{
+    head1 = removeLeadingZeros(head1);
+    head2 = removeLeadingZeros(head2);
+
+    // Find the lengths of both lists
+    let len1 = 0, len2 = 0;
+
+    for (let temp = head1; temp !== null; temp = temp.next)
+        len1++;
+
+    for (let temp = head2; temp !== null; temp = temp.next)
+        len2++;
+
+    // Ensure head1 points to the longer list
+    if (len1 < len2) {
+        let temp = head1;
+        head1 = head2;
+        head2 = temp;
+    }
+
+    // Reverse both lists
+    head1 = reverseList(head1);
+    head2 = reverseList(head2);
+
+    let curr1 = head1;
+    let curr2 = head2;
+    let carry = 0;
+
+    // Store the sum in the longer list
+    while (curr1 !== null) {
+        let sum = curr1.data + carry;
+
+        if (curr2 !== null) {
+            sum += curr2.data;
+            curr2 = curr2.next;
+        }
+
+        curr1.data = sum % 10;
+        carry = Math.floor(sum / 10);
+
+        // Add a node if a carry remains
+        if (curr1.next === null && carry > 0) {
+            curr1.next = new Node(carry);
+            carry = 0;
+        }
+
+        curr1 = curr1.next;
+    }
+
+    // Reverse the result to restore digit order
+    head1 = reverseList(head1);
+
+    // Remove leading zeros from the result
+    return removeLeadingZeros(head1);
+}
+
+// Print the linked list
+function printList(head)
+{
+    let output = [];
+
+    while (head !== null) {
+        output.push(head.data);
+        head = head.next;
+    }
+
+    console.log(output.join(" -> "));
+}
+
+// Driver code
+let head1 = new Node(0);
+head1.next = new Node(0);
+head1.next.next = new Node(6);
+head1.next.next.next = new Node(3);
+
+let head2 = new Node(0);
+head2.next = new Node(7);
+
+let result = addTwoLists(head1, head2);
+
+printList(result);
+
+main();
+
+Output7 -> 0

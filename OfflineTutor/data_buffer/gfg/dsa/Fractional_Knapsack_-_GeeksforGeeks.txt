@@ -1,66 +1,69 @@
 # Fractional Knapsack - GeeksforGeeks
 
-Given two arrays, val[] and wt[], representing the values and weights of item respectively, and an integer capacity representing the maximum weight a knapsack can hold, we have to determine the maximum total value that can be achieved by putting the items in the knapsack without exceeding its capacity. Items can also be taken in fractional parts if required.Examples:Input: val[] = [60, 100, 120], wt[] = [10, 20, 30], capacity = 50Output: 240 Explanation: We will take the items of weight 10kg and 20kg and 2/3 fraction of 30kg. Hence total value will be 60 + 100 + (2/3) * 120 = 240.Input: val[] = [500], wt[] = [30], capacity = 10Output: 166.667Try It YourselfWhy naive approach will fail?Case 1: Picking the items with smaller weights first Example: val[] = [10, 10, 10, 100], wt[] = [10, 10, 10, 30], capacity = 30If we start picking smaller weights, we can pick the three items of weight 10 → total value = 10+10+10 = 30.But the optimal choice is to take the last item (value 100, weight 30) → total value = 100.So, choosing smaller weights first fails here.Case 2: Picking items with larger value first Example: val[]= [10, 10, 10, 20], wt[] = [10, 10, 10, 30], capacity = 30If we start picking higher values, we might choose the last item (value 20, weight 30) → total value = 20.But the better choice is to take the three items of weight 10 each → total value = 10+10+10 = 30.So, choosing higher values first also fails.[Approach] Selecting Items by value/weight Ratio - O(nlogn) Time and O(n) SpaceThe idea is to always pick items greedily based on their value-to-weight ratio. Take the item with the highest ratio first, then the next highest, and so on, until the knapsack is full. If any item doesn’t fully fit, then take its fractional part according to the remaining capacity.Steps to solve the problem:Calculate the ratio (value/weight) for each item.Sort all the items in decreasing order of the ratio.Iterate through items:if the current item fully fits, add its full value and decrease capacity otherwise, take the fractional part that fits and add proportional value.Stop once the capacity becomes zero.
+Given two arrays, val[] and wt[], representing the values and weights of n items, respectively, and an integer capacity representing the maximum weight a knapsack can hold.Find the maximum total value that can be obtained without exceeding the knapsack's capacity. Items can be divided into fractions if required.Examples:Input: val[] = [60, 100, 120], wt[] = [10, 20, 30], capacity = 50Output: 240 Explanation: We will take the items of weight 10kg and 20kg and 2/3 fraction of 30kg. Hence total value will be 60 + 100 + (2/3) * 120 = 240.Input: val[] = [500], wt[] = [30], capacity = 10Output: 166.667Explanation: The capacity is 10kg, so we will take 1/3 fraction of the 30kg item. Hence, total value will be (1/3) * 500 = 166.667.Try It YourselfTable of Content[Naive Approach] Select Items Based on Weight or ValueGreedy by Value-to-Weight Ratio - O(nlogn) Time and O(n) Space[Naive Approach] Select Items Based on Weight or ValueSelecting items based only on their weight or total value does not always maximize the total value.Case 1: Picking the items with smaller weights firstConsider val[] = [10, 10, 10, 100], wt[] = [10, 10, 10, 30], and capacity = 30.If we select the three items with smaller weights first, the total value is  10 + 10 + 10 = 30. However, selecting the item weighing 30 gives a value of 100, which is optimal.Thus, selecting items based only on their weights does not always maximize the total value.Case 2: Picking items with larger value firstConsider val[] = [10, 10, 10, 20], wt[] = [10, 10, 10, 30], and capacity = 30.If we select the item with the highest value first, we get a total value of 20. However, selecting the three items weighing 10 each gives a total value of  10 + 10 + 10 = 30 , which is optimal.Thus, selecting items based only on their values does not always maximize the total value.Greedy by Value-to-Weight Ratio - O(nlogn) Time and O(n) SpaceThe idea is to select items in decreasing order of their value-to-weight ratio, as items with a higher ratio provide more value per unit of weight.Calculate the value-to-weight ratio for each item using val[i] / wt[i].Sort the items in decreasing order of their ratios.Traverse the sorted items. If an item fits within the remaining capacity, take it completely, add its value to the total, and reduce the remaining capacity.If an item does not fit completely, take the fraction that fits and add its proportional value to the total.Stop when the knapsack is full or all items have been considered.
             C++
 
     #include <iostream>
-#include<vector>
-#include<algorithm>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
 // Comparison function to sort items based on value/weight ratio
-bool compare(vector<int>& a, vector<int>& b) {
+static bool compare(vector<int>& a, vector<int>& b)
+{
     double a1 = (1.0 * a[0]) / a[1];
     double b1 = (1.0 * b[0]) / b[1];
+
     return a1 > b1;
 }
 
-double fractionalKnapsack(vector<int>& val, vector<int>& wt, int capacity) {
+double fractionalKnapsack(vector<int>& val, vector<int>& wt, int capacity)
+{
     int n = val.size();
-    
+
     // Create 2D vector to store value and weight
-    // items[i][0] = value, items[i][1] = weight
     vector<vector<int>> items(n, vector<int>(2));
-    
-    for (int i = 0; i < n; i++) {
+
+    for (int i = 0; i < n; i++)
+    {
         items[i][0] = val[i];
         items[i][1] = wt[i];
     }
-    
-    // Sort items based on value-to-weight ratio in descending order
+
+    // Sort items by value-to-weight ratio
     sort(items.begin(), items.end(), compare);
-    
+
     double res = 0.0;
     int currentCapacity = capacity;
-    
+
     // Process items in sorted order
-    for (int i = 0; i < n; i++) {
-        
-        // If we can take the entire item
-        if (items[i][1] <= currentCapacity) {
+    for (int i = 0; i < n; i++)
+    {
+        // Take the complete item
+        if (items[i][1] <= currentCapacity)
+        {
             res += items[i][0];
             currentCapacity -= items[i][1];
         }
-        
-        // Otherwise take a fraction of the item
-        else {
+        // Take a fraction of the item
+        else
+        {
             res += (1.0 * items[i][0] / items[i][1]) * currentCapacity;
-            
-            // Knapsack is full
-            break; 
+            break;
         }
     }
-    
+
     return res;
 }
 
-int main() {
+int main()
+{
     vector<int> val = {60, 100, 120};
     vector<int> wt = {10, 20, 30};
     int capacity = 50;
-    
+
     cout << fractionalKnapsack(val, wt, capacity) << endl;
-    
+
     return 0;
 }
 
@@ -71,58 +74,80 @@ int main() {
 #include <stdlib.h>
 
 // Function to compare two items based on value-to-weight ratio
-int compare(const void *a, const void *b) {
-    float a1 = (*(float *)a) / (*(float *)a + 1);
-    float b1 = (*(float *)b) / (*(float *)b + 1);
-    return (b1 - a1);
+int compare(const void *a, const void *b)
+{
+    const float *itemA = (const float *)a;
+    const float *itemB = (const float *)b;
+
+    float ratioA = itemA[0] / itemA[1];
+    float ratioB = itemB[0] / itemB[1];
+
+    if (ratioA < ratioB)
+        return 1;
+    if (ratioA > ratioB)
+        return -1;
+
+    return 0;
 }
 
-float fractionalKnapsack(float val[], float wt[], int capacity, int n) {
+float fractionalKnapsack(float val[], float wt[], int capacity, int n)
+{
     // Create an array to store value and weight
     float items[n][2];
-    for (int i = 0; i < n; i++) {
+
+    for (int i = 0; i < n; i++)
+    {
         items[i][0] = val[i];
         items[i][1] = wt[i];
     }
-    
-    // Sort items based on value-to-weight ratio in descending order
-    qsort(items, n, sizeof(float[2]), compare);
-    
+
+    // Sort items based on value-to-weight ratio
+    qsort(items, n, sizeof(items[0]), compare);
+
     float res = 0.0;
     float currentCapacity = capacity;
-    
+
     // Process items in sorted order
-    for (int i = 0; i < n; i++) {
-        // If we can take the entire item
-        if (items[i][1] <= currentCapacity) {
+    for (int i = 0; i < n; i++)
+    {
+        // Take the complete item
+        if (items[i][1] <= currentCapacity)
+        {
             res += items[i][0];
             currentCapacity -= items[i][1];
         }
-        // Otherwise take a fraction of the item
-        else {
+        // Take a fraction of the item
+        else
+        {
             res += (items[i][0] / items[i][1]) * currentCapacity;
             // Knapsack is full
             break;
         }
     }
+
     return res;
 }
 
-int main() {
+int main()
+{
     float val[] = {60, 100, 120};
     float wt[] = {10, 20, 30};
     int capacity = 50;
+
     int n = sizeof(val) / sizeof(val[0]);
+
     printf("%.2f", fractionalKnapsack(val, wt, capacity, n));
+
     return 0;
 }
 
 
             Java
 
-    import java.util.*;
+    import java.util.Arrays;
+import java.util.Comparator;
 
-class GfG {
+class GFG {
 
     // Comparison function to sort items based on value/weight ratio
     static class ItemComparator implements Comparator<int[]> {
@@ -294,53 +319,37 @@ class GfG {
 
             JavaScript
 
-    function compare(a, b) {
-    let a1 = (1.0 * a[0]) / a[1];
-    let b1 = (1.0 * b[0]) / b[1];
-    return b1 - a1;
-}
-
-function fractionalKnapsack(val, wt, capacity) {
+    function fractionalKnapsack(val, wt, capacity) {
     let n = val.length;
-
-    // Create array to store value and weight
-    // items[i][0] = value, items[i][1] = weight
     let items = [];
+
     for (let i = 0; i < n; i++) {
         items.push([val[i], wt[i]]);
     }
 
-    // Sort items based on value-to-weight ratio in descending order
-    items.sort(compare);
+    items.sort((a, b) => (b[0] / b[1]) - (a[0] / a[1]));
 
     let res = 0.0;
     let currentCapacity = capacity;
 
-    // Process items in sorted order
     for (let i = 0; i < n; i++) {
-
-        // If we can take the entire item
         if (items[i][1] <= currentCapacity) {
             res += items[i][0];
             currentCapacity -= items[i][1];
-        }
-
-        // Otherwise take a fraction of the item
-        else {
-            res += (1.0 * items[i][0] / items[i][1]) * currentCapacity;
-
-            // Knapsack is full
+        } else {
+            res += (items[i][0] / items[i][1]) * currentCapacity;
             break;
         }
     }
 
     return res;
 }
+
 // Driver Code
 let val = [60, 100, 120];
 let wt = [10, 20, 30];
 let capacity = 50;
 
-console.log(fractionalKnapsack(val, wt, capacity));
+console.log(fractionalKnapsack(val, wt, capacity).toFixed(6));
 
 Output240

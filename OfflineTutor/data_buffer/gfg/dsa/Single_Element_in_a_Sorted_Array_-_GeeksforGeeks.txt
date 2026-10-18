@@ -1,6 +1,6 @@
 # Single Element in a Sorted Array - GeeksforGeeks
 
-Given a sorted array arr[] where every element appears exactly twice except one element that appears only once, find that single element.Examples: Input: arr[] = [1, 1, 2, 2, 3, 4, 4]Output: 3Explanation: All numbers except 3 occur twice in the array.Input: arr[] = [1, 1, 3, 3, 4, 4, 5, 5, 7, 7, 8]Output: 8Explanation: All numbers except 8 occur twice in the array.Try It YourselfTable of Content[Naive Approach 1] By comparing adjacent elements - O(n) Time and O(1) Space:[Naive Approach 2] Using Bitwise XOR - O(n) Time and O(1) Space:[Expected Approach] Using Binary Search - O(log n) Time and O(1) Space:[Naive Approach 1] By comparing adjacent elements - O(n) Time and O(1) Space:The idea behind this approach is to check every adjacent element in order to find if there exists its pair or not as the array is sorted.The single element must appear at an odd position (or even index) because every other element appears twice.One by one check all odd postilions (or even indexes) and if we find an element which is not same as next, we return the element. 
+Given a sorted array arr[] where every element appears exactly twice except one element that appears only once, find that single element.Examples: Input: arr[] = [1, 1, 2, 2, 3, 4, 4]Output: 3Explanation: All numbers except 3 occur twice in the array.Input: arr[] = [1, 1, 3, 3, 4, 4, 5, 5, 7, 7, 8]Output: 8Explanation: All numbers except 8 occur twice in the array.Try It YourselfTable of Content[Naive Approach 1] Comparing Adjacent Elements - O(n) Time and O(1) Space[Naive Approach 2] Bitwise XOR - O(n) Time and O(1) Space[Expected Approach] Binary Search - O(log n) Time and O(1) Space[Naive Approach 1] Comparing Adjacent Elements - O(n) Time and O(1) SpaceThe idea behind this approach is to check every adjacent element in order to find if there exists its pair or not as the array is sorted.The single element must appear at an odd position (or even index) because every other element appears twice.One by one check all odd postilions (or even indexes) and if we find an element which is not same as next, we return the element. 
             C++
 
     #include <iostream>
@@ -168,7 +168,7 @@ class GfG
 const arr = [1, 1, 2, 2, 3, 4, 4];
 console.log(single(arr));
 
-Output3[Naive Approach 2] Using Bitwise XOR - O(n) Time and O(1) Space:The idea behind this approach is to use bitwise XOR between pair of elements, as XOR of two same numbers is always equal to 0.We can use the properties of XOR (a ^ a = 0 & a ^ 0 = a) to find the element that occurs once. The idea is to find the XOR of the complete array, so all the elements which occur twice will have their XOR = 0 and the XOR of the array will be the required answer.
+Output3[Naive Approach 2] Bitwise XOR - O(n) Time and O(1) SpaceThe XOR of two identical numbers is 0, and the XOR of any number with 0 is the number itself. Therefore, XOR all elements of the array. Every element that appears twice cancels out, leaving only the single element.
             C++
 
     #include <iostream>
@@ -294,7 +294,7 @@ const arr = [1, 1, 2, 2, 3, 4, 4];
 console.log(single(arr));
 
 Output3
-[Expected Approach] Using Binary Search - O(log n) Time and O(1) Space:The idea is to use Binary Search. Below is an observation on the input array. All elements before the element that occurs once have the first occurrence at even index (0, 2, ..) and the next occurrence at odd index (1, 3, ...). And all elements after the element that occurs once have the first occurrence at an odd index and the next occurrence at an even index.Find the middle index, say 'mid'. If mid is odd, then reduce it by 1 to make it evenIf 'arr[mid] and arr[mid+1] are same, then the single element must be on the right sideElse single element must be on the left side.
+[Expected Approach] Binary Search - O(log n) Time and O(1) SpaceThe idea is to use Binary Search. Below is an observation on the input array. All elements before the element that occurs once have the first occurrence at even index (0, 2, ..) and the next occurrence at odd index (1, 3, ...). And all elements after the element that occurs once have the first occurrence at an odd index and the next occurrence at an even index.Find the middle index, say 'mid'. If mid is odd, then reduce it by 1 to make it evenIf 'arr[mid] and arr[mid+1] are same, then the single element must be on the right sideElse single element must be on the left side.
             C++
 
     #include <iostream>

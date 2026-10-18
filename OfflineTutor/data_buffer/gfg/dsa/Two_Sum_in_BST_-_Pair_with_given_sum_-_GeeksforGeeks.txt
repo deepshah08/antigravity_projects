@@ -1,76 +1,81 @@
 # Two Sum in BST - Pair with given sum - GeeksforGeeks
 
-Given the root of a Binary Search Tree (BST) of size n and an integer target, determine whether there exists a pair of distinct nodes in the BST such that the sum of their values is equal to the given target. Return true if such a pair exists; otherwise, return false.Example:Input: root = [7, 3, 8, 2, 4, N, 9], target = 12Output: trueExplanation: In the given binary tree, there are two nodes (3 and 9) that add up to 12. Input: root = [9, 5, 10, 2, 6, N, 12], target = 23Output: falseExplanation: In the given binary tree, there are no such two nodes that add up to 23. Try It YourselfTable of Content[Naive Approach] Check Complement for Every Node - O(n²) Time and O(h) Space[Better Approach 1] Using Hash Set - O(n) time and O(n) space [Expected Approach 2] Using Inorder Traversal and Two Pointers - O(n) time and O(n) space[Naive Approach] Check Complement for Every Node - O(n²) Time and O(h) SpaceThe idea is to traverse the BST and, for each node, search for its complement (target - node value) in the BST. If the complement exists in a different node, return true. 
+Given the root of a Binary Search Tree (BST) of size n and an integer target, determine whether there exists a pair of distinct nodes in the BST such that the sum of their values is equal to the given target. Return true if such a pair exists; otherwise, return false.Examples:Input: root = [7, 3, 8, 2, 4, N, 9], target = 12Output: trueExplanation: In the given binary tree, there are two nodes (3 and 9) that add up to 12. Input: root = [9, 5, 10, 2, 6, N, 12], target = 23Output: falseExplanation: In the given binary tree, there are no such two nodes that add up to 23. Try It YourselfTable of Content[Naive Approach] Check Complement for Every Node - O(n ^ 2) Time and O(h) Space[Better Approach] Hash Set - O(n) time and O(n) space [Expected Approach] Inorder Traversal and Two Pointers - O(n) time and O(n) space[Naive Approach] Check Complement for Every Node - O(n ^ 2) Time and O(h) SpaceThe idea is to traverse the BST and, for each node, search for its complement (target - node value) in the BST.  If the complement exists, return true. 
             C++
 
     #include <iostream>
 using namespace std;
 
-class Node {
+class Node
+{
   public:
     int data;
-    Node* left;
-    Node* right;
-    Node(int d) {
+    Node *left;
+    Node *right;
+    Node(int d)
+    {
         data = d;
-        left = nullptr;
-        right = nullptr;
+        left = right = nullptr;
     }
 };
 
 // Function to search for the Key in the BST
-bool search(Node* root, int key, Node* temp) {
-    
+bool search(Node *root, int key, Node *temp)
+{
+
     // If the root is NULL, return false
     if (root == nullptr)
         return false;
 
     // Start search from the root
-    Node* current = root;
+    Node *current = root;
 
     // Traverse the BST to find the target value `k`
-    while (current != nullptr) {
-        
+    while (current != nullptr)
+    {
+
         // If Key is found
-        if (current->data == key && current != temp) 
+        if (current->data == key && current != temp)
             return true;
-      
+
         // If key is smaller, move to the left
-        else if (key < current->data) 
+        else if (key < current->data)
             current = current->left;
-      
-      	// If key is larger, move to the right
-        else 
+
+        // If key is larger, move to the right
+        else
             current = current->right;
     }
-  
-	// Return false if no match is found
-    return false; 
+
+    // Return false if no match is found
+    return false;
 }
 
-// Helper Function to find if there exists a pair 
+// Helper Function to find if there exists a pair
 // with a given sum in the BST
-bool findTargetRec(Node* root, Node* current, int target) {
+bool findTargetRec(Node *root, Node *current, int target)
+{
     if (current == nullptr)
         return false;
-  	
-  	// Check if the complement of the current node value exists
-  	int complement = target - current->data;
-  	if (search(root, complement, current)) 
-      	return true;
-	
+
+    // Check if the complement of the current node value exists
+    int complement = target - current->data;
+    if (search(root, complement, current))
+        return true;
+
     // Check for the pair in left and right subtree
-    return findTargetRec(root, current->left, target) || 
-      		findTargetRec(root, current->right, target);
+    return findTargetRec(root, current->left, target) || findTargetRec(root, current->right, target);
 }
 
-// Function to find if there exists a pair 
+// Function to find if there exists a pair
 // with a given sum in the BST
-bool findTarget(Node* root, int target) {
-  	return findTargetRec(root, root, target);
+bool findTarget(Node *root, int target)
+{
+    return findTargetRec(root, root, target);
 }
 
-int main() {
+int main()
+{
 
     // Constructing the following BST:
     //         7
@@ -99,17 +104,19 @@ int main() {
     int data;
     Node left, right;
 
-    Node(int d) {
+    Node(int d)
+    {
         data = d;
         left = right = null;
     }
 }
 
-class GfG {
-  
+class GFG {
+
     // Function to search for the Key in the BST
-    static boolean search(Node root, int key, Node temp) {
-        
+    static boolean search(Node root, int key, Node temp)
+    {
+
         // If the root is NULL, return false
         if (root == null)
             return false;
@@ -119,7 +126,7 @@ class GfG {
 
         // Traverse the BST to find the target value `key`
         while (current != null) {
-            
+
             // If Key is found
             if (current.data == key && current != temp)
                 return true;
@@ -137,30 +144,35 @@ class GfG {
         return false;
     }
 
-    // Helper Function to find if there exists a pair 
+    // Helper Function to find if there exists a pair
     // with a given sum in the BST
-    static boolean findTargetRec(Node root, Node current, int target) {
+    static boolean findTargetRec(Node root, Node current,
+                                 int target)
+    {
         if (current == null)
             return false;
 
-        // Check if the complement of the current node value exists
+        // Check if the complement of the current node value
+        // exists
         int complement = target - current.data;
         if (search(root, complement, current))
             return true;
 
         // Check for the pair in left and right subtree
-        return findTargetRec(root, current.left, target) ||
-               findTargetRec(root, current.right, target);
+        return findTargetRec(root, current.left, target)
+            || findTargetRec(root, current.right, target);
     }
 
-    // Function to find if there exists a pair 
+    // Function to find if there exists a pair
     // with a given sum in the BST
-    static boolean findTarget(Node root, int target) {
+    static boolean findTarget(Node root, int target)
+    {
         return findTargetRec(root, root, target);
     }
 
-    public static void main(String[] args) {
-        
+    public static void main(String[] args)
+    {
+
         // Constructing the following BST:
         //         7
         //        / \
@@ -177,7 +189,8 @@ class GfG {
 
         int target = 12;
 
-        System.out.println(findTarget(root, target) ? "true" : "false");
+        System.out.println(
+            findTarget(root, target) ? "true" : "false");
     }
 }
 
@@ -265,17 +278,19 @@ class Node {
     public int data;
     public Node left, right;
 
-    public Node(int d) {
+    public Node(int d)
+    {
         data = d;
         left = right = null;
     }
 }
 
-class GfG {
-  
+class GFG {
+
     // Function to search for the Key in the BST
-    static bool Search(Node root, int key, Node temp) {
-        
+    static bool Search(Node root, int key, Node temp)
+    {
+
         // If the root is NULL, return false
         if (root == null)
             return false;
@@ -285,7 +300,7 @@ class GfG {
 
         // Traverse the BST to find the target value `key`
         while (current != null) {
-            
+
             // If Key is found
             if (current.data == key && current != temp)
                 return true;
@@ -303,30 +318,35 @@ class GfG {
         return false;
     }
 
-    // Helper Function to find if there exists a pair 
+    // Helper Function to find if there exists a pair
     // with a given sum in the BST
-    static bool FindTargetRec(Node root, Node current, int target) {
+    static bool FindTargetRec(Node root, Node current,
+                              int target)
+    {
         if (current == null)
             return false;
 
-        // Check if the complement of the current node value exists
+        // Check if the complement of the current node value
+        // exists
         int complement = target - current.data;
         if (Search(root, complement, current))
             return true;
 
         // Check for the pair in left and right subtree
-        return FindTargetRec(root, current.left, target) || 
-               FindTargetRec(root, current.right, target);
+        return FindTargetRec(root, current.left, target)
+            || FindTargetRec(root, current.right, target);
     }
 
-    // Function to find if there exists a pair 
+    // Function to find if there exists a pair
     // with a given sum in the BST
-    static bool FindTarget(Node root, int target) {
+    static bool findTarget(Node root, int target)
+    {
         return FindTargetRec(root, root, target);
     }
 
-    static void Main(string[] args) {
-        
+    static void Main(string[] args)
+    {
+
         // Constructing the following BST:
         //         7
         //        / \
@@ -343,7 +363,8 @@ class GfG {
 
         int target = 12;
 
-        Console.WriteLine(FindTarget(root, target) ? "true" : "false");
+        Console.WriteLine(
+            findTarget(root, target) ? "true" : "false");
     }
 }
 
@@ -351,7 +372,8 @@ class GfG {
             JavaScript
 
     class Node {
-    constructor(data) {
+    constructor(data)
+    {
         this.data = data;
         this.left = null;
         this.right = null;
@@ -359,8 +381,9 @@ class GfG {
 }
 
 // Function to search for the Key in the BST
-function search(root, key, temp) {
-    
+function search(root, key, temp)
+{
+
     // If the root is NULL, return false
     if (root === null)
         return false;
@@ -370,7 +393,7 @@ function search(root, key, temp) {
 
     // Traverse the BST to find the target value `key`
     while (current !== null) {
-        
+
         // If Key is found
         if (current.data === key && current !== temp)
             return true;
@@ -388,30 +411,32 @@ function search(root, key, temp) {
     return false;
 }
 
-// Helper Function to find if there exists a pair 
+// Helper Function to find if there exists a pair
 // with a given sum in the BST
-function findTargetRec(root, current, target) {
+function findTargetRec(root, current, target)
+{
     if (current === null)
         return false;
 
-    // Check if the complement of the current node value exists
+    // Check if the complement of the current node value
+    // exists
     const complement = target - current.data;
     if (search(root, complement, current))
         return true;
 
     // Check for the pair in left and right subtree
-    return findTargetRec(root, current.left, target) || 
-           findTargetRec(root, current.right, target);
+    return findTargetRec(root, current.left, target)
+           || findTargetRec(root, current.right, target);
 }
 
-// Function to find if there exists a pair 
+// Function to find if there exists a pair
 // with a given sum in the BST
-function findTarget(root, target) {
+function findTarget(root, target)
+{
     return findTargetRec(root, root, target);
 }
 
 // Driver Code
-
 // Constructing the following BST:
 //         7
 //        / \
@@ -429,31 +454,30 @@ let target = 12;
 
 console.log(findTarget(root, target) ? "true" : "false");
 
-Outputtrue[Better Approach 1] Using Hash Set - O(n) time and O(n) space The idea of this approach is to use a Hash Set to store the values of nodes visited during a traversal of the BST. While traversing each node, we check whether the complement value (target - current node value) already exists in the set. If it exists, it means a valid pair of distinct nodes has been found whose sum is equal to the target, and we return true. Otherwise, we insert the current node’s value into the set and continue the traversal. 
+Outputtrue[Better Approach] Hash Set - O(n) time and O(n) space The idea of this approach is to use a Hash Set to store the values of nodes visited during a traversal of the BST. While traversing each node, we check whether the complement value (target - current node value) already exists in the set. If it exists, it means a valid pair of distinct nodes has been found whose sum is equal to the target, and we return true. Otherwise, we insert the current node’s value into the set and continue the traversal. 
             C++
 
-    //Driver Code Starts
-#include <iostream>
+    #include <iostream>
 #include <unordered_set>
 using namespace std;
 
-class Node{
+class Node
+{
   public:
     int data;
     Node *left, *right;
-    Node(int x){
+    Node(int x)
+    {
         data = x;
-        left = nullptr;
-        right = nullptr;
+        left = right = nullptr;
     }
 };
 
 // Helper function to perform DFS and check
-//Driver Code Ends
-
 // for the required target.
-bool dfs(Node *root, unordered_set<int> &st, int target){
-  
+bool dfs(Node *root, unordered_set<int> &st, int target)
+{
+
     if (root == nullptr)
         return false;
 
@@ -471,8 +495,9 @@ bool dfs(Node *root, unordered_set<int> &st, int target){
 
 // Main function to check if two elements
 // in the BST target to target
-bool findTarget(Node *root, int target){
-  
+bool findTarget(Node *root, int target)
+{
+
     // To store visited nodes' values
     unordered_set<int> st;
 
@@ -480,10 +505,9 @@ bool findTarget(Node *root, int target){
     return dfs(root, st, target);
 }
 
-int main(){
-    
+int main()
+{
 
-//Driver Code Starts
     // Constructing the following BST:
     //         7
     //        / \
@@ -501,66 +525,65 @@ int main(){
     int target = 12;
 
     if (findTarget(root, target))
-        cout << "true
-";
+        cout << "true\n";
     else
-        cout << "false
-";
+        cout << "false\n";
 
     return 0;
 }
-//Driver Code Ends
 
 
             Java
 
-    //Driver Code Starts
-import java.util.HashSet;
+    import java.util.HashSet;
 
 class Node {
     int data;
     Node left, right;
 
-    Node(int x) {
+    Node(int x)
+    {
         data = x;
         left = null;
         right = null;
     }
 }
 
-class GfG {
-  
-    // Helper function to perform DFS and check
-//Driver Code Ends
+class GFG {
 
+    // Helper function to perform DFS and check
     // for the required target.
-    static boolean dfs(Node root, HashSet<Integer> set, int target) {
+    static boolean dfs(Node root, HashSet<Integer> set,
+                       int target)
+    {
         if (root == null)
             return false;
 
-        // Check if the complement (target - current node's value)
-        // exists in the set
+        // Check if the complement (target - current node's
+        // value) exists in the set
         if (set.contains(target - root.data))
             return true;
 
         // Insert the current node's value into the set
         set.add(root.data);
 
-        // Continue the search in the left and right subtrees
-        return dfs(root.left, set, target) || dfs(root.right, set, target);
+        // Continue the search in the left and right
+        // subtrees
+        return dfs(root.left, set, target)
+            || dfs(root.right, set, target);
     }
 
     // Main function to check if two elements
     // in the BST target to target
-    static boolean findTarget(Node root, int target) {
+    static boolean findTarget(Node root, int target)
+    {
         HashSet<Integer> set = new HashSet<>();
         return dfs(root, set, target);
     }
 
-    public static void main(String[] args) {
-        
+    public static void main(String[] args)
+    {
 
-//Driver Code Starts
         // Constructing the following BST:
         //         7
         //        / \
@@ -583,13 +606,11 @@ class GfG {
             System.out.println("false");
     }
 }
-//Driver Code Ends
 
 
             Python
 
-    #Driver Code Starts
-class Node:
+    class Node:
     def __init__(self, x):
         self.data = x
         self.left = None
@@ -597,8 +618,6 @@ class Node:
 
 # Helper function to perform DFS and check
 # for the required target.
-#Driver Code Ends
-
 def dfs(root, st, target):
     if root is None:
         return False
@@ -623,8 +642,6 @@ def findTarget(root, target):
 if __name__ == "__main__":
     
     # Constructing the following BST:
-
-#Driver Code Starts
     #         7
     #        / \
     #       3   8
@@ -644,59 +661,59 @@ if __name__ == "__main__":
         print("true")
     else:
         print("false")
-#Driver Code Ends
 
 
             C#
 
-    //Driver Code Starts
-using System;
+    using System;
 using System.Collections.Generic;
 
 class Node {
     public int data;
     public Node left, right;
 
-    public Node(int x) {
+    public Node(int x)
+    {
         data = x;
         left = null;
         right = null;
     }
 }
 
-class GfG {
-  
-    // Helper function to perform DFS and check
-//Driver Code Ends
+class GFG {
 
+    // Helper function to perform DFS and check
     // for the required target.
-    static bool dfs(Node root, HashSet<int> set, int target) {
+    static bool dfs(Node root, HashSet<int> set, int target)
+    {
         if (root == null)
             return false;
 
-        // Check if the complement (target - current node's value)
-        // exists in the set
+        // Check if the complement (target - current node's
+        // value) exists in the set
         if (set.Contains(target - root.data))
             return true;
 
         // Insert the current node's value into the set
         set.Add(root.data);
 
-        // Continue the search in the left and right subtrees
-        return dfs(root.left, set, target) || dfs(root.right, set, target);
+        // Continue the search in the left and right
+        // subtrees
+        return dfs(root.left, set, target)
+            || dfs(root.right, set, target);
     }
 
     // Main function to check if two elements
     // in the BST target to target
-    static bool findTarget(Node root, int target) {
+    static bool findTarget(Node root, int target)
+    {
         HashSet<int> set = new HashSet<int>();
         return dfs(root, set, target);
     }
 
-    static void Main(string[] args) {
-        
+    static void Main(string[] args)
+    {
 
-//Driver Code Starts
         // Constructing the following BST:
         //         7
         //        / \
@@ -719,14 +736,13 @@ class GfG {
             Console.WriteLine("false");
     }
 }
-//Driver Code Ends
 
 
             JavaScript
 
-    //Driver Code Starts
-class Node {
-    constructor(x) {
+    class Node {
+    constructor(x)
+    {
         this.data = x;
         this.left = null;
         this.right = null;
@@ -734,15 +750,14 @@ class Node {
 }
 
 // Helper function to perform DFS and check
-//Driver Code Ends
-
 // for the required target.
-function dfs(root, set, target) {
+function dfs(root, set, target)
+{
     if (root === null)
         return false;
 
-    // Check if the complement (target - current node's value)
-    // exists in the set
+    // Check if the complement (target - current node's
+    // value) exists in the set
     if (set.has(target - root.data))
         return true;
 
@@ -750,20 +765,19 @@ function dfs(root, set, target) {
     set.add(root.data);
 
     // Continue the search in the left and right subtrees
-    return dfs(root.left, set, target) || dfs(root.right, set, target);
+    return dfs(root.left, set, target)
+           || dfs(root.right, set, target);
 }
 
 // Main function to check if two elements
 // in the BST target to target
-function findTarget(root, target) {
+function findTarget(root, target)
+{
     const set = new Set();
     return dfs(root, set, target);
 }
 
 // Driver Code
-
-
-//Driver Code Starts
 // Constructing the following BST:
 //         7
 //        / \
@@ -781,38 +795,37 @@ const target = 12;
 
 if (findTarget(root, target)) {
     console.log("true");
-} else {
+}
+else {
     console.log("false");
 }
-//Driver Code Ends
 
 Outputtrue
-[Expected Approach 2] Using Inorder Traversal and Two Pointers - O(n) time and O(n) spaceThe idea of this approach is based on the property of a Binary Search Tree (BST), where an inorder traversal always produces elements in sorted order. We first perform an inorder traversal of the BST and store all node values in an auxiliary array. Since the BST inorder is sorted, the resulting array will also be sorted. Once we have the sorted array, we apply the two-pointer technique to find whether there exists a pair of elements whose sum is equal to the given target.Perform inorder traversal of the BSTStore all node values in an array, which becomes sorted due to BST inorder propertyInitialize two pointers: left = 0 and right = n - 1While left < right, compute currentSum = arr[left] + arr[right]If currentSum == target, return trueIf currentSum < target, increment left pointerIf currentSum > target, decrement right pointerIf no valid pair is found after traversal, return falseConsider the BST: root = [7, 3, 8, 2, 4, N, 9], target = 12  Step 1: Inorder traversal of BST gives sorted array: [2, 3, 4, 7, 8, 9]Step 2: Apply Two Pointersleft = 0 (2), right = 5 (9): sum = 11 -> less than 12 -> move left++left = 1 (3), right = 5 (9): sum = 12 -> equal to target -> return trueFinal Result: Pair found: (3, 9), hence, we return true.
+[Expected Approach] Inorder Traversal and Two Pointers - O(n) time and O(n) spaceThe idea of this approach is based on the property of a Binary Search Tree (BST), where an inorder traversal always produces elements in sorted order. We first perform an inorder traversal of the BST and store all node values in an auxiliary array. Since the BST inorder is sorted, the resulting array will also be sorted. Once we have the sorted array, we apply the two-pointer technique to find whether there exists a pair of elements whose sum is equal to the given target.Perform inorder traversal of the BSTStore all node values in an array, which becomes sorted due to BST inorder propertyInitialize two pointers: left = 0 and right = n - 1While left < right, compute currentSum = arr[left] + arr[right]If currentSum == target, return trueIf currentSum < target, increment left pointerIf currentSum > target, decrement right pointerIf no valid pair is found after traversal, return falseConsider the BST: root = [7, 3, 8, 2, 4, N, 9], target = 12  Step 1: Inorder traversal of BST gives sorted array: [2, 3, 4, 7, 8, 9]Step 2: Apply Two Pointersleft = 0 (2), right = 5 (9): sum = 11 -> less than 12 -> move left++left = 1 (3), right = 5 (9): sum = 12 -> equal to target -> return trueFinal Result: Pair found: (3, 9), hence, we return true.
             C++
 
-    //Driver Code Starts
-#include <iostream>
+    #include <iostream>
 #include <vector>
 using namespace std;
 
-class Node {
+class Node
+{
   public:
     int data;
-    Node* left;
-    Node* right;
+    Node *left;
+    Node *right;
 
-    Node(int d) {
+    Node(int d)
+    {
         data = d;
-        left = nullptr;
-        right = nullptr;
+        left = right = nullptr;
     }
 };
 
-// Function to perform Inorder traversal and store the 
-//Driver Code Ends
-
+// Function to perform Inorder traversal and store the
 // elements in a vector
-void inorderTraversal(Node* root, vector<int>& inorder) {
+void inorderTraversal(Node *root, vector<int> &inorder)
+{
     if (root == nullptr)
         return;
 
@@ -824,28 +837,30 @@ void inorderTraversal(Node* root, vector<int>& inorder) {
     inorderTraversal(root->right, inorder);
 }
 
-bool findTarget(Node* root, int target) {
-    
+bool findTarget(Node *root, int target)
+{
+
     // Create an auxiliary array and store Inorder traversal
     vector<int> inorder;
-    inorderTraversal(root, inorder); 
+    inorderTraversal(root, inorder);
 
     // Use two-pointer technique to find the pair with given sum
     int left = 0, right = inorder.size() - 1;
 
-    while (left < right) {
+    while (left < right)
+    {
         int currentSum = inorder[left] + inorder[right];
 
         // If the pair is found, return true
-        if (currentSum == target) 
+        if (currentSum == target)
             return true;
 
-        // If the current sum is less than the target, 
+        // If the current sum is less than the target,
         // move the left pointer
         if (currentSum < target)
             left++;
-      
-          // If the current sum is greater than 
+
+        // If the current sum is greater than
         // the target, move the right pointer
         else
             right--;
@@ -854,12 +869,11 @@ bool findTarget(Node* root, int target) {
     return false;
 }
 
-int main(){
-    
+int main()
+{
+
     // Constructing the following BST:
     //         7
-
-//Driver Code Starts
     //        / \
     //       3   8
     //      / \   \
@@ -875,40 +889,37 @@ int main(){
     int target = 12;
 
     if (findTarget(root, target))
-        cout << "true
-";
+        cout << "true\n";
     else
-        cout << "false
-";
+        cout << "false\n";
 
     return 0;
 }
-//Driver Code Ends
 
 
             Java
 
-    //Driver Code Starts
-import java.util.ArrayList;
+    import java.util.ArrayList;
 
 class Node {
     int data;
     Node left, right;
 
-    Node(int data) {
+    Node(int data)
+    {
         this.data = data;
         left = null;
         right = null;
     }
 }
 
-class GfG {
-    
-    // Function to perform Inorder traversal and store the 
-    // elements in an array
-//Driver Code Ends
+class GFG {
 
-    static void inorderTraversal(Node root, ArrayList<Integer> inorder) {
+    // Function to perform Inorder traversal and store the
+    // elements in an array
+    static void inorderTraversal(Node root,
+                                 ArrayList<Integer> inorder)
+    {
         if (root == null)
             return;
 
@@ -920,28 +931,32 @@ class GfG {
         inorderTraversal(root.right, inorder);
     }
 
-    static boolean findTarget(Node root, int target) {
-      
-        // Create an auxiliary array and store Inorder traversal
+    static boolean findTarget(Node root, int target)
+    {
+
+        // Create an auxiliary array and store Inorder
+        // traversal
         ArrayList<Integer> inorder = new ArrayList<>();
         inorderTraversal(root, inorder);
 
-        // Use two-pointer technique to find the pair with given sum
+        // Use two-pointer technique to find the pair with
+        // given sum
         int left = 0, right = inorder.size() - 1;
 
         while (left < right) {
-            int currentSum = inorder.get(left) + inorder.get(right);
+            int currentSum
+                = inorder.get(left) + inorder.get(right);
 
             // If the pair is found, return true
             if (currentSum == target)
                 return true;
 
-            // If the current sum is less than the target, 
+            // If the current sum is less than the target,
             // move the left pointer
             if (currentSum < target)
                 left++;
-          
-            // If the current sum is greater than 
+
+            // If the current sum is greater than
             // the target, move the right pointer
             else
                 right--;
@@ -950,13 +965,12 @@ class GfG {
         return false;
     }
 
-    public static void main(String[] args) {
-        
+    public static void main(String[] args)
+    {
+
         // Constructing the following BST:
         //         7
         //        / \
-
-//Driver Code Starts
         //       3   8
         //      / \   \
         //     2   4   9
@@ -976,13 +990,11 @@ class GfG {
             System.out.println("false");
     }
 }
-//Driver Code Ends
 
 
             Python
 
-    #Driver Code Starts
-class Node:
+    class Node:
     def __init__(self, data):
         self.data = data
         self.left = None
@@ -990,8 +1002,6 @@ class Node:
 
 # Function to perform Inorder traversal and store the 
 # elements in an array
-#Driver Code Ends
-
 def inorderTraversal(root, inorder):
     if root is None:
         return
@@ -1035,8 +1045,6 @@ if __name__ == "__main__":
     
     # Constructing the following BST:
     #         7
-
-#Driver Code Starts
     #        / \
     #       3   8
     #      / \   \
@@ -1055,32 +1063,31 @@ if __name__ == "__main__":
         print("true")
     else:
         print("false")
-#Driver Code Ends
 
 
             C#
 
-    //Driver Code Starts
-using System;
+    using System;
 using System.Collections.Generic;
 
 class Node {
     public int data;
     public Node left, right;
 
-    public Node(int data) {
+    public Node(int data)
+    {
         this.data = data;
         left = right = null;
     }
 }
 
-class GfG {
+class GFG {
 
-    // Function to perform Inorder traversal and store the 
+    // Function to perform Inorder traversal and store the
     // elements in a list
-//Driver Code Ends
-
-    static void inorderTraversal(Node root, List<int> inorder) {
+    static void inorderTraversal(Node root,
+                                 List<int> inorder)
+    {
         if (root == null)
             return;
 
@@ -1092,13 +1099,16 @@ class GfG {
         inorderTraversal(root.right, inorder);
     }
 
-    static bool findTarget(Node root, int target) {
-      
-        // Create an auxiliary list and store Inorder traversal
+    static bool findTarget(Node root, int target)
+    {
+
+        // Create an auxiliary list and store Inorder
+        // traversal
         List<int> inorder = new List<int>();
         inorderTraversal(root, inorder);
 
-        // Use two-pointer technique to find the pair with given sum
+        // Use two-pointer technique to find the pair with
+        // given sum
         int left = 0, right = inorder.Count - 1;
 
         while (left < right) {
@@ -1108,12 +1118,12 @@ class GfG {
             if (currentSum == target)
                 return true;
 
-            // If the current sum is less than the target, 
+            // If the current sum is less than the target,
             // move the left pointer
             if (currentSum < target)
                 left++;
-          
-            // If the current sum is greater than 
+
+            // If the current sum is greater than
             // the target, move the right pointer
             else
                 right--;
@@ -1122,13 +1132,12 @@ class GfG {
         return false;
     }
 
-    static void Main(string[] args) {
-        
+    static void Main(string[] args)
+    {
+
         // Constructing the following BST:
         //         7
         //        / \
-
-//Driver Code Starts
         //       3   8
         //      / \   \
         //     2   4   9
@@ -1148,25 +1157,23 @@ class GfG {
             Console.WriteLine("false");
     }
 }
-//Driver Code Ends
 
 
             JavaScript
 
-    //Driver Code Starts
-class Node {
-    constructor(data) {
+    class Node {
+    constructor(data)
+    {
         this.data = data;
         this.left = null;
         this.right = null;
     }
 }
 
-// Function to perform Inorder traversal and store the 
+// Function to perform Inorder traversal and store the
 // elements in an array
-//Driver Code Ends
-
-function inorderTraversal(root, inorder) {
+function inorderTraversal(root, inorder)
+{
     if (root === null)
         return;
 
@@ -1178,13 +1185,15 @@ function inorderTraversal(root, inorder) {
     inorderTraversal(root.right, inorder);
 }
 
-function findTarget(root, target) {
+function findTarget(root, target)
+{
 
     // Create an auxiliary array and store Inorder traversal
     let inorder = [];
     inorderTraversal(root, inorder);
 
-    // Use two-pointer technique to find the pair with given sum
+    // Use two-pointer technique to find the pair with given
+    // sum
     let left = 0, right = inorder.length - 1;
 
     while (left < right) {
@@ -1194,12 +1203,12 @@ function findTarget(root, target) {
         if (currentSum === target)
             return true;
 
-        // If the current sum is less than the target, 
+        // If the current sum is less than the target,
         // move the left pointer
         if (currentSum < target)
             left++;
-          
-        // If the current sum is greater than 
+
+        // If the current sum is greater than
         // the target, move the right pointer
         else
             right--;
@@ -1209,12 +1218,9 @@ function findTarget(root, target) {
 }
 
 // Driver Code
-
 // Constructing the following BST:
 //         7
 //        / \
-
-//Driver Code Starts
 //       3   8
 //      / \   \
 //     2   4   9
@@ -1229,9 +1235,9 @@ const target = 12;
 
 if (findTarget(root, target)) {
     console.log("true");
-} else {
+}
+else {
     console.log("false");
 }
-//Driver Code Ends
 
 Outputtrue

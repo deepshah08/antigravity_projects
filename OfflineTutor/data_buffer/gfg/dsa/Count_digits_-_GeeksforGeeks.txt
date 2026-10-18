@@ -1,363 +1,294 @@
 # Count digits - GeeksforGeeks
 
-Given a number n, return the count of digits in this number.Example:Input: n = 1567Output: 4Explanation: There are 4 digits in 1567, which are 1, 5, 6 and 7.Input: n = 255Output: 3Explanation: There are 3 digits in 255, which are 2, 5 and 5.Try It YourselfTable of ContentIterative Solution O(log10(n)) Time or  O(Number of digits) and O(1) Space  Using Recursion - O(log10(n)) or  O(Number of digits) Time and O(Number of digits) Space  Using log base 10 function - O(1) Time and O(1) Space Converting Number to String - O(Number of digits) Time and O(Number of digits) Space   Iterative Solution O(log10(n)) Time or  O(Number of digits) and O(1) Space  The idea is to count the digits by removing the digits from the input number starting from right(least significant digit) to left(most significant digit) till the number is reduced to 0. We are removing digits from the right because the rightmost digit can be removed simply by performing integer division by 10. For eg: n = 1567, then 1567 / 10 = 156.7 = 156(Integer Division).
+Given a number n, return the count of digits in this number.Example:Input: n = 1567Output: 4Explanation: There are 4 digits in 1567, which are 1, 5, 6 and 7.Input: n = 255Output: 3Explanation: There are 3 digits in 255, which are 2, 5 and 5.Try It YourselfTable of ContentIterative Solution -O(log10(n)) Time or  O(Number of digits) and O(1) Space Using Recursion - O(log10(n)) or  O(Number of digits) Time and O(Number of digits) Space  Using log base 10 function - O(1) Time and O(1) SpaceConverting Number to String - O(Number of digits) Time and O(Number of digits) Space  Iterative Solution -O(log10(n)) Time or  O(Number of digits) and O(1) Space The idea is to count the digits by removing them one by one from the rightmost side (least significant digit) until the number becomes 0.The rightmost digit can be removed easily by performing integer division by 10. Repeat this process and increment the count each time a digit is removed.
             C++
 
-    #include <iostream>
+    #include <bits/stdc++.h>
 using namespace std;
 
-int countDigit(int n)
-{
-    // Base case
+int countDigits(int n) {
     if (n == 0)
         return 1;
 
+    n = abs(n);
     int count = 0;
 
-    // Iterate till n has digits remaining
-    while (n != 0)
-    {
-
-        // Remove rightmost digit
-        n = n / 10;
-
-        // Increment digit count by 1
-        ++count;
+    // Remove one digit at a time
+    while (n > 0) {
+        n /= 10;
+        count++;
     }
+
     return count;
 }
 
-int main()
-{
-    int n = 58964;
-    cout << countDigit(n);
-    return 0;
-}
+int main() {
+    int n = 1567;
 
+    cout << countDigits(n);
 
-            C
-
-    #include <stdio.h>
-
-int countDigit(int n)
-{
-
-    // Base case
-    if (n == 0)
-        return 1;
-
-    int count = 0;
-
-    // Iterate till n has digits remaining
-    while (n != 0)
-    {
-
-        // Remove rightmost digit
-        n = n / 10;
-
-        // Increment digit count by 1
-        ++count;
-    }
-    return count;
-}
-
-int main()
-{
-    int n = 58964;
-    printf("%d\n", countDigit(n));
     return 0;
 }
 
 
             Java
 
-    import java.io.*;
+    class GFG {
 
-class GfG {
-    static int countDigit(int n)
-    {
-        // Base case
+    static int countDigits(int n) {
         if (n == 0)
             return 1;
 
+        n = Math.abs(n);
         int count = 0;
 
-        // Iterate till n has digits remaining
-        while (n != 0) {
-
-            // Remove rightmost digit
-            n = n / 10;
-
-            // Increment digit count by 1
-            ++count;
+        // Remove one digit at a time
+        while (n > 0) {
+            n /= 10;
+            count++;
         }
+
         return count;
     }
 
-    public static void main(String[] args)
-    {
-        int n = 58964;
-        System.out.println(countDigit(n));
+    public static void main(String[] args) {
+        int n = 1567;
+
+        System.out.println(countDigits(n));
     }
 }
 
 
             Python
 
-    def countDigit(n):
-
-    # Base case
+    def countDigits(n):
     if n == 0:
         return 1
 
+    n = abs(n)
     count = 0
 
-    # Iterate till n has digits remaining
-    while n != 0:
-
-        # Remove rightmost digit
-        n = n // 10
-
-        # Increment digit count by 1
+    # Remove one digit at a time
+    while n > 0:
+        n //= 10
         count += 1
 
     return count
 
 
 if __name__ == "__main__":
-    n = 58964
-    print(countDigit(n))
+    n = 1567
+
+    print(countDigits(n))
 
 
             C#
 
     using System;
 
-class GfG {
-
-    static int CountDigit(int n)
+class GFG
+{
+    static int countDigits(int n)
     {
-
-        // Base case
         if (n == 0)
             return 1;
 
+        n = Math.Abs(n);
         int count = 0;
 
-        // Iterate till n has digits remaining
-        while (n != 0) {
-
-            // Remove rightmost digit
-            n = n / 10;
-
-            // Increment digit count by 1
-            ++count;
+        // Remove one digit at a time
+        while (n > 0)
+        {
+            n /= 10;
+            count++;
         }
+
         return count;
     }
 
     static void Main()
     {
-        int n = 58964;
-        Console.WriteLine(CountDigit(n));
+        int n = 1567;
+
+        Console.WriteLine(countDigits(n));
     }
 }
 
 
             JavaScript
 
-    function countDigit(n)
-{
-
-    // Base case
+    function countDigits(n) {
     if (n === 0)
         return 1;
 
+    n = Math.abs(n);
     let count = 0;
 
-    // Iterate till n has digits remaining
-    while (n !== 0) {
-
-        // Remove rightmost digit
+    // Remove one digit at a time
+    while (n > 0) {
         n = Math.floor(n / 10);
-
-        // Increment digit count by 1
-        ++count;
+        count++;
     }
+
     return count;
 }
 
-let n = 58964;
-console.log(countDigit(n));
+// Driver code
+let n = 1567;
 
-Output5Using Recursion - O(log10(n)) or  O(Number of digits) Time and O(Number of digits) Space  The idea is to remove digits from right by calling a recursive function for each digit. The base condition of this recursive approach is when we divide the number by 10 and the number gets reduced to 0, so return 1 for this operation. Otherwise, Keep dividing the number by 10 this reduces the input number size by 1 and keeps track of the number of sizes reduced.
+console.log(countDigits(n));
+
+Output4Using Recursion - O(log10(n)) or  O(Number of digits) Time and O(Number of digits) Space  The idea is to remove digits from right by calling a recursive function for each digit. The base condition of this recursive approach is when we divide the number by 10 and the number gets reduced to 0, so return 1 for this operation. If not base case, keep dividing the number by 10 this reduces the input number size by 1 and keeps track of the number of sizes reduced.
             C++
 
-    #include <iostream>
+    #include <bits/stdc++.h>
 using namespace std;
 
-// Recursively count the number of digits in the integer 'n'
-int countDigit(int n)
-{
-    // Base case: if 'n' is a single digit
-    if (n / 10 == 0)
+int countDigits(int n) {
+    n = abs(n);
+
+    if (n < 10)
         return 1;
 
-    // Recursive case: strip one digit and count
-    return 1 + countDigit(n / 10);
+    // Remove one digit and recurse
+    return 1 + countDigits(n / 10);
 }
 
-int main()
-{
-    int n = 58964;
-    cout << countDigit(n); 
-    return 0;
-}
+int main() {
+    int n = 1567;
 
+    cout << countDigits(n);
 
-            C
-
-    #include <stdio.h>
-// Recursively count the number of digits in the integer 'n'
-int countDigit(int n)
-{
-    // Base case: if 'n' is a single digit
-    if (n / 10 == 0)
-        return 1;
-    // Recursive case: strip one digit and count
-    return 1 + countDigit(n / 10);
-}
-
-int main()
-{
-    int n = 58964;
-    printf("%d", countDigit(n));
     return 0;
 }
 
 
             Java
 
-    import java.util.*;
+    class GFG {
 
-class GfG {
+    static int countDigits(int n) {
+        n = Math.abs(n);
 
-    // Recursively counts the number of digits in the number 'n'
-    static int countDigit(int n)
-    {
-        // Base case: if 'n' is a single-digit number
-        if (n / 10 == 0)
+        if (n < 10)
             return 1;
 
-        // Recursive call: strip one digit and count
-        return 1 + countDigit(n / 10);
+        // Remove one digit and recurse
+        return 1 + countDigits(n / 10);
     }
 
-    public static void main(String[] args)
-    {
-        int n = 58964;
-        System.out.print(countDigit(n)); 
+    public static void main(String[] args) {
+        int n = 1567;
+
+        System.out.println(countDigits(n));
     }
 }
 
 
             Python
 
-    def countDigit(n):
-    # Base case: if 'n' is a single-digit number
-    if n // 10 == 0:
+    def countDigits(n):
+    n = abs(n)
+
+    if n < 10:
         return 1
-    # Recursive case: strip one digit and count
-    return 1 + countDigit(n // 10)
+
+    # Remove one digit and recurse
+    return 1 + countDigits(n // 10)
+
 
 if __name__ == "__main__":
-    n = 58964
-    print(countDigit(n))  
+    n = 1567
+
+    print(countDigits(n))
 
 
             C#
 
     using System;
 
-class GfG {
-
-    // Recursively counts the number of digits in the number 'n'
-    static int countDigit(int n)
+class GFG
+{
+    static int countDigits(int n)
     {
-        // Base case: if 'n' is a single-digit number
-        if (n / 10 == 0)
+        n = Math.Abs(n);
+
+        if (n < 10)
             return 1;
 
-        // Recursive call: strip one digit and count
-        return 1 + countDigit(n / 10);
+        // Remove one digit and recurse
+        return 1 + countDigits(n / 10);
     }
 
-    public static void Main()
+    static void Main()
     {
-        int n = 58964;
-        Console.WriteLine(countDigit(n));
+        int n = 1567;
+
+        Console.WriteLine(countDigits(n));
     }
 }
 
 
             JavaScript
 
-    function countDigit(n) {
-    // Base case: if 'n' is a single-digit number
-    if (parseInt(n / 10) === 0)
+    function countDigits(n) {
+    n = Math.abs(n);
+
+    if (n < 10)
         return 1;
 
-    // Recursive case: strip one digit and count
-    return 1 + countDigit(parseInt(n / 10));
+    // Remove one digit and recurse
+    return 1 + countDigits(Math.floor(n / 10));
 }
 
-var n = 58964;
-console.log(countDigit(n)); 
+// Driver code
+let n = 1567;
 
-Output5Using log base 10 function - O(1) Time and O(1) Space We can use log10(logarithm of base 10) to count the number of digits of positive numbers (logarithm is not defined for negative numbers). For negative numbers, first take the absolute value of n, since logarithm is not defined for negative values.Digit count of n = floor(log10(n) + 1) 
+console.log(countDigits(n));
+
+Output4Using log base 10 function - O(1) Time and O(1) SpaceWe can use log10(logarithm of base 10) to count the number of digits of positive numbers (logarithm is not defined for negative numbers). For negative numbers, first take the absolute value of n, since logarithm is not defined for negative values.Digit count of n = floor(log10(n) + 1) 
             C++
 
-    #include <iostream>
-#include <cmath>
+    #include <bits/stdc++.h>
 using namespace std;
 
-int countDigit(int n)
-{
-    // Handle zero separately
-    if (n == 0) return 1;
-
-    // Convert negative to positive
+int countDigits(int n) {
     n = abs(n);
 
+    if (n == 0)
+        return 1;
+
+    // Log gives the number of digits indirectly
     return floor(log10(n)) + 1;
 }
 
-int main()
-{
-    int n = -58964;
-    cout << countDigit(n); 
+int main() {
+    int n = 1567;
+
+    cout << countDigits(n);
+
     return 0;
 }
 
 
             Java
 
-    import java.lang.Math;
+    class GFG {
 
-public class GfG {
-    public static int countDigit(int n) {
-        // Handle zero separately
-        if (n == 0) return 1;
-
-        // Convert negative to positive
+    static int countDigits(int n) {
         n = Math.abs(n);
 
-        return (int)Math.floor(Math.log10(n)) + 1;
+        if (n == 0)
+            return 1;
+
+        // Log gives the number of digits indirectly
+        return (int) Math.floor(Math.log10(n)) + 1;
     }
 
     public static void main(String[] args) {
-        int n = -58964;
-        System.out.println(countDigit(n));
+        int n = 1567;
+
+        System.out.println(countDigits(n));
     }
 }
 
@@ -366,160 +297,166 @@ public class GfG {
 
     import math
 
-def countDigit(n):
-    # Handle zero separately
-    if n == 0: return 1
-
-    # Convert negative to positive
+def countDigits(n):
     n = abs(n)
 
+    if n == 0:
+        return 1
+
+    # Log gives the number of digits indirectly
     return math.floor(math.log10(n)) + 1
 
+
 if __name__ == "__main__":
-    n = -58964
-    print(countDigit(n))
+    n = 1567
+
+    print(countDigits(n))
 
 
             C#
 
     using System;
 
-class GfG{
-    static int CountDigit(int n) {
-        // Handle zero separately
-        if (n == 0) return 1;
-
-        // Convert negative to positive
+class GFG
+{
+    static int countDigits(int n)
+    {
         n = Math.Abs(n);
 
+        if (n == 0)
+            return 1;
+
+        // Log gives the number of digits indirectly
         return (int)Math.Floor(Math.Log10(n)) + 1;
     }
 
-    static void Main() {
-        int n = -58964;
-        Console.WriteLine(CountDigit(n));
+    static void Main()
+    {
+        int n = 1567;
+
+        Console.WriteLine(countDigits(n));
     }
 }
 
 
             JavaScript
 
-    function countDigit(n) {
-    // Handle zero separately
-    if (n === 0) return 1;
-
-    // Convert negative to positive
+    function countDigits(n) {
     n = Math.abs(n);
 
+    if (n === 0)
+        return 1;
+
+    // Log gives the number of digits indirectly
     return Math.floor(Math.log10(n)) + 1;
 }
 
-// driver code
-let n = -58964;
-console.log(countDigit(n));
+// Driver code
+let n = 1567;
 
-Converting Number to String - O(Number of digits) Time and O(Number of digits) Space  We can convert the number into a string and then find the length of the string to get the number of digits in the original number. If the number is negative, the string will contain a '-' sign, so subtract 1 from the length.
+console.log(countDigits(n));
+
+Output4Converting Number to String - O(Number of digits) Time and O(Number of digits) Space We convert the number into a string and then find the length of the string to get the number of digits in the original number. If the number is negative, the string will contain a '-' sign, so subtract 1 from the length.
             C++
 
-    #include <iostream>
+    #include <bits/stdc++.h>
 using namespace std;
 
-int countDigit(int n)
-{
-    // Convert integer to string
-    string num = to_string(n);
+int countDigits(int n) {
+    n = abs(n);
 
-    // If negative, exclude '-' sign
-    if (num[0] == '-')
-        return num.length() - 1;
+    // Convert number to string
+    string s = to_string(n);
 
-    return num.length();
+    return s.length();
 }
 
-int main()
-{
-    int n = -58964;
-    cout << countDigit(n); 
+int main() {
+    int n = 1567;
+
+    cout << countDigits(n);
+
     return 0;
 }
 
 
             Java
 
-    public class GfG {
-    public static int countDigit(int n) {
-        // Convert integer to string
-        String num = Integer.toString(n);
+    class GFG {
 
-        // If negative, exclude '-' sign
-        if (num.charAt(0) == '-')
-            return num.length() - 1;
+    static int countDigits(int n) {
+        n = Math.abs(n);
 
-        return num.length();
+        // Convert number to string
+        String s = String.valueOf(n);
+
+        return s.length();
     }
 
     public static void main(String[] args) {
-        int n = -58964;
-        System.out.println(countDigit(n));
+        int n = 1567;
+
+        System.out.println(countDigits(n));
     }
 }
 
 
             Python
 
-    def countDigit(n):
-    # Convert integer to string
-    num = str(n)
+    def countDigits(n):
+    n = abs(n)
 
-    # If negative, exclude '-' sign
-    if num[0] == '-':
-        return len(num) - 1
+    # Convert number to string
+    s = str(n)
 
-    return len(num)
+    return len(s)
 
-if __name__ == '__main__':
-    n = -58964
-    print(countDigit(n))
+
+if __name__ == "__main__":
+    n = 1567
+
+    print(countDigits(n))
 
 
             C#
 
     using System;
 
-class GfG{
-    static int CountDigit(int n) {
-        // Convert integer to string
-        string num = n.ToString();
+class GFG
+{
+    static int countDigits(int n)
+    {
+        n = Math.Abs(n);
 
-        // If negative, exclude '-' sign
-        if (num[0] == '-')
-            return num.Length - 1;
+        // Convert number to string
+        string s = n.ToString();
 
-        return num.Length;
+        return s.Length;
     }
 
-    static void Main() {
-        int n = -58964;
-        Console.WriteLine(CountDigit(n));
+    static void Main()
+    {
+        int n = 1567;
+
+        Console.WriteLine(countDigits(n));
     }
 }
 
 
             JavaScript
 
-    function countDigit(n) {
-    // Convert integer to string
-    let num = n.toString();
+    function countDigits(n) {
+    n = Math.abs(n);
 
-    // If negative, exclude '-' sign
-    if (num[0] === '-')
-        return num.length - 1;
+    // Convert number to string
+    let s = n.toString();
 
-    return num.length;
+    return s.length;
 }
 
-// driver code
-let n = -58964;
-console.log(countDigit(n));
+// Driver code
+let n = 1567;
 
-Output5
+console.log(countDigits(n));
+
+Output4

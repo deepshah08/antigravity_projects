@@ -1,35 +1,39 @@
 # Vertical Traversal of a  Binary Tree - GeeksforGeeks
 
-Given the root of a binary Tree, Find its vertical traversal starting from the leftmost level to the rightmost level. Note: If multiple nodes are at the same horizontal distance from the root and on the same level, they should be printed in the order they appear in a level-order traversal (top-to-bottom, left-to-right).Here, Horizontal distance is calculated from the root to a specific node by counting how many times we move left or right along the unique path from the root to that node.The formula for Horizontal distance from the root is given by: Horizontal Distance = Number of right moves − Number of left moves in the path from the root to that node.Examples:  Input: Output: [[4], [2], [1, 5, 6, 11], [3, 8, 9], [7], [10]]Explanation: The below image shows the horizontal distances used to print vertical traversal starting from the leftmost level to the rightmost level Try It YourselfTable of Content[Naive Approach] - Traversing the Tree for each vertical line[Better Approach] - Using DFS and Sorting - O(n log(n)) Time and O(n) Space[Expected Approach] - Using BFS - O(n) Time and O(n) Space[Naive Approach] - Traversing the Tree for each vertical lineThe idea is to traverse the tree once and get the minimum and maximum horizontal distance with respect to root. For the tree shown above example, minimum distance is -2 (for node with value 4) and maximum distance is 3 (For node with value 10). Once we have maximum and minimum distances from root, we iterate for each vertical line at distance minimum to maximum from root, and for each vertical line traverse the tree and print the nodes which lie on that vertical line.
+Given a binary Tree, find its vertical traversal starting from the leftmost level to the rightmost level. Note: If multiple nodes are at the same horizontal distance from the root and on the same level, they should be printed in the order they appear in a level-order traversal (top-to-bottom, left-to-right).Here, Horizontal distance is calculated from the root to a specific node by counting how many times we move left or right along the unique path from the root to that node.Horizontal Distance = Number of right moves − Number of left moves in the path from the root to that node.Examples:  Input: root = [1, 2, 3, 4, 5, 6, 7, N, N, N, 8, N, 9, N, 10, 11, N] Output: [[4], [2], [1, 5, 6, 11], [3, 8, 9], [7], [10]]Explanation: The below image shows the horizontal distances used to print vertical traversal starting from the leftmost level to the rightmost level. Input: root = [1, 2, 3, 4, 5, N, 6] Output: [[4], [2], [1, 5], [3], [6]]Explanation: From left to right the vertical order will be [[4], [2], [1, 5], [3], [6]]Try It YourselfTable of Content[Naive Approach] Traversing the Tree for Each Vertical Line - O(n ^ 2) Time and O(n) Space[Better Approach] DFS and Sorting – O(n log n) Time and O(n) Space[Expected Approach] BFS – O(n) Time and O(n) Space[Naive Approach] Traversing the Tree for Each Vertical Line - O(n ^ 2) Time and O(n) SpaceThe idea is to first traverse the tree to find the minimum and maximum horizontal distances (HD) from the root. In the example tree, the minimum HD is -2 (node 4) and the maximum HD is 3 (node 10).Working of Approach:Find the minimum and maximum horizontal distances (HD) from the root.Iterate through each vertical line from the minimum HD to the maximum HD.Perform a level-order traversal (BFS) and collect nodes whose HD matches the current vertical line.Store the collected nodes in the result in left-to-right vertical order.
             C++
 
-    #include <iostream>
+    #include <algorithm>
+#include <iostream>
+#include <queue>
 #include <vector>
-#include <queue>   
-#include <algorithm> 
 using namespace std;
 
-// Node Structure
-class Node {
-public:
+class Node
+{
+  public:
     int data;
-    Node* left;
-    Node* right;
+    Node *left;
+    Node *right;
 
-    Node(int x) {
+    Node(int x)
+    {
         data = x;
-        left = nullptr;
-        right = nullptr;
+        left = right = nullptr;
     }
 };
 
 // Finds the minimum and maximum horizontal distance in the tree
-void findMinMax(Node* node, int& min, int& max, int hd) {
-  
-    if (node == nullptr) return;
+void findMinMax(Node *node, int &min, int &max, int hd)
+{
 
-    if (hd < min) min = hd;
-    else if (hd > max) max = hd;
+    if (node == nullptr)
+        return;
+
+    if (hd < min)
+        min = hd;
+    else if (hd > max)
+        max = hd;
 
     // Recur for left and right subtrees
     findMinMax(node->left, min, max, hd - 1);
@@ -37,52 +41,57 @@ void findMinMax(Node* node, int& min, int& max, int hd) {
 }
 
 // Collects all nodes at a given vertical distance in level-order
-void collectVerticalLine(Node *root, int dist, vector<int>& line) {
+void collectVerticalLine(Node *root, int dist, vector<int> &line)
+{
 
-      int hd = 0;
+    int hd = 0;
 
-      // Create a queue for level order traversal
-      queue<pair<Node*, int>> q;
-      q.push({ root, 0 });
+    // Create a queue for level order traversal
+    queue<pair<Node *, int>> q;
+    q.push({root, 0});
 
-      int mn = 0, mx = 0;
-      while (!q.empty()) {
-        pair<Node*, int> curr = q.front();
+    int mn = 0, mx = 0;
+    while (!q.empty())
+    {
+        pair<Node *, int> curr = q.front();
         q.pop();
 
-        Node* node = curr.first;
-		hd = curr.second;
-        if( hd == dist ) line.push_back(node->data);
+        Node *node = curr.first;
+        hd = curr.second;
+        if (hd == dist)
+            line.push_back(node->data);
 
         if (node->left)
-              q.push({ node->left, hd - 1 });
+            q.push({node->left, hd - 1});
         if (node->right)
-              q.push({ node->right, hd + 1 });
-      }
-  
-}    
+            q.push({node->right, hd + 1});
+    }
+}
 
 // Returns the vertical order traversal of the tree
-vector<vector<int>> verticalOrder(Node* root) {
+vector<vector<int>> verticalOrder(Node *root)
+{
     vector<vector<int>> res;
 
     int min = 0, max = 0;
     findMinMax(root, min, max, 0);
 
-    for (int line = min; line <= max; line++) {
+    for (int line = min; line <= max; line++)
+    {
         vector<int> verticalNodes;
-        
+
         // storing nodes for each vertical lines
         collectVerticalLine(root, line, verticalNodes);
-        
+
         res.push_back(verticalNodes);
     }
 
     return res;
 }
 
-int main() {
-  
+int main()
+{
+
     // Create binary tree
     //            1
     //          /   \
@@ -94,7 +103,7 @@ int main() {
     //            /
     //           11
 
-    Node* root = new Node(1);
+    Node *root = new Node(1);
     root->left = new Node(2);
     root->right = new Node(3);
     root->left->left = new Node(4);
@@ -108,19 +117,22 @@ int main() {
 
     vector<vector<int>> res = verticalOrder(root);
 
-
     cout << "[";
-    for(int i = 0;i < res.size(); i++) {
+    for (int i = 0; i < res.size(); i++)
+    {
         cout << "[";
         vector<int> line = res[i];
-        for( int j = 0; j < line.size(); j++ ) {
+        for (int j = 0; j < line.size(); j++)
+        {
             cout << line[j];
-            if( j != line.size()-1) cout << ", ";
+            if (j != line.size() - 1)
+                cout << ", ";
         }
         cout << "]";
-        if( i != res.size()-1) cout << ", ";
+        if (i != res.size() - 1)
+            cout << ", ";
     }
-    
+
     cout << "]";
     cout << endl;
 
@@ -139,7 +151,8 @@ class Node {
     int data;
     Node left, right;
 
-    Node(int x) {
+    Node(int x)
+    {
         data = x;
         left = null;
         right = null;
@@ -148,24 +161,33 @@ class Node {
 
 class GFG {
 
-    // Finds the minimum and maximum horizontal distance in the tree
-    static void findMinMax(Node node, int[] min, int[] max, int hd) {
-        if (node == null) return;
+    // Finds the minimum and maximum horizontal distance in
+    // the tree
+    static void findMinMax(Node node, int[] min, int[] max,
+                           int hd)
+    {
+        if (node == null)
+            return;
 
-        if (hd < min[0]) min[0] = hd;
-        else if (hd > max[0]) max[0] = hd;
+        if (hd < min[0])
+            min[0] = hd;
+        else if (hd > max[0])
+            max[0] = hd;
 
         // Recur for left and right subtrees
         findMinMax(node.left, min, max, hd - 1);
         findMinMax(node.right, min, max, hd + 1);
     }
 
-    // Collects all nodes at a given vertical distance in level-order
-    static void collectVerticalLine(Node root, int dist, ArrayList<Integer> line) {
+    // Collects all nodes at a given vertical distance in
+    // level-order
+    static void collectVerticalLine(Node root, int dist,
+                                    ArrayList<Integer> line)
+    {
         int hd = 0;
 
         // Queue for level-order traversal
-        Queue<ArrayList<Object>> q = new LinkedList<>();
+        Queue<ArrayList<Object> > q = new LinkedList<>();
         ArrayList<Object> first = new ArrayList<>();
         first.add(root);
         first.add(hd);
@@ -173,19 +195,22 @@ class GFG {
 
         while (!q.isEmpty()) {
             ArrayList<Object> curr = q.poll();
-            Node node = (Node) curr.get(0);
-            hd = (int) curr.get(1);
+            Node node = (Node)curr.get(0);
+            hd = (int)curr.get(1);
 
-            if (hd == dist) line.add(node.data);
+            if (hd == dist)
+                line.add(node.data);
 
             if (node.left != null) {
-                ArrayList<Object> leftNode = new ArrayList<>();
+                ArrayList<Object> leftNode
+                    = new ArrayList<>();
                 leftNode.add(node.left);
                 leftNode.add(hd - 1);
                 q.add(leftNode);
             }
             if (node.right != null) {
-                ArrayList<Object> rightNode = new ArrayList<>();
+                ArrayList<Object> rightNode
+                    = new ArrayList<>();
                 rightNode.add(node.right);
                 rightNode.add(hd + 1);
                 q.add(rightNode);
@@ -194,21 +219,26 @@ class GFG {
     }
 
     // Returns the vertical order traversal of the tree
-    static ArrayList<ArrayList<Integer>> verticalOrder(Node root) {
-        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+    static ArrayList<ArrayList<Integer> >
+    verticalOrder(Node root)
+    {
+        ArrayList<ArrayList<Integer> > res
+            = new ArrayList<>();
 
-        int[] min = {0}, max = {0};
+        int[] min = { 0 }, max = { 0 };
         findMinMax(root, min, max, 0);
 
         for (int line = min[0]; line <= max[0]; line++) {
-            ArrayList<Integer> verticalNodes = new ArrayList<>();
+            ArrayList<Integer> verticalNodes
+                = new ArrayList<>();
             collectVerticalLine(root, line, verticalNodes);
             res.add(verticalNodes);
         }
         return res;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
 
         // Create binary tree
         //            1
@@ -233,7 +263,8 @@ class GFG {
         root.right.right.right = new Node(10);
         root.left.right.right.left = new Node(11);
 
-        ArrayList<ArrayList<Integer>> res = verticalOrder(root);
+        ArrayList<ArrayList<Integer> > res
+            = verticalOrder(root);
 
         System.out.print("[");
         for (int i = 0; i < res.size(); i++) {
@@ -241,10 +272,12 @@ class GFG {
             ArrayList<Integer> line = res.get(i);
             for (int j = 0; j < line.size(); j++) {
                 System.out.print(line.get(j));
-                if (j != line.size() - 1) System.out.print(", ");
+                if (j != line.size() - 1)
+                    System.out.print(", ");
             }
             System.out.print("]");
-            if (i != res.size() - 1) System.out.print(", ");
+            if (i != res.size() - 1)
+                System.out.print(", ");
         }
         System.out.println("]");
     }
@@ -360,7 +393,8 @@ class Node {
     public int data;
     public Node left, right;
 
-    public Node(int x) {
+    public Node(int x)
+    {
         data = x;
         left = null;
         right = null;
@@ -368,21 +402,30 @@ class Node {
 }
 
 class GFG {
-    
-    // Finds the minimum and maximum horizontal distance in the tree
-    static void findMinMax(Node node, ref int min, ref int max, int hd) {
-        if (node == null) return;
 
-        if (hd < min) min = hd;
-        else if (hd > max) max = hd;
+    // Finds the minimum and maximum horizontal distance in
+    // the tree
+    static void findMinMax(Node node, ref int min,
+                           ref int max, int hd)
+    {
+        if (node == null)
+            return;
+
+        if (hd < min)
+            min = hd;
+        else if (hd > max)
+            max = hd;
 
         // Recur for left and right subtrees
         findMinMax(node.left, ref min, ref max, hd - 1);
         findMinMax(node.right, ref min, ref max, hd + 1);
     }
-    
-    // Collects all nodes at a given vertical distance in level-order
-    static void collectVerticalLine(Node root, int dist, List<int> line) {
+
+    // Collects all nodes at a given vertical distance in
+    // level-order
+    static void collectVerticalLine(Node root, int dist,
+                                    List<int> line)
+    {
         int hd = 0;
 
         // Create a queue for level order traversal
@@ -394,16 +437,20 @@ class GFG {
             Node node = curr.Item1;
             hd = curr.Item2;
 
-            if (hd == dist) line.Add(node.data);
+            if (hd == dist)
+                line.Add(node.data);
 
-            if (node.left != null) q.Enqueue((node.left, hd - 1));
-            if (node.right != null) q.Enqueue((node.right, hd + 1));
+            if (node.left != null)
+                q.Enqueue((node.left, hd - 1));
+            if (node.right != null)
+                q.Enqueue((node.right, hd + 1));
         }
     }
-    
+
     // Returns the vertical order traversal of the tree
-    static List<List<int>> verticalOrder(Node root) {
-        List<List<int>> res = new List<List<int>>();
+    static List<List<int> > verticalOrder(Node root)
+    {
+        List<List<int> > res = new List<List<int> >();
 
         int min = 0, max = 0;
         findMinMax(root, ref min, ref max, 0);
@@ -417,8 +464,9 @@ class GFG {
         return res;
     }
 
-    static void Main() {
-        
+    static void Main()
+    {
+
         // Create binary tree
         //            1
         //          /   \
@@ -429,8 +477,7 @@ class GFG {
         //             8  9   10
         //            /
         //           11
-    
-    
+
         Node root = new Node(1);
         root.left = new Node(2);
         root.right = new Node(3);
@@ -443,7 +490,7 @@ class GFG {
         root.right.right.right = new Node(10);
         root.left.right.right.left = new Node(11);
 
-        List<List<int>> res = verticalOrder(root);
+        List<List<int> > res = verticalOrder(root);
 
         Console.Write("[");
         for (int i = 0; i < res.Count; i++) {
@@ -451,10 +498,12 @@ class GFG {
             List<int> line = res[i];
             for (int j = 0; j < line.Count; j++) {
                 Console.Write(line[j]);
-                if (j != line.Count - 1) Console.Write(", ");
+                if (j != line.Count - 1)
+                    Console.Write(", ");
             }
             Console.Write("]");
-            if (i != res.Count - 1) Console.Write(", ");
+            if (i != res.Count - 1)
+                Console.Write(", ");
         }
         Console.WriteLine("]");
     }
@@ -465,54 +514,65 @@ class GFG {
 
     // Node Structure
 class Node {
-    constructor(x) {
+    constructor(x)
+    {
         this.data = x;
         this.left = null;
         this.right = null;
     }
 }
 
-// Finds the minimum and maximum horizontal distance in the tree
-function findMinMax(node, minmax, hd) {
-    if (!node) return;
+// Finds the minimum and maximum horizontal distance in the
+// tree
+function findMinMax(node, minmax, hd)
+{
+    if (!node)
+        return;
 
-    if (hd < minmax.min) minmax.min = hd;
-    else if (hd > minmax.max) minmax.max = hd;
-
+    if (hd < minmax.min)
+        minmax.min = hd;
+    else if (hd > minmax.max)
+        minmax.max = hd;
 
     // Recur for left and right subtrees
     findMinMax(node.left, minmax, hd - 1);
     findMinMax(node.right, minmax, hd + 1);
 }
 
-// Collects all nodes at a given vertical distance in level-order
-function collectVerticalLine(root, dist, line) {
+// Collects all nodes at a given vertical distance in
+// level-order
+function collectVerticalLine(root, dist, line)
+{
     let hd = 0;
-
 
     // Create a queue for level order traversal
     let q = [];
-    q.push([root, 0]);
+    q.push([ root, 0 ]);
 
     while (q.length > 0) {
         let [node, currHd] = q.shift();
         hd = currHd;
 
-        if (hd === dist) line.push(node.data);
+        if (hd === dist)
+            line.push(node.data);
 
-        if (node.left) q.push([node.left, hd - 1]);
-        if (node.right) q.push([node.right, hd + 1]);
+        if (node.left)
+            q.push([ node.left, hd - 1 ]);
+        if (node.right)
+            q.push([ node.right, hd + 1 ]);
     }
 }
 
 // Returns the vertical order traversal of the tree
-function verticalOrder(root) {
+function verticalOrder(root)
+{
     let res = [];
 
-    let minmax = { min: 0, max: 0 };
+    let minmax = {min : 0, max : 0};
     findMinMax(root, minmax, 0);
 
-    for (let line = minmax.min; line <= minmax.max; line++) {
+    for (let line = minmax.min; line <= minmax.max;
+         line++) {
         let verticalNodes = [];
         collectVerticalLine(root, line, verticalNodes);
         res.push(verticalNodes);
@@ -554,40 +614,44 @@ for (let i = 0; i < res.length; i++) {
     let line = res[i];
     for (let j = 0; j < line.length; j++) {
         process.stdout.write(line[j].toString());
-        if (j !== line.length - 1) process.stdout.write(", ");
+        if (j !== line.length - 1)
+            process.stdout.write(", ");
     }
     process.stdout.write("]");
-    if (i !== res.length - 1) process.stdout.write(", ");
+    if (i !== res.length - 1)
+        process.stdout.write(", ");
 }
 console.log("]");
 
 Output[[4], [2], [1, 5, 6, 11], [3, 8, 9], [7], [10]]
-Time Complexity: O(n2), Time complexity of above algorithm is O(w*n) where w is width of Binary Tree and n is number of nodes in Binary Tree. In worst case, the value of w can be n.Auxiliary Space: O(n), due to recursion stack.[Better Approach] - Using DFS and Sorting - O(n log(n)) Time and O(n) SpaceThe idea is to traverse the tree using DFS and store the mapping of each horizontal distance to a list of pairs containing the node value and its level. These pairs are required so that nodes can later be printed in the correct order based on their level. Then, we sort the pairs based on their level as the order of nodes in the same level is maintained in DFS, but since DFS explores all nodes in depth before moving to other branches, the order of nodes by level is not naturally preserved.
+[Better Approach] DFS and Sorting – O(n log n) Time and O(n) SpaceThe idea is to traverse the tree using Depth-First Search (DFS) and store each node's value and level according to its horizontal distance (HD) from the root.This groups the nodes belonging to the same vertical line.Since DFS may visit deeper nodes before shallower nodes, we sort the nodes in each vertical line by their levels to maintain the correct order.Finally, we collect the node values from left to right to obtain the vertical order traversal.Working of Approach:Traverse the tree using DFS and track the horizontal distance and level of each node.Sort the nodes in each vertical line by level using a stable sort, preserving left-to-right order when levels are equal.Collect the node values from left to right to obtain the result.
             C++
 
-    #include <iostream>
-#include <vector>
-#include <queue>   
-#include <algorithm> 
+    #include <algorithm>
+#include <iostream>
 #include <map>
+#include <queue>
+#include <vector>
 using namespace std;
 
-// Node Structure
-class Node {
-public:
+class Node
+{
+  public:
     int data;
-    Node* left;
-    Node* right;
-    Node(int x) {
+    Node *left;
+    Node *right;
+    Node(int x)
+    {
         data = x;
-        left = nullptr;
-        right = nullptr;
+        left = right = nullptr;
     }
 };
 
 // Performs DFS to map each node to its horizontal distance and level
-void dfs(Node* root, int hd, int lvl, map<int, vector<pair<int,int>>>& verticalLines) {
-    if (root == nullptr) return;
+void dfs(Node *root, int hd, int lvl, map<int, vector<pair<int, int>>> &verticalLines)
+{
+    if (root == nullptr)
+        return;
 
     // storing node value and level
     verticalLines[hd].push_back({root->data, lvl});
@@ -598,22 +662,23 @@ void dfs(Node* root, int hd, int lvl, map<int, vector<pair<int,int>>>& verticalL
 }
 
 // Collects all vertical lines after DFS traversal and sorting by level
-vector<vector<int>> verticalOrder(Node* root) {
-    map<int, vector<pair<int,int>>> verticalLines;
+vector<vector<int>> verticalOrder(Node *root)
+{
+    map<int, vector<pair<int, int>>> verticalLines;
 
     dfs(root, 0, 0, verticalLines);
     vector<vector<int>> res;
 
-    for (auto& kv : verticalLines) {
-        vector<pair<int,int>> lines = kv.second;
+    for (auto &kv : verticalLines)
+    {
+        vector<pair<int, int>> lines = kv.second;
 
         // Sorting based on level
-        stable_sort(lines.begin(), lines.end(), [](auto &a, auto &b) {
-            return a.second < b.second;
-        });
+        stable_sort(lines.begin(), lines.end(), [](auto &a, auto &b) { return a.second < b.second; });
 
         vector<int> line;
-        for (auto &node : lines) {
+        for (auto &node : lines)
+        {
             line.push_back(node.first);
         }
         res.push_back(line);
@@ -622,7 +687,8 @@ vector<vector<int>> verticalOrder(Node* root) {
     return res;
 }
 
-int main() {
+int main()
+{
     // Create binary tree
     //            1
     //          /   \
@@ -633,8 +699,8 @@ int main() {
     //             8  9   10
     //            /
     //           11
-    
-    Node* root = new Node(1);
+
+    Node *root = new Node(1);
     root->left = new Node(2);
     root->right = new Node(3);
     root->left->left = new Node(4);
@@ -649,15 +715,19 @@ int main() {
     vector<vector<int>> res = verticalOrder(root);
 
     cout << "[";
-    for (int i = 0; i < res.size(); i++) {
+    for (int i = 0; i < res.size(); i++)
+    {
         cout << "[";
         vector<int> line = res[i];
-        for (int j = 0; j < line.size(); j++) {
+        for (int j = 0; j < line.size(); j++)
+        {
             cout << line[j];
-            if (j != line.size() - 1) cout << ", ";
+            if (j != line.size() - 1)
+                cout << ", ";
         }
         cout << "]";
-        if (i != res.size() - 1) cout << ", ";
+        if (i != res.size() - 1)
+            cout << ", ";
     }
     cout << "]" << endl;
 }
@@ -665,19 +735,20 @@ int main() {
 
             Java
 
-    import java.util.List;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.TreeMap;
+    import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 // Node Structure
 class Node {
     int data;
     Node left, right;
 
-    Node(int x) {
+    Node(int x)
+    {
         data = x;
         left = null;
         right = null;
@@ -686,24 +757,31 @@ class Node {
 
 class GFG {
 
-    // Performs DFS to map each node to its horizontal distance and level
-    static ArrayList<ArrayList<Integer>> verticalOrder(Node root) {
-        TreeMap<Integer, ArrayList<ArrayList<Integer>>> map = new TreeMap<>();
+    // Performs DFS to map each node to its horizontal
+    // distance and level
+    static ArrayList<ArrayList<Integer> >
+    verticalOrder(Node root)
+    {
+        TreeMap<Integer, ArrayList<ArrayList<Integer> > >
+            map = new TreeMap<>();
 
         dfs(root, 0, 0, map);
-        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+        ArrayList<ArrayList<Integer> > res
+            = new ArrayList<>();
 
         for (int hd : map.keySet()) {
-            ArrayList<ArrayList<Integer>> lines = map.get(hd);
+            ArrayList<ArrayList<Integer> > lines
+                = map.get(hd);
 
             // Sorting based on level (2nd element in list)
-            Collections.sort(lines, Comparator.comparingInt(a -> a.get(1)));
+            Collections.sort(lines, Comparator.comparingInt(
+                                        a -> a.get(1)));
 
             ArrayList<Integer> line = new ArrayList<>();
             for (ArrayList<Integer> node : lines) {
-                
+
                 // add only value, not level
-                line.add(node.get(0)); 
+                line.add(node.get(0));
             }
             res.add(line);
         }
@@ -711,14 +789,20 @@ class GFG {
         return res;
     }
 
-    // Collects all vertical lines after DFS traversal and sorting by level
-    static void dfs(Node root, int hd, int lvl, TreeMap<Integer, 
-                    ArrayList<ArrayList<Integer>>> verticalLines) {
-        
-        if (root == null) return;
+    // Collects all vertical lines after DFS traversal and
+    // sorting by level
+    static void
+    dfs(Node root, int hd, int lvl,
+        TreeMap<Integer, ArrayList<ArrayList<Integer> > >
+            verticalLines)
+    {
 
-        ArrayList<ArrayList<Integer>> line = 
-                    verticalLines.getOrDefault(hd, new ArrayList<>());
+        if (root == null)
+            return;
+
+        ArrayList<ArrayList<Integer> > line
+            = verticalLines.getOrDefault(hd,
+                                         new ArrayList<>());
 
         // store node value and level as a small list
         ArrayList<Integer> nodeInfo = new ArrayList<>();
@@ -733,7 +817,8 @@ class GFG {
         dfs(root.right, hd + 1, lvl + 1, verticalLines);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
 
         // Create binary tree
         //            1
@@ -758,7 +843,8 @@ class GFG {
         root.right.right.right = new Node(10);
         root.left.right.right.left = new Node(11);
 
-        ArrayList<ArrayList<Integer>> res = verticalOrder(root);
+        ArrayList<ArrayList<Integer> > res
+            = verticalOrder(root);
 
         System.out.print("[");
         for (int i = 0; i < res.size(); i++) {
@@ -766,10 +852,12 @@ class GFG {
             List<Integer> line = res.get(i);
             for (int j = 0; j < line.size(); j++) {
                 System.out.print(line.get(j));
-                if (j != line.size() - 1) System.out.print(", ");
+                if (j != line.size() - 1)
+                    System.out.print(", ");
             }
             System.out.print("]");
-            if (i != res.size() - 1) System.out.print(", ");
+            if (i != res.size() - 1)
+                System.out.print(", ");
         }
         System.out.println("]");
     }
@@ -819,6 +907,7 @@ def dfs(root, hd, lvl, verticalLines):
     dfs(root.left, hd - 1, lvl + 1, verticalLines)
     dfs(root.right, hd + 1, lvl + 1, verticalLines)
 
+
 if __name__ == "__main__":
     # Create binary tree
     #         1
@@ -830,7 +919,7 @@ if __name__ == "__main__":
     #          8  9   10
     #         /
     #       11
-    
+
     root = Node(1)
     root.left = Node(2)
     root.right = Node(3)
@@ -870,7 +959,8 @@ class Node {
     public int data;
     public Node left, right;
 
-    public Node(int x) {
+    public Node(int x)
+    {
         data = x;
         left = null;
         right = null;
@@ -878,22 +968,27 @@ class Node {
 }
 
 class GFG {
-    
-    // Collects all vertical lines after DFS traversal and sorting by level
-    static List<List<int>> verticalOrder(Node root) {
-        SortedDictionary<int, List<int[]>> map = new SortedDictionary<int, List<int[]>>();
+
+    // Collects all vertical lines after DFS traversal and
+    // sorting by level
+    static List<List<int>> verticalOrder(Node root)
+    {
+        SortedDictionary<int, List<int[]>> map
+            = new SortedDictionary<int, List<int[]>>();
 
         dfs(root, 0, 0, map);
         List<List<int>> res = new List<List<int>>();
 
-        foreach (int hd in map.Keys) {
+        foreach(int hd in map.Keys)
+        {
             List<int[]> lines = map[hd];
 
             // Sorting based on level
             lines = lines.OrderBy(a => a[1]).ToList();
 
             List<int> line = new List<int>();
-            foreach (int[] node in lines) {
+            foreach(int[] node in lines)
+            {
                 line.Add(node[0]);
             }
             res.Add(line);
@@ -901,11 +996,15 @@ class GFG {
 
         return res;
     }
-    
-    // Performs DFS to map each node to its horizontal distance and level
-    static void dfs(Node root, int hd, int lvl, 
-            SortedDictionary<int, List<int[]>> verticalLines) {
-        if (root == null) return;
+
+    // Performs DFS to map each node to its horizontal
+    // distance and level
+    static void
+    dfs(Node root, int hd, int lvl,
+        SortedDictionary<int, List<int[]>> verticalLines)
+    {
+        if (root == null)
+            return;
 
         if (!verticalLines.ContainsKey(hd))
             verticalLines[hd] = new List<int[]>();
@@ -918,7 +1017,8 @@ class GFG {
         dfs(root.right, hd + 1, lvl + 1, verticalLines);
     }
 
-    static void Main(string[] args) {
+    static void Main(string[] args)
+    {
         // Create binary tree
         //            1
         //          /   \
@@ -941,7 +1041,7 @@ class GFG {
         root.right.right.right = new Node(10);
         root.left.right.right.left = new Node(11);
 
-        List<List<int>> res = verticalOrder(root);
+        List<List<int> > res = verticalOrder(root);
 
         Console.Write("[");
         for (int i = 0; i < res.Count; i++) {
@@ -949,10 +1049,12 @@ class GFG {
             List<int> line = res[i];
             for (int j = 0; j < line.Count; j++) {
                 Console.Write(line[j]);
-                if (j != line.Count - 1) Console.Write(", ");
+                if (j != line.Count - 1)
+                    Console.Write(", ");
             }
             Console.Write("]");
-            if (i != res.Count - 1) Console.Write(", ");
+            if (i != res.Count - 1)
+                Console.Write(", ");
         }
         Console.WriteLine("]");
     }
@@ -963,15 +1065,18 @@ class GFG {
 
     // Node Structure
 class Node {
-    constructor(x) {
+    constructor(x)
+    {
         this.data = x;
         this.left = null;
         this.right = null;
     }
 }
 
-// Collects all vertical lines after DFS traversal and sorting by level
-function verticalOrder(root) {
+// Collects all vertical lines after DFS traversal and
+// sorting by level
+function verticalOrder(root)
+{
     let map = new Map();
 
     dfs(root, 0, 0, map);
@@ -994,14 +1099,17 @@ function verticalOrder(root) {
     return res;
 }
 
-// Performs DFS to map each node to its horizontal distance and level
-function dfs(root, hd, lvl, verticalLines) {
-    if (!root) return;
+// Performs DFS to map each node to its horizontal distance
+// and level
+function dfs(root, hd, lvl, verticalLines)
+{
+    if (!root)
+        return;
 
     let line = verticalLines.get(hd) || [];
 
     // storing node value and level
-    line.push([root.data, lvl]);
+    line.push([ root.data, lvl ]);
     verticalLines.set(hd, line);
 
     // Recur for left and right subtrees
@@ -1041,77 +1149,83 @@ for (let i = 0; i < res.length; i++) {
     let line = res[i];
     for (let j = 0; j < line.length; j++) {
         process.stdout.write(line[j].toString());
-        if (j != line.length - 1) process.stdout.write(", ");
+        if (j != line.length - 1)
+            process.stdout.write(", ");
     }
     process.stdout.write("]");
-    if (i != res.length - 1) process.stdout.write(", ");
+    if (i != res.length - 1)
+        process.stdout.write(", ");
 }
 console.log("]");
 
 Output[[4], [2], [1, 5, 6, 11], [3, 8, 9], [7], [10]]
-[Expected Approach] - Using BFS - O(n) Time and O(n) SpaceIn this approach, we are using map to store horizontal distance and nodes having that as horizontal distance from the root. BFS ensures that nodes are traversed in level order traversal. Therefore, we don't need any additional data structure in this approach to maintain level-order traversal.
+[Expected Approach] BFS – O(n) Time and O(n) SpaceThe idea is to traverse the tree using Breadth-First Search (BFS) and store each node's value in a map based on its horizontal distance (HD) from the root.The horizontal distance decreases by 1 for the left child and increases by 1 for the right child.Since BFS visits nodes level by level, the nodes are stored in the correct order within each vertical line without requiring additional sorting.Finally, we collect the nodes from the minimum to the maximum horizontal distance to obtain the vertical order traversal.Working of Approach:Initialize a queue with the root node and its horizontal distance as 0.Traverse the tree using BFS and store each node's value at its corresponding horizontal distance.Update the minimum and maximum horizontal distances during traversal.Collect the nodes from the minimum to the maximum horizontal distance to obtain the result.
             C++
 
-    #include <iostream>
-#include <vector>
-#include <queue>   
-#include <algorithm> 
+    #include <algorithm>
+#include <iostream>
 #include <map>
+#include <queue>
 #include <unordered_map>
+#include <vector>
 using namespace std;
 
-// Node Structure
-class Node {
-public:
+class Node
+{
+  public:
     int data;
-    Node* left;
-    Node* right;
+    Node *left;
+    Node *right;
 
-    Node(int x) {
+    Node(int x)
+    {
         data = x;
         left = nullptr;
         right = nullptr;
     }
 };
 
-vector<vector<int>> verticalOrder(Node* root) {
-    
+vector<vector<int>> verticalOrder(Node *root)
+{
+
     // Queue to store nodes and their vertical levels.
     unordered_map<int, vector<int>> lst;
-    
+
     // Queue to store nodes and their vertical levels.
     queue<pair<Node *, int>> q;
     q.push({root, 0});
-    
+
     int mn = 0, mx = 0;
-    
-    while (!q.empty()) {
+
+    while (!q.empty())
+    {
         auto c = q.front();
         mn = min(mn, c.second);
         mx = max(mx, c.second);
         q.pop();
-        
+
         // adding node to the corresponding vertical level.
         lst[c.second].push_back(c.first->data);
-      
-       // pushing left child with decreased vertical level.
+
+        // pushing left child with decreased vertical level.
         if (c.first->left)
             q.push({c.first->left, c.second - 1});
-       
+
         // pushing right child with increased vertical level.
         if (c.first->right)
             q.push({c.first->right, c.second + 1});
     }
-   
+
     // creating the result vector in vertical order.
     vector<vector<int>> res;
     for (int i = mn; i <= mx; i++)
         res.push_back(lst[i]);
-  
+
     return res;
 }
 
-int main() {
+int main()
+{
     // Create binary tree
     //            1
     //          /   \
@@ -1122,8 +1236,8 @@ int main() {
     //             8  9   10
     //            /
     //           11
-    
-    Node* root = new Node(1);
+
+    Node *root = new Node(1);
     root->left = new Node(2);
     root->right = new Node(3);
     root->left->left = new Node(4);
@@ -1138,15 +1252,19 @@ int main() {
     vector<vector<int>> res = verticalOrder(root);
 
     cout << "[";
-    for (int i = 0; i < res.size(); i++) {
+    for (int i = 0; i < res.size(); i++)
+    {
         cout << "[";
         vector<int> line = res[i];
-        for (int j = 0; j < line.size(); j++) {
+        for (int j = 0; j < line.size(); j++)
+        {
             cout << line[j];
-            if (j != line.size() - 1) cout << ", ";
+            if (j != line.size() - 1)
+                cout << ", ";
         }
         cout << "]";
-        if (i != res.size() - 1) cout << ", ";
+        if (i != res.size() - 1)
+            cout << ", ";
     }
     cout << "]" << endl;
 }
@@ -1154,80 +1272,80 @@ int main() {
 
             Java
 
-    import java.util.List;
-import java.util.ArrayList;
-import java.util.Queue;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.HashMap;
+    import java.util.*;
 
-// Node Structure
 class Node {
-    int data;
-    Node left, right;
+    public int data;
+    public Node left;
+    public Node right;
 
-    Node(int x) {
+    public Node(int x)
+    {
         data = x;
         left = null;
         right = null;
     }
 }
 
-class Pair<K, V> {
-    private K key;
-    private V value;
+public class GFG {
 
-    public Pair(K key, V value) {
-        this.key = key;
-        this.value = value;
-    }
+    public static ArrayList<ArrayList<Integer> >
+    verticalOrder(Node root)
+    {
+        // Map to store nodes at each vertical level.
+        Map<Integer, ArrayList<Integer> > lst
+            = new HashMap<>();
 
-    public K getKey() { return key; }
+        if (root == null)
+            return new ArrayList<>();
 
-    public V getValue() { return value; }
-}
-
-class GFG {
-
-    static ArrayList<ArrayList<Integer>> verticalOrder(Node root) {
-        
-        // Map to store nodes and their vertical levels.
-        Map<Integer, ArrayList<Integer>> lst = new HashMap<>();
-        
         // Queue to store nodes and their vertical levels.
-        Queue<Pair<Node, Integer>> q = new LinkedList<>();
-        q.offer(new Pair<>(root, 0));
+        Queue<AbstractMap.SimpleEntry<Node, Integer> > q
+            = new LinkedList<>();
+        q.add(new AbstractMap.SimpleEntry<>(root, 0));
 
         int mn = 0, mx = 0;
 
         while (!q.isEmpty()) {
-            Pair<Node, Integer> c = q.poll();
-            mn = Math.min(mn, c.getValue());
-            mx = Math.max(mx, c.getValue());
+            AbstractMap.SimpleEntry<Node, Integer> c
+                = q.poll();
 
-            // adding node to the corresponding vertical level.
-            lst.putIfAbsent(c.getValue(), new ArrayList<>());
-            lst.get(c.getValue()).add(c.getKey().data);
+            Node node = c.getKey();
+            int hd = c.getValue();
 
-            // pushing left child with decreased vertical level.
-            if (c.getKey().left != null)
-                q.offer(new Pair<>(c.getKey().left, c.getValue() - 1));
+            mn = Math.min(mn, hd);
+            mx = Math.max(mx, hd);
 
-            // pushing right child with increased vertical level.
-            if (c.getKey().right != null)
-                q.offer(new Pair<>(c.getKey().right, c.getValue() + 1));
+            // Adding node to the corresponding vertical
+            // level.
+            lst.computeIfAbsent(hd, k -> new ArrayList<>())
+                .add(node.data);
+
+            // Pushing left child with decreased vertical
+            // level.
+            if (node.left != null)
+                q.add(new AbstractMap.SimpleEntry<>(
+                    node.left, hd - 1));
+
+            // Pushing right child with increased vertical
+            // level.
+            if (node.right != null)
+                q.add(new AbstractMap.SimpleEntry<>(
+                    node.right, hd + 1));
         }
 
-        // creating the result vector in vertical order.
-        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+        // Creating the result in vertical order.
+        ArrayList<ArrayList<Integer> > res
+            = new ArrayList<>();
+
         for (int i = mn; i <= mx; i++)
             res.add(lst.get(i));
 
         return res;
     }
 
-    public static void main(String[] args) {
-        
+    public static void main(String[] args)
+    {
         // Create binary tree
         //            1
         //          /   \
@@ -1251,19 +1369,25 @@ class GFG {
         root.right.right.right = new Node(10);
         root.left.right.right.left = new Node(11);
 
-        ArrayList<ArrayList<Integer>> res = verticalOrder(root);
+        ArrayList<ArrayList<Integer> > res
+            = verticalOrder(root);
 
         System.out.print("[");
         for (int i = 0; i < res.size(); i++) {
             System.out.print("[");
-            List<Integer> line = res.get(i);
+            ArrayList<Integer> line = res.get(i);
+
             for (int j = 0; j < line.size(); j++) {
                 System.out.print(line.get(j));
-                if (j != line.size() - 1) System.out.print(", ");
+                if (j != line.size() - 1)
+                    System.out.print(", ");
             }
+
             System.out.print("]");
-            if (i != res.size() - 1) System.out.print(", ");
+            if (i != res.size() - 1)
+                System.out.print(", ");
         }
+
         System.out.println("]");
     }
 }
@@ -1369,7 +1493,8 @@ class Node {
     public int data;
     public Node left, right;
 
-    public Node(int x) {
+    public Node(int x)
+    {
         data = x;
         left = right = null;
     }
@@ -1377,12 +1502,15 @@ class Node {
 
 class GFG {
 
-    static List<List<int>> verticalOrder(Node root) {
-        List<List<int>> res = new List<List<int>>();
-        if (root == null) return res;
+    static List<List<int> > verticalOrder(Node root)
+    {
+        List<List<int> > res = new List<List<int> >();
+        if (root == null)
+            return res;
 
         // Map to store nodes and their vertical levels.
-        Dictionary<int, List<int>> lst = new Dictionary<int, List<int>>();
+        Dictionary<int, List<int> > lst
+            = new Dictionary<int, List<int> >();
 
         // Queue to store nodes and their vertical levels.
         Queue<(Node, int)> q = new Queue<(Node, int)>();
@@ -1398,15 +1526,21 @@ class GFG {
             mn = Math.Min(mn, val);
             mx = Math.Max(mx, val);
 
-            // adding node to the corresponding vertical level.
-            if (!lst.ContainsKey(val)) lst[val] = new List<int>();
+            // adding node to the corresponding vertical
+            // level.
+            if (!lst.ContainsKey(val))
+                lst[val] = new List<int>();
             lst[val].Add(node.data);
 
-            // pushing left child with decreased vertical level.
-            if (node.left != null) q.Enqueue((node.left, val - 1));
+            // pushing left child with decreased vertical
+            // level.
+            if (node.left != null)
+                q.Enqueue((node.left, val - 1));
 
-            // pushing right child with increased vertical level.
-            if (node.right != null) q.Enqueue((node.right, val + 1));
+            // pushing right child with increased vertical
+            // level.
+            if (node.right != null)
+                q.Enqueue((node.right, val + 1));
         }
 
         // creating the result vector in vertical order.
@@ -1416,8 +1550,9 @@ class GFG {
         return res;
     }
 
-    static void Main(string[] args) {
-      
+    static void Main(string[] args)
+    {
+
         // Create binary tree
         //            1
         //          /   \
@@ -1441,7 +1576,7 @@ class GFG {
         root.right.right.right = new Node(10);
         root.left.right.right.left = new Node(11);
 
-        List<List<int>> res = verticalOrder(root);
+        List<List<int> > res = verticalOrder(root);
 
         Console.Write("[");
         for (int i = 0; i < res.Count; i++) {
@@ -1449,10 +1584,12 @@ class GFG {
             List<int> line = res[i];
             for (int j = 0; j < line.Count; j++) {
                 Console.Write(line[j]);
-                if (j != line.Count - 1) Console.Write(", ");
+                if (j != line.Count - 1)
+                    Console.Write(", ");
             }
             Console.Write("]");
-            if (i != res.Count - 1) Console.Write(", ");
+            if (i != res.Count - 1)
+                Console.Write(", ");
         }
         Console.WriteLine("]");
     }
@@ -1463,7 +1600,8 @@ class GFG {
 
     // Node Structure
 class Node {
-    constructor(x) {
+    constructor(x)
+    {
         this.data = x;
         this.left = null;
         this.right = null;
@@ -1472,17 +1610,18 @@ class Node {
 
 // Custom Queue Implementation
 class Queue {
-    constructor() {
+    constructor()
+    {
         this.items = [];
-        this.frontIndex = 0; 
+        this.frontIndex = 0;
     }
 
-    enqueue(element) {
-        this.items.push(element);
-    }
+    enqueue(element) { this.items.push(element); }
 
-    dequeue() {
-        if (this.isEmpty()) return null;
+    dequeue()
+    {
+        if (this.isEmpty())
+            return null;
         const item = this.items[this.frontIndex];
         this.frontIndex++;
         // Optional: Reset array if frontIndex gets large
@@ -1493,24 +1632,25 @@ class Queue {
         return item;
     }
 
-    isEmpty() {
+    isEmpty()
+    {
         return this.frontIndex >= this.items.length;
     }
 
-    size() {
-        return this.items.length - this.frontIndex;
-    }
+    size() { return this.items.length - this.frontIndex; }
 }
 
-function verticalOrder(root) {
-    if (!root) return [];
+function verticalOrder(root)
+{
+    if (!root)
+        return [];
 
     // Map to store nodes and their vertical levels
     const lst = new Map();
 
     // Use our custom queue
     const q = new Queue();
-    q.enqueue([root, 0]);
+    q.enqueue([ root, 0 ]);
 
     let mn = 0, mx = 0;
 
@@ -1520,11 +1660,14 @@ function verticalOrder(root) {
         mn = Math.min(mn, val);
         mx = Math.max(mx, val);
 
-        if (!lst.has(val)) lst.set(val, []);
+        if (!lst.has(val))
+            lst.set(val, []);
         lst.get(val).push(node.data);
 
-        if (node.left) q.enqueue([node.left, val - 1]);
-        if (node.right) q.enqueue([node.right, val + 1]);
+        if (node.left)
+            q.enqueue([ node.left, val - 1 ]);
+        if (node.right)
+            q.enqueue([ node.right, val + 1 ]);
     }
 
     // Build the result in vertical order
@@ -1567,10 +1710,12 @@ for (let i = 0; i < res.length; i++) {
     let line = res[i];
     for (let j = 0; j < line.length; j++) {
         process.stdout.write(line[j].toString());
-        if (j != line.length - 1) process.stdout.write(", ");
+        if (j != line.length - 1)
+            process.stdout.write(", ");
     }
     process.stdout.write("]");
-    if (i != res.length - 1) process.stdout.write(", ");
+    if (i != res.length - 1)
+        process.stdout.write(", ");
 }
 console.log("]");
 

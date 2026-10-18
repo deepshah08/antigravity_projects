@@ -1,6 +1,6 @@
 # String vs StringBuilder vs StringBuffer in Java - GeeksforGeeks
 
-In Java, strings are widely used to store and manipulate text. However, Java provides three different classes for handling string-related operations,  String, StringBuilder, and StringBuffer.StringA String in Java is an immutable sequence of characters, meaning once a String object is created, it cannot be changed.
+In Java, String, StringBuilder, and StringBuffer are used to store and manipulate sequences of characters. The main difference between them lies in mutability, thread safety, and performance. String is immutable, while StringBuilder and StringBuffer are mutable, making them suitable for different string manipulation requirements.String: Immutable and suitable for text that does not require frequent modifications.StringBuilder: Mutable and efficient for repeated string modifications without synchronization.StringBuffer: Mutable and synchronized, making individual method calls thread-safe.StringA String in Java is an immutable sequence of characters. Once a String object is created, its contents cannot be modified. Operations such as concat(), replace(), and substring() return a string result instead of changing the original object.
             Java
 
     public class StringExample{
@@ -15,7 +15,7 @@ In Java, strings are widely used to store and manipulate text. However, Java pro
 }
 
 OutputHello
-Explanation: Here, str.concat(" World") does not modify the original string. Instead, it creates a new String object, and the old one remains unchanged.StringBuilderStringBuilder is a mutable sequence of characters introduced in Java 5. It allows modification of the string content without creating new objects
+Explanation: Here, str.concat(" World") does not modify the original string. Instead, it creates a new String object, and the old one remains unchanged.StringBuilderStringBuilder is a mutable sequence of characters introduced in Java 5. Unlike String, it allows modifications to the existing object using methods such as append(), insert(), delete(), and reverse().StringBuilder is not synchronized, making it generally suitable for repeated string modifications when external synchronization is not required.
             Java
 
     public class Geeks{
@@ -29,7 +29,7 @@ Explanation: Here, str.concat(" World") does not modify the original string. Ins
 }
 
 OutputHello World
-Explanation: In the above example append() method modifies the existing object directly without creating a new one.StringBufferStringBuffer is also a mutable sequence of characters, similar to StringBuilder, but it is thread-safe and synchronized.
+Explanation: In the above example append() method modifies the existing object directly without creating a new one.StringBufferStringBuffer is a mutable sequence of characters similar to StringBuilder. However, its main methods are synchronized, allowing individual operations to be performed safely when multiple threads access the same object. This synchronization introduces some overhead compared with StringBuilder.
             Java
 
     public class Geeks{
